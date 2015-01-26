@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Login_Main: UIViewController, FBLoginViewDelegate{
+class Login_MainViewController: UIViewController, FBLoginViewDelegate{
 
     @IBOutlet var bg : UIImageView!
 
@@ -37,34 +37,43 @@ class Login_Main: UIViewController, FBLoginViewDelegate{
         
     }
     
+    func getPotraitFromFacebook()->UIImage{
+        
+        var image:UIImage!
+        FBRequest.requestForMe().startWithCompletionHandler({(connection: FBRequestConnection!, user: AnyObject!, error: NSError!) -> Void in
+            if((error) != nil){
+                //error
+            }else{
+                println(user as [String: AnyObject])
+                
+                var userID = user["id"] as String
+                var str = "http://graph.facebook.com/\(userID)/picture?type=large"
+                var url = NSURL(string: str)
+                println(url)
+                var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
+                image = UIImage(data: data)
+                
+            }
+        })
+        
+        return image
+        
+    }
+    
     func loginView(loginView: FBLoginView!, handleError error: NSError!) {
-        //println(error)
+        println(error)
     }
 
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
         println(user)
-        
-        let permissions = ["email"]
-        FBSession.openActiveSessionWithReadPermissions(permissions, allowLoginUI: true, completionHandler: {
-            (session: FBSession!, state: FBSessionState!, error: NSError!) -> Void in
-            self.sessionStateChanged(session, state: state, error: error)
-        })
+    
         
     }
     
+    
+    
     // retrive information from user
-    func sessionStateChanged(session: FBSession!, state: FBSessionState!, error: NSError!){
-        if state == FBSessionState.Open{
-            
-                FBRequest.requestForMe().startWithCompletionHandler({(connection: FBRequestConnection!, user: AnyObject!, error: NSError!) -> Void in
-                    if((error) != nil){
-                        //error
-                    }else{
-                        //println((user as [String: AnyObject])["email"])
-                    }
-                })
-        }
-    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

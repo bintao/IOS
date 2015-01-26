@@ -5,10 +5,10 @@
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--Login Main-->
+        <!--Login Main View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="Login_Main" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="Login_MainViewController" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -26,6 +26,14 @@
                                     <constraint firstAttribute="height" constant="50" id="tD1-Nx-7P7"/>
                                 </constraints>
                                 <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="QdZ-2A-MZj">
+                                <rect key="frame" x="180" y="204" width="240" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="nIO-iD-cED"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -58,14 +66,17 @@
                                     <constraint firstAttribute="width" constant="300" id="zmF-RE-Mp8"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="QdZ-2A-MZj">
-                                <rect key="frame" x="180" y="204" width="240" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFA-5m-7f4">
+                                <rect key="frame" x="209" y="436" width="241" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="nIO-iD-cED"/>
+                                    <constraint firstAttribute="width" constant="200" id="Tco-aa-FjR"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="21"/>
+                                <state key="normal" title="Forgot Password">
+                                    <color key="titleColor" red="0.49803921580314636" green="0.49803921580314636" blue="0.49803921580314636" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -79,7 +90,9 @@
                             <constraint firstItem="oBZ-AL-TLF" firstAttribute="trailing" secondItem="lXT-pm-Gy7" secondAttribute="trailing" id="Ivk-yY-fE8"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="9zG-A6-eJ5" secondAttribute="bottom" constant="30" id="KkE-aK-rSi"/>
                             <constraint firstAttribute="centerX" secondItem="9zG-A6-eJ5" secondAttribute="centerX" id="N5C-cF-SP0"/>
+                            <constraint firstAttribute="centerX" secondItem="wFA-5m-7f4" secondAttribute="centerX" id="RPq-zB-LX0"/>
                             <constraint firstAttribute="centerX" secondItem="KbB-dG-jd9" secondAttribute="centerX" id="Uxy-8E-nwW"/>
+                            <constraint firstItem="wFA-5m-7f4" firstAttribute="bottom" secondItem="oBZ-AL-TLF" secondAttribute="bottom" constant="45" id="cia-AS-Bug"/>
                             <constraint firstItem="oBZ-AL-TLF" firstAttribute="bottom" secondItem="lXT-pm-Gy7" secondAttribute="bottom" constant="-80" id="eoJ-dp-GMY"/>
                             <constraint firstAttribute="trailing" secondItem="QdZ-2A-MZj" secondAttribute="trailing" constant="60" id="j5g-J8-KVp"/>
                             <constraint firstItem="oBZ-AL-TLF" firstAttribute="leading" secondItem="lXT-pm-Gy7" secondAttribute="leading" id="m3n-ZV-WKG"/>
@@ -100,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="488" y="353"/>
+            <point key="canvasLocation" x="431" y="345"/>
         </scene>
         <!--Login Create View Controller-->
         <scene sceneID="ToN-RI-bck">
