@@ -17,14 +17,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-<<<<<<< HEAD
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inkinesss.png" translatesAutoresizingMaskIntoConstraints="NO" id="KbB-dG-jd9">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                                <gestureRecognizers/>
-=======
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Inkinesss.png" translatesAutoresizingMaskIntoConstraints="NO" id="KbB-dG-jd9">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="301"/>
->>>>>>> bintao
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999999999999996" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="vwv-gd-bOd">
                                 <rect key="frame" x="180" y="125" width="240" height="50"/>
@@ -34,42 +28,22 @@
                                 <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="XHC-4V-qhO"/>
-                                </connections>
                             </textField>
-<<<<<<< HEAD
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="QdZ-2A-MZj">
-                                <rect key="frame" x="180" y="204" width="240" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="nIO-iD-cED"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="0vs-zx-0EG"/>
-                                </connections>
-                            </textField>
-=======
->>>>>>> bintao
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBZ-AL-TLF">
                                 <rect key="frame" x="126" y="336" width="346" height="84"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="3DP-Mc-Ati"/>
-                                    <constraint firstAttribute="height" constant="55" id="p7N-sZ-SFv"/>
+                                    <constraint firstAttribute="height" constant="60" id="p7N-sZ-SFv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
                                 <state key="normal" title="LOGIN" backgroundImage="button.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <action selector="loginWithUserAndPass" destination="vXZ-lx-hvc" eventType="touchUpInside" id="eHe-OC-cHO"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXT-pm-Gy7">
-                                <rect key="frame" x="116.5" y="428" width="367" height="84"/>
+                                <rect key="frame" x="117" y="428" width="367" height="84"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="1Lb-6A-tAy"/>
+                                    <constraint firstAttribute="height" constant="60" id="1Lb-6A-tAy"/>
                                     <constraint firstAttribute="width" constant="250" id="MdF-l4-hQt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
@@ -87,31 +61,6 @@
                                     <constraint firstAttribute="width" constant="300" id="zmF-RE-Mp8"/>
                                 </constraints>
                             </view>
-<<<<<<< HEAD
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5mI-dq-0dL">
-                                <rect key="frame" x="235" y="421" width="222" height="53"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qzN-Sw-MPC">
-                                        <rect key="frame" x="29" y="14" width="25" height="25"/>
-                                        <state key="normal" image="lock1.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wFA-5m-7f4">
-                                        <rect key="frame" x="21" y="6" width="181" height="45"/>
-                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
-                                        <state key="normal" title="Forgot Password">
-                                            <color key="titleColor" red="0.49803921580314636" green="0.49803921580314636" blue="0.49803921580314636" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="222" id="G0a-hh-sxf"/>
-                                    <constraint firstAttribute="height" constant="53" id="Tpc-xR-c57"/>
-                                </constraints>
-                            </view>
-=======
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="QdZ-2A-MZj">
                                 <rect key="frame" x="180" y="204" width="240" height="50"/>
                                 <constraints>
@@ -120,28 +69,21 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
->>>>>>> bintao
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="KbB-dG-jd9" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="3u0-VT-LqI"/>
                             <constraint firstItem="KbB-dG-jd9" firstAttribute="bottom" secondItem="QdZ-2A-MZj" secondAttribute="bottom" constant="50" id="5Hj-NK-1Ec"/>
                             <constraint firstItem="vwv-gd-bOd" firstAttribute="leading" secondItem="QdZ-2A-MZj" secondAttribute="leading" id="818-1q-1Ur"/>
-                            <constraint firstItem="5mI-dq-0dL" firstAttribute="bottom" secondItem="oBZ-AL-TLF" secondAttribute="bottom" constant="45" id="94B-bi-PJU"/>
                             <constraint firstAttribute="trailing" secondItem="KbB-dG-jd9" secondAttribute="trailing" id="9ha-BB-mjX"/>
                             <constraint firstItem="KbB-dG-jd9" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="9r3-tb-Qe8"/>
                             <constraint firstItem="vwv-gd-bOd" firstAttribute="top" secondItem="QdZ-2A-MZj" secondAttribute="top" constant="-80" id="BOp-vZ-vpD"/>
-                            <constraint firstItem="KbB-dG-jd9" firstAttribute="bottom" secondItem="oBZ-AL-TLF" secondAttribute="bottom" constant="-70" id="BkL-MK-SLu"/>
+                            <constraint firstItem="KbB-dG-jd9" firstAttribute="bottom" secondItem="oBZ-AL-TLF" secondAttribute="bottom" constant="-90" id="BkL-MK-SLu"/>
                             <constraint firstItem="oBZ-AL-TLF" firstAttribute="trailing" secondItem="lXT-pm-Gy7" secondAttribute="trailing" id="Ivk-yY-fE8"/>
                             <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="9zG-A6-eJ5" secondAttribute="bottom" constant="30" id="KkE-aK-rSi"/>
                             <constraint firstAttribute="centerX" secondItem="9zG-A6-eJ5" secondAttribute="centerX" id="N5C-cF-SP0"/>
                             <constraint firstAttribute="centerX" secondItem="KbB-dG-jd9" secondAttribute="centerX" id="Uxy-8E-nwW"/>
-<<<<<<< HEAD
-                            <constraint firstItem="5mI-dq-0dL" firstAttribute="trailing" secondItem="oBZ-AL-TLF" secondAttribute="trailing" id="ZHZ-oH-PUo"/>
-                            <constraint firstItem="oBZ-AL-TLF" firstAttribute="bottom" secondItem="lXT-pm-Gy7" secondAttribute="bottom" constant="-70" id="eoJ-dp-GMY"/>
-=======
                             <constraint firstItem="oBZ-AL-TLF" firstAttribute="bottom" secondItem="lXT-pm-Gy7" secondAttribute="bottom" constant="-80" id="eoJ-dp-GMY"/>
->>>>>>> bintao
                             <constraint firstAttribute="trailing" secondItem="QdZ-2A-MZj" secondAttribute="trailing" constant="60" id="j5g-J8-KVp"/>
                             <constraint firstItem="oBZ-AL-TLF" firstAttribute="leading" secondItem="lXT-pm-Gy7" secondAttribute="leading" id="m3n-ZV-WKG"/>
                             <constraint firstAttribute="centerX" secondItem="oBZ-AL-TLF" secondAttribute="centerX" id="mqt-6p-jyJ"/>
@@ -161,11 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="491" y="345"/>
-=======
             <point key="canvasLocation" x="371" y="-279"/>
->>>>>>> bintao
         </scene>
         <!--Login Create View Controller-->
         <scene sceneID="ToN-RI-bck">
@@ -308,11 +246,7 @@
         <image name="arrow.png" width="69" height="63"/>
         <image name="backG.png" width="750" height="1334"/>
         <image name="button.png" width="367" height="84"/>
-<<<<<<< HEAD
-        <image name="lock1.png" width="54" height="57"/>
-=======
         <image name="double teemo.png" width="265" height="301"/>
->>>>>>> bintao
         <image name="textField.png" width="500" height="120"/>
     </resources>
 </document>

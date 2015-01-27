@@ -9,15 +9,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-<<<<<<< HEAD
-            filePath = "Cteemo/Login_MainViewController.swift"
-            timestampString = "444002359.181168"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "loginView(_:handleError:)"
-=======
             filePath = "Cteemo/Login_Main.swift"
             timestampString = "443854961.998679"
             startingColumnNumber = "9223372036854775807"
@@ -73,7 +64,6 @@
             startingLineNumber = "46"
             endingLineNumber = "46"
             landmarkName = "loginViewFetchedUserInfo(_:user:)"
->>>>>>> bintao
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
