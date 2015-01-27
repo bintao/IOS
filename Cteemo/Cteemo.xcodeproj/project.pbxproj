@@ -37,6 +37,7 @@
 		42B85A451A74A81A00FD4642 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B85A421A74A81A00FD4642 /* DataManager.swift */; };
 		42B85A461A74A81A00FD4642 /* InteractingWithServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B85A431A74A81A00FD4642 /* InteractingWithServer.swift */; };
 		42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A471A74A9FC00FD4642 /* UserInformation.plist */; };
+		42E5E78B1A773E56004A781E /* Login_LoginBySelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E5E78A1A773E56004A781E /* Login_LoginBySelf.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +87,7 @@
 		42B85A421A74A81A00FD4642 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		42B85A431A74A81A00FD4642 /* InteractingWithServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractingWithServer.swift; sourceTree = "<group>"; };
 		42B85A471A74A9FC00FD4642 /* UserInformation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserInformation.plist; sourceTree = "<group>"; };
+		42E5E78A1A773E56004A781E /* Login_LoginBySelf.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_LoginBySelf.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
 				42B859F11A74840F00FD4642 /* Login_MainViewController.swift */,
+				42E5E78A1A773E56004A781E /* Login_LoginBySelf.swift */,
 				42B85A171A748B2E00FD4642 /* Login_SchoolSearchViewController.swift */,
 				42B85A0F1A74884100FD4642 /* Login_CreateViewController.swift */,
 				42B85A111A74888500FD4642 /* Login_SchoolAndPhoto.swift */,
@@ -330,6 +333,7 @@
 			files = (
 				42B85A101A74884100FD4642 /* Login_CreateViewController.swift in Sources */,
 				42B859F21A74840F00FD4642 /* Login_MainViewController.swift in Sources */,
+				42E5E78B1A773E56004A781E /* Login_LoginBySelf.swift in Sources */,
 				42B85A121A74888500FD4642 /* Login_SchoolAndPhoto.swift in Sources */,
 				42B85A461A74A81A00FD4642 /* InteractingWithServer.swift in Sources */,
 				42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */,

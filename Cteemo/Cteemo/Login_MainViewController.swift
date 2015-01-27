@@ -8,12 +8,9 @@
 
 import UIKit
 
-class Login_MainViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate{
+class Login_MainViewController: UIViewController, FBLoginViewDelegate{
 
     @IBOutlet var bg : UIImageView!
-
-    @IBOutlet var email : UITextField!
-    @IBOutlet var password : UITextField!
 
     @IBOutlet var login : UIButton!
     @IBOutlet var signup : UIButton!
@@ -30,45 +27,13 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, UITextFie
         loginView.frame.size = facebook.frame.size
         self.facebook.addSubview(loginView)
         
-//
-        //add tap gesture to board
-        self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "keyboardReturn:"))
-
         // Do any additional setup after loading the view, typically from a nib.
-    }
-    
-    @IBAction func loginWithUserAndPass(){
-        if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != nil{
-            //login
-        }else{
-            //login failed
-            println("invalid")
-        }
     }
     
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
         
     }
-    
-    // keyboard customization
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if textField == email{
-            email.resignFirstResponder()
-            password.becomeFirstResponder()
-        }else if textField == password{
-            password.resignFirstResponder()
-            loginWithUserAndPass()
-        }
-        return true
-    }
-    
-    // keyboard return
-    func keyboardReturn(gestureRecognizer: UITapGestureRecognizer){
-        password.resignFirstResponder()
-        email.resignFirstResponder()
-    }
 
-    
     // get facebook portrait
     func getPotraitFromFacebook()->UIImage{
         
@@ -99,10 +64,12 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, UITextFie
 
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
         println(user)
-    
+        
+        //login successful
+        
+        //UserInfo.setUserData(user.objectForKey("email") as String, name: user.name + " " + user.first_name, accessToken: "", id: user.objectID)
         
     }
-    
     
     
     // retrive information from user
