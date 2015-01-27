@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Login_MainViewController.swift"
-            timestampString = "443945079.128082"
+            timestampString = "444002359.181168"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "loginViewFetchedUserInfo(_:user:)"
+            startingLineNumber = "97"
+            endingLineNumber = "97"
+            landmarkName = "loginView(_:handleError:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

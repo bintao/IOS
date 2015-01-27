@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Login_MainViewController: UIViewController, FBLoginViewDelegate{
+class Login_MainViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate{
 
     @IBOutlet var bg : UIImageView!
 
@@ -30,13 +30,46 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
         loginView.frame.size = facebook.frame.size
         self.facebook.addSubview(loginView)
         
+
+        //add tap gesture to board
+        self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "keyboardReturn:"))
+
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    @IBAction func loginWithUserAndPass(){
+        if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != nil{
+            //login
+        }else{
+            //login failed
+            println("invalid")
+        }
     }
     
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
         
     }
     
+    // keyboard customization
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == email{
+            email.resignFirstResponder()
+            password.becomeFirstResponder()
+        }else if textField == password{
+            password.resignFirstResponder()
+            loginWithUserAndPass()
+        }
+        return true
+    }
+    
+    // keyboard return
+    func keyboardReturn(gestureRecognizer: UITapGestureRecognizer){
+        password.resignFirstResponder()
+        email.resignFirstResponder()
+    }
+
+    
+    // get facebook portrait
     func getPotraitFromFacebook()->UIImage{
         
         var image:UIImage!
