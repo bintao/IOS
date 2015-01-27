@@ -30,7 +30,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, UITextFie
         loginView.frame.size = facebook.frame.size
         self.facebook.addSubview(loginView)
         
-
+//
         //add tap gesture to board
         self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "keyboardReturn:"))
 
