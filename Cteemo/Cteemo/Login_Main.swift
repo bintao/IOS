@@ -8,7 +8,11 @@
 
 import UIKit
 
+<<<<<<< HEAD:Cteemo/Cteemo/Login_MainViewController.swift
 class Login_MainViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate{
+=======
+class Login_Main: UIViewController, FBLoginViewDelegate{
+>>>>>>> bintao:Cteemo/Cteemo/Login_Main.swift
 
     @IBOutlet var bg : UIImageView!
 
@@ -23,7 +27,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, UITextFie
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
+        //
         //Create faceook login
         var loginView: FBLoginView = FBLoginView()
         loginView.delegate = self
@@ -50,6 +54,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, UITextFie
         
     }
     
+<<<<<<< HEAD:Cteemo/Cteemo/Login_MainViewController.swift
     // keyboard customization
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == email{
@@ -93,20 +98,36 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, UITextFie
         
     }
     
+=======
+>>>>>>> bintao:Cteemo/Cteemo/Login_Main.swift
     func loginView(loginView: FBLoginView!, handleError error: NSError!) {
-        println(error)
+        //println(error)
     }
 
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
         println(user)
-    
+        
+        let permissions = ["email"]
+        FBSession.openActiveSessionWithReadPermissions(permissions, allowLoginUI: true, completionHandler: {
+            (session: FBSession!, state: FBSessionState!, error: NSError!) -> Void in
+            self.sessionStateChanged(session, state: state, error: error)
+        })
         
     }
     
-    
-    
     // retrive information from user
-
+    func sessionStateChanged(session: FBSession!, state: FBSessionState!, error: NSError!){
+        if state == FBSessionState.Open{
+            
+                FBRequest.requestForMe().startWithCompletionHandler({(connection: FBRequestConnection!, user: AnyObject!, error: NSError!) -> Void in
+                    if((error) != nil){
+                        //error
+                    }else{
+                        //println((user as [String: AnyObject])["email"])
+                    }
+                })
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
