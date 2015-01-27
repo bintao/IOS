@@ -10,4 +10,11 @@ import UIKit
 
 class Login_CreateViewController: UIViewController {
     
+    @IBOutlet weak var Email: UITextField!
+    @IBOutlet weak var Password: UITextField!
+    
+    @IBOutlet weak var createUser: UIButton!
+    
+    
+    
 }

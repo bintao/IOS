@@ -36,8 +36,7 @@
 		42B85A451A74A81A00FD4642 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B85A421A74A81A00FD4642 /* DataManager.swift */; };
 		42B85A461A74A81A00FD4642 /* InteractingWithServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B85A431A74A81A00FD4642 /* InteractingWithServer.swift */; };
 		42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A471A74A9FC00FD4642 /* UserInformation.plist */; };
-		A1963F411A75F9FE00BD1436 /* double teemo.png in Resources */ = {isa = PBXBuildFile; fileRef = A1963F401A75F9FE00BD1436 /* double teemo.png */; };
-		A1963F431A76138500BD1436 /* bg(shool+photo).png in Resources */ = {isa = PBXBuildFile; fileRef = A1963F421A76138500BD1436 /* bg(shool+photo).png */; };
+		A1C7D5E11A773B360080DA90 /* double teemo.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C7D5E01A773B360080DA90 /* double teemo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,8 +85,7 @@
 		42B85A421A74A81A00FD4642 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		42B85A431A74A81A00FD4642 /* InteractingWithServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractingWithServer.swift; sourceTree = "<group>"; };
 		42B85A471A74A9FC00FD4642 /* UserInformation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserInformation.plist; sourceTree = "<group>"; };
-		A1963F401A75F9FE00BD1436 /* double teemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "double teemo.png"; path = "../../final/LOGIN/double teemo.png"; sourceTree = "<group>"; };
-		A1963F421A76138500BD1436 /* bg(shool+photo).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "bg(shool+photo).png"; path = "../../final/LOGIN/bg(shool+photo).png"; sourceTree = "<group>"; };
+		A1C7D5E01A773B360080DA90 /* double teemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "double teemo.png"; path = "../../../../Desktop/final/LOGIN/double teemo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,12 +201,11 @@
 			isa = PBXGroup;
 			children = (
 				42B85A2E1A74947E00FD4642 /* textField.png */,
+				A1C7D5E01A773B360080DA90 /* double teemo.png */,
 				42B85A1A1A748CDB00FD4642 /* arrow.png */,
 				42B85A2C1A748D4E00FD4642 /* arrowTurned.png */,
 				42B85A1B1A748CDB00FD4642 /* backG.png */,
-				A1963F421A76138500BD1436 /* bg(shool+photo).png */,
 				42B85A1C1A748CDB00FD4642 /* button.png */,
-				A1963F401A75F9FE00BD1436 /* double teemo.png */,
 				42B85A1E1A748CDB00FD4642 /* Inkinesss.png */,
 				42B85A1F1A748CDB00FD4642 /* lock1.png */,
 				42B85A201A748CDB00FD4642 /* me_icons1.png */,
@@ -306,10 +303,9 @@
 				42B85A2A1A748CDB00FD4642 /* PHOTO icons.png in Resources */,
 				42B859F51A74840F00FD4642 /* Main.storyboard in Resources */,
 				42B859FA1A74840F00FD4642 /* LaunchScreen.xib in Resources */,
-				A1963F411A75F9FE00BD1436 /* double teemo.png in Resources */,
+				A1C7D5E11A773B360080DA90 /* double teemo.png in Resources */,
 				42B85A161A7489CF00FD4642 /* loading_page.png in Resources */,
 				42B85A231A748CDB00FD4642 /* arrow.png in Resources */,
-				A1963F431A76138500BD1436 /* bg(shool+photo).png in Resources */,
 				42B85A2D1A748D4E00FD4642 /* arrowTurned.png in Resources */,
 				42B85A2F1A74947E00FD4642 /* textField.png in Resources */,
 				42B85A2B1A748CDB00FD4642 /* SUBMIT.png in Resources */,

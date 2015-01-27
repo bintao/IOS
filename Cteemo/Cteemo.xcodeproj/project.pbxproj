@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		42B859ED1A74840F00FD4642 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B859EC1A74840F00FD4642 /* AppDelegate.swift */; };
 		42B859F01A74840F00FD4642 /* Cteemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42B859EE1A74840F00FD4642 /* Cteemo.xcdatamodeld */; };
-		42B859F21A74840F00FD4642 /* Login_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B859F11A74840F00FD4642 /* Login_MainViewController.swift */; };
+		42B859F21A74840F00FD4642 /* Login_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B859F11A74840F00FD4642 /* Login_Main.swift */; };
 		42B859F51A74840F00FD4642 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 42B859F31A74840F00FD4642 /* Main.storyboard */; };
 		42B859F71A74840F00FD4642 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 42B859F61A74840F00FD4642 /* Images.xcassets */; };
 		42B859FA1A74840F00FD4642 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42B859F81A74840F00FD4642 /* LaunchScreen.xib */; };
@@ -21,7 +21,6 @@
 		42B85A231A748CDB00FD4642 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A1A1A748CDB00FD4642 /* arrow.png */; };
 		42B85A241A748CDB00FD4642 /* backG.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A1B1A748CDB00FD4642 /* backG.png */; };
 		42B85A251A748CDB00FD4642 /* button.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A1C1A748CDB00FD4642 /* button.png */; };
-		42B85A261A748CDB00FD4642 /* double_teemo.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A1D1A748CDB00FD4642 /* double_teemo.png */; };
 		42B85A271A748CDB00FD4642 /* Inkinesss.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A1E1A748CDB00FD4642 /* Inkinesss.png */; };
 		42B85A281A748CDB00FD4642 /* lock1.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A1F1A748CDB00FD4642 /* lock1.png */; };
 		42B85A291A748CDB00FD4642 /* me_icons1.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A201A748CDB00FD4642 /* me_icons1.png */; };
@@ -37,6 +36,7 @@
 		42B85A451A74A81A00FD4642 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B85A421A74A81A00FD4642 /* DataManager.swift */; };
 		42B85A461A74A81A00FD4642 /* InteractingWithServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B85A431A74A81A00FD4642 /* InteractingWithServer.swift */; };
 		42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A471A74A9FC00FD4642 /* UserInformation.plist */; };
+		A1C7D5E11A773B360080DA90 /* double teemo.png in Resources */ = {isa = PBXBuildFile; fileRef = A1C7D5E01A773B360080DA90 /* double teemo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +54,7 @@
 		42B859EB1A74840F00FD4642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42B859EC1A74840F00FD4642 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		42B859EF1A74840F00FD4642 /* Cteemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cteemo.xcdatamodel; sourceTree = "<group>"; };
-		42B859F11A74840F00FD4642 /* Login_MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_MainViewController.swift; sourceTree = "<group>"; };
+		42B859F11A74840F00FD4642 /* Login_Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login_Main.swift; sourceTree = "<group>"; };
 		42B859F41A74840F00FD4642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42B859F61A74840F00FD4642 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		42B859F91A74840F00FD4642 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -68,7 +68,6 @@
 		42B85A1A1A748CDB00FD4642 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		42B85A1B1A748CDB00FD4642 /* backG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = backG.png; sourceTree = "<group>"; };
 		42B85A1C1A748CDB00FD4642 /* button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button.png; sourceTree = "<group>"; };
-		42B85A1D1A748CDB00FD4642 /* double_teemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = double_teemo.png; sourceTree = "<group>"; };
 		42B85A1E1A748CDB00FD4642 /* Inkinesss.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Inkinesss.png; sourceTree = "<group>"; };
 		42B85A1F1A748CDB00FD4642 /* lock1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lock1.png; sourceTree = "<group>"; };
 		42B85A201A748CDB00FD4642 /* me_icons1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = me_icons1.png; sourceTree = "<group>"; };
@@ -86,6 +85,7 @@
 		42B85A421A74A81A00FD4642 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		42B85A431A74A81A00FD4642 /* InteractingWithServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InteractingWithServer.swift; sourceTree = "<group>"; };
 		42B85A471A74A9FC00FD4642 /* UserInformation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserInformation.plist; sourceTree = "<group>"; };
+		A1C7D5E01A773B360080DA90 /* double teemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "double teemo.png"; path = "../../../../Desktop/final/LOGIN/double teemo.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,7 +137,7 @@
 				42B859F31A74840F00FD4642 /* Main.storyboard */,
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
-				42B859F11A74840F00FD4642 /* Login_MainViewController.swift */,
+				42B859F11A74840F00FD4642 /* Login_Main.swift */,
 				42B85A171A748B2E00FD4642 /* Login_SchoolSearchViewController.swift */,
 				42B85A0F1A74884100FD4642 /* Login_CreateViewController.swift */,
 				42B85A111A74888500FD4642 /* Login_SchoolAndPhoto.swift */,
@@ -201,11 +201,11 @@
 			isa = PBXGroup;
 			children = (
 				42B85A2E1A74947E00FD4642 /* textField.png */,
+				A1C7D5E01A773B360080DA90 /* double teemo.png */,
 				42B85A1A1A748CDB00FD4642 /* arrow.png */,
 				42B85A2C1A748D4E00FD4642 /* arrowTurned.png */,
 				42B85A1B1A748CDB00FD4642 /* backG.png */,
 				42B85A1C1A748CDB00FD4642 /* button.png */,
-				42B85A1D1A748CDB00FD4642 /* double_teemo.png */,
 				42B85A1E1A748CDB00FD4642 /* Inkinesss.png */,
 				42B85A1F1A748CDB00FD4642 /* lock1.png */,
 				42B85A201A748CDB00FD4642 /* me_icons1.png */,
@@ -303,6 +303,7 @@
 				42B85A2A1A748CDB00FD4642 /* PHOTO icons.png in Resources */,
 				42B859F51A74840F00FD4642 /* Main.storyboard in Resources */,
 				42B859FA1A74840F00FD4642 /* LaunchScreen.xib in Resources */,
+				A1C7D5E11A773B360080DA90 /* double teemo.png in Resources */,
 				42B85A161A7489CF00FD4642 /* loading_page.png in Resources */,
 				42B85A231A748CDB00FD4642 /* arrow.png in Resources */,
 				42B85A2D1A748D4E00FD4642 /* arrowTurned.png in Resources */,
@@ -310,7 +311,6 @@
 				42B85A2B1A748CDB00FD4642 /* SUBMIT.png in Resources */,
 				42B859F71A74840F00FD4642 /* Images.xcassets in Resources */,
 				42B85A281A748CDB00FD4642 /* lock1.png in Resources */,
-				42B85A261A748CDB00FD4642 /* double_teemo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -329,7 +329,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				42B85A101A74884100FD4642 /* Login_CreateViewController.swift in Sources */,
-				42B859F21A74840F00FD4642 /* Login_MainViewController.swift in Sources */,
+				42B859F21A74840F00FD4642 /* Login_Main.swift in Sources */,
 				42B85A121A74888500FD4642 /* Login_SchoolAndPhoto.swift in Sources */,
 				42B85A461A74A81A00FD4642 /* InteractingWithServer.swift in Sources */,
 				42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */,
@@ -466,7 +466,6 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Cteemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Cteemo/Cteemo-Bridging-Header.h";
@@ -484,7 +483,6 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Cteemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Cteemo/Cteemo-Bridging-Header.h";

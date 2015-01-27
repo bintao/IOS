@@ -23,7 +23,7 @@ class Login_Main: UIViewController, FBLoginViewDelegate{
     
     override func viewDidLoad(){
         super.viewDidLoad()
-        
+        //
         //Create faceook login
         var loginView: FBLoginView = FBLoginView()
         loginView.delegate = self
