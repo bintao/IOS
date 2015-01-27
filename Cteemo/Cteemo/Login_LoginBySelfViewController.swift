@@ -8,12 +8,14 @@
 
 import UIKit
 
-class Login_LoginBySelf: UIViewController, FBLoginViewDelegate, UITextFieldDelegate{
+class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate{
 
     @IBOutlet var bg : UIImageView!
 
     @IBOutlet var email : UITextField!
     @IBOutlet var password : UITextField!
+
+    @IBOutlet var back : UIButton!
 
     @IBOutlet var login : UIButton!
     @IBOutlet var forgotPass : UIView!
@@ -67,6 +69,9 @@ class Login_LoginBySelf: UIViewController, FBLoginViewDelegate, UITextFieldDeleg
             password.resignFirstResponder()
             loginWithUserAndPass()
         }
+        
+        println(back.superview)
+
         return true
     }
     

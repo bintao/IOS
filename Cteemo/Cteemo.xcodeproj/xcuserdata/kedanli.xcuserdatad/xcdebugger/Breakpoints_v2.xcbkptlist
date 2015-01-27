@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Login_MainViewController.swift"
-            timestampString = "444028527.353525"
+            timestampString = "444032586.507938"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "61"
-            endingLineNumber = "61"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "loginView(_:handleError:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -41,12 +41,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cteemo/Login_LoginBySelf.swift"
-            timestampString = "444030645.128212"
+            filePath = "Cteemo/Login_LoginBySelfViewController.swift"
+            timestampString = "444033161.308976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
             landmarkName = "loginResult(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -57,12 +57,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cteemo/Login_LoginBySelf.swift"
-            timestampString = "444029901.913386"
+            filePath = "Cteemo/Login_LoginBySelfViewController.swift"
+            timestampString = "444033161.308976"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "loginResult(_:)"
             landmarkType = "5">
          </BreakpointContent>

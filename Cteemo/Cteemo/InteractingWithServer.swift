@@ -101,7 +101,7 @@ class InteractingWithServer: NSObject {
             }
             dispatch_async(dispatch_get_main_queue(), {
                 if suffix == "/login"{
-                    (returnView as Login_LoginBySelf).loginResult(result)
+                    (returnView as Login_LoginBySelfViewController).loginResult(result)
                 }else if suffix == "/profile"{
                     
                     println(result)

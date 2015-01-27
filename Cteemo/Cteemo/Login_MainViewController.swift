@@ -33,6 +33,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
         
     }
 
+    
     // get facebook portrait
     func getPotraitFromFacebook()->UIImage{
         
@@ -71,8 +72,9 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     }
     
     
-    // retrive information from user
-
+    @IBAction func returnToLoginMain(segue : UIStoryboardSegue) {
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
