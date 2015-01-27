@@ -38,16 +38,19 @@ class UserInformation: NSObject {
         
     }
    
-    //update user information with the server
+    //upload user information to the server
 
-    func upadateUserInfo(){
+    func uploadUserInfo(){
         var data:[String: AnyObject] = ["name": name, "id": id, "accessToken": accessToken, "email": email]
-        DataManager.saveUserInfoToLocal(data)
     }
     
+    //download user information from the server
+
+    func downloadUserInfo(){
+        InteractingWithServer.getUserProfile(self.accessToken)
+    }
     
-    //user Login   
-    
+    //change user data and save
     func setUserData(email: String, name: String, accessToken:String, id: String){
         self.email = email
         self.name = name
@@ -60,7 +63,7 @@ class UserInformation: NSObject {
     //Save User Data to local
     
     func saveUserData(){
-        var data:[String: AnyObject] = ["name":name,"accessToken":accessToken,"id":id,"name":name]
+        var data:[String: AnyObject] = ["name":name,"accessToken":accessToken,"id":id,"email":email]
         DataManager.saveUserInfoToLocal(data)
     }
     

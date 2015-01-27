@@ -16,7 +16,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     @IBOutlet var signup : UIButton!
 
     @IBOutlet var facebook : UIView!
-
     
     override func viewDidLoad(){
         super.viewDidLoad()

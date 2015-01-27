@@ -9,6 +9,8 @@ import UIKit
 
 class InteractingWithServer: NSObject {
     
+
+    
     class func getCurrentNet() -> String{
         
         var result: String?
@@ -36,19 +38,24 @@ class InteractingWithServer: NSObject {
         
     }
     
-    class func login(email: String, password: String)->Bool{
+    class func login(email: String, password: String, returnView: UIViewController){
         
-        var result:[String: AnyObject] = [String: AnyObject]()
         
         let info :[String: AnyObject] = ["email": "bintao@cteemo.com", "password": "123"]
 
-        InteractingWithServer.connectASynchoronous("/login", info: info, method:"POST")
+        InteractingWithServer.connectASynchoronous("/login", info: info, method:"POST", returnView: returnView)
+    }
+    
+    class func getUserProfile(token: String){
         
-        return true //result["success"] as Bool
+        var result:[String: AnyObject] = [String: AnyObject]()
+        
+        InteractingWithServer.connectASynchoronous("/profile", info: result, method:"GET", returnView: nil)
+        
     }
 
     
-    class func connectASynchoronous(suffix: String ,info:[String: AnyObject], method:String){
+    class func connectASynchoronous(suffix: String ,info:[String: AnyObject], method:String, returnView: UIViewController?){
         
         var result:[String: AnyObject] = [String: AnyObject]()
         
@@ -60,8 +67,6 @@ class InteractingWithServer: NSObject {
         
         // create some JSON data and configure the request
         var jsonData: NSData = NSJSONSerialization.dataWithJSONObject(info, options: NSJSONWritingOptions.PrettyPrinted, error: &error)!
-        
-        println(jsonData.description)
         
         request.HTTPBody = jsonData//jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         request.HTTPMethod = method
@@ -88,13 +93,20 @@ class InteractingWithServer: NSObject {
                     }
                 }
                 
-            }else if error == nil{
+            }else if data == nil{
                 println("empty response")
                 
             }else if error != nil{
                 println(error)
-                
             }
+            dispatch_async(dispatch_get_main_queue(), {
+                if suffix == "/login"{
+                    (returnView as Login_LoginBySelf).loginResult(result)
+                }else if suffix == "/profile"{
+                    
+                    println(result)
+                }
+            })
         })
                 
     }

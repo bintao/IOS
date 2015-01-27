@@ -18,6 +18,8 @@ class Login_LoginBySelf: UIViewController, FBLoginViewDelegate, UITextFieldDeleg
     @IBOutlet var login : UIButton!
     @IBOutlet var forgotPass : UIView!
 
+    @IBOutlet var loadingView : UIView!
+    @IBOutlet var loading : UIActivityIndicatorView!
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -27,21 +29,35 @@ class Login_LoginBySelf: UIViewController, FBLoginViewDelegate, UITextFieldDeleg
 
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+
     //login
     @IBAction func loginWithUserAndPass(){
         if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != nil{
 
+            InteractingWithServer.login(email.text, password: password.text, returnView: self)
             
-            InteractingWithServer.login(email.text, password: password.text)
-        
+            startLoading()
         }else{
             //login failed
             println("invalid")
         }
     }
-    
 
+    //after login
+    func loginResult(result: [String: AnyObject]){
+        println(result)
+        stopLoading()
+        if result["success"] as Bool{
+            // login success
+            UserInfo.setUserData(email.text, name: "", accessToken: result["token"] as String, id: "")
+            
+            UserInfo.downloadUserInfo()
+            
+        }else{
+            
+        }
+    }
+    
     // keyboard customization
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == email{
@@ -60,9 +76,16 @@ class Login_LoginBySelf: UIViewController, FBLoginViewDelegate, UITextFieldDeleg
         email.resignFirstResponder()
     }
     
-    
-    // retrive information from user
-
+    //loading view display while login
+    func startLoading(){
+        self.view.bringSubviewToFront(loadingView)
+        self.loading.startAnimating()
+    }
+    //loading view hide, login finished
+    func stopLoading(){
+        self.view.sendSubviewToBack(loadingView)
+        self.loading.stopAnimating()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
