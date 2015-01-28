@@ -47,4 +47,32 @@ class DataManager: NSObject {
         
     }
     
+    //save User Icon
+    class func saveUserIconToLocal(img: UIImage){
+        
+        let fileManager = NSFileManager()
+        var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        path = path.stringByAppendingPathComponent("icon.png")
+        
+        var binaryImage:NSData = UIImagePNGRepresentation(img)
+        binaryImage.writeToFile(path, atomically: true)
+        
+    }
+    
+    //get User Icon
+    class func getUserIconFromLocal()->UIImage{
+        var image: UIImage!
+        let fileManager = NSFileManager()
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var imagePath = paths.stringByAppendingPathComponent("icon.png")
+        if (fileManager.fileExistsAtPath(imagePath)) {
+            let getImage = UIImage(contentsOfFile: imagePath)
+            image = getImage
+        }else{
+            
+        }
+        
+        return image
+    }
+
 }

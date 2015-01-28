@@ -17,10 +17,11 @@ class UserInformation: NSObject {
     var name: String = ""
     var id: String = ""
     var accessToken: String = ""
-
+    var password: String = ""
+    
     //check if the user is logined
     func userIsLogined()->Bool{
-        if email == "" || name == "" || id == "" || accessToken == ""{
+        if email == "" || name == "" || id == "" || accessToken == "" {
             return false
         }else{
             return true
@@ -36,15 +37,39 @@ class UserInformation: NSObject {
         accessToken = data["accessToken"] as String
         
     }
-   /*
-    func upadateUserInfo(){
-        var data:[String: AnyObject] = ["name": name, "userid": userid, "accessToken": accessToken]
+   
+    //upload user information to the server
+
+    func uploadUserInfo(){
+        var data:[String: AnyObject] = ["name": name, "id": id, "accessToken": accessToken, "email": email]
+    }
+    
+    //download user information from the server
+
+    func downloadUserInfo(){
+        InteractingWithServer.getUserProfile(self.accessToken)
+    }
+    
+    //change user data and save
+    func setUserData(email: String, name: String, accessToken:String, id: String){
+        self.email = email
+        self.name = name
+        self.accessToken = accessToken
+        self.id = id
+        
+        saveUserData()
+    }
+    
+    //Save User Data to local
+    
+    func saveUserData(){
+        var data:[String: AnyObject] = ["name":name,"accessToken":accessToken,"id":id,"email":email]
         DataManager.saveUserInfoToLocal(data)
     }
-    */
+    
     //user logout, remove all local data
-    func logout(){
-        var data:[String: AnyObject] = ["name":"","accessToken":"","userid":""]
+    func cleanUserData(){
+        var data:[String: AnyObject] = ["name":"","accessToken":"","id":"","email":""]
         DataManager.saveUserInfoToLocal(data)
     }
     

@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cteemo/Login_Main.swift"
-            timestampString = "443854961.998679"
+            filePath = "Cteemo/Login_MainViewController.swift"
+            timestampString = "444032586.507938"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "loginViewFetchedUserInfo(_:user:)"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
+            landmarkName = "loginView(_:handleError:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cteemo/Login_Main.swift"
-            timestampString = "443852447.903608"
+            filePath = "Cteemo/InteractingWithServer.swift"
+            timestampString = "444030645.128212"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "loginViewShowingLoggedInUser(_:)"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "connectASynchoronous(_:info:method:returnView:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,29 +41,61 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cteemo/Login_Main.swift"
-            timestampString = "443854961.998679"
+            filePath = "Cteemo/Login_LoginBySelfViewController.swift"
+            timestampString = "444033161.308976"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "loginResult(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/Login_LoginBySelfViewController.swift"
+            timestampString = "444033161.308976"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "loginResult(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/InteractingWithServer.swift"
+            timestampString = "444030757.430846"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "connectASynchoronous(_:info:method:returnView:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/InteractingWithServer.swift"
+            timestampString = "444030774.690004"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
-            landmarkName = "Login_Main"
-            landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cteemo/Login_Main.swift"
-            timestampString = "443856280.290217"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "loginViewFetchedUserInfo(_:user:)"
+            landmarkName = "getUserProfile(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
