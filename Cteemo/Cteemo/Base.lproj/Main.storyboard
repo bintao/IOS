@@ -15,11 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="600" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backG.png" translatesAutoresizingMaskIntoConstraints="NO" id="KbB-dG-jd9">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <gestureRecognizers/>
                             </imageView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9zG-A6-eJ5">
@@ -317,17 +317,13 @@
                                     <outlet property="delegate" destination="gaW-jR-kY0" id="ZHs-2q-lrg"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjv-lc-YBo" userLabel="back">
-                                <rect key="frame" x="10" y="35" width="69" height="63"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="aJl-6q-Pet"/>
-                                    <constraint firstAttribute="width" constant="69" id="dfe-yx-xeq"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0F-QZ-aMR">
+                                <rect key="frame" x="16" y="20" width="69" height="63"/>
                                 <state key="normal" image="arrow.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="back:" destination="XAq-Dd-zaX" eventType="touchUpInside" id="8Ac-cY-gfH"/>
+                                    <segue destination="vXZ-lx-hvc" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="Uqe-qi-NC2"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -340,7 +336,6 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="back" destination="Gjv-lc-YBo" id="v7c-Fq-VlB"/>
                         <outlet property="bg" destination="G3W-jM-h6q" id="ZVa-k2-BwG"/>
                         <outlet property="email" destination="O8a-GT-aYz" id="wG4-JX-UPs"/>
                         <outlet property="password" destination="u5j-u0-rX9" id="sAr-Ke-hlY"/>
@@ -349,7 +344,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxc-rT-oK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="599.5" y="-438.5"/>
+            <point key="canvasLocation" x="602.5" y="-408.5"/>
         </scene>
     </scenes>
     <resources>
