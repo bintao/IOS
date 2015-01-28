@@ -31,7 +31,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
-            landmarkName = "connectASynchoronous(_:info:method:returnView:)"
+            landmarkName = "getUserProfile(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -95,7 +95,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
-            landmarkName = "getUserProfile(_:)"
+            landmarkName = "signUp(_:password:returnView:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
