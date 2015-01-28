@@ -5,7 +5,7 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>53D1C1DC-AD4E-4EF7-881C-BCBB740C5D9A</string>
+	<string>3871B3D6-1E66-4F4D-BA04-75D08D6CEEE0</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Cteemo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
@@ -34,7 +34,7 @@
 			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>BC2EF6447407A9003FAE3E95541E95F84FC72EFE</string>
 			<key>IDESourceControlWCCName</key>
-			<string>IOS</string>
+			<string>cteemoIOS</string>
 		</dict>
 	</array>
 </dict>

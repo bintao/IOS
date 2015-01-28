@@ -9,11 +9,5 @@
 import UIKit
 
 class Login_SchoolAndPhoto: UIViewController {
-    
-    
-    @IBOutlet weak var photo: UIButton!
-    
-    @IBOutlet weak var school: UIButton!
 
-    
 }
