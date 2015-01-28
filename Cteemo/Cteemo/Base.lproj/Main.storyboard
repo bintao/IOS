@@ -20,10 +20,14 @@
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backG.png" translatesAutoresizingMaskIntoConstraints="NO" id="KbB-dG-jd9">
 <<<<<<< HEAD
+<<<<<<< HEAD
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
 =======
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
 >>>>>>> bintao
+=======
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+>>>>>>> kedan
                                 <gestureRecognizers/>
                             </imageView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9zG-A6-eJ5">
@@ -49,6 +53,7 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" image="teemoDouble.png" translatesAutoresizingMaskIntoConstraints="NO" id="cir-El-Qpw">
                                 <rect key="frame" x="252" y="34" width="92" height="109"/>
+<<<<<<< HEAD
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="OEz-30-Vbe"/>
                                     <constraint firstAttribute="height" constant="110" id="nfa-be-uVu"/>
@@ -57,6 +62,16 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXT-pm-Gy7">
                                 <rect key="frame" x="128" y="321" width="367" height="96"/>
                                 <constraints>
+=======
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="OEz-30-Vbe"/>
+                                    <constraint firstAttribute="height" constant="110" id="nfa-be-uVu"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXT-pm-Gy7">
+                                <rect key="frame" x="128" y="321" width="367" height="96"/>
+                                <constraints>
+>>>>>>> kedan
                                     <constraint firstAttribute="height" constant="70" id="Ggf-XV-X8Y"/>
                                     <constraint firstAttribute="width" constant="280" id="pOu-5o-RgC"/>
                                 </constraints>
@@ -95,7 +110,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="236" y="317"/>
+=======
+            <point key="canvasLocation" x="-2" y="297"/>
+>>>>>>> kedan
         </scene>
         <!--Login Login By Self View Controller-->
         <scene sceneID="ToN-RI-bck">
@@ -303,9 +322,12 @@
                                 <connections>
                                     <action selector="signUpWithUserAndPa:" destination="XAq-Dd-zaX" eventType="touchUpInside" id="OBS-zU-thK"/>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <segue destination="MXV-oK-tcc" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="YIo-ot-SCk"/>
 =======
 >>>>>>> bintao
+=======
+>>>>>>> kedan
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="O8a-GT-aYz">
@@ -326,6 +348,7 @@
                                 </connections>
                             </textField>
 <<<<<<< HEAD
+<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjv-lc-YBo" userLabel="back">
                                 <rect key="frame" x="10" y="35" width="69" height="63"/>
                                 <constraints>
@@ -336,15 +359,23 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0F-QZ-aMR">
                                 <rect key="frame" x="16" y="20" width="69" height="63"/>
 >>>>>>> bintao
+=======
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0F-QZ-aMR">
+                                <rect key="frame" x="16" y="20" width="69" height="63"/>
+>>>>>>> kedan
                                 <state key="normal" image="arrow.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
 <<<<<<< HEAD
+<<<<<<< HEAD
                                     <action selector="back:" destination="XAq-Dd-zaX" eventType="touchUpInside" id="8Ac-cY-gfH"/>
 =======
                                     <segue destination="vXZ-lx-hvc" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="Uqe-qi-NC2"/>
 >>>>>>> bintao
+=======
+                                    <segue destination="c33-JE-Q03" kind="unwind" unwindAction="returnToLoginMain:" id="G4S-ea-mcg"/>
+>>>>>>> kedan
                                 </connections>
                             </button>
                         </subviews>
@@ -358,9 +389,12 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
 <<<<<<< HEAD
+<<<<<<< HEAD
                         <outlet property="back" destination="Gjv-lc-YBo" id="v7c-Fq-VlB"/>
 =======
 >>>>>>> bintao
+=======
+>>>>>>> kedan
                         <outlet property="bg" destination="G3W-jM-h6q" id="ZVa-k2-BwG"/>
                         <outlet property="email" destination="O8a-GT-aYz" id="wG4-JX-UPs"/>
                         <outlet property="password" destination="u5j-u0-rX9" id="sAr-Ke-hlY"/>
@@ -368,12 +402,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxc-rT-oK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+<<<<<<< HEAD
             </objects>
 <<<<<<< HEAD
             <point key="canvasLocation" x="599.5" y="-438.5"/>
 =======
             <point key="canvasLocation" x="602.5" y="-408.5"/>
 >>>>>>> bintao
+=======
+                <exit id="c33-JE-Q03" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="602.5" y="-408.5"/>
+>>>>>>> kedan
         </scene>
     </scenes>
     <resources>

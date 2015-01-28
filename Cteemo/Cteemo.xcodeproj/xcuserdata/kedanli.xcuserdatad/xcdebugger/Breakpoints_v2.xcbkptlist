@@ -31,7 +31,11 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
             endingLineNumber = "59"
+<<<<<<< HEAD
             landmarkName = "connectASynchoronous(_:info:method:returnView:)"
+=======
+            landmarkName = "getUserProfile(_:)"
+>>>>>>> kedan
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -95,7 +99,11 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "54"
             endingLineNumber = "54"
+<<<<<<< HEAD
             landmarkName = "getUserProfile(_:)"
+=======
+            landmarkName = "signUp(_:password:returnView:)"
+>>>>>>> kedan
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
