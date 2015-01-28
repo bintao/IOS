@@ -39,7 +39,6 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             InteractingWithServer.login(email.text, password: password.text, returnView: self)
             
             startLoading()
-            
         }else{
             //login failed
             println("invalid")
@@ -48,9 +47,8 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
 
     //after login
     func loginResult(result: [String: AnyObject]){
-
+        println(result)
         stopLoading()
-        
         if result["success"] as Bool{
             // login success
             UserInfo.setUserData(email.text, name: "", accessToken: result["token"] as String, id: "")
@@ -72,6 +70,8 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             loginWithUserAndPass()
         }
         
+        println(back.superview)
+
         return true
     }
     
@@ -86,6 +86,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
         self.view.bringSubviewToFront(loadingView)
         self.loading.startAnimating()
     }
+    
     //loading view hide, login finished
     func stopLoading(){
         self.view.sendSubviewToBack(loadingView)

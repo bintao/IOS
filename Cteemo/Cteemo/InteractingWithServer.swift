@@ -40,25 +40,35 @@ class InteractingWithServer: NSObject {
     
     class func login(email: String, password: String, returnView: UIViewController){
         
-        let info :[String: AnyObject] = ["email": "bintao@cteemo.com", "password": "123"]
+        
+        let info :[String: AnyObject] = ["email": email, "password": password]
 
-        InteractingWithServer.connectASynchoronous("/login", info: info, method:"POST", returnView: returnView, token: "")
+        InteractingWithServer.connectASynchoronous("/login", info: info, method:"POST", returnView: returnView)
     }
     
+    
+    class func signUp(email: String, password: String, returnView: UIViewController){
+        
+        
+        let info :[String: AnyObject] = ["email": email, "password": password]
+        
+        InteractingWithServer.connectASynchoronous("/create_user", info: info, method:"POST", returnView: returnView)
+    }
+
     class func getUserProfile(token: String){
-        
-        let info :[String: String] = [:]
-        
-        InteractingWithServer.connectASynchoronous("/profile", info: info, method:"GET", returnView: nil, token: token)
-        
-    }
-
-    
-    class func connectASynchoronous(suffix: String ,info:[String: AnyObject], method:String, returnView: UIViewController?, token:String){
         
         var result:[String: AnyObject] = [String: AnyObject]()
         
-        var request = NSMutableURLRequest(URL: NSURL(string: InteractingWithServer.getServerAddress() + suffix)!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 10)
+        InteractingWithServer.connectASynchoronous("/profile", info: result, method:"GET", returnView: nil)
+        
+    }
+
+    
+    class func connectASynchoronous(suffix: String ,info:[String: AnyObject], method:String, returnView: UIViewController?){
+        
+        var result:[String: AnyObject] = [String: AnyObject]()
+        
+        var request = NSMutableURLRequest(URL: NSURL(string: InteractingWithServer.getServerAddress() + suffix)!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 15)
         
         var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
         
@@ -67,21 +77,13 @@ class InteractingWithServer: NSObject {
         // create some JSON data and configure the request
         var jsonData: NSData = NSJSONSerialization.dataWithJSONObject(info, options: NSJSONWritingOptions.PrettyPrinted, error: &error)!
         
-        
         request.HTTPBody = jsonData//jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         request.HTTPMethod = method
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        println(token)
-        
-        if token != ""{
-            request.addValue(token, forHTTPHeaderField: "token")
-        }
-
+        //println(request.description)
 
         var queue = NSOperationQueue()
         
-        println("request")
-
         NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             
             if data != nil && data.length > 0 && error == nil{
@@ -93,8 +95,6 @@ class InteractingWithServer: NSObject {
                     var jsonObject: AnyObject? = NSJSONSerialization.JSONObjectWithData(data, options: NSJSONReadingOptions.AllowFragments, error: &error)
                     result = jsonObject as [String: AnyObject]!
                     
-                    println(result)
-                    
                     if result["token"]? != nil{
                         result.updateValue(true, forKey: "success")
                     }else {
@@ -103,77 +103,49 @@ class InteractingWithServer: NSObject {
                 }
                 
             }else if data == nil{
-                println("empty responsef")
+                println("empty response")
                 
             }else if error != nil{
                 println(error)
             }
             dispatch_async(dispatch_get_main_queue(), {
-                
-                println(suffix)
-
-                if suffix == "/login" && method == "POST"{
+                if suffix == "/login"{
                     (returnView as Login_LoginBySelfViewController).loginResult(result)
-                }else if suffix == "/profile"{
-                    
                 }
-
+                else if suffix == "/profile"{
+                    
+                    println(result)
+                }
+                else if suffix == "/create_user"{
+                    
+                    println(result)
+                }
             })
         })
                 
     }
 
     /*
-    class func connectSynchoronous(suffix: String ,info:[String: AnyObject], method:String)-> [String:AnyObject]{
+    class func getCurrentNet() -> String{
         
-        var result:[String: AnyObject] = [String: AnyObject]()
+        var result: String?
         
-        var request = NSMutableURLRequest(URL: NSURL(string: InteractingWithServer.getServerAddress() + suffix)!, cachePolicy: NSURLRequestCachePolicy.ReloadIgnoringLocalCacheData, timeoutInterval: 5)
+        let reach = Reachability()
+        var internetReachable = Reachability(hostName: "www.apple.com")
+        var status: NetworkStatus = internetReachable.currentReachabilityStatus()
         
-        var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
         
-        var error: NSError?
-        
-        // create some JSON data and configure the request
-        var jsonData: NSData = NSJSONSerialization.dataWithJSONObject(info, options: NSJSONWritingOptions.PrettyPrinted, error: &error)!
-        
-        request.HTTPBody = jsonData//jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
-        request.HTTPMethod = method
-        request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-
-        var returnData = NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error: &error)!
-        if (error == nil){
-            
-            var data = NSString(data: returnData, encoding: NSASCIIStringEncoding)
-            
-            //var returnData = httpResponse.textEncodingName!.dataUsingEncoding(NSUTF8StringEncoding)
-            var jsonObject: AnyObject? = NSJSONSerialization.JSONObjectWithData(returnData, options: NSJSONReadingOptions.AllowFragments, error: &error)
-            
-            
-            
-            if jsonObject != nil{
-                result = jsonObject as [String: AnyObject]
-                
-                println(result)
-                
-                if result["token"]? != nil{
-                    result.updateValue(true, forKey: "success")
-                }else {
-                    result.updateValue(false, forKey: "success")
-                }
-                
-            }else{
-                result.updateValue(false, forKey: "success")
-            }
-            
-        }else{
-            result.updateValue(false, forKey: "success")
+        if status == 0{
+            result = "NO"
+        }else if status == 1{
+            result = "WIFI"
+        }else if status == 2{
+            result = "WLAN"
         }
-        return result
+        
+        return result!
+        
     }
-
-    */
-    /*
 
     
 class func checkCookie()->Bool{
