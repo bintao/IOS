@@ -298,7 +298,6 @@
                                 </state>
                                 <connections>
                                     <action selector="signUpWithUserAndPa:" destination="XAq-Dd-zaX" eventType="touchUpInside" id="OBS-zU-thK"/>
-                                    <segue destination="MXV-oK-tcc" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="YIo-ot-SCk"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="O8a-GT-aYz">
