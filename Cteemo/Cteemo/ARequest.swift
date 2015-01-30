@@ -18,11 +18,7 @@ class ARequest: NSObject {
   
     
     var delegate:RequestResultDelegate!
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> FETCH_HEAD
     var info: [String: AnyObject]!
     var method: String!
     var prefix: String!
