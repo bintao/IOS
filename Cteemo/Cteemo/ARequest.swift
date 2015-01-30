@@ -11,6 +11,10 @@ import UIKit
 
 class ARequest: NSObject {
     
+<<<<<<< Updated upstream
     
+=======
+    var method: String!
+>>>>>>> Stashed changes
     
 }
