@@ -37,30 +37,6 @@ class InteractingWithServer: NSObject {
         
     }
     
-    class func login(email: String, password: String, returnView: UIViewController){
-        
-        
-        let info :[String: AnyObject] = ["email": email, "password": password]
-
-        InteractingWithServer.connectASynchoronous("/login", info: info, method:"POST", returnView: returnView)
-    }
-    
-    
-    class func signUp(email: String, password: String, returnView: UIViewController){
-        
-        
-        let info :[String: AnyObject] = ["email": email, "password": password]
-        
-        InteractingWithServer.connectASynchoronous("/create_user", info: info, method:"POST", returnView: returnView)
-    }
-
-    class func getUserProfile(token: String){
-        
-        var result:[String: AnyObject] = [String: AnyObject]()
-        
-        InteractingWithServer.connectASynchoronous("/profile", info: result, method:"GET", returnView: nil)
-        
-    }
 
     
     class func connectASynchoronous(suffix: String ,info:[String: AnyObject], method:String, theRequest: ARequest){
@@ -116,18 +92,10 @@ class InteractingWithServer: NSObject {
 
             }
             
+            // send the result to ARqusest class
             dispatch_async(dispatch_get_main_queue(), {
-                if suffix == "/login"{
-                    (returnView as Login_LoginBySelfViewController).loginResult(result)
-                }
-                else if suffix == "/profile"{
-                    
-                    println(result)
-                }
-                else if suffix == "/create_user"{
-                    
-                    println(result)
-                }
+            
+                theRequest.gotResult(result)
             })
 
         })

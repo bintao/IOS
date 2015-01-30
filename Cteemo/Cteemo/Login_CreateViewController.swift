@@ -28,7 +28,7 @@ class Login_CreateViewController: UIViewController {
         
         if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != nil{
             
-            InteractingWithServer.signUp(email.text, password: password.text, returnView: self)
+            //InteractingWithServer.signUp(email.text, password: password.text, returnView: self)
             
         }
         else if(email.text==nil||email.text.rangeOfString("@")?.isEmpty == nil){
