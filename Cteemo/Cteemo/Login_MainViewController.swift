@@ -11,8 +11,7 @@ import UIKit
 class Login_MainViewController: UIViewController, FBLoginViewDelegate{
 
     @IBOutlet var bg : UIImageView!
-//v
-    var temp:Int!
+
     @IBOutlet var login : UIButton!
     @IBOutlet var signup : UIButton!
 
