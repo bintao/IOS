@@ -20,8 +20,12 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
     @IBOutlet var login : UIButton!
     @IBOutlet var forgotPass : UIView!
 
-    @IBOutlet var loadingView : UIView!
+    @IBOutlet var loadingView : UIImageView!
     @IBOutlet var loading : UIActivityIndicatorView!
+    
+    @IBOutlet var teemoSpeaker : UIView!
+    @IBOutlet var loginDisplay : UITextView!
+
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -58,9 +62,49 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             
         }else{
             
+            //login error
+            
+            displaySpeaker("email and password not match")
+            
         }
     }
 
+    // display the speaker on teemo
+    func displaySpeaker(text: String){
+        
+        loginDisplay.text = text
+        
+        if teemoSpeaker.alpha != 1{
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            
+                self.teemoSpeaker.alpha = 1
+            
+                }
+            , completion: {
+                (value: Bool) in
+                
+            })
+        }
+    }
+    
+    // speaker on teemo disappear
+    
+    func disappearSpeaker(){
+        if teemoSpeaker.alpha != 0{
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                
+                self.teemoSpeaker.alpha = 0
+                
+                }
+                , completion: {
+                    (value: Bool) in
+                    
+            })
+        }
+
+    }
+    
+    
     // keyboard customization
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == email{
@@ -68,7 +112,6 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             password.becomeFirstResponder()
         }else if textField == password{
             password.resignFirstResponder()
-            loginWithUserAndPass()
         }
         
         println(back.superview)
@@ -76,10 +119,13 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
         return true
     }
     
-    // keyboard return
+    // background tapped
     func keyboardReturn(gestureRecognizer: UITapGestureRecognizer){
         password.resignFirstResponder()
         email.resignFirstResponder()
+        if teemoSpeaker.alpha != 0{
+            disappearSpeaker()
+        }
     }
     
     //loading view display while login
