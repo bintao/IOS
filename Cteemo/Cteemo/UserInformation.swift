@@ -47,7 +47,7 @@ class UserInformation: NSObject {
     //download user information from the server
 
     func downloadUserInfo(){
-        InteractingWithServer.getUserProfile(self.accessToken)
+        //InteractingWithServer.getUserProfile(self.accessToken)
     }
     
     //change user data and save

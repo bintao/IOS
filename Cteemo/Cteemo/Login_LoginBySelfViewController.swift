@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate{
+class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate, RequestResultDelegate{
 
     @IBOutlet var bg : UIImageView!
 
@@ -36,7 +36,9 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
     @IBAction func loginWithUserAndPass(){
         if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != nil{
 
-            InteractingWithServer.login(email.text, password: password.text, returnView: self)
+            var req = ARequest(prefix: "/login", method: "POST", data: ["email": email.text, "password": password.text])
+            req.delegate = self
+            req.sendRequest()
             
             startLoading()
         }else{
@@ -45,8 +47,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
         }
     }
 
-    //after login
-    func loginResult(result: [String: AnyObject]){
+    func gotResult(prefix:String ,result: [String: AnyObject]){
         println(result)
         stopLoading()
         if result["success"] as Bool{
@@ -59,7 +60,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             
         }
     }
-    
+
     // keyboard customization
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == email{

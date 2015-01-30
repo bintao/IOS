@@ -9,30 +9,28 @@
 
 import UIKit
 
-protocol ResultDelegate:NSObjectProtocol{
+protocol RequestResultDelegate: NSObjectProtocol{
     func gotResult(prefix:String ,result: [String: AnyObject])
 }
 
 //a request class
 class ARequest: NSObject {
     
-    var delegate:ResultDelegate!
+    var delegate:RequestResultDelegate!
     
     var info: [String: AnyObject]!
     var method: String!
     var prefix: String!
-    var returnView: UIViewController!
     var result: [String: AnyObject]!
     
-    init(prefix: String, method: String, data: [String: AnyObject], returnView: UIViewController){
+    init(prefix: String, method: String, data: [String: AnyObject]){
         super.init()
         self.method = method
         self.info = data
-        self.returnView = returnView
         self.prefix = prefix
         
     }
-    
+    // send req
     func sendRequest(){
         InteractingWithServer.connectASynchoronous(self.prefix, info: self.info, method: self.method, theRequest:self)
     }
