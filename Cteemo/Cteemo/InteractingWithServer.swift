@@ -9,7 +9,6 @@ import UIKit
 
 class InteractingWithServer: NSObject {
     
-
     
     class func getCurrentNet() -> String{
         
@@ -85,7 +84,7 @@ class InteractingWithServer: NSObject {
         var queue = NSOperationQueue()
         
         NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            
+            println(data)
             if data != nil && data.length > 0 && error == nil{
                 
                 if let httpResponse = response as? NSHTTPURLResponse {
@@ -102,12 +101,8 @@ class InteractingWithServer: NSObject {
                     }
                 }
                 
-            }else if data == nil{
-                println("empty response")
-                
-            }else if error != nil{
-                println(error)
             }
+            
             dispatch_async(dispatch_get_main_queue(), {
                 if suffix == "/login"{
                     (returnView as Login_LoginBySelfViewController).loginResult(result)
@@ -121,10 +116,10 @@ class InteractingWithServer: NSObject {
                     println(result)
                 }
             })
+
         })
                 
     }
-
     /*
     class func getCurrentNet() -> String{
         

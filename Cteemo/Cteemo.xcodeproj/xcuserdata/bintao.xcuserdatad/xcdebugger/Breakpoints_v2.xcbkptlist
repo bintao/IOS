@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/InteractingWithServer.swift"
-            timestampString = "444120200.343968"
+            timestampString = "444279393.878662"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "InteractingWithServer"
             landmarkType = "3">
          </BreakpointContent>

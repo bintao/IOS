@@ -15,19 +15,11 @@
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" placeholderIntrinsicWidth="600" placeholderIntrinsicHeight="600" id="kh9-bI-dsS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backG.png" translatesAutoresizingMaskIntoConstraints="NO" id="KbB-dG-jd9">
-<<<<<<< HEAD
-<<<<<<< HEAD
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-=======
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
->>>>>>> bintao
-=======
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
->>>>>>> kedan
                                 <gestureRecognizers/>
                             </imageView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9zG-A6-eJ5">
@@ -53,7 +45,6 @@
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" image="teemoDouble.png" translatesAutoresizingMaskIntoConstraints="NO" id="cir-El-Qpw">
                                 <rect key="frame" x="252" y="34" width="92" height="109"/>
-<<<<<<< HEAD
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="OEz-30-Vbe"/>
                                     <constraint firstAttribute="height" constant="110" id="nfa-be-uVu"/>
@@ -62,16 +53,6 @@
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXT-pm-Gy7">
                                 <rect key="frame" x="128" y="321" width="367" height="96"/>
                                 <constraints>
-=======
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="90" id="OEz-30-Vbe"/>
-                                    <constraint firstAttribute="height" constant="110" id="nfa-be-uVu"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXT-pm-Gy7">
-                                <rect key="frame" x="128" y="321" width="367" height="96"/>
-                                <constraints>
->>>>>>> kedan
                                     <constraint firstAttribute="height" constant="70" id="Ggf-XV-X8Y"/>
                                     <constraint firstAttribute="width" constant="280" id="pOu-5o-RgC"/>
                                 </constraints>
@@ -110,11 +91,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-<<<<<<< HEAD
             <point key="canvasLocation" x="236" y="317"/>
-=======
-            <point key="canvasLocation" x="-2" y="297"/>
->>>>>>> kedan
         </scene>
         <!--Login Login By Self View Controller-->
         <scene sceneID="ToN-RI-bck">
@@ -286,13 +263,53 @@
                     <view key="view" contentMode="scaleToFill" id="Hdc-1q-PPK">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="backG.png" translatesAutoresizingMaskIntoConstraints="NO" id="6NK-7y-O2g">
+                                <rect key="frame" x="0.0" y="-5" width="384" height="678"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="League of Legend ID" textAlignment="center" minimumFontSize="17" background="school button icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="uxq-k6-JuV">
+                                <rect key="frame" x="63" y="270" width="249" height="51"/>
+                                <color key="textColor" red="0.3458412247474747" green="0.3458412247474747" blue="0.3458412247474747" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gaW-jR-kY0" id="Orv-X0-vZe"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5hS-Zt-hCN">
+                                <rect key="frame" x="118" y="55" width="138" height="138"/>
+                                <state key="normal" image="PHOTO icons.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0RQ-wV-eEg">
+                                <rect key="frame" x="76" y="365" width="222" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="211" id="3xW-zi-Z3E"/>
+                                    <constraint firstAttribute="height" constant="64" id="inQ-uD-aqh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                <state key="normal" title="Submit" backgroundImage="SUBMIT.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signUpWithUserAndPa:" destination="XAq-Dd-zaX" eventType="touchUpInside" id="LVe-cz-uUO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N07-gs-dBq">
+                                <rect key="frame" x="63" y="228" width="249" height="49"/>
+                                <state key="normal" image="school button icon.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mR-ma-8P4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1137.5" y="-429.5"/>
+            <point key="canvasLocation" x="1129.5" y="-500.5"/>
         </scene>
         <!--Login Create View Controller-->
         <scene sceneID="Oyl-jf-RyU">
@@ -321,13 +338,7 @@
                                 </state>
                                 <connections>
                                     <action selector="signUpWithUserAndPa:" destination="XAq-Dd-zaX" eventType="touchUpInside" id="OBS-zU-thK"/>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                    <segue destination="MXV-oK-tcc" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="YIo-ot-SCk"/>
-=======
->>>>>>> bintao
-=======
->>>>>>> kedan
+                                    <segue destination="MXV-oK-tcc" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="BUF-a5-A94"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="O8a-GT-aYz">
@@ -347,35 +358,13 @@
                                     <outlet property="delegate" destination="gaW-jR-kY0" id="ZHs-2q-lrg"/>
                                 </connections>
                             </textField>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjv-lc-YBo" userLabel="back">
-                                <rect key="frame" x="10" y="35" width="69" height="63"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="63" id="aJl-6q-Pet"/>
-                                    <constraint firstAttribute="width" constant="69" id="dfe-yx-xeq"/>
-                                </constraints>
-=======
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0F-QZ-aMR">
                                 <rect key="frame" x="16" y="20" width="69" height="63"/>
->>>>>>> bintao
-=======
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v0F-QZ-aMR">
-                                <rect key="frame" x="16" y="20" width="69" height="63"/>
->>>>>>> kedan
                                 <state key="normal" image="arrow.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                                    <action selector="back:" destination="XAq-Dd-zaX" eventType="touchUpInside" id="8Ac-cY-gfH"/>
-=======
-                                    <segue destination="vXZ-lx-hvc" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="Uqe-qi-NC2"/>
->>>>>>> bintao
-=======
-                                    <segue destination="c33-JE-Q03" kind="unwind" unwindAction="returnToLoginMain:" id="G4S-ea-mcg"/>
->>>>>>> kedan
+                                    <segue destination="xGQ-wS-HTa" kind="unwind" unwindAction="returnToLoginMain:" id="fej-j3-TQt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -388,13 +377,6 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-<<<<<<< HEAD
-<<<<<<< HEAD
-                        <outlet property="back" destination="Gjv-lc-YBo" id="v7c-Fq-VlB"/>
-=======
->>>>>>> bintao
-=======
->>>>>>> kedan
                         <outlet property="bg" destination="G3W-jM-h6q" id="ZVa-k2-BwG"/>
                         <outlet property="email" destination="O8a-GT-aYz" id="wG4-JX-UPs"/>
                         <outlet property="password" destination="u5j-u0-rX9" id="sAr-Ke-hlY"/>
@@ -402,25 +384,18 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fxc-rT-oK3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-<<<<<<< HEAD
+                <exit id="xGQ-wS-HTa" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-<<<<<<< HEAD
-            <point key="canvasLocation" x="599.5" y="-438.5"/>
-=======
-            <point key="canvasLocation" x="602.5" y="-408.5"/>
->>>>>>> bintao
-=======
-                <exit id="c33-JE-Q03" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="602.5" y="-408.5"/>
->>>>>>> kedan
+            <point key="canvasLocation" x="602.5" y="-500.5"/>
         </scene>
     </scenes>
     <resources>
+        <image name="PHOTO icons.png" width="165" height="165"/>
         <image name="SUBMIT.png" width="438" height="96"/>
         <image name="arrow.png" width="69" height="63"/>
         <image name="backG.png" width="750" height="1334"/>
         <image name="lock1.png" width="54" height="57"/>
+        <image name="school button icon.png" width="562" height="93"/>
         <image name="teemoDouble.png" width="200" height="256"/>
         <image name="textField.png" width="500" height="120"/>
     </resources>
