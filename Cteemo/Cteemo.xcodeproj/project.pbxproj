@@ -38,7 +38,6 @@
 		42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A471A74A9FC00FD4642 /* UserInformation.plist */; };
 		42E5E78B1A773E56004A781E /* Login_LoginBySelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */; };
 		42E5E7911A7762DB004A781E /* teemoDouble.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5E7901A7762DB004A781E /* teemoDouble.png */; };
-		A1010D451A7B28E500256208 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010D441A7B28E500256208 /* Alamofire.swift */; };
 		A1010D471A7B2ACF00256208 /* ARequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010D461A7B2ACF00256208 /* ARequest.swift */; };
 		A1010D491A7B2F9100256208 /* school button icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D481A7B2F9100256208 /* school button icon.png */; };
 		A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */; };
@@ -104,7 +103,6 @@
 		42B85A471A74A9FC00FD4642 /* UserInformation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserInformation.plist; sourceTree = "<group>"; };
 		42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_LoginBySelfViewController.swift; sourceTree = "<group>"; };
 		42E5E7901A7762DB004A781E /* teemoDouble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teemoDouble.png; sourceTree = "<group>"; };
-		A1010D441A7B28E500256208 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		A1010D461A7B2ACF00256208 /* ARequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARequest.swift; sourceTree = "<group>"; };
 		A1010D481A7B2F9100256208 /* school button icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "school button icon.png"; sourceTree = "<group>"; };
 		A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯1.png"; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 		42B859E91A74840F00FD4642 /* Cteemo */ = {
 			isa = PBXGroup;
 			children = (
-				A1010D441A7B28E500256208 /* Alamofire.swift */,
 				42B859EC1A74840F00FD4642 /* AppDelegate.swift */,
 				42B859F31A74840F00FD4642 /* Main.storyboard */,
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
@@ -408,7 +405,6 @@
 				42B85A121A74888500FD4642 /* Login_SchoolAndPhoto.swift in Sources */,
 				42B85A461A74A81A00FD4642 /* InteractingWithServer.swift in Sources */,
 				42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */,
-				A1010D451A7B28E500256208 /* Alamofire.swift in Sources */,
 				42B859F01A74840F00FD4642 /* Cteemo.xcdatamodeld in Sources */,
 				42B85A441A74A81A00FD4642 /* UserInformation.swift in Sources */,
 				42B859ED1A74840F00FD4642 /* AppDelegate.swift in Sources */,
