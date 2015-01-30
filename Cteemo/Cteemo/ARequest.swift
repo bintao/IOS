@@ -17,10 +17,7 @@ protocol ResultDelegate:NSObjectProtocol{
 class ARequest: NSObject {
   
     
-<<<<<<< HEAD
-    var method: String!
-    
-=======
+
     var delegate:ResultDelegate!
     
     var info: [String: AnyObject]!
@@ -48,6 +45,5 @@ class ARequest: NSObject {
         
         self.delegate.gotResult(self.prefix, result: result)
     }
->>>>>>> FETCH_HEAD
 
 }

@@ -11,7 +11,7 @@ import UIKit
 class Login_SchoolAndPhoto: UIViewController {
 
     
-    @IBAction func returnToLoginMain(segue : UIStoryboardSegue) {
+    @IBAction func returnSchoolAndPhoto(segue : UIStoryboardSegue) {
         
     }
 
