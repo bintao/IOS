@@ -40,19 +40,19 @@
 		42E5E7911A7762DB004A781E /* teemoDouble.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5E7901A7762DB004A781E /* teemoDouble.png */; };
 		A1B8E9291A7AFAA1009BE011 /* school button icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9281A7AFAA1009BE011 /* school button icon.png */; };
 		A1B8E92B1A7AFE41009BE011 /* News_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8E92A1A7AFE41009BE011 /* News_Main.swift */; };
-		A1B8E93C1A7B0083009BE011 /* 奖杯1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E92E1A7B0083009BE011 /* 奖杯1.png */; };
-		A1B8E93D1A7B0083009BE011 /* 奖杯2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E92F1A7B0083009BE011 /* 奖杯2.png */; };
-		A1B8E93E1A7B0083009BE011 /* 我.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9301A7B0083009BE011 /* 我.png */; };
-		A1B8E93F1A7B0083009BE011 /* 我2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9311A7B0083009BE011 /* 我2.png */; };
-		A1B8E9401A7B0083009BE011 /* 新闻1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9321A7B0083009BE011 /* 新闻1.png */; };
-		A1B8E9421A7B0083009BE011 /* 形状 14.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9341A7B0083009BE011 /* 形状 14.png */; };
-		A1B8E9431A7B0083009BE011 /* 战队1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9351A7B0083009BE011 /* 战队1.png */; };
-		A1B8E9441A7B0083009BE011 /* 战队2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9361A7B0083009BE011 /* 战队2.png */; };
-		A1B8E9451A7B0083009BE011 /* flag 拷贝 2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9371A7B0083009BE011 /* flag 拷贝 2.png */; };
-		A1B8E9461A7B0083009BE011 /* Forma 1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9381A7B0083009BE011 /* Forma 1.png */; };
-		A1B8E9471A7B0083009BE011 /* hentiao.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9391A7B0083009BE011 /* hentiao.png */; };
-		A1B8E9481A7B0083009BE011 /* hentiao2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E93A1A7B0083009BE011 /* hentiao2.png */; };
-		A1B8E9491A7B0083009BE011 /* OK.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E93B1A7B0083009BE011 /* OK.png */; };
+		A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */; };
+		A1B8E9581A7B20F2009BE011 /* 奖杯2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */; };
+		A1B8E9591A7B20F2009BE011 /* 我.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94C1A7B20F2009BE011 /* 我.png */; };
+		A1B8E95A1A7B20F2009BE011 /* 我2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94D1A7B20F2009BE011 /* 我2.png */; };
+		A1B8E95B1A7B20F2009BE011 /* 新闻1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94E1A7B20F2009BE011 /* 新闻1.png */; };
+		A1B8E95C1A7B20F2009BE011 /* 形状 14.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94F1A7B20F2009BE011 /* 形状 14.png */; };
+		A1B8E95D1A7B20F2009BE011 /* 战队1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9501A7B20F2009BE011 /* 战队1.png */; };
+		A1B8E95E1A7B20F2009BE011 /* 战队2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9511A7B20F2009BE011 /* 战队2.png */; };
+		A1B8E95F1A7B20F2009BE011 /* flag 拷贝 2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9521A7B20F2009BE011 /* flag 拷贝 2.png */; };
+		A1B8E9601A7B20F2009BE011 /* Forma 1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9531A7B20F2009BE011 /* Forma 1.png */; };
+		A1B8E9611A7B20F2009BE011 /* hentiao.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9541A7B20F2009BE011 /* hentiao.png */; };
+		A1B8E9621A7B20F2009BE011 /* hentiao2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9551A7B20F2009BE011 /* hentiao2.png */; };
+		A1B8E9631A7B20F2009BE011 /* OK.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9561A7B20F2009BE011 /* OK.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,19 +105,19 @@
 		42E5E7901A7762DB004A781E /* teemoDouble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teemoDouble.png; sourceTree = "<group>"; };
 		A1B8E9281A7AFAA1009BE011 /* school button icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "school button icon.png"; path = "../../../../Desktop/final/school button icon.png"; sourceTree = "<group>"; };
 		A1B8E92A1A7AFE41009BE011 /* News_Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News_Main.swift; sourceTree = "<group>"; };
-		A1B8E92E1A7B0083009BE011 /* 奖杯1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "奖杯1.png"; path = "../../../../Desktop/final/Team/切片/team/奖杯1.png"; sourceTree = "<group>"; };
-		A1B8E92F1A7B0083009BE011 /* 奖杯2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "奖杯2.png"; path = "../../../../Desktop/final/Team/切片/team/奖杯2.png"; sourceTree = "<group>"; };
-		A1B8E9301A7B0083009BE011 /* 我.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "我.png"; path = "../../../../Desktop/final/Team/切片/team/我.png"; sourceTree = "<group>"; };
-		A1B8E9311A7B0083009BE011 /* 我2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "我2.png"; path = "../../../../Desktop/final/Team/切片/team/我2.png"; sourceTree = "<group>"; };
-		A1B8E9321A7B0083009BE011 /* 新闻1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "新闻1.png"; path = "../../../../Desktop/final/Team/切片/team/新闻1.png"; sourceTree = "<group>"; };
-		A1B8E9341A7B0083009BE011 /* 形状 14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "形状 14.png"; path = "../../../../Desktop/final/Team/切片/team/形状 14.png"; sourceTree = "<group>"; };
-		A1B8E9351A7B0083009BE011 /* 战队1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "战队1.png"; path = "../../../../Desktop/final/Team/切片/team/战队1.png"; sourceTree = "<group>"; };
-		A1B8E9361A7B0083009BE011 /* 战队2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "战队2.png"; path = "../../../../Desktop/final/Team/切片/team/战队2.png"; sourceTree = "<group>"; };
-		A1B8E9371A7B0083009BE011 /* flag 拷贝 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "flag 拷贝 2.png"; path = "../../../../Desktop/final/Team/切片/team/flag 拷贝 2.png"; sourceTree = "<group>"; };
-		A1B8E9381A7B0083009BE011 /* Forma 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Forma 1.png"; path = "../../../../Desktop/final/Team/切片/team/Forma 1.png"; sourceTree = "<group>"; };
-		A1B8E9391A7B0083009BE011 /* hentiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hentiao.png; path = "../../../../Desktop/final/Team/切片/team/hentiao.png"; sourceTree = "<group>"; };
-		A1B8E93A1A7B0083009BE011 /* hentiao2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hentiao2.png; path = "../../../../Desktop/final/Team/切片/team/hentiao2.png"; sourceTree = "<group>"; };
-		A1B8E93B1A7B0083009BE011 /* OK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = OK.png; path = "../../../../Desktop/final/Team/切片/team/OK.png"; sourceTree = "<group>"; };
+		A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯1.png"; sourceTree = "<group>"; };
+		A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯2.png"; sourceTree = "<group>"; };
+		A1B8E94C1A7B20F2009BE011 /* 我.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我.png"; sourceTree = "<group>"; };
+		A1B8E94D1A7B20F2009BE011 /* 我2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我2.png"; sourceTree = "<group>"; };
+		A1B8E94E1A7B20F2009BE011 /* 新闻1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新闻1.png"; sourceTree = "<group>"; };
+		A1B8E94F1A7B20F2009BE011 /* 形状 14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "形状 14.png"; sourceTree = "<group>"; };
+		A1B8E9501A7B20F2009BE011 /* 战队1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "战队1.png"; sourceTree = "<group>"; };
+		A1B8E9511A7B20F2009BE011 /* 战队2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "战队2.png"; sourceTree = "<group>"; };
+		A1B8E9521A7B20F2009BE011 /* flag 拷贝 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag 拷贝 2.png"; sourceTree = "<group>"; };
+		A1B8E9531A7B20F2009BE011 /* Forma 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Forma 1.png"; sourceTree = "<group>"; };
+		A1B8E9541A7B20F2009BE011 /* hentiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hentiao.png; sourceTree = "<group>"; };
+		A1B8E9551A7B20F2009BE011 /* hentiao2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hentiao2.png; sourceTree = "<group>"; };
+		A1B8E9561A7B20F2009BE011 /* OK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OK.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,19 +226,19 @@
 		42B85A141A7489B700FD4642 /* StartPage */ = {
 			isa = PBXGroup;
 			children = (
-				A1B8E92E1A7B0083009BE011 /* 奖杯1.png */,
-				A1B8E92F1A7B0083009BE011 /* 奖杯2.png */,
-				A1B8E9301A7B0083009BE011 /* 我.png */,
-				A1B8E9311A7B0083009BE011 /* 我2.png */,
-				A1B8E9321A7B0083009BE011 /* 新闻1.png */,
-				A1B8E9341A7B0083009BE011 /* 形状 14.png */,
-				A1B8E9351A7B0083009BE011 /* 战队1.png */,
-				A1B8E9361A7B0083009BE011 /* 战队2.png */,
-				A1B8E9371A7B0083009BE011 /* flag 拷贝 2.png */,
-				A1B8E9381A7B0083009BE011 /* Forma 1.png */,
-				A1B8E9391A7B0083009BE011 /* hentiao.png */,
-				A1B8E93A1A7B0083009BE011 /* hentiao2.png */,
-				A1B8E93B1A7B0083009BE011 /* OK.png */,
+				A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */,
+				A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */,
+				A1B8E94C1A7B20F2009BE011 /* 我.png */,
+				A1B8E94D1A7B20F2009BE011 /* 我2.png */,
+				A1B8E94E1A7B20F2009BE011 /* 新闻1.png */,
+				A1B8E94F1A7B20F2009BE011 /* 形状 14.png */,
+				A1B8E9501A7B20F2009BE011 /* 战队1.png */,
+				A1B8E9511A7B20F2009BE011 /* 战队2.png */,
+				A1B8E9521A7B20F2009BE011 /* flag 拷贝 2.png */,
+				A1B8E9531A7B20F2009BE011 /* Forma 1.png */,
+				A1B8E9541A7B20F2009BE011 /* hentiao.png */,
+				A1B8E9551A7B20F2009BE011 /* hentiao2.png */,
+				A1B8E9561A7B20F2009BE011 /* OK.png */,
 				42B85A151A7489CF00FD4642 /* loading_page.png */,
 			);
 			name = StartPage;
@@ -343,32 +343,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1B8E9451A7B0083009BE011 /* flag 拷贝 2.png in Resources */,
+				A1B8E95C1A7B20F2009BE011 /* 形状 14.png in Resources */,
+				A1B8E9581A7B20F2009BE011 /* 奖杯2.png in Resources */,
+				A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */,
 				42B85A291A748CDB00FD4642 /* me_icons1.png in Resources */,
 				42B85A271A748CDB00FD4642 /* Inkinesss.png in Resources */,
-				A1B8E9461A7B0083009BE011 /* Forma 1.png in Resources */,
+				A1B8E9631A7B20F2009BE011 /* OK.png in Resources */,
 				42B85A251A748CDB00FD4642 /* button.png in Resources */,
 				42B85A241A748CDB00FD4642 /* backG.png in Resources */,
-				A1B8E93C1A7B0083009BE011 /* 奖杯1.png in Resources */,
-				A1B8E93E1A7B0083009BE011 /* 我.png in Resources */,
-				A1B8E9401A7B0083009BE011 /* 新闻1.png in Resources */,
-				A1B8E9471A7B0083009BE011 /* hentiao.png in Resources */,
-				A1B8E9481A7B0083009BE011 /* hentiao2.png in Resources */,
-				A1B8E9421A7B0083009BE011 /* 形状 14.png in Resources */,
 				42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */,
-				A1B8E9431A7B0083009BE011 /* 战队1.png in Resources */,
+				A1B8E95E1A7B20F2009BE011 /* 战队2.png in Resources */,
 				42B85A2A1A748CDB00FD4642 /* PHOTO icons.png in Resources */,
 				42B859F51A74840F00FD4642 /* Main.storyboard in Resources */,
-				A1B8E93F1A7B0083009BE011 /* 我2.png in Resources */,
+				A1B8E95A1A7B20F2009BE011 /* 我2.png in Resources */,
+				A1B8E9601A7B20F2009BE011 /* Forma 1.png in Resources */,
+				A1B8E95B1A7B20F2009BE011 /* 新闻1.png in Resources */,
 				42E5E7911A7762DB004A781E /* teemoDouble.png in Resources */,
-				A1B8E9491A7B0083009BE011 /* OK.png in Resources */,
-				A1B8E9441A7B0083009BE011 /* 战队2.png in Resources */,
 				42B859FA1A74840F00FD4642 /* LaunchScreen.xib in Resources */,
 				42B85A161A7489CF00FD4642 /* loading_page.png in Resources */,
 				42B85A231A748CDB00FD4642 /* arrow.png in Resources */,
-				A1B8E93D1A7B0083009BE011 /* 奖杯2.png in Resources */,
+				A1B8E9611A7B20F2009BE011 /* hentiao.png in Resources */,
+				A1B8E9591A7B20F2009BE011 /* 我.png in Resources */,
+				A1B8E95F1A7B20F2009BE011 /* flag 拷贝 2.png in Resources */,
 				42B85A2D1A748D4E00FD4642 /* arrowTurned.png in Resources */,
+				A1B8E95D1A7B20F2009BE011 /* 战队1.png in Resources */,
 				42B85A2F1A74947E00FD4642 /* textField.png in Resources */,
+				A1B8E9621A7B20F2009BE011 /* hentiao2.png in Resources */,
 				42B85A2B1A748CDB00FD4642 /* SUBMIT.png in Resources */,
 				A1B8E9291A7AFAA1009BE011 /* school button icon.png in Resources */,
 				42B859F71A74840F00FD4642 /* Images.xcassets in Resources */,
