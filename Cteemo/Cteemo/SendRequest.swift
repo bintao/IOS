@@ -53,19 +53,6 @@ class SendRequest: NSObject {
                 
             }
             
-            dispatch_async(dispatch_get_main_queue(), {
-                if suffix == "/login"{
-                    (returnView as Login_LoginBySelfViewController).loginResult(result)
-                }
-                else if suffix == "/profile"{
-                    
-                    println(result)
-                }
-                else if suffix == "/create_user"{
-                    
-                    println(result)
-                }
-            })
         })
         
     }
