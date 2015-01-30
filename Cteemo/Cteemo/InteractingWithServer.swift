@@ -63,7 +63,7 @@ class InteractingWithServer: NSObject {
     }
 
     
-    class func connectASynchoronous(suffix: String ,info:[String: AnyObject], method:String, returnView: UIViewController?){
+    class func connectASynchoronous(suffix: String ,info:[String: AnyObject], method:String, theRequest: ARequest){
         
         var result:[String: AnyObject] = [String: AnyObject]()
         
@@ -84,7 +84,6 @@ class InteractingWithServer: NSObject {
         var queue = NSOperationQueue()
         
         NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            println(data)
             if data != nil && data.length > 0 && error == nil{
                 
                 if let httpResponse = response as? NSHTTPURLResponse {
@@ -99,8 +98,22 @@ class InteractingWithServer: NSObject {
                     }else {
                         result.updateValue(false, forKey: "success")
                     }
+                }else{
+                    result.updateValue(false, forKey: "success")
                 }
                 
+            }else if error != nil{
+                
+                println(error)
+                
+                result.updateValue(false, forKey: "success")
+                
+            }else if data == nil{
+                
+                println("empty")
+                
+                result.updateValue(false, forKey: "success")
+
             }
             
             dispatch_async(dispatch_get_main_queue(), {
