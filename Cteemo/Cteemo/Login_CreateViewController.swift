@@ -8,21 +8,30 @@
 
 import UIKit
 
-class Login_CreateViewController: UIViewController {
+class Login_CreateViewController: UIViewController, UITextFieldDelegate {
     
     
-    @IBOutlet var email: UITextField!
+    @IBOutlet var bg : UIImageView!
     
-    @IBOutlet var password: UITextField!
+    @IBOutlet var email : UITextField!
+    @IBOutlet var password : UITextField!
+    @IBOutlet var nickname : UITextField!
+
+    @IBOutlet var back : UIButton!
     
-    @IBOutlet weak var back: UIButton!
+    @IBOutlet var signup : UIButton!
     
-    @IBOutlet weak var bg: UIImageView!
+    @IBOutlet var loadingView : UIImageView!
+    @IBOutlet var loading : UIActivityIndicatorView!
     
+    @IBOutlet var teemoSpeaker : UIView!
+    @IBOutlet var messageDisplay : UITextView!
     
-    @IBOutlet weak var signUp: UIButton!
-    
-    
+    override func viewDidLoad() {
+        //add tap gesture to board
+        self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "backGroundTapped:"))
+
+    }
     
     @IBAction func signUpWithUserAndPa(sender: UIButton) {
         
@@ -53,6 +62,78 @@ class Login_CreateViewController: UIViewController {
         }
 
   
+    // display the speaker on teemo
+    func displaySpeaker(text: String){
+        
+        messageDisplay.text = text
+        
+        if teemoSpeaker.alpha != 1{
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                
+                self.teemoSpeaker.alpha = 1
+                
+                }
+                , completion: {
+                    (value: Bool) in
+                    
+            })
+        }
+    }
+    
+    // speaker on teemo disappear
+    
+    func disappearSpeaker(){
+        if teemoSpeaker.alpha != 0{
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                
+                self.teemoSpeaker.alpha = 0
+                
+                }
+                , completion: {
+                    (value: Bool) in
+                    
+            })
+        }
+        
+    }
+    
+    
+    // keyboard customization
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == email{
+            email.resignFirstResponder()
+            password.becomeFirstResponder()
+        }else if textField == password{
+            password.resignFirstResponder()
+            nickname.becomeFirstResponder()
+        }else if textField == nickname{
+            nickname.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+    // background tapped
+    func backGroundTapped(gestureRecognizer: UITapGestureRecognizer){
+        password.resignFirstResponder()
+        email.resignFirstResponder()
+        nickname.resignFirstResponder()
+        if teemoSpeaker.alpha != 0{
+            disappearSpeaker()
+        }
+    }
+    
+    //loading view display while login
+    func startLoading(){
+        self.view.bringSubviewToFront(loadingView)
+        self.loading.startAnimating()
+    }
+    
+    //loading view hide, login finished
+    func stopLoading(){
+        self.view.sendSubviewToBack(loadingView)
+        self.loading.stopAnimating()
+    }
 
     
     

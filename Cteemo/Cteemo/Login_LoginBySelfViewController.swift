@@ -24,14 +24,14 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
     @IBOutlet var loading : UIActivityIndicatorView!
     
     @IBOutlet var teemoSpeaker : UIView!
-    @IBOutlet var loginDisplay : UITextView!
+    @IBOutlet var messageDisplay : UITextView!
 
     
     override func viewDidLoad(){
         super.viewDidLoad()
         
         //add tap gesture to board
-        self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "keyboardReturn:"))
+        self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "backGroundTapped:"))
 
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -72,7 +72,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
     // display the speaker on teemo
     func displaySpeaker(text: String){
         
-        loginDisplay.text = text
+        messageDisplay.text = text
         
         if teemoSpeaker.alpha != 1{
             UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
@@ -120,7 +120,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
     }
     
     // background tapped
-    func keyboardReturn(gestureRecognizer: UITapGestureRecognizer){
+    func backGroundTapped(gestureRecognizer: UITapGestureRecognizer){
         password.resignFirstResponder()
         email.resignFirstResponder()
         if teemoSpeaker.alpha != 0{
