@@ -18,7 +18,7 @@ class ARequest: NSObject {
   
     
     var delegate:RequestResultDelegate!
-
+//
     var info: [String: AnyObject]!
     var method: String!
     var prefix: String!
