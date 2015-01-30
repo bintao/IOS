@@ -11,7 +11,7 @@ import UIKit
 
 var UserInfo: UserInformation = UserInformation()
 
-class UserInformation: NSObject {
+class UserInformation: NSObject ,RequestResultDelegate {
    
     var email: String = ""
     var name: String = ""
@@ -37,9 +37,11 @@ class UserInformation: NSObject {
         accessToken = data["accessToken"] as String
         
     }
-   
+    func gotResult(prefix: String, result: [String : AnyObject]) {
+        println(result)
+    }
     //upload user information to the server
-
+   
     func uploadUserInfo(){
         var data:[String: AnyObject] = ["name": name, "id": id, "accessToken": accessToken, "email": email]
     }
@@ -48,6 +50,10 @@ class UserInformation: NSObject {
 
     func downloadUserInfo(){
         //InteractingWithServer.getUserProfile(self.accessToken)
+        
+        var req = ARequest(prefix: "/profile", method: "GET", data: ["token": self.accessToken])
+        req.delegate = self
+        req.sendRequest()
     }
     
     //change user data and save
