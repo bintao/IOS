@@ -8,7 +8,11 @@
 
 import UIKit
 
+<<<<<<< HEAD
 class Login_CreateViewController: UIViewController, UITextFieldDelegate , RequestResultDelegate{
+=======
+class Login_CreateViewController: UIViewController, UITextFieldDelegate {
+>>>>>>> FETCH_HEAD
     
     
     @IBOutlet var bg : UIImageView!

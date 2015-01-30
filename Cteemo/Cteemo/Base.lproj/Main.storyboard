@@ -587,7 +587,11 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RTy-xV-Qou" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Tio-e2-iuu" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
+<<<<<<< HEAD
             <point key="canvasLocation" x="423" y="-992"/>
+=======
+            <point key="canvasLocation" x="375" y="-952"/>
+>>>>>>> FETCH_HEAD
         </scene>
     </scenes>
     <resources>
