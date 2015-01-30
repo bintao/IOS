@@ -10,4 +10,9 @@ import UIKit
 
 class Login_SchoolAndPhoto: UIViewController {
 
+    
+    @IBAction func returnToLoginMain(segue : UIStoryboardSegue) {
+        
+    }
+
 }
