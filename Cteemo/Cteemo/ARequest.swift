@@ -11,6 +11,8 @@ import UIKit
 
 class ARequest: NSObject {
     
+    var info: [String: AnyObjects]!
+    
     
     
 }
