@@ -66,6 +66,9 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
         println(user)
         
+        var myToken = FBSession.activeSession().accessTokenData.accessToken
+
+        println(myToken)
         //login successful
         
         //UserInfo.setUserData(user.objectForKey("email") as String, name: user.name + " " + user.first_name, accessToken: "", id: user.objectID)

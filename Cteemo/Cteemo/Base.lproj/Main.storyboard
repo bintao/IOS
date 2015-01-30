@@ -346,7 +346,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="EOv-aU-VEf" kind="unwind" unwindAction="returnSchoolAndPhoto:" id="RDm-kF-kd6"/>
+                                    <segue destination="EOv-aU-VEf" kind="unwind" unwindAction="returnSchoolAndPhoto:" id="TDB-P4-yf4"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PLEASE ENTER YOUR SCHOOL NAME" textAlignment="center" minimumFontSize="17" background="school button icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ksu-vQ-iMC">
