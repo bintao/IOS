@@ -11,6 +11,7 @@ import UIKit
 
 class ARequest: NSObject {
     
+<<<<<<< Updated upstream
 <<<<<<< HEAD
     var info: [String: AnyObjects]!
     
@@ -19,7 +20,8 @@ class ARequest: NSObject {
 >>>>>>> FETCH_HEAD
     
 =======
-    var method: String!
+=======
 >>>>>>> Stashed changes
+    var method: String!
     
 }
