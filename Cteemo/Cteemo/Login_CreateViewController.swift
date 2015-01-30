@@ -43,29 +43,33 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate, Request
             req.delegate = self
             req.sendRequest()
             
+            startLoading()
             
-        }
-        else if(email.text==nil||email.text.rangeOfString("@")?.isEmpty == nil){
-            println("invalid Email")
-        }
-        else {
-            println("invalid Password")
+        }else if password.text == nil{
+            displaySpeaker("password invalid")
+        }else if email.text == nil || email.text.rangeOfString("@")?.isEmpty == nil{
+            displaySpeaker("email invalid")
         }
         
         
     }
     
-    
     func gotResult(prefix:String ,result: [String: AnyObject]){
+
+        stopLoading()
+        
         println(result)
-        if (result["status"] as String == "success") {
+        
+        if result["success"] as Bool {
             println("OK")
-            UserInfo.setUserData(email.text, name: "", accessToken: result["token"] as String, id: "")
-            
-            UserInfo.downloadUserInfo()
+            UserInfo.setUserData(email.text, name: nickname.text, accessToken: result["token"] as String, id: "")
+    
+            self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
             
         }else{
             
+            
+            //login fail
             
         }
 
