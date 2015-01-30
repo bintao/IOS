@@ -15,8 +15,17 @@ protocol RequestResultDelegate: NSObjectProtocol{
 
 //a request class
 class ARequest: NSObject {
+  
     
+<<<<<<< HEAD
     var delegate:RequestResultDelegate!
+=======
+<<<<<<< HEAD
+    var method: String!
+    
+=======
+    var delegate:ResultDelegate!
+>>>>>>> FETCH_HEAD
     
     var info: [String: AnyObject]!
     var method: String!
@@ -41,5 +50,6 @@ class ARequest: NSObject {
         
         self.delegate.gotResult(self.prefix, result: result)
     }
+>>>>>>> FETCH_HEAD
 
 }

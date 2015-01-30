@@ -252,10 +252,10 @@
             </objects>
             <point key="canvasLocation" x="1256" y="317"/>
         </scene>
-        <!--Login School Search View Controller-->
+        <!--Login School And Photo-->
         <scene sceneID="9AD-RB-awA">
             <objects>
-                <viewController id="MXV-oK-tcc" customClass="Login_SchoolSearchViewController" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MXV-oK-tcc" customClass="Login_SchoolAndPhoto" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="I7K-6Z-OaN"/>
                         <viewControllerLayoutGuide type="bottom" id="wKE-zu-etd"/>
@@ -301,6 +301,9 @@
                                 <state key="normal" image="school button icon.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <segue destination="0hb-dg-qur" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="ZsC-KN-wMY"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -310,6 +313,62 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9mR-ma-8P4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1156.5" y="-553.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="HxK-cg-4JD">
+            <objects>
+                <viewController id="0hb-dg-qur" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IXn-hj-Y03"/>
+                        <viewControllerLayoutGuide type="bottom" id="DLZ-7b-vSr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iSd-Fs-Qqf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="school.png" translatesAutoresizingMaskIntoConstraints="NO" id="5L4-Xj-zRv">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="64"/>
+                            </imageView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="3CJ-HU-CTK">
+                                <rect key="frame" x="0.0" y="171" width="375" height="496"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="     UNIVERSITY OF ILLINOIS AT URBANA - CHAMPAIGN " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="f7z-ag-5wt">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vb8-mO-Kfe">
+                                <rect key="frame" x="0.0" y="6" width="82" height="52"/>
+                                <state key="normal" image="arrow.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="PLEASE ENTER YOUR SCHOOL NAME" textAlignment="center" minimumFontSize="17" background="school button icon.png" translatesAutoresizingMaskIntoConstraints="NO" id="Ksu-vQ-iMC">
+                                <rect key="frame" x="16" y="75" width="343" height="50"/>
+                                <color key="textColor" red="0.34584122470000001" green="0.34584122470000001" blue="0.34584122470000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="gaW-jR-kY0" id="ROx-5P-uPz"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Find friends in your school and play tournament together." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bLl-Dl-QxD">
+                                <rect key="frame" x="16" y="130" width="349" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YKE-ur-ag6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1706.5" y="-805.5"/>
         </scene>
         <!--Login Create View Controller-->
         <scene sceneID="Oyl-jf-RyU">
@@ -396,6 +455,7 @@
         <image name="backG.png" width="750" height="1334"/>
         <image name="lock1.png" width="54" height="57"/>
         <image name="school button icon.png" width="562" height="93"/>
+        <image name="school.png" width="709" height="114"/>
         <image name="teemoDouble.png" width="200" height="256"/>
         <image name="textField.png" width="500" height="120"/>
     </resources>
