@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/InteractingWithServer.swift"
-            timestampString = "444284771.944203"
+            timestampString = "444327056.239737"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "connectASynchoronous(_:info:method:theRequest:)"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
+            landmarkName = "connectASynchoronous(_:info:method:theRequest:token:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
