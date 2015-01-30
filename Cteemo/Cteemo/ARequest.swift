@@ -17,23 +17,7 @@ protocol RequestResultDelegate: NSObjectProtocol{
 class ARequest: NSObject {
   
     
-<<<<<<< HEAD
     var delegate:RequestResultDelegate!
-=======
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-    var delegate:RequestResultDelegate!
-=======
-<<<<<<< HEAD
-    var method: String!
-    
-=======
->>>>>>> FETCH_HEAD
-    var delegate:ResultDelegate!
->>>>>>> FETCH_HEAD
->>>>>>> FETCH_HEAD
     
     var info: [String: AnyObject]!
     var method: String!
