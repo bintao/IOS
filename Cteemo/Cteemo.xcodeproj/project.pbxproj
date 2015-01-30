@@ -39,7 +39,6 @@
 		42E5E78B1A773E56004A781E /* Login_LoginBySelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */; };
 		42E5E7911A7762DB004A781E /* teemoDouble.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5E7901A7762DB004A781E /* teemoDouble.png */; };
 		A1B8E9291A7AFAA1009BE011 /* school button icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9281A7AFAA1009BE011 /* school button icon.png */; };
-		A1B8E92B1A7AFE41009BE011 /* News_Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B8E92A1A7AFE41009BE011 /* News_Main.swift */; };
 		A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */; };
 		A1B8E9581A7B20F2009BE011 /* 奖杯2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */; };
 		A1B8E9591A7B20F2009BE011 /* 我.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94C1A7B20F2009BE011 /* 我.png */; };
@@ -104,7 +103,6 @@
 		42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_LoginBySelfViewController.swift; sourceTree = "<group>"; };
 		42E5E7901A7762DB004A781E /* teemoDouble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teemoDouble.png; sourceTree = "<group>"; };
 		A1B8E9281A7AFAA1009BE011 /* school button icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "school button icon.png"; path = "../../../../Desktop/final/school button icon.png"; sourceTree = "<group>"; };
-		A1B8E92A1A7AFE41009BE011 /* News_Main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = News_Main.swift; sourceTree = "<group>"; };
 		A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯1.png"; sourceTree = "<group>"; };
 		A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯2.png"; sourceTree = "<group>"; };
 		A1B8E94C1A7B20F2009BE011 /* 我.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我.png"; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 			children = (
 				42B859EC1A74840F00FD4642 /* AppDelegate.swift */,
 				42B859F31A74840F00FD4642 /* Main.storyboard */,
-				A1B8E92A1A7AFE41009BE011 /* News_Main.swift */,
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
 				42B859F11A74840F00FD4642 /* Login_MainViewController.swift */,
@@ -181,10 +178,10 @@
 				42B859EE1A74840F00FD4642 /* Cteemo.xcdatamodeld */,
 				42B85A3C1A74A0D800FD4642 /* Reachability.h */,
 				42B85A3D1A74A0D800FD4642 /* Reachability.m */,
+				42B85A3B1A74A0D700FD4642 /* Cteemo-Bridging-Header.h */,
 				42B85A471A74A9FC00FD4642 /* UserInformation.plist */,
 				42B85A131A74897A00FD4642 /* Images */,
 				42B859EA1A74840F00FD4642 /* Supporting Files */,
-				42B85A3B1A74A0D700FD4642 /* Cteemo-Bridging-Header.h */,
 			);
 			path = Cteemo;
 			sourceTree = "<group>";
@@ -217,6 +214,7 @@
 		42B85A131A74897A00FD4642 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A1B8E9641A7B215C009BE011 /* Team */,
 				42B85A191A748C1500FD4642 /* Login */,
 				42B85A141A7489B700FD4642 /* StartPage */,
 			);
@@ -226,19 +224,6 @@
 		42B85A141A7489B700FD4642 /* StartPage */ = {
 			isa = PBXGroup;
 			children = (
-				A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */,
-				A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */,
-				A1B8E94C1A7B20F2009BE011 /* 我.png */,
-				A1B8E94D1A7B20F2009BE011 /* 我2.png */,
-				A1B8E94E1A7B20F2009BE011 /* 新闻1.png */,
-				A1B8E94F1A7B20F2009BE011 /* 形状 14.png */,
-				A1B8E9501A7B20F2009BE011 /* 战队1.png */,
-				A1B8E9511A7B20F2009BE011 /* 战队2.png */,
-				A1B8E9521A7B20F2009BE011 /* flag 拷贝 2.png */,
-				A1B8E9531A7B20F2009BE011 /* Forma 1.png */,
-				A1B8E9541A7B20F2009BE011 /* hentiao.png */,
-				A1B8E9551A7B20F2009BE011 /* hentiao2.png */,
-				A1B8E9561A7B20F2009BE011 /* OK.png */,
 				42B85A151A7489CF00FD4642 /* loading_page.png */,
 			);
 			name = StartPage;
@@ -261,6 +246,26 @@
 				42B85A221A748CDB00FD4642 /* SUBMIT.png */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		A1B8E9641A7B215C009BE011 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */,
+				A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */,
+				A1B8E94C1A7B20F2009BE011 /* 我.png */,
+				A1B8E94D1A7B20F2009BE011 /* 我2.png */,
+				A1B8E94E1A7B20F2009BE011 /* 新闻1.png */,
+				A1B8E94F1A7B20F2009BE011 /* 形状 14.png */,
+				A1B8E9501A7B20F2009BE011 /* 战队1.png */,
+				A1B8E9511A7B20F2009BE011 /* 战队2.png */,
+				A1B8E9521A7B20F2009BE011 /* flag 拷贝 2.png */,
+				A1B8E9531A7B20F2009BE011 /* Forma 1.png */,
+				A1B8E9541A7B20F2009BE011 /* hentiao.png */,
+				A1B8E9551A7B20F2009BE011 /* hentiao2.png */,
+				A1B8E9561A7B20F2009BE011 /* OK.png */,
+			);
+			name = Team;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -397,7 +402,6 @@
 				42B85A461A74A81A00FD4642 /* InteractingWithServer.swift in Sources */,
 				42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */,
 				42B859F01A74840F00FD4642 /* Cteemo.xcdatamodeld in Sources */,
-				A1B8E92B1A7AFE41009BE011 /* News_Main.swift in Sources */,
 				42B85A441A74A81A00FD4642 /* UserInformation.swift in Sources */,
 				42B859ED1A74840F00FD4642 /* AppDelegate.swift in Sources */,
 				42B85A451A74A81A00FD4642 /* DataManager.swift in Sources */,

@@ -62,7 +62,6 @@ class InteractingWithServer: NSObject {
         InteractingWithServer.connectASynchoronous("/profile", info: result, method:"GET", returnView: nil)
         
     }
-
     
     class func connectASynchoronous(suffix: String ,info:[String: AnyObject], method:String, returnView: UIViewController?){
         
