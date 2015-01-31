@@ -9,7 +9,11 @@
 import UIKit
 
 class Login_CreateViewController: UIViewController, UITextFieldDelegate, RequestResultDelegate{
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> FETCH_HEAD
     
     
     @IBOutlet var bg : UIImageView!
@@ -46,6 +50,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate, Request
             startLoading()
             
         }else if password.text == nil{
+<<<<<<< HEAD
             displaySpeaker("Password Invalid")
         }else if email.text == nil || email.text.rangeOfString("@")?.isEmpty == nil{
             displaySpeaker("Email Invalid")
@@ -53,17 +58,27 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate, Request
         else if nickname.text == nil{
             displaySpeaker("Fill your Nickname please ~ ")
         
+=======
+            displaySpeaker("password invalid")
+        }else if email.text == nil || email.text.rangeOfString("@")?.isEmpty == nil{
+            displaySpeaker("email invalid")
+>>>>>>> FETCH_HEAD
         }
         
         
     }
     
     func gotResult(prefix:String ,result: [String: AnyObject]){
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> FETCH_HEAD
         stopLoading()
         
         println(result)
         
+<<<<<<< HEAD
         
         
         
@@ -71,6 +86,12 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate, Request
             println("OK")
             UserInfo.setUserData(email.text, name: nickname.text, accessToken: "", id: "")
             
+=======
+        if result["success"] as Bool {
+            println("OK")
+            UserInfo.setUserData(email.text, name: nickname.text, accessToken: result["token"] as String, id: "")
+    
+>>>>>>> FETCH_HEAD
             self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
             
         }else{
@@ -81,6 +102,8 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate, Request
             if((result["message"] as String).rangeOfString("Tried")?.isEmpty != nil){
                 displaySpeaker("Your Account Already Exist")
             }
+            //login fail
+            
             //login fail
             
         }
