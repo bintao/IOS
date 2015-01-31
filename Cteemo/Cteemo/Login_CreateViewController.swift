@@ -39,8 +39,13 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate, Request
     }
     
     @IBAction func signUpWithUserAndPa(sender: UIButton) {
+
+        // just for testing
         
-        if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != nil{
+        self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
+
+        
+       /* if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != nil{
             
             var req = ARequest(prefix: "/create_user", method: "POST", data: ["email": email.text, "password": password.text])
             
@@ -65,7 +70,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate, Request
 >>>>>>> FETCH_HEAD
         }
         
-        
+        */
     }
     
     func gotResult(prefix:String ,result: [String: AnyObject]){
