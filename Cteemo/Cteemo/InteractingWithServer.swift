@@ -39,7 +39,7 @@ class InteractingWithServer: NSObject {
     
 
     
-    class func connectASynchoronous(suffix: String ,info:[String: AnyObject], method:String, theRequest: ARequest){
+    class func connectASynchoronous(suffix: String ,info:[String: AnyObject], method:String, theRequest: ARequest, token: String?){
         
         var result:[String: AnyObject] = [String: AnyObject]()
         
@@ -55,6 +55,10 @@ class InteractingWithServer: NSObject {
         request.HTTPBody = jsonData//jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         request.HTTPMethod = method
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        
+        if token != nil && token != ""{
+            request.addValue(token, forHTTPHeaderField: "token")
+        }
         //println(request.description)
 
         var queue = NSOperationQueue()

@@ -18,22 +18,21 @@ class ARequest: NSObject {
   
     
     var delegate:RequestResultDelegate!
-
     var info: [String: AnyObject]!
     var method: String!
     var prefix: String!
     var result: [String: AnyObject]!
+    var token: String!
     
     init(prefix: String, method: String, data: [String: AnyObject]){
         super.init()
         self.method = method
         self.info = data
         self.prefix = prefix
-        
     }
     // send req
     func sendRequest(){
-        InteractingWithServer.connectASynchoronous(self.prefix, info: self.info, method: self.method, theRequest:self)
+        InteractingWithServer.connectASynchoronous(self.prefix, info: self.info, method: self.method, theRequest:self, token: self.token)
     }
     
     func gotResult(result: [String: AnyObject]){

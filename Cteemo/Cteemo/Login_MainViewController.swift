@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Login_MainViewController: UIViewController, FBLoginViewDelegate{
+class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestResultDelegate{
 
     @IBOutlet var bg : UIImageView!
 
@@ -32,8 +32,17 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
         
+        
+    
     }
-
+    
+    
+    
+    func gotResult(prefix:String ,result: [String: AnyObject]){
+        println(result)
+        
+        
+    }
     
     // get facebook portrait
     func getPotraitFromFacebook()->UIImage{
@@ -64,11 +73,12 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     }
 
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
-        println(user)
-        
+       println(user)
         var myToken = FBSession.activeSession().accessTokenData.accessToken
-
-        println(myToken)
+        
+      print(myToken)
+        
+        
         //login successful
         
         //UserInfo.setUserData(user.objectForKey("email") as String, name: user.name + " " + user.first_name, accessToken: "", id: user.objectID)

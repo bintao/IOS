@@ -8,11 +8,8 @@
 
 import UIKit
 
-<<<<<<< HEAD
-class Login_CreateViewController: UIViewController, UITextFieldDelegate , RequestResultDelegate{
-=======
-class Login_CreateViewController: UIViewController, UITextFieldDelegate {
->>>>>>> FETCH_HEAD
+class Login_CreateViewController: UIViewController, UITextFieldDelegate, RequestResultDelegate{
+    
     
     
     @IBOutlet var bg : UIImageView!
@@ -20,7 +17,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var email : UITextField!
     @IBOutlet var password : UITextField!
     @IBOutlet var nickname : UITextField!
-
+    
     @IBOutlet var back : UIButton!
     
     @IBOutlet var signup : UIButton!
@@ -34,7 +31,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         //add tap gesture to board
         self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "backGroundTapped:"))
-
+        
     }
     
     @IBAction func signUpWithUserAndPa(sender: UIButton) {
@@ -46,47 +43,63 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate {
             req.delegate = self
             req.sendRequest()
             
+            startLoading()
             
+        }else if password.text == nil{
+            displaySpeaker("Password Invalid")
+        }else if email.text == nil || email.text.rangeOfString("@")?.isEmpty == nil{
+            displaySpeaker("Email Invalid")
         }
-        else if(email.text==nil||email.text.rangeOfString("@")?.isEmpty == nil){
-            println("invalid Email")
-        }
-        else {
-            println("invalid Password")
+        else if nickname.text == nil{
+            displaySpeaker("Fill your Nickname please ~ ")
+        
         }
         
         
     }
     
-    
     func gotResult(prefix:String ,result: [String: AnyObject]){
+        
+        stopLoading()
+        
         println(result)
-        if (result["status"] as String == "success") {
+        
+        
+        
+        
+        if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {
             println("OK")
-            UserInfo.setUserData(email.text, name: "", accessToken: result["token"] as String, id: "")
+            UserInfo.setUserData(email.text, name: nickname.text, accessToken: "", id: "")
+            
+            self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
+            
+        }else{
+            if((result["message"] as String).rangeOfString("Validation")?.isEmpty != nil){
+                displaySpeaker("Invalid Email")
+            }
+            
+            if((result["message"] as String).rangeOfString("Tried")?.isEmpty != nil){
+                displaySpeaker("Your Account Already Exist")
+            }
+            //login fail
+            
+        }
+        
+        
+    }
+    func signUpResult(result: [String: AnyObject]){
+        println(result)
+        
+        if (result["status"] as String == "success"){
+            
+            UserInfo.setUserData(email.text, name: nickname.text, accessToken: result["token"] as String, id: "")
             
             UserInfo.downloadUserInfo()
             
-        }else{
-            
-            
         }
-
-        
     }
-        func signUpResult(result: [String: AnyObject]){
-            println(result)
-            
-            if (result["status"] as String == "success"){
-                
-                UserInfo.setUserData(email.text, name: nickname.text, accessToken: result["token"] as String, id: "")
-                
-                UserInfo.downloadUserInfo()
-                
-            }
-        }
-
-  
+    
+    
     // display the speaker on teemo
     func displaySpeaker(text: String){
         
@@ -159,7 +172,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate {
         self.view.sendSubviewToBack(loadingView)
         self.loading.stopAnimating()
     }
-
+    
     
     
     
