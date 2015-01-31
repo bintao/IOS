@@ -11,6 +11,7 @@ import UIKit
 class Login_CreateViewController: UIViewController, UITextFieldDelegate, RequestResultDelegate{
     
     
+    
     @IBOutlet var bg : UIImageView!
     
     @IBOutlet var email : UITextField!
@@ -34,12 +35,8 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate, Request
     }
     
     @IBAction func signUpWithUserAndPa(sender: UIButton) {
-
-        // just for testing
         
-
-        
-       if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != nil{
+        if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != ""{
             
             var req = ARequest(prefix: "/create_user", method: "POST", data: ["email": email.text, "password": password.text])
             
@@ -55,15 +52,20 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate, Request
         }
         else if nickname.text == ""{
             displaySpeaker("Fill your Nickname please ~ ")
+        
         }
+        
         
     }
     
     func gotResult(prefix:String ,result: [String: AnyObject]){
-
+        
         stopLoading()
         
         println(result)
+        
+        
+        
         
         if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {
             println("OK")
@@ -79,8 +81,6 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate, Request
             if((result["message"] as String).rangeOfString("Tried")?.isEmpty != nil){
                 displaySpeaker("Your Account Already Exist")
             }
-            //login fail
-            
             //login fail
             
         }

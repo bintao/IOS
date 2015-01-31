@@ -36,7 +36,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    //logincelkjwerc
+    //login
     @IBAction func loginWithUserAndPass(){
         if  (password.text != nil) && email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil {
 
@@ -47,14 +47,14 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             startLoading()
         }else{
             //login failed
-            if password.text == ""{
+            if password.text == nil{
                 displaySpeaker("password is empty")
             }else if email.text.rangeOfString("@")?.isEmpty != nil{
                 displaySpeaker("email is invalid")
-            }else if email.text != ""{
+            }else if email.text != nil{
                 displaySpeaker("email is empty")
             }
-
+        
         }
     }
 
