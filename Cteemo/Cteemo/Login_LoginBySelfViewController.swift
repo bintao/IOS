@@ -36,7 +36,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
         // Do any additional setup after loading the view, typically from a nib.
     }
 
-    //login
+    //logincelkjwerc
     @IBAction func loginWithUserAndPass(){
         if  (password.text != nil) && email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil {
 
