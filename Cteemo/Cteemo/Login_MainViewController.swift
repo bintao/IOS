@@ -38,12 +38,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
     
     
     
-    func gotResult(prefix:String ,result: [String: AnyObject]){
-        println(result)
-        
-        
-    }
-    
+   
     // get facebook portrait
     func getPotraitFromFacebook()->UIImage{
         
@@ -72,19 +67,29 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
         println(error)
     }
 
-    func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!) {
-       println(user)
+    func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!)
+    {
+       
         var myToken = FBSession.activeSession().accessTokenData.accessToken
+        println(user.objectID)
+        println(myToken)
         
-      print(myToken)
+        var req = ARequest(prefix: "/fb_login", method: "POST", data: ["fbtoken": myToken, "fbid": user.objectID])
+        req.delegate = self
+        req.sendRequest()
         
         
-        //login successful
+        //login 
         
         //UserInfo.setUserData(user.objectForKey("email") as String, name: user.name + " " + user.first_name, accessToken: "", id: user.objectID)
         
     }
     
+    func gotResult(prefix:String ,result: [String: AnyObject]){
+        println(result)
+        
+        
+    }
     
     @IBAction func returnToLoginMain(segue : UIStoryboardSegue) {
         
