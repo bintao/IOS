@@ -58,12 +58,15 @@ class InteractingWithServer: NSObject {
         
         if token != nil && token != ""{
             request.addValue(token, forHTTPHeaderField: "token")
+            println("dd")
         }
         //println(request.description)
 
         var queue = NSOperationQueue()
-        
+
         NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
+            
+            
             if data != nil && data.length > 0 && error == nil{
                 
                 if let httpResponse = response as? NSHTTPURLResponse {

@@ -40,6 +40,7 @@ class ARequest: NSObject {
         self.result = result
         
         self.delegate.gotResult(self.prefix, result: result)
+        
     }
 
 }

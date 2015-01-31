@@ -15,13 +15,19 @@ class UserInformation: NSObject ,RequestResultDelegate {
    
     var email: String = ""
     var name: String = ""
-    var id: String = ""
+    var fbid: String = ""
     var accessToken: String = ""
-    var password: String = ""
+    var lolID: String = ""
+    var gender: String = ""
+    var school: String = ""
+    var intro: String = ""
+
+    
+    var icon: UIImage!
     
     //check if the user is logined
     func userIsLogined()->Bool{
-        if email == "" || name == "" || id == "" || accessToken == "" {
+        if email == "" || name == "" || accessToken == "" {
             return false
         }else{
             return true
@@ -32,18 +38,38 @@ class UserInformation: NSObject ,RequestResultDelegate {
     func setUp(){
         
         var data:[String: AnyObject] = DataManager.getUserInfo()
-        name = data["name"] as String
-        id = data["userid"] as String
-        accessToken = data["accessToken"] as String
+        setUserData(data)
         
     }
+    
+    //change user data and save
+
+    func setUserData(data: [String: AnyObject]){
+        
+        name = data["name"] as String
+        fbid = data["fbid"] as String
+        accessToken = data["accessToken"] as String
+        email = data["email"] as String
+        lolID = data["lolID"] as String
+        gender = data["gender"] as String
+        school = data["school"] as String
+        intro = data["intro"] as String
+        
+        saveUserData()
+    }
+    
+    func packaging()->[String: AnyObject]{
+        var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "lolID": lolID, "school": school]
+        return data
+    }
+    
     func gotResult(prefix: String, result: [String : AnyObject]) {
         println(result)
     }
     //upload user information to the server
    
     func uploadUserInfo(){
-        var data:[String: AnyObject] = ["name": name, "id": id, "accessToken": accessToken, "email": email]
+
     }
     
     //download user information from the server
@@ -56,27 +82,24 @@ class UserInformation: NSObject ,RequestResultDelegate {
         req.sendRequest()
     }
     
-    //change user data and save
-    func setUserData(email: String, name: String, accessToken:String, id: String){
-        self.email = email
-        self.name = name
-        self.accessToken = accessToken
-        self.id = id
-        
-        saveUserData()
-    }
-    
     //Save User Data to local
     
     func saveUserData(){
-        var data:[String: AnyObject] = ["name":name,"accessToken":accessToken,"id":id,"email":email]
+        var data:[String: AnyObject] = packaging()
         DataManager.saveUserInfoToLocal(data)
     }
     
     //user logout, remove all local data
     func cleanUserData(){
-        var data:[String: AnyObject] = ["name":"","accessToken":"","id":"","email":""]
-        DataManager.saveUserInfoToLocal(data)
+        email = ""
+        name = ""
+        fbid = ""
+        accessToken = ""
+        lolID = ""
+        gender = ""
+        school = ""
+        intro = ""
+        DataManager.saveUserInfoToLocal(packaging())
     }
     
 }

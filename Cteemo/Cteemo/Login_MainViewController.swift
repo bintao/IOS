@@ -32,12 +32,43 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
     
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
         
+
+        var myToken = FBSession.activeSession().accessTokenData.accessToken
+        var fbid: String = ""
         
-    
+        FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
+            if !(error != nil)
+            {
+                fbid = result.objectForKey("id") as String
+                println("@@@@@")
+            }
+            else
+            {
+                println("Error")
+            }
+        })
+        
+        var req =  ARequest(prefix: "/fb_login", method: "POST", data: ["fbtoken": myToken, "fbid": fbid])
+        req.delegate = self
+        req.sendRequest()
+        
     }
     
     
-    
+    func getFriends(){
+        FBRequestConnection.startForMyFriendsWithCompletionHandler({ (connection, result, error: NSError!) -> Void in
+            if error == nil {
+                var friendObjects = result["data"] as [NSDictionary]
+                for friendObject in friendObjects {
+                    println(friendObject["id"] as NSString)
+                }
+                println("\(friendObjects.count)")
+            } else {
+                println("Error requesting friends list form facebook")
+                println("\(error)")
+            }
+        })
+    }
    
     // get facebook portrait
     func getPotraitFromFacebook()->UIImage{
@@ -69,15 +100,13 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
 
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!)
     {
-       
-        var myToken = FBSession.activeSession().accessTokenData.accessToken
-        println(user.objectID)
-        println(myToken)
-        
-        var req = ARequest(prefix: "/fb_login", method: "POST", data: ["fbtoken": myToken, "fbid": user.objectID])
-        req.delegate = self
-        req.sendRequest()
-        
+       //save and update user data
+        UserInfo.fbid = user.objectForKey("id") as String
+        UserInfo.email = user.objectForKey("email") as String
+        UserInfo.gender = user.objectForKey("gender") as String
+        UserInfo.name = user.name
+
+
         
         //login 
         
@@ -87,7 +116,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
     
     func gotResult(prefix:String ,result: [String: AnyObject]){
         println(result)
-        
         
     }
     
