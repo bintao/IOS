@@ -9,11 +9,6 @@
 import UIKit
 
 class Login_CreateViewController: UIViewController, UITextFieldDelegate, RequestResultDelegate{
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> FETCH_HEAD
     
     
     @IBOutlet var bg : UIImageView!
@@ -42,10 +37,9 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate, Request
 
         // just for testing
         
-        self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
 
         
-       /* if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != nil{
+       if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != nil{
             
             var req = ARequest(prefix: "/create_user", method: "POST", data: ["email": email.text, "password": password.text])
             
@@ -54,49 +48,27 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate, Request
             
             startLoading()
             
-        }else if password.text == nil{
-<<<<<<< HEAD
+        }else if password.text == ""{
             displaySpeaker("Password Invalid")
-        }else if email.text == nil || email.text.rangeOfString("@")?.isEmpty == nil{
+        }else if email.text == "" || email.text.rangeOfString("@")?.isEmpty == nil{
             displaySpeaker("Email Invalid")
         }
-        else if nickname.text == nil{
+        else if nickname.text == ""{
             displaySpeaker("Fill your Nickname please ~ ")
-        
-=======
-            displaySpeaker("password invalid")
-        }else if email.text == nil || email.text.rangeOfString("@")?.isEmpty == nil{
-            displaySpeaker("email invalid")
->>>>>>> FETCH_HEAD
         }
         
-        */
     }
     
     func gotResult(prefix:String ,result: [String: AnyObject]){
-<<<<<<< HEAD
-        
-=======
 
->>>>>>> FETCH_HEAD
         stopLoading()
         
         println(result)
-        
-<<<<<<< HEAD
-        
-        
         
         if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {
             println("OK")
             UserInfo.setUserData(email.text, name: nickname.text, accessToken: "", id: "")
             
-=======
-        if result["success"] as Bool {
-            println("OK")
-            UserInfo.setUserData(email.text, name: nickname.text, accessToken: result["token"] as String, id: "")
-    
->>>>>>> FETCH_HEAD
             self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
             
         }else{

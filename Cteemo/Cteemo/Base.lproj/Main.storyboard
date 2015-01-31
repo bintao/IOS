@@ -635,8 +635,7 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
-<<<<<<< HEAD
-=======
+
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bvT-f8-KOJ" userLabel="back">
                                 <rect key="frame" x="26" y="10" width="69" height="63"/>
                                 <constraints>
@@ -650,23 +649,18 @@
                                     <segue destination="RDT-EZ-jMC" kind="unwind" unwindAction="returnToLoginMain:" id="b7r-IU-CtU"/>
                                 </connections>
                             </button>
->>>>>>> FETCH_HEAD
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Jaz-Mc-47v" firstAttribute="bottom" secondItem="fsd-6F-wiq" secondAttribute="bottom" constant="-80" id="4Q6-Cc-1AF"/>
                             <constraint firstAttribute="centerY" secondItem="Rzm-Ne-k2Q" secondAttribute="centerY" constant="-160" id="7A0-cI-SZa"/>
                             <constraint firstItem="Jaz-Mc-47v" firstAttribute="leading" secondItem="fsd-6F-wiq" secondAttribute="leading" id="DDt-d5-ua7"/>
-<<<<<<< HEAD
-                            <constraint firstItem="W8U-tW-eJH" firstAttribute="top" secondItem="QGn-iI-4Cu" secondAttribute="bottom" id="LJb-Wh-JSE"/>
-                            <constraint firstItem="QGn-iI-4Cu" firstAttribute="leading" secondItem="2KZ-sM-RiY" secondAttribute="leading" id="PaZ-xK-ocz"/>
-=======
+
                             <constraint firstItem="bvT-f8-KOJ" firstAttribute="leading" secondItem="2KZ-sM-RiY" secondAttribute="leadingMargin" id="F2m-zf-Z0j"/>
                             <constraint firstItem="W8U-tW-eJH" firstAttribute="top" secondItem="QGn-iI-4Cu" secondAttribute="bottom" id="LJb-Wh-JSE"/>
                             <constraint firstItem="bvT-f8-KOJ" firstAttribute="leading" secondItem="2KZ-sM-RiY" secondAttribute="leading" constant="10" id="Nsp-Kj-Tmq"/>
                             <constraint firstItem="QGn-iI-4Cu" firstAttribute="leading" secondItem="2KZ-sM-RiY" secondAttribute="leading" id="PaZ-xK-ocz"/>
                             <constraint firstItem="bvT-f8-KOJ" firstAttribute="top" secondItem="2KZ-sM-RiY" secondAttribute="topMargin" constant="10" id="UKu-e4-gzc"/>
->>>>>>> FETCH_HEAD
                             <constraint firstAttribute="trailing" secondItem="QGn-iI-4Cu" secondAttribute="trailing" id="eyB-YF-eFP"/>
                             <constraint firstAttribute="centerX" secondItem="fsd-6F-wiq" secondAttribute="centerX" id="kPu-vq-1yV"/>
                             <constraint firstItem="fsd-6F-wiq" firstAttribute="bottom" secondItem="Rzm-Ne-k2Q" secondAttribute="bottom" constant="-100" id="ljc-rD-8HT"/>
@@ -677,24 +671,16 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-<<<<<<< HEAD
-=======
                                 <exclude reference="F2m-zf-Z0j"/>
->>>>>>> FETCH_HEAD
                                 <exclude reference="ljc-rD-8HT"/>
                             </mask>
                         </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tZ-nF-zbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-<<<<<<< HEAD
-            </objects>
-            <point key="canvasLocation" x="1203" y="-1388"/>
-=======
                 <exit id="RDT-EZ-jMC" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1025" y="-1392"/>
->>>>>>> FETCH_HEAD
         </scene>
     </scenes>
     <resources>

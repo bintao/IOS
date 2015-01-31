@@ -38,11 +38,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
 
     //login
     @IBAction func loginWithUserAndPass(){
-<<<<<<< HEAD
         if  (password.text != nil) && email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil {
-=======
-        if email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil && password.text != nil{
->>>>>>> FETCH_HEAD
 
             var req = ARequest(prefix: "/login", method: "POST", data: ["email": email.text, "password": password.text])
             req.delegate = self
@@ -51,17 +47,14 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             startLoading()
         }else{
             //login failed
-            if password.text == nil{
+            if password.text == ""{
                 displaySpeaker("password is empty")
             }else if email.text.rangeOfString("@")?.isEmpty != nil{
                 displaySpeaker("email is invalid")
-            }else if email.text != nil{
+            }else if email.text != ""{
                 displaySpeaker("email is empty")
             }
-<<<<<<< HEAD
-        
-=======
->>>>>>> FETCH_HEAD
+
         }
     }
 
