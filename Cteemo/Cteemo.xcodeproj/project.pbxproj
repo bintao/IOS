@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4215A6701A7B45E1002EB62E /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4215A66F1A7B45E1002EB62E /* speaker.png */; };
+		4215A6721A7D7616002EB62E /* API in Resources */ = {isa = PBXBuildFile; fileRef = 4215A6711A7D7616002EB62E /* API */; };
 		42B859ED1A74840F00FD4642 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B859EC1A74840F00FD4642 /* AppDelegate.swift */; };
 		42B859F01A74840F00FD4642 /* Cteemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42B859EE1A74840F00FD4642 /* Cteemo.xcdatamodeld */; };
 		42B859F21A74840F00FD4642 /* Login_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B859F11A74840F00FD4642 /* Login_MainViewController.swift */; };
@@ -69,6 +70,7 @@
 
 /* Begin PBXFileReference section */
 		4215A66F1A7B45E1002EB62E /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
+		4215A6711A7D7616002EB62E /* API */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API; sourceTree = "<group>"; };
 		42B859E71A74840F00FD4642 /* Cteemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cteemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B859EB1A74840F00FD4642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42B859EC1A74840F00FD4642 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -169,6 +171,7 @@
 		42B859E91A74840F00FD4642 /* Cteemo */ = {
 			isa = PBXGroup;
 			children = (
+				4215A6711A7D7616002EB62E /* API */,
 				42B859EC1A74840F00FD4642 /* AppDelegate.swift */,
 				42B859F31A74840F00FD4642 /* Main.storyboard */,
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
@@ -363,6 +366,7 @@
 				A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */,
 				42B85A291A748CDB00FD4642 /* me_icons1.png in Resources */,
 				42B85A271A748CDB00FD4642 /* Inkinesss.png in Resources */,
+				4215A6721A7D7616002EB62E /* API in Resources */,
 				A1B8E9631A7B20F2009BE011 /* OK.png in Resources */,
 				42B85A251A748CDB00FD4642 /* button.png in Resources */,
 				42B85A241A748CDB00FD4642 /* backG.png in Resources */,

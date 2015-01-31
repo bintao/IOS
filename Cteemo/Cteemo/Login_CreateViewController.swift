@@ -69,7 +69,10 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate, Request
         
         if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {
             println("OK")
-            UserInfo.setUserData(email.text, name: nickname.text, accessToken: "", id: "")
+            
+            UserInfo.email = email.text
+            UserInfo.name = nickname.text
+            UserInfo.saveUserData()
             
             self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
             
@@ -92,7 +95,8 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate, Request
         
         if (result["status"] as String == "success"){
             
-            UserInfo.setUserData(email.text, name: nickname.text, accessToken: result["token"] as String, id: "")
+            UserInfo.accessToken = result["token"] as String
+            UserInfo.saveUserData()
             
             UserInfo.downloadUserInfo()
             

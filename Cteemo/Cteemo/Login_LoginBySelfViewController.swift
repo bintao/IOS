@@ -47,7 +47,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             startLoading()
         }else{
             //login failed
-            if password.text == nil{
+            if password.text == ""{
                 displaySpeaker("password is empty")
             }else if email.text.rangeOfString("@")?.isEmpty != nil{
                 displaySpeaker("email is invalid")
@@ -65,8 +65,9 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             
             // login success
             
-            UserInfo.setUserData(email.text, name: "", accessToken: result["token"] as String, id: "")
-            
+            UserInfo.accessToken = result["token"] as String
+            UserInfo.saveUserData()
+
             UserInfo.downloadUserInfo()
             
         }else{
