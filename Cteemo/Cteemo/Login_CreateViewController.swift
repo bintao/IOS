@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Login_CreateViewController: UIViewController, UITextFieldDelegate, RequestResultDelegate{
+class Login_CreateViewController: UIViewController, UITextFieldDelegate{
     
     
     
