@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate, RequestResultDelegate{
 
@@ -25,7 +26,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
     
     @IBOutlet var teemoSpeaker : UIView!
     @IBOutlet var messageDisplay : UITextView!
-
+    
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -39,11 +40,21 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
     //login
     @IBAction func loginWithUserAndPass(){
         if  (password.text != nil) && email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil {
-
+            /*
             var req = ARequest(prefix: "/login", method: "POST", data: ["email": email.text, "password": password.text])
             req.delegate = self
             req.sendRequest()
+            */
+            let token = "eyJhbGciOiJIUzI1NiIsImV4cCI6MTQyMzEzMjM3MSwiaWF0IjoxNDIyNzcyMzcxfQ.IjU0Yzg5N2RjMDU1MWRjNTA2NjIwMWEzOSI.JlbJ-AZW7YaheyNYMTJ_NId-FAYhkBJgieweGEUgx2I"
+           /*
+            var re = Agent.post("http://54.149.235.253:5000/profile", headers: ["token" : token])
+             println(re.end())
+           */
             
+            var req = Alamofire.request(.POST, "http://54.149.235.253:5000/login", parameters: ["email": email.text, "password":password.text ])
+                .responseJSON { (_, _, JSON, _) in
+                    println(JSON)
+            }
             startLoading()
         }else{
             //login failed

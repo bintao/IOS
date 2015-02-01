@@ -77,9 +77,9 @@ class UserInformation: NSObject ,RequestResultDelegate {
     func downloadUserInfo(){
         //InteractingWithServer.getUserProfile(self.accessToken)
         
-        var req = ARequest(prefix: "/profile", method: "GET", data: ["token": self.accessToken])
+       /* var req = ARequest(prefix: "/profile", method: "GET", data: ["token": self.accessToken])
         req.delegate = self
-        req.sendRequest()
+        req.sendRequest()*/
     }
     
     //Save User Data to local
