@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestResultDelegate{
 
@@ -14,10 +15,9 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
 
     @IBOutlet var login : UIButton!
     @IBOutlet var signup : UIButton!
-
+    
     @IBOutlet var facebook : UIView!
-
-
+    var time = true;
     override func viewDidLoad(){
         super.viewDidLoad()
         
@@ -26,32 +26,33 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
         loginView.delegate = self
         loginView.frame.size = facebook.frame.size
         self.facebook.addSubview(loginView)
+        loginView.readPermissions = ["public_profile", "email", "user_friends"]
         
-        // Do any additional setup after loading the view, typically from a nib.
+                // Do any additional setup after loading the view, typically from a nib.
     }
     
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
-        
+    
+            if(!UserInfo.fbid.isEmpty && time )
+            {
+                
+                var myToken = FBSession.activeSession().accessTokenData.accessToken
+               /*
+                var req = Alamofire.request(.POST, "http://54.149.235.253:5000/fb_login", parameters: ["fbtoken": myToken, "fbid": UserInfo.fbid])
+                    .responseJSON { (_, _, JSON, _) in
+                        println(JSON)
+                }
+                */
+                
+               
+                println(UserInfo.fbid)
+                println(UserInfo.name)
+                println(UserInfo.email)
+                println(myToken)
+                time = false;
+            }
+     
 
-        var myToken = FBSession.activeSession().accessTokenData.accessToken
-        var fbid: String = ""
-        
-        FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
-            if !(error != nil)
-            {
-                fbid = result.objectForKey("id") as String
-                println("@@@@@")
-            }
-            else
-            {
-                println("Error")
-            }
-        })
-        
-        var req =  ARequest(prefix: "/fb_login", method: "POST", data: ["fbtoken": myToken, "fbid": fbid])
-        req.delegate = self
-        req.sendRequest()
-        
     }
     
     
@@ -62,7 +63,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
                 for friendObject in friendObjects {
                     println(friendObject["id"] as NSString)
                 }
-                println("\(friendObjects.count)")
             } else {
                 println("Error requesting friends list form facebook")
                 println("\(error)")
@@ -101,18 +101,28 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!)
     {
        //save and update user data
-        UserInfo.fbid = user.objectForKey("id") as String
-        UserInfo.email = user.objectForKey("email") as String
-        UserInfo.gender = user.objectForKey("gender") as String
-        UserInfo.name = user.name
+        
+        if UserInfo.fbid.isEmpty || UserInfo.gender.isEmpty||UserInfo.name.isEmpty{
+            
+            UserInfo.gender = user.objectForKey("gender") as String
+            UserInfo.name = user.name
+            UserInfo.fbid = user.objectForKey("id") as String
+           
+        }
 
-
+        if user.objectForKey("email") == nil{
+           UserInfo.email = ""
+        }else{
+           UserInfo.email = user.objectForKey("email") as String
+        }
         
         //login 
         
         //UserInfo.setUserData(user.objectForKey("email") as String, name: user.name + " " + user.first_name, accessToken: "", id: user.objectID)
         
     }
+    
+    
     
     func gotResult(prefix:String ,result: [String: AnyObject]){
         println(result)

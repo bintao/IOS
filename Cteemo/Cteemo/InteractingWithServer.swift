@@ -64,6 +64,7 @@ class InteractingWithServer: NSObject {
 
         var queue = NSOperationQueue()
 
+        
         NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
             
             
