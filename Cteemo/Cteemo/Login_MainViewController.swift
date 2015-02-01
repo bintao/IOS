@@ -53,7 +53,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
                 println(UserInfo.name)
                 println(UserInfo.email)
                 println(myToken)
-                time = false;
+                self.time = false;
             }
             else
             {
