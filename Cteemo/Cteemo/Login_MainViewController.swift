@@ -34,8 +34,8 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
         
 
         var myToken = FBSession.activeSession().accessTokenData.accessToken
-        var fbid: String = ""
-        
+        var fbid: String = UserInfo.fbid
+        println(fbid)
         FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
             if !(error != nil)
             {
