@@ -50,7 +50,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
         
         var req =  ARequest(prefix: "/fb_login", method: "POST", data: ["fbtoken": myToken, "fbid": fbid])
         req.delegate = self
-        req.sendRequest()
+        //req.sendRequest()
         
     }
     

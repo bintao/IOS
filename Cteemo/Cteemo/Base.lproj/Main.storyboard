@@ -404,7 +404,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YKE-ur-ag6" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="EOv-aU-VEf" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1730.5" y="-815.5"/>
+            <point key="canvasLocation" x="1826.5" y="-341.5"/>
         </scene>
         <!--Login Create View Controller-->
         <scene sceneID="2bj-h2-56j">
@@ -606,18 +606,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-Ne-k2Q">
-                                <rect key="frame" x="127" y="390" width="346" height="96"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="MpA-hT-laL"/>
-                                    <constraint firstAttribute="width" constant="280" id="itx-Fb-ADh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
-                                <state key="normal" title="SIGNUP" backgroundImage="SUBMIT.png">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="School" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jaz-Mc-47v">
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="School" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jaz-Mc-47v">
                                 <rect key="frame" x="182" y="159" width="240" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="y5L-aZ-sX0"/>
@@ -626,7 +615,7 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="League of Legend ID" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="fsd-6F-wiq">
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="League of Legend ID" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="fsd-6F-wiq">
                                 <rect key="frame" x="182" y="232" width="240" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="W0v-6e-Yw0"/>
@@ -635,9 +624,55 @@
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
                             </textField>
-                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11f-14-13N">
-                                <rect key="frame" x="182" y="303" width="110" height="53"/>
-                                <state key="normal" backgroundImage="textField.png">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kd8-xD-waI">
+                                <rect key="frame" x="177" y="305" width="250" height="60"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r6h-Ze-XtG">
+                                        <rect key="frame" x="137" y="5" width="110" height="50"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                        <state key="normal" title="Female" backgroundImage="textField.png">
+                                            <color key="titleColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" alpha="0.69999998807907104" contentMode="scaleToFill" fixedFrame="YES" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgN-vm-SvJ">
+                                        <rect key="frame" x="4" y="5" width="110" height="50"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                        <state key="normal" title="Male" backgroundImage="textField.png">
+                                            <color key="titleColor" red="0.80000001192092896" green="0.80000001192092896" blue="0.80000001192092896" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <state key="selected">
+                                            <color key="titleColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="7Dm-Rf-36f"/>
+                                    <constraint firstAttribute="width" constant="250" id="lcc-jT-ORB"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-Ne-k2Q">
+                                <rect key="frame" x="90" y="384" width="438" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="MpA-hT-laL"/>
+                                    <constraint firstAttribute="width" constant="280" id="itx-Fb-ADh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                <state key="normal" title="SUBMIT" backgroundImage="SUBMIT.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-Qi-IqW">
+                                <rect key="frame" x="232" y="20" width="140" height="140"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="97b-cG-dC7"/>
+                                    <constraint firstAttribute="height" constant="120" id="9b1-QV-lQV"/>
+                                </constraints>
+                                <state key="normal" image="PHOTO icons.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
@@ -645,28 +680,37 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Jaz-Mc-47v" firstAttribute="bottom" secondItem="fsd-6F-wiq" secondAttribute="bottom" constant="-80" id="4Q6-Cc-1AF"/>
-                            <constraint firstAttribute="centerY" secondItem="Rzm-Ne-k2Q" secondAttribute="centerY" constant="-160" id="7A0-cI-SZa"/>
+                            <constraint firstAttribute="centerY" secondItem="Rzm-Ne-k2Q" secondAttribute="centerY" constant="-180" id="7A0-cI-SZa"/>
+                            <constraint firstItem="Kd8-xD-waI" firstAttribute="bottom" secondItem="fsd-6F-wiq" secondAttribute="bottom" constant="80" id="81j-eH-rP4"/>
                             <constraint firstItem="Jaz-Mc-47v" firstAttribute="leading" secondItem="fsd-6F-wiq" secondAttribute="leading" id="DDt-d5-ua7"/>
                             <constraint firstItem="W8U-tW-eJH" firstAttribute="top" secondItem="QGn-iI-4Cu" secondAttribute="bottom" id="LJb-Wh-JSE"/>
+                            <constraint firstItem="Kd8-xD-waI" firstAttribute="trailing" secondItem="fsd-6F-wiq" secondAttribute="trailing" id="P2z-uX-Lsb"/>
                             <constraint firstItem="QGn-iI-4Cu" firstAttribute="leading" secondItem="2KZ-sM-RiY" secondAttribute="leading" id="PaZ-xK-ocz"/>
+                            <constraint firstItem="K2v-Qi-IqW" firstAttribute="bottom" secondItem="Jaz-Mc-47v" secondAttribute="bottom" constant="-80" id="TcM-6o-ODD"/>
+                            <constraint firstAttribute="centerX" secondItem="Rzm-Ne-k2Q" secondAttribute="centerX" id="Wab-M6-tfh"/>
+                            <constraint firstItem="Kd8-xD-waI" firstAttribute="top" secondItem="Rzm-Ne-k2Q" secondAttribute="top" constant="-100" id="Wm5-Ep-t9b"/>
                             <constraint firstAttribute="trailing" secondItem="QGn-iI-4Cu" secondAttribute="trailing" id="eyB-YF-eFP"/>
+                            <constraint firstItem="Jaz-Mc-47v" firstAttribute="top" relation="greaterThanOrEqual" secondItem="FKE-ic-Mf8" secondAttribute="bottom" constant="50" id="fmO-5P-2Zj"/>
                             <constraint firstAttribute="centerX" secondItem="fsd-6F-wiq" secondAttribute="centerX" id="kPu-vq-1yV"/>
                             <constraint firstItem="fsd-6F-wiq" firstAttribute="bottom" secondItem="Rzm-Ne-k2Q" secondAttribute="bottom" constant="-100" id="ljc-rD-8HT"/>
                             <constraint firstItem="QGn-iI-4Cu" firstAttribute="top" secondItem="2KZ-sM-RiY" secondAttribute="top" id="oLQ-Zm-oQW"/>
                             <constraint firstAttribute="centerX" secondItem="Rzm-Ne-k2Q" secondAttribute="centerX" id="q5B-dh-gLZ"/>
                             <constraint firstAttribute="centerX" secondItem="Jaz-Mc-47v" secondAttribute="centerX" id="vGM-Qc-Er6"/>
+                            <constraint firstAttribute="centerX" secondItem="K2v-Qi-IqW" secondAttribute="centerX" id="xAi-BK-Zpx"/>
                             <constraint firstItem="Jaz-Mc-47v" firstAttribute="trailing" secondItem="fsd-6F-wiq" secondAttribute="trailing" id="xwO-rn-ltG"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="fmO-5P-2Zj"/>
                                 <exclude reference="ljc-rD-8HT"/>
+                                <exclude reference="Wab-M6-tfh"/>
                             </mask>
                         </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tZ-nF-zbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1661" y="-1296"/>
+            <point key="canvasLocation" x="1691" y="-1060"/>
         </scene>
     </scenes>
     <resources>
