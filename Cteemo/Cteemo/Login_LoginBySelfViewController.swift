@@ -45,12 +45,6 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             req.delegate = self
             req.sendRequest()
             */
-            let token = "eyJhbGciOiJIUzI1NiIsImV4cCI6MTQyMzEzMjM3MSwiaWF0IjoxNDIyNzcyMzcxfQ.IjU0Yzg5N2RjMDU1MWRjNTA2NjIwMWEzOSI.JlbJ-AZW7YaheyNYMTJ_NId-FAYhkBJgieweGEUgx2I"
-           /*
-            var re = Agent.post("http://54.149.235.253:5000/profile", headers: ["token" : token])
-             println(re.end())
-           */
-            
             var req = Alamofire.request(.POST, "http://54.149.235.253:5000/login", parameters: ["email": email.text, "password":password.text ])
                 .responseJSON { (_, _, JSON, _) in
                     println(JSON)

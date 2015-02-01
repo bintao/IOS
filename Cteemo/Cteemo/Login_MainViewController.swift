@@ -40,11 +40,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
         FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
             if !(error != nil)
             {
-                fbid = result.objectForKey("id") as String
-                println("@@@@@")
-            }
-            else
-            {
                 
                 var myToken = FBSession.activeSession().accessTokenData.accessToken
                /*
@@ -60,6 +55,10 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
                 println(UserInfo.email)
                 println(myToken)
                 time = false;
+            }
+            else
+            {
+                println("Error")
             }
         })
         
