@@ -45,9 +45,6 @@
 		A1010D4B1A7B385700256208 /* school.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D4A1A7B385700256208 /* school.png */; };
 		A10CA2971A7DE85600D69FAB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1710B751A7DE73900DE1F24 /* Alamofire.framework */; };
 		A10CA2981A7DE88300D69FAB /* Alamofire.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = A1710B751A7DE73900DE1F24 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A10CA2A71A7E012D00D69FAB /* Agent.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10CA2A61A7E012D00D69FAB /* Agent.swift */; };
-		A10CA2B31A7E0E0300D69FAB /* Agent.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A10CA2AE1A7E0D8800D69FAB /* Agent.framework */; };
-		A10CA2B41A7E0E1200D69FAB /* Agent.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = A10CA2AE1A7E0D8800D69FAB /* Agent.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */; };
 		A1B8E9581A7B20F2009BE011 /* 奖杯2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */; };
 		A1B8E9591A7B20F2009BE011 /* 我.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94C1A7B20F2009BE011 /* 我.png */; };
@@ -70,27 +67,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 42B859E61A74840E00FD4642;
 			remoteInfo = Cteemo;
-		};
-		A10CA2AD1A7E0D8800D69FAB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A10CA2A81A7E0D8800D69FAB /* Agent.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8A90A2A1193D5613001D7C92;
-			remoteInfo = Agent;
-		};
-		A10CA2AF1A7E0D8800D69FAB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A10CA2A81A7E0D8800D69FAB /* Agent.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 8A90A2AC193D5613001D7C92;
-			remoteInfo = AgentTests;
-		};
-		A10CA2B11A7E0DDA00D69FAB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A10CA2A81A7E0D8800D69FAB /* Agent.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 8A90A2A0193D5613001D7C92;
-			remoteInfo = Agent;
 		};
 		A1710B741A7DE73900DE1F24 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -136,7 +112,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				A10CA2B41A7E0E1200D69FAB /* Agent.framework in Copy Framework */,
 				A10CA2981A7DE88300D69FAB /* Alamofire.framework in Copy Framework */,
 			);
 			name = "Copy Framework";
@@ -187,8 +162,6 @@
 		A1010D461A7B2ACF00256208 /* ARequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARequest.swift; sourceTree = "<group>"; };
 		A1010D481A7B2F9100256208 /* school button icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "school button icon.png"; sourceTree = "<group>"; };
 		A1010D4A1A7B385700256208 /* school.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school.png; sourceTree = "<group>"; };
-		A10CA2A61A7E012D00D69FAB /* Agent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Agent.swift; sourceTree = "<group>"; };
-		A10CA2A81A7E0D8800D69FAB /* Agent.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Agent.xcodeproj; path = "../../../Downloads/agent-master 2/Agent.xcodeproj"; sourceTree = "<group>"; };
 		A1710B6D1A7DE73900DE1F24 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "../../../Downloads/Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯1.png"; sourceTree = "<group>"; };
 		A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯2.png"; sourceTree = "<group>"; };
@@ -210,7 +183,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A10CA2B31A7E0E0300D69FAB /* Agent.framework in Frameworks */,
 				A10CA2971A7DE85600D69FAB /* Alamofire.framework in Frameworks */,
 				42B85A3A1A749F6E00FD4642 /* FBAudienceNetwork.framework in Frameworks */,
 				42B85A381A749F6E00FD4642 /* Bolts.framework in Frameworks */,
@@ -237,7 +209,6 @@
 				42B859E91A74840F00FD4642 /* Cteemo */,
 				42B85A021A74840F00FD4642 /* CteemoTests */,
 				42B859E81A74840F00FD4642 /* Products */,
-				A10CA2A81A7E0D8800D69FAB /* Agent.xcodeproj */,
 				A1710B6D1A7DE73900DE1F24 /* Alamofire.xcodeproj */,
 			);
 			sourceTree = "<group>";
@@ -255,7 +226,6 @@
 			isa = PBXGroup;
 			children = (
 				4215A6711A7D7616002EB62E /* API */,
-				A10CA2A61A7E012D00D69FAB /* Agent.swift */,
 				42B859EC1A74840F00FD4642 /* AppDelegate.swift */,
 				42B859F31A74840F00FD4642 /* Main.storyboard */,
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
@@ -344,15 +314,6 @@
 			name = Login;
 			sourceTree = "<group>";
 		};
-		A10CA2A91A7E0D8800D69FAB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A10CA2AE1A7E0D8800D69FAB /* Agent.framework */,
-				A10CA2B01A7E0D8800D69FAB /* AgentTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		A1710B6E1A7DE73900DE1F24 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -399,7 +360,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				A10CA2B21A7E0DDA00D69FAB /* PBXTargetDependency */,
 				A1710B7D1A7DE7B400DE1F24 /* PBXTargetDependency */,
 			);
 			name = Cteemo;
@@ -456,10 +416,6 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = A10CA2A91A7E0D8800D69FAB /* Products */;
-					ProjectRef = A10CA2A81A7E0D8800D69FAB /* Agent.xcodeproj */;
-				},
-				{
 					ProductGroup = A1710B6E1A7DE73900DE1F24 /* Products */;
 					ProjectRef = A1710B6D1A7DE73900DE1F24 /* Alamofire.xcodeproj */;
 				},
@@ -473,20 +429,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		A10CA2AE1A7E0D8800D69FAB /* Agent.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Agent.framework;
-			remoteRef = A10CA2AD1A7E0D8800D69FAB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		A10CA2B01A7E0D8800D69FAB /* AgentTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AgentTests.xctest;
-			remoteRef = A10CA2AF1A7E0D8800D69FAB /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		A1710B751A7DE73900DE1F24 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -577,7 +519,6 @@
 				42B859F21A74840F00FD4642 /* Login_MainViewController.swift in Sources */,
 				42E5E78B1A773E56004A781E /* Login_LoginBySelfViewController.swift in Sources */,
 				42B85A121A74888500FD4642 /* Login_SchoolAndPhoto.swift in Sources */,
-				A10CA2A71A7E012D00D69FAB /* Agent.swift in Sources */,
 				42B85A461A74A81A00FD4642 /* InteractingWithServer.swift in Sources */,
 				42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */,
 				42B859F01A74840F00FD4642 /* Cteemo.xcdatamodeld in Sources */,
@@ -603,11 +544,6 @@
 			isa = PBXTargetDependency;
 			target = 42B859E61A74840E00FD4642 /* Cteemo */;
 			targetProxy = 42B85A001A74840F00FD4642 /* PBXContainerItemProxy */;
-		};
-		A10CA2B21A7E0DDA00D69FAB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Agent;
-			targetProxy = A10CA2B11A7E0DDA00D69FAB /* PBXContainerItemProxy */;
 		};
 		A1710B7D1A7DE7B400DE1F24 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
