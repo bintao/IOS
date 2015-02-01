@@ -59,6 +59,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4215A6751A7ED66D002EB62E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A10CA2C41A7ED5BC00D69FAB /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
 		42B85A001A74840F00FD4642 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 42B859DF1A74840E00FD4642 /* Project object */;
@@ -349,6 +356,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				4215A6761A7ED66D002EB62E /* PBXTargetDependency */,
 			);
 			name = Cteemo;
 			productName = Cteemo;
@@ -528,6 +536,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4215A6761A7ED66D002EB62E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = 4215A6751A7ED66D002EB62E /* PBXContainerItemProxy */;
+		};
 		42B85A011A74840F00FD4642 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 42B859E61A74840E00FD4642 /* Cteemo */;
