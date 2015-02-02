@@ -306,6 +306,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backG.png" translatesAutoresizingMaskIntoConstraints="NO" id="s4g-cE-sRP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xYq-Xg-Wue">
                                 <rect key="frame" x="127" y="390" width="346" height="96"/>
                                 <constraints>
@@ -402,10 +406,6 @@
                                     <outlet property="delegate" destination="XQx-ok-uBL" id="fec-lb-3Fj"/>
                                 </connections>
                             </textField>
-                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backG.png" translatesAutoresizingMaskIntoConstraints="NO" id="s4g-cE-sRP">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <gestureRecognizers/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -638,18 +638,6 @@
                                 <rect key="frame" x="9" y="6" width="600" height="600"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="League of Legend ID" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="fsd-6F-wiq">
-                                <rect key="frame" x="182" y="232" width="240" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="W0v-6e-Yw0"/>
-                                    <constraint firstAttribute="width" constant="250" id="ZMG-As-hAf"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="UYe-Qw-NJx" id="Ben-pk-tOX"/>
-                                </connections>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-Ne-k2Q">
                                 <rect key="frame" x="90" y="384" width="438" height="96"/>
                                 <constraints>
@@ -670,6 +658,9 @@
                                 <state key="normal" image="PHOTO icons.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="getPhoto:" destination="UYe-Qw-NJx" eventType="touchUpInside" id="u5X-s6-fMg"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="School" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="l4Q-0i-Kpt">
                                 <rect key="frame" x="182" y="168" width="240" height="50"/>
@@ -678,7 +669,7 @@
                                     <constraint firstAttribute="height" constant="60" id="pLQ-F3-JFS"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
-                                <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
                                 <connections>
                                     <outlet property="delegate" destination="UYe-Qw-NJx" id="US2-dD-n5g"/>
                                 </connections>
@@ -696,6 +687,18 @@
                                 </segments>
                                 <color key="tintColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
                             </segmentedControl>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="League of Legend ID" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="fsd-6F-wiq">
+                                <rect key="frame" x="182" y="232" width="240" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="W0v-6e-Yw0"/>
+                                    <constraint firstAttribute="width" constant="250" id="ZMG-As-hAf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no"/>
+                                <connections>
+                                    <outlet property="delegate" destination="UYe-Qw-NJx" id="Ben-pk-tOX"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -725,6 +728,8 @@
                     </view>
                     <connections>
                         <outlet property="addPhoto" destination="K2v-Qi-IqW" id="xr2-vq-rCE"/>
+                        <outlet property="bg" destination="0yt-ES-pKy" id="B0J-NI-00v"/>
+                        <outlet property="gender" destination="vu3-vO-HJm" id="Zq7-hO-O44"/>
                         <outlet property="lolID" destination="fsd-6F-wiq" id="1CP-MA-Ba3"/>
                         <outlet property="school" destination="l4Q-0i-Kpt" id="x8T-83-kr8"/>
                         <outlet property="submit" destination="Rzm-Ne-k2Q" id="dyr-1f-X17"/>

@@ -32,7 +32,7 @@ class Login_SchoolSearchViewController: UIViewController, UITextFieldDelegate , 
         
         var controller: Login_SchoolAndPhoto = segue.destinationViewController as Login_SchoolAndPhoto
         
-        controller.school.placeholder = self.chosenSchool as String
+        controller.school.text = self.chosenSchool as String
     }
     
 }
