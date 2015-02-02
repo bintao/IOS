@@ -1,21 +1,23 @@
 //
-//  Login_CreateViewController.swift
+//  forpassword.swift
 //  Cteemo
 //
-//  Created by Kedan Li on 15/1/24.
+//  Created by bintao on 15/2/2.
 //  Copyright (c) 2015年 Kedan Li. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 
-class Login_CreateViewController: UIViewController, UITextFieldDelegate{
+
+class Login_Forpassword: UIViewController, UITextFieldDelegate{
+    
+    
     
     @IBOutlet var bg : UIImageView!
     
     @IBOutlet var email : UITextField!
-    @IBOutlet var password : UITextField!
-    @IBOutlet var nickname : UITextField!
+   
     
     @IBOutlet var back : UIButton!
     
@@ -33,59 +35,45 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         
     }
     
-    @IBAction func signUpWithUserAndPa(sender: UIButton) {
+    @IBAction func submit_Password(sender: UIButton) {
         
-        self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
         
-        /*
-        if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != ""&&nickname.text != ""{
-            
-            var req = Alamofire.request(.POST, "http://54.149.235.253:5000/create_user", parameters: ["email": email.text, "password":password.text])
-                .responseJSON { (_, _, JSON, _) in
-                var result: [String: AnyObject] = JSON as [String: AnyObject]
-                self.gotCreateResult(result)
+        if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) {
+        
+        var req = Alamofire.request(.POST, "http://54.149.235.253:5000/forget_password", parameters: ["email": email.text])
+        .responseJSON { (_, _, JSON, _) in
+        var result: [String: AnyObject] = JSON as [String: AnyObject]
+        self.gotSubmitResult(result)
         }
-            
+        
         self.startLoading()
-       
+        
         }else if email.text == "" || email.text.rangeOfString("@")?.isEmpty == nil{
-            displaySpeaker("Email Invalid")
-        }
-        else if password.text == ""{
-            displaySpeaker("Password Invalid")
-        }
-        else if nickname.text == ""{
-            displaySpeaker("Fill your Nickname please ~ ")
+        displaySpeaker("Email Invalid")
         }
         
-    */
+        
+    
     }
     
-    func gotCreateResult(result: [String: AnyObject]){
+    func gotSubmitResult(result: [String: AnyObject]){
         
         stopLoading()
         
         println(result)
         
-        
+        // email with user
         if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {
             println("OK")
             
-            UserInfo.email = email.text
-            UserInfo.name = nickname.text
-            UserInfo.saveUserData()
             
-            self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
-            
-        }else{
+        }
+        //can't find email
+        else{
             if((result["message"] as String).rangeOfString("Validation")?.isEmpty != nil){
                 displaySpeaker("Invalid Email")
             }
             
-            if((result["message"] as String).rangeOfString("Tried")?.isEmpty != nil){
-                displaySpeaker("Your Account Already Exist")
-            }
-            //login fail
             
         }
         
@@ -134,22 +122,13 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == email{
             email.resignFirstResponder()
-            password.becomeFirstResponder()
-        }else if textField == password{
-            password.resignFirstResponder()
-            nickname.becomeFirstResponder()
-        }else if textField == nickname{
-            nickname.resignFirstResponder()
         }
-        
         return true
     }
     
     // background tapped
     func backGroundTapped(gestureRecognizer: UITapGestureRecognizer){
-        password.resignFirstResponder()
         email.resignFirstResponder()
-        nickname.resignFirstResponder()
         if teemoSpeaker.alpha != 0{
             disappearSpeaker()
         }
@@ -166,10 +145,6 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         self.view.sendSubviewToBack(loadingView)
         self.loading.stopAnimating()
     }
-    
-    
-    
-    
     
     
 }
