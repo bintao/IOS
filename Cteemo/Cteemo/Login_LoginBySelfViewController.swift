@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate, RequestResultDelegate{
+class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate{
 
     @IBOutlet var bg : UIImageView!
 
@@ -40,16 +40,15 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
     //login
     @IBAction func loginWithUserAndPass(){
         if  (password.text != nil) && email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil {
-            /*
-            var req = ARequest(prefix: "/login", method: "POST", data: ["email": email.text, "password": password.text])
-            req.delegate = self
-            req.sendRequest()
-            */
+
             var req = Alamofire.request(.POST, "http://54.149.235.253:5000/login", parameters: ["email": email.text, "password":password.text ])
                 .responseJSON { (_, _, JSON, _) in
-                    println(JSON)
-            }
-            startLoading()
+                    var result: [String: AnyObject] = JSON as [String: AnyObject]
+                    self.gotLoginResult(result)
+                    self.startLoading()
+                }
+            
+            
         }else{
             //login failed
             if password.text == ""{
@@ -63,27 +62,48 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
         }
     }
 
-    func gotResult(prefix:String ,result: [String: AnyObject]){
+    func gotLoginResult(result: [String: AnyObject]){
 
         stopLoading()
-        if result["success"] as Bool{
-            
+        
+        if result["token"]? as String != ""{
             // login success
             
             UserInfo.accessToken = result["token"] as String
+            
+            // Creating an Instance of the Alamofire Manager
+            var manager = Manager.sharedInstance
+            
+            // Specifying the Headers we need
+            manager.session.configuration.HTTPAdditionalHeaders = [
+                "token": UserInfo.accessToken
+            ]
+            //
+            var req = Alamofire.request(.GET, "http://54.149.235.253:5000/profile", parameters: nil)
+                .responseJSON { (_, _, JSON, _) in
+                    var result: [String: AnyObject] = JSON as [String: AnyObject]
+                    self.gotProfileResult(result)
+                    self.startLoading()
+            }
+            
             UserInfo.saveUserData()
 
             UserInfo.downloadUserInfo()
             
         }else{
-            
             //login error
-            
             displaySpeaker("email and password not match")
-            
         }
     }
 
+    func gotProfileResult(result: [String: AnyObject]){
+        
+        stopLoading()
+    println(result)
+        
+    }
+
+    
     // display the speaker on teemo
     func displaySpeaker(text: String){
         

@@ -8,6 +8,12 @@
 
 import UIKit
 
-class Login_SchoolSearchViewController: UIViewController {
+class Login_SchoolSearchViewController: UIViewController,UITextFieldDelegate {
 
+    @IBOutlet var school : UITextField!
+
+    override func viewDidLoad() {
+        //add tap gesture to board
+        
+    }
 }

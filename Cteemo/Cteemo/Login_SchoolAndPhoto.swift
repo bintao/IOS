@@ -10,9 +10,18 @@ import UIKit
 
 class Login_SchoolAndPhoto: UIViewController {
 
-    
-    @IBAction func returnSchoolAndPhoto(segue : UIStoryboardSegue) {
+    @IBOutlet var bg : UIImageView!
+    @IBOutlet var submit : UIButton!
+    @IBOutlet var skip : UIButton!
+    @IBOutlet var male : UIButton!
+    @IBOutlet var female : UIButton!
+    @IBOutlet var addPhoto : UIButton!
+
+    @IBOutlet var lolID : UITextField!
+    @IBOutlet var school : UITextField!
+
+    @IBAction func schoolAndPhoto(segue : UIStoryboardSegue) {
         
     }
-
+    
 }
