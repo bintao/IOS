@@ -42,7 +42,10 @@
 		A1010D471A7B2ACF00256208 /* ARequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010D461A7B2ACF00256208 /* ARequest.swift */; };
 		A1010D491A7B2F9100256208 /* school button icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D481A7B2F9100256208 /* school button icon.png */; };
 		A1010D4B1A7B385700256208 /* school.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D4A1A7B385700256208 /* school.png */; };
-		A14C00A71A7EF98A00998C9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14C00A61A7EF98A00998C9C /* Main.storyboard */; };
+		A14C00AE1A7F153F00998C9C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A14C00AD1A7F153F00998C9C /* Main.storyboard */; };
+		A14C00B11A7F236E00998C9C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E7F7451A7EE09B006BCFD1 /* Alamofire.framework */; };
+		A14C00B41A7F250300998C9C /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1E7F7451A7EE09B006BCFD1 /* Alamofire.framework */; };
+		A14C00B51A7F250300998C9C /* Alamofire.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = A1E7F7451A7EE09B006BCFD1 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */; };
 		A1B8E9581A7B20F2009BE011 /* 奖杯2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */; };
 		A1B8E9591A7B20F2009BE011 /* 我.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94C1A7B20F2009BE011 /* 我.png */; };
@@ -65,6 +68,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 42B859E61A74840E00FD4642;
 			remoteInfo = Cteemo;
+		};
+		A14C00AF1A7F236800998C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1E7F73D1A7EE09B006BCFD1 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
+		};
+		A14C00B61A7F250300998C9C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A1E7F73D1A7EE09B006BCFD1 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = "Alamofire iOS";
 		};
 		A1E7F7441A7EE09B006BCFD1 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -103,6 +120,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A14C00B51A7F250300998C9C /* Alamofire.framework in Copy Framework */,
 			);
 			name = "Copy Framework";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,7 +169,7 @@
 		A1010D461A7B2ACF00256208 /* ARequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARequest.swift; sourceTree = "<group>"; };
 		A1010D481A7B2F9100256208 /* school button icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "school button icon.png"; sourceTree = "<group>"; };
 		A1010D4A1A7B385700256208 /* school.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school.png; sourceTree = "<group>"; };
-		A14C00A61A7EF98A00998C9C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A14C00AD1A7F153F00998C9C /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯1.png"; sourceTree = "<group>"; };
 		A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯2.png"; sourceTree = "<group>"; };
 		A1B8E94C1A7B20F2009BE011 /* 我.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我.png"; sourceTree = "<group>"; };
@@ -173,8 +191,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A14C00B11A7F236E00998C9C /* Alamofire.framework in Frameworks */,
 				42B85A3A1A749F6E00FD4642 /* FBAudienceNetwork.framework in Frameworks */,
 				42B85A381A749F6E00FD4642 /* Bolts.framework in Frameworks */,
+				A14C00B41A7F250300998C9C /* Alamofire.framework in Frameworks */,
 				42B85A391A749F6E00FD4642 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -216,8 +236,8 @@
 			children = (
 				4215A6711A7D7616002EB62E /* API */,
 				42B859EC1A74840F00FD4642 /* AppDelegate.swift */,
+				A14C00AD1A7F153F00998C9C /* Main.storyboard */,
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
-				A14C00A61A7EF98A00998C9C /* Main.storyboard */,
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
 				42B859F11A74840F00FD4642 /* Login_MainViewController.swift */,
 				42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */,
@@ -349,6 +369,8 @@
 			buildRules = (
 			);
 			dependencies = (
+				A14C00B01A7F236800998C9C /* PBXTargetDependency */,
+				A14C00B71A7F250300998C9C /* PBXTargetDependency */,
 			);
 			name = Cteemo;
 			productName = Cteemo;
@@ -479,7 +501,7 @@
 				42B85A2D1A748D4E00FD4642 /* arrowTurned.png in Resources */,
 				A1B8E95D1A7B20F2009BE011 /* 战队1.png in Resources */,
 				42B85A2F1A74947E00FD4642 /* textField.png in Resources */,
-				A14C00A71A7EF98A00998C9C /* Main.storyboard in Resources */,
+				A14C00AE1A7F153F00998C9C /* Main.storyboard in Resources */,
 				A1B8E9621A7B20F2009BE011 /* hentiao2.png in Resources */,
 				42B85A2B1A748CDB00FD4642 /* SUBMIT.png in Resources */,
 				42B859F71A74840F00FD4642 /* Images.xcassets in Resources */,
@@ -532,6 +554,16 @@
 			isa = PBXTargetDependency;
 			target = 42B859E61A74840E00FD4642 /* Cteemo */;
 			targetProxy = 42B85A001A74840F00FD4642 /* PBXContainerItemProxy */;
+		};
+		A14C00B01A7F236800998C9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = A14C00AF1A7F236800998C9C /* PBXContainerItemProxy */;
+		};
+		A14C00B71A7F250300998C9C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Alamofire iOS";
+			targetProxy = A14C00B61A7F250300998C9C /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -629,6 +661,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -647,6 +680,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

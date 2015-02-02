@@ -7,10 +7,9 @@
 //
 
 import UIKit
+import Alamofire
 
 class Login_CreateViewController: UIViewController, UITextFieldDelegate{
-    
-    
     
     @IBOutlet var bg : UIImageView!
     
@@ -36,33 +35,30 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func signUpWithUserAndPa(sender: UIButton) {
         
-        self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
-        
-        //for testing
-        /*
-        if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != ""{
+        if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != ""&&nickname.text != ""{
             
-            var req = ARequest(prefix: "/create_user", method: "POST", data: ["email": email.text, "password": password.text])
+            var req = Alamofire.request(.POST, "http://54.149.235.253:5000/create_user", parameters: ["email": email.text, "password":password.text])
+                .responseJSON { (_, _, JSON, _) in
+                var result: [String: AnyObject] = JSON as [String: AnyObject]
+                self.gotCreateResult(result)
+        }
             
-            req.delegate = self
-            req.sendRequest()
-            
-            startLoading()
-            
-        }else if password.text == ""{
-            displaySpeaker("Password Invalid")
+        self.startLoading()
+       
         }else if email.text == "" || email.text.rangeOfString("@")?.isEmpty == nil{
             displaySpeaker("Email Invalid")
         }
+        else if password.text == ""{
+            displaySpeaker("Password Invalid")
+        }
         else if nickname.text == ""{
             displaySpeaker("Fill your Nickname please ~ ")
-        
         }
         
-        */
+    
     }
     
-    func gotResult(prefix:String ,result: [String: AnyObject]){
+    func gotCreateResult(result: [String: AnyObject]){
         
         stopLoading()
         
@@ -178,6 +174,8 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         self.view.sendSubviewToBack(loadingView)
         self.loading.stopAnimating()
     }
+    
+    
     
     
     

@@ -44,10 +44,11 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             var req = Alamofire.request(.POST, "http://54.149.235.253:5000/login", parameters: ["email": email.text, "password":password.text ])
                 .responseJSON { (_, _, JSON, _) in
                     var result: [String: AnyObject] = JSON as [String: AnyObject]
+                    println(result)
                     self.gotLoginResult(result)
-                    self.startLoading()
+                    
                 }
-            
+            self.startLoading()
             
         }else{
             //login failed
@@ -64,13 +65,14 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
 
     func gotLoginResult(result: [String: AnyObject]){
 
-        stopLoading()
+            stopLoading()
         
-        if result["token"]? as String != ""{
+             if result["token"]?  != nil{
             // login success
             
             UserInfo.accessToken = result["token"] as String
-            
+            UserInfo.email = email.text
+            println(email.text)
             // Creating an Instance of the Alamofire Manager
             var manager = Manager.sharedInstance
             
@@ -83,7 +85,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
                 .responseJSON { (_, _, JSON, _) in
                     var result: [String: AnyObject] = JSON as [String: AnyObject]
                     self.gotProfileResult(result)
-                    self.startLoading()
+                    
             }
             
             UserInfo.saveUserData()
@@ -91,15 +93,20 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             UserInfo.downloadUserInfo()
             
         }else{
-            //login error
-            displaySpeaker("email and password not match")
+                if((result["message"] as String).rangeOfString("password")?.isEmpty != nil){
+                    displaySpeaker("email and password not matched")
+                }
+                else
+                 {
+                    displaySpeaker("Your Account not activated. Please check your email")
+                }
         }
     }
 
     func gotProfileResult(result: [String: AnyObject]){
         
         stopLoading()
-    println(result)
+        println(result)
         
     }
 

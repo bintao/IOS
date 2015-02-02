@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestResultDelegate{
 
@@ -27,6 +28,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
         self.facebook.addSubview(loginView)
         loginView.readPermissions = ["public_profile", "email", "user_friends"]
         
+        
                 // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -41,8 +43,9 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
             {
                 
                 var myToken = FBSession.activeSession().accessTokenData.accessToken
-               /*
-                var req = Alamofire.request(.POST, "http://54.149.235.253:5000/fb_login", parameters: ["fbtoken": myToken, "fbid": UserInfo.fbid])
+                
+                /*
+                var req = Alamofire.request(.POST, "http://54.149.235.253:5000/fb_login", parameters: ["fbtoken": myToken, "fbid": UserInfo.fbid,"email":UserInfo.fbid+"@cteemo.com"])
                     .responseJSON { (_, _, JSON, _) in
                         println(JSON)
                 }

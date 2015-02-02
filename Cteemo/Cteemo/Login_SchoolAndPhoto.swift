@@ -22,6 +22,8 @@ class Login_SchoolAndPhoto: UIViewController {
 
     @IBAction func schoolAndPhoto(segue : UIStoryboardSegue) {
         
+        UserInfo.lolID = self.lolID.text
+        
     }
     
 }
