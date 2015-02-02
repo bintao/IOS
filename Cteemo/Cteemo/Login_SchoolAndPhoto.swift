@@ -18,11 +18,10 @@ class Login_SchoolAndPhoto: UIViewController {
     @IBOutlet var addPhoto : UIButton!
 
     @IBOutlet var lolID : UITextField!
-    @IBOutlet var school : UITextField!
+    @IBOutlet var school : UIButton!
 
     @IBAction func schoolAndPhoto(segue : UIStoryboardSegue) {
         
         
     }
-    
 }

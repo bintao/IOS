@@ -35,6 +35,9 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func signUpWithUserAndPa(sender: UIButton) {
         
+        self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
+        
+        /*
         if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != ""&&nickname.text != ""{
             
             var req = Alamofire.request(.POST, "http://54.149.235.253:5000/create_user", parameters: ["email": email.text, "password":password.text])
@@ -55,7 +58,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
             displaySpeaker("Fill your Nickname please ~ ")
         }
         
-    
+    */
     }
     
     func gotCreateResult(result: [String: AnyObject]){
