@@ -20,10 +20,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate {
     @IBOutlet var lolID : UITextField!
     @IBOutlet var school : UITextField!
 
-<<<<<<< HEAD
-    @IBAction func schoolAndPhoto(segue : UIStoryboardSegue) {
-        
-=======
+
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
 
         self.performSegueWithIdentifier("searchSchool", sender: self)
@@ -32,7 +29,6 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func returnToLoginSchoolAndPhoto(segue : UIStoryboardSegue) {
->>>>>>> FETCH_HEAD
         
     }
 }
