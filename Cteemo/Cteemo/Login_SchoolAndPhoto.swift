@@ -20,7 +20,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate {
     @IBOutlet var lolID : UITextField!
     @IBOutlet var school : UITextField!
 
-
+    
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
 
         self.performSegueWithIdentifier("searchSchool", sender: self)
