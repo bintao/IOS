@@ -9,7 +9,10 @@
 /* Begin PBXBuildFile section */
 		4215A6701A7B45E1002EB62E /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4215A66F1A7B45E1002EB62E /* speaker.png */; };
 		4215A6721A7D7616002EB62E /* API in Resources */ = {isa = PBXBuildFile; fileRef = 4215A6711A7D7616002EB62E /* API */; };
+<<<<<<< HEAD
 
+=======
+>>>>>>> FETCH_HEAD
 		428F6E711A7EFBC1007C21AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428F6E6F1A7EFBC1007C21AC /* Main.storyboard */; };
 		42B859ED1A74840F00FD4642 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B859EC1A74840F00FD4642 /* AppDelegate.swift */; };
 		42B859F01A74840F00FD4642 /* Cteemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42B859EE1A74840F00FD4642 /* Cteemo.xcdatamodeld */; };
@@ -71,6 +74,7 @@
 			remoteGlobalIDString = 42B859E61A74840E00FD4642;
 			remoteInfo = Cteemo;
 		};
+<<<<<<< HEAD
 		A14C00AF1A7F236800998C9C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = A1E7F73D1A7EE09B006BCFD1 /* Alamofire.xcodeproj */;
@@ -114,6 +118,8 @@
 			remoteInfo = "Alamofire OSX Tests";
 		};
 
+=======
+>>>>>>> FETCH_HEAD
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -123,8 +129,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+<<<<<<< HEAD
 				A14C00B51A7F250300998C9C /* Alamofire.framework in Copy Framework */,
 
+=======
+>>>>>>> FETCH_HEAD
 			);
 			name = "Copy Framework";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,7 +143,10 @@
 /* Begin PBXFileReference section */
 		4215A66F1A7B45E1002EB62E /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
 		4215A6711A7D7616002EB62E /* API */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API; sourceTree = "<group>"; };
+<<<<<<< HEAD
 
+=======
+>>>>>>> FETCH_HEAD
 		428F6E701A7EFBC1007C21AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		42B859E71A74840F00FD4642 /* Cteemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cteemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B859EB1A74840F00FD4642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -197,8 +209,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				A14C00B11A7F236E00998C9C /* Alamofire.framework in Frameworks */,
 
+=======
+>>>>>>> FETCH_HEAD
 				42B85A3A1A749F6E00FD4642 /* FBAudienceNetwork.framework in Frameworks */,
 				42B85A381A749F6E00FD4642 /* Bolts.framework in Frameworks */,
 				A14C00B41A7F250300998C9C /* Alamofire.framework in Frameworks */,
@@ -243,8 +258,11 @@
 			children = (
 				4215A6711A7D7616002EB62E /* API */,
 				42B859EC1A74840F00FD4642 /* AppDelegate.swift */,
+<<<<<<< HEAD
 				A14C00AD1A7F153F00998C9C /* Main.storyboard */,
 
+=======
+>>>>>>> FETCH_HEAD
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
 				428F6E6F1A7EFBC1007C21AC /* Main.storyboard */,
@@ -378,9 +396,12 @@
 			buildRules = (
 			);
 			dependencies = (
+<<<<<<< HEAD
 				A14C00B01A7F236800998C9C /* PBXTargetDependency */,
 				A14C00B71A7F250300998C9C /* PBXTargetDependency */,
 
+=======
+>>>>>>> FETCH_HEAD
 			);
 			name = Cteemo;
 			productName = Cteemo;
@@ -434,6 +455,7 @@
 			mainGroup = 42B859DE1A74840E00FD4642;
 			productRefGroup = 42B859E81A74840F00FD4642 /* Products */;
 			projectDirPath = "";
+<<<<<<< HEAD
 			projectReferences = (
 				{
 					ProductGroup = A1E7F73E1A7EE09B006BCFD1 /* Products */;
@@ -441,6 +463,8 @@
 				},
 			);
 
+=======
+>>>>>>> FETCH_HEAD
 			projectRoot = "";
 			targets = (
 				42B859E61A74840E00FD4642 /* Cteemo */,
@@ -449,6 +473,7 @@
 		};
 /* End PBXProject section */
 
+<<<<<<< HEAD
 /* Begin PBXReferenceProxy section */
 		A1E7F7451A7EE09B006BCFD1 /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
@@ -481,6 +506,8 @@
 /* End PBXReferenceProxy section */
 
 
+=======
+>>>>>>> FETCH_HEAD
 /* Begin PBXResourcesBuildPhase section */
 		42B859E51A74840E00FD4642 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
@@ -513,8 +540,12 @@
 				42B85A2D1A748D4E00FD4642 /* arrowTurned.png in Resources */,
 				A1B8E95D1A7B20F2009BE011 /* 战队1.png in Resources */,
 				42B85A2F1A74947E00FD4642 /* textField.png in Resources */,
+<<<<<<< HEAD
 				A14C00AE1A7F153F00998C9C /* Main.storyboard in Resources */,
 
+=======
+				428F6E711A7EFBC1007C21AC /* Main.storyboard in Resources */,
+>>>>>>> FETCH_HEAD
 				A1B8E9621A7B20F2009BE011 /* hentiao2.png in Resources */,
 				42B85A2B1A748CDB00FD4642 /* SUBMIT.png in Resources */,
 				42B859F71A74840F00FD4642 /* Images.xcassets in Resources */,
@@ -581,7 +612,10 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+<<<<<<< HEAD
 
+=======
+>>>>>>> FETCH_HEAD
 		428F6E6F1A7EFBC1007C21AC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
