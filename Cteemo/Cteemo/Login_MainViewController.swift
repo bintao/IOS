@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestResultDelegate{
+class Login_MainViewController: UIViewController, FBLoginViewDelegate{
 
     @IBOutlet var bg : UIImageView!
 
@@ -44,14 +44,13 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
                 
                 var myToken = FBSession.activeSession().accessTokenData.accessToken
                 
-                /*
-                var req = Alamofire.request(.POST, "http://54.149.235.253:5000/fb_login", parameters: ["fbtoken": myToken, "fbid": UserInfo.fbid,"email":UserInfo.fbid+"@cteemo.com"])
-                    .responseJSON { (_, _, JSON, _) in
-                        println(JSON)
-                }
-                */
                 
-               
+                var req = Alamofire.request(.POST, "http://54.149.235.253:5000/fb_login", parameters: ["fbtoken": myToken, "fbid": UserInfo.fbid,"fbemail":UserInfo.fbid+"@cteemo.com"])
+                    .responseJSON { (_, _, JSON, _) in
+                        var result: [String: AnyObject] = JSON as [String: AnyObject]
+                        self.gotFBResult(result)
+                }
+                
                 println(UserInfo.fbid)
                 println(UserInfo.name)
                 println(UserInfo.email)
@@ -64,9 +63,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
             }
         })
         
-        var req =  ARequest(prefix: "/fb_login", method: "POST", data: ["fbtoken": myToken, "fbid": fbid])
-        req.delegate = self
-        //req.sendRequest()
+        
         
     }
     
@@ -131,16 +128,20 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate,RequestRes
            UserInfo.email = user.objectForKey("email") as String
         }
         
-        //login 
-        
-        //UserInfo.setUserData(user.objectForKey("email") as String, name: user.name + " " + user.first_name, accessToken: "", id: user.objectID)
+   
         
     }
     
     
     
-    func gotResult(prefix:String ,result: [String: AnyObject]){
-        println(result)
+    func gotFBResult(result: [String: AnyObject]){
+        if result["token"]?  != nil
+        {
+        UserInfo.accessToken = result["token"] as String
+        println(UserInfo.accessToken)
+        }
+        
+            
         
     }
     
