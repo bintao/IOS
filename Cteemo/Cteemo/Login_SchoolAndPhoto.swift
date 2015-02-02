@@ -13,8 +13,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate {
     @IBOutlet var bg : UIImageView!
     @IBOutlet var submit : UIButton!
     @IBOutlet var skip : UIButton!
-    @IBOutlet var male : UIButton!
-    @IBOutlet var female : UIButton!
+    @IBOutlet var gender: UISegmentedControl!
     @IBOutlet var addPhoto : UIButton!
 
     @IBOutlet var lolID : UITextField!
@@ -23,9 +22,11 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate {
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
 
-        self.performSegueWithIdentifier("searchSchool", sender: self)
-
-        return false
+        if textField == school{
+            self.performSegueWithIdentifier("searchSchool", sender: self)
+            return false
+        }
+        return true
     }
     
     @IBAction func returnToLoginSchoolAndPhoto(segue : UIStoryboardSegue) {
