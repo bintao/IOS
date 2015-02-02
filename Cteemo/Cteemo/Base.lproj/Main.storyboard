@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -614,6 +614,8 @@
             </objects>
             <point key="canvasLocation" x="1483" y="-1890"/>
         </scene>
+=======
+>>>>>>> FETCH_HEAD
         <!--Login School And Photo-->
         <scene sceneID="Hsk-5t-R6U">
             <objects>
@@ -717,7 +719,7 @@
                                     <color key="titleColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fpx-AZ-8Df" kind="presentation" identifier="searchSchool" id="YXn-2R-Iha"/>
+                                    <segue destination="A7H-Sn-HAT" kind="presentation" id="C21-Cw-i95"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -760,7 +762,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tZ-nF-zbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1691" y="-1060"/>
+            <point key="canvasLocation" x="1432" y="-1031"/>
+        </scene>
+        <!--Login School Search View Controller-->
+        <scene sceneID="0lh-eR-vWe">
+            <objects>
+                <viewController id="A7H-Sn-HAT" customClass="Login_SchoolSearchViewController" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="2J2-uR-gKg"/>
+                        <viewControllerLayoutGuide type="bottom" id="e5e-DP-1oW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4t9-pJ-62S">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDv-RE-ZbN" userLabel="back">
+                                <rect key="frame" x="10" y="10" width="69" height="63"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="c2m-yH-4Xx"/>
+                                    <constraint firstAttribute="height" constant="63" id="u8M-fK-P76"/>
+                                </constraints>
+                                <state key="normal" image="arrow.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="School" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="JjE-Qq-Otf">
+                                <rect key="frame" x="180" y="77" width="240" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Ag2-eA-Kgy"/>
+                                    <constraint firstAttribute="width" constant="250" id="TUq-6B-9HB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" spellCheckingType="no" secureTextEntry="YES"/>
+                            </textField>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backG.png" translatesAutoresizingMaskIntoConstraints="NO" id="glN-QX-MXk">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="glN-QX-MXk" firstAttribute="leading" secondItem="4t9-pJ-62S" secondAttribute="leading" id="IOD-JL-9bd"/>
+                            <constraint firstAttribute="centerX" secondItem="JjE-Qq-Otf" secondAttribute="centerX" id="OBF-Ya-NUl"/>
+                            <constraint firstAttribute="trailing" secondItem="glN-QX-MXk" secondAttribute="trailing" id="Vzu-gv-TgS"/>
+                            <constraint firstItem="e5e-DP-1oW" firstAttribute="top" secondItem="glN-QX-MXk" secondAttribute="bottom" id="ivK-wX-e2A"/>
+                            <constraint firstItem="glN-QX-MXk" firstAttribute="top" secondItem="4t9-pJ-62S" secondAttribute="top" id="rD2-FH-gss"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2PD-p1-1bo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1841" y="-1650"/>
         </scene>
     </scenes>
     <resources>
