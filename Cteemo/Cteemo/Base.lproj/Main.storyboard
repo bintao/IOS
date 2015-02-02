@@ -527,10 +527,10 @@
             </objects>
             <point key="canvasLocation" x="422" y="-1014"/>
         </scene>
-        <!--Login Create View Controller-->
+        <!--Login School Search View Controller-->
         <scene sceneID="ijU-hG-NFB">
             <objects>
-                <viewController id="fpx-AZ-8Df" customClass="Login_CreateViewController" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="fpx-AZ-8Df" customClass="Login_SchoolSearchViewController" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hsd-ZH-8tY"/>
                         <viewControllerLayoutGuide type="bottom" id="xff-fw-2ba"/>
