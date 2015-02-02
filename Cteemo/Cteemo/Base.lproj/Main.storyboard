@@ -527,7 +527,6 @@
             </objects>
             <point key="canvasLocation" x="422" y="-1014"/>
         </scene>
-<<<<<<< HEAD
         <!--Login School Search View Controller-->
         <scene sceneID="ijU-hG-NFB">
             <objects>
@@ -615,10 +614,7 @@
             </objects>
             <point key="canvasLocation" x="1483" y="-1890"/>
         </scene>
-=======
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
+
         <!--Login School And Photo-->
         <scene sceneID="Hsk-5t-R6U">
             <objects>
