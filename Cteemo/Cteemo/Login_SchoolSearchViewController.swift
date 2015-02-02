@@ -32,7 +32,7 @@ class Login_SchoolSearchViewController: UIViewController, UITextFieldDelegate , 
         
         var controller: Login_SchoolAndPhoto = segue.destinationViewController as Login_SchoolAndPhoto
         
-        controller.school.titleLabel?.text = self.chosenSchool as String
+        controller.school.placeholder = self.chosenSchool as String
     }
     
 }
@@ -52,7 +52,7 @@ class Login_SchoolSearchViewController: UIViewController, UITextFieldDelegate , 
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         
         cell.backgroundColor = UIColor.clearColor()
-        
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         var school = UILabel(frame: CGRectMake(20, 10, 200, 50))
         school.font = UIFont(name: "AvenirNext-Regular", size: 23)

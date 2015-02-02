@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Login_SchoolAndPhoto: UIViewController {
+class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var bg : UIImageView!
     @IBOutlet var submit : UIButton!
@@ -18,9 +18,14 @@ class Login_SchoolAndPhoto: UIViewController {
     @IBOutlet var addPhoto : UIButton!
 
     @IBOutlet var lolID : UITextField!
-    @IBOutlet var school : UIButton!
+    @IBOutlet var school : UITextField!
 
+    func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
 
+        self.performSegueWithIdentifier("searchSchool", sender: self)
+
+        return false
+    }
     
     @IBAction func returnToLoginSchoolAndPhoto(segue : UIStoryboardSegue) {
         
