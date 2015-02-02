@@ -78,7 +78,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             manager.session.configuration.HTTPAdditionalHeaders = [
                 "token": UserInfo.accessToken
             ]
-            
+            //
             var req = Alamofire.request(.GET, "http://54.149.235.253:5000/profile", parameters: nil)
                 .responseJSON { (_, _, JSON, _) in
                     var result: [String: AnyObject] = JSON as [String: AnyObject]

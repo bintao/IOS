@@ -561,7 +561,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="School" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="Zej-cI-MsG">
-                                <rect key="frame" x="142" y="80" width="240" height="50"/>
+                                <rect key="frame" x="143" y="94" width="240" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="CiX-AM-XeI"/>
                                 </constraints>
