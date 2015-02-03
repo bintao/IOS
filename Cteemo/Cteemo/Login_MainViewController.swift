@@ -48,13 +48,18 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                     .responseJSON { (_, _, JSON, _) in
                         var result: [String: AnyObject] = JSON as [String: AnyObject]
                         self.gotFBResult(result)
+                        self.gotProfile()
                 }
             
                 
+<<<<<<< Updated upstream
                 println(UserInfo.fbid)
                 println(UserInfo.name)
                 println(UserInfo.email)
                 println(myToken)
+=======
+                self.time = false;
+>>>>>>> Stashed changes
                 
                 //self.getPotraitFromFacebook()
             }
@@ -135,6 +140,24 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     }
     
     
+    func gotProfile(){
+    
+        var manager = Manager.sharedInstance
+        
+        // Specifying the Headers we need
+        manager.session.configuration.HTTPAdditionalHeaders = [
+            "token": UserInfo.accessToken
+        ]
+        
+        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/profile", parameters: nil)
+            .responseJSON { (_, _, JSON, _) in
+                var result: [String: AnyObject] = JSON as [String: AnyObject]
+                println(result)
+                
+        }
+
+    
+    }
     
     func gotFBResult(result: [String: AnyObject]){
         if result["token"]?  != nil
