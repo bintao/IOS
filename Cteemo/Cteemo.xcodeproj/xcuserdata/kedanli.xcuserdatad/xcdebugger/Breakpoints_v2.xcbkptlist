@@ -42,7 +42,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Login_SchoolAndPhoto.swift"
-            timestampString = "444630767.917906"
+            timestampString = "444633221.624113"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "41"
@@ -65,6 +65,52 @@
             endingLineNumber = "21"
             landmarkName = "UIImage"
             landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/Login_MainViewController.swift"
+            timestampString = "444633694.501447"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "loginViewShowingLoggedInUser(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cteemo.Login_MainViewController.(loginViewShowingLoggedInUser (Cteemo.Login_MainViewController) -&gt; (Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.FBLoginView&gt;) -&gt; ()).(closure #1)"
+                  moduleName = "Cteemo"
+                  urlString = "file:///Users/kedanli/Desktop/IOS/Cteemo/Cteemo/Login_MainViewController.swift"
+                  timestampString = "444633700.500635"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "reabstraction thunk helper from @callee_owned (@owned Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.FBRequestConnection&gt;, @owned Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;, @owned Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSError&gt;) -&gt; (@unowned ()) to @callee_unowned @objc_block (@unowned Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.FBRequestConnection&gt;, @unowned Swift.ImplicitlyUnwrappedOptional&lt;Swift.AnyObject&gt;, @unowned Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.NSError&gt;) -&gt; (@unowned ())"
+                  moduleName = "Cteemo"
+                  urlString = "file:///Users/kedanli/Desktop/IOS/Cteemo/Cteemo/Login_MainViewController.swift"
+                  timestampString = "444633700.500878"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "42"
+                  endingLineNumber = "42"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
