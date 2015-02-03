@@ -14,10 +14,10 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
     
     
     
-    @IBOutlet weak var bg: UIImageView!
+    @IBOutlet var bg : UIImageView!
     
     @IBOutlet var email : UITextField!
-    
+   
     
     @IBOutlet var back : UIButton!
     
@@ -38,23 +38,22 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
     @IBAction func submit_Password(sender: UIButton) {
         
         
-        if (email.text != "" && email.text.rangeOfString("@")?.isEmpty != nil) {
-            
-            var req = Alamofire.request(.POST, "http://54.149.235.253:5000/forget_password", parameters: ["email": email.text])
-                .responseJSON { (_, _, JSON, _) in
-                    var result: [String: AnyObject] = JSON as [String: AnyObject]
-                    self.gotSubmitResult(result)
-            }
-            
-            self.startLoading()
-            
-        }else {
+        if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) {
         
-            displaySpeaker("Email Invalid")
+        var req = Alamofire.request(.POST, "http://54.149.235.253:5000/forget_password", parameters: ["email": email.text])
+        .responseJSON { (_, _, JSON, _) in
+        var result: [String: AnyObject] = JSON as [String: AnyObject]
+        self.gotSubmitResult(result)
+        }
+        
+        self.startLoading()
+        
+        }else if email.text == "" || email.text.rangeOfString("@")?.isEmpty == nil{
+        displaySpeaker("Email Invalid")
         }
         
         
-        
+    
     }
     
     func gotSubmitResult(result: [String: AnyObject]){
@@ -69,7 +68,7 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
             
             
         }
-            //can't find email
+        //can't find email
         else{
             if((result["message"] as String).rangeOfString("Validation")?.isEmpty != nil){
                 displaySpeaker("Invalid Email")
@@ -120,7 +119,12 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
     
     
     // keyboard customization
-    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == email{
+            email.resignFirstResponder()
+        }
+        return true
+    }
     
     // background tapped
     func backGroundTapped(gestureRecognizer: UITapGestureRecognizer){

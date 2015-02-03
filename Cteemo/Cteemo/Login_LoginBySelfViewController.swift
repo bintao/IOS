@@ -39,7 +39,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
 
     //login
     @IBAction func loginWithUserAndPass(){
-        if  (password.text != "") && email.text != "" && email.text.rangeOfString("@")?.isEmpty != nil {
+        if  (password.text != nil) && email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil {
 
             var req = Alamofire.request(.POST, "http://54.149.235.253:5000/login", parameters: ["email": email.text, "password":password.text ])
                 .responseJSON { (_, _, JSON, _) in
@@ -54,9 +54,9 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             //login failed
             if password.text == ""{
                 displaySpeaker("password is empty")
-            }else if email.text.rangeOfString("@")?.isEmpty == nil{
+            }else if email.text.rangeOfString("@")?.isEmpty != nil{
                 displaySpeaker("email is invalid")
-            }else if email.text == nil{
+            }else if email.text != nil{
                 displaySpeaker("email is empty")
             }
         
@@ -185,11 +185,6 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    
-    @IBAction func returnToLogin(segue : UIStoryboardSegue) {
-        
     }
 
 
