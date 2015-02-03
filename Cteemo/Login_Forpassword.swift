@@ -9,26 +9,11 @@
 import UIKit
 import Alamofire
 
+/*
 
 class Login_Forpassword: UIViewController, UITextFieldDelegate{
     
-    
-    
-    @IBOutlet var bg : UIImageView!
-    
-    @IBOutlet var email : UITextField!
-   
-    
-    @IBOutlet var back : UIButton!
-    
-    @IBOutlet var signup : UIButton!
-    
-    @IBOutlet var loadingView : UIImageView!
-    @IBOutlet var loading : UIActivityIndicatorView!
-    
-    @IBOutlet var teemoSpeaker : UIView!
-    @IBOutlet var messageDisplay : UITextView!
-    
+  
     override func viewDidLoad() {
         //add tap gesture to board
         self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "backGroundTapped:"))
@@ -119,12 +104,7 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
     
     
     // keyboard customization
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        if textField == email{
-            email.resignFirstResponder()
-        }
-        return true
-    }
+ 
     
     // background tapped
     func backGroundTapped(gestureRecognizer: UITapGestureRecognizer){
@@ -145,6 +125,6 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
         self.view.sendSubviewToBack(loadingView)
         self.loading.stopAnimating()
     }
-    
-    
 }
+ */   
+    
