@@ -26,16 +26,16 @@ class Login_SchoolSearchViewController: UIViewController, UITextFieldDelegate , 
     
 
 
- override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    
-    if segue.identifier == "gotSchoolResult"{
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        var controller: Login_SchoolAndPhoto = segue.destinationViewController as Login_SchoolAndPhoto
+        if segue.identifier == "gotSchoolResult"{
+            
+            var controller: Login_SchoolAndPhoto = segue.destinationViewController as Login_SchoolAndPhoto
+            
+            controller.school.text = self.chosenSchool as String
+        }
         
-        controller.school.text = self.chosenSchool as String
     }
-    
-}
 
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

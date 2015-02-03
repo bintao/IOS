@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
     </dependencies>
@@ -622,6 +623,106 @@
             </objects>
             <point key="canvasLocation" x="1885" y="529"/>
         </scene>
+        <!--Login Add Photo-->
+        <scene sceneID="rFt-8Y-mJN">
+            <objects>
+                <viewController id="b65-ez-iSU" customClass="Login_AddPhoto" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bww-QB-1Fh"/>
+                        <viewControllerLayoutGuide type="bottom" id="nQp-kH-Esw"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cek-SU-zMC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" indicatorStyle="black" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2m4-iS-X1H">
+                                <rect key="frame" x="0.0" y="60" width="600" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="delegate" destination="b65-ez-iSU" id="ts8-xU-Vj1"/>
+                                </connections>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="circleCropper.png" translatesAutoresizingMaskIntoConstraints="NO" id="NTH-6M-uGh">
+                                <rect key="frame" x="0.0" y="50" width="600" height="500"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NTH-6M-uGh" secondAttribute="height" multiplier="1:1" id="BcZ-hh-QnJ"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSE-tA-VY2">
+                                <rect key="frame" x="156" y="556" width="300" height="44"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gU-4C-V2W">
+                                        <rect key="frame" x="116" y="8" width="500" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="240" id="jxS-Lf-M5b"/>
+                                            <constraint firstAttribute="height" constant="60" id="zHq-Ey-CIB"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="30"/>
+                                        <state key="normal" title="SUBMIT" backgroundImage="textField.png">
+                                            <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="submitPhoto:" destination="b65-ez-iSU" eventType="touchUpInside" id="tw3-db-oAR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="9gU-4C-V2W" firstAttribute="top" secondItem="sSE-tA-VY2" secondAttribute="top" constant="40" id="SGq-Zl-Uy3"/>
+                                    <constraint firstAttribute="centerX" secondItem="9gU-4C-V2W" secondAttribute="centerX" id="aQm-bH-rIA"/>
+                                </constraints>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAZ-pm-AN7">
+                                <textAttributes key="titleTextAttributes">
+                                    <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="22"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Cliping" id="yAD-7p-Cbv">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="tne-k3-ia9">
+                                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="sSE-tA-VY2" secondAttribute="trailing" id="1cU-Cy-gXg"/>
+                            <constraint firstItem="GAZ-pm-AN7" firstAttribute="leading" secondItem="cek-SU-zMC" secondAttribute="leading" id="4mU-uc-9Ui"/>
+                            <constraint firstItem="NTH-6M-uGh" firstAttribute="top" secondItem="2m4-iS-X1H" secondAttribute="top" id="6L1-Fy-Abp"/>
+                            <constraint firstItem="GAZ-pm-AN7" firstAttribute="top" secondItem="cek-SU-zMC" secondAttribute="topMargin" id="7v7-cf-tL9"/>
+                            <constraint firstItem="sSE-tA-VY2" firstAttribute="top" secondItem="NTH-6M-uGh" secondAttribute="bottom" id="Hcz-yp-dUd"/>
+                            <constraint firstAttribute="trailing" secondItem="GAZ-pm-AN7" secondAttribute="trailing" id="NNd-Bs-GPq"/>
+                            <constraint firstItem="NTH-6M-uGh" firstAttribute="top" secondItem="GAZ-pm-AN7" secondAttribute="bottom" id="OD5-aS-kqN"/>
+                            <constraint firstItem="NTH-6M-uGh" firstAttribute="top" secondItem="cek-SU-zMC" secondAttribute="top" id="WZm-NS-VGR"/>
+                            <constraint firstItem="sSE-tA-VY2" firstAttribute="leading" secondItem="cek-SU-zMC" secondAttribute="leading" id="Wx5-jz-pKT"/>
+                            <constraint firstItem="NTH-6M-uGh" firstAttribute="leading" secondItem="cek-SU-zMC" secondAttribute="leading" id="XWM-9s-bOd"/>
+                            <constraint firstItem="NTH-6M-uGh" firstAttribute="top" secondItem="bww-QB-1Fh" secondAttribute="bottom" id="YPb-Dl-Omj"/>
+                            <constraint firstItem="NTH-6M-uGh" firstAttribute="trailing" secondItem="2m4-iS-X1H" secondAttribute="trailing" id="ZxG-lj-9BM"/>
+                            <constraint firstItem="NTH-6M-uGh" firstAttribute="leading" secondItem="2m4-iS-X1H" secondAttribute="leading" id="eoa-ob-5yJ"/>
+                            <constraint firstItem="NTH-6M-uGh" firstAttribute="bottom" secondItem="2m4-iS-X1H" secondAttribute="bottom" id="rT5-Qx-JDG"/>
+                            <constraint firstAttribute="trailing" secondItem="NTH-6M-uGh" secondAttribute="trailing" id="sJo-EC-BIf"/>
+                            <constraint firstItem="nQp-kH-Esw" firstAttribute="top" secondItem="sSE-tA-VY2" secondAttribute="bottom" id="zGm-pF-sD2"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="WZm-NS-VGR"/>
+                                <exclude reference="YPb-Dl-Omj"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="circleCropper" destination="NTH-6M-uGh" id="Q67-ON-ygj"/>
+                        <outlet property="resizer" destination="2m4-iS-X1H" id="rJt-6j-f7S"/>
+                        <segue destination="C29-7t-mjL" kind="unwind" identifier="returnWithPhoto" unwindAction="returnToLoginSchoolAndPhoto:" id="K9n-cJ-Rso"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5of-i8-Gfr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="C29-7t-mjL" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="753" y="-1709.5"/>
+        </scene>
         <!--Login School And Photo-->
         <scene sceneID="Hsk-5t-R6U">
             <objects>
@@ -660,6 +761,7 @@
                                 </state>
                                 <connections>
                                     <action selector="getPhoto:" destination="UYe-Qw-NJx" eventType="touchUpInside" id="u5X-s6-fMg"/>
+                                    <segue destination="b65-ez-iSU" kind="presentation" identifier="addImage" id="XXS-TH-m3a"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" alpha="0.69999998807907104" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="School" textAlignment="center" minimumFontSize="17" background="textField.png" translatesAutoresizingMaskIntoConstraints="NO" id="l4Q-0i-Kpt">
@@ -675,7 +777,7 @@
                                 </connections>
                             </textField>
                             <segmentedControl opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bordered" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vu3-vO-HJm">
-                                <rect key="frame" x="193" y="316" width="218" height="29"/>
+                                <rect key="frame" x="193" y="316" width="218" height="41"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="X5T-f6-UAy"/>
@@ -699,10 +801,16 @@
                                     <outlet property="delegate" destination="UYe-Qw-NJx" id="Ben-pk-tOX"/>
                                 </connections>
                             </textField>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jbP-Sc-4H2">
+                                <rect key="frame" x="239" y="28" width="127" height="128"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="K2v-Qi-IqW" firstAttribute="leading" secondItem="jbP-Sc-4H2" secondAttribute="leading" constant="3" id="1s0-7u-A5g"/>
+                            <constraint firstItem="K2v-Qi-IqW" firstAttribute="trailing" secondItem="jbP-Sc-4H2" secondAttribute="trailing" constant="3" id="2tj-bH-0r9"/>
                             <constraint firstAttribute="centerY" secondItem="Rzm-Ne-k2Q" secondAttribute="centerY" constant="-180" id="7A0-cI-SZa"/>
+                            <constraint firstItem="K2v-Qi-IqW" firstAttribute="bottom" secondItem="jbP-Sc-4H2" secondAttribute="bottom" constant="3" id="Go6-2v-6ff"/>
                             <constraint firstItem="fsd-6F-wiq" firstAttribute="leading" secondItem="l4Q-0i-Kpt" secondAttribute="leading" id="Mjd-di-xfG"/>
                             <constraint firstAttribute="trailing" secondItem="0yt-ES-pKy" secondAttribute="trailing" id="R1S-aS-Cwf"/>
                             <constraint firstAttribute="centerX" secondItem="Rzm-Ne-k2Q" secondAttribute="centerX" id="Wab-M6-tfh"/>
@@ -712,6 +820,7 @@
                             <constraint firstItem="fsd-6F-wiq" firstAttribute="trailing" secondItem="vu3-vO-HJm" secondAttribute="trailing" id="fQS-Hl-pkk"/>
                             <constraint firstItem="fsd-6F-wiq" firstAttribute="bottom" secondItem="vu3-vO-HJm" secondAttribute="bottom" constant="-80" id="g13-Dg-8f0"/>
                             <constraint firstAttribute="bottom" secondItem="0yt-ES-pKy" secondAttribute="bottom" id="itR-eV-cr7"/>
+                            <constraint firstItem="K2v-Qi-IqW" firstAttribute="top" secondItem="jbP-Sc-4H2" secondAttribute="top" constant="3" id="jNH-A5-VKd"/>
                             <constraint firstAttribute="centerX" secondItem="fsd-6F-wiq" secondAttribute="centerX" id="kPu-vq-1yV"/>
                             <constraint firstItem="Rzm-Ne-k2Q" firstAttribute="top" secondItem="vu3-vO-HJm" secondAttribute="top" constant="80" id="kk2-V7-G1x"/>
                             <constraint firstItem="fsd-6F-wiq" firstAttribute="bottom" secondItem="Rzm-Ne-k2Q" secondAttribute="bottom" constant="-100" id="ljc-rD-8HT"/>
@@ -730,6 +839,7 @@
                         <outlet property="addPhoto" destination="K2v-Qi-IqW" id="xr2-vq-rCE"/>
                         <outlet property="bg" destination="0yt-ES-pKy" id="B0J-NI-00v"/>
                         <outlet property="gender" destination="vu3-vO-HJm" id="Zq7-hO-O44"/>
+                        <outlet property="iconDisplay" destination="jbP-Sc-4H2" id="t3Z-Z1-le3"/>
                         <outlet property="lolID" destination="fsd-6F-wiq" id="1CP-MA-Ba3"/>
                         <outlet property="school" destination="l4Q-0i-Kpt" id="x8T-83-kr8"/>
                         <outlet property="submit" destination="Rzm-Ne-k2Q" id="dyr-1f-X17"/>
@@ -738,7 +848,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tZ-nF-zbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1428" y="-1014"/>
+            <point key="canvasLocation" x="1541" y="-1014"/>
         </scene>
         <!--Login School Search View Controller-->
         <scene sceneID="0lh-eR-vWe">
@@ -841,6 +951,7 @@
         <image name="SUBMIT.png" width="438" height="96"/>
         <image name="arrow.png" width="69" height="63"/>
         <image name="backG.png" width="750" height="1334"/>
+        <image name="circleCropper.png" width="1000" height="1000"/>
         <image name="lock1.png" width="54" height="57"/>
         <image name="speaker.png" width="500" height="400"/>
         <image name="tableback.png" width="500" height="700"/>
