@@ -25,7 +25,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
 
     override func viewDidLoad() {
         //add tap gesture to board
-        bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "backGroundTapped:"))
+        self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "backGroundTapped:"))
         
     }
     
