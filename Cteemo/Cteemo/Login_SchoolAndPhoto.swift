@@ -15,28 +15,56 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet var gender: UISegmentedControl!
     @IBOutlet var addPhoto : UIButton!
 
+    @IBOutlet var iconDisplay : UIImageView!
+
     @IBOutlet var lolID : UITextField!
     @IBOutlet var school : UITextField!
+
+    var sourceImage: UIImage!
+    var icon: UIImage!
 
     override func viewDidLoad() {
         //add tap gesture to board
         self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "backGroundTapped:"))
         
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if icon != nil{
+            iconDisplay.image = icon
+        }
     }
     
     // get photo of user
     @IBAction func getPhoto(sender : UIButton) {
         
+        // get photo from system album
         let pickerC = UIImagePickerController()
         pickerC.delegate = self
         self.presentViewController(pickerC, animated: true, completion: nil)
 
     }
     
+    // after got photo   go to cropping view
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: NSDictionary!) {
         self.dismissViewControllerAnimated(true, completion: nil);
         println(info);
+        sourceImage =  info.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
+        self.performSegueWithIdentifier("addImage", sender: self)
+
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "addImage"{
+            
+            var controller: Login_AddPhoto = segue.destinationViewController as Login_AddPhoto
+            controller.sourceImage = self.sourceImage
+        }
+        
+    }
+
     
     // background tapped
     func backGroundTapped(gestureRecognizer: UITapGestureRecognizer){

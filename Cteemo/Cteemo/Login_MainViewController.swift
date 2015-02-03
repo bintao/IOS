@@ -56,6 +56,8 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                 println(UserInfo.email)
                 println(myToken)
                 self.time = false;
+                
+                //self.getPotraitFromFacebook()
             }
             else
             {
@@ -86,22 +88,18 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     func getPotraitFromFacebook()->UIImage{
         
         var image:UIImage!
-        FBRequest.requestForMe().startWithCompletionHandler({(connection: FBRequestConnection!, user: AnyObject!, error: NSError!) -> Void in
-            if((error) != nil){
-                //error
-            }else{
-                println(user as [String: AnyObject])
-                
-                var userID = user["id"] as String
-                var str = "http://graph.facebook.com/\(userID)/picture?type=large"
-                var url = NSURL(string: str)
-                println(url)
-                var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
-                image = UIImage(data: data)
-                
-            }
-        })
         
+        var str = "http://graph.facebook.com/\(UserInfo.fbid)/picture?type=large"
+        var url = NSURL(string: str)
+
+        var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
+        image = UIImage(data: data)
+        //image = image.crop(CGRectMake(0, 0, 50, 50))
+        image = image.roundCornersToCircle()
+
+        var img = UIImageView(image: image)
+        self.view.addSubview(img)
+
         return image
         
     }
