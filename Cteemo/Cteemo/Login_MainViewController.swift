@@ -77,7 +77,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
             UserInfo.saveUserIcon()
         }
         
-        self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: sender)
+        self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
         
     }
     
