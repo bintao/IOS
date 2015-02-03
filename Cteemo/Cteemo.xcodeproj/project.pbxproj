@@ -15,6 +15,12 @@
 		42AB57DA1A7F391A00C7799E /* tableback.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AB57D91A7F391A00C7799E /* tableback.png */; };
 		42AB57DB1A7F3D4800C7799E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 428F6E7A1A7F2F3D007C21AC /* Alamofire.framework */; };
 		42AB57DC1A7F3D4800C7799E /* Alamofire.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 428F6E7A1A7F2F3D007C21AC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		42B74FC41A812416008B575C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B74FBE1A812416008B575C /* MainViewController.swift */; };
+		42B74FC51A812416008B575C /* TournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B74FBF1A812416008B575C /* TournamentViewController.swift */; };
+		42B74FC61A812416008B575C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B74FC01A812416008B575C /* LoginViewController.swift */; };
+		42B74FC71A812416008B575C /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B74FC11A812416008B575C /* TeamViewController.swift */; };
+		42B74FC81A812416008B575C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B74FC21A812416008B575C /* NewsViewController.swift */; };
+		42B74FC91A812416008B575C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B74FC31A812416008B575C /* MeViewController.swift */; };
 		42B859ED1A74840F00FD4642 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B859EC1A74840F00FD4642 /* AppDelegate.swift */; };
 		42B859F01A74840F00FD4642 /* Cteemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 42B859EE1A74840F00FD4642 /* Cteemo.xcdatamodeld */; };
 		42B859F21A74840F00FD4642 /* Login_MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B859F11A74840F00FD4642 /* Login_MainViewController.swift */; };
@@ -132,6 +138,12 @@
 		429FD09E1A801607003BA84D /* Login_AddPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_AddPhoto.swift; sourceTree = "<group>"; };
 		429FD0A31A801F25003BA84D /* circleCropper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circleCropper.png; sourceTree = "<group>"; };
 		42AB57D91A7F391A00C7799E /* tableback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tableback.png; sourceTree = "<group>"; };
+		42B74FBE1A812416008B575C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		42B74FBF1A812416008B575C /* TournamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentViewController.swift; sourceTree = "<group>"; };
+		42B74FC01A812416008B575C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		42B74FC11A812416008B575C /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
+		42B74FC21A812416008B575C /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
+		42B74FC31A812416008B575C /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
 		42B859E71A74840F00FD4642 /* Cteemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cteemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		42B859EB1A74840F00FD4642 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		42B859EC1A74840F00FD4642 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -221,6 +233,20 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		42B74FBD1A812220008B575C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				42B859F11A74840F00FD4642 /* Login_MainViewController.swift */,
+				42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */,
+				A19CA9921A7F4C010093C575 /* Login_Forpassword.swift */,
+				42B85A0F1A74884100FD4642 /* Login_CreateViewController.swift */,
+				42B85A111A74888500FD4642 /* Login_SchoolAndPhoto.swift */,
+				429FD09E1A801607003BA84D /* Login_AddPhoto.swift */,
+				42B85A171A748B2E00FD4642 /* Login_SchoolSearchViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		42B859DE1A74840E00FD4642 = {
 			isa = PBXGroup;
 			children = (
@@ -251,13 +277,13 @@
 				42B859F31A74840F00FD4642 /* Main.storyboard */,
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
-				42B859F11A74840F00FD4642 /* Login_MainViewController.swift */,
-				42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */,
-				A19CA9921A7F4C010093C575 /* Login_Forpassword.swift */,
-				42B85A0F1A74884100FD4642 /* Login_CreateViewController.swift */,
-				42B85A111A74888500FD4642 /* Login_SchoolAndPhoto.swift */,
-				429FD09E1A801607003BA84D /* Login_AddPhoto.swift */,
-				42B85A171A748B2E00FD4642 /* Login_SchoolSearchViewController.swift */,
+				42B74FBE1A812416008B575C /* MainViewController.swift */,
+				42B74FBF1A812416008B575C /* TournamentViewController.swift */,
+				42B74FC01A812416008B575C /* LoginViewController.swift */,
+				42B74FC11A812416008B575C /* TeamViewController.swift */,
+				42B74FC21A812416008B575C /* NewsViewController.swift */,
+				42B74FC31A812416008B575C /* MeViewController.swift */,
+				42B74FBD1A812220008B575C /* Login */,
 				42B85A411A74A81A00FD4642 /* UserInformation.swift */,
 				42B85A421A74A81A00FD4642 /* DataManager.swift */,
 				42B85A431A74A81A00FD4642 /* InteractingWithServer.swift */,
@@ -531,20 +557,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				42B74FC61A812416008B575C /* LoginViewController.swift in Sources */,
 				42B85A101A74884100FD4642 /* Login_CreateViewController.swift in Sources */,
 				A1010D471A7B2ACF00256208 /* ARequest.swift in Sources */,
 				42B859F21A74840F00FD4642 /* Login_MainViewController.swift in Sources */,
+				42B74FC81A812416008B575C /* NewsViewController.swift in Sources */,
 				42E5E78B1A773E56004A781E /* Login_LoginBySelfViewController.swift in Sources */,
+				42B74FC71A812416008B575C /* TeamViewController.swift in Sources */,
+				42B74FC91A812416008B575C /* MeViewController.swift in Sources */,
 				42B85A121A74888500FD4642 /* Login_SchoolAndPhoto.swift in Sources */,
 				4267D82F1A8011D20054E800 /* ImageProcessor.swift in Sources */,
 				42B85A461A74A81A00FD4642 /* InteractingWithServer.swift in Sources */,
 				42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */,
 				42B859F01A74840F00FD4642 /* Cteemo.xcdatamodeld in Sources */,
+				42B74FC51A812416008B575C /* TournamentViewController.swift in Sources */,
 				42B85A441A74A81A00FD4642 /* UserInformation.swift in Sources */,
 				429FD09F1A801607003BA84D /* Login_AddPhoto.swift in Sources */,
 				42B859ED1A74840F00FD4642 /* AppDelegate.swift in Sources */,
 				A19CA9931A7F4C010093C575 /* Login_Forpassword.swift in Sources */,
 				42B85A451A74A81A00FD4642 /* DataManager.swift in Sources */,
+				42B74FC41A812416008B575C /* MainViewController.swift in Sources */,
 				42B85A181A748B2E00FD4642 /* Login_SchoolSearchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
