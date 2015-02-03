@@ -54,7 +54,7 @@ class Login_SchoolSearchViewController: UIViewController, UITextFieldDelegate , 
         cell.backgroundColor = UIColor.clearColor()
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
-        var school = UILabel(frame: CGRectMake(20, 10, 200, 50))
+        var school = UILabel(frame: CGRectMake(20, 0, 200, 40))
         school.font = UIFont(name: "AvenirNext-Regular", size: 23)
         school.text = schools[indexPath.row]
         school.textColor = UIColor.grayColor()
