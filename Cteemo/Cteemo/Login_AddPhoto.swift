@@ -16,8 +16,6 @@ class Login_AddPhoto: UIViewController, UIScrollViewDelegate{
     var sourceImage: UIImage!
     var imgView: UIImageView!
     
-    // determine whether the image is processed
-    var imageCutted = false
     
     override func viewDidLoad() {
     }
@@ -46,16 +44,7 @@ class Login_AddPhoto: UIViewController, UIScrollViewDelegate{
         self.performSegueWithIdentifier("returnWithPhoto", sender: self)
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-        if segue.identifier == "returnWithPhoto" && imageCutted{
-            
-            var controller: Login_SchoolAndPhoto = segue.destinationViewController as Login_SchoolAndPhoto
-            
-            controller.icon = self.sourceImage
-        }
-        
-    }
+
     
     func cutImage(){
         
@@ -64,6 +53,8 @@ class Login_AddPhoto: UIViewController, UIScrollViewDelegate{
         sourceImage = sourceImage.crop(CGRectMake(resizer.contentOffset.x, resizer.contentOffset.y, resizer.frame.width / resizer.zoomScale, resizer.frame.height / resizer.zoomScale))
         sourceImage = sourceImage.roundCornersToCircle()
         sourceImage = sourceImage.changeImageSize(CGSizeMake(200, 200))
-        imageCutted = true
+        // save user icon
+        UserInfo.icon = sourceImage
+        UserInfo.saveUserIcon()
     }
 }

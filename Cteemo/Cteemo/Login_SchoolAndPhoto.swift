@@ -21,7 +21,6 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet var school : UITextField!
 
     var sourceImage: UIImage!
-    var icon: UIImage!
 
     override func viewDidLoad() {
         //add tap gesture to board
@@ -30,8 +29,8 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     }
     
     override func viewDidAppear(animated: Bool) {
-        if icon != nil{
-            iconDisplay.image = icon
+        if UserInfo.icon != nil{
+            iconDisplay.image = UserInfo.icon
         }
     }
     

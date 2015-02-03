@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Login_SchoolAndPhoto.swift"
-            timestampString = "444626042.040191"
+            timestampString = "444630767.917906"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "getPhoto(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -65,52 +65,6 @@
             endingLineNumber = "21"
             landmarkName = "UIImage"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cteemo/Login_AddPhoto.swift"
-            timestampString = "444622759.385102"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "prepareForSegue(_:sender:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Cteemo.Login_AddPhoto.prepareForSegue (Cteemo.Login_AddPhoto)(ObjectiveC.UIStoryboardSegue, sender : Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
-                  moduleName = "Cteemo"
-                  urlString = "file:///Users/kedanli/Desktop/IOS/Cteemo/Cteemo/Login_AddPhoto.swift"
-                  timestampString = "444622759.444714"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "35">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Cteemo.Login_AddPhoto.prepareForSegue (Cteemo.Login_AddPhoto)(ObjectiveC.UIStoryboardSegue, sender : Swift.Optional&lt;Swift.AnyObject&gt;) -&gt; ()"
-                  moduleName = "Cteemo"
-                  urlString = "file:///Users/kedanli/Desktop/IOS/Cteemo/Cteemo/Login_AddPhoto.swift"
-                  timestampString = "444622759.451512"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "962">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

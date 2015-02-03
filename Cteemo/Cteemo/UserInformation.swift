@@ -22,7 +22,6 @@ class UserInformation: NSObject ,RequestResultDelegate {
     var school: String = ""
     var intro: String = ""
 
-    
     var icon: UIImage!
     
     //check if the user is logined
@@ -61,6 +60,16 @@ class UserInformation: NSObject ,RequestResultDelegate {
     func packaging()->[String: AnyObject]{
         var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "lolID": lolID, "school": school]
         return data
+    }
+    
+    func saveUserIcon(){
+        if icon != nil{
+            DataManager.saveUserIconToLocal(icon)
+        }
+    }
+    
+    func getIconFromLocal(){
+        icon = DataManager.getUserIconFromLocal()
     }
     
     func gotResult(prefix: String, result: [String : AnyObject]) {
