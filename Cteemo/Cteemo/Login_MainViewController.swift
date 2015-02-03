@@ -37,19 +37,20 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
 
         var myToken = FBSession.activeSession().accessTokenData.accessToken
         var fbid: String = UserInfo.fbid
-        println(fbid)
+
         FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
             if !(error != nil)
             {
                 
                 var myToken = FBSession.activeSession().accessTokenData.accessToken
                 
-                
                 var req = Alamofire.request(.POST, "http://54.149.235.253:5000/fb_login", parameters: ["fbtoken": myToken, "fbid": UserInfo.fbid,"fbemail":UserInfo.fbid+"@cteemo.com"])
                     .responseJSON { (_, _, JSON, _) in
                         var result: [String: AnyObject] = JSON as [String: AnyObject]
                         self.gotFBResult(result)
                 }
+                
+                self.getPotraitFromFacebook()
                 
                 println(UserInfo.fbid)
                 println(UserInfo.name)
@@ -94,9 +95,11 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
 
         var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
         image = UIImage(data: data)
-        //image = image.crop(CGRectMake(0, 0, 50, 50))
-        image = image.roundCornersToCircle()
 
+        image = image.roundCornersToCircle()
+        println(image.size)
+
+        
         var img = UIImageView(image: image)
         self.view.addSubview(img)
 

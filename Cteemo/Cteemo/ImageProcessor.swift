@@ -234,6 +234,14 @@ extension UIImage {
         return crop(insetRect)
     }
     
+    
+    func changeImageSize(size: CGSize)->UIImage{
+        UIGraphicsBeginImageContextWithOptions(size, false, 0)
+        self.drawInRect(CGRectMake(0, 0, size.width, size.height))
+        var img = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return img
+    }
     // MARK: Resize
     
     func resize(size:CGSize, contentMode: UIImageContentMode = .ScaleToFill) -> UIImage?
