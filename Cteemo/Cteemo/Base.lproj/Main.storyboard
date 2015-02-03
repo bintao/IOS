@@ -1228,8 +1228,8 @@
                                         </state>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="GTO-5d-daA"/>
                                                 <exclude reference="5YP-3a-rxf"/>
+                                                <exclude reference="GTO-5d-daA"/>
                                             </mask>
                                         </variation>
                                         <connections>
@@ -1296,8 +1296,8 @@
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="VFI-b7-6iU"/>
                                         <exclude reference="Se1-Hb-1U4"/>
+                                        <exclude reference="VFI-b7-6iU"/>
                                     </mask>
                                 </variation>
                                 <connections>
@@ -1353,7 +1353,7 @@
             </objects>
             <point key="canvasLocation" x="4358" y="1423.5"/>
         </scene>
-        <!--JOIN TEAM-->
+        <!--FIND TEAM-->
         <scene sceneID="bpP-pN-ogk">
             <objects>
                 <viewController id="blR-Dl-a0a" sceneMemberID="viewController">
@@ -1364,13 +1364,76 @@
                     <view key="view" contentMode="scaleToFill" id="l3b-dI-OSP">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dvz-6v-Ccl">
+                                <rect key="frame" x="0.0" y="72" width="600" height="49"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="mnq-mf-oWb">
+                                        <rect key="frame" x="0.0" y="0.0" width="750" height="4"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="3" id="OHD-o2-IKk"/>
+                                            <constraint firstAttribute="height" constant="3" id="bmN-gD-81f"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="OHD-o2-IKk"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="fHn-rY-3Lb">
+                                        <rect key="frame" x="0.0" y="45" width="750" height="4"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="3" id="V20-Aq-a7c"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="3" id="l7g-xI-TPb"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="l7g-xI-TPb"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="32" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="LnI-uq-x18">
+                                        <rect key="frame" x="384" y="9" width="11" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="3" id="2fX-QP-ZVk"/>
+                                            <constraint firstAttribute="height" constant="47" id="5EX-4Q-qqi"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="3" id="HKl-2i-fjh"/>
+                                            <constraint firstAttribute="height" constant="3" id="pMg-QF-Ljh"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="HKl-2i-fjh"/>
+                                                <exclude reference="pMg-QF-Ljh"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="LnI-uq-x18" firstAttribute="top" secondItem="mnq-mf-oWb" secondAttribute="bottom" id="OwF-S6-q6c"/>
+                                    <constraint firstAttribute="trailing" secondItem="mnq-mf-oWb" secondAttribute="trailing" id="QdA-PD-UAZ"/>
+                                    <constraint firstItem="mnq-mf-oWb" firstAttribute="top" secondItem="dvz-6v-Ccl" secondAttribute="top" id="jdH-gu-aS4"/>
+                                    <constraint firstItem="mnq-mf-oWb" firstAttribute="leading" secondItem="dvz-6v-Ccl" secondAttribute="leading" id="os8-bf-moj"/>
+                                    <constraint firstAttribute="bottom" secondItem="fHn-rY-3Lb" secondAttribute="bottom" id="q4J-jG-nwM"/>
+                                    <constraint firstAttribute="trailing" secondItem="fHn-rY-3Lb" secondAttribute="trailing" id="sqA-VK-662"/>
+                                    <constraint firstAttribute="height" constant="50" id="vhK-WH-7BJ"/>
+                                    <constraint firstItem="fHn-rY-3Lb" firstAttribute="leading" secondItem="dvz-6v-Ccl" secondAttribute="leading" id="wTQ-Uz-Tne"/>
+                                    <constraint firstAttribute="centerX" secondItem="LnI-uq-x18" secondAttribute="centerX" id="xDb-XV-YT2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="dvz-6v-Ccl" secondAttribute="trailing" id="i8F-NW-unV"/>
+                            <constraint firstItem="dvz-6v-Ccl" firstAttribute="leading" secondItem="l3b-dI-OSP" secondAttribute="leading" id="nJL-CT-bJS"/>
+                            <constraint firstItem="dvz-6v-Ccl" firstAttribute="top" secondItem="M4Z-yE-JUv" secondAttribute="bottom" constant="8" id="tpi-Yr-HCJ"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="JOIN TEAM" id="ZwZ-yb-h7A"/>
+                    <navigationItem key="navigationItem" title="FIND TEAM" id="ZwZ-yb-h7A"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3O-pt-TQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5208" y="1396"/>
+            <point key="canvasLocation" x="5499" y="1692"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4FT-0R-U4A">

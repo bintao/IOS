@@ -11,6 +11,9 @@
 		42041AE71A81594900623C70 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 42041AE61A81594900623C70 /* right.png */; };
 		42041AE91A815E1600623C70 /* addfriendsbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 42041AE81A815E1600623C70 /* addfriendsbutton.png */; };
 		42041AF11A81665E00623C70 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 42041AF01A81665E00623C70 /* white.png */; };
+		42041AF71A816EE400623C70 /* box1.png in Resources */ = {isa = PBXBuildFile; fileRef = 42041AF41A816EE400623C70 /* box1.png */; };
+		42041AF81A816EE400623C70 /* institution.png in Resources */ = {isa = PBXBuildFile; fileRef = 42041AF51A816EE400623C70 /* institution.png */; };
+		42041AF91A816EE400623C70 /* SUITCASE.png in Resources */ = {isa = PBXBuildFile; fileRef = 42041AF61A816EE400623C70 /* SUITCASE.png */; };
 		4215A6701A7B45E1002EB62E /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4215A66F1A7B45E1002EB62E /* speaker.png */; };
 		4215A6721A7D7616002EB62E /* API in Resources */ = {isa = PBXBuildFile; fileRef = 4215A6711A7D7616002EB62E /* API */; };
 		4267D82F1A8011D20054E800 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267D82E1A8011D20054E800 /* ImageProcessor.swift */; };
@@ -137,6 +140,9 @@
 		42041AE61A81594900623C70 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
 		42041AE81A815E1600623C70 /* addfriendsbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addfriendsbutton.png; sourceTree = "<group>"; };
 		42041AF01A81665E00623C70 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
+		42041AF41A816EE400623C70 /* box1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = box1.png; sourceTree = "<group>"; };
+		42041AF51A816EE400623C70 /* institution.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = institution.png; sourceTree = "<group>"; };
+		42041AF61A816EE400623C70 /* SUITCASE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SUITCASE.png; sourceTree = "<group>"; };
 		4215A66F1A7B45E1002EB62E /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
 		4215A6711A7D7616002EB62E /* API */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API; sourceTree = "<group>"; };
 		4267D82E1A8011D20054E800 /* ImageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
@@ -372,6 +378,9 @@
 		A1B8E9641A7B215C009BE011 /* Team */ = {
 			isa = PBXGroup;
 			children = (
+				42041AF41A816EE400623C70 /* box1.png */,
+				42041AF51A816EE400623C70 /* institution.png */,
+				42041AF61A816EE400623C70 /* SUITCASE.png */,
 				42041AE41A81592600623C70 /* left.png */,
 				42041AE61A81594900623C70 /* right.png */,
 				A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */,
@@ -516,10 +525,12 @@
 				A1B8E95C1A7B20F2009BE011 /* joinTeam.png in Resources */,
 				A1B8E9581A7B20F2009BE011 /* 奖杯2.png in Resources */,
 				A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */,
+				42041AF71A816EE400623C70 /* box1.png in Resources */,
 				42B85A291A748CDB00FD4642 /* me_icons1.png in Resources */,
 				42B85A271A748CDB00FD4642 /* Inkinesss.png in Resources */,
 				4215A6721A7D7616002EB62E /* API in Resources */,
 				A1B8E9631A7B20F2009BE011 /* OK.png in Resources */,
+				42041AF91A816EE400623C70 /* SUITCASE.png in Resources */,
 				42B85A251A748CDB00FD4642 /* button.png in Resources */,
 				42AB57DA1A7F391A00C7799E /* tableback.png in Resources */,
 				42B85A241A748CDB00FD4642 /* backG.png in Resources */,
@@ -538,6 +549,7 @@
 				42B85A161A7489CF00FD4642 /* loading_page.png in Resources */,
 				42B85A231A748CDB00FD4642 /* arrow.png in Resources */,
 				A1B8E9591A7B20F2009BE011 /* 我.png in Resources */,
+				42041AF81A816EE400623C70 /* institution.png in Resources */,
 				A1B8E95F1A7B20F2009BE011 /* createTeam.png in Resources */,
 				42041AE51A81592600623C70 /* left.png in Resources */,
 				42B85A2D1A748D4E00FD4642 /* arrowTurned.png in Resources */,
