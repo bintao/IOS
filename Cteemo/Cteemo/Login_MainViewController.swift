@@ -38,10 +38,11 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
         var myToken = FBSession.activeSession().accessTokenData.accessToken
         var fbid: String = UserInfo.fbid
 
+        
         FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
             if !(error != nil)
             {
-                
+                //already got facebook information
                 var myToken = FBSession.activeSession().accessTokenData.accessToken
                 
                 var req = Alamofire.request(.POST, "http://54.149.235.253:5000/fb_login", parameters: ["fbtoken": myToken, "fbid": UserInfo.fbid,"fbemail":UserInfo.fbid+"@cteemo.com"])
@@ -49,26 +50,17 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                         var result: [String: AnyObject] = JSON as [String: AnyObject]
                         self.gotFBResult(result)
                         self.gotProfile()
+                        
+                        
                 }
             
-                
 
-                
-                //self.getPotraitFromFacebook()
             }
             else
             {
                 println("Error")
             }
         })
-        
-        
-        var facebookIcon: UIImage? = self.getPotraitFromFacebook() as UIImage
-        
-        if facebookIcon != nil{
-            UserInfo.icon = facebookIcon
-            UserInfo.saveUserIcon()
-        }
         
         
     }
@@ -133,6 +125,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     
     
     //get user profile
+
     func gotProfile(){
     
         var manager = Manager.sharedInstance
@@ -153,7 +146,14 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                 }
                 else {
                 //new user
-                
+                var facebookIcon: UIImage? = self.getPotraitFromFacebook() as UIImage
+                        
+                        if facebookIcon != nil{
+                            UserInfo.icon = facebookIcon
+                            UserInfo.saveUserIcon()
+                        }
+                        
+                        self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
                 
                 }
         }
