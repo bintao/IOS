@@ -51,10 +51,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                         self.gotFBResult(result)
                 }
                 
-                println(UserInfo.fbid)
-                println(UserInfo.name)
-                println(UserInfo.email)
-                println(myToken)
                 self.time = false;
                 
                 //self.getPotraitFromFacebook()
@@ -64,8 +60,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                 println("Error")
             }
         })
-        
-        
         
     }
     
@@ -139,7 +133,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
         println(UserInfo.accessToken)
         }
         
-            
         
     }
     
