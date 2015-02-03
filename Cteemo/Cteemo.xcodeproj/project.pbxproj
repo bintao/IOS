@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42041AE51A81592600623C70 /* left.png in Resources */ = {isa = PBXBuildFile; fileRef = 42041AE41A81592600623C70 /* left.png */; };
+		42041AE71A81594900623C70 /* right.png in Resources */ = {isa = PBXBuildFile; fileRef = 42041AE61A81594900623C70 /* right.png */; };
+		42041AE91A815E1600623C70 /* addfriendsbutton.png in Resources */ = {isa = PBXBuildFile; fileRef = 42041AE81A815E1600623C70 /* addfriendsbutton.png */; };
+		42041AF11A81665E00623C70 /* white.png in Resources */ = {isa = PBXBuildFile; fileRef = 42041AF01A81665E00623C70 /* white.png */; };
 		4215A6701A7B45E1002EB62E /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4215A66F1A7B45E1002EB62E /* speaker.png */; };
 		4215A6721A7D7616002EB62E /* API in Resources */ = {isa = PBXBuildFile; fileRef = 4215A6711A7D7616002EB62E /* API */; };
 		4267D82F1A8011D20054E800 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267D82E1A8011D20054E800 /* ImageProcessor.swift */; };
@@ -17,7 +21,6 @@
 		42AB57DC1A7F3D4800C7799E /* Alamofire.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = 428F6E7A1A7F2F3D007C21AC /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		42B74FC41A812416008B575C /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B74FBE1A812416008B575C /* MainViewController.swift */; };
 		42B74FC51A812416008B575C /* TournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B74FBF1A812416008B575C /* TournamentViewController.swift */; };
-		42B74FC61A812416008B575C /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B74FC01A812416008B575C /* LoginViewController.swift */; };
 		42B74FC71A812416008B575C /* TeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B74FC11A812416008B575C /* TeamViewController.swift */; };
 		42B74FC81A812416008B575C /* NewsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B74FC21A812416008B575C /* NewsViewController.swift */; };
 		42B74FC91A812416008B575C /* MeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B74FC31A812416008B575C /* MeViewController.swift */; };
@@ -61,12 +64,11 @@
 		A1B8E9591A7B20F2009BE011 /* 我.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94C1A7B20F2009BE011 /* 我.png */; };
 		A1B8E95A1A7B20F2009BE011 /* 我2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94D1A7B20F2009BE011 /* 我2.png */; };
 		A1B8E95B1A7B20F2009BE011 /* 新闻1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94E1A7B20F2009BE011 /* 新闻1.png */; };
-		A1B8E95C1A7B20F2009BE011 /* 形状 14.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94F1A7B20F2009BE011 /* 形状 14.png */; };
+		A1B8E95C1A7B20F2009BE011 /* joinTeam.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94F1A7B20F2009BE011 /* joinTeam.png */; };
 		A1B8E95D1A7B20F2009BE011 /* 战队1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9501A7B20F2009BE011 /* 战队1.png */; };
 		A1B8E95E1A7B20F2009BE011 /* 战队2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9511A7B20F2009BE011 /* 战队2.png */; };
-		A1B8E95F1A7B20F2009BE011 /* flag 拷贝 2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9521A7B20F2009BE011 /* flag 拷贝 2.png */; };
+		A1B8E95F1A7B20F2009BE011 /* createTeam.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9521A7B20F2009BE011 /* createTeam.png */; };
 		A1B8E9601A7B20F2009BE011 /* Forma 1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9531A7B20F2009BE011 /* Forma 1.png */; };
-		A1B8E9611A7B20F2009BE011 /* hentiao.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9541A7B20F2009BE011 /* hentiao.png */; };
 		A1B8E9621A7B20F2009BE011 /* hentiao2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9551A7B20F2009BE011 /* hentiao2.png */; };
 		A1B8E9631A7B20F2009BE011 /* OK.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9561A7B20F2009BE011 /* OK.png */; };
 /* End PBXBuildFile section */
@@ -131,6 +133,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		42041AE41A81592600623C70 /* left.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = left.png; sourceTree = "<group>"; };
+		42041AE61A81594900623C70 /* right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = right.png; sourceTree = "<group>"; };
+		42041AE81A815E1600623C70 /* addfriendsbutton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addfriendsbutton.png; sourceTree = "<group>"; };
+		42041AF01A81665E00623C70 /* white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = white.png; sourceTree = "<group>"; };
 		4215A66F1A7B45E1002EB62E /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
 		4215A6711A7D7616002EB62E /* API */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API; sourceTree = "<group>"; };
 		4267D82E1A8011D20054E800 /* ImageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
@@ -140,7 +146,6 @@
 		42AB57D91A7F391A00C7799E /* tableback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tableback.png; sourceTree = "<group>"; };
 		42B74FBE1A812416008B575C /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		42B74FBF1A812416008B575C /* TournamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentViewController.swift; sourceTree = "<group>"; };
-		42B74FC01A812416008B575C /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		42B74FC11A812416008B575C /* TeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TeamViewController.swift; sourceTree = "<group>"; };
 		42B74FC21A812416008B575C /* NewsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsViewController.swift; sourceTree = "<group>"; };
 		42B74FC31A812416008B575C /* MeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeViewController.swift; sourceTree = "<group>"; };
@@ -190,12 +195,11 @@
 		A1B8E94C1A7B20F2009BE011 /* 我.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我.png"; sourceTree = "<group>"; };
 		A1B8E94D1A7B20F2009BE011 /* 我2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我2.png"; sourceTree = "<group>"; };
 		A1B8E94E1A7B20F2009BE011 /* 新闻1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "新闻1.png"; sourceTree = "<group>"; };
-		A1B8E94F1A7B20F2009BE011 /* 形状 14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "形状 14.png"; sourceTree = "<group>"; };
+		A1B8E94F1A7B20F2009BE011 /* joinTeam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joinTeam.png; sourceTree = "<group>"; };
 		A1B8E9501A7B20F2009BE011 /* 战队1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "战队1.png"; sourceTree = "<group>"; };
 		A1B8E9511A7B20F2009BE011 /* 战队2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "战队2.png"; sourceTree = "<group>"; };
-		A1B8E9521A7B20F2009BE011 /* flag 拷贝 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "flag 拷贝 2.png"; sourceTree = "<group>"; };
+		A1B8E9521A7B20F2009BE011 /* createTeam.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = createTeam.png; sourceTree = "<group>"; };
 		A1B8E9531A7B20F2009BE011 /* Forma 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Forma 1.png"; sourceTree = "<group>"; };
-		A1B8E9541A7B20F2009BE011 /* hentiao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hentiao.png; sourceTree = "<group>"; };
 		A1B8E9551A7B20F2009BE011 /* hentiao2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hentiao2.png; sourceTree = "<group>"; };
 		A1B8E9561A7B20F2009BE011 /* OK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OK.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -279,7 +283,6 @@
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
 				42B74FBE1A812416008B575C /* MainViewController.swift */,
 				42B74FBF1A812416008B575C /* TournamentViewController.swift */,
-				42B74FC01A812416008B575C /* LoginViewController.swift */,
 				42B74FC11A812416008B575C /* TeamViewController.swift */,
 				42B74FC21A812416008B575C /* NewsViewController.swift */,
 				42B74FC31A812416008B575C /* MeViewController.swift */,
@@ -369,19 +372,22 @@
 		A1B8E9641A7B215C009BE011 /* Team */ = {
 			isa = PBXGroup;
 			children = (
+				42041AE41A81592600623C70 /* left.png */,
+				42041AE61A81594900623C70 /* right.png */,
 				A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */,
+				42041AF01A81665E00623C70 /* white.png */,
 				A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */,
 				A1B8E94C1A7B20F2009BE011 /* 我.png */,
 				A1B8E94D1A7B20F2009BE011 /* 我2.png */,
 				A1B8E94E1A7B20F2009BE011 /* 新闻1.png */,
-				A1B8E94F1A7B20F2009BE011 /* 形状 14.png */,
+				A1B8E94F1A7B20F2009BE011 /* joinTeam.png */,
 				A1B8E9501A7B20F2009BE011 /* 战队1.png */,
 				A1B8E9511A7B20F2009BE011 /* 战队2.png */,
-				A1B8E9521A7B20F2009BE011 /* flag 拷贝 2.png */,
+				A1B8E9521A7B20F2009BE011 /* createTeam.png */,
 				A1B8E9531A7B20F2009BE011 /* Forma 1.png */,
-				A1B8E9541A7B20F2009BE011 /* hentiao.png */,
 				A1B8E9551A7B20F2009BE011 /* hentiao2.png */,
 				A1B8E9561A7B20F2009BE011 /* OK.png */,
+				42041AE81A815E1600623C70 /* addfriendsbutton.png */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -507,7 +513,7 @@
 			files = (
 				A1010D491A7B2F9100256208 /* school button icon.png in Resources */,
 				429FD0A41A801F25003BA84D /* circleCropper.png in Resources */,
-				A1B8E95C1A7B20F2009BE011 /* 形状 14.png in Resources */,
+				A1B8E95C1A7B20F2009BE011 /* joinTeam.png in Resources */,
 				A1B8E9581A7B20F2009BE011 /* 奖杯2.png in Resources */,
 				A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */,
 				42B85A291A748CDB00FD4642 /* me_icons1.png in Resources */,
@@ -518,10 +524,12 @@
 				42AB57DA1A7F391A00C7799E /* tableback.png in Resources */,
 				42B85A241A748CDB00FD4642 /* backG.png in Resources */,
 				4215A6701A7B45E1002EB62E /* speaker.png in Resources */,
+				42041AF11A81665E00623C70 /* white.png in Resources */,
 				42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */,
 				A1B8E95E1A7B20F2009BE011 /* 战队2.png in Resources */,
 				42B85A2A1A748CDB00FD4642 /* PHOTO icons.png in Resources */,
 				42B859F51A74840F00FD4642 /* Main.storyboard in Resources */,
+				42041AE91A815E1600623C70 /* addfriendsbutton.png in Resources */,
 				A1B8E95A1A7B20F2009BE011 /* 我2.png in Resources */,
 				A1B8E9601A7B20F2009BE011 /* Forma 1.png in Resources */,
 				A1B8E95B1A7B20F2009BE011 /* 新闻1.png in Resources */,
@@ -529,12 +537,13 @@
 				42B859FA1A74840F00FD4642 /* LaunchScreen.xib in Resources */,
 				42B85A161A7489CF00FD4642 /* loading_page.png in Resources */,
 				42B85A231A748CDB00FD4642 /* arrow.png in Resources */,
-				A1B8E9611A7B20F2009BE011 /* hentiao.png in Resources */,
 				A1B8E9591A7B20F2009BE011 /* 我.png in Resources */,
-				A1B8E95F1A7B20F2009BE011 /* flag 拷贝 2.png in Resources */,
+				A1B8E95F1A7B20F2009BE011 /* createTeam.png in Resources */,
+				42041AE51A81592600623C70 /* left.png in Resources */,
 				42B85A2D1A748D4E00FD4642 /* arrowTurned.png in Resources */,
 				A1B8E95D1A7B20F2009BE011 /* 战队1.png in Resources */,
 				42B85A2F1A74947E00FD4642 /* textField.png in Resources */,
+				42041AE71A81594900623C70 /* right.png in Resources */,
 				A1B8E9621A7B20F2009BE011 /* hentiao2.png in Resources */,
 				42B85A2B1A748CDB00FD4642 /* SUBMIT.png in Resources */,
 				42B859F71A74840F00FD4642 /* Images.xcassets in Resources */,
@@ -557,7 +566,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				42B74FC61A812416008B575C /* LoginViewController.swift in Sources */,
 				42B85A101A74884100FD4642 /* Login_CreateViewController.swift in Sources */,
 				A1010D471A7B2ACF00256208 /* ARequest.swift in Sources */,
 				42B859F21A74840F00FD4642 /* Login_MainViewController.swift in Sources */,
