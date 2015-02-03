@@ -17,7 +17,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     @IBOutlet var signup : UIButton!
     
     @IBOutlet var facebook : UIView!
-    var time = true;
+
     override func viewDidLoad(){
         super.viewDidLoad()
         
@@ -49,14 +49,12 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                         var result: [String: AnyObject] = JSON as [String: AnyObject]
                         self.gotFBResult(result)
                 }
-                
-                self.getPotraitFromFacebook()
+            
                 
                 println(UserInfo.fbid)
                 println(UserInfo.name)
                 println(UserInfo.email)
                 println(myToken)
-                self.time = false;
                 
                 //self.getPotraitFromFacebook()
             }
@@ -67,6 +65,14 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
         })
         
         
+        var facebookIcon: UIImage? = self.getPotraitFromFacebook() as UIImage
+        
+        if facebookIcon != nil{
+            UserInfo.icon = facebookIcon
+            UserInfo.saveUserIcon()
+        }
+        
+        self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: sender)
         
     }
     
@@ -97,11 +103,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
         image = UIImage(data: data)
 
         image = image.roundCornersToCircle()
-        println(image.size)
-
-        
-        var img = UIImageView(image: image)
-        self.view.addSubview(img)
 
         return image
         
