@@ -141,10 +141,9 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
         UserInfo.accessToken = result["token"] as String
         println(UserInfo.accessToken)
         }
-        
-            
-        
     }
+    
+    
     
     @IBAction func returnToLoginMain(segue : UIStoryboardSegue) {
         

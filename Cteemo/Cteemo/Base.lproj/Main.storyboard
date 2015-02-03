@@ -565,8 +565,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="signUpWithUserAndPa:" destination="DML-go-uoc" eventType="touchUpInside" id="at1-W8-QH4"/>
-                                    <action selector="submit_Password:" destination="DML-go-uoc" eventType="touchUpInside" id="62p-Oo-SGg"/>
+                                    <action selector="submit_Password:" destination="DML-go-uoc" eventType="touchUpInside" id="G3q-gG-EpY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -614,9 +613,9 @@
                         <outlet property="email" destination="LHA-DH-sJ7" id="x1U-YN-Ilw"/>
                         <outlet property="loading" destination="LTZ-ir-lIv" id="Vk9-Oa-xuQ"/>
                         <outlet property="loadingView" destination="AEX-ll-Bt6" id="bF0-xA-Mvq"/>
-                        <outlet property="messageDisplay" destination="wqC-HA-qdM" id="gjm-kE-G53"/>
+                        <outlet property="messageDisplay" destination="wqC-HA-qdM" id="4vj-KH-5Zf"/>
                         <outlet property="signup" destination="oYD-KO-lG3" id="x0R-Mx-4LE"/>
-                        <outlet property="teemoSpeaker" destination="QES-HV-E3K" id="EvS-fT-Dle"/>
+                        <outlet property="teemoSpeaker" destination="SW3-OM-RU1" id="1Cr-lg-YBf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5V2-re-qgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
