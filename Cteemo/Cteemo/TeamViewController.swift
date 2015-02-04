@@ -40,8 +40,9 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
     }
     
-    override func performSegueWithIdentifier(identifier: String?, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
