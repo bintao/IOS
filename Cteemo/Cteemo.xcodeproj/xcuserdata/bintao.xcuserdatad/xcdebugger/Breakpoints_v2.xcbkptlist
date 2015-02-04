@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Login_MainViewController.swift"
-            timestampString = "444634032.552769"
+            timestampString = "444637518.92116"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "loginViewShowingLoggedInUser(_:)"
             landmarkType = "5">
          </BreakpointContent>

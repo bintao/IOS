@@ -52,12 +52,15 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             
         }else{
             //login failed
-            if password.text == ""{
-                displaySpeaker("password is empty")
-            }else if email.text.rangeOfString("@")?.isEmpty != nil{
-                displaySpeaker("email is invalid")
-            }else if email.text != nil{
+            if email.text == ""{
                 displaySpeaker("email is empty")
+            }
+            else if password.text == ""{
+                displaySpeaker("password is empty")
+            }
+            else{
+            displaySpeaker("email is invalid")
+            
             }
         
         }
@@ -96,7 +99,12 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
                 if((result["message"] as String).rangeOfString("password")?.isEmpty != nil){
                     displaySpeaker("email and password not matched")
                 }
-                else
+                else if ((result["message"] as String).rangeOfString("ascii")?.isEmpty != nil)
+                {
+                
+                    displaySpeaker("请不要输入中文，please type english!")
+                }
+               else if ((result["message"] as String).rangeOfString("Account")?.isEmpty != nil)
                  {
                     displaySpeaker("Your Account not activated. Please check your email")
                 }

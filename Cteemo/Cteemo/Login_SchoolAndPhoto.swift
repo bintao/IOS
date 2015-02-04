@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import Alamofire
 class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var bg : UIImageView!
@@ -44,6 +44,81 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
 
     }
     
+    
+    @IBAction func submitProfile(sender: UIButton) {
+        
+        if (UserInfo.accessToken != "" && lolID.text != "" && school.text != "" ){
+            var manager = Manager.sharedInstance
+            // Specifying the Headers we need
+            manager.session.configuration.HTTPAdditionalHeaders = [
+                "token": UserInfo.accessToken
+            ]
+
+            var req = Alamofire.request(.POST, "http://54.149.235.253:5000/profile", parameters: ["username": UserInfo.name, "school":school.text,"lolID":lolID.text])
+                .responseJSON { (_, _, JSON, _) in
+                    var result: [String: AnyObject] = JSON as [String: AnyObject]
+                    self.postProfile(result)
+            }
+            
+ 
+         /*  upload image
+           var r = Alamofire.upload(.POST,"http://54.149.235.253:5000/upload_profile_icon", sourceImage)
+                     .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+                     println(totalBytesWritten)
+                     }
+            */
+            }
+        else{
+        //lol ID or school is empty
+            
+        
+        }
+        
+    }
+    func postProfile(result: [String: AnyObject]){
+        
+        println(result)
+        
+        UserInfo.lolID = self.lolID.text
+        UserInfo.school = self.school.text
+        UserInfo.icon = self.sourceImage
+        if self.gender.selectedSegmentIndex == 1{
+        UserInfo.gender = "Female"
+        
+        }
+        else{
+        UserInfo.gender = "Male"
+        }
+        println(UserInfo.lolID)
+        println(UserInfo.school)
+        println(UserInfo.gender)
+        
+        
+       /*
+        if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {
+            println("OK")
+            
+            UserInfo.email = email.text
+            UserInfo.name = nickname.text
+            UserInfo.saveUserData()
+            
+            self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
+            
+        }else{
+            if((result["message"] as String).rangeOfString("Validation")?.isEmpty != nil){
+                displaySpeaker("Invalid Email")
+            }
+            
+            if((result["message"] as String).rangeOfString("Tried")?.isEmpty != nil){
+                displaySpeaker("Your Account Already Exist")
+            }
+
+            
+        }
+        */ 
+        
+    }
+
     // after got photo   go to cropping view
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: NSDictionary!) {
         self.dismissViewControllerAnimated(true, completion: nil);

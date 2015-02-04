@@ -51,10 +51,9 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                         self.gotFBResult(result)
                         self.gotProfile()
                         
-                        
                 }
-            
-
+            println(UserInfo.email)
+            println(UserInfo.name)
             }
             else
             {
@@ -104,13 +103,14 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!)
     {
        //save and update user data
-        
+        println(user)
         if UserInfo.fbid.isEmpty || UserInfo.gender.isEmpty||UserInfo.name.isEmpty{
             
             UserInfo.gender = user.objectForKey("gender") as String
             UserInfo.name = user.name
             UserInfo.fbid = user.objectForKey("id") as String
-           
+            UserInfo.email = user.objectForKey("email") as String
+        
         }
 
         if user.objectForKey("email") == nil{
@@ -142,7 +142,15 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                 if ( result["username"]? != nil) {
                 //old User
                 
-                
+                    var facebookIcon: UIImage? = self.getPotraitFromFacebook() as UIImage
+                    
+                    if facebookIcon != nil{
+                        UserInfo.icon = facebookIcon
+                        UserInfo.saveUserIcon()
+                    }
+                    
+                    self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
+                    
                 }
                 else {
                 //new user
