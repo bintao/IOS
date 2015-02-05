@@ -105,6 +105,10 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
        //save and update user data
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> FETCH_HEAD
 =======
 
 >>>>>>> FETCH_HEAD
@@ -186,7 +190,10 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
         }
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
     
+=======
+>>>>>>> FETCH_HEAD
 =======
 >>>>>>> FETCH_HEAD
 =======
