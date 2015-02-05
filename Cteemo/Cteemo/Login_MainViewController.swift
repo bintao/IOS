@@ -103,7 +103,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!)
     {
        //save and update user data
-        println(user)
+
         if UserInfo.fbid.isEmpty || UserInfo.gender.isEmpty||UserInfo.name.isEmpty{
             
             UserInfo.gender = user.objectForKey("gender") as String
@@ -119,6 +119,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
            UserInfo.email = user.objectForKey("email") as String
         }
         
+        UserInfo.saveUserData()
    
         
     }
@@ -149,7 +150,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                         UserInfo.saveUserIcon()
                     }
                     
-                    self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
+                    self.performSegueWithIdentifier("exitToMain", sender: self)
                     
                 }
                 else {
@@ -172,12 +173,9 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     func gotFBResult(result: [String: AnyObject]){
         if result["token"]?  != nil
         {
-        UserInfo.accessToken = result["token"] as String
-        println(UserInfo.accessToken)
+            UserInfo.accessToken = result["token"] as String
+            UserInfo.saveUserData()
         }
-        
-            
-        
     }
     
     @IBAction func returnToLoginMain(segue : UIStoryboardSegue) {

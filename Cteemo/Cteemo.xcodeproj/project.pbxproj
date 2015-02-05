@@ -232,6 +232,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		421D56511A832452005E56F0 /* Team */ = {
+			isa = PBXGroup;
+			children = (
+				42B74FC11A812416008B575C /* TeamViewController.swift */,
+			);
+			name = Team;
+			sourceTree = "<group>";
+		};
 		428F6E731A7F2F3C007C21AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,7 +297,7 @@
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
 				42B74FBE1A812416008B575C /* MainViewController.swift */,
 				42B74FBF1A812416008B575C /* TournamentViewController.swift */,
-				42B74FC11A812416008B575C /* TeamViewController.swift */,
+				421D56511A832452005E56F0 /* Team */,
 				42B74FC21A812416008B575C /* NewsViewController.swift */,
 				42B74FC31A812416008B575C /* MeViewController.swift */,
 				42B74FBD1A812220008B575C /* Login */,
