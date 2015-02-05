@@ -25,7 +25,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         
         otherChoices.backgroundColor = UIColor.clearColor()
         
-        teams = ["UIUC","UCB","Stanford","MIT","University of Michigan"]
+        teams = ["My Boy","I'm the king","Sunrise","Cicicici","God of Michigan"]
 
         if hasOwnteam{
             
@@ -50,20 +50,29 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 70
+        return 80
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
-        
-        cell.backgroundColor = UIColor.clearColor()
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
-        var cellbg = UIImageView(image: UIImage(named: "textField"))
-        cellbg.frame = CGRectMake(10, 0, tableView.frame.width - 20, 60)
-        cell.addSubview(cellbg)
+        var backButton = UIButton()
+        backButton.frame.size = createTeam.frame.size
+        backButton.setImage(UIImage(named: "white"), forState: UIControlState.Normal)
+        cell.addSubview(backButton)
+        
+        var cellIcon = UIImageView(image: UIImage(named: "Forma 1"))
+        cellIcon.frame = CGRectMake(10, 10, 60, 60)
+        cell.addSubview(cellIcon)
+        
+        var teamName = UILabel(frame: CGRectMake(85, 15, 200, 27))
+        teamName.text = teams[indexPath.row]
+        teamName.textColor = UIColor.darkGrayColor()
+        teamName.font = UIFont(name: "AvenirNext-Medium", size: 18)
+        cell.addSubview(teamName)
         
         return cell
     }

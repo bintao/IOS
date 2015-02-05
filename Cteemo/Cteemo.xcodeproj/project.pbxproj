@@ -16,6 +16,7 @@
 		42041AF91A816EE400623C70 /* SUITCASE.png in Resources */ = {isa = PBXBuildFile; fileRef = 42041AF61A816EE400623C70 /* SUITCASE.png */; };
 		4215A6701A7B45E1002EB62E /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4215A66F1A7B45E1002EB62E /* speaker.png */; };
 		4215A6721A7D7616002EB62E /* API in Resources */ = {isa = PBXBuildFile; fileRef = 4215A6711A7D7616002EB62E /* API */; };
+		421D565C1A8339D2005E56F0 /* Team_FindTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */; };
 		4267D82F1A8011D20054E800 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267D82E1A8011D20054E800 /* ImageProcessor.swift */; };
 		429FD09F1A801607003BA84D /* Login_AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429FD09E1A801607003BA84D /* Login_AddPhoto.swift */; };
 		429FD0A41A801F25003BA84D /* circleCropper.png in Resources */ = {isa = PBXBuildFile; fileRef = 429FD0A31A801F25003BA84D /* circleCropper.png */; };
@@ -145,6 +146,7 @@
 		42041AF61A816EE400623C70 /* SUITCASE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SUITCASE.png; sourceTree = "<group>"; };
 		4215A66F1A7B45E1002EB62E /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
 		4215A6711A7D7616002EB62E /* API */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API; sourceTree = "<group>"; };
+		421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_FindTeamViewController.swift; sourceTree = "<group>"; };
 		4267D82E1A8011D20054E800 /* ImageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		428F6E721A7F2F3C007C21AC /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		429FD09E1A801607003BA84D /* Login_AddPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_AddPhoto.swift; sourceTree = "<group>"; };
@@ -236,6 +238,7 @@
 			isa = PBXGroup;
 			children = (
 				42B74FC11A812416008B575C /* TeamViewController.swift */,
+				421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -597,6 +600,7 @@
 				42B85A121A74888500FD4642 /* Login_SchoolAndPhoto.swift in Sources */,
 				4267D82F1A8011D20054E800 /* ImageProcessor.swift in Sources */,
 				42B85A461A74A81A00FD4642 /* InteractingWithServer.swift in Sources */,
+				421D565C1A8339D2005E56F0 /* Team_FindTeamViewController.swift in Sources */,
 				42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */,
 				42B859F01A74840F00FD4642 /* Cteemo.xcdatamodeld in Sources */,
 				42B74FC51A812416008B575C /* TournamentViewController.swift in Sources */,

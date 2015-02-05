@@ -48,6 +48,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBAction func submitProfile(sender: UIButton) {
         
         if (UserInfo.accessToken != "" && lolID.text != "" && school.text != "" ){
+            
             var manager = Manager.sharedInstance
             // Specifying the Headers we need
             manager.session.configuration.HTTPAdditionalHeaders = [
