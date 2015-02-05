@@ -26,7 +26,14 @@ class MainViewController: UIViewController, UITabBarDelegate {
         content = self.storyboard!.instantiateViewControllerWithIdentifier("News")! as UIViewController
         self.displayContentController(content)
         self.view.bringSubviewToFront(self.tabbar)
+        
         // Do any additional setup after loading the view, typically from a nib.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        if !UserInfo.userIsLogined(){
+            self.performSegueWithIdentifier("login", sender: self)
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -125,6 +132,10 @@ class MainViewController: UIViewController, UITabBarDelegate {
                 
             })
         }
+    }
+    
+    @IBAction func returnToLoginMain(segue : UIStoryboardSegue) {
+        
     }
     
 }

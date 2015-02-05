@@ -10,5 +10,13 @@
 	<string></string>
 	<key>accessToken</key>
 	<string></string>
+	<key>gender</key>
+	<string></string>
+	<key>lolID</key>
+	<string></string>
+	<key>school</key>
+	<string></string>
+	<key>intro</key>
+	<string></string>
 </dict>
 </plist>

@@ -26,7 +26,8 @@ class UserInformation: NSObject ,RequestResultDelegate {
     
     //check if the user is logined
     func userIsLogined()->Bool{
-        if email == "" || name == "" || accessToken == "" {
+        
+        if accessToken == "" {
             return false
         }else{
             return true
@@ -58,7 +59,7 @@ class UserInformation: NSObject ,RequestResultDelegate {
     }
     
     func packaging()->[String: AnyObject]{
-        var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "lolID": lolID, "school": school]
+        var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "lolID": lolID, "school": school, "intro": intro]
         return data
     }
     
