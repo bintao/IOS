@@ -8,6 +8,8 @@
 
 import UIKit
 import Alamofire
+
+
 class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var bg : UIImageView!
@@ -16,8 +18,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet var addPhoto : UIButton!
 
     @IBOutlet var iconDisplay : UIImageView!
-
-    @IBOutlet var lolID : UITextField!
+    @IBOutlet var lolName : UITextField!
     @IBOutlet var school : UITextField!
 
     var sourceImage: UIImage!
@@ -47,30 +48,43 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     
     @IBAction func submitProfile(sender: UIButton) {
         
+<<<<<<< HEAD
+        if (UserInfo.accessToken != "" && lolName.text != "" && school.text != "" ){
+=======
         if (UserInfo.accessToken != "" && lolID.text != "" && school.text != "" ){
+            
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
+>>>>>>> FETCH_HEAD
             var manager = Manager.sharedInstance
             // Specifying the Headers we need
             manager.session.configuration.HTTPAdditionalHeaders = [
                 "token": UserInfo.accessToken
             ]
 
-            var req = Alamofire.request(.POST, "http://54.149.235.253:5000/profile", parameters: ["username": UserInfo.name, "school":school.text,"lolID":lolID.text])
+            var req = Alamofire.request(.POST, "http://54.149.235.253:5000/profile", parameters: ["username": UserInfo.name, "school":school.text,"lolID":lolName.text])
                 .responseJSON { (_, _, JSON, _) in
                     var result: [String: AnyObject] = JSON as [String: AnyObject]
-                    self.postProfile(result)
+                    self.gotResult(result)
             }
+          
             
- 
-         /*  upload image
+           /*  upload image
            var r = Alamofire.upload(.POST,"http://54.149.235.253:5000/upload_profile_icon", sourceImage)
                      .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
                      println(totalBytesWritten)
                      }
             */
+            
+            lolapi.getSummonerID(lolName.text)
             }
+            
         else{
         //lol ID or school is empty
-            
+<<<<<<< HEAD
+<<<<<<< HEAD
+          
         
         }
         
@@ -79,43 +93,60 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         
         println(result)
         
-        UserInfo.lolID = self.lolID.text
+        UserInfo.lolName = self.lolName.text
         UserInfo.school = self.school.text
         UserInfo.icon = self.sourceImage
         if self.gender.selectedSegmentIndex == 1{
         UserInfo.gender = "Female"
+        UserInfo.saveUserData()
         
         }
         else{
         UserInfo.gender = "Male"
         }
-        println(UserInfo.lolID)
+        println(UserInfo.lolName)
         println(UserInfo.school)
         println(UserInfo.gender)
         
         
-       /*
-        if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {
-            println("OK")
-            
-            UserInfo.email = email.text
-            UserInfo.name = nickname.text
-            UserInfo.saveUserData()
-            
-            self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
-            
-        }else{
-            if((result["message"] as String).rangeOfString("Validation")?.isEmpty != nil){
-                displaySpeaker("Invalid Email")
-            }
-            
-            if((result["message"] as String).rangeOfString("Tried")?.isEmpty != nil){
-                displaySpeaker("Your Account Already Exist")
-            }
-
-            
+=======
         }
-        */ 
+        
+    }
+    
+    //got the result from the server
+    func gotResult(result: [String: AnyObject]){
+                
+        UserInfo.lolID = self.lolID.text
+        UserInfo.school = self.school.text
+        UserInfo.icon = self.sourceImage
+        UserInfo.saveUserData()
+        
+=======
+        }
+        
+    }
+    
+    //got the result from the server
+    func gotResult(result: [String: AnyObject]){
+                
+        UserInfo.lolID = self.lolID.text
+        UserInfo.school = self.school.text
+        UserInfo.icon = self.sourceImage
+        UserInfo.saveUserData()
+        
+>>>>>>> FETCH_HEAD
+        if self.gender.selectedSegmentIndex == 1{
+            UserInfo.gender = "Female"
+        }else{
+            UserInfo.gender = "Male"
+        }
+
+        self.performSegueWithIdentifier("goToMain", sender: self)
+<<<<<<< HEAD
+>>>>>>> FETCH_HEAD
+=======
+>>>>>>> FETCH_HEAD
         
     }
 
@@ -141,7 +172,13 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     
     // background tapped
     func backGroundTapped(gestureRecognizer: UITapGestureRecognizer){
-        lolID.resignFirstResponder()
+        lolName.resignFirstResponder()
+    }
+    
+    func textFieldDidEndEditing(textField: UITextField) {
+        if textField == lolName{
+           
+        }
     }
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
@@ -156,7 +193,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     // keyboard customization
     func textFieldShouldReturn(textField: UITextField) -> Bool {
 
-        lolID.resignFirstResponder()
+        lolName.resignFirstResponder()
         
         return true
     }

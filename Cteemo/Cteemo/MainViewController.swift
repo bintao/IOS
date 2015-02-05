@@ -12,27 +12,24 @@ class MainViewController: UIViewController, UITabBarDelegate {
     
     @IBOutlet var tabbar: UITabBar!
     
-    
     var content : UIViewController!
 
-    @IBOutlet var news: UIView!
-    @IBOutlet var tournament: UIView!
-    @IBOutlet var me: UIView!
-    @IBOutlet var team: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        content = self.storyboard!.instantiateViewControllerWithIdentifier("News")! as UIViewController
-        self.displayContentController(content)
-        self.view.bringSubviewToFront(self.tabbar)
-        
+        self.tabbar.transform = CGAffineTransformMakeTranslation(0, self.tabbar.frame.height)
+        self.tabbar.alpha = 0
+
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+
     override func viewDidAppear(animated: Bool) {
         if !UserInfo.userIsLogined(){
             self.performSegueWithIdentifier("login", sender: self)
+        }else{
+            showTabb()
+            content = self.storyboard!.instantiateViewControllerWithIdentifier("News")! as UIViewController
+            self.displayContentController(content)
+            self.view.bringSubviewToFront(self.tabbar)
         }
     }
     
@@ -87,20 +84,6 @@ class MainViewController: UIViewController, UITabBarDelegate {
         content.view.removeFromSuperview()
         content.removeFromParentViewController()
     }
-    
-    func presentTheView(view: UIView){
-        UIView.animateWithDuration(0.4, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            
-            self.me.alpha = 0
-            self.team.alpha = 0
-            self.news.alpha = 0
-            self.tournament.alpha = 0
-            view.alpha = 1
-            }
-            , completion: {
-                (value: Bool) in
-        })
-    }
  
     //hide tab bar
     
@@ -134,7 +117,7 @@ class MainViewController: UIViewController, UITabBarDelegate {
         }
     }
     
-    @IBAction func returnToLoginMain(segue : UIStoryboardSegue) {
+    @IBAction func returnToMain(segue : UIStoryboardSegue) {
         
     }
     

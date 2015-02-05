@@ -57,8 +57,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         else if nickname.text == ""{
             displaySpeaker("Fill your Nickname please ~ ")
         }
-        
-    */
+        */
     }
     
     func gotCreateResult(result: [String: AnyObject]){
