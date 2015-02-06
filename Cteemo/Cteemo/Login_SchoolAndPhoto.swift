@@ -62,17 +62,12 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
                     self.gotResult(result)
             }
           
+            UIImagePNGRepresentation(sourceImage)
             
-           /*  upload image
-           var r = Alamofire.upload(.POST,"http://54.149.235.253:5000/upload_profile_icon", sourceImage)
-                     .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
-                     println(totalBytesWritten)
-                     }
-            */
             
-            lolapi.getSummonerID(lolName.text)
-            }
+           var req1 = Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(sourceImage))
             
+        }
         else{
         //lol ID or school is empty
 
