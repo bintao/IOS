@@ -106,7 +106,7 @@ class MainViewController: UIViewController, UITabBarDelegate {
         if tabbar.alpha < 1{
         
             UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            
+                
             self.tabbar.alpha = 1
             self.tabbar.transform = CGAffineTransformMakeTranslation(0, 0)
             }
@@ -116,6 +116,15 @@ class MainViewController: UIViewController, UITabBarDelegate {
             })
         }
     }
+    
+    func logout(){
+        hideTabb()
+        hideContentController(content)
+        UserInfo.cleanUserData()
+        FBSession.activeSession().closeAndClearTokenInformation()
+        self.performSegueWithIdentifier("login", sender: self)
+    }
+
     
     @IBAction func returnToMain(segue : UIStoryboardSegue) {
         

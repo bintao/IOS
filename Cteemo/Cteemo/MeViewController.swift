@@ -10,6 +10,8 @@ import UIKit
 
 class MeViewController: UIViewController {
 
+    @IBOutlet weak var logout: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +23,14 @@ class MeViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func log_out(sender: UIButton) {
+        
+         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).logout()
+        
+        UserInfo.accessToken = ""
+        UserInfo.saveUserData()
+        
+    }
     /*
     // MARK: - Navigation
 

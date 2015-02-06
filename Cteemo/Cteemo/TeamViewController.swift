@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class TeamViewController: UIViewController , UITableViewDataSource, UITableViewDelegate  {
 
@@ -22,7 +23,15 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        var manager = Manager.sharedInstance
+        manager.session.configuration.HTTPAdditionalHeaders = ["token": UserInfo.accessToken]
         
+        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/my_team/lol")
+            .responseJSON { (_, _, JSON, _) in
+                var result: [String: AnyObject] = JSON as [String: AnyObject]
+                
+        }
+
         otherChoices.backgroundColor = UIColor.clearColor()
         
         teams = ["My Boy","I'm the king","Sunrise","Cicicici","God of Michigan"]
@@ -36,6 +45,22 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
     }
     
+    
+    func gotTeam(result: [String: AnyObject]){
+        
+        
+        if (result["message"] as String).rangeOfString("Not")?.isEmpty != nil {
+            // Not joined any team yet
+            
+            }
+            else{
+        
+            // joined team
+        
+            }
+    }
+        
+        
     override func viewDidAppear(animated: Bool) {
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
     }
@@ -82,7 +107,9 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    
+    
     /*
     // MARK: - Navigation
 

@@ -83,17 +83,12 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     func getPotraitFromFacebook()->UIImage{
         
         var image:UIImage!
-        
         var str = "http://graph.facebook.com/\(UserInfo.fbid)/picture?type=large"
         var url = NSURL(string: str)
-
         var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
         image = UIImage(data: data)
-
         image = image.roundCornersToCircle()
-
         return image
-        
     }
     
     func loginView(loginView: FBLoginView!, handleError error: NSError!) {
@@ -151,7 +146,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                     }
                     
                     self.performSegueWithIdentifier("exitToMain", sender: self)
-                    
+    
                 }
                 else {
                 //new user
