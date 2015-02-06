@@ -1412,8 +1412,19 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="CREATE TEAM" id="Bxb-vu-etp">
-                        <barButtonItem key="rightBarButtonItem" title="CREATE" id="JVQ-AG-4Wd"/>
+                        <barButtonItem key="rightBarButtonItem" title="CREATE" id="JVQ-AG-4Wd">
+                            <connections>
+                                <action selector="createTeam:" destination="1rz-XN-iyY" id="eBz-xR-ieX"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="create" destination="JVQ-AG-4Wd" id="iUG-GW-AYO"/>
+                        <outlet property="icon" destination="qP7-2u-E2O" id="fsz-qM-JZH"/>
+                        <outlet property="school" destination="20Y-vy-lNY" id="7mL-l6-ZyV"/>
+                        <outlet property="teamIntro" destination="w9j-JW-7Mx" id="7TG-Lg-L9m"/>
+                        <outlet property="teamName" destination="AhU-FB-bTE" id="Raa-fG-xHb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgX-LB-i11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

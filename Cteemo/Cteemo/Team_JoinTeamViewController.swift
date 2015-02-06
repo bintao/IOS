@@ -9,6 +9,7 @@
 import UIKit
 
 class Team_JoinTeamViewController: UIViewController {
+
     @IBOutlet var search: UIButton!
     @IBOutlet var post: UIButton!
     @IBOutlet var searchLab: UILabel!
@@ -53,6 +54,8 @@ class Team_JoinTeamViewController: UIViewController {
 
         
     }
+    
+    
     func searchSelect(){
         postLab.textColor = self.navigationController?.view.tintColor
         postLab.backgroundColor = UIColor.whiteColor()
