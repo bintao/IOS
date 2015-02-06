@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -760,6 +760,18 @@
                                 <state key="normal" image="arrow.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+                                <connections>
+                                    <segue destination="b8U-VU-yhg" kind="unwind" unwindAction="returnToLoginMain:" id="A7n-jI-A48"/>
+                                </connections>
+=======
+>>>>>>> FETCH_HEAD
+=======
+>>>>>>> FETCH_HEAD
+=======
+>>>>>>> FETCH_HEAD
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-Ne-k2Q">
                                 <rect key="frame" x="90" y="384" width="438" height="96"/>
@@ -865,7 +877,7 @@
                         <outlet property="bg" destination="0yt-ES-pKy" id="B0J-NI-00v"/>
                         <outlet property="gender" destination="vu3-vO-HJm" id="Zq7-hO-O44"/>
                         <outlet property="iconDisplay" destination="jbP-Sc-4H2" id="t3Z-Z1-le3"/>
-                        <outlet property="lolID" destination="fsd-6F-wiq" id="1CP-MA-Ba3"/>
+                        <outlet property="lolName" destination="fsd-6F-wiq" id="cg7-MH-H6Y"/>
                         <outlet property="school" destination="l4Q-0i-Kpt" id="x8T-83-kr8"/>
                         <outlet property="submit" destination="Rzm-Ne-k2Q" id="dyr-1f-X17"/>
                         <segue destination="A7H-Sn-HAT" kind="presentation" identifier="searchSchool" id="a4j-wu-9T7"/>
@@ -1014,7 +1026,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VxQ-Kp-HYI" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3001" y="-530"/>
+            <point key="canvasLocation" x="3081" y="-498"/>
         </scene>
         <!--Replies-->
         <scene sceneID="OcL-AN-Zhm">
@@ -1524,7 +1536,7 @@
         <image name="white.png" width="1200" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9wu-Y0-gi9"/>
+        <segue reference="WGx-hs-GOh"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.15303676869999999" blue="0.0294614929" alpha="1" colorSpace="calibratedRGB"/>
 </document>

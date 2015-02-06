@@ -17,11 +17,13 @@ class UserInformation: NSObject ,RequestResultDelegate {
     var name: String = ""
     var fbid: String = ""
     var accessToken: String = ""
-    var lolID: String = ""
     var gender: String = ""
     var school: String = ""
     var intro: String = ""
-
+    var lolID :String = ""
+    var lolRank: String = ""
+    var lolName: String = ""
+    
     var icon: UIImage!
     
     //check if the user is logined
@@ -54,12 +56,15 @@ class UserInformation: NSObject ,RequestResultDelegate {
         gender = data["gender"] as String
         school = data["school"] as String
         intro = data["intro"] as String
+        lolRank = data["lolRank"] as String
         
+        
+        lolName = data["lolName"] as String
         saveUserData()
     }
     
     func packaging()->[String: AnyObject]{
-        var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "lolID": lolID, "school": school, "intro": intro]
+        var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "lolID": lolID, "school": school, "intro": intro,"lolName":lolName,"lolRank":lolRank]
         return data
     }
     
@@ -109,6 +114,8 @@ class UserInformation: NSObject ,RequestResultDelegate {
         gender = ""
         school = ""
         intro = ""
+        lolName = ""
+        lolRank = ""
         DataManager.saveUserInfoToLocal(packaging())
     }
     
