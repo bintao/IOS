@@ -19,6 +19,10 @@
 		421D565C1A8339D2005E56F0 /* Team_FindTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */; };
 		4267D82F1A8011D20054E800 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267D82E1A8011D20054E800 /* ImageProcessor.swift */; };
 		42855B9D1A8459A600EB9546 /* Team_JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42855B9C1A8459A600EB9546 /* Team_JoinTeamViewController.swift */; };
+		42855BA21A846C0000EB9546 /* Team_FindTeamPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42855BA11A846C0000EB9546 /* Team_FindTeamPostsViewController.swift */; };
+		42855BA41A847CCC00EB9546 /* CAMERA.png in Resources */ = {isa = PBXBuildFile; fileRef = 42855BA31A847CCC00EB9546 /* CAMERA.png */; };
+		42855BA61A847D9F00EB9546 /* teambg .png in Resources */ = {isa = PBXBuildFile; fileRef = 42855BA51A847D9F00EB9546 /* teambg .png */; };
+		42855BA81A84803000EB9546 /* Team_CreateTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42855BA71A84803000EB9546 /* Team_CreateTeamViewController.swift */; };
 		429FD09F1A801607003BA84D /* Login_AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429FD09E1A801607003BA84D /* Login_AddPhoto.swift */; };
 		429FD0A41A801F25003BA84D /* circleCropper.png in Resources */ = {isa = PBXBuildFile; fileRef = 429FD0A31A801F25003BA84D /* circleCropper.png */; };
 		42AB57DA1A7F391A00C7799E /* tableback.png in Resources */ = {isa = PBXBuildFile; fileRef = 42AB57D91A7F391A00C7799E /* tableback.png */; };
@@ -151,6 +155,10 @@
 		421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_FindTeamViewController.swift; sourceTree = "<group>"; };
 		4267D82E1A8011D20054E800 /* ImageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		42855B9C1A8459A600EB9546 /* Team_JoinTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_JoinTeamViewController.swift; sourceTree = "<group>"; };
+		42855BA11A846C0000EB9546 /* Team_FindTeamPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_FindTeamPostsViewController.swift; sourceTree = "<group>"; };
+		42855BA31A847CCC00EB9546 /* CAMERA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CAMERA.png; sourceTree = "<group>"; };
+		42855BA51A847D9F00EB9546 /* teambg .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "teambg .png"; sourceTree = "<group>"; };
+		42855BA71A84803000EB9546 /* Team_CreateTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_CreateTeamViewController.swift; sourceTree = "<group>"; };
 		428F6E721A7F2F3C007C21AC /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Alamofire-master/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		429FD09E1A801607003BA84D /* Login_AddPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_AddPhoto.swift; sourceTree = "<group>"; };
 		429FD0A31A801F25003BA84D /* circleCropper.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circleCropper.png; sourceTree = "<group>"; };
@@ -244,6 +252,8 @@
 				42B74FC11A812416008B575C /* TeamViewController.swift */,
 				42855B9C1A8459A600EB9546 /* Team_JoinTeamViewController.swift */,
 				421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */,
+				42855BA11A846C0000EB9546 /* Team_FindTeamPostsViewController.swift */,
+				42855BA71A84803000EB9546 /* Team_CreateTeamViewController.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -395,9 +405,11 @@
 		A1B8E9641A7B215C009BE011 /* Team */ = {
 			isa = PBXGroup;
 			children = (
+				42855BA31A847CCC00EB9546 /* CAMERA.png */,
 				42041AF41A816EE400623C70 /* box1.png */,
 				42041AF51A816EE400623C70 /* institution.png */,
 				42041AF61A816EE400623C70 /* SUITCASE.png */,
+				42855BA51A847D9F00EB9546 /* teambg .png */,
 				42041AE41A81592600623C70 /* left.png */,
 				42041AE61A81594900623C70 /* right.png */,
 				A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */,
@@ -540,6 +552,7 @@
 			files = (
 				A1010D491A7B2F9100256208 /* school button icon.png in Resources */,
 				429FD0A41A801F25003BA84D /* circleCropper.png in Resources */,
+				42855BA41A847CCC00EB9546 /* CAMERA.png in Resources */,
 				A1B8E95C1A7B20F2009BE011 /* joinTeam.png in Resources */,
 				A1B8E9581A7B20F2009BE011 /* 奖杯2.png in Resources */,
 				A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */,
@@ -552,6 +565,7 @@
 				42B85A251A748CDB00FD4642 /* button.png in Resources */,
 				42AB57DA1A7F391A00C7799E /* tableback.png in Resources */,
 				42B85A241A748CDB00FD4642 /* backG.png in Resources */,
+				42855BA61A847D9F00EB9546 /* teambg .png in Resources */,
 				4215A6701A7B45E1002EB62E /* speaker.png in Resources */,
 				42041AF11A81665E00623C70 /* white.png in Resources */,
 				42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */,
@@ -610,6 +624,7 @@
 				421D565C1A8339D2005E56F0 /* Team_FindTeamViewController.swift in Sources */,
 				42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */,
 				42B859F01A74840F00FD4642 /* Cteemo.xcdatamodeld in Sources */,
+				42855BA81A84803000EB9546 /* Team_CreateTeamViewController.swift in Sources */,
 				42B74FC51A812416008B575C /* TournamentViewController.swift in Sources */,
 				42B85A441A74A81A00FD4642 /* UserInformation.swift in Sources */,
 				429FD09F1A801607003BA84D /* Login_AddPhoto.swift in Sources */,
@@ -619,6 +634,7 @@
 				42B74FC41A812416008B575C /* MainViewController.swift in Sources */,
 				A1F138861A8346C9007DE5A2 /* lol_api.swift in Sources */,
 				42B85A181A748B2E00FD4642 /* Login_SchoolSearchViewController.swift in Sources */,
+				42855BA21A846C0000EB9546 /* Team_FindTeamPostsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

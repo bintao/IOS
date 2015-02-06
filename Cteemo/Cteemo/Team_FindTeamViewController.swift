@@ -9,13 +9,19 @@
 import UIKit
 import Alamofire
 
-class Team_FindTeamViewController: UIViewController, UISearchBarDelegate{
+class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
     
     
     @IBOutlet var search: UISearchBar!
     @IBOutlet var loading : UIActivityIndicatorView!
     @IBOutlet var resultTable : UITableView!
-
+    
+    var teams: [AnyObject] = [AnyObject]()
+    
+    override func viewDidLoad() {
+        resultTable.backgroundColor = UIColor.clearColor()
+    }
+    
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         
         var manager = Manager.sharedInstance
@@ -25,7 +31,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate{
         ]
         
         startLoading()
-        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/search_team/lol", parameters: ["teamName": searchBar.text])
+        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/search_team/lol", parameters: ["teamName": searchBar.text, "school": "UIUC"])
             .responseJSON { (_, _, JSON, _) in
                 
                 var result: [AnyObject] = [AnyObject]()
@@ -39,6 +45,36 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate{
     func gotResult(result: [AnyObject]){
         stopLoading()
         print(result)
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return teams.count
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        var backButton = UIButton(frame: CGRectMake(0, 0, self.view.frame.width, 70))
+        backButton.setImage(UIImage(named: "white"), forState: UIControlState.Normal)
+        cell.addSubview(backButton)
+        
+        var cellIcon = UIImageView(image: UIImage(named: "Forma 1"))
+        cellIcon.frame = CGRectMake(10, 10, 60, 60)
+        cell.addSubview(cellIcon)
+        
+        var teamName = UILabel(frame: CGRectMake(85, 15, 200, 27))
+        teamName.textColor = UIColor.darkGrayColor()
+        teamName.font = UIFont(name: "AvenirNext-Medium", size: 18)
+        cell.addSubview(teamName)
+        
+        return cell
     }
     
     //loading view display while login
