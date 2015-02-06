@@ -34,7 +34,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
         
-
         var myToken = FBSession.activeSession().accessTokenData.accessToken
         var fbid: String = UserInfo.fbid
 
