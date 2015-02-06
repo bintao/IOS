@@ -11,6 +11,7 @@ import Alamofire
 
 class Team_FindTeamViewController: UIViewController, UISearchBarDelegate{
     
+    
     @IBOutlet var search: UISearchBar!
     @IBOutlet var loading : UIActivityIndicatorView!
     @IBOutlet var resultTable : UITableView!

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -760,18 +760,9 @@
                                 <state key="normal" image="arrow.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
                                 <connections>
                                     <segue destination="b8U-VU-yhg" kind="unwind" unwindAction="returnToLoginMain:" id="A7n-jI-A48"/>
                                 </connections>
-=======
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-Ne-k2Q">
                                 <rect key="frame" x="90" y="384" width="438" height="96"/>
@@ -1004,8 +995,9 @@
                                     <tabBarItem title="Team" image="flag" id="kGG-rg-Xuk"/>
                                     <tabBarItem title="Me" image="user" id="Yps-TO-rjE"/>
                                 </items>
-                                <color key="tintColor" red="0.9103215939" green="0.75699410810000001" blue="0.1628884642" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="selectedImageTintColor" red="0.9103215939" green="0.75699410810000001" blue="0.1628884642" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="selectedImageTintColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="delegate" destination="HIH-ZW-Nle" id="4yR-up-wyI"/>
                                 </connections>
@@ -1339,7 +1331,7 @@
         <!--Join a Team-->
         <scene sceneID="bpP-pN-ogk">
             <objects>
-                <viewController id="blR-Dl-a0a" customClass="Team_FindTeamViewController" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="blR-Dl-a0a" customClass="Team_JoinTeamViewController" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="M4Z-yE-JUv"/>
                         <viewControllerLayoutGuide type="bottom" id="vFb-Sf-obK"/>
@@ -1348,40 +1340,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aps-qy-OCu">
-                                <rect key="frame" x="0.0" y="90" width="600" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <outlet property="delegate" destination="blR-Dl-a0a" id="2M8-cS-Ehg"/>
-                                </connections>
-                            </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="cph-XM-6Rr">
-                                <rect key="frame" x="0.0" y="176" width="600" height="424"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="RA5-m0-fbD">
-                                <rect key="frame" x="290" y="290" width="20" height="20"/>
-                            </activityIndicatorView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9KK-6D-s5j">
+                                <rect key="frame" x="0.0" y="94" width="600" height="45"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i5j-GK-S6C">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gp1-dp-lac">
+                                                <rect key="frame" x="110" y="7" width="48" height="34"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="POST">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4J-vM-eoK">
+                                                <rect key="frame" x="462" y="6" width="48" height="34"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                <state key="normal" title="POST">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <state key="selected">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="i5j-GK-S6C" secondAttribute="trailing" constant="2" id="LN5-xW-dP3"/>
+                                    <constraint firstItem="i5j-GK-S6C" firstAttribute="top" secondItem="9KK-6D-s5j" secondAttribute="top" constant="2" id="OYA-md-iWw"/>
+                                    <constraint firstItem="i5j-GK-S6C" firstAttribute="leading" secondItem="9KK-6D-s5j" secondAttribute="leading" constant="2" id="WeQ-J7-hjn"/>
+                                    <constraint firstAttribute="bottom" secondItem="i5j-GK-S6C" secondAttribute="bottom" constant="2" id="bcY-qf-9hR"/>
+                                    <constraint firstAttribute="height" constant="45" id="hjZ-fE-llb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="RA5-m0-fbD" secondAttribute="centerY" id="6ab-Cj-aw6"/>
-                            <constraint firstItem="aps-qy-OCu" firstAttribute="leading" secondItem="l3b-dI-OSP" secondAttribute="leading" id="8kK-dT-WV9"/>
-                            <constraint firstItem="aps-qy-OCu" firstAttribute="top" secondItem="M4Z-yE-JUv" secondAttribute="bottom" constant="10" id="NCO-YA-FxJ"/>
-                            <constraint firstAttribute="centerX" secondItem="RA5-m0-fbD" secondAttribute="centerX" id="Unp-8D-Flt"/>
-                            <constraint firstAttribute="trailing" secondItem="aps-qy-OCu" secondAttribute="trailing" id="fIq-2E-qLo"/>
+                            <constraint firstItem="9KK-6D-s5j" firstAttribute="top" secondItem="M4Z-yE-JUv" secondAttribute="bottom" constant="30" id="497-8N-w24"/>
+                            <constraint firstItem="9KK-6D-s5j" firstAttribute="leading" secondItem="l3b-dI-OSP" secondAttribute="leading" id="FJ1-Av-75e"/>
+                            <constraint firstAttribute="trailing" secondItem="9KK-6D-s5j" secondAttribute="trailing" id="lse-SO-55G"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Join a Team" id="ZwZ-yb-h7A"/>
                     <connections>
-                        <outlet property="loading" destination="RA5-m0-fbD" id="kVr-4V-Fnq"/>
-                        <outlet property="resultTable" destination="cph-XM-6Rr" id="kAu-nQ-FDR"/>
-                        <outlet property="search" destination="aps-qy-OCu" id="N8d-Fo-p6Z"/>
+                        <outlet property="container" destination="i5j-GK-S6C" id="c1a-2M-lwe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3O-pt-TQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6915" y="-74"/>
+            <point key="canvasLocation" x="6573" y="-118"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4FT-0R-U4A">
@@ -1538,5 +1552,5 @@
     <inferredMetricsTieBreakers>
         <segue reference="WGx-hs-GOh"/>
     </inferredMetricsTieBreakers>
-    <color key="tintColor" red="1" green="0.15303676869999999" blue="0.0294614929" alpha="1" colorSpace="calibratedRGB"/>
+    <color key="tintColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
 </document>

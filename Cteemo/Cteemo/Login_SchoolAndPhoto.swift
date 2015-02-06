@@ -48,18 +48,8 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     
     @IBAction func submitProfile(sender: UIButton) {
         
-<<<<<<< HEAD
         if (UserInfo.accessToken != "" && lolName.text != "" && school.text != "" ){
-=======
-        if (UserInfo.accessToken != "" && lolID.text != "" && school.text != "" ){
-            
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
+
             var manager = Manager.sharedInstance
             // Specifying the Headers we need
             manager.session.configuration.HTTPAdditionalHeaders = [
@@ -85,9 +75,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             
         else{
         //lol ID or school is empty
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
+
           
         
         }
@@ -113,47 +101,17 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         println(UserInfo.gender)
         
         
-=======
-        }
-        
     }
+    
     
     //got the result from the server
     func gotResult(result: [String: AnyObject]){
                 
-        UserInfo.lolID = self.lolID.text
+        UserInfo.lolName = self.lolName.text
         UserInfo.school = self.school.text
         UserInfo.icon = self.sourceImage
         UserInfo.saveUserData()
         
-=======
-        }
-        
-    }
-    
-    //got the result from the server
-    func gotResult(result: [String: AnyObject]){
-                
-        UserInfo.lolID = self.lolID.text
-        UserInfo.school = self.school.text
-        UserInfo.icon = self.sourceImage
-        UserInfo.saveUserData()
-        
->>>>>>> FETCH_HEAD
-=======
-        }
-        
-    }
-    
-    //got the result from the server
-    func gotResult(result: [String: AnyObject]){
-                
-        UserInfo.lolID = self.lolID.text
-        UserInfo.school = self.school.text
-        UserInfo.icon = self.sourceImage
-        UserInfo.saveUserData()
-        
->>>>>>> FETCH_HEAD
         if self.gender.selectedSegmentIndex == 1{
             UserInfo.gender = "Female"
         }else{
@@ -161,13 +119,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         }
 
         self.performSegueWithIdentifier("goToMain", sender: self)
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
-=======
->>>>>>> FETCH_HEAD
+
         
     }
 
