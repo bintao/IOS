@@ -218,9 +218,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "UserInformation"
-            landmarkType = "3">
+            endingLineNumber = "24">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -292,9 +290,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "UserInformation"
-            landmarkType = "3">
+            endingLineNumber = "25">
             <Locations>
                <Location
                   shouldBeEnabled = "No"

@@ -76,6 +76,15 @@ class DataManager: NSObject {
     }
     
 
+
+    class func saveUserIconFromLocal(icon: UIImage){
+
+        let fileManager = NSFileManager()
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var imagePath = paths.stringByAppendingPathComponent("icon.png")
+        UIImagePNGRepresentation(icon).writeToFile(imagePath, atomically: true)
+    }
+
     
     //get User Icon
     class func getUserIconFromLocal()->UIImage{
@@ -107,6 +116,15 @@ class DataManager: NSObject {
             
         }
         return image
+    }
+    
+    
+    class func saveTeamIconFromLocal(icon: UIImage){
+        
+        let fileManager = NSFileManager()
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var imagePath = paths.stringByAppendingPathComponent("teamicon.png")
+        UIImagePNGRepresentation(icon).writeToFile(imagePath, atomically: true)
     }
 
 }
