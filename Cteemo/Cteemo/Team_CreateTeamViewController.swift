@@ -33,11 +33,11 @@ class Team_CreateTeamViewController: UIViewController {
             .responseJSON { (_, _, JSON, _) in
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
                     println(result)
+            }
         }
         
         
-        
     
-    }
+    
     
 }
