@@ -47,7 +47,7 @@ class UserTeam: NSObject{
     
     func saveUserIcon(){
         if teamicon != nil{
-            DataManager.
+            
         }
     }
     

@@ -153,10 +153,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                         UserInfo.saveUserIcon()
 
                     }
-                    var req1 = Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", NSURL(fileURLWithPath: DataManager.getUserIconURL())!).responseJSON { (_, _, JSON, _) in
-                        print(JSON)
-                    }
-                    
 
                     self.performSegueWithIdentifier("exitToMain", sender: self)
     
@@ -169,13 +165,8 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                             UserInfo.icon = facebookIcon
                             UserInfo.saveUserIcon()
 
-                            var req1 = Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", NSURL(fileURLWithPath: DataManager.getUserIconURL())!).responseJSON { (_, _, JSON, _) in
-                                print(JSON)
-                            }
-                        }
-                    var req1 = Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", NSURL(fileURLWithPath: DataManager.getUserIconURL())!).responseJSON { (_, _, JSON, _) in
-                        print(JSON)
-                    }
+                                                   }
+
                         self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
                 
                 }
