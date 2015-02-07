@@ -31,6 +31,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
                 if JSON != nil{
                     var result: [String: AnyObject] = JSON as [String: AnyObject]
                 }
+
                 
         }
 
@@ -51,18 +52,34 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     func gotTeam(result: [String: AnyObject]){
         
         
-       
             if(result["id"]?  != nil ){
             // joined team
+            
+                
+                
+                var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
+                
+                if(captain != UserInfo.profile_ID){
+                
+                 println("You are not a captain.")
+                println(UserInfo.profile_ID)
+                }
+                
+                else {
+                
+                 println("You are a captain.")
+                    
+                }
+                
+            
             UserInfo.teamID = result["id"] as String
             UserInfo.teamName = result["teamName"] as String
             UserInfo.team_Intro = result["teamIntro"] as String
-            UserInfo.saveUserData()
             
+            UserInfo.saveUserData()
             println(UserInfo.teamID)
             println(UserInfo.teamName)
             println(UserInfo.team_Intro)
-            
             
             }
         else {
