@@ -21,8 +21,7 @@ class CustomSwitcher: UIView {
     var chosenBox = 0
 
     
-    func setup(choices:[String], frame: CGRect, colorSelected: UIColor, colorDefault:UIColor){
-        self.backgroundColor = UIColor.blackColor()
+    func setup(choices:[String], colorSelected: UIColor, colorDefault:UIColor){
         defaultColor = colorDefault
         chosenColor = colorSelected
         
@@ -34,7 +33,7 @@ class CustomSwitcher: UIView {
         for var index = 0; index < selections.count; index++ {
             
             var width: CGFloat = (self.frame.width - 4) / CGFloat(selections.count)
-            var height: CGFloat = (self.frame.height - 4) / CGFloat(selections.count)
+            var height: CGFloat = self.frame.height - 4
             
             var but = UIButton(frame: CGRectMake(2 + width * CGFloat(index), 2, width, height))
             but.backgroundColor = defaultColor

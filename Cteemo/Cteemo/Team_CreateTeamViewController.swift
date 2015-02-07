@@ -33,8 +33,7 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate{
 }
     override func viewDidAppear(animated: Bool) {
         var choices = ["SCHOOL","PUBLIC"]
-        schoolPublicIn.setup(choices, frame: schoolPublicIn.frame, colorSelected: self.navigationController!.view.tintColor!, colorDefault: UIColor.clearColor())
-        schoolPublicIn.frame.origin = CGPointMake(0, 0)
+        schoolPublicIn.setup(choices, colorSelected: self.navigationController!.view.tintColor!, colorDefault: UIColor.whiteColor())
     }
     
     @IBAction func createTeam(sender: UIBarButtonItem) {

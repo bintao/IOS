@@ -47,7 +47,7 @@ class UserTeam: NSObject{
     
     func saveUserIcon(){
         if teamicon != nil{
-            DataManager.saveUserIconToLocal(teamicon)
+            DataManager.
         }
     }
     
@@ -75,7 +75,7 @@ class UserTeam: NSObject{
     
     func saveUserData(){
         var data:[String: AnyObject] = packaging()
-        DataManager.saveUserInfoToLocal(data)
+        DataManager.saveTeamInfoToLocal(data)
     }
     
     //user logout, remove all local data
@@ -83,7 +83,7 @@ class UserTeam: NSObject{
         teamName = ""
         teamID = ""
         team_Intro = ""
-        DataManager.saveUserInfoToLocal(packaging())
+        DataManager.saveTeamInfoToLocal(data)
     }
     
 }

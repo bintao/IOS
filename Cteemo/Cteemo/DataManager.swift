@@ -52,24 +52,30 @@ class DataManager: NSObject {
         
     }
     
-    //save User Icon
-    class func saveUserIconToLocal(img: UIImage){
+    class func getTeamInfo()->[String: AnyObject]{
         
         let fileManager = NSFileManager()
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        path = path.stringByAppendingPathComponent("icon.png")
+        path = path.stringByAppendingPathComponent("UserTeam.plist")
         
-        var binaryImage:NSData = UIImagePNGRepresentation(img)
-        binaryImage.writeToFile(path, atomically: true)
+        let dict = NSDictionary(contentsOfFile: path)
+        
+        return dict as [String: AnyObject]
         
     }
     
-    class func getUserIconURL()->String{
+    class func saveTeamInfoToLocal(info: [String: AnyObject]){
+        
         let fileManager = NSFileManager()
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        path = path.stringByAppendingPathComponent("icon.png")
-        return path
+        path = path.stringByAppendingPathComponent("UserTeam.plist")
+        
+        let dict : NSDictionary = info
+        dict.writeToFile(path, atomically: true)
+        
     }
+    
+
     
     //get User Icon
     class func getUserIconFromLocal()->UIImage{
@@ -84,6 +90,22 @@ class DataManager: NSObject {
             
         }
         
+        return image
+    }
+
+    
+    //get User Icon
+    class func getTeamIconFromLocal()->UIImage{
+        var image: UIImage!
+        let fileManager = NSFileManager()
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var imagePath = paths.stringByAppendingPathComponent("teamicon.png")
+        if (fileManager.fileExistsAtPath(imagePath)) {
+            let getImage = UIImage(contentsOfFile: imagePath)
+            image = getImage
+        }else{
+            
+        }
         return image
     }
 

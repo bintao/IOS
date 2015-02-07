@@ -41,15 +41,6 @@ class UserInformation: NSObject {
     func setUp(){
         
         var data:[String: AnyObject] = DataManager.getUserInfo()
-        setUserData(data)
-        
-    }
-    
-    //change user data and save
-
-    func setUserData(data: [String: AnyObject]){
-        
-        //user data
         name = data["name"] as String
         fbid = data["fbid"] as String
         accessToken = data["accessToken"] as String
@@ -60,9 +51,10 @@ class UserInformation: NSObject {
         intro = data["intro"] as String
         lolRank = data["lolRank"] as String
         lolName = data["lolName"] as String
-        
-        saveUserData()
     }
+    
+    //change user data and save
+
     
     func packaging()->[String: AnyObject]{
         var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "lolID": lolID, "school": school, "intro": intro,"lolName":lolName,"lolRank":lolRank]
