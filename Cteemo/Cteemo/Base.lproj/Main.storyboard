@@ -735,10 +735,10 @@
             </objects>
             <point key="canvasLocation" x="855" y="-1730"/>
         </scene>
-        <!--Login Add Photo-->
+        <!--Team Add Photo-->
         <scene sceneID="RXC-t0-FY4">
             <objects>
-                <viewController id="Qc5-Ow-Tzo" customClass="Login_AddPhoto" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Qc5-Ow-Tzo" customClass="Team_AddPhoto" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gHh-Tx-HDK"/>
                         <viewControllerLayoutGuide type="bottom" id="r1S-qa-AQc"/>
@@ -790,7 +790,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="submitPhoto:" destination="Qc5-Ow-Tzo" eventType="touchUpInside" id="b9D-OH-bq1"/>
+                                            <action selector="submitPhoto:" destination="Qc5-Ow-Tzo" eventType="touchUpInside" id="Pkz-je-vcm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -834,8 +834,8 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="circleCropper" destination="JkO-vX-bxL" id="Boe-Ay-vsq"/>
-                        <outlet property="resizer" destination="TBv-0C-7LX" id="M5Q-J1-Viu"/>
+                        <outlet property="circleCropper" destination="JkO-vX-bxL" id="Epz-j3-qGC"/>
+                        <outlet property="resizer" destination="TBv-0C-7LX" id="RRj-wW-B3g"/>
                         <segue destination="qsJ-qK-8VB" kind="unwind" identifier="returnWithPhoto" unwindAction="returnToLoginSchoolAndPhoto:" id="3MI-xO-Ye3"/>
                     </connections>
                 </viewController>
@@ -1462,6 +1462,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="getPhoto" destination="1rz-XN-iyY" eventType="touchUpInside" id="Of8-WT-x46"/>
                                     <segue destination="Qc5-Ow-Tzo" kind="presentation" id="fx2-WQ-Lpq"/>
                                 </connections>
                             </button>

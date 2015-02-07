@@ -10,7 +10,7 @@
 import UIKit
 import Alamofire
 
-class Team_CreateTeamViewController: UIViewController, UITextViewDelegate{
+class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
 
     @IBOutlet var schoolPublicOut: UIView!
     
@@ -47,7 +47,16 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate{
         }
     
     }
-
+    
+    //get photo for team
+    @IBAction func getPhoto(){
+        
+        let pickerC = UIImagePickerController()
+        pickerC.delegate = self
+        self.presentViewController(pickerC, animated: true, completion: nil)
+        
+    }
+    
     func textViewShouldBeginEditing(textView: UITextView) -> Bool {
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             
