@@ -19,6 +19,7 @@ class Team_JoinTeamViewController: UIViewController {
 
     var container : UIViewController!
 
+    
     var isPostNotSearch = true
     
     override func viewDidLoad() {

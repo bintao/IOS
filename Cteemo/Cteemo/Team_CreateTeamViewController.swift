@@ -12,79 +12,29 @@ import Alamofire
 
 class Team_CreateTeamViewController: UIViewController, UITextViewDelegate{
 
-    @IBOutlet var school: UIButton!
-    @IBOutlet var publicc: UIButton!
-    @IBOutlet var schoolLab: UILabel!
-    @IBOutlet var publicLab: UILabel!
-    @IBOutlet var schoolView: UIView!
-    @IBOutlet var publicView: UIView!
+    @IBOutlet var schoolPublicOut: UIView!
     
-    
+    @IBOutlet weak var schoolPublicIn: CustomSwitcher!
+
     
     @IBOutlet var icon: UIButton!
 
     @IBOutlet weak var teamName: UITextField!
     
-    @IBOutlet weak var schoolPublic: UIView!
     
     @IBOutlet weak var teamIntro: UITextView!
     
     @IBOutlet weak var create: UIBarButtonItem!
     
+    var switcher: CustomSwitcher!
+    
     override func viewDidLoad() {
-        school.backgroundColor = self.navigationController?.view.tintColor
-
-    }
-    
-    @IBAction func switchSection(sender: UIButton){
         
-        if sender == school{
-            schoolSelect()
-        }else if sender == publicc{
-            publicSelect()
-        }
-    }
-    
-    func schoolSelect(){
-        
-        schoolLab.backgroundColor = self.navigationController?.view.tintColor
-        schoolLab.textColor = UIColor.whiteColor()
-        publicLab.backgroundColor = UIColor.whiteColor()
-        publicLab.textColor = self.navigationController?.view.tintColor
-
-        
-        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            
-            self.school.alpha = 1
-            self.publicc.alpha = 0
-            
-            }
-            , completion: {
-                (value: Bool) in
-                
-        })
-        
-        
-    }
-    
-    
-    func publicSelect(){
-
-        publicLab.backgroundColor = self.navigationController?.view.tintColor
-        publicLab.textColor = UIColor.whiteColor()
-        schoolLab.backgroundColor = UIColor.whiteColor()
-        schoolLab.textColor = self.navigationController?.view.tintColor
-        
-        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            
-            self.school.alpha = 0
-            self.publicc.alpha = 1
-            
-            }
-            , completion: {
-                (value: Bool) in
-                
-        })
+}
+    override func viewDidAppear(animated: Bool) {
+        var choices = ["SCHOOL","PUBLIC"]
+        schoolPublicIn.setup(choices, frame: schoolPublicIn.frame, colorSelected: self.navigationController!.view.tintColor!, colorDefault: UIColor.clearColor())
+        schoolPublicIn.frame.origin = CGPointMake(0, 0)
     }
     
     @IBAction func createTeam(sender: UIBarButtonItem) {
@@ -106,7 +56,7 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate{
             
             self.teamName.transform = CGAffineTransformMakeTranslation(0, -100)
             self.icon.transform = CGAffineTransformMakeTranslation(0, -100)
-            self.schoolPublic.transform = CGAffineTransformMakeTranslation(0, -100)
+            self.schoolPublicOut.transform = CGAffineTransformMakeTranslation(0, -100)
             self.teamIntro.transform = CGAffineTransformMakeTranslation(0, -100)
 
             }
@@ -124,7 +74,7 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate{
             
             self.teamName.transform = CGAffineTransformMakeTranslation(0, 0)
             self.icon.transform = CGAffineTransformMakeTranslation(0, 0)
-            self.schoolPublic.transform = CGAffineTransformMakeTranslation(0, 0)
+            self.schoolPublicOut.transform = CGAffineTransformMakeTranslation(0, 0)
             self.teamIntro.transform = CGAffineTransformMakeTranslation(0, 0)
             
             }

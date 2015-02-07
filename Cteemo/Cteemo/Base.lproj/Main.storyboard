@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -1379,75 +1379,8 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="B0n-NZ-VPR">
                                 <rect key="frame" x="16" y="371" width="600" height="45"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sll-Et-T8E">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sll-Et-T8E" customClass="CustomSwitcher" customModule="Cteemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SCHOOL" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkg-qa-VW6">
-                                                <rect key="frame" x="113" y="12" width="76" height="22"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="PUBLIC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fuV-nJ-Avg">
-                                                <rect key="frame" x="453" y="12" width="65" height="22"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iTJ-tS-CS3">
-                                                <rect key="frame" x="110" y="7" width="76" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="selected">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="switchSection:" destination="1rz-XN-iyY" eventType="touchUpInside" id="Eg1-Ll-ebg"/>
-                                                    <action selector="switchSection:" destination="blR-Dl-a0a" eventType="touchUpInside" id="tZP-zW-oj2"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3im-uQ-aqu">
-                                                <rect key="frame" x="462" y="6" width="30" height="34"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="selected">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="switchSection:" destination="blR-Dl-a0a" eventType="touchUpInside" id="Mmt-Rl-lJP"/>
-                                                    <action selector="switchSection:" destination="1rz-XN-iyY" eventType="touchUpInside" id="ks8-Mm-oYO"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="gkg-qa-VW6" firstAttribute="leading" secondItem="Sll-Et-T8E" secondAttribute="leading" id="09v-Em-nDS"/>
-                                            <constraint firstItem="iTJ-tS-CS3" firstAttribute="leading" secondItem="Sll-Et-T8E" secondAttribute="leading" id="0xf-QU-rIz"/>
-                                            <constraint firstItem="gkg-qa-VW6" firstAttribute="top" secondItem="Sll-Et-T8E" secondAttribute="top" id="AJZ-wM-pZ2"/>
-                                            <constraint firstItem="3im-uQ-aqu" firstAttribute="top" secondItem="Sll-Et-T8E" secondAttribute="top" id="HDv-ea-BB6"/>
-                                            <constraint firstAttribute="bottom" secondItem="3im-uQ-aqu" secondAttribute="bottom" id="Hol-8a-cFn"/>
-                                            <constraint firstAttribute="trailing" secondItem="3im-uQ-aqu" secondAttribute="trailing" id="Nhd-42-JNp"/>
-                                            <constraint firstAttribute="centerX" secondItem="iTJ-tS-CS3" secondAttribute="centerX" multiplier="2" id="P2C-MW-0QC"/>
-                                            <constraint firstItem="3im-uQ-aqu" firstAttribute="leading" secondItem="iTJ-tS-CS3" secondAttribute="trailing" id="QJ0-pk-M3v"/>
-                                            <constraint firstAttribute="bottom" secondItem="gkg-qa-VW6" secondAttribute="bottom" id="UoQ-Bu-nRK"/>
-                                            <constraint firstAttribute="trailing" secondItem="fuV-nJ-Avg" secondAttribute="trailing" id="f9M-9q-f3J"/>
-                                            <constraint firstItem="3im-uQ-aqu" firstAttribute="leading" secondItem="gkg-qa-VW6" secondAttribute="trailing" id="gqP-i4-FnQ"/>
-                                            <constraint firstItem="fuV-nJ-Avg" firstAttribute="leading" secondItem="gkg-qa-VW6" secondAttribute="trailing" id="gsZ-hQ-rmo"/>
-                                            <constraint firstItem="3im-uQ-aqu" firstAttribute="leading" secondItem="iTJ-tS-CS3" secondAttribute="trailing" id="iAO-Hc-fbJ"/>
-                                            <constraint firstAttribute="bottom" secondItem="iTJ-tS-CS3" secondAttribute="bottom" id="jkG-Ul-HYe"/>
-                                            <constraint firstItem="fuV-nJ-Avg" firstAttribute="top" secondItem="Sll-Et-T8E" secondAttribute="top" id="lST-d7-yuu"/>
-                                            <constraint firstAttribute="bottom" secondItem="fuV-nJ-Avg" secondAttribute="bottom" id="ncd-l0-bqA"/>
-                                            <constraint firstItem="iTJ-tS-CS3" firstAttribute="top" secondItem="Sll-Et-T8E" secondAttribute="top" id="uwD-yp-33M"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="iAO-Hc-fbJ"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1498,12 +1431,8 @@
                     <connections>
                         <outlet property="create" destination="JVQ-AG-4Wd" id="iUG-GW-AYO"/>
                         <outlet property="icon" destination="qP7-2u-E2O" id="fsz-qM-JZH"/>
-                        <outlet property="publicLab" destination="fuV-nJ-Avg" id="HSF-jA-XLo"/>
-                        <outlet property="publicView" destination="fuV-nJ-Avg" id="cz8-8d-Htr"/>
-                        <outlet property="publicc" destination="3im-uQ-aqu" id="Vs1-gP-SaI"/>
-                        <outlet property="school" destination="iTJ-tS-CS3" id="eLS-0V-yYZ"/>
-                        <outlet property="schoolLab" destination="gkg-qa-VW6" id="Uyy-Ie-HQT"/>
-                        <outlet property="schoolPublic" destination="gkg-qa-VW6" id="HBP-kl-B1U"/>
+                        <outlet property="schoolPublicIn" destination="Sll-Et-T8E" id="MJj-5T-00A"/>
+                        <outlet property="schoolPublicOut" destination="B0n-NZ-VPR" id="URg-Bs-XP6"/>
                         <outlet property="teamIntro" destination="w9j-JW-7Mx" id="7TG-Lg-L9m"/>
                         <outlet property="teamName" destination="AhU-FB-bTE" id="Raa-fG-xHb"/>
                     </connections>

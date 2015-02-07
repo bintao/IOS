@@ -17,10 +17,12 @@ class CustomSwitcher: UIView {
     
     var buttons:[UIButton]!
     var text:[UILabel]!
+    
+    var chosenBox = 0
 
-    init(choices:[String], frame: CGRect, colorSelected: UIColor, colorDefault:UIColor) {
-        super.init(frame: frame)
-        
+    
+    func setup(choices:[String], frame: CGRect, colorSelected: UIColor, colorDefault:UIColor){
+        self.backgroundColor = UIColor.blackColor()
         defaultColor = colorDefault
         chosenColor = colorSelected
         
@@ -28,32 +30,44 @@ class CustomSwitcher: UIView {
         
         buttons = [UIButton]()
         text = [UILabel]()
-
+        
         for var index = 0; index < selections.count; index++ {
-
+            
             var width: CGFloat = (self.frame.width - 4) / CGFloat(selections.count)
             var height: CGFloat = (self.frame.height - 4) / CGFloat(selections.count)
-
+            
             var but = UIButton(frame: CGRectMake(2 + width * CGFloat(index), 2, width, height))
-            but.backgroundColor = UIColor.clearColor()
+            but.backgroundColor = defaultColor
             but.addTarget(self, action: "chosen:", forControlEvents: UIControlEvents.TouchUpInside)
             buttons.append(but)
             self.addSubview(but)
             
-            var text = UILabel(frame: CGRectMake(2 + width * CGFloat(index), 2, width, height))
-            text.backgroundColor = UIColor.clearColor()
-            text.textColor = chosenColor
-            text.font = UIFont(name: "AvenirNext-Medium", size: 18)
-            text.textAlignment = NSTextAlignment.Center
-            self.addSubview(text)
+            var label = UILabel(frame: CGRectMake(2 + width * CGFloat(index), 2, width, height))
+            label.backgroundColor = UIColor.clearColor()
+            label.textColor = chosenColor
+            label.text = selections[index]
+            label.font = UIFont(name: "AvenirNext-Medium", size: 22)
+            label.textAlignment = NSTextAlignment.Center
+            self.addSubview(label)
+            text.append(label)
             
         }
+        buttons[0].backgroundColor = chosenColor
+        text[0].backgroundColor = defaultColor
+    }
+    
+    func chosen(sender: UIButton){
         
+        
+        buttons[chosenBox].backgroundColor = defaultColor
+        text[chosenBox].backgroundColor = chosenColor
+        
+        chosenBox = Int(find(buttons, sender)!)
+        
+        print(chosenBox)
+
+        buttons[chosenBox].backgroundColor = chosenColor
+        text[chosenBox].backgroundColor = defaultColor
     }
 
-    
-    
-    required init(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
 }
