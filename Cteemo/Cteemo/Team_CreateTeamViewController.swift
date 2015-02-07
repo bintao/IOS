@@ -29,8 +29,9 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate{
     var switcher: CustomSwitcher!
     
     override func viewDidLoad() {
-        
-}
+        self.view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "backGroundTapped:"))
+
+    }
     override func viewDidAppear(animated: Bool) {
         var choices = ["SCHOOL","PUBLIC"]
         schoolPublicIn.setup(choices, colorSelected: self.navigationController!.view.tintColor!, colorDefault: UIColor.whiteColor())
@@ -84,6 +85,10 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate{
         return true
     }
     
-    
+    func backGroundTapped(gestureRecognizer: UITapGestureRecognizer){
+        teamName.resignFirstResponder()
+        teamIntro.resignFirstResponder()
     }
+    
+}
 
