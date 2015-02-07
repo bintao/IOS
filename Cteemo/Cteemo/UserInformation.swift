@@ -63,7 +63,7 @@ class UserInformation: NSObject {
     
     func saveUserIcon(){
         if icon != nil{
-            DataManager.saveUserIconToLocal(icon)
+            DataManager.saveUserIconFromLocal(UserInfo.icon)
         }
     }
     

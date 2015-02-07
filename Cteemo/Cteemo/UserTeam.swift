@@ -83,6 +83,7 @@ class UserTeam: NSObject{
         teamName = ""
         teamID = ""
         team_Intro = ""
+        var data:[String: AnyObject] = packaging()
         DataManager.saveTeamInfoToLocal(data)
     }
     

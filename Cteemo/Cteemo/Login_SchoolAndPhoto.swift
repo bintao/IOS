@@ -64,9 +64,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
                     self.gotResult(result)
             }
             
-            var req1 = Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", NSURL(fileURLWithPath: DataManager.getUserIconURL())!).responseJSON { (_, _, JSON, _) in
-                print(JSON)
-            }
+
             
         }
         else{
