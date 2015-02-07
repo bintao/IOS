@@ -20,7 +20,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet var iconDisplay : UIImageView!
     @IBOutlet var lolName : UITextField!
     @IBOutlet var school : UITextField!
-
+    
     var sourceImage: UIImage!
 
     override func viewDidLoad() {
@@ -56,16 +56,17 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
                 "token": UserInfo.accessToken
             ]
 
+
+            
             var req = Alamofire.request(.POST, "http://54.149.235.253:5000/profile", parameters: ["username": UserInfo.name, "school":school.text,"lolID":lolName.text])
                 .responseJSON { (_, _, JSON, _) in
                     var result: [String: AnyObject] = JSON as [String: AnyObject]
                     self.gotResult(result)
             }
-          
-            UIImagePNGRepresentation(sourceImage)
             
-            
-           var req1 = Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(sourceImage))
+            var req1 = Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(UserInfo.icon)).responseJSON { (_, _, JSON, _) in
+                print(JSON)
+            }
             
         }
         else{
@@ -76,35 +77,12 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         }
         
     }
-    func postProfile(result: [String: AnyObject]){
-        
-        println(result)
-        
-        UserInfo.lolName = self.lolName.text
-        UserInfo.school = self.school.text
-        UserInfo.icon = self.sourceImage
-        if self.gender.selectedSegmentIndex == 1{
-        UserInfo.gender = "Female"
-        UserInfo.saveUserData()
-        
-        }
-        else{
-        UserInfo.gender = "Male"
-        }
-        println(UserInfo.lolName)
-        println(UserInfo.school)
-        println(UserInfo.gender)
-        
-        
-    }
-    
+
     
     //got the result from the server
     func gotResult(result: [String: AnyObject]){
                 
         UserInfo.lolName = self.lolName.text
-        UserInfo.school = self.school.text
-        UserInfo.icon = self.sourceImage
         UserInfo.saveUserData()
         
         if self.gender.selectedSegmentIndex == 1{
@@ -112,6 +90,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         }else{
             UserInfo.gender = "Male"
         }
+        UserInfo.school = self.school.text
 
         self.performSegueWithIdentifier("goToMain", sender: self)
 

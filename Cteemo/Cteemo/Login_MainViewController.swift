@@ -32,6 +32,8 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                 // Do any additional setup after loading the view, typically from a nib.
     }
     
+    
+    //facebook logedin
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
         
         var myToken = FBSession.activeSession().accessTokenData.accessToken
@@ -47,8 +49,8 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                 var req = Alamofire.request(.POST, "http://54.149.235.253:5000/fb_login", parameters: ["fbtoken": myToken, "fbid": UserInfo.fbid,"fbemail":UserInfo.fbid+"@cteemo.com"])
                     .responseJSON { (_, _, JSON, _) in
                         var result: [String: AnyObject] = JSON as [String: AnyObject]
-                        self.gotFBResult(result)
-                        self.gotProfile()
+                        self.saveToken(result)
+                        self.gettProfileFromServer()
                         
                 }
             println(UserInfo.email)
@@ -119,9 +121,9 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     }
     
     
-    //get user profile
+    //get user profile from server
 
-    func gotProfile(){
+    func gettProfileFromServer(){
     
         var manager = Manager.sharedInstance
         
@@ -136,14 +138,20 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                 println(result)
                 if ( result["username"]? != nil) {
                 //old User
-                
-                    var facebookIcon: UIImage? = self.getPotraitFromFacebook() as UIImage
                     
+                    var facebookIcon: UIImage? = self.getPotraitFromFacebook() as UIImage
+
                     if facebookIcon != nil{
                         UserInfo.icon = facebookIcon
                         UserInfo.saveUserIcon()
+                        var req1 = Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(UserInfo.icon)).responseJSON { (_, _, JSON, _) in
+                            println("!!!!!!!!!!!!!!")
+                            print(JSON)
+                        }
                     }
-                    
+                    var req1 = Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(UserInfo.icon)).responseJSON { (_, _, JSON, _) in
+                        print(JSON)
+                    }
                     self.performSegueWithIdentifier("exitToMain", sender: self)
     
                 }
@@ -154,6 +162,11 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                         if facebookIcon != nil{
                             UserInfo.icon = facebookIcon
                             UserInfo.saveUserIcon()
+
+                            var req1 = Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(UserInfo.icon)).responseJSON { (_, _, JSON, _) in
+                                println("!!!!!!!!!!!!!!")
+                                print(JSON)
+                            }
                         }
                         
                         self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
@@ -164,7 +177,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     
     }
 
-    func gotFBResult(result: [String: AnyObject]){
+    func saveToken(result: [String: AnyObject]){
         
         if result["token"]?  != nil
         {

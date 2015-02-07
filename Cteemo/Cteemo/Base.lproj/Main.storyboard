@@ -1354,7 +1354,7 @@
                                 </state>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Team Name" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AhU-FB-bTE">
-                                <rect key="frame" x="231" y="329" width="97" height="71"/>
+                                <rect key="frame" x="229" y="292" width="97" height="71"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="A5q-nx-3L1"/>
                                     <constraint firstAttribute="width" constant="240" id="FoL-H5-Ijf"/>
@@ -1373,7 +1373,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="School" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="20Y-vy-lNY">
-                                <rect key="frame" x="258" y="389" width="63" height="28"/>
+                                <rect key="frame" x="256" y="371" width="63" height="28"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Wkk-Ys-YWX"/>
                                     <constraint firstAttribute="width" constant="240" id="b24-Lq-qLp"/>
@@ -1428,7 +1428,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgX-LB-i11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6719" y="600"/>
+            <point key="canvasLocation" x="6711" y="564"/>
         </scene>
         <!--Join a Team-->
         <scene sceneID="bpP-pN-ogk">
