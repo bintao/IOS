@@ -52,21 +52,21 @@ class CustomSwitcher: UIView {
             
         }
         buttons[0].backgroundColor = chosenColor
-        text[0].backgroundColor = defaultColor
+        text[0].textColor = defaultColor
     }
     
     func chosen(sender: UIButton){
         
         
         buttons[chosenBox].backgroundColor = defaultColor
-        text[chosenBox].backgroundColor = chosenColor
+        text[chosenBox].textColor = chosenColor
         
         chosenBox = Int(find(buttons, sender)!)
         
         print(chosenBox)
 
         buttons[chosenBox].backgroundColor = chosenColor
-        text[chosenBox].backgroundColor = defaultColor
+        text[chosenBox].textColor = defaultColor
     }
 
 }
