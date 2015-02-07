@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol CustomSwitcherDelegate: NSObjectProtocol{
+    func customSwitcherSwitched(switcher: CustomSwitcher)
+}
+
 class CustomSwitcher: UIView {
+    
+    var delegate:CustomSwitcherDelegate!
     
     var defaultColor = UIColor.whiteColor()
     var chosenColor = UIColor.clearColor()
@@ -38,6 +44,7 @@ class CustomSwitcher: UIView {
             var but = UIButton(frame: CGRectMake(2 + width * CGFloat(index), 2, width, height))
             but.backgroundColor = defaultColor
             but.addTarget(self, action: "chosen:", forControlEvents: UIControlEvents.TouchUpInside)
+            but.alpha = 0
             buttons.append(but)
             self.addSubview(but)
             
@@ -47,8 +54,20 @@ class CustomSwitcher: UIView {
             label.text = selections[index]
             label.font = UIFont(name: "AvenirNext-Medium", size: 22)
             label.textAlignment = NSTextAlignment.Center
+            label.alpha = 0
             self.addSubview(label)
             text.append(label)
+            
+            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            
+                but.alpha = 1
+                label.alpha = 1
+                }
+                , completion: {
+                    (value: Bool) in
+                    
+            })
+
             
         }
         buttons[0].backgroundColor = chosenColor
@@ -67,6 +86,10 @@ class CustomSwitcher: UIView {
 
         buttons[chosenBox].backgroundColor = chosenColor
         text[chosenBox].textColor = defaultColor
+        
+        if self.delegate != nil{
+            self.delegate.customSwitcherSwitched(self)
+        }
     }
 
 }

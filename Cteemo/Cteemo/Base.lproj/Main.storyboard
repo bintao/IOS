@@ -1379,7 +1379,7 @@
                                     <constraint firstItem="wo7-54-MBn" firstAttribute="top" secondItem="BtF-FQ-sDZ" secondAttribute="top" constant="10" id="yCz-y7-low"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zZq-j7-w8Z">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="zZq-j7-w8Z">
                                 <rect key="frame" x="131" y="258" width="300" height="300"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1568,73 +1568,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9KK-6D-s5j">
                                 <rect key="frame" x="0.0" y="84" width="600" height="45"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i5j-GK-S6C">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i5j-GK-S6C" customClass="CustomSwitcher" customModule="Cteemo" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gp1-dp-lac">
-                                                <rect key="frame" x="110" y="7" width="48" height="34"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="selected">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="switchSection:" destination="blR-Dl-a0a" eventType="touchUpInside" id="YTw-YM-9zR"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" adjustsImageWhenHighlighted="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P4J-vM-eoK">
-                                                <rect key="frame" x="462" y="6" width="30" height="34"/>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <state key="normal">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="selected">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="switchSection:" destination="blR-Dl-a0a" eventType="touchUpInside" id="rFl-7V-LgC"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="POST" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQH-tw-iVV">
-                                                <rect key="frame" x="113" y="12" width="48" height="22"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SEARCH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUk-sQ-Gbq">
-                                                <rect key="frame" x="453" y="12" width="73" height="22"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                                <color key="textColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstItem="P4J-vM-eoK" firstAttribute="leading" secondItem="gp1-dp-lac" secondAttribute="trailing" id="E7U-SA-O5U"/>
-                                            <constraint firstAttribute="bottom" secondItem="aUk-sQ-Gbq" secondAttribute="bottom" id="Fee-tK-kCs"/>
-                                            <constraint firstItem="jQH-tw-iVV" firstAttribute="leading" secondItem="i5j-GK-S6C" secondAttribute="leading" id="Hhc-LW-jhH"/>
-                                            <constraint firstAttribute="bottom" secondItem="P4J-vM-eoK" secondAttribute="bottom" id="Mos-OU-JtC"/>
-                                            <constraint firstAttribute="bottom" secondItem="jQH-tw-iVV" secondAttribute="bottom" id="NUe-Ez-8Se"/>
-                                            <constraint firstItem="gp1-dp-lac" firstAttribute="top" secondItem="i5j-GK-S6C" secondAttribute="top" id="Va8-gK-6jj"/>
-                                            <constraint firstItem="P4J-vM-eoK" firstAttribute="top" secondItem="i5j-GK-S6C" secondAttribute="top" id="WQ6-O8-kUu"/>
-                                            <constraint firstItem="aUk-sQ-Gbq" firstAttribute="leading" secondItem="jQH-tw-iVV" secondAttribute="trailing" id="WYe-SK-ehw"/>
-                                            <constraint firstAttribute="centerX" secondItem="gp1-dp-lac" secondAttribute="centerX" multiplier="2" id="XWQ-ML-rk4"/>
-                                            <constraint firstAttribute="trailing" secondItem="P4J-vM-eoK" secondAttribute="trailing" id="d4d-1P-2c3"/>
-                                            <constraint firstItem="P4J-vM-eoK" firstAttribute="leading" secondItem="jQH-tw-iVV" secondAttribute="trailing" id="fGA-Ra-cgJ"/>
-                                            <constraint firstItem="jQH-tw-iVV" firstAttribute="top" secondItem="i5j-GK-S6C" secondAttribute="top" id="fOV-7H-eOM"/>
-                                            <constraint firstItem="gp1-dp-lac" firstAttribute="leading" secondItem="i5j-GK-S6C" secondAttribute="leading" id="ppe-L6-i7b"/>
-                                            <constraint firstItem="aUk-sQ-Gbq" firstAttribute="top" secondItem="i5j-GK-S6C" secondAttribute="top" id="r6a-iE-MhJ"/>
-                                            <constraint firstItem="P4J-vM-eoK" firstAttribute="leading" secondItem="gp1-dp-lac" secondAttribute="trailing" id="ryO-w6-OVz"/>
-                                            <constraint firstAttribute="bottom" secondItem="gp1-dp-lac" secondAttribute="bottom" id="tqh-HZ-Vgu"/>
-                                            <constraint firstAttribute="trailing" secondItem="aUk-sQ-Gbq" secondAttribute="trailing" id="uc8-rC-zbx"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="E7U-SA-O5U"/>
-                                            </mask>
-                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1676,12 +1611,9 @@
                     </view>
                     <navigationItem key="navigationItem" title="Join a Team" id="ZwZ-yb-h7A"/>
                     <connections>
-                        <outlet property="post" destination="gp1-dp-lac" id="rR9-hR-omt"/>
-                        <outlet property="postLab" destination="jQH-tw-iVV" id="Hpz-KV-qln"/>
                         <outlet property="postView" destination="OQP-Gp-9ol" id="Hh2-sM-r3V"/>
-                        <outlet property="search" destination="P4J-vM-eoK" id="vgI-dd-Acv"/>
-                        <outlet property="searchLab" destination="aUk-sQ-Gbq" id="R95-Ek-PPf"/>
                         <outlet property="searchView" destination="UEp-9C-E24" id="a9g-sF-Nj1"/>
+                        <outlet property="switcher" destination="i5j-GK-S6C" id="ON9-IV-iYX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3O-pt-TQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1708,7 +1640,7 @@
                                     <outlet property="delegate" destination="HQN-iE-gfF" id="tw8-Pr-gzU"/>
                                 </connections>
                             </searchBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eXu-nV-OBg">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="eXu-nV-OBg">
                                 <rect key="frame" x="0.0" y="78" width="600" height="522"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>

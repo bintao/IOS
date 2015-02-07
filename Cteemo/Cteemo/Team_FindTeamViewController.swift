@@ -35,7 +35,6 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
             .responseJSON { (_, _, JSON, _) in
                 
                 var result: [AnyObject] = [AnyObject]()
-                println(JSON)
                 result = JSON as [AnyObject]
                 
                 self.gotResult(result)
@@ -45,7 +44,8 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
     
     func gotResult(result: [AnyObject]){
         stopLoading()
-        print(result)
+        teams = result
+        resultTable.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -62,7 +62,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
-        var backButton = UIButton(frame: CGRectMake(0, 0, self.view.frame.width, 70))
+        var backButton = UIButton(frame: CGRectMake(0, 0, self.view.frame.width, 80))
         backButton.setImage(UIImage(named: "white"), forState: UIControlState.Normal)
         cell.addSubview(backButton)
         

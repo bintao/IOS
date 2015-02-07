@@ -8,40 +8,37 @@
 
 import UIKit
 
-class Team_JoinTeamViewController: UIViewController {
+class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
 
-    @IBOutlet var search: UIButton!
-    @IBOutlet var post: UIButton!
-    @IBOutlet var searchLab: UILabel!
-    @IBOutlet var postLab: UILabel!
+    
+    @IBOutlet var switcher: CustomSwitcher!
+
     @IBOutlet var postView: UIView!
     @IBOutlet var searchView: UIView!
 
     var container : UIViewController!
 
     
-    var isPostNotSearch = true
-    
     override func viewDidLoad() {
-        post.backgroundColor = self.navigationController?.view.tintColor
+        
     }
-
-    @IBAction func switchSection(sender: UIButton){
-        if sender == post{
+    
+    override func viewDidAppear(animated: Bool) {
+        var choices = ["POSTS","SEARCH"]
+        switcher.setup(choices, colorSelected: self.navigationController!.view.tintColor!, colorDefault: UIColor.whiteColor())
+        switcher.delegate = self
+    }
+    
+    func customSwitcherSwitched(switcher: CustomSwitcher) {
+        if switcher.chosenBox == 0{
             postSelect()
-        }else if sender == search{
+        }else if switcher.chosenBox == 1{
             searchSelect()
         }
     }
     
     func postSelect(){
-        postLab.backgroundColor = self.navigationController?.view.tintColor
-        postLab.textColor = UIColor.whiteColor()
-        searchLab.backgroundColor = UIColor.whiteColor()
-        searchLab.textColor = self.navigationController?.view.tintColor
-
-        isPostNotSearch = true
-        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             
             self.postView.alpha = 1
             self.searchView.alpha = 0
@@ -51,18 +48,10 @@ class Team_JoinTeamViewController: UIViewController {
                 (value: Bool) in
                 
         })
-
-        
     }
     
     
     func searchSelect(){
-        postLab.textColor = self.navigationController?.view.tintColor
-        postLab.backgroundColor = UIColor.whiteColor()
-        searchLab.textColor = UIColor.whiteColor()
-        searchLab.backgroundColor = self.navigationController?.view.tintColor
-        
-        isPostNotSearch = false
 
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             
