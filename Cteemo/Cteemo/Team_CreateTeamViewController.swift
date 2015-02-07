@@ -96,6 +96,7 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate{
             .responseJSON { (_, _, JSON, _) in
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
                     println(result)
+            
         }
     
     }

@@ -13,6 +13,7 @@ var UserInfo: UserInformation = UserInformation()
 
 class UserInformation: NSObject ,RequestResultDelegate {
    
+    // User profile
     var email: String = ""
     var name: String = ""
     var fbid: String = ""
@@ -23,8 +24,15 @@ class UserInformation: NSObject ,RequestResultDelegate {
     var lolID :String = ""
     var lolRank: String = ""
     var lolName: String = ""
-    
+    var profile_ID: String = ""
     var icon: UIImage!
+    
+    // User team
+    var teamName: String = ""
+    var teamID : String = ""
+    var team_isschool: Bool!
+    var team_Intro : String = ""
+   
     
     //check if the user is logined
     func userIsLogined()->Bool{
@@ -57,9 +65,13 @@ class UserInformation: NSObject ,RequestResultDelegate {
         school = data["school"] as String
         intro = data["intro"] as String
         lolRank = data["lolRank"] as String
-        
-        
         lolName = data["lolName"] as String
+        
+        // team data
+        team_Intro = data["team_Intro"] as String
+        teamID = data["teamID"] as String
+        teamName = data["teamName"] as String
+        
         saveUserData()
     }
     
@@ -116,6 +128,9 @@ class UserInformation: NSObject ,RequestResultDelegate {
         intro = ""
         lolName = ""
         lolRank = ""
+        teamName = ""
+        teamID = ""
+        team_Intro = ""
         DataManager.saveUserInfoToLocal(packaging())
     }
     

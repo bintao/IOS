@@ -51,15 +51,24 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     func gotTeam(result: [String: AnyObject]){
         
         
-        if (result["message"] as String).rangeOfString("Not")?.isEmpty != nil {
-            // Not joined any team yet
+       
+            if(result["id"]?  != nil ){
+            // joined team
+            UserInfo.teamID = result["id"] as String
+            UserInfo.teamName = result["teamName"] as String
+            UserInfo.team_Intro = result["teamIntro"] as String
+            UserInfo.saveUserData()
+            
+            println(UserInfo.teamID)
+            println(UserInfo.teamName)
+            println(UserInfo.team_Intro)
+            
             
             }
-            else{
+        else {
+                println("not joined team yet")
         
-            // joined team
-        
-            }
+        }
     }
         
         
