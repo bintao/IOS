@@ -50,11 +50,14 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                     .responseJSON { (_, _, JSON, _) in
                         var result: [String: AnyObject] = JSON as [String: AnyObject]
                         self.saveToken(result)
-                        self.gettProfileFromServer()
+                        self.getProfileFromServer()
                         
                 }
+            
             println(UserInfo.email)
             println(UserInfo.name)
+            println(UserInfo.profile_ID)
+                
             }
             else
             {
@@ -123,7 +126,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     
     //get user profile from server
 
-    func gettProfileFromServer(){
+    func getProfileFromServer(){
     
         var manager = Manager.sharedInstance
         
@@ -138,6 +141,10 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                 println(result)
                 if ( result["username"]? != nil) {
                 //old User
+                    
+                    UserInfo.profile_ID = result["id"] as String
+                    println(UserInfo.profile_ID)
+                    UserInfo.saveUserData()
                     
                     var facebookIcon: UIImage? = self.getPotraitFromFacebook() as UIImage
 
