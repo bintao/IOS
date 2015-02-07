@@ -12,10 +12,10 @@ import Alamofire
 class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate{
 
     @IBOutlet var bg : UIImageView!
-
+    
     @IBOutlet var email : UITextField!
     @IBOutlet var password : UITextField!
-
+    
     @IBOutlet var back : UIButton!
 
     @IBOutlet var login : UIButton!

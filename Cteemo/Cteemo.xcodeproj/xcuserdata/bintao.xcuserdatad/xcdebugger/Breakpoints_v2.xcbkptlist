@@ -168,11 +168,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TeamViewController.swift"
-            timestampString = "444974884.005397"
+            timestampString = "444977803.999589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
             landmarkName = "gotTeam(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -180,7 +180,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Login_LoginBySelfViewController.swift"
@@ -200,13 +200,161 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TeamViewController.swift"
-            timestampString = "444975294.425448"
+            timestampString = "444977803.999589"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "gotTeam(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/UserInformation.swift"
+            timestampString = "444979508.867055"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "UserInformation"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cteemo.UserInformation.lolID.getter : Swift.String"
+                  moduleName = "Cteemo"
+                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/UserInformation.swift"
+                  timestampString = "444979508.906897"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cteemo.UserInformation.lolID.setter : Swift.String"
+                  moduleName = "Cteemo"
+                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/UserInformation.swift"
+                  timestampString = "444979508.907202"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cteemo.UserInformation.lolID.materializeForSet : Swift.String"
+                  moduleName = "Cteemo"
+                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/UserInformation.swift"
+                  timestampString = "444979508.907398"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cteemo.UserInformation.init (Cteemo.UserInformation.Type)() -&gt; Cteemo.UserInformation"
+                  moduleName = "Cteemo"
+                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/UserInformation.swift"
+                  timestampString = "444979508.907586"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "388">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/UserInformation.swift"
+            timestampString = "444979510.657213"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "UserInformation"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cteemo.UserInformation.lolRank.getter : Swift.String"
+                  moduleName = "Cteemo"
+                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/UserInformation.swift"
+                  timestampString = "444979510.677384"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cteemo.UserInformation.lolRank.setter : Swift.String"
+                  moduleName = "Cteemo"
+                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/UserInformation.swift"
+                  timestampString = "444979510.677686"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cteemo.UserInformation.lolRank.materializeForSet : Swift.String"
+                  moduleName = "Cteemo"
+                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/UserInformation.swift"
+                  timestampString = "444979510.67788"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "0">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cteemo.UserInformation.init (Cteemo.UserInformation.Type)() -&gt; Cteemo.UserInformation"
+                  moduleName = "Cteemo"
+                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/UserInformation.swift"
+                  timestampString = "444979510.678073"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "25"
+                  endingLineNumber = "25"
+                  offsetFromSymbolStart = "440">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

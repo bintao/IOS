@@ -11,7 +11,7 @@ import UIKit
 
 var UserInfo: UserInformation = UserInformation()
 
-class UserInformation: NSObject ,RequestResultDelegate {
+class UserInformation: NSObject {
    
     // User profile
     var email: String = ""
@@ -26,13 +26,6 @@ class UserInformation: NSObject ,RequestResultDelegate {
     var lolName: String = ""
     var profile_ID: String = ""
     var icon: UIImage!
-    
-    // User team
-    var teamName: String = ""
-    var teamID : String = ""
-    var team_isschool: Bool!
-    var team_Intro : String = ""
-   
     
     //check if the user is logined
     func userIsLogined()->Bool{
@@ -68,16 +61,11 @@ class UserInformation: NSObject ,RequestResultDelegate {
         lolRank = data["lolRank"] as String
         lolName = data["lolName"] as String
         
-        // team data
-        team_Intro = data["team_Intro"] as String
-        teamID = data["teamID"] as String
-        teamName = data["teamName"] as String
-        
         saveUserData()
     }
     
     func packaging()->[String: AnyObject]{
-        var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "lolID": lolID, "school": school, "intro": intro,"lolName":lolName,"lolRank":lolRank,"team_Intro" : team_Intro,"teamID":teamID,"teamName" :teamName]
+        var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "lolID": lolID, "school": school, "intro": intro,"lolName":lolName,"lolRank":lolRank]
         return data
     }
     
@@ -129,9 +117,7 @@ class UserInformation: NSObject ,RequestResultDelegate {
         intro = ""
         lolName = ""
         lolRank = ""
-        teamName = ""
-        teamID = ""
-        team_Intro = ""
+    
         DataManager.saveUserInfoToLocal(packaging())
     }
     

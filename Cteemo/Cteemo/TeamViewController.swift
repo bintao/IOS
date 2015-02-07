@@ -30,20 +30,21 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
             .responseJSON { (_, _, JSON, _) in
                 if JSON != nil{
                     var result: [String: AnyObject] = JSON as [String: AnyObject]
+                    self.gotTeam(result)
                 }
-
+                
                 
         }
 
         otherChoices.backgroundColor = UIColor.clearColor()
         
         teams = ["My Boy","I'm the king","Sunrise","Cicicici","God of Michigan"]
-
+        
         if hasOwnteam{
             
         }else{
             var iconBack = UIImage(color: UIColor(red: 255.0, green: 244.0, blue: 73.0, alpha: 1), size: CGSizeMake(300, 300))
-
+            
         }
         // Do any additional setup after loading the view.
     }
@@ -71,15 +72,15 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
                     
                 }
                 
+        
+            TeamInfo.teamID = result["id"] as String
+            TeamInfo.teamName = result["teamName"] as String
+            TeamInfo.team_Intro = result["teamIntro"] as String
             
-            UserInfo.teamID = result["id"] as String
-            UserInfo.teamName = result["teamName"] as String
-            UserInfo.team_Intro = result["teamIntro"] as String
-            
-            UserInfo.saveUserData()
-            println(UserInfo.teamID)
-            println(UserInfo.teamName)
-            println(UserInfo.team_Intro)
+            TeamInfo.saveUserData()
+            println(TeamInfo.teamID)
+            println(TeamInfo.teamName)
+            println(TeamInfo.team_Intro)
             
             }
         else {
@@ -87,7 +88,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         
         }
     }
-        
         
     override func viewDidAppear(animated: Bool) {
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()

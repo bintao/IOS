@@ -25,6 +25,8 @@ class MainViewController: UIViewController, UITabBarDelegate {
     override func viewDidAppear(animated: Bool) {
         if !UserInfo.userIsLogined(){
             self.performSegueWithIdentifier("login", sender: self)
+            FBSession.activeSession().closeAndClearTokenInformation()
+
         }else{
             showTabb()
             content = self.storyboard!.instantiateViewControllerWithIdentifier("News")! as UIViewController

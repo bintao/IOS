@@ -16,11 +16,16 @@ class DataManager: NSObject {
         let fileManager = NSFileManager()
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         path = path.stringByAppendingPathComponent("UserInformation.plist")
-        let resource = NSBundle.mainBundle().pathForResource("UserInformation", ofType: "plist") as String?
+        var resource = NSBundle.mainBundle().pathForResource("UserInformation", ofType: "plist") as String?
         
         var dict = NSDictionary(contentsOfFile: resource!)
+            fileManager.copyItemAtPath(resource!, toPath: path, error: nil)
+
+        path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        path = path.stringByAppendingPathComponent("UserTeam")
+        resource = NSBundle.mainBundle().pathForResource("UserTeam", ofType: "plist") as String?
+        dict = NSDictionary(contentsOfFile: resource!)
         fileManager.copyItemAtPath(resource!, toPath: path, error: nil)
-        
     }
     
     

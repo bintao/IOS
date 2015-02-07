@@ -22,13 +22,5 @@
 	<string></string>
 	<key>intro</key>
 	<string></string>
-	<key>teamName</key>
-	<string></string>
-	<key>teamID</key>
-	<string></string>
-	<key>team_isschool</key>
-	<string></string>
-	<key>team_Intro</key>
-	<string></string>
 </dict>
 </plist>
