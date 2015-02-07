@@ -24,6 +24,10 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
     
     @IBOutlet weak var create: UIBarButtonItem!
     
+    @IBOutlet var iconDisplay : UIImageView!
+    
+    var sourceImage:UIImage!
+    
     var switcher: CustomSwitcher!
     
     override func viewDidLoad() {
@@ -33,6 +37,10 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
     override func viewDidAppear(animated: Bool) {
         var choices = ["SCHOOL","PUBLIC"]
         schoolPublicIn.setup(choices, colorSelected: self.navigationController!.view.tintColor!, colorDefault: UIColor.whiteColor())
+        
+        if TeamInfo.teamicon != nil{
+            iconDisplay.image = TeamInfo.teamicon
+        }
     }
     
     @IBAction func createTeam(sender: UIBarButtonItem) {
@@ -54,9 +62,27 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
         let pickerC = UIImagePickerController()
         pickerC.delegate = self
         self.presentViewController(pickerC, animated: true, completion: nil)
+    
+    }
+    
+    func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: NSDictionary!) {
+        self.dismissViewControllerAnimated(true, completion: nil);
+        println(info);
+        sourceImage =  info.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
+        self.performSegueWithIdentifier("addImage", sender: self)
         
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "addImage"{
+            
+            var controller: Team_AddPhoto = segue.destinationViewController as Team_AddPhoto
+            controller.sourceImage = self.sourceImage
+        }
+        
+    }
+
     func textViewShouldBeginEditing(textView: UITextView) -> Bool {
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             

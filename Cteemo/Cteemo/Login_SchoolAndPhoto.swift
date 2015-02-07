@@ -113,7 +113,6 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         }
         
     }
-
     
     // background tapped
     func backGroundTapped(gestureRecognizer: UITapGestureRecognizer){
