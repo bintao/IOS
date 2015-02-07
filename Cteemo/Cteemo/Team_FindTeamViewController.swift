@@ -39,6 +39,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
                 result = JSON as [AnyObject]
                 
                 self.gotResult(result)
+                
         }
     }
     

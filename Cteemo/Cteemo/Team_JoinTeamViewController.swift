@@ -19,12 +19,10 @@ class Team_JoinTeamViewController: UIViewController {
 
     var container : UIViewController!
 
-    
     var isPostNotSearch = true
     
     override func viewDidLoad() {
-        
-             post.backgroundColor = self.navigationController?.view.tintColor
+        post.backgroundColor = self.navigationController?.view.tintColor
     }
 
     @IBAction func switchSection(sender: UIButton){
@@ -41,6 +39,7 @@ class Team_JoinTeamViewController: UIViewController {
         searchLab.backgroundColor = UIColor.whiteColor()
         searchLab.textColor = self.navigationController?.view.tintColor
 
+        isPostNotSearch = true
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             
             self.postView.alpha = 1
@@ -62,6 +61,8 @@ class Team_JoinTeamViewController: UIViewController {
         searchLab.textColor = UIColor.whiteColor()
         searchLab.backgroundColor = self.navigationController?.view.tintColor
         
+        isPostNotSearch = false
+
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             
             self.postView.alpha = 0

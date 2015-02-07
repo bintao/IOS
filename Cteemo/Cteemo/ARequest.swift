@@ -35,6 +35,7 @@ class ARequest: NSObject {
         InteractingWithServer.connectASynchoronous(self.prefix, info: self.info, method: self.method, theRequest:self, token: self.token)
     }
     
+    
     func gotResult(result: [String: AnyObject]){
         
         self.result = result

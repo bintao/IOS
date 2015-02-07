@@ -28,7 +28,9 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/my_team/lol")
             .responseJSON { (_, _, JSON, _) in
-                var result: [String: AnyObject] = JSON as [String: AnyObject]
+                if JSON != nil{
+                    var result: [String: AnyObject] = JSON as [String: AnyObject]
+                }
                 
         }
 

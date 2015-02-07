@@ -59,6 +59,13 @@ class DataManager: NSObject {
         
     }
     
+    class func getUserIconURL()->String{
+        let fileManager = NSFileManager()
+        var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        path = path.stringByAppendingPathComponent("icon.png")
+        return path
+    }
+    
     //get User Icon
     class func getUserIconFromLocal()->UIImage{
         var image: UIImage!
