@@ -20,7 +20,8 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
 
     
     override func viewDidLoad() {
-        
+        self.postView.alpha = 1
+        self.searchView.alpha = 0
     }
     
     override func viewDidAppear(animated: Bool) {

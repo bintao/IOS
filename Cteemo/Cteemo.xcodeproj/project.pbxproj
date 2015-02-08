@@ -17,6 +17,7 @@
 		4215A6701A7B45E1002EB62E /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4215A66F1A7B45E1002EB62E /* speaker.png */; };
 		4215A6721A7D7616002EB62E /* API in Resources */ = {isa = PBXBuildFile; fileRef = 4215A6711A7D7616002EB62E /* API */; };
 		421D565C1A8339D2005E56F0 /* Team_FindTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */; };
+		424AF75E1A872DA20033B863 /* adddd.png in Resources */ = {isa = PBXBuildFile; fileRef = 424AF75D1A872DA20033B863 /* adddd.png */; };
 		4267D82F1A8011D20054E800 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267D82E1A8011D20054E800 /* ImageProcessor.swift */; };
 		427D7A911A85C36000BFB2DA /* CustomSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */; };
 		427D7A931A85CBA600BFB2DA /* UserTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D7A921A85CBA600BFB2DA /* UserTeam.swift */; };
@@ -157,6 +158,7 @@
 		4215A66F1A7B45E1002EB62E /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
 		4215A6711A7D7616002EB62E /* API */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API; sourceTree = "<group>"; };
 		421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_FindTeamViewController.swift; sourceTree = "<group>"; };
+		424AF75D1A872DA20033B863 /* adddd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adddd.png; sourceTree = "<group>"; };
 		4267D82E1A8011D20054E800 /* ImageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwitcher.swift; sourceTree = "<group>"; };
 		427D7A921A85CBA600BFB2DA /* UserTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTeam.swift; sourceTree = "<group>"; };
@@ -417,6 +419,7 @@
 		A1B8E9641A7B215C009BE011 /* Team */ = {
 			isa = PBXGroup;
 			children = (
+				424AF75D1A872DA20033B863 /* adddd.png */,
 				42855BA31A847CCC00EB9546 /* CAMERA.png */,
 				42041AF41A816EE400623C70 /* box1.png */,
 				42041AF51A816EE400623C70 /* institution.png */,
@@ -564,6 +567,7 @@
 			files = (
 				A1010D491A7B2F9100256208 /* school button icon.png in Resources */,
 				429FD0A41A801F25003BA84D /* circleCropper.png in Resources */,
+				424AF75E1A872DA20033B863 /* adddd.png in Resources */,
 				42855BA41A847CCC00EB9546 /* CAMERA.png in Resources */,
 				A1B8E95C1A7B20F2009BE011 /* joinTeam.png in Resources */,
 				A1B8E9581A7B20F2009BE011 /* 奖杯2.png in Resources */,

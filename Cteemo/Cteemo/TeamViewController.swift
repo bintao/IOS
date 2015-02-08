@@ -11,14 +11,14 @@ import UIKit
 import Alamofire
 
 class TeamViewController: UIViewController , UITableViewDataSource, UITableViewDelegate  {
-
+    
     var hasOwnteam = false
     
     @IBOutlet var createTeam : UIView!
     @IBOutlet var teamInfo : UIView!
-
+    
     @IBOutlet var otherChoices : UITableView!
-
+    
     var teams: [String] = [String]()
     
     override func viewDidLoad() {
@@ -33,46 +33,40 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
                     self.gotTeam(result)
                 }
                 
-                
         }
-
+        
         otherChoices.backgroundColor = UIColor.clearColor()
         
         teams = ["My Boy","I'm the king","Sunrise","Cicicici","God of Michigan"]
         
-        if hasOwnteam{
-            
-        }else{
-            var iconBack = UIImage(color: UIColor(red: 255.0, green: 244.0, blue: 73.0, alpha: 1), size: CGSizeMake(300, 300))
-            
-        }
         // Do any additional setup after loading the view.
     }
     
     
     func gotTeam(result: [String: AnyObject]){
         
+        println(result)
         
-            if(result["id"]?  != nil ){
+        if(result["id"]?  != nil ){
             // joined team
             
+                        var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
+            
+            if(captain != UserInfo.profile_ID){
                 
-                
-                var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
-                
-                if(captain != UserInfo.profile_ID){
-                
-                 println("You are not a captain.")
+                println("You are not a captain.")
                 println(UserInfo.profile_ID)
-                }
+            }
                 
-                else {
+            else {
                 
-                 println("You are a captain.")
-                    
-                }
+                self.performSegueWithIdentifier("presentMyTeam", sender: self)
                 
-        
+                println("You are a captain.")
+                
+            }
+            
+            
             TeamInfo.teamID = result["id"] as String
             TeamInfo.teamName = result["teamName"] as String
             TeamInfo.team_Intro = result["teamIntro"] as String
@@ -82,13 +76,13 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
             println(TeamInfo.teamName)
             println(TeamInfo.team_Intro)
             
-            }
+        }
         else {
-                println("not joined team yet")
-        
+            println("not joined team yet")
+            
         }
     }
-        
+    
     override func viewDidAppear(animated: Bool) {
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
     }
@@ -96,7 +90,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
         
-
+        
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -130,7 +124,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         
         return cell
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -141,12 +135,12 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     /*
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
     }
     */
-
+    
 }
