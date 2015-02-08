@@ -65,16 +65,17 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
        
             //let fileURL = NSBundle.mainBundle().URLForResource("image", withExtension: "png")
             
-         /*
-            Alamofire.upload("http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(sourceImage))
+         
+            
+            Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", UIImageJPEGRepresentation(UserInfo.icon, 1))
                 .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
                     println(totalBytesWritten)
-                    println(totalBytesExpectedToWrite)
+                    println(bytesWritten)
                 }
                 .responseJSON { (_, _, JSON, _) in
                     println(JSON)
             }
-           */
+           
             
         }
         else{
