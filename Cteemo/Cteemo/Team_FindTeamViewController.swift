@@ -74,6 +74,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         
         var teamName = UILabel(frame: CGRectMake(85, 15, 200, 27))
         teamName.textColor = UIColor.darkGrayColor()
+        teamName.text = (teams[indexPath.row] as [String: AnyObject])["teamName"] as? String
         teamName.font = UIFont(name: "AvenirNext-Medium", size: 18)
         cell.addSubview(teamName)
         
