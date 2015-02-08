@@ -154,7 +154,8 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
 
                     }
 
-                    self.performSegueWithIdentifier("exitToMain", sender: self)
+                   /* self.performSegueWithIdentifier("exitToMain", sender: self)*/
+                    self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
     
                 }
                 else {

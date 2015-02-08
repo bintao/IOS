@@ -56,15 +56,25 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
                 "token": UserInfo.accessToken
             ]
 
-
-            
             var req = Alamofire.request(.POST, "http://54.149.235.253:5000/profile", parameters: ["username": UserInfo.name, "school":school.text,"lolID":lolName.text])
                 .responseJSON { (_, _, JSON, _) in
                     var result: [String: AnyObject] = JSON as [String: AnyObject]
                     self.gotResult(result)
             }
             
-
+       
+            //let fileURL = NSBundle.mainBundle().URLForResource("image", withExtension: "png")
+            
+         /*
+            Alamofire.upload("http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(sourceImage))
+                .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+                    println(totalBytesWritten)
+                    println(totalBytesExpectedToWrite)
+                }
+                .responseJSON { (_, _, JSON, _) in
+                    println(JSON)
+            }
+           */
             
         }
         else{
@@ -75,7 +85,8 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         }
         
     }
-
+    
+   
     
     //got the result from the server
     func gotResult(result: [String: AnyObject]){
