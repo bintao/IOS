@@ -53,7 +53,6 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
                     println(result)
             
         }
-    
     }
     
     //get photo for team
@@ -69,13 +68,13 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
         self.dismissViewControllerAnimated(true, completion: nil);
         println(info);
         sourceImage =  info.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
-        self.performSegueWithIdentifier("addImage", sender: self)
+        self.performSegueWithIdentifier("addTeamImage", sender: self)
         
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if segue.identifier == "addImage"{
+        if segue.identifier == "addTeamImage"{
             
             var controller: Team_AddPhoto = segue.destinationViewController as Team_AddPhoto
             controller.sourceImage = self.sourceImage
@@ -90,7 +89,6 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
             self.icon.transform = CGAffineTransformMakeTranslation(0, -100)
             self.schoolPublicOut.transform = CGAffineTransformMakeTranslation(0, -100)
             self.teamIntro.transform = CGAffineTransformMakeTranslation(0, -100)
-
             }
             , completion: {
                 (value: Bool) in
@@ -120,7 +118,11 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
     func backGroundTapped(gestureRecognizer: UITapGestureRecognizer){
         teamName.resignFirstResponder()
         teamIntro.resignFirstResponder()
-    }
+        }
     
+    @IBAction func returnToCreate(segue : UIStoryboardSegue) {
+
+
+    }
 }
 

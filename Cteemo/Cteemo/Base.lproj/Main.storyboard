@@ -769,7 +769,7 @@
                                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="cancel" id="XGe-0e-qZk">
                                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <connections>
-                                                <segue destination="qsJ-qK-8VB" kind="unwind" unwindAction="returnToLoginSchoolAndPhoto:" id="sas-2T-TeF"/>
+                                                <segue destination="qsJ-qK-8VB" kind="unwind" identifier="returnToTeamWithPhoto" unwindAction="returnToCreate:" id="sas-2T-TeF"/>
                                             </connections>
                                         </barButtonItem>
                                     </navigationItem>
@@ -790,7 +790,7 @@
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="submitPhoto:" destination="Qc5-Ow-Tzo" eventType="touchUpInside" id="Pkz-je-vcm"/>
+                                            <action selector="submitPhoto:" destination="Qc5-Ow-Tzo" eventType="touchUpInside" id="0op-Mi-v9c"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -836,7 +836,6 @@
                     <connections>
                         <outlet property="circleCropper" destination="JkO-vX-bxL" id="Epz-j3-qGC"/>
                         <outlet property="resizer" destination="TBv-0C-7LX" id="RRj-wW-B3g"/>
-                        <segue destination="qsJ-qK-8VB" kind="unwind" identifier="returnWithPhoto" unwindAction="returnToLoginSchoolAndPhoto:" id="3MI-xO-Ye3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubP-CX-JdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1463,7 +1462,7 @@
                                 </state>
                                 <connections>
                                     <action selector="getPhoto" destination="1rz-XN-iyY" eventType="touchUpInside" id="Of8-WT-x46"/>
-                                    <segue destination="Qc5-Ow-Tzo" kind="presentation" id="fx2-WQ-Lpq"/>
+                                    <segue destination="Qc5-Ow-Tzo" kind="presentation" identifier="addTeamImage" id="fx2-WQ-Lpq"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Team Name" textAlignment="center" adjustsFontSizeToFit="NO" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="AhU-FB-bTE">

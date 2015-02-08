@@ -43,10 +43,8 @@ class Team_AddPhoto: UIViewController, UIScrollViewDelegate{
     @IBAction func submitPhoto(sender : UIButton) {
 
         cutImage()
-        self.performSegueWithIdentifier("returnWithPhoto", sender: self)
+        self.performSegueWithIdentifier("returnToTeamWithPhoto", sender: self)
     }
-    
-
     
     func cutImage(){
         
