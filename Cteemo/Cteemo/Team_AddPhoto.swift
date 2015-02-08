@@ -18,6 +18,7 @@ class Team_AddPhoto: UIViewController, UIScrollViewDelegate{
     
     
     override func viewDidLoad() {
+        
     }
     
     override func viewDidAppear(animated: Bool) {

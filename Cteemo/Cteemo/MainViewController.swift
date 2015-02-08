@@ -12,6 +12,13 @@ class MainViewController: UIViewController, UITabBarDelegate {
     
     @IBOutlet var tabbar: UITabBar!
     
+    @IBOutlet var news: UIView!
+    @IBOutlet var team: UIView!
+    @IBOutlet var tournament: UIView!
+    @IBOutlet var me: UIView!
+
+    var tabbarShouldAppear = true
+    
     var content : UIViewController!
 
     override func viewDidLoad() {
@@ -23,15 +30,17 @@ class MainViewController: UIViewController, UITabBarDelegate {
     }
 
     override func viewDidAppear(animated: Bool) {
+        
         if !UserInfo.userIsLogined(){
             self.performSegueWithIdentifier("login", sender: self)
             FBSession.activeSession().closeAndClearTokenInformation()
 
         }else{
-            showTabb()
-            content = self.storyboard!.instantiateViewControllerWithIdentifier("News")! as UIViewController
-            self.displayContentController(content)
-            self.view.bringSubviewToFront(self.tabbar)
+            
+            if tabbarShouldAppear {
+                showTabb()
+                self.view.bringSubviewToFront(self.tabbar)
+            }
         }
     }
     
@@ -41,26 +50,22 @@ class MainViewController: UIViewController, UITabBarDelegate {
     }
     
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
-        presentView(item.title!)
+        if item.title! == "News"{
+            self.view.bringSubviewToFront(news)
+            self.view.bringSubviewToFront(tabbar)
+        }else if item.title! == "Tournament"{
+            self.view.bringSubviewToFront(tournament)
+            self.view.bringSubviewToFront(tabbar)
+        }else if item.title! == "Team"{
+            self.view.bringSubviewToFront(team)
+            self.view.bringSubviewToFront(tabbar)
+        }else if item.title! == "Me"{
+            self.view.bringSubviewToFront(me)
+            self.view.bringSubviewToFront(tabbar)
+        }
     }
     
-    func presentView(title: String){
-        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            
-            self.content.view.alpha = 0
-            
-            }
-            , completion: {
-                (value: Bool) in
-                self.hideContentController(self.content)
-                self.content = self.storyboard!.instantiateViewControllerWithIdentifier(title)! as UIViewController
-                self.displayContentController(self.content)
-                
-        })
-
-    }
-
-// display the new view controller
+   // display the new view controller
     func displayContentController(content: UIViewController){
         self.addChildViewController(content)
         content.didMoveToParentViewController(self)          // 3
@@ -82,14 +87,11 @@ class MainViewController: UIViewController, UITabBarDelegate {
         
     }
     
-    func hideContentController(content: UIViewController){
-        content.view.removeFromSuperview()
-        content.removeFromParentViewController()
-    }
  
     //hide tab bar
     
     func hideTabb(){
+        tabbarShouldAppear = false
         if tabbar.alpha > 0{
         UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             
@@ -104,7 +106,8 @@ class MainViewController: UIViewController, UITabBarDelegate {
     }
     //display the tab bar
     func showTabb(){
-        
+        tabbarShouldAppear = true
+
         if tabbar.alpha < 1{
         
             UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
@@ -121,7 +124,6 @@ class MainViewController: UIViewController, UITabBarDelegate {
     
     func logout(){
         hideTabb()
-        hideContentController(content)
         UserInfo.cleanUserData()
         FBSession.activeSession().closeAndClearTokenInformation()
         self.performSegueWithIdentifier("login", sender: self)

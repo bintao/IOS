@@ -49,9 +49,13 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
         manager.session.configuration.HTTPAdditionalHeaders = ["token": UserInfo.accessToken]
         var req = Alamofire.request(.POST, "http://54.149.235.253:5000/create_team/lol",parameters: ["teamName":teamName.text, "teamIntro":teamIntro.text,"isSchool":true])
             .responseJSON { (_, _, JSON, _) in
-                var result: [String: AnyObject] = JSON as [String: AnyObject]
+                if JSON != nil{
+                    
+                    var result: [String: AnyObject] = JSON as [String: AnyObject]
                     println(result)
-            
+
+                }
+                
         }
     }
     
@@ -61,12 +65,9 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
         let pickerC = UIImagePickerController()
         pickerC.delegate = self
         self.presentViewController(pickerC, animated: true, completion: nil)
-    
     }
-    
     func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: NSDictionary!) {
         self.dismissViewControllerAnimated(true, completion: nil);
-        println(info);
         sourceImage =  info.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
         self.performSegueWithIdentifier("addTeamImage", sender: self)
         
@@ -89,6 +90,8 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
             self.icon.transform = CGAffineTransformMakeTranslation(0, -100)
             self.schoolPublicOut.transform = CGAffineTransformMakeTranslation(0, -100)
             self.teamIntro.transform = CGAffineTransformMakeTranslation(0, -100)
+            self.iconDisplay.transform = CGAffineTransformMakeTranslation(0, -100)
+
             }
             , completion: {
                 (value: Bool) in
@@ -106,6 +109,9 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
             self.icon.transform = CGAffineTransformMakeTranslation(0, 0)
             self.schoolPublicOut.transform = CGAffineTransformMakeTranslation(0, 0)
             self.teamIntro.transform = CGAffineTransformMakeTranslation(0, 0)
+            self.iconDisplay.transform = CGAffineTransformMakeTranslation(0, 0)
+
+            
             
             }
             , completion: {

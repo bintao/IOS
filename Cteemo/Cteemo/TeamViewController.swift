@@ -95,6 +95,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        
 
     }
     
