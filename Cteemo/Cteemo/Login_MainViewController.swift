@@ -109,6 +109,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
             UserInfo.name = user.name
             UserInfo.fbid = user.objectForKey("id") as String
             UserInfo.email = user.objectForKey("email") as String
+            UserInfo.saveUserData()
         
         }
 
@@ -143,8 +144,9 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                 //old User
                     
                     UserInfo.profile_ID = result["id"] as String
-                    println(UserInfo.profile_ID)
                     UserInfo.saveUserData()
+                    println(UserInfo.profile_ID)
+                    
                     
                     var facebookIcon: UIImage? = self.getPotraitFromFacebook() as UIImage
 
@@ -154,8 +156,8 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
 
                     }
 
-                   /* self.performSegueWithIdentifier("exitToMain", sender: self)*/
-                    self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
+                    self.performSegueWithIdentifier("exitToMain", sender: self)
+                    /*self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)*/
     
                 }
                 else {

@@ -71,6 +71,7 @@
 		A1010D491A7B2F9100256208 /* school button icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D481A7B2F9100256208 /* school button icon.png */; };
 		A1010D4B1A7B385700256208 /* school.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D4A1A7B385700256208 /* school.png */; };
 		A12FDD8A1A85EF9B00DF278F /* Team_AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */; };
+		A16023F61A87356E00CFAACA /* Login_lolID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16023F51A87356E00CFAACA /* Login_lolID.swift */; };
 		A19CA9931A7F4C010093C575 /* Login_Forpassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = A19CA9921A7F4C010093C575 /* Login_Forpassword.swift */; };
 		A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */; };
 		A1B8E9581A7B20F2009BE011 /* 奖杯2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */; };
@@ -216,6 +217,7 @@
 		A1010D481A7B2F9100256208 /* school button icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "school button icon.png"; sourceTree = "<group>"; };
 		A1010D4A1A7B385700256208 /* school.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school.png; sourceTree = "<group>"; };
 		A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_AddPhoto.swift; sourceTree = "<group>"; };
+		A16023F51A87356E00CFAACA /* Login_lolID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_lolID.swift; sourceTree = "<group>"; };
 		A19CA9921A7F4C010093C575 /* Login_Forpassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Login_Forpassword.swift; path = ../Login_Forpassword.swift; sourceTree = "<group>"; };
 		A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯1.png"; sourceTree = "<group>"; };
 		A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯2.png"; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				42B85A111A74888500FD4642 /* Login_SchoolAndPhoto.swift */,
 				429FD09E1A801607003BA84D /* Login_AddPhoto.swift */,
 				42B85A171A748B2E00FD4642 /* Login_SchoolSearchViewController.swift */,
+				A16023F51A87356E00CFAACA /* Login_lolID.swift */,
 			);
 			name = Login;
 			sourceTree = "<group>";
@@ -630,6 +633,7 @@
 				42E5E78B1A773E56004A781E /* Login_LoginBySelfViewController.swift in Sources */,
 				42855B9D1A8459A600EB9546 /* Team_JoinTeamViewController.swift in Sources */,
 				42B74FC71A812416008B575C /* TeamViewController.swift in Sources */,
+				A16023F61A87356E00CFAACA /* Login_lolID.swift in Sources */,
 				427D7A931A85CBA600BFB2DA /* UserTeam.swift in Sources */,
 				42B74FC91A812416008B575C /* MeViewController.swift in Sources */,
 				42B85A121A74888500FD4642 /* Login_SchoolAndPhoto.swift in Sources */,
