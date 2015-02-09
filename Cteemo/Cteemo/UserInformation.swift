@@ -51,13 +51,14 @@ class UserInformation: NSObject {
         intro = data["intro"] as String
         lolRank = data["lolRank"] as String
         lolName = data["lolName"] as String
+        profile_ID = data["profile_ID"] as String
     }
     
     //change user data and save
 
     
     func packaging()->[String: AnyObject]{
-        var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "lolID": lolID, "school": school, "intro": intro,"lolName":lolName,"lolRank":lolRank]
+        var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "lolID": lolID, "school": school, "intro": intro,"lolName":lolName,"lolRank":lolRank,"profile_ID":profile_ID]
         return data
     }
     
@@ -109,7 +110,7 @@ class UserInformation: NSObject {
         intro = ""
         lolName = ""
         lolRank = ""
-    
+        profile_ID = ""
         DataManager.saveUserInfoToLocal(packaging())
     }
     

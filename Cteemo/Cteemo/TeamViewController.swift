@@ -50,7 +50,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         if(result["id"]?  != nil ){
             // joined team
             
-                        var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
+            var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
             
             if(captain != UserInfo.profile_ID){
                 
@@ -88,9 +88,9 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
-        
-        
+        if segue.identifier != "presentMyTeam"{
+            ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        }
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

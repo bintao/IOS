@@ -988,6 +988,65 @@
             </objects>
             <point key="canvasLocation" x="1541" y="-1014"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="dad-4f-I3s">
+            <objects>
+                <viewController id="hGg-dP-nKv" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3kI-3F-yNL"/>
+                        <viewControllerLayoutGuide type="bottom" id="TqT-1B-ylU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jtk-Kv-A8n">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="～～，我们已经在召唤师峡谷找到你的信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8K-O7-IVy">
+                                <rect key="frame" x="119" y="64" width="323" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsf-92-vkC">
+                                <rect key="frame" x="329" y="128" width="156" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYq-Ux-cG0">
+                                <rect key="frame" x="329" y="171" width="156" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="va5-pi-n3y">
+                                <rect key="frame" x="329" y="214" width="156" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjz-LX-ark">
+                                <rect key="frame" x="79" y="393" width="272" height="30"/>
+                                <state key="normal" title="开始征战">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5y9-En-eRP">
+                                <rect key="frame" x="192" y="458" width="60" height="30"/>
+                                <state key="normal" title="更改信息">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kj0-OO-tPC">
+                                <rect key="frame" x="119" y="121" width="160" height="150"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pPe-ip-jUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2269" y="-1014"/>
+        </scene>
         <!--Login School Search View Controller-->
         <scene sceneID="0lh-eR-vWe">
             <objects>
@@ -1081,7 +1140,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2PD-p1-1bo" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="nYC-Nf-tPz" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2127" y="-1954"/>
+            <point key="canvasLocation" x="2246" y="-1930"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="mHp-kl-bhb">
@@ -1484,10 +1543,10 @@
             </objects>
             <point key="canvasLocation" x="5726" y="-113"/>
         </scene>
-        <!--View Controller-->
+        <!--Team Team Info View Controller-->
         <scene sceneID="9W0-Wv-aIb">
             <objects>
-                <viewController id="hEF-di-Hta" sceneMemberID="viewController">
+                <viewController id="hEF-di-Hta" customClass="Team_TeamInfoViewController" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LY9-oo-41W"/>
                         <viewControllerLayoutGuide type="bottom" id="chR-Zo-MaF"/>
@@ -1496,13 +1555,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="teambg .png" translatesAutoresizingMaskIntoConstraints="NO" id="YV6-dc-kLW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="teambg .png" translatesAutoresizingMaskIntoConstraints="NO" id="YV6-dc-kLW">
                                 <rect key="frame" x="0.0" y="64" width="600" height="172"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="YV6-dc-kLW" secondAttribute="height" multiplier="2:1" id="H0r-UD-DKA"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fSe-Ff-3ec">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fSe-Ff-3ec">
                                 <rect key="frame" x="0.0" y="236" width="600" height="25"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MEMBER LIST" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kwm-cW-H2r">
@@ -1523,14 +1582,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="YV6-dc-kLW" firstAttribute="leading" secondItem="Wbv-cg-afh" secondAttribute="leading" id="2Vg-7Z-Tn7"/>
                             <constraint firstItem="fSe-Ff-3ec" firstAttribute="top" secondItem="YV6-dc-kLW" secondAttribute="bottom" id="4zZ-4E-elm"/>
                             <constraint firstAttribute="trailing" secondItem="fSe-Ff-3ec" secondAttribute="trailing" id="6gd-tN-81p"/>
+                            <constraint firstItem="YV6-dc-kLW" firstAttribute="top" secondItem="LY9-oo-41W" secondAttribute="bottom" id="82h-rm-8b2"/>
                             <constraint firstItem="fSe-Ff-3ec" firstAttribute="leading" secondItem="Wbv-cg-afh" secondAttribute="leading" id="Fjb-9j-NaV"/>
+                            <constraint firstAttribute="trailing" secondItem="YV6-dc-kLW" secondAttribute="trailing" id="Fzf-In-Agp"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dwP-Q5-qV9">
-                        <barButtonItem key="leftBarButtonItem" id="WQa-Q8-mhZ"/>
+                        <barButtonItem key="rightBarButtonItem" image="more111.png" id="xLF-d3-XXF"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="navigation" destination="dwP-Q5-qV9" id="ESu-7v-6I0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX3-eO-xmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1637,6 +1702,7 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="CREATE TEAM" id="Bxb-vu-etp">
+                        <barButtonItem key="leftBarButtonItem" id="pi4-jT-vZD"/>
                         <barButtonItem key="rightBarButtonItem" title="CREATE" id="JVQ-AG-4Wd">
                             <connections>
                                 <action selector="createTeam:" destination="1rz-XN-iyY" id="eBz-xR-ieX"/>
@@ -1987,6 +2053,7 @@
         <image name="hentiao2.png" width="750" height="4"/>
         <image name="joinTeam.png" width="90" height="90"/>
         <image name="lock1.png" width="54" height="57"/>
+        <image name="more111.png" width="60" height="60"/>
         <image name="news" width="30" height="30"/>
         <image name="right.png" width="24" height="42"/>
         <image name="speaker.png" width="500" height="400"/>

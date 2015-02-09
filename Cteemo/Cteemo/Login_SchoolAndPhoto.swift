@@ -52,6 +52,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
 
             var manager = Manager.sharedInstance
             // Specifying the Headers we need
+            //manager.requestSerializer = [AFJSONRequestSerializer serializer]
             manager.session.configuration.HTTPAdditionalHeaders = [
                 "token": UserInfo.accessToken
             ]
@@ -65,10 +66,9 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
        
             //let fileURL = NSBundle.mainBundle().URLForResource("image", withExtension: "png")
             
-         
             
-            Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", UIImageJPEGRepresentation(UserInfo.icon, 1))
-                .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+            Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(UserInfo.icon)
+                ).progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
                     println(totalBytesWritten)
                     println(bytesWritten)
                 }

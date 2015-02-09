@@ -52,17 +52,39 @@ class MainViewController: UIViewController, UITabBarDelegate {
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
         if item.title! == "News"{
             self.view.bringSubviewToFront(news)
+            news.alpha = 0
+            displayView(news)
             self.view.bringSubviewToFront(tabbar)
         }else if item.title! == "Tournament"{
             self.view.bringSubviewToFront(tournament)
+            tournament.alpha = 0
+            displayView(tournament)
             self.view.bringSubviewToFront(tabbar)
         }else if item.title! == "Team"{
             self.view.bringSubviewToFront(team)
+            team.alpha = 0
+            displayView(team)
             self.view.bringSubviewToFront(tabbar)
         }else if item.title! == "Me"{
             self.view.bringSubviewToFront(me)
+            me.alpha = 0
+            displayView(me)
             self.view.bringSubviewToFront(tabbar)
         }
+    }
+    
+    func displayView(content: UIView){
+        
+        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            
+            content.alpha = 1
+            
+            }
+            , completion: {
+                (value: Bool) in
+                
+        })
+        
     }
     
    // display the new view controller
