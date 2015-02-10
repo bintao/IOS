@@ -53,7 +53,11 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
 
             var manager = Manager.sharedInstance
             // Specifying the Headers we need
+<<<<<<< HEAD
 
+=======
+            //manager.requestSerializer = [AFJSONRequestSerializer serializer]
+>>>>>>> FETCH_HEAD
             manager.session.configuration.HTTPAdditionalHeaders = [
                 "token": "eyJhbGciOiJIUzI1NiIsImV4cCI6MTQyMzg4NDg4OCwiaWF0IjoxNDIzNTI0ODg4fQ.IjU0ZDQyOGZiMDU1MWRjMWYxMTdjOTZhNiI.--n9JSm00dvVZng9g8eDlD3-cRgxFITYIHG-qxruDrc"//UserInfo.accessToken
             ]
@@ -94,9 +98,18 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             
             
             
+<<<<<<< HEAD
+=======
+            var requ = NSURLRequest(URL: NSURL(string: "http://54.149.235.253:5000/upload_profile_icon")!)
+            var encoding =  Alamofire.ParameterEncoding.URL
+            let param = ["upload": UIImagePNGRepresentation(UserInfo.icon)]
+            (requ, _) = encoding.encode(requ, parameters: param)
+>>>>>>> FETCH_HEAD
             
-            Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", UIImageJPEGRepresentation(UserInfo.icon, 1))
-                .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+            
+            
+            Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(UserInfo.icon)
+                ).progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
                     println(totalBytesWritten)
                     println(bytesWritten)
                 }

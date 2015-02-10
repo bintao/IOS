@@ -85,9 +85,15 @@ class DataManager: NSObject {
         UIImagePNGRepresentation(icon).writeToFile(imagePath, atomically: true)
     }
 
-    
+    class func getUserIconPath()->String{
+        let fileManager = NSFileManager()
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var imagePath = paths.stringByAppendingPathComponent("icon.png")
+        
+        return imagePath
+    }
     //get User Icon
-    class func getUserIconFromLocal()->UIImage{
+    class func getUserIconFromLocal()->UIImage?{
         var image: UIImage!
         let fileManager = NSFileManager()
         var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String

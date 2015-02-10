@@ -55,7 +55,12 @@ class UserInformation: NSObject {
         lolRank = data["lolRank"] as String
         lolName = data["lolName"] as String
         profile_ID = data["profile_ID"] as String
+<<<<<<< HEAD
         lolIcon = data["lolIcon"] as String
+=======
+        
+        icon = DataManager.getUserIconFromLocal()
+>>>>>>> FETCH_HEAD
     }
     
     //change user data and save

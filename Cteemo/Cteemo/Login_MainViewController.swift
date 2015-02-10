@@ -142,6 +142,10 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
             .responseJSON { (_, _, JSON, _) in
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
                 println(result)
+                
+                
+
+                
                 if ( result["username"]? != nil) {
                 //old User
                     
@@ -157,6 +161,14 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                         UserInfo.saveUserIcon()
 
                     }
+                    Alamofire.upload(.GET, "http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(UserInfo.icon)
+                        ).progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+                            println(totalBytesWritten)
+                            println(bytesWritten)
+                        }
+                        .responseJSON { (_, _, JSON, _) in
+                            println(JSON)
+                    }
 
                     //self.performSegueWithIdentifier("exitToMain", sender: self)
                     self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
@@ -170,8 +182,17 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                             UserInfo.icon = facebookIcon
                             UserInfo.saveUserIcon()
 
-                                                   }
+                            }
 
+                    Alamofire.upload(.GET, "http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(UserInfo.icon)
+                        ).progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+                            println(totalBytesWritten)
+                            println(bytesWritten)
+                        }
+                        .responseJSON { (_, _, JSON, _) in
+                            println("sdf")
+                    }
+                    
                         self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
                 
                 }
