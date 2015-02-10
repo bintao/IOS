@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class MainViewController: UIViewController, UITabBarDelegate {
     
@@ -18,7 +19,7 @@ class MainViewController: UIViewController, UITabBarDelegate {
     @IBOutlet var me: UIView!
 
     var tabbarShouldAppear = true
-    
+
     var content : UIViewController!
 
     override func viewDidLoad() {
@@ -26,14 +27,59 @@ class MainViewController: UIViewController, UITabBarDelegate {
         self.tabbar.transform = CGAffineTransformMakeTranslation(0, self.tabbar.frame.height)
         self.tabbar.alpha = 0
 
+        
+        var manager = Manager.sharedInstance
+        // Specifying the Headers we need
+        
+        manager.session.configuration.HTTPAdditionalHeaders = [
+            "token": "eyJhbGciOiJIUzI1NiIsImV4cCI6MTQyMzg4NDg4OCwiaWF0IjoxNDIzNTI0ODg4fQ.IjU0ZDQyOGZiMDU1MWRjMWYxMTdjOTZhNiI.--n9JSm00dvVZng9g8eDlD3-cRgxFITYIHG-qxruDrc"//UserInfo.accessToken
+        ]
+        
+        
+//        var request = A
+//        [ASIFormDataRequest requestWithURL:url];
+//        [request setPostValue:self.username forKey:@"username"];
+//        [request setPostValue:self.password forKey:@"password"];
+//        [request startAsynchronous];
+
+        Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", NSData())
+            .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
+                println(totalBytesWritten)
+                println(bytesWritten)
+            }
+            .responseJSON { (_, _, JSON, error) in
+                println(error)
+                println(JSON)
+        }
+        
+        let url = NSURL(string: "http://54.149.235.253:5000/upload_profile_icon")!
+        var request = NSURLRequest(URL: url)
+        
+        let parameters = ["upload": UIImagePNGRepresentation(UserInfo.icon)]
+        let encoding = Alamofire.ParameterEncoding.URL
+        (request, _) = encoding.encode(request, parameters: parameters)
+        
+        var session = NSURLSession.sharedSession()
+        var task = session.dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+            println(error)
+            println(NSString(data: data, encoding: NSUTF8StringEncoding))
+            println("done")
+        })
+        task.resume()
+        
+        
+        //manager.session.configuration.HTTPAdditionalHeaders = ["Content-Type" : "multipart/form-data"]
+        
+
         // Do any additional setup after loading the view, typically from a nib.
     }
 
     override func viewDidAppear(animated: Bool) {
         
         if !UserInfo.userIsLogined(){
-            self.performSegueWithIdentifier("login", sender: self)
             FBSession.activeSession().closeAndClearTokenInformation()
+            self.performSegueWithIdentifier("login", sender: self)
+           
 
         }else{
             
