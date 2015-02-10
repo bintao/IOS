@@ -35,6 +35,8 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
                 
         }
         
+
+        
         otherChoices.backgroundColor = UIColor.clearColor()
         
         teams = ["My Boy","I'm the king","Sunrise","Cicicici","God of Michigan"]

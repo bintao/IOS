@@ -140,6 +140,10 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
             .responseJSON { (_, _, JSON, _) in
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
                 println(result)
+                
+                
+
+                
                 if ( result["username"]? != nil) {
                 //old User
                     

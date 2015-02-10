@@ -66,6 +66,12 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
        
             //let fileURL = NSBundle.mainBundle().URLForResource("image", withExtension: "png")
             
+            var requ = NSURLRequest(URL: NSURL(string: "http://54.149.235.253:5000/upload_profile_icon")!)
+            var encoding =  Alamofire.ParameterEncoding.URL
+            let param = ["upload": UIImagePNGRepresentation(UserInfo.icon)]
+            (requ, _) = encoding.encode(requ, parameters: param)
+            
+            
             
             Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(UserInfo.icon)
                 ).progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
