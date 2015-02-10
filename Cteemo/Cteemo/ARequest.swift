@@ -8,6 +8,7 @@
 //
 
 import UIKit
+import Alamofire
 
 protocol RequestResultDelegate: NSObjectProtocol{
     func gotResult(prefix:String ,result: [String: AnyObject])
@@ -24,6 +25,13 @@ class ARequest: NSObject {
     var result: [String: AnyObject]!
     var token: String!
     
+    
+    var uploadRequest: NSURLSessionUploadTask?
+
+    override init() {
+        
+    }
+    
     init(prefix: String, method: String, data: [String: AnyObject]){
         super.init()
         self.method = method
@@ -34,7 +42,40 @@ class ARequest: NSObject {
     func sendRequest(){
         InteractingWithServer.connectASynchoronous(self.prefix, info: self.info, method: self.method, theRequest:self, token: self.token)
     }
-    
+
+    // upload photo
+    func uploadPhoto(){
+        
+        var manager1 = Manager.sharedInstance
+        // Specifying the Headers we need
+        //manager.requestSerializer = [AFJSONRequestSerializer serializer]
+        println(UserInfo.accessToken)
+        manager1.session.configuration.HTTPAdditionalHeaders = [
+            "token": UserInfo.accessToken
+        ]
+        
+        var parameters = NSMutableDictionary()
+        var filePath = NSURL(fileURLWithPath: DataManager.getUserIconPath())!
+        
+        var request = AFHTTPRequestSerializer().multipartFormRequestWithMethod("POST", URLString: "http://54.149.235.253:5000/upload_profile_icon", parameters: parameters, constructingBodyWithBlock: { (formData) -> Void in
+            formData.appendPartWithFileURL(filePath, name: "upload", fileName: "upload", mimeType: "image/png", error: nil)
+            return
+            }, error: nil)
+        
+        
+        var manager = AFURLSessionManager(sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        manager.session.configuration.HTTPAdditionalHeaders = [
+            "token": UserInfo.accessToken
+        ]
+        
+        uploadRequest = manager.uploadTaskWithStreamedRequest(request, progress: nil) { (response, obj, error) -> Void in
+            println(obj)
+            println(error)
+            println("dfdf")
+        }
+        uploadRequest?.resume()
+        
+    }
     
     func gotResult(result: [String: AnyObject]){
         

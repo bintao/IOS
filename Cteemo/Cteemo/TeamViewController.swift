@@ -55,7 +55,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
             var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
             
             if(captain != UserInfo.profile_ID){
-                
                 println("You are not a captain.")
                 println(UserInfo.profile_ID)
             }

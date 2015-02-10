@@ -38,6 +38,7 @@ class Login_AddPhoto: UIViewController, UIScrollViewDelegate{
         println(resizer.contentOffset)
         return self.imgView
     }
+    
     @IBAction func submitPhoto(sender : UIButton) {
 
         cutImage()

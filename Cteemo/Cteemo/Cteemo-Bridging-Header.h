@@ -3,9 +3,6 @@
 //
 
 #import <FacebookSDK/FacebookSDK.h>
-<<<<<<< HEAD
-#import "Reachability.h"
-=======
+
 #import "Reachability.h"
 #import "AFNetworking.h"
->>>>>>> FETCH_HEAD

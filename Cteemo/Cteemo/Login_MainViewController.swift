@@ -120,7 +120,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
         }else{
            UserInfo.email = user.objectForKey("email") as String
         }
-        
+       
         UserInfo.saveUserData()
    
         
@@ -161,18 +161,11 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                         UserInfo.saveUserIcon()
 
                     }
-                    Alamofire.upload(.GET, "http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(UserInfo.icon)
-                        ).progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
-                            println(totalBytesWritten)
-                            println(bytesWritten)
-                        }
-                        .responseJSON { (_, _, JSON, _) in
-                            println(JSON)
-                    }
+                    
 
                     //self.performSegueWithIdentifier("exitToMain", sender: self)
+                 
                     self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
-    
                 }
                 else {
                 //new user
@@ -184,15 +177,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
 
                             }
 
-                    Alamofire.upload(.GET, "http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(UserInfo.icon)
-                        ).progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
-                            println(totalBytesWritten)
-                            println(bytesWritten)
-                        }
-                        .responseJSON { (_, _, JSON, _) in
-                            println("sdf")
-                    }
-                    
                         self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
                 
                 }

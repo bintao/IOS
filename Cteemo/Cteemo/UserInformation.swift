@@ -46,21 +46,20 @@ class UserInformation: NSObject {
         name = data["name"] as String
         fbid = data["fbid"] as String
         accessToken = data["accessToken"] as String
+        
         email = data["email"] as String
         lolID = data["lolID"] as String
         gender = data["gender"] as String
         school = data["school"] as String
         intro = data["intro"] as String
+        
         lolLevel = data["lolLevel"] as Int
         lolRank = data["lolRank"] as String
         lolName = data["lolName"] as String
         profile_ID = data["profile_ID"] as String
-<<<<<<< HEAD
         lolIcon = data["lolIcon"] as String
-=======
         
         icon = DataManager.getUserIconFromLocal()
->>>>>>> FETCH_HEAD
     }
     
     //change user data and save
