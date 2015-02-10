@@ -22,8 +22,15 @@ class lol_api: NSObject{
         Alamofire.request(.GET,url)
             .responseJSON { (_, _, JSON, _) in
                 
+                if(JSON != nil){
+                println(JSON)
                 self.getIDresult((JSON as [String: AnyObject])[lolName] as [String: AnyObject])
+                }
+                else{
                 
+                    println(JSON)
+                    
+                }
         }
     }
     
@@ -31,10 +38,13 @@ class lol_api: NSObject{
         if result["id"] != nil{
             var idd: Int = result["id"] as Int
             UserInfo.lolID = "\(idd)"
+            UserInfo.lolLevel = result["summonerLevel"] as Int
             UserInfo.saveUserData()
             println(UserInfo.lolID)
+            println(UserInfo.lolLevel)
+            if(result["summonerLevel"] as Int == 30){
             self.getSummonerLeague(UserInfo.lolID)
-            
+            }
         }
         
     }
@@ -44,11 +54,28 @@ class lol_api: NSObject{
         var url = "https://na.api.pvp.net/api/lol/na/v2.5/league/by-summoner/"+lolID+"/entry?api_key="+key
         Alamofire.request(.GET,url)
             .responseJSON { (_, _, JSON, _) in
-                println((JSON as [String: AnyObject])[lolID])
+                var result: [String: AnyObject] = JSON as [String: AnyObject]
+
+                self.getLeagueResult(result)
         }
     }
     
+    func getLeagueResult(result: [String: AnyObject]){
+        
+       // (result["entries"] as [String: AnyObject])["entries"]
+        println(result[UserInfo.lolID])
+        println (((result[UserInfo.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"])
+        
+        var tier : String = (((result[UserInfo.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"] as String) + " "+(((((result[UserInfo.lolID] as [AnyObject])[0] as [String: AnyObject])["entries"] as [AnyObject])[0] as [String: AnyObject])["division"] as String)
+        
+        print(tier)
+        
+        UserInfo.lolRank = tier
+        UserInfo.saveUserData()
+        
+        
     
+    }
     
     
     

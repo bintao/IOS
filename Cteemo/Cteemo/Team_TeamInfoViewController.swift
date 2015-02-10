@@ -12,11 +12,41 @@ class Team_TeamInfoViewController: UIViewController {
 
     @IBOutlet var navigation : UINavigationItem!
 
+    @IBOutlet var memberScroll : UIScrollView!
+   
+    @IBOutlet var capTain : UIButton!
+    @IBOutlet var capTainName : UILabel!
+
+    var members = ["kedan", "jake", "Tom", "Father","BOSS"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         navigation.title = TeamInfo.teamName
+        
+        capTain.setImage(UserInfo.icon, forState: UIControlState.Normal)
+        capTainName.text = UserInfo.name
+        
+        memberScroll.contentSize = CGSizeMake(75 * CGFloat(members.count), 75)
+        
+        for var index = 0; index < members.count; index++ {
+            var but = UIButton(frame: CGRectMake(5 + 75 * CGFloat(index), 10, 65, 65))
+            but.setImage(UserInfo.icon, forState: UIControlState.Normal)
+            memberScroll.addSubview(but)
+            
+            var lab = UILabel(frame: CGRectMake(75 * CGFloat(index), 75, 75, 20))
+            lab.textAlignment = NSTextAlignment.Center
+            lab.text = members[index]
+            lab.font = capTainName.font
+            memberScroll.addSubview(lab)
+            
+        }
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+
     }
 
     override func didReceiveMemoryWarning() {

@@ -18,22 +18,25 @@ class MainViewController: UIViewController, UITabBarDelegate {
     @IBOutlet var me: UIView!
 
     var tabbarShouldAppear = true
-    
+
     var content : UIViewController!
+    var uploadRequest: NSURLSessionUploadTask?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabbar.transform = CGAffineTransformMakeTranslation(0, self.tabbar.frame.height)
         self.tabbar.alpha = 0
-
-        // Do any additional setup after loading the view, typically from a nib.
+       
+        var req = ARequest()
+        req.uploadPhoto()
     }
 
     override func viewDidAppear(animated: Bool) {
         
         if !UserInfo.userIsLogined(){
-            self.performSegueWithIdentifier("login", sender: self)
             FBSession.activeSession().closeAndClearTokenInformation()
+            self.performSegueWithIdentifier("login", sender: self)
+           
 
         }else{
             

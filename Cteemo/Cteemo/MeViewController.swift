@@ -14,7 +14,10 @@ class MeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        var img = UIImageView(image: UserInfo.icon)
+        img.frame = CGRectMake(100, 100, 100, 100)
+        self.view.addSubview(img)
         // Do any additional setup after loading the view.
     }
 
