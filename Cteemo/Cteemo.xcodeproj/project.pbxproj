@@ -70,6 +70,8 @@
 		42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A471A74A9FC00FD4642 /* UserInformation.plist */; };
 		42E5E78B1A773E56004A781E /* Login_LoginBySelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */; };
 		42E5E7911A7762DB004A781E /* teemoDouble.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5E7901A7762DB004A781E /* teemoDouble.png */; };
+		88535F501A89A0CB00F38098 /* RED.png in Resources */ = {isa = PBXBuildFile; fileRef = 88535F4F1A89A0CB00F38098 /* RED.png */; };
+		88535F551A89C84B00F38098 /* SUMMARY.png in Resources */ = {isa = PBXBuildFile; fileRef = 88535F541A89C84B00F38098 /* SUMMARY.png */; };
 		A1010D471A7B2ACF00256208 /* ARequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010D461A7B2ACF00256208 /* ARequest.swift */; };
 		A1010D491A7B2F9100256208 /* school button icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D481A7B2F9100256208 /* school button icon.png */; };
 		A1010D4B1A7B385700256208 /* school.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D4A1A7B385700256208 /* school.png */; };
@@ -219,6 +221,8 @@
 		42B85A471A74A9FC00FD4642 /* UserInformation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserInformation.plist; sourceTree = "<group>"; };
 		42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_LoginBySelfViewController.swift; sourceTree = "<group>"; };
 		42E5E7901A7762DB004A781E /* teemoDouble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teemoDouble.png; sourceTree = "<group>"; };
+		88535F4F1A89A0CB00F38098 /* RED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RED.png; sourceTree = "<group>"; };
+		88535F541A89C84B00F38098 /* SUMMARY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SUMMARY.png; sourceTree = "<group>"; };
 		A1010D461A7B2ACF00256208 /* ARequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARequest.swift; sourceTree = "<group>"; };
 		A1010D481A7B2F9100256208 /* school button icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "school button icon.png"; sourceTree = "<group>"; };
 		A1010D4A1A7B385700256208 /* school.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school.png; sourceTree = "<group>"; };
@@ -386,6 +390,7 @@
 		42B85A131A74897A00FD4642 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				88535F561A89C91A00F38098 /* News */,
 				A1B8E9641A7B215C009BE011 /* Team */,
 				42B85A191A748C1500FD4642 /* Login */,
 				42B85A141A7489B700FD4642 /* StartPage */,
@@ -422,6 +427,15 @@
 				42B85A221A748CDB00FD4642 /* SUBMIT.png */,
 			);
 			name = Login;
+			sourceTree = "<group>";
+		};
+		88535F561A89C91A00F38098 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				88535F541A89C84B00F38098 /* SUMMARY.png */,
+				88535F4F1A89A0CB00F38098 /* RED.png */,
+			);
+			name = News;
 			sourceTree = "<group>";
 		};
 		A1B8E9641A7B215C009BE011 /* Team */ = {
@@ -586,6 +600,7 @@
 				42B85A271A748CDB00FD4642 /* Inkinesss.png in Resources */,
 				4215A6721A7D7616002EB62E /* API in Resources */,
 				A1B8E9631A7B20F2009BE011 /* OK.png in Resources */,
+				88535F551A89C84B00F38098 /* SUMMARY.png in Resources */,
 				42041AF91A816EE400623C70 /* SUITCASE.png in Resources */,
 				42B85A251A748CDB00FD4642 /* button.png in Resources */,
 				42AB57DA1A7F391A00C7799E /* tableback.png in Resources */,
@@ -607,6 +622,7 @@
 				42B85A231A748CDB00FD4642 /* arrow.png in Resources */,
 				427D7A951A85CBDE00BFB2DA /* UserTeam.plist in Resources */,
 				A1B8E9591A7B20F2009BE011 /* 我.png in Resources */,
+				88535F501A89A0CB00F38098 /* RED.png in Resources */,
 				42041AF81A816EE400623C70 /* institution.png in Resources */,
 				A1B8E95F1A7B20F2009BE011 /* createTeam.png in Resources */,
 				42041AE51A81592600623C70 /* left.png in Resources */,
