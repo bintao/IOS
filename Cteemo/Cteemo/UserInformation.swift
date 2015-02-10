@@ -25,6 +25,8 @@ class UserInformation: NSObject {
     var lolRank: String = ""
     var lolName: String = ""
     var profile_ID: String = ""
+    var lolLevel : Int = 0
+    var lolIcon : String = ""
     var icon: UIImage!
     
     //check if the user is logined
@@ -49,9 +51,11 @@ class UserInformation: NSObject {
         gender = data["gender"] as String
         school = data["school"] as String
         intro = data["intro"] as String
+        lolLevel = data["lolLevel"] as Int
         lolRank = data["lolRank"] as String
         lolName = data["lolName"] as String
         profile_ID = data["profile_ID"] as String
+        lolIcon = data["lolIcon"] as String
         
         icon = DataManager.getUserIconFromLocal()
     }
@@ -60,7 +64,7 @@ class UserInformation: NSObject {
 
     
     func packaging()->[String: AnyObject]{
-        var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "lolID": lolID, "school": school, "intro": intro,"lolName":lolName,"lolRank":lolRank,"profile_ID":profile_ID]
+        var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "lolID": lolID, "school": school, "intro": intro,"lolName":lolName,"lolRank":lolRank,"profile_ID":profile_ID,"lolLevel": lolLevel,"lolIcon":lolIcon]
         return data
     }
     
@@ -113,6 +117,8 @@ class UserInformation: NSObject {
         lolName = ""
         lolRank = ""
         profile_ID = ""
+        lolLevel = 0
+        lolIcon = ""
         DataManager.saveUserInfoToLocal(packaging())
     }
     

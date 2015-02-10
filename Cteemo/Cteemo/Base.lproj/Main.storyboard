@@ -872,20 +872,6 @@
                                     <segue destination="b8U-VU-yhg" kind="unwind" unwindAction="returnToLoginMain:" id="A7n-jI-A48"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-Ne-k2Q">
-                                <rect key="frame" x="90" y="384" width="438" height="96"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="MpA-hT-laL"/>
-                                    <constraint firstAttribute="width" constant="280" id="itx-Fb-ADh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
-                                <state key="normal" title="SUBMIT" backgroundImage="SUBMIT.png">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="submitProfile:" destination="UYe-Qw-NJx" eventType="touchUpInside" id="8tW-0E-tKs"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-Qi-IqW">
                                 <rect key="frame" x="232" y="20" width="140" height="140"/>
                                 <constraints>
@@ -940,6 +926,20 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jbP-Sc-4H2">
                                 <rect key="frame" x="239" y="28" width="127" height="128"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rzm-Ne-k2Q">
+                                <rect key="frame" x="90" y="384" width="438" height="96"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="MpA-hT-laL"/>
+                                    <constraint firstAttribute="width" constant="280" id="itx-Fb-ADh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="24"/>
+                                <state key="normal" title="SUBMIT" backgroundImage="SUBMIT.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitProfile:" destination="UYe-Qw-NJx" eventType="touchUpInside" id="8tW-0E-tKs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -988,10 +988,10 @@
             </objects>
             <point key="canvasLocation" x="1541" y="-1014"/>
         </scene>
-        <!--View Controller-->
+        <!--Login lolID-->
         <scene sceneID="dad-4f-I3s">
             <objects>
-                <viewController id="hGg-dP-nKv" sceneMemberID="viewController">
+                <viewController id="hGg-dP-nKv" customClass="Login_lolID" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3kI-3F-yNL"/>
                         <viewControllerLayoutGuide type="bottom" id="TqT-1B-ylU"/>
@@ -1042,6 +1042,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="lol_icon" destination="Kj0-OO-tPC" id="PaQ-gU-W68"/>
+                        <outlet property="lol_level" destination="va5-pi-n3y" id="JHf-DN-KYa"/>
+                        <outlet property="lol_rank" destination="HYq-Ux-cG0" id="rRC-Kv-NIT"/>
+                        <outlet property="lolname" destination="vsf-92-vkC" id="fdf-is-J4B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPe-ip-jUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
