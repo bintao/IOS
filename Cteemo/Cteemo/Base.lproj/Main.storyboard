@@ -1577,14 +1577,19 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EEL-KL-1oz">
-                                        <rect key="frame" x="560" y="3" width="35" height="33"/>
+                                        <rect key="frame" x="540" y="3" width="52" height="33"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="25" id="9W5-e5-Cct"/>
-                                            <constraint firstAttribute="width" constant="25" id="hSN-Dy-8V0"/>
+                                            <constraint firstAttribute="width" constant="60" id="hSN-Dy-8V0"/>
                                         </constraints>
-                                        <state key="normal" image="config.png">
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="18"/>
+                                        <state key="normal" title="Edit">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <state key="selected" title="Cancel"/>
+                                        <connections>
+                                            <action selector="editMember:" destination="hEF-di-Hta" eventType="touchDragInside" id="m2e-2I-sI3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1635,7 +1640,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="dLQ-Ch-b9H" firstAttribute="top" secondItem="0PV-pF-ZOy" secondAttribute="bottom" id="24T-DA-8u9"/>
-                                    <constraint firstAttribute="height" constant="90" id="2Qp-VA-ygP"/>
+                                    <constraint firstAttribute="height" constant="100" id="2Qp-VA-ygP"/>
                                     <constraint firstAttribute="bottom" secondItem="UWk-Qw-5Mq" secondAttribute="bottom" constant="8" id="6nn-v7-zZI"/>
                                     <constraint firstItem="UWk-Qw-5Mq" firstAttribute="top" secondItem="ve9-3K-VfH" secondAttribute="top" constant="8" id="Er2-r0-Bgx"/>
                                     <constraint firstItem="0PV-pF-ZOy" firstAttribute="top" secondItem="ve9-3K-VfH" secondAttribute="top" constant="10" id="FtI-Kp-j5s"/>
@@ -1658,6 +1663,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="fSe-Ff-3ec" firstAttribute="trailing" secondItem="awa-X6-gY3" secondAttribute="trailing" id="1CX-q4-xoH"/>
                             <constraint firstItem="YV6-dc-kLW" firstAttribute="leading" secondItem="Wbv-cg-afh" secondAttribute="leading" id="2Vg-7Z-Tn7"/>
                             <constraint firstItem="fSe-Ff-3ec" firstAttribute="top" secondItem="YV6-dc-kLW" secondAttribute="bottom" id="4zZ-4E-elm"/>
                             <constraint firstAttribute="trailing" secondItem="fSe-Ff-3ec" secondAttribute="trailing" id="6gd-tN-81p"/>
@@ -1677,6 +1683,7 @@
                             <mask key="constraints">
                                 <exclude reference="IJO-9Y-rrz"/>
                                 <exclude reference="Ops-7p-Y71"/>
+                                <exclude reference="iUu-7n-Lsw"/>
                             </mask>
                         </variation>
                     </view>
@@ -1692,7 +1699,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX3-eO-xmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6139" y="1509"/>
+            <point key="canvasLocation" x="6122" y="1509"/>
         </scene>
         <!--CREATE TEAM-->
         <scene sceneID="S1Y-3s-Tgk">
@@ -2141,7 +2148,6 @@
         <image name="arrow.png" width="69" height="63"/>
         <image name="backG.png" width="750" height="1334"/>
         <image name="circleCropper.png" width="1000" height="1000"/>
-        <image name="config.png" width="60" height="60"/>
         <image name="createTeam.png" width="90" height="90"/>
         <image name="flag" width="30" height="30"/>
         <image name="hentiao2.png" width="750" height="4"/>

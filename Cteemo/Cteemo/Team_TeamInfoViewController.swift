@@ -28,7 +28,6 @@ class Team_TeamInfoViewController: UIViewController {
         capTainName.text = UserInfo.name
         
         memberScroll.contentSize = CGSizeMake(75 * CGFloat(members.count), 75)
-        
         for var index = 0; index < members.count; index++ {
             var but = UIButton(frame: CGRectMake(5 + 75 * CGFloat(index), 10, 65, 65))
             but.setImage(UserInfo.icon, forState: UIControlState.Normal)
@@ -45,7 +44,14 @@ class Team_TeamInfoViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    //Enable editing member
+    @IBAction func editMember(sender: UIButton){
+        
+        sender.setTitle("Cancel", forState: UIControlState.Normal)
+    }
+    
     override func viewDidAppear(animated: Bool) {
+        println(memberScroll.frame)
 
     }
 
