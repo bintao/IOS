@@ -27,7 +27,9 @@ class MainViewController: UIViewController, UITabBarDelegate {
         self.tabbar.transform = CGAffineTransformMakeTranslation(0, self.tabbar.frame.height)
         self.tabbar.alpha = 0
        
-       
+        var req = ARequest()
+        req.uploadPhoto()
+
     }
 
     override func viewDidAppear(animated: Bool) {

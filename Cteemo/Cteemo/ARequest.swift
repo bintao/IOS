@@ -11,20 +11,26 @@ import UIKit
 import Alamofire
 
 protocol RequestResultDelegate: NSObjectProtocol{
-    func gotResult(prefix:String ,result: [String: AnyObject])
+    func gotResult(prefix:String ,result: AnyObject)
+}
+
+enum requestType {
+    case GET
+    case POST
 }
 
 //a request class
 class ARequest: NSObject {
   
     
-    var delegate:RequestResultDelegate!
-    var info: [String: AnyObject]!
-    var method: String!
-    var prefix: String!
-    var result: [String: AnyObject]!
-    var token: String!
+    var delegate:RequestResultDelegate?
     
+    var parameters: [String: AnyObject]?
+    var method: requestType!
+    var prefix: String!
+    var result: AnyObject?
+    
+    var server = "http://54.149.235.253:5000/"
     
     var uploadRequest: NSURLSessionUploadTask?
 
@@ -32,24 +38,59 @@ class ARequest: NSObject {
         
     }
     
-    init(prefix: String, method: String, data: [String: AnyObject]){
+    init(prefix: String, method: requestType, data: [String: AnyObject]){
         super.init()
         self.method = method
-        self.info = data
         self.prefix = prefix
+        
     }
-    // send req
+    
+    init(prefix: String , method: requestType, parameters: [String: AnyObject]?){
+        super.init()
+        self.method = method
+        self.parameters = parameters
+        self.prefix = prefix
+    
+    }
+    // send request without token
     func sendRequest(){
-        InteractingWithServer.connectASynchoronous(self.prefix, info: self.info, method: self.method, theRequest:self, token: self.token)
+        
+        if requestType.GET == method {
+            var req = Alamofire.request(.GET, server + "profile", parameters: parameters)
+                .responseJSON { (_, _, JSON, _) in
+                    if JSON != nil{
+                        self.gotResult(JSON!)
+                    }
+            }
+        }else if requestType.POST == method{
+        
+            var req = Alamofire.request(.POST, server + "profile", parameters: parameters)
+                .responseJSON { (_, _, JSON, _) in
+                    if JSON != nil{
+                        self.gotResult(JSON!)
+                    }
+            }
+        }
     }
 
+    // send request with token
+    func sendRequestWithToken(token: String){
+        
+        var manager = Manager.sharedInstance
+        // Specifying the Headers we need
+        
+        manager.session.configuration.HTTPAdditionalHeaders = [
+            "token": token
+        ]
+        
+        sendRequest()
+        
+    }
     // upload photo
     func uploadPhoto(){
         
         var manager1 = Manager.sharedInstance
-        // Specifying the Headers we need
         //manager.requestSerializer = [AFJSONRequestSerializer serializer]
-        println(UserInfo.accessToken)
         manager1.session.configuration.HTTPAdditionalHeaders = [
             "token": UserInfo.accessToken
         ]
@@ -69,19 +110,23 @@ class ARequest: NSObject {
         ]
         
         uploadRequest = manager.uploadTaskWithStreamedRequest(request, progress: nil) { (response, obj, error) -> Void in
-            println(obj)
-            println(error)
-            println("dfdf")
+            
+            if obj != nil{
+                self.gotResult(obj)
+            }
         }
         uploadRequest?.resume()
         
     }
+
     
-    func gotResult(result: [String: AnyObject]){
+    func gotResult(result: AnyObject){
         
         self.result = result
         
-        self.delegate.gotResult(self.prefix, result: result)
+        if self.delegate != nil{
+            self.delegate!.gotResult(self.prefix, result: result)
+        }
         
     }
 

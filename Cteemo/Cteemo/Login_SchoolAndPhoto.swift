@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 
-class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate {
+class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var bg : UIImageView!
     @IBOutlet var submit : UIButton!
@@ -79,7 +79,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             var re = ARequest()
             re.uploadPhoto()
             
-            
+
         }
         else{
         //lol ID or school is empty
