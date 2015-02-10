@@ -1357,6 +1357,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="imageScroll" destination="pX8-jS-8QI" id="IoO-9B-sp4"/>
+                        <outlet property="imageScrollView" destination="pX8-jS-8QI" id="733-c2-KKl"/>
                         <outlet property="menu" destination="KYe-v5-qNK" id="mo9-LR-YxL"/>
                         <outlet property="newsTable" destination="C51-WV-99a" id="3tx-yw-kUI"/>
                     </connections>

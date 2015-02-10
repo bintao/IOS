@@ -8,12 +8,14 @@
 
 import UIKit
 
-class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
-    @IBOutlet var imageScroll : UIScrollView!
+    @IBOutlet var imageScrollView : UIScrollView!
     @IBOutlet var newsTable : UITableView!
     @IBOutlet var menu: UIBarButtonItem!
 
+    var imageView : UIImageView!
+    
     //@IBOutlet var menu : UIBarButtonItem!
     var hotImageIcon : UIButton!
     
@@ -24,22 +26,28 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        /*
-        // Hot Image Icon
-        // Icon frame
-        hotImageIcon = UIButton(frame: CGRectMake(45, 18, 70, 70))
-        hotImageIcon.setImage(UIImage(named: "RED"), forState: UIControlState.Normal)
-        // text frame
-        var imageText = UILabel(frame: CGRectMake(12, 25, 80, 20))
-        // text attributes
-        imageText.font = UIFont(name: "AvenirNext-Bold", size: 22)
-        imageText.textColor = UIColor.whiteColor()
-        imageText.text = "HOT"
-        // addsubview
-        self.view.addSubview(hotImageIcon)
-        hotImageIcon.addSubview(imageText)
-        */
+//        // Hot Image Icon
+//        // Icon frame
+//        hotImageIcon = UIButton(frame: CGRectMake(45, 18, 70, 70))
+//        hotImageIcon.setImage(UIImage(named: "RED"), forState: UIControlState.Normal)
+//        // text frame
+//        var imageText = UILabel(frame: CGRectMake(12, 25, 80, 20))
+//        // text attributes
+//        imageText.font = UIFont(name: "AvenirNext-Bold", size: 22)
+//        imageText.textColor = UIColor.whiteColor()
+//        imageText.text = "HOT"
+//        // addsubview
+//        self.view.addSubview(hotImageIcon)
+//        hotImageIcon.addSubview(imageText)
         // Do any additional setup after loading the view.
+        
+        let image = UIImage(named: "img1")
+        imageView = UIImageView(image: image)
+
+        imageScrollView.addSubview(imageView)
+        
+        imageScrollView.contentSize = image!.size
+        
     }
     
 
