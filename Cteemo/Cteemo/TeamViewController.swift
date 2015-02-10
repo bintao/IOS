@@ -10,7 +10,7 @@
 import UIKit
 import Alamofire
 
-class TeamViewController: UIViewController , UITableViewDataSource, UITableViewDelegate  {
+class TeamViewController: UIViewController , UITableViewDataSource, UITableViewDelegate, RequestResultDelegate {
     
     var hasOwnteam = false
     
@@ -26,7 +26,13 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         var manager = Manager.sharedInstance
         manager.session.configuration.HTTPAdditionalHeaders = ["token": UserInfo.accessToken]
         
-        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/my_team/lol")
+        
+        var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
+        req.delegate = self
+        req.sendRequest()
+        
+        
+        Alamofire.request(.GET, "http://54.149.235.253:5000/my_team/lol")
             .responseJSON { (_, _, JSON, _) in
                 if JSON != nil{
                     var result: [String: AnyObject] = JSON as [String: AnyObject]
@@ -44,6 +50,9 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
     }
     
+    func gotResult(prefix: String, result: AnyObject?) {
+        println(result)
+    }
     
     func gotTeam(result: [String: AnyObject]){
         
