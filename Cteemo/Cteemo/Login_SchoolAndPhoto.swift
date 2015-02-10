@@ -71,39 +71,8 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
                 //self.performSegueWithIdentifier("gotololID", sender: self)
             
             }
-         /*
-            var request = NSMutableURLRequest(URL:NSURL(string: "")!)http://54.149.235.253:5000/upload_profile_icon
-            request.HTTPMethod = "POST"
-            request.addValue(UserInfo.accessToken, forHTTPHeaderField: "token")
-            var contentype = "multipart/form-data;"
-            request.setValue(contentype, forHTTPHeaderField: "Content-Type")
-            
-            Alamofire.upload(request, )
-                .progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
-                println(totalBytesWritten)
-                println(bytesWritten)
-                }
-                .responseJSON { (_, _, JSON, _) in
-                    println(JSON)
-            }
-        */
-            //uploadFileToUrl()
-            
-            let URL = NSURL(string: "http://httpbin.org/get")!
-            var request = NSURLRequest(URL: URL)
-            
+
         
-            
-            
-            Alamofire.upload(.POST, "http://54.149.235.253:5000/upload_profile_icon", UIImagePNGRepresentation(UserInfo.icon)
-                ).progress { (bytesWritten, totalBytesWritten, totalBytesExpectedToWrite) in
-                    println(totalBytesWritten)
-                    println(bytesWritten)
-                }
-                .responseJSON { (_, _, JSON, _) in
-                    println(JSON)
-            }
-            
         }
         else{
         //lol ID or school is empty
