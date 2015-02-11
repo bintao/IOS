@@ -14,7 +14,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var newsTable : UITableView!
     @IBOutlet var menu: UIBarButtonItem!
 
-    var imageView : UIImageView!
+    var imageArray : [UIImage]!
     
     //@IBOutlet var menu : UIBarButtonItem!
     var hotImageIcon : UIButton!
@@ -26,6 +26,19 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        imageArray = [UIImage]()
+        
+        
+        
+        let img1 : UIImage = UIImage(named: "img1")!
+        imageArray.append(img1)
+        let img2 : UIImage = UIImage(named: "img1")!
+        imageArray.append(img2)
+        let img3 : UIImage = UIImage(named: "img1")!
+        imageArray.append(img3)
+        let img4 : UIImage = UIImage(named: "img1")!
+        imageArray.append(img4)
+
 //        // Hot Image Icon
 //        // Icon frame
 //        hotImageIcon = UIButton(frame: CGRectMake(45, 18, 70, 70))
@@ -41,12 +54,9 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
 //        hotImageIcon.addSubview(imageText)
         // Do any additional setup after loading the view.
         
-        let image = UIImage(named: "img1")
-        imageView = UIImageView(image: image)
 
-        imageScrollView.addSubview(imageView)
         
-        imageScrollView.contentSize = image!.size
+        //imageScrollimageScrollView.contentSize = image.size
         
     }
     
