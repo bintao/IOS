@@ -24,12 +24,12 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         var manager = Manager.sharedInstance
-        manager.session.configuration.HTTPAdditionalHeaders = ["token": UserInfo.accessToken]
+        manager.session.configuration.HTTPAdditionalHeaders = ["token": UserInfo.accessToken!]
         
         
         var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
         req.delegate = self
-        req.sendRequestWithToken(UserInfo.accessToken)
+        req.sendRequestWithToken(UserInfo.accessToken!)
 
         otherChoices.backgroundColor = UIColor.clearColor()
         

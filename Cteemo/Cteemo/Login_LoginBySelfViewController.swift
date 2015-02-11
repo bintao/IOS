@@ -72,14 +72,14 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
              if result["token"]?  != nil{
             // login success
             
-            UserInfo.accessToken = result["token"] as String
+            UserInfo.accessToken = result["token"] as? String
             UserInfo.email = email.text
             // Creating an Instance of the Alamofire Manager
             var manager = Manager.sharedInstance
             
             // Specifying the Headers we need
             manager.session.configuration.HTTPAdditionalHeaders = [
-                "token": UserInfo.accessToken
+                "token": UserInfo.accessToken!
             ]
             
             var req = Alamofire.request(.GET, "http://54.149.235.253:5000/profile", parameters: nil)

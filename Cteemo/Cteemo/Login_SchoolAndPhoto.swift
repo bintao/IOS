@@ -56,10 +56,12 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             var manager = Manager.sharedInstance
             // Specifying the Headers we need
 
+            
+            
             manager.session.configuration.HTTPAdditionalHeaders = [
-                "token": UserInfo.accessToken
+                "token": UserInfo.accessToken!
                 ]
-            var req = Alamofire.request(.POST, "http://54.149.235.253:5000/profile", parameters: ["username": UserInfo.name, "school":school.text,"lolID":lolName.text])
+            var req = Alamofire.request(.POST, "http://54.149.235.253:5000/profile", parameters: ["username": UserInfo.name!, "school":school.text,"lolID":lolName.text])
                 .responseJSON { (_, _, JSON, _) in
                     var result: [String: AnyObject] = JSON as [String: AnyObject]
                     self.gotResult(result)
@@ -110,7 +112,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         
         UserInfo.saveUserData()
     
-        lolapi.getSummonerID(UserInfo.lolName)
+        lolapi.getSummonerID(UserInfo.lolName!)
         //self.performSegueWithIdentifier("goToMain", sender: self)
         
     }

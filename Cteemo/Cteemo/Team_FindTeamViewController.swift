@@ -27,7 +27,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         var manager = Manager.sharedInstance
         // Specifying the Headers we need
         manager.session.configuration.HTTPAdditionalHeaders = [
-            "token": UserInfo.accessToken
+            "token": UserInfo.accessToken!
         ]
         
         startLoading()

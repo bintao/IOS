@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class Login_MainViewController: UIViewController, FBLoginViewDelegate{
+class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestResultDelegate{
 
     @IBOutlet var bg : UIImageView!
 
@@ -18,6 +18,9 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     
     @IBOutlet var facebook : UIView!
 
+    @IBOutlet var loadingView : UIImageView!
+    @IBOutlet var loading : UIActivityIndicatorView!
+    
     override func viewDidLoad(){
         super.viewDidLoad()
                     
@@ -26,7 +29,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
             loginView.frame.size = self.facebook.frame.size
             self.facebook.addSubview(loginView)
             loginView.readPermissions = ["public_profile", "email", "user_friends"]
-    
         
     }
     
@@ -36,13 +38,13 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     {
         
         // avoid running multiple time
-        if UserInfo.fbid.isEmpty || UserInfo.gender.isEmpty||UserInfo.name.isEmpty{
+        if UserInfo.fbid!.isEmpty || UserInfo.gender!.isEmpty||UserInfo.name!.isEmpty{
             
-            UserInfo.gender = user.objectForKey("gender") as String
+            UserInfo.gender = user.objectForKey("gender") as? String
             UserInfo.name = user.name
-            UserInfo.fbid = user.objectForKey("id") as String
+            UserInfo.fbid = user.objectForKey("id") as? String
             if user.objectForKey("email") != nil{
-                UserInfo.email = user.objectForKey("email") as String
+                UserInfo.email = user.objectForKey("email") as? String
             }
             UserInfo.saveUserData()
             
@@ -56,21 +58,19 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     //facebook logedin
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
         
+        startLoading()
+        
         FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
             if !(error != nil)
             {
                 println(result)
                 //get facebook token
                 var myToken = FBSession.activeSession().accessTokenData.accessToken
-                println(myToken)
-                var req = Alamofire.request(.POST, "http://54.149.235.253:5000/fb_login", parameters: ["fbtoken": myToken, "fbid": UserInfo.fbid,"fbemail":UserInfo.fbid+"@cteemo.com"])
-                    .responseJSON { (_, _, JSON, _) in
-                        var result: [String: AnyObject] = JSON as [String: AnyObject]
-                        self.saveToken(result)
-                        self.getProfileFromServer()
-                        
-                }
-           
+
+                // get token from the server
+                var req = ARequest(prefix: "fb_login", method: requestType.POST, parameters: ["fbtoken": myToken, "fbid": UserInfo.fbid!,"fbemail":UserInfo.fbid!+"@cteemo.com"])
+                req.delegate = self
+                req.sendRequest()
                 
             }
             else
@@ -79,6 +79,66 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
             }
         })
         
+        
+    }
+    
+    func gotResult(prefix: String, result: AnyObject) {
+        
+        if prefix == "fb_login"{
+        
+            println(result)
+            
+            //save token
+            if result["token"]? != nil
+            {
+                UserInfo.accessToken = result["token"] as? String
+                UserInfo.saveUserData()
+                //get profile from the user
+                getProfileFromServer()
+                
+            }else{
+                stopLoading()
+                //facebook login failed
+            }
+            
+        }else if prefix == "profile" {
+            
+            if result["username"]? != nil {
+                //old User
+                
+                UserInfo.profile_ID = result["id"] as? String
+                UserInfo.saveUserData()
+                stopLoading()
+                self.performSegueWithIdentifier("exitToMain", sender: self)
+                
+            }else {
+                
+                //new user
+                var facebookIcon: UIImage? = self.getPotraitFromFacebook() as UIImage
+                
+                if facebookIcon != nil{
+                    UserInfo.icon = facebookIcon
+                    UserInfo.saveUserIcon()
+                    
+                }
+                stopLoading()
+                self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
+                
+            }
+
+            
+        }
+        
+    }
+    
+    
+    //get user profile from server
+    
+    func getProfileFromServer(){
+        
+        var req = ARequest(prefix: "profile", method: requestType.POST)
+        req.delegate = self
+        req.sendRequestWithToken(UserInfo.accessToken!)
         
     }
     
@@ -101,12 +161,25 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     func getPotraitFromFacebook()->UIImage{
         
         var image:UIImage!
-        var str = "http://graph.facebook.com/\(UserInfo.fbid)/picture?type=large"
+        var str = "http://graph.facebook.com/\(UserInfo.fbid!)/picture?type=large"
         var url = NSURL(string: str)
         var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
         image = UIImage(data: data)
         image = image.roundCornersToCircle()
         return image
+    }
+
+    
+    //loading view display while login
+    func startLoading(){
+        self.view.bringSubviewToFront(loadingView)
+        self.loading.startAnimating()
+    }
+    
+    //loading view hide, login finished
+    func stopLoading(){
+        self.view.sendSubviewToBack(loadingView)
+        self.loading.stopAnimating()
     }
     
     func loginView(loginView: FBLoginView!, handleError error: NSError!) {
@@ -114,68 +187,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
     }
 
 
-    
-    //get user profile from server
-
-    func getProfileFromServer(){
-    
-        var manager = Manager.sharedInstance
-        
-        // Specifying the Headers we need
-        manager.session.configuration.HTTPAdditionalHeaders = [
-            "token": UserInfo.accessToken
-        ]
-        
-        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/profile", parameters: nil)
-            .responseJSON { (_, _, JSON, _) in
-                var result: [String: AnyObject] = JSON as [String: AnyObject]
-                
-                if ( result["username"]? != nil) {
-                //old User
-                    
-                    UserInfo.profile_ID = result["id"] as String
-                    UserInfo.saveUserData()
-                    
-                    
-                    var facebookIcon: UIImage? = self.getPotraitFromFacebook() as UIImage
-
-                    if facebookIcon != nil{
-                        UserInfo.icon = facebookIcon
-                        UserInfo.saveUserIcon()
-
-                    }
-                    
-
-                    self.performSegueWithIdentifier("exitToMain", sender: self)
-                 
-                }
-                else {
-                //new user
-                var facebookIcon: UIImage? = self.getPotraitFromFacebook() as UIImage
-                        
-                        if facebookIcon != nil{
-                            UserInfo.icon = facebookIcon
-                            UserInfo.saveUserIcon()
-
-                            }
-
-                        self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
-                
-                }
-        }
-
-    
-    }
-
-    func saveToken(result: [String: AnyObject]){
-        
-        if result["token"]?  != nil
-        {
-            UserInfo.accessToken = result["token"] as String
-            UserInfo.saveUserData()
-        }
-    }
-    
     @IBAction func returnToLoginMain(segue : UIStoryboardSegue) {
         
     }

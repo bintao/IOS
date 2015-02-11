@@ -43,7 +43,7 @@ class lol_api: NSObject{
             println(UserInfo.lolID)
             println(UserInfo.lolLevel)
             if(result["summonerLevel"] as Int == 30){
-            self.getSummonerLeague(UserInfo.lolID)
+            self.getSummonerLeague(UserInfo.lolID!)
             }
         }
         
@@ -63,10 +63,10 @@ class lol_api: NSObject{
     func getLeagueResult(result: [String: AnyObject]){
         
        // (result["entries"] as [String: AnyObject])["entries"]
-        println(result[UserInfo.lolID])
-        println (((result[UserInfo.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"])
+        println(result[UserInfo.lolID!])
+        println (((result[UserInfo.lolID!] as [AnyObject])[0] as [String: AnyObject])["tier"])
         
-        var tier : String = (((result[UserInfo.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"] as String) + " "+(((((result[UserInfo.lolID] as [AnyObject])[0] as [String: AnyObject])["entries"] as [AnyObject])[0] as [String: AnyObject])["division"] as String)
+        var tier : String = (((result[UserInfo.lolID!] as [AnyObject])[0] as [String: AnyObject])["tier"] as String) + " "+(((((result[UserInfo.lolID!] as [AnyObject])[0] as [String: AnyObject])["entries"] as [AnyObject])[0] as [String: AnyObject])["division"] as String)
         
         print(tier)
         

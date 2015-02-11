@@ -19,6 +19,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.40000000596046448" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3dq-Sa-hjg">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backG.png" translatesAutoresizingMaskIntoConstraints="NO" id="KbB-dG-jd9">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <gestureRecognizers/>
@@ -65,12 +69,22 @@
                                     <segue destination="XQx-ok-uBL" kind="presentation" identifier="signup" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="k1b-Wu-TAv"/>
                                 </connections>
                             </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Oy1-JL-y2U">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="h3Y-Eb-r6t"/>
+                                    <constraint firstAttribute="width" constant="100" id="szf-Il-sDI"/>
+                                </constraints>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="cir-El-Qpw" secondAttribute="centerX" id="0Za-Ju-uf4"/>
                             <constraint firstAttribute="centerX" secondItem="KbB-dG-jd9" secondAttribute="centerX" id="6mR-hH-O4W"/>
+                            <constraint firstAttribute="centerY" secondItem="Oy1-JL-y2U" secondAttribute="centerY" id="ICT-7D-SZt"/>
+                            <constraint firstItem="3dq-Sa-hjg" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="IxZ-93-e3c"/>
                             <constraint firstAttribute="centerX" secondItem="lXT-pm-Gy7" secondAttribute="centerX" id="Nie-aL-yVg"/>
+                            <constraint firstAttribute="trailing" secondItem="3dq-Sa-hjg" secondAttribute="trailing" id="QAy-fn-YCE"/>
                             <constraint firstItem="oBZ-AL-TLF" firstAttribute="bottom" secondItem="lXT-pm-Gy7" secondAttribute="bottom" constant="-90" id="QaI-bC-WVT"/>
                             <constraint firstAttribute="centerY" secondItem="oBZ-AL-TLF" secondAttribute="centerY" multiplier="4:3" id="RmS-h3-Y0n"/>
                             <constraint firstItem="KbB-dG-jd9" firstAttribute="bottom" secondItem="9zG-A6-eJ5" secondAttribute="bottom" constant="30" id="bCb-3W-F7I"/>
@@ -79,13 +93,18 @@
                             <constraint firstItem="cir-El-Qpw" firstAttribute="top" secondItem="oBZ-AL-TLF" secondAttribute="top" constant="-130" id="ilT-WB-ZkK"/>
                             <constraint firstAttribute="centerX" secondItem="oBZ-AL-TLF" secondAttribute="centerX" id="l5c-aH-xfh"/>
                             <constraint firstAttribute="trailing" secondItem="KbB-dG-jd9" secondAttribute="trailing" id="mNv-EG-Qkm"/>
+                            <constraint firstAttribute="centerX" secondItem="Oy1-JL-y2U" secondAttribute="centerX" id="pFa-3t-hR6"/>
+                            <constraint firstItem="3dq-Sa-hjg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="t82-Zf-wb0"/>
                             <constraint firstItem="KbB-dG-jd9" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="top" id="tvZ-3S-f5n"/>
                             <constraint firstAttribute="centerX" secondItem="9zG-A6-eJ5" secondAttribute="centerX" id="tz6-6R-hua"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="3dq-Sa-hjg" secondAttribute="bottom" id="zDx-9o-dmt"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="bg" destination="KbB-dG-jd9" id="wS4-1G-xjS"/>
                         <outlet property="facebook" destination="9zG-A6-eJ5" id="Mru-MY-Zav"/>
+                        <outlet property="loading" destination="Oy1-JL-y2U" id="qh4-w5-dOe"/>
+                        <outlet property="loadingView" destination="3dq-Sa-hjg" id="B0X-xS-LeN"/>
                         <outlet property="login" destination="oBZ-AL-TLF" id="jod-i1-7fb"/>
                         <outlet property="signup" destination="lXT-pm-Gy7" id="0VR-sR-KiU"/>
                         <segue destination="UYe-Qw-NJx" kind="presentation" identifier="getSchoolAfterFacebook" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="9wu-Y0-gi9"/>
@@ -947,7 +966,7 @@
                                     <action selector="submitProfile:" destination="UYe-Qw-NJx" eventType="touchUpInside" id="8tW-0E-tKs"/>
                                 </connections>
                             </button>
-                            <view alpha="0.0" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEx-Up-Tcd">
+                            <view alpha="0.0" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEx-Up-Tcd">
                                 <rect key="frame" x="374" y="28" width="130" height="106"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="speaker.png" translatesAutoresizingMaskIntoConstraints="NO" id="cdT-rb-Sbx">
