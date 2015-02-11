@@ -18,6 +18,7 @@
 		4215A6721A7D7616002EB62E /* API in Resources */ = {isa = PBXBuildFile; fileRef = 4215A6711A7D7616002EB62E /* API */; };
 		421D565C1A8339D2005E56F0 /* Team_FindTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */; };
 		424AF75E1A872DA20033B863 /* adddd.png in Resources */ = {isa = PBXBuildFile; fileRef = 424AF75D1A872DA20033B863 /* adddd.png */; };
+		425E8FE51A8B19BF00A06752 /* CustomPosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */; };
 		4260F3FC1A886D6000A6F39D /* Team_TeamInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4260F3FB1A886D6000A6F39D /* Team_TeamInfoViewController.swift */; };
 		4260F4031A886F1E00A6F39D /* more111.png in Resources */ = {isa = PBXBuildFile; fileRef = 4260F4021A886F1E00A6F39D /* more111.png */; };
 		4267D82F1A8011D20054E800 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267D82E1A8011D20054E800 /* ImageProcessor.swift */; };
@@ -82,7 +83,6 @@
 		42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A471A74A9FC00FD4642 /* UserInformation.plist */; };
 		42E5E78B1A773E56004A781E /* Login_LoginBySelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */; };
 		42E5E7911A7762DB004A781E /* teemoDouble.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5E7901A7762DB004A781E /* teemoDouble.png */; };
-		881045F91A8B037E0057C5E9 /* CustomPosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 881045F81A8B037E0057C5E9 /* CustomPosterView.swift */; };
 		88535F501A89A0CB00F38098 /* RED.png in Resources */ = {isa = PBXBuildFile; fileRef = 88535F4F1A89A0CB00F38098 /* RED.png */; };
 		88535F551A89C84B00F38098 /* SUMMARY.png in Resources */ = {isa = PBXBuildFile; fileRef = 88535F541A89C84B00F38098 /* SUMMARY.png */; };
 		88535F5A1A89DFF400F38098 /* img1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88535F591A89DFF400F38098 /* img1.jpg */; };
@@ -179,6 +179,7 @@
 		4215A6711A7D7616002EB62E /* API */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API; sourceTree = "<group>"; };
 		421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_FindTeamViewController.swift; sourceTree = "<group>"; };
 		424AF75D1A872DA20033B863 /* adddd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adddd.png; sourceTree = "<group>"; };
+		425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPosterView.swift; sourceTree = "<group>"; };
 		4260F3FB1A886D6000A6F39D /* Team_TeamInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_TeamInfoViewController.swift; sourceTree = "<group>"; };
 		4260F4021A886F1E00A6F39D /* more111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more111.png; sourceTree = "<group>"; };
 		4267D82E1A8011D20054E800 /* ImageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
@@ -258,7 +259,6 @@
 		42B85A471A74A9FC00FD4642 /* UserInformation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserInformation.plist; sourceTree = "<group>"; };
 		42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_LoginBySelfViewController.swift; sourceTree = "<group>"; };
 		42E5E7901A7762DB004A781E /* teemoDouble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teemoDouble.png; sourceTree = "<group>"; };
-		881045F81A8B037E0057C5E9 /* CustomPosterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPosterView.swift; sourceTree = "<group>"; };
 		88535F4F1A89A0CB00F38098 /* RED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RED.png; sourceTree = "<group>"; };
 		88535F541A89C84B00F38098 /* SUMMARY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SUMMARY.png; sourceTree = "<group>"; };
 		88535F591A89DFF400F38098 /* img1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img1.jpg; sourceTree = "<group>"; };
@@ -404,7 +404,7 @@
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
 				42B74FBE1A812416008B575C /* MainViewController.swift */,
 				42B74FBF1A812416008B575C /* TournamentViewController.swift */,
-				881045F81A8B037E0057C5E9 /* CustomPosterView.swift */,
+				425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */,
 				427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */,
 				421D56511A832452005E56F0 /* Team */,
 				42B74FC21A812416008B575C /* NewsViewController.swift */,
@@ -735,7 +735,6 @@
 				A1010D471A7B2ACF00256208 /* ARequest.swift in Sources */,
 				42B859F21A74840F00FD4642 /* Login_MainViewController.swift in Sources */,
 				42B74FC81A812416008B575C /* NewsViewController.swift in Sources */,
-				881045F91A8B037E0057C5E9 /* CustomPosterView.swift in Sources */,
 				42B0A33C1A898BD200EA908C /* AFURLConnectionOperation.m in Sources */,
 				42E5E78B1A773E56004A781E /* Login_LoginBySelfViewController.swift in Sources */,
 				42855B9D1A8459A600EB9546 /* Team_JoinTeamViewController.swift in Sources */,
@@ -752,6 +751,7 @@
 				42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */,
 				42B859F01A74840F00FD4642 /* Cteemo.xcdatamodeld in Sources */,
 				42B0A3481A89CFF800EA908C /* Login_Forpassword.swift in Sources */,
+				425E8FE51A8B19BF00A06752 /* CustomPosterView.swift in Sources */,
 				42855BA81A84803000EB9546 /* Team_CreateTeamViewController.swift in Sources */,
 				42B74FC51A812416008B575C /* TournamentViewController.swift in Sources */,
 				42B85A441A74A81A00FD4642 /* UserInformation.swift in Sources */,
