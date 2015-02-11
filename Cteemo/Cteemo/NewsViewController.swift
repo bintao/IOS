@@ -10,7 +10,7 @@ import UIKit
 
 class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
-    @IBOutlet var imageScrollView : UIScrollView!
+    @IBOutlet var imageScrollView : CustomPosterView!
     @IBOutlet var newsTable : UITableView!
     @IBOutlet var menu: UIBarButtonItem!
 
@@ -28,35 +28,17 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         imageArray = [UIImage]()
         
-        
-        
-        let img1 : UIImage = UIImage(named: "img1")!
-        imageArray.append(img1)
-        let img2 : UIImage = UIImage(named: "img1")!
-        imageArray.append(img2)
-        let img3 : UIImage = UIImage(named: "img1")!
-        imageArray.append(img3)
-        let img4 : UIImage = UIImage(named: "img1")!
-        imageArray.append(img4)
-
-//        // Hot Image Icon
-//        // Icon frame
-//        hotImageIcon = UIButton(frame: CGRectMake(45, 18, 70, 70))
-//        hotImageIcon.setImage(UIImage(named: "RED"), forState: UIControlState.Normal)
-//        // text frame
-//        var imageText = UILabel(frame: CGRectMake(12, 25, 80, 20))
-//        // text attributes
-//        imageText.font = UIFont(name: "AvenirNext-Bold", size: 22)
-//        imageText.textColor = UIColor.whiteColor()
-//        imageText.text = "HOT"
-//        // addsubview
-//        self.view.addSubview(hotImageIcon)
-//        hotImageIcon.addSubview(imageText)
-        // Do any additional setup after loading the view.
-        
-
-        
+        for var index = 1; index <= 3; index++ {
+            var str = "img\(index).jpg"
+                    var img : UIImage = UIImage(named: str)!
+                    imageArray.append(img)
+            }
         //imageScrollimageScrollView.contentSize = image.size
+        
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        imageScrollView.setup(imageArray)
         
     }
     

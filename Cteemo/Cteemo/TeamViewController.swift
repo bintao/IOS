@@ -14,7 +14,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     var hasOwnteam = false
     
-    @IBOutlet var createTeam : UIView!
+    @IBOutlet weak var createTeam : UIView!
     @IBOutlet var teamInfo : UIView!
     
     @IBOutlet var otherChoices : UITableView!
