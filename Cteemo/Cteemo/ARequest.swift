@@ -11,7 +11,7 @@ import UIKit
 import Alamofire
 
 protocol RequestResultDelegate: NSObjectProtocol{
-    func gotResult(prefix:String ,result: AnyObject?)
+    func gotResult(prefix:String ,result: AnyObject)
 }
 
 enum requestType {
@@ -37,7 +37,8 @@ class ARequest: NSObject {
     override init() {
         
     }
-    init(prefix: String , method: requestType){
+    
+    init(prefix: String, method: requestType, data: [String: AnyObject]){
         super.init()
         self.method = method
         self.prefix = prefix
@@ -59,8 +60,6 @@ class ARequest: NSObject {
                 .responseJSON { (_, _, JSON, _) in
                     if JSON != nil{
                         self.gotResult(JSON!)
-                    }else{
-                        self.gotResult(nil)
                     }
             }
         }else if requestType.POST == method{
@@ -69,8 +68,6 @@ class ARequest: NSObject {
                 .responseJSON { (_, _, JSON, _) in
                     if JSON != nil{
                         self.gotResult(JSON!)
-                    }else{
-                        self.gotResult(nil)
                     }
             }
         }
@@ -85,28 +82,9 @@ class ARequest: NSObject {
         manager.session.configuration.HTTPAdditionalHeaders = [
             "token": token
         ]
-        //man
         
-        if requestType.GET == method {
-            var req = Alamofire.request(.GET, server + "profile", parameters: parameters)
-                .responseJSON { (_, _, JSON, _) in
-                    if JSON != nil{
-                        self.gotResult(JSON!)
-                    }else{
-                        self.gotResult(nil)
-                    }
-            }
-        }else if requestType.POST == method{
-            
-            var req = Alamofire.request(.POST, server + "profile", parameters: parameters)
-                .responseJSON { (_, _, JSON, _) in
-                    if JSON != nil{
-                        self.gotResult(JSON!)
-                    }else{
-                        self.gotResult(nil)
-                    }
-            }
-        }
+        sendRequest()
+        
     }
     // upload photo
     func uploadPhoto(){
@@ -132,19 +110,23 @@ class ARequest: NSObject {
         ]
         
         uploadRequest = manager.uploadTaskWithStreamedRequest(request, progress: nil) { (response, obj, error) -> Void in
-            println(response)
-            println("s!!!!!!")
-            println(obj)
+            
+            if obj != nil{
+                self.gotResult(obj)
+            }
         }
         uploadRequest?.resume()
         
     }
+
     
-    func gotResult(result: AnyObject?){
+    func gotResult(result: AnyObject){
         
         self.result = result
         
-        self.delegate!.gotResult(self.prefix, result: result)
+        if self.delegate != nil{
+            self.delegate!.gotResult(self.prefix, result: result)
+        }
         
     }
 

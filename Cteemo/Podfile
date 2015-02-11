@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+ pod 'RongCloudIMKit', '~> 1.3.4'
+=======
+pod 'RongCloudIMKit', '~> 1.3.4'
+>>>>>>> FETCH_HEAD

@@ -29,20 +29,8 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         
         var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
         req.delegate = self
-        req.sendRequest()
-        
-        
-        Alamofire.request(.GET, "http://54.149.235.253:5000/my_team/lol")
-            .responseJSON { (_, _, JSON, _) in
-                if JSON != nil{
-                    var result: [String: AnyObject] = JSON as [String: AnyObject]
-                    self.gotTeam(result)
-                }
-                
-        }
-        
+        req.sendRequestWithToken(UserInfo.accessToken)
 
-        
         otherChoices.backgroundColor = UIColor.clearColor()
         
         teams = ["My Boy","I'm the king","Sunrise","Cicicici","God of Michigan"]
@@ -50,9 +38,11 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
     }
     
-    func gotResult(prefix: String, result: AnyObject?) {
+    func gotResult(prefix: String, result: AnyObject) {
+        println(prefix + "dsdd")
         println(result)
     }
+    
     
     func gotTeam(result: [String: AnyObject]){
         
@@ -64,7 +54,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
             var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
             
             if(captain != UserInfo.profile_ID){
-                
                 println("You are not a captain.")
                 println(UserInfo.profile_ID)
             }

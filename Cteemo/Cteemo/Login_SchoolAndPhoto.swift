@@ -10,18 +10,20 @@ import UIKit
 import Alamofire
 
 
-class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate, NSURLSessionDataDelegate {
+class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var bg : UIImageView!
     @IBOutlet var submit : UIButton!
     @IBOutlet var gender: UISegmentedControl!
     @IBOutlet var addPhoto : UIButton!
-
     @IBOutlet var iconDisplay : UIImageView!
     @IBOutlet var lolName : UITextField!
     @IBOutlet var school : UITextField!
     
     var sourceImage: UIImage!
+    
+    @IBOutlet var teemoSpeaker : UIView!
+    @IBOutlet var messageDisplay : UITextView!
 
     override func viewDidLoad() {
         //add tap gesture to board
@@ -55,10 +57,8 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             // Specifying the Headers we need
 
             manager.session.configuration.HTTPAdditionalHeaders = [
-                "token": "eyJhbGciOiJIUzI1NiIsImV4cCI6MTQyMzg4NDg4OCwiaWF0IjoxNDIzNTI0ODg4fQ.IjU0ZDQyOGZiMDU1MWRjMWYxMTdjOTZhNiI.--n9JSm00dvVZng9g8eDlD3-cRgxFITYIHG-qxruDrc"//UserInfo.accessToken
-            ]
-            //manager.session.configuration.HTTPAdditionalHeaders = ["Content-Type" : "multipart/form-data"]
-
+                "token": UserInfo.accessToken
+                ]
             var req = Alamofire.request(.POST, "http://54.149.235.253:5000/profile", parameters: ["username": UserInfo.name, "school":school.text,"lolID":lolName.text])
                 .responseJSON { (_, _, JSON, _) in
                     var result: [String: AnyObject] = JSON as [String: AnyObject]
@@ -68,66 +68,28 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             //println(UserInfo.lolID)
             if (UserInfo.lolID != ""){
                 
-                //self.performSegueWithIdentifier("gotololID", sender: self)
+                self.performSegueWithIdentifier("gotololID", sender: self)
             
             }
+            else {
+                //can't find lolID
+            self.displaySpeaker("We can't find your lolID information please check your ID")
+            }
+            
+            var re = ARequest()
+            re.uploadPhoto()
+            
 
-        
         }
         else{
         //lol ID or school is empty
-        
-          
+          self.displaySpeaker("lolID or school is empty")
         
         }
         
     }
     
     
-    func uploadFileToUrl(){
-        
-        var request = NSMutableURLRequest(URL:NSURL(string: "http://54.149.235.253:5000/upload_profile_icon")!)
-        request.HTTPMethod = "POST"
-        request.addValue(UserInfo.accessToken, forHTTPHeaderField: "token")
-    
-    
-        var boundary = "----------------------------6f875f2289c9"
-        var contentype = "multipart/form-data;"
-        //request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue(contentype, forHTTPHeaderField: "Content-Type")
-        
-        var body = NSMutableData()
-        body.appendData("\r\n--\(boundary)\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        body.appendData("Content-Disposition: form-data; name=\"upload\"; \r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-        body.appendData(UIImagePNGRepresentation(UserInfo.icon))
-        body.appendData("\r\n--\(boundary)--\r\n".dataUsingEncoding(NSUTF8StringEncoding)!)
-
-        request.setValue("\(body.length)", forHTTPHeaderField: "Content-Length")
-        
-        request.HTTPBody = body
-        println("miraqui \(request.debugDescription)")
-        
-        var response: AutoreleasingUnsafeMutablePointer<NSURLResponse?>=nil
-        var HTTPError: NSError? = nil
-        var JSONError: NSError? = nil
-        
-        
-        var dataVal: NSData? =  NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error: &HTTPError)
-        
-        if ((dataVal != nil) && (HTTPError == nil)) {
-            var jsonResult: AnyObject? = NSJSONSerialization.JSONObjectWithData(dataVal!, options: NSJSONReadingOptions.MutableContainers, error: &JSONError)
-            
-            if (JSONError != nil) {
-                println("Bad JSON")
-            } else {
-                println("Synchronous\(jsonResult)")
-            }
-        } else if (HTTPError != nil) {
-            println("Request failed")
-        } else {
-            println("No Data returned")
-        }
-    }
 
     //got the result from the server
    func gotResult(result: [String: AnyObject]){
@@ -182,11 +144,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         lolName.resignFirstResponder()
     }
     
-    func textFieldDidEndEditing(textField: UITextField) {
-        if textField == lolName{
-           
-        }
-    }
+  
     
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
 
@@ -203,6 +161,40 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         lolName.resignFirstResponder()
         
         return true
+    }
+    
+    func displaySpeaker(text: String){
+        
+        messageDisplay.text = text
+        
+        if teemoSpeaker.alpha != 1{
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                
+                self.teemoSpeaker.alpha = 1
+                
+                }
+                , completion: {
+                    (value: Bool) in
+                    
+            })
+        }
+    }
+    
+    // speaker on teemo disappear
+    
+    func disappearSpeaker(){
+        if teemoSpeaker.alpha != 0{
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                
+                self.teemoSpeaker.alpha = 0
+                
+                }
+                , completion: {
+                    (value: Bool) in
+                    
+            })
+        }
+        
     }
     
     @IBAction func returnToLoginSchoolAndPhoto(segue : UIStoryboardSegue) {
