@@ -16,30 +16,37 @@ class MainViewController: UIViewController, UITabBarDelegate {
     @IBOutlet var team: UIView!
     @IBOutlet var tournament: UIView!
     @IBOutlet var me: UIView!
-
+    
     var tabbarShouldAppear = true
-
+    
     var content : UIViewController!
-    var uploadRequest: NSURLSessionUploadTask?
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabbar.transform = CGAffineTransformMakeTranslation(0, self.tabbar.frame.height)
         self.tabbar.alpha = 0
-       
-        var req = ARequest()
-        req.uploadPhoto()
-
+        
+        // doens't appear if user haven't login
+        news.alpha = 0
+        tournament.alpha = 0
+        team.alpha = 0
+        me.alpha = 0
+        
     }
-
+    
     override func viewDidAppear(animated: Bool) {
         
+        
         if !UserInfo.userIsLogined(){
+            
+            // if user have't login let him login
             FBSession.activeSession().closeAndClearTokenInformation()
             self.performSegueWithIdentifier("login", sender: self)
-           
-
+            
         }else{
+            
+            news.alpha = 1
             
             if tabbarShouldAppear {
                 showTabb()
@@ -91,7 +98,7 @@ class MainViewController: UIViewController, UITabBarDelegate {
         
     }
     
-   // display the new view controller
+    // display the new view controller
     func displayContentController(content: UIViewController){
         self.addChildViewController(content)
         content.didMoveToParentViewController(self)          // 3
@@ -100,7 +107,7 @@ class MainViewController: UIViewController, UITabBarDelegate {
         
         //reset the tab bar to front
         self.view.bringSubviewToFront(self.tabbar)
-
+        
         UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             
             self.content.view.alpha = 1
@@ -113,48 +120,57 @@ class MainViewController: UIViewController, UITabBarDelegate {
         
     }
     
- 
+    
     //hide tab bar
     
     func hideTabb(){
         tabbarShouldAppear = false
         if tabbar.alpha > 0{
-        UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            
-            self.tabbar.alpha = 0
-            self.tabbar.transform = CGAffineTransformMakeTranslation(0, self.tabbar.frame.height)
-            }
-            , completion: {
-                (value: Bool) in
+            UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                 
-        })
+                self.tabbar.alpha = 0
+                self.tabbar.transform = CGAffineTransformMakeTranslation(0, self.tabbar.frame.height)
+                }
+                , completion: {
+                    (value: Bool) in
+                    
+            })
         }
     }
     //display the tab bar
     func showTabb(){
         tabbarShouldAppear = true
-
-        if tabbar.alpha < 1{
         
+        if tabbar.alpha < 1{
+            
             UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                 
-            self.tabbar.alpha = 1
-            self.tabbar.transform = CGAffineTransformMakeTranslation(0, 0)
-            }
-            , completion: {
-                (value: Bool) in
-                
+                self.tabbar.alpha = 1
+                self.tabbar.transform = CGAffineTransformMakeTranslation(0, 0)
+                }
+                , completion: {
+                    (value: Bool) in
+                    
             })
         }
     }
     
     func logout(){
         hideTabb()
-        UserInfo.cleanUserData()
-        FBSession.activeSession().closeAndClearTokenInformation()
+        
+        // clean facebook login
+        if FBSession.activeSession().state == FBSessionState.Open{
+            FBSession.activeSession().closeAndClearTokenInformation()
+        }else{
+            
+            FBSession.activeSession().openWithCompletionHandler { (session, state, error) -> Void in
+                // logout if needed
+                FBSession.activeSession().closeAndClearTokenInformation()
+            }
+        }
         self.performSegueWithIdentifier("login", sender: self)
     }
-
+    
     
     @IBAction func returnToMain(segue : UIStoryboardSegue) {
         

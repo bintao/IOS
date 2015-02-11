@@ -28,10 +28,11 @@ class MeViewController: UIViewController {
     
     @IBAction func log_out(sender: UIButton) {
         
+        //clean all saved user data
+        UserInfo.cleanUserData()
+        // team data
+
          ((self.parentViewController as UINavigationController).parentViewController as MainViewController).logout()
-        
-        UserInfo.accessToken = ""
-        UserInfo.saveUserData()
         
     }
     /*

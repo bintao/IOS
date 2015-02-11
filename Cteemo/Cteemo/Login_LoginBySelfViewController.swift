@@ -44,7 +44,6 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             var req = Alamofire.request(.POST, "http://54.149.235.253:5000/login", parameters: ["email": email.text, "password":password.text ])
                 .responseJSON { (_, _, JSON, _) in
                     var result: [String: AnyObject] = JSON as [String: AnyObject]
-                    println(result)
                     self.gotLoginResult(result)
                     
                 }
@@ -75,7 +74,6 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             
             UserInfo.accessToken = result["token"] as String
             UserInfo.email = email.text
-            println(email.text)
             // Creating an Instance of the Alamofire Manager
             var manager = Manager.sharedInstance
             
@@ -114,7 +112,6 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
     func gotProfileResult(result: [String: AnyObject]){
         
         stopLoading()
-        println(result)
         
     }
 
@@ -164,8 +161,6 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             password.resignFirstResponder()
         }
         
-        println(back.superview)
-
         return true
     }
     

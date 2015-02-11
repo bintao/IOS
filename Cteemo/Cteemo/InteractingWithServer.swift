@@ -58,9 +58,7 @@ class InteractingWithServer: NSObject {
         
         if token != nil && token != ""{
             request.addValue(token, forHTTPHeaderField: "token")
-            println("dd")
         }
-        //println(request.description)
 
         var queue = NSOperationQueue()
 
@@ -88,13 +86,9 @@ class InteractingWithServer: NSObject {
                 
             }else if error != nil{
                 
-                println(error)
-                
                 result.updateValue(false, forKey: "success")
                 
             }else if data == nil{
-                
-                println("empty")
                 
                 result.updateValue(false, forKey: "success")
 
@@ -178,7 +172,6 @@ var jsonData: NSData = NSJSONSerialization.dataWithJSONObject(info, options: NSJ
 request.HTTPBody = jsonData//jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
 request.HTTPMethod = method
 request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-//println(request.description)
 var returnData = NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error: &error)!
 if (error == nil){
 

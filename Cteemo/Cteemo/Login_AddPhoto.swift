@@ -35,7 +35,6 @@ class Login_AddPhoto: UIViewController, UIScrollViewDelegate{
     
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
         
-        println(resizer.contentOffset)
         return self.imgView
     }
     
@@ -48,9 +47,7 @@ class Login_AddPhoto: UIViewController, UIScrollViewDelegate{
 
     
     func cutImage(){
-        
-        println(resizer.zoomScale)
-        
+                
         sourceImage = sourceImage.crop(CGRectMake(resizer.contentOffset.x / resizer.zoomScale, resizer.contentOffset.y / resizer.zoomScale, resizer.frame.width / resizer.zoomScale, resizer.frame.height / resizer.zoomScale))
         sourceImage = sourceImage.roundCornersToCircle()
         sourceImage = sourceImage.changeImageSize(CGSizeMake(200, 200))

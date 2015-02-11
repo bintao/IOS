@@ -60,12 +60,9 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
         
         stopLoading()
         
-        println(result)
         
         // email with user
-        if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {
-            println("OK")
-            
+        if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {            
             
         }
         //can't find email

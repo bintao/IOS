@@ -20,32 +20,50 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
 
     override func viewDidLoad(){
         super.viewDidLoad()
+                    
+            var loginView: FBLoginView = FBLoginView()
+            loginView.delegate = self
+            loginView.frame.size = self.facebook.frame.size
+            self.facebook.addSubview(loginView)
+            loginView.readPermissions = ["public_profile", "email", "user_friends"]
         
-        //Create faceook login
-        var loginView: FBLoginView = FBLoginView()
-        loginView.delegate = self
-        loginView.frame.size = facebook.frame.size
-        self.facebook.addSubview(loginView)
-        loginView.readPermissions = ["public_profile", "email", "user_friends"]
+
+        
+    }
+    
+    //save and update user data
+
+    func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!)
+    {
+        
+        // avoid running multiple time
+        if UserInfo.fbid.isEmpty || UserInfo.gender.isEmpty||UserInfo.name.isEmpty{
+            
+            UserInfo.gender = user.objectForKey("gender") as String
+            UserInfo.name = user.name
+            UserInfo.fbid = user.objectForKey("id") as String
+            if user.objectForKey("email") != nil{
+                UserInfo.email = user.objectForKey("email") as String
+            }
+            UserInfo.saveUserData()
+            
+        }
+
         
         
-                // Do any additional setup after loading the view, typically from a nib.
     }
     
     
     //facebook logedin
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
         
-        var myToken = FBSession.activeSession().accessTokenData.accessToken
-        var fbid: String = UserInfo.fbid
-
-        
         FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
             if !(error != nil)
             {
-                //already got facebook information
+                println(result)
+                //get facebook token
                 var myToken = FBSession.activeSession().accessTokenData.accessToken
-                
+                println(myToken)
                 var req = Alamofire.request(.POST, "http://54.149.235.253:5000/fb_login", parameters: ["fbtoken": myToken, "fbid": UserInfo.fbid,"fbemail":UserInfo.fbid+"@cteemo.com"])
                     .responseJSON { (_, _, JSON, _) in
                         var result: [String: AnyObject] = JSON as [String: AnyObject]
@@ -53,10 +71,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                         self.getProfileFromServer()
                         
                 }
-            
-            println(UserInfo.email)
-            println(UserInfo.name)
-            println(UserInfo.profile_ID)
            
                 
             }
@@ -100,32 +114,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
         println(error)
     }
 
-    func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!)
-    {
-       //save and update user data
 
-        if UserInfo.fbid.isEmpty || UserInfo.gender.isEmpty||UserInfo.name.isEmpty{
-            
-            UserInfo.gender = user.objectForKey("gender") as String
-            UserInfo.name = user.name
-            UserInfo.fbid = user.objectForKey("id") as String
-            UserInfo.email = user.objectForKey("email") as String
-            UserInfo.saveUserData()
-             println(UserInfo.accessToken)
-        
-        }
-
-        if user.objectForKey("email") == nil{
-           UserInfo.email = ""
-        }else{
-           UserInfo.email = user.objectForKey("email") as String
-        }
-       
-        UserInfo.saveUserData()
-   
-        
-    }
-    
     
     //get user profile from server
 
@@ -141,17 +130,12 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/profile", parameters: nil)
             .responseJSON { (_, _, JSON, _) in
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
-                println(result)
-                
-                
-
                 
                 if ( result["username"]? != nil) {
                 //old User
                     
                     UserInfo.profile_ID = result["id"] as String
                     UserInfo.saveUserData()
-                    println(UserInfo.accessToken)
                     
                     
                     var facebookIcon: UIImage? = self.getPotraitFromFacebook() as UIImage
@@ -163,9 +147,8 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
                     }
                     
 
-                    //self.performSegueWithIdentifier("exitToMain", sender: self)
+                    self.performSegueWithIdentifier("exitToMain", sender: self)
                  
-                    self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
                 }
                 else {
                 //new user

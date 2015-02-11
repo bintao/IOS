@@ -62,11 +62,8 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         
         stopLoading()
         
-        println(result)
-        
         
         if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {
-            println("OK")
             
             UserInfo.email = email.text
             UserInfo.name = nickname.text
