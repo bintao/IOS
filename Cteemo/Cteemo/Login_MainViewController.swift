@@ -26,8 +26,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate{
             loginView.frame.size = self.facebook.frame.size
             self.facebook.addSubview(loginView)
             loginView.readPermissions = ["public_profile", "email", "user_friends"]
-        
-
+    
         
     }
     

@@ -63,7 +63,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "43"
             endingLineNumber = "43"
-            landmarkName = "loginViewShowingLoggedInUser(_:)"
+            landmarkName = "loginViewFetchedUserInfo(_:user:)"
             landmarkType = "5">
             <Locations>
                <Location
