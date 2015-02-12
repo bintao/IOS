@@ -38,15 +38,15 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
         var choices = ["SCHOOL","PUBLIC"]
         schoolPublicIn.setup(choices, colorSelected: self.navigationController!.view.tintColor!, colorDefault: UIColor.whiteColor())
         
-        if TeamInfo.teamicon != nil{
-            iconDisplay.image = TeamInfo.teamicon
+        if TeamInfoGlobal.teamicon != nil{
+            iconDisplay.image = TeamInfoGlobal.teamicon
         }
     }
     
     @IBAction func createTeam(sender: UIBarButtonItem) {
         
         var manager = Manager.sharedInstance
-        manager.session.configuration.HTTPAdditionalHeaders = ["token": UserInfo.accessToken]
+        manager.session.configuration.HTTPAdditionalHeaders = ["token": UserInfoGlobal.accessToken!]
         var req = Alamofire.request(.POST, "http://54.149.235.253:5000/create_team/lol",parameters: ["teamName":teamName.text, "teamIntro":teamIntro.text,"isSchool":true])
             .responseJSON { (_, _, JSON, _) in
                 if JSON != nil{

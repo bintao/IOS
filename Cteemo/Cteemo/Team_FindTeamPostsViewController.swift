@@ -26,7 +26,7 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         var manager = Manager.sharedInstance
         // Specifying the Headers we need
         manager.session.configuration.HTTPAdditionalHeaders = [
-            "token": UserInfo.accessToken
+            "token": UserInfoGlobal.accessToken!
         ]
         
         startLoading()

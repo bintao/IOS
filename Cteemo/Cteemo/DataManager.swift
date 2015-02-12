@@ -26,6 +26,12 @@ class DataManager: NSObject {
         resource = NSBundle.mainBundle().pathForResource("UserTeam", ofType: "plist") as String?
         dict = NSDictionary(contentsOfFile: resource!)
         fileManager.copyItemAtPath(resource!, toPath: path, error: nil)
+        
+        path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        path = path.stringByAppendingPathComponent("LOLInfo")
+        resource = NSBundle.mainBundle().pathForResource("LOLInfo", ofType: "plist") as String?
+        dict = NSDictionary(contentsOfFile: resource!)
+        fileManager.copyItemAtPath(resource!, toPath: path, error: nil)
     }
     
     
@@ -41,13 +47,13 @@ class DataManager: NSObject {
         
     }
     
-    class func saveUserInfoToLocal(info: [String: AnyObject]){
+    class func saveUserInfoToLocal(info: [String: AnyObject?]){
         
         let fileManager = NSFileManager()
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         path = path.stringByAppendingPathComponent("UserInformation.plist")
         
-        let dict : NSDictionary = info
+        let dict : NSDictionary = info as [String: AnyObject]
         dict.writeToFile(path, atomically: true)
         
     }
@@ -64,18 +70,39 @@ class DataManager: NSObject {
         
     }
     
-    class func saveTeamInfoToLocal(info: [String: AnyObject]){
+    class func saveTeamInfoToLocal(info: [String: AnyObject?]){
         
         let fileManager = NSFileManager()
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         path = path.stringByAppendingPathComponent("UserTeam.plist")
         
-        let dict : NSDictionary = info
+        let dict : NSDictionary = info as [String: AnyObject]
         dict.writeToFile(path, atomically: true)
         
     }
     
-
+    class func getLOLInfo()->[String: AnyObject]{
+        
+        let fileManager = NSFileManager()
+        var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        path = path.stringByAppendingPathComponent("LOLInfo.plist")
+        
+        let dict = NSDictionary(contentsOfFile: path)
+        
+        return dict as [String: AnyObject]
+        
+    }
+    
+    class func saveLOLInfoToLocal(info: [String: AnyObject?]){
+        
+        let fileManager = NSFileManager()
+        var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        path = path.stringByAppendingPathComponent("LOLInfo.plist")
+        
+        let dict : NSDictionary = info as [String: AnyObject]
+        dict.writeToFile(path, atomically: true)
+        
+    }
 
     class func saveUserIconFromLocal(icon: UIImage){
 

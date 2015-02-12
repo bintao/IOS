@@ -18,7 +18,8 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
     
     var teams: [AnyObject] = [AnyObject]()
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         resultTable.backgroundColor = UIColor.clearColor()
     }
     
@@ -27,7 +28,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         var manager = Manager.sharedInstance
         // Specifying the Headers we need
         manager.session.configuration.HTTPAdditionalHeaders = [
-            "token": UserInfo.accessToken
+            "token": UserInfoGlobal.accessToken!
         ]
         
         startLoading()

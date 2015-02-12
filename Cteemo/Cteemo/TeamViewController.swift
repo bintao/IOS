@@ -14,7 +14,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     var hasOwnteam = false
     
-    @IBOutlet var createTeam : UIView!
+    @IBOutlet weak var createTeam : UIView!
     @IBOutlet var teamInfo : UIView!
     
     @IBOutlet var otherChoices : UITableView!
@@ -24,12 +24,12 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         var manager = Manager.sharedInstance
-        manager.session.configuration.HTTPAdditionalHeaders = ["token": UserInfo.accessToken]
+        manager.session.configuration.HTTPAdditionalHeaders = ["token": UserInfoGlobal.accessToken!]
         
         
         var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
         req.delegate = self
-        req.sendRequestWithToken(UserInfo.accessToken)
+        req.sendRequestWithToken(UserInfoGlobal.accessToken!)
 
         otherChoices.backgroundColor = UIColor.clearColor()
         
@@ -53,28 +53,25 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
             
             var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
             
-            if(captain != UserInfo.profile_ID){
+            if(captain != UserInfoGlobal.profile_ID){
                 println("You are not a captain.")
-                println(UserInfo.profile_ID)
+                println(UserInfoGlobal.profile_ID)
             }
                 
             else {
-                
-                self.performSegueWithIdentifier("presentMyTeam", sender: self)
                 
                 println("You are a captain.")
                 
             }
             
             
-            TeamInfo.teamID = result["id"] as String
-            TeamInfo.teamName = result["teamName"] as String
-            TeamInfo.team_Intro = result["teamIntro"] as String
+            TeamInfoGlobal.teamID = result["id"] as? String
+            TeamInfoGlobal.teamName = result["teamName"] as? String
+            TeamInfoGlobal.team_Intro = result["teamIntro"] as? String
             
-            TeamInfo.saveUserData()
-            println(TeamInfo.teamID)
-            println(TeamInfo.teamName)
-            println(TeamInfo.team_Intro)
+            TeamInfoGlobal.saveUserData()
+
+            self.performSegueWithIdentifier("presentMyTeam", sender: self)
             
         }
         else {

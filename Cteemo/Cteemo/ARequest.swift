@@ -38,7 +38,7 @@ class ARequest: NSObject {
         
     }
     
-    init(prefix: String, method: requestType, data: [String: AnyObject]){
+    init(prefix: String, method: requestType){
         super.init()
         self.method = method
         self.prefix = prefix
@@ -56,7 +56,7 @@ class ARequest: NSObject {
     func sendRequest(){
         
         if requestType.GET == method {
-            var req = Alamofire.request(.GET, server + "profile", parameters: parameters)
+            var req = Alamofire.request(.GET, server + prefix, parameters: parameters)
                 .responseJSON { (_, _, JSON, _) in
                     if JSON != nil{
                         self.gotResult(JSON!)
@@ -64,7 +64,7 @@ class ARequest: NSObject {
             }
         }else if requestType.POST == method{
         
-            var req = Alamofire.request(.POST, server + "profile", parameters: parameters)
+            var req = Alamofire.request(.POST, server + prefix, parameters: parameters)
                 .responseJSON { (_, _, JSON, _) in
                     if JSON != nil{
                         self.gotResult(JSON!)
@@ -92,7 +92,7 @@ class ARequest: NSObject {
         var manager1 = Manager.sharedInstance
         //manager.requestSerializer = [AFJSONRequestSerializer serializer]
         manager1.session.configuration.HTTPAdditionalHeaders = [
-            "token": UserInfo.accessToken
+            "token": UserInfoGlobal.accessToken!
         ]
         
         var parameters = NSMutableDictionary()
@@ -106,7 +106,7 @@ class ARequest: NSObject {
         
         var manager = AFURLSessionManager(sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
         manager.session.configuration.HTTPAdditionalHeaders = [
-            "token": UserInfo.accessToken
+            "token": UserInfoGlobal.accessToken!
         ]
         
         uploadRequest = manager.uploadTaskWithStreamedRequest(request, progress: nil) { (response, obj, error) -> Void in
@@ -116,7 +116,6 @@ class ARequest: NSObject {
             }
         }
         uploadRequest?.resume()
-        
     }
 
     

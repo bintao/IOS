@@ -55,7 +55,7 @@ class Team_AddPhoto: UIViewController, UIScrollViewDelegate{
         sourceImage = sourceImage.roundCornersToCircle()
         sourceImage = sourceImage.changeImageSize(CGSizeMake(200, 200))
         // save user icon
-        TeamInfo.teamicon = sourceImage
-        TeamInfo.saveUserIcon()
+        TeamInfoGlobal.teamicon = sourceImage
+        TeamInfoGlobal.saveTeamIcon()
     }
 }

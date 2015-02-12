@@ -22,15 +22,15 @@ class Team_TeamInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigation.title = TeamInfo.teamName
+        navigation.title = TeamInfoGlobal.teamName
         
-        capTain.setImage(UserInfo.icon, forState: UIControlState.Normal)
-        capTainName.text = UserInfo.name
+        capTain.setImage(UserInfoGlobal.icon, forState: UIControlState.Normal)
+        capTainName.text = UserInfoGlobal.name
         
         memberScroll.contentSize = CGSizeMake(75 * CGFloat(members.count), 75)
         for var index = 0; index < members.count; index++ {
             var but = UIButton(frame: CGRectMake(5 + 75 * CGFloat(index), 10, 65, 65))
-            but.setImage(UserInfo.icon, forState: UIControlState.Normal)
+            but.setImage(UserInfoGlobal.icon, forState: UIControlState.Normal)
             memberScroll.addSubview(but)
             
             var lab = UILabel(frame: CGRectMake(75 * CGFloat(index), 75, 75, 20))

@@ -38,7 +38,7 @@ class MainViewController: UIViewController, UITabBarDelegate {
     override func viewDidAppear(animated: Bool) {
         
         
-        if !UserInfo.userIsLogined(){
+        if !UserInfoGlobal.userIsLogined(){
             
             // if user have't login let him login
             FBSession.activeSession().closeAndClearTokenInformation()
@@ -46,6 +46,8 @@ class MainViewController: UIViewController, UITabBarDelegate {
             
         }else{
             
+            LolAPIGlobal.getlolvision()
+
             news.alpha = 1
             
             if tabbarShouldAppear {

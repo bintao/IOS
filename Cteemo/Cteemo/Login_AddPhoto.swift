@@ -52,7 +52,7 @@ class Login_AddPhoto: UIViewController, UIScrollViewDelegate{
         sourceImage = sourceImage.roundCornersToCircle()
         sourceImage = sourceImage.changeImageSize(CGSizeMake(200, 200))
         // save user icon
-        UserInfo.icon = sourceImage
-        UserInfo.saveUserIcon()
+        UserInfoGlobal.icon = sourceImage
+        UserInfoGlobal.saveUserIcon()
     }
 }

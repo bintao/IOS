@@ -12,21 +12,13 @@
 	<string></string>
 	<key>gender</key>
 	<string></string>
-	<key>lolID</key>
-	<string></string>
-	<key>lolName</key>
-	<string></string>
-	<key>lolRank</key>
-	<string></string>
 	<key>school</key>
 	<string></string>
 	<key>intro</key>
 	<string></string>
 	<key>profile_ID</key>
 	<string></string>
-	<key>lolLevel</key>
-	<integer>0</integer>
-	<key>lolIcon</key>
+	<key>profile_icon_Link</key>
 	<string></string>
 </dict>
 </plist>
