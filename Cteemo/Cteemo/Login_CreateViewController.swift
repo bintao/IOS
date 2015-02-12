@@ -7,53 +7,161 @@
 //
 
 import UIKit
+import Alamofire
 
-class Login_CreateViewController: UIViewController {
+class Login_CreateViewController: UIViewController, UITextFieldDelegate{
     
+    @IBOutlet var bg : UIImageView!
     
-    @IBOutlet var email: UITextField!
+    @IBOutlet var email : UITextField!
+    @IBOutlet var password : UITextField!
+    @IBOutlet var nickname : UITextField!
     
-    @IBOutlet var password: UITextField!
+    @IBOutlet var back : UIButton!
     
-    @IBOutlet weak var back: UIButton!
+    @IBOutlet var signup : UIButton!
     
-    @IBOutlet weak var bg: UIImageView!
+    @IBOutlet var loadingView : UIImageView!
+    @IBOutlet var loading : UIActivityIndicatorView!
     
+    @IBOutlet var teemoSpeaker : UIView!
+    @IBOutlet var messageDisplay : UITextView!
     
-    @IBOutlet weak var signUp: UIButton!
-    
-    
+    override func viewDidLoad() {
+        //add tap gesture to board
+        self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "backGroundTapped:"))
+        
+    }
     
     @IBAction func signUpWithUserAndPa(sender: UIButton) {
         
-        if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != nil{
+        
+        if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != ""&&nickname.text != ""{
             
-            InteractingWithServer.signUp(email.text, password: password.text, returnView: self)
-            
+            var req = Alamofire.request(.POST, "http://54.149.235.253:5000/create_user", parameters: ["email": email.text, "password":password.text])
+                .responseJSON { (_, _, JSON, _) in
+                var result: [String: AnyObject] = JSON as [String: AnyObject]
+                self.gotCreateResult(result)
         }
-        else if(email.text==nil||email.text.rangeOfString("@")?.isEmpty == nil){
-                println("invalid Email")
+            
+        self.startLoading()
+       
+        }else if email.text == "" || email.text.rangeOfString("@")?.isEmpty == nil{
+            displaySpeaker("Email Invalid")
+        }
+        else if password.text == ""{
+            displaySpeaker("Password Invalid")
+        }
+        else if nickname.text == ""{
+            displaySpeaker("Fill your Nickname please ~ ")
+        }
+        
+    }
+    
+    func gotCreateResult(result: [String: AnyObject]){
+        
+        stopLoading()
+        
+        
+        if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {
+            
+            UserInfoGlobal.email = email.text
+            UserInfoGlobal.name = nickname.text
+            UserInfoGlobal.saveUserData()
+            
+            self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
+            
+        }else{
+            if((result["message"] as String).rangeOfString("Validation")?.isEmpty != nil){
+                displaySpeaker("Invalid Email")
             }
-        else {
-            println("invalid Password")
+            
+            if((result["message"] as String).rangeOfString("Tried")?.isEmpty != nil){
+                displaySpeaker("Your Account Already Exist")
+            }
+            //login fail
+            
         }
         
         
     }
-        func signUpResult(result: [String: AnyObject]){
-            println(result)
-            
-            if result["success"] as Bool{
+    
+    
+    
+    // display the speaker on teemo
+    func displaySpeaker(text: String){
+        
+        messageDisplay.text = text
+        
+        if teemoSpeaker.alpha != 1{
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                 
-                UserInfo.setUserData(email.text, name: "", accessToken: result["token"] as String, id: "")
+                self.teemoSpeaker.alpha = 1
                 
-                UserInfo.downloadUserInfo()
-                
-            }
+                }
+                , completion: {
+                    (value: Bool) in
+                    
+            })
         }
-
-  
-
+    }
+    
+    // speaker on teemo disappear
+    
+    func disappearSpeaker(){
+        if teemoSpeaker.alpha != 0{
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                
+                self.teemoSpeaker.alpha = 0
+                
+                }
+                , completion: {
+                    (value: Bool) in
+                    
+            })
+        }
+        
+    }
+    
+    
+    // keyboard customization
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == email{
+            email.resignFirstResponder()
+            password.becomeFirstResponder()
+        }else if textField == password{
+            password.resignFirstResponder()
+            nickname.becomeFirstResponder()
+        }else if textField == nickname{
+            nickname.resignFirstResponder()
+        }
+        
+        return true
+    }
+    
+    // background tapped
+    func backGroundTapped(gestureRecognizer: UITapGestureRecognizer){
+        password.resignFirstResponder()
+        email.resignFirstResponder()
+        nickname.resignFirstResponder()
+        if teemoSpeaker.alpha != 0{
+            disappearSpeaker()
+        }
+    }
+    
+    //loading view display while login
+    func startLoading(){
+        self.view.bringSubviewToFront(loadingView)
+        self.loading.startAnimating()
+    }
+    
+    //loading view hide, login finished
+    func stopLoading(){
+        self.view.sendSubviewToBack(loadingView)
+        self.loading.stopAnimating()
+    }
+    
+    
     
     
     

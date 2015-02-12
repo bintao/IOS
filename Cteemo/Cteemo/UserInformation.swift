@@ -9,19 +9,28 @@
 
 import UIKit
 
-var UserInfo: UserInformation = UserInformation()
+var UserInfoGlobal: UserInformation = UserInformation()
 
-class UserInformation: NSObject {
+class UserInformation: NSObject, RequestResultDelegate{
    
-    var email: String = ""
-    var name: String = ""
-    var id: String = ""
-    var accessToken: String = ""
-    var password: String = ""
+    // User profile
+    var email: String?
+    var name: String?
+    var fbid: String?
+    var accessToken: String?
+    var gender: String?
+    var school: String?
+    var intro: String?
+    var profile_icon_Link: String?
+
+    var profile_ID: String?
+
+    var icon: UIImage?
     
     //check if the user is logined
     func userIsLogined()->Bool{
-        if email == "" || name == "" || id == "" || accessToken == "" {
+        
+        if accessToken == "" {
             return false
         }else{
             return true
@@ -32,45 +41,111 @@ class UserInformation: NSObject {
     func setUp(){
         
         var data:[String: AnyObject] = DataManager.getUserInfo()
-        name = data["name"] as String
-        id = data["userid"] as String
-        accessToken = data["accessToken"] as String
+        name = data["name"] as? String
+        fbid = data["fbid"] as? String
+        accessToken = data["accessToken"] as? String
+        email = data["email"] as? String
+        gender = data["gender"] as? String
+        school = data["school"] as? String
+        intro = data["intro"] as? String
+        profile_ID = data["profile_ID"] as? String
         
-    }
-   
-    //upload user information to the server
+        profile_icon_Link = data["profile_icon_Link"] as? String
 
-    func uploadUserInfo(){
-        var data:[String: AnyObject] = ["name": name, "id": id, "accessToken": accessToken, "email": email]
-    }
-    
-    //download user information from the server
-
-    func downloadUserInfo(){
-        InteractingWithServer.getUserProfile(self.accessToken)
+        icon = DataManager.getUserIconFromLocal()
     }
     
     //change user data and save
-    func setUserData(email: String, name: String, accessToken:String, id: String){
-        self.email = email
-        self.name = name
-        self.accessToken = accessToken
-        self.id = id
-        
-        saveUserData()
+
+    
+    func packaging()->[String: AnyObject?]{
+        var data:[String: AnyObject?] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "school": school, "intro": intro,"profile_ID":profile_ID, "profile_icon_Link": profile_icon_Link]
+        return data
     }
+    
+    func saveUserIcon(){
+        if icon != nil{
+            DataManager.saveUserIconFromLocal(UserInfoGlobal.icon!)
+        }
+    }
+    
+    func getIconFromLocal(){
+        icon = DataManager.getUserIconFromLocal()
+    }
+    
+    func getIconFromServer(){
+        var url = NSURL(string: profile_icon_Link!)
+        var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
+        icon = UIImage(data: data)
+
+    }
+    
+    func gotResult(prefix: String, result: [String : AnyObject]) {
+        println(result)
+    }
+    //upload user information to the server
+   
+    func uploadUserInfo(){
+
+    }
+    
+    //download user information from the server
+    func updateUserInfo(){
+        var req = ARequest(prefix: "profile", method: requestType.GET)
+        req.delegate = self
+        req.sendRequestWithToken(UserInfoGlobal.accessToken!)
+    }
+    
+    func gotResult(prefix: String, result: AnyObject) {
+        if prefix == "profile"{
+            if result["username"]? != nil {
+                UserInfoGlobal.name = result["username"] as? String
+            }
+            if result["id"]? != nil {
+                UserInfoGlobal.profile_ID = result["id"] as? String
+            }
+            if result["intro"]? != nil {
+                UserInfoGlobal.intro = result["intro"] as? String
+            }
+            if result["profile_icon"]? != nil {
+                UserInfoGlobal.profile_icon_Link = result["profile_icon"] as? String
+                getIconFromServer()
+            }
+            if result["school"]? != nil {
+                UserInfoGlobal.school = result["school"] as? String
+            }
+            
+            if result["lolID"]? != nil {
+                LolAPIGlobal.lolName = result["lolID"] as? String
+            }
+            
+            if result["LOLTeam"]? != nil {
+                TeamInfoGlobal.teamID = result["LOLTeam"] as? String
+            }
+           
+        }
+    }
+    
     
     //Save User Data to local
     
     func saveUserData(){
-        var data:[String: AnyObject] = ["name":name,"accessToken":accessToken,"id":id,"email":email]
+        var data:[String: AnyObject?] = packaging()
         DataManager.saveUserInfoToLocal(data)
     }
     
     //user logout, remove all local data
     func cleanUserData(){
-        var data:[String: AnyObject] = ["name":"","accessToken":"","id":"","email":""]
-        DataManager.saveUserInfoToLocal(data)
+        email = ""
+        name = ""
+        fbid = ""
+        accessToken = ""
+        gender = ""
+        school = ""
+        intro = ""
+        profile_ID = ""
+        profile_icon_Link = ""
+        DataManager.saveUserInfoToLocal(packaging())
     }
     
 }

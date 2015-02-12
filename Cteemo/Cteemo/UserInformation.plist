@@ -2,13 +2,23 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>id</key>
+	<key>fbid</key>
 	<string></string>
 	<key>email</key>
 	<string></string>
 	<key>name</key>
 	<string></string>
 	<key>accessToken</key>
+	<string></string>
+	<key>gender</key>
+	<string></string>
+	<key>school</key>
+	<string></string>
+	<key>intro</key>
+	<string></string>
+	<key>profile_ID</key>
+	<string></string>
+	<key>profile_icon_Link</key>
 	<string></string>
 </dict>
 </plist>

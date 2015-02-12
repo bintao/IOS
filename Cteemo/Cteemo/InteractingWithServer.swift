@@ -9,7 +9,6 @@ import UIKit
 
 class InteractingWithServer: NSObject {
     
-
     
     class func getCurrentNet() -> String{
         
@@ -38,32 +37,9 @@ class InteractingWithServer: NSObject {
         
     }
     
-    class func login(email: String, password: String, returnView: UIViewController){
-        
-        
-        let info :[String: AnyObject] = ["email": email, "password": password]
 
-        InteractingWithServer.connectASynchoronous("/login", info: info, method:"POST", returnView: returnView)
-    }
     
-    
-    class func signUp(email: String, password: String, returnView: UIViewController){
-        
-        
-        let info :[String: AnyObject] = ["email": email, "password": password]
-        
-        InteractingWithServer.connectASynchoronous("/create_user", info: info, method:"POST", returnView: returnView)
-    }
-
-    class func getUserProfile(token: String){
-        
-        var result:[String: AnyObject] = [String: AnyObject]()
-        
-        InteractingWithServer.connectASynchoronous("/profile", info: result, method:"GET", returnView: nil)
-        
-    }
-    
-    class func connectASynchoronous(suffix: String ,info:[String: AnyObject], method:String, returnView: UIViewController?){
+    class func connectASynchoronous(suffix: String ,info:[String: AnyObject], method:String, theRequest: ARequest, token: String?){
         
         var result:[String: AnyObject] = [String: AnyObject]()
         
@@ -79,12 +55,17 @@ class InteractingWithServer: NSObject {
         request.HTTPBody = jsonData//jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
         request.HTTPMethod = method
         request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-        //println(request.description)
+        
+        if token != nil && token != ""{
+            request.addValue(token, forHTTPHeaderField: "token")
+        }
 
         var queue = NSOperationQueue()
+
         
         NSURLConnection.sendAsynchronousRequest(request, queue: queue, completionHandler:{ (response: NSURLResponse!, data: NSData!, error: NSError!) -> Void in
-            println(data)
+            
+            
             if data != nil && data.length > 0 && error == nil{
                 
                 if let httpResponse = response as? NSHTTPURLResponse {
@@ -99,27 +80,29 @@ class InteractingWithServer: NSObject {
                     }else {
                         result.updateValue(false, forKey: "success")
                     }
+                }else{
+                    result.updateValue(false, forKey: "success")
                 }
                 
+            }else if error != nil{
+                
+                result.updateValue(false, forKey: "success")
+                
+            }else if data == nil{
+                
+                result.updateValue(false, forKey: "success")
+
             }
             
+            // send the result to ARqusest class
             dispatch_async(dispatch_get_main_queue(), {
-                if suffix == "/login"{
-                    (returnView as Login_LoginBySelfViewController).loginResult(result)
-                }
-                else if suffix == "/profile"{
-                    
-                    println(result)
-                }
-                else if suffix == "/create_user"{
-                    
-                    println(result)
-                }
+            
+                theRequest.gotResult(result)
             })
+
         })
                 
     }
-
     /*
     class func getCurrentNet() -> String{
         
@@ -189,7 +172,6 @@ var jsonData: NSData = NSJSONSerialization.dataWithJSONObject(info, options: NSJ
 request.HTTPBody = jsonData//jsonString.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: true)
 request.HTTPMethod = method
 request.setValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
-//println(request.description)
 var returnData = NSURLConnection.sendSynchronousRequest(request, returningResponse: response, error: &error)!
 if (error == nil){
 

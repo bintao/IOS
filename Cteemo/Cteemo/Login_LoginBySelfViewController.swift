@@ -7,58 +7,132 @@
 //
 
 import UIKit
+import Alamofire
 
-class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate{
-
+class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate, RequestResultDelegate{
+    
     @IBOutlet var bg : UIImageView!
-
+    
     @IBOutlet var email : UITextField!
     @IBOutlet var password : UITextField!
-
+    
     @IBOutlet var back : UIButton!
-
+    
     @IBOutlet var login : UIButton!
     @IBOutlet var forgotPass : UIView!
-
-    @IBOutlet var loadingView : UIView!
+    
+    @IBOutlet var loadingView : UIImageView!
     @IBOutlet var loading : UIActivityIndicatorView!
+    
+    @IBOutlet var teemoSpeaker : UIView!
+    @IBOutlet var messageDisplay : UITextView!
+    
     
     override func viewDidLoad(){
         super.viewDidLoad()
         
         //add tap gesture to board
-        self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "keyboardReturn:"))
-
+        self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "backGroundTapped:"))
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
-
+    
     //login
     @IBAction func loginWithUserAndPass(){
-        if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != nil{
-
-            InteractingWithServer.login(email.text, password: password.text, returnView: self)
+        if  (password.text != nil) && email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil {
+            var req = ARequest(prefix: "login", method: requestType.POST, parameters: ["email": email.text, "password":password.text ])
+            req.delegate = self
+            req.sendRequest()
+            self.startLoading()
             
-            startLoading()
         }else{
             //login failed
-            println("invalid")
+            if email.text == ""{
+                displaySpeaker("email is empty")
+            }
+            else if password.text == ""{
+                displaySpeaker("password is empty")
+            }
+            else{
+                displaySpeaker("email is invalid")
+                
+            }
+            
         }
     }
-
-    //after login
-    func loginResult(result: [String: AnyObject]){
-        println(result)
+    
+    func gotResult(prefix: String, result: AnyObject) {
+        
         stopLoading()
-        if result["success"] as Bool{
-            // login success
-            UserInfo.setUserData(email.text, name: "", accessToken: result["token"] as String, id: "")
+        
+        if prefix == "login"{
             
-            UserInfo.downloadUserInfo()
-            
-        }else{
-            
+            if result["token"]? != nil{
+                // login success
+                UserInfoGlobal.updateUserInfo()
+                self.performSegueWithIdentifier("loginSucc", sender: self)
+                
+            }else{
+                if((result["message"] as String).rangeOfString("password")?.isEmpty != nil){
+                    displaySpeaker("email and password not matched")
+                }
+                else if ((result["message"] as String).rangeOfString("ascii")?.isEmpty != nil)
+                {
+                    
+                    displaySpeaker("请不要输入中文，please type english!")
+                }
+                else if ((result["message"] as String).rangeOfString("Account")?.isEmpty != nil)
+                {
+                    displaySpeaker("Your Account not activated. Please check your email")
+                }
+            }
+
         }
     }
+    
+    
+    func gotProfileResult(result: [String: AnyObject]){
+        
+        stopLoading()
+        
+    }
+    
+    
+    // display the speaker on teemo
+    func displaySpeaker(text: String){
+        
+        messageDisplay.text = text
+        
+        if teemoSpeaker.alpha != 1{
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                
+                self.teemoSpeaker.alpha = 1
+                
+                }
+                , completion: {
+                    (value: Bool) in
+                    
+            })
+        }
+    }
+    
+    // speaker on teemo disappear
+    
+    func disappearSpeaker(){
+        if teemoSpeaker.alpha != 0{
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+                
+                self.teemoSpeaker.alpha = 0
+                
+                }
+                , completion: {
+                    (value: Bool) in
+                    
+            })
+        }
+        
+    }
+    
     
     // keyboard customization
     func textFieldShouldReturn(textField: UITextField) -> Bool {
@@ -67,18 +141,18 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             password.becomeFirstResponder()
         }else if textField == password{
             password.resignFirstResponder()
-            loginWithUserAndPass()
         }
         
-        println(back.superview)
-
         return true
     }
     
-    // keyboard return
-    func keyboardReturn(gestureRecognizer: UITapGestureRecognizer){
+    // background tapped
+    func backGroundTapped(gestureRecognizer: UITapGestureRecognizer){
         password.resignFirstResponder()
         email.resignFirstResponder()
+        if teemoSpeaker.alpha != 0{
+            disappearSpeaker()
+        }
     }
     
     //loading view display while login
@@ -97,7 +171,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

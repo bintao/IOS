@@ -16,11 +16,22 @@ class DataManager: NSObject {
         let fileManager = NSFileManager()
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         path = path.stringByAppendingPathComponent("UserInformation.plist")
-        let resource = NSBundle.mainBundle().pathForResource("UserInformation", ofType: "plist") as String?
+        var resource = NSBundle.mainBundle().pathForResource("UserInformation", ofType: "plist") as String?
         
         var dict = NSDictionary(contentsOfFile: resource!)
+            fileManager.copyItemAtPath(resource!, toPath: path, error: nil)
+
+        path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        path = path.stringByAppendingPathComponent("UserTeam")
+        resource = NSBundle.mainBundle().pathForResource("UserTeam", ofType: "plist") as String?
+        dict = NSDictionary(contentsOfFile: resource!)
         fileManager.copyItemAtPath(resource!, toPath: path, error: nil)
         
+        path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        path = path.stringByAppendingPathComponent("LOLInfo")
+        resource = NSBundle.mainBundle().pathForResource("LOLInfo", ofType: "plist") as String?
+        dict = NSDictionary(contentsOfFile: resource!)
+        fileManager.copyItemAtPath(resource!, toPath: path, error: nil)
     }
     
     
@@ -36,31 +47,80 @@ class DataManager: NSObject {
         
     }
     
-    class func saveUserInfoToLocal(info: [String: AnyObject]){
+    class func saveUserInfoToLocal(info: [String: AnyObject?]){
         
         let fileManager = NSFileManager()
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         path = path.stringByAppendingPathComponent("UserInformation.plist")
         
-        let dict : NSDictionary = info
+        let dict : NSDictionary = info as [String: AnyObject]
         dict.writeToFile(path, atomically: true)
         
     }
     
-    //save User Icon
-    class func saveUserIconToLocal(img: UIImage){
+    class func getTeamInfo()->[String: AnyObject]{
         
         let fileManager = NSFileManager()
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        path = path.stringByAppendingPathComponent("icon.png")
+        path = path.stringByAppendingPathComponent("UserTeam.plist")
         
-        var binaryImage:NSData = UIImagePNGRepresentation(img)
-        binaryImage.writeToFile(path, atomically: true)
+        let dict = NSDictionary(contentsOfFile: path)
+        
+        return dict as [String: AnyObject]
         
     }
     
+    class func saveTeamInfoToLocal(info: [String: AnyObject?]){
+        
+        let fileManager = NSFileManager()
+        var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        path = path.stringByAppendingPathComponent("UserTeam.plist")
+        
+        let dict : NSDictionary = info as [String: AnyObject]
+        dict.writeToFile(path, atomically: true)
+        
+    }
+    
+    class func getLOLInfo()->[String: AnyObject]{
+        
+        let fileManager = NSFileManager()
+        var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        path = path.stringByAppendingPathComponent("LOLInfo.plist")
+        
+        let dict = NSDictionary(contentsOfFile: path)
+        
+        return dict as [String: AnyObject]
+        
+    }
+    
+    class func saveLOLInfoToLocal(info: [String: AnyObject?]){
+        
+        let fileManager = NSFileManager()
+        var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        path = path.stringByAppendingPathComponent("LOLInfo.plist")
+        
+        let dict : NSDictionary = info as [String: AnyObject]
+        dict.writeToFile(path, atomically: true)
+        
+    }
+
+    class func saveUserIconFromLocal(icon: UIImage){
+
+        let fileManager = NSFileManager()
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var imagePath = paths.stringByAppendingPathComponent("icon.png")
+        UIImagePNGRepresentation(icon).writeToFile(imagePath, atomically: true)
+    }
+
+    class func getUserIconPath()->String{
+        let fileManager = NSFileManager()
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var imagePath = paths.stringByAppendingPathComponent("icon.png")
+        
+        return imagePath
+    }
     //get User Icon
-    class func getUserIconFromLocal()->UIImage{
+    class func getUserIconFromLocal()->UIImage?{
         var image: UIImage!
         let fileManager = NSFileManager()
         var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
@@ -73,6 +133,31 @@ class DataManager: NSObject {
         }
         
         return image
+    }
+
+    
+    //get User Icon
+    class func getTeamIconFromLocal()->UIImage{
+        var image: UIImage!
+        let fileManager = NSFileManager()
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var imagePath = paths.stringByAppendingPathComponent("teamicon.png")
+        if (fileManager.fileExistsAtPath(imagePath)) {
+            let getImage = UIImage(contentsOfFile: imagePath)
+            image = getImage
+        }else{
+            
+        }
+        return image
+    }
+    
+    
+    class func saveTeamIconFromLocal(icon: UIImage){
+        
+        let fileManager = NSFileManager()
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var imagePath = paths.stringByAppendingPathComponent("teamicon.png")
+        UIImagePNGRepresentation(icon).writeToFile(imagePath, atomically: true)
     }
 
 }
