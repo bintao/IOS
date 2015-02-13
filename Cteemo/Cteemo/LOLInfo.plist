@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>lolLevel</key>
-	<integer>0</integer>
+	<string></string>
 	<key>lolIcon</key>
 	<string></string>
 	<key>lolpatch</key>
