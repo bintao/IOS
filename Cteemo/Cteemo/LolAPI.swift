@@ -18,7 +18,7 @@ class LolAPI: NSObject{
     var lolID :String?
     var lolRank: String?
     var lolName: String?
-    var lolLevel : Int = 0
+    var lolLevel : String?
     var lolIcon : String?
     var lolpatch : String?
     
@@ -26,7 +26,7 @@ class LolAPI: NSObject{
         
         var data:[String: AnyObject] = DataManager.getLOLInfo()
         lolID = data["lolID"] as? String
-        lolLevel = data["lolLevel"] as Int
+        lolLevel = data["lolLevel"] as? String
         lolRank = data["lolRank"] as? String
         lolName = data["lolName"] as? String
         lolIcon = data["lolIcon"] as? String
@@ -42,15 +42,18 @@ class LolAPI: NSObject{
         lolID = ""
         lolName = ""
         lolRank = ""
-        lolLevel = 0
+        lolLevel = ""
         lolIcon = ""
         lolpatch = ""
         DataManager.saveUserInfoToLocal(packaging())
     }
     
     func saveLOLData(){
+        
         var data:[String: AnyObject?] = packaging()
+        
         DataManager.saveLOLInfoToLocal(data)
+        
     }
     //get LOL summoner ID and level
     func getSummonerID(lolName : String, loginView: Login_SchoolAndPhoto){
@@ -60,13 +63,35 @@ class LolAPI: NSObject{
         req.delegate = loginView
         req.sendRequest()
     }
+
     
     func getIDresult(result: [String: AnyObject]){
         if result["id"] != nil{
-            var idd: Int = result["id"] as Int
-            lolID = "\(idd)"
-            lolLevel = result["summonerLevel"] as Int
-            saveLOLData()
+          
+            
+            println(result)
+            
+            if result["id"]? != nil {
+                var idd: Int! = result["id"] as? Int!
+                self.lolID = "\(idd)"
+            }
+            
+            if result["name"]? != nil {
+                LolAPIGlobal.lolName = result["name"] as? String
+            }
+            
+            if result["profileIconId"]? != nil {
+                LolAPIGlobal.lolIcon = result["profileIconId"] as? String
+            }
+            
+            if result["summonerLevel"]? != nil {
+                var idd: Int! = result["summonerLevel"] as? Int!
+                self.lolLevel = "\(idd)"
+            }
+        
+            self.saveLOLData()
+            
+            
             
             if(result["summonerLevel"] as Int == 30){
             self.getSummonerLeague(lolID!)
@@ -112,6 +137,19 @@ class LolAPI: NSObject{
                     UserInfoGlobal.saveUserData()
                 }
         }
+        
+    }
+    
+    
+    func getlolIcon(vision : String , id :String)->UIImage{
+        
+        var image:UIImage!
+        var str = "http://ddragon.leagueoflegends.com/cdn/"+vision+"/img/profileicon/"+id+".png"
+        var url = NSURL(string: str)
+        var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
+        image = UIImage(data: data)
+        image = image.roundCornersToCircle()
+        return image
         
     }
     

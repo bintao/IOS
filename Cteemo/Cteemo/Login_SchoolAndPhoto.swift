@@ -96,8 +96,9 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             var re = ARequest()
             re.uploadPhoto()
         }else if prefix == LolAPIGlobal.key {
-            
+            println(result)
             LolAPIGlobal.getIDresult((result as [String: AnyObject])[LolAPIGlobal.lolName!] as [String: AnyObject])
+            println(LolAPIGlobal.lolID)
             
         }
         
@@ -154,10 +155,11 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     
     func textFieldDidEndEditing(textField: UITextField) {
         if textField == lolName {
-            //lolapi.
+            
+            LolAPIGlobal.getSummonerID(self.lolName.text, loginView: Login_SchoolAndPhoto())
         }
     }
-    
+
     func displaySpeaker(text: String){
         messageDisplay.text = text
         
