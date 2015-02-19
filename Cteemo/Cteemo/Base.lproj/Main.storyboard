@@ -1823,7 +1823,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX3-eO-xmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="vGF-HT-bC3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6122" y="1509"/>
+            <point key="canvasLocation" x="6275" y="1146"/>
         </scene>
         <!--CREATE TEAM-->
         <scene sceneID="S1Y-3s-Tgk">
@@ -1942,11 +1942,12 @@
                         <outlet property="teamIntro" destination="w9j-JW-7Mx" id="7TG-Lg-L9m"/>
                         <outlet property="teamName" destination="AhU-FB-bTE" id="Raa-fG-xHb"/>
                         <segue destination="Qc5-Ow-Tzo" kind="presentation" identifier="addTeamImage" id="5uu-Vu-39E"/>
+                        <segue destination="hEF-di-Hta" kind="presentation" identifier="toTeamInfo" id="Xdi-dd-yWS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgX-LB-i11" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6743" y="386"/>
+            <point key="canvasLocation" x="5535" y="1052"/>
         </scene>
         <!--Join a Team-->
         <scene sceneID="bpP-pN-ogk">
@@ -2290,6 +2291,7 @@
         <image name="white.png" width="1200" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Xdi-dd-yWS"/>
         <segue reference="WGx-hs-GOh"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>

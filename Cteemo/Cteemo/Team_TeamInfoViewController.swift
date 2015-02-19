@@ -67,7 +67,7 @@ class Team_TeamInfoViewController: UIViewController{
                 if JSON != nil{
                     if((JSON as [String:AnyObject])["status"] as String == "success")
                     {
-                self.performSegueWithIdentifier("returnToTeam", sender: self)
+                    self.performSegueWithIdentifier("returnToTeam", sender: self)
                     println((JSON as [String:AnyObject])["status"])
                     }
                 }
@@ -93,7 +93,9 @@ class Team_TeamInfoViewController: UIViewController{
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func toTeamInfo(segue : UIStoryboardSegue) {
+        
+    }
     /*
     // MARK: - Navigation
 

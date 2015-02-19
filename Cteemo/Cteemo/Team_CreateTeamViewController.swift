@@ -52,8 +52,13 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
                 if JSON != nil{
                     
                     var result: [String: AnyObject] = JSON as [String: AnyObject]
-                    println(result)
-
+                    
+                    if(result["id"]? != nil){
+                    
+                    self.performSegueWithIdentifier("toTeamInfo", sender: self)
+                    
+                        println(result["id"])
+                    }
                 }
                 
         }
@@ -79,6 +84,11 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
             
             var controller: Team_AddPhoto = segue.destinationViewController as Team_AddPhoto
             controller.sourceImage = self.sourceImage
+        }
+        
+         if segue.identifier == "toTeamInfo"{
+            
+            var controller: Team_TeamInfoViewController = segue.destinationViewController as Team_TeamInfoViewController
         }
         
     }
