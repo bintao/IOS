@@ -30,6 +30,8 @@ class MeViewController: UIViewController {
         
         //clean all saved user data
         UserInfoGlobal.cleanUserData()
+        TeamInfoGlobal.cleanUserData()
+        LolAPIGlobal.cleanUserData()
         // team data
 
          ((self.parentViewController as UINavigationController).parentViewController as MainViewController).logout()
