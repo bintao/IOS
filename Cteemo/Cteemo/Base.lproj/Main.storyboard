@@ -1806,6 +1806,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="dwP-Q5-qV9">
+                        <barButtonItem key="leftBarButtonItem" enabled="NO" title="func" id="cqV-ti-zej">
+                            <connections>
+                                <action selector="leaveteam:" destination="hEF-di-Hta" id="3aq-ZP-NCr"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="more111.png" id="xLF-d3-XXF">
                             <connections>
                                 <action selector="leaveteam:" destination="hEF-di-Hta" id="pmx-H6-q5b"/>
@@ -1926,7 +1931,6 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="CREATE TEAM" id="Bxb-vu-etp">
-                        <barButtonItem key="leftBarButtonItem" id="pi4-jT-vZD"/>
                         <barButtonItem key="rightBarButtonItem" title="CREATE" id="JVQ-AG-4Wd">
                             <connections>
                                 <action selector="createTeam:" destination="1rz-XN-iyY" id="eBz-xR-ieX"/>
@@ -1942,10 +1946,11 @@
                         <outlet property="teamIntro" destination="w9j-JW-7Mx" id="7TG-Lg-L9m"/>
                         <outlet property="teamName" destination="AhU-FB-bTE" id="Raa-fG-xHb"/>
                         <segue destination="Qc5-Ow-Tzo" kind="presentation" identifier="addTeamImage" id="5uu-Vu-39E"/>
-                        <segue destination="hEF-di-Hta" kind="presentation" identifier="toTeamInfo" id="Xdi-dd-yWS"/>
+                        <segue destination="wEk-h5-C70" kind="unwind" identifier="toTeamInfo" unwindAction="returnToTeam:" id="0Tv-60-ZAv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgX-LB-i11" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="wEk-h5-C70" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="5535" y="1052"/>
         </scene>
@@ -2291,7 +2296,6 @@
         <image name="white.png" width="1200" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Xdi-dd-yWS"/>
         <segue reference="WGx-hs-GOh"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>

@@ -10,7 +10,7 @@
 import UIKit
 import Alamofire
 
-class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImagePickerControllerDelegate, UINavigationControllerDelegate, RequestResultDelegate{
 
     @IBOutlet var schoolPublicOut: UIView!
     
@@ -45,23 +45,23 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
     
     @IBAction func createTeam(sender: UIBarButtonItem) {
         
-        var manager = Manager.sharedInstance
-        manager.session.configuration.HTTPAdditionalHeaders = ["token": UserInfoGlobal.accessToken!]
-        var req = Alamofire.request(.POST, "http://54.149.235.253:5000/create_team/lol",parameters: ["teamName":teamName.text, "teamIntro":teamIntro.text,"isSchool":true])
-            .responseJSON { (_, _, JSON, _) in
-                if JSON != nil{
-                    
-                    var result: [String: AnyObject] = JSON as [String: AnyObject]
-                    
-                    if(result["id"]? != nil){
-                    
-                    self.performSegueWithIdentifier("toTeamInfo", sender: self)
-                    
-                        println(result["id"])
-                    }
-                }
-                
+        var req = ARequest(prefix: "create_team/lol", method: requestType.POST, parameters: ["teamName":teamName.text, "teamIntro":teamIntro.text,"isSchool":true])
+        req.delegate = self
+        req.sendRequestWithToken(UserInfoGlobal.accessToken!)
+        
+    }
+    
+    func gotResult(prefix: String, result: AnyObject) {
+        
+        println(result)
+
+        if(result["id"]? != nil){
+            
+            self.performSegueWithIdentifier("toTeamInfo", sender: self)
+            
+            println(result["id"])
         }
+
     }
     
     //get photo for team

@@ -135,7 +135,9 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     
     @IBAction func returnToTeam(segue : UIStoryboardSegue) {
-        
+        if TeamInfoGlobal.team_Intro != nil{
+            self.performSegueWithIdentifier("presentMyTeam", sender: self)
+        }
     }
     
     

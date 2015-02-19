@@ -128,11 +128,13 @@ class LolAPI: NSObject{
         let url = "http://ddragon.leagueoflegends.com/realms/na.json"
         Alamofire.request(.GET,url)
             .responseJSON { (_, _, JSON, _) in
+                if JSON != nil{
                 var result: [String: AnyObject] = (JSON as [String: AnyObject])["n"] as [String: AnyObject]
-                if result["profileicon"]? != nil {
+                    if result["profileicon"]? != nil {
                     
-                    LolAPIGlobal.lolpatch = result["profileicon"] as? String
-                    UserInfoGlobal.saveUserData()
+                        LolAPIGlobal.lolpatch = result["profileicon"] as? String
+                        UserInfoGlobal.saveUserData()
+                    }
                 }
         }
         
