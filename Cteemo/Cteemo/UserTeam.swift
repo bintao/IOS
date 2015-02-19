@@ -20,6 +20,8 @@ class UserTeam: NSObject{
     var team_Intro : String?
     var teamicon: UIImage?
     
+    var iscaptain : String?
+    
     func setUp(){
         
         var data:[String: AnyObject] = DataManager.getUserInfo()
@@ -35,11 +37,12 @@ class UserTeam: NSObject{
         team_Intro = data["team_Intro"] as? String
         teamID = data["teamID"] as? String
         teamName = data["teamName"] as? String
+        iscaptain = data["iscaptain"] as? String
         saveUserData()
     }
     
     func packaging()->[String: AnyObject]{
-        var data:[String: AnyObject] = ["team_Intro" : team_Intro!,"teamID":teamID!,"teamName" :teamName!]
+        var data:[String: AnyObject] = ["team_Intro" : team_Intro!,"teamID":teamID!,"teamName" :teamName!,"iscaptain": iscaptain!]
         return data
     }
     
@@ -81,6 +84,7 @@ class UserTeam: NSObject{
         teamName = ""
         teamID = ""
         team_Intro = ""
+        iscaptain = ""
         var data:[String: AnyObject] = packaging()
         DataManager.saveTeamInfoToLocal(data)
     }

@@ -26,8 +26,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
 
         if UserInfoGlobal.profile_ID == ""{
                 UserInfoGlobal.updateUserInfo()
-        }else{
-            self.performSegueWithIdentifier("presentMyTeam", sender: self)
         }
         
         var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
@@ -52,15 +50,13 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
             
             if(captain != UserInfoGlobal.profile_ID){
                 println("You are not a captain.")
-               // UserInfoGlobal.iscaptain = "no"
-                UserInfoGlobal.saveUserData()
+                TeamInfoGlobal.iscaptain = "no"
             }
                 
             else {
                 
                 println("You are a captain.")
-               // UserInfoGlobal.iscaptain = "yes"
-                UserInfoGlobal.saveUserData()
+               TeamInfoGlobal.iscaptain = "yes"
             }
 
             TeamInfoGlobal.teamID = result["id"] as? String
@@ -90,7 +86,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     override func viewDidAppear(animated: Bool) {
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
-        if TeamInfoGlobal.team_Intro != nil{
+        if TeamInfoGlobal.team_Intro != nil && TeamInfoGlobal.team_Intro != ""{
             self.performSegueWithIdentifier("presentMyTeam", sender: self)
         }
 
@@ -141,9 +137,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     
     @IBAction func returnToTeam(segue : UIStoryboardSegue) {
-        if UserInfoGlobal.profile_ID != nil{
-            self.performSegueWithIdentifier("presentMyTeam", sender: self)
-        }
+      
     }
     
     

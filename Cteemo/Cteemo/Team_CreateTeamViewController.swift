@@ -57,9 +57,28 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
 
         if(result["id"]? != nil){
             
-            self.performSegueWithIdentifier("toTeamInfo", sender: self)
+    
             
-            println(result["id"])
+            var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
+            
+            if(captain != UserInfoGlobal.profile_ID){
+                println("You are not a captain.")
+                TeamInfoGlobal.iscaptain = "no"
+            }
+                
+            else {
+                
+                println("You are a captain.")
+                TeamInfoGlobal.iscaptain = "yes"
+            }
+            
+            TeamInfoGlobal.teamID = result["id"] as? String
+            TeamInfoGlobal.teamName = result["teamName"] as? String
+            TeamInfoGlobal.team_Intro = result["teamIntro"] as? String
+            
+            TeamInfoGlobal.saveUserData()
+            
+            self.performSegueWithIdentifier("toTeamInfo", sender: self)
         }
 
     }

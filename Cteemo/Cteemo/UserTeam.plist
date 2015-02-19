@@ -10,5 +10,7 @@
 	<string></string>
 	<key>teamID</key>
 	<string></string>
+	<key>iscaptain</key>
+	<string></string>
 </dict>
 </plist>

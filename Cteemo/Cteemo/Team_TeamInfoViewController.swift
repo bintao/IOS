@@ -84,6 +84,9 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     @IBAction func toTeamInfo(segue : UIStoryboardSegue) {
         
     }
+
+
+
     /*
     // MARK: - Navigation
 
