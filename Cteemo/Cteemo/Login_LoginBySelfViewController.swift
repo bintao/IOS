@@ -58,8 +58,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
                 displaySpeaker("password is empty")
             }
             else{
-            displaySpeaker("email is invalid")
-            
+                displaySpeaker("email is invalid")
             }
         
         }
@@ -86,7 +85,6 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
                 .responseJSON { (_, _, JSON, _) in
                     var result: [String: AnyObject] = JSON as [String: AnyObject]
                     self.gotProfileResult(result)
-                    
             }
             
             UserInfo.saveUserData()
@@ -99,7 +97,6 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
                 }
                 else if ((result["message"] as String).rangeOfString("ascii")?.isEmpty != nil)
                 {
-                
                     displaySpeaker("请不要输入中文，please type english!")
                 }
                else if ((result["message"] as String).rangeOfString("Account")?.isEmpty != nil)

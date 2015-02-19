@@ -125,7 +125,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                 self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
                 
             }
-
             
         }
         
