@@ -51,9 +51,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         
         sender.setTitle("Cancel", forState: UIControlState.Normal)
     }
-   
-  //kjn
-    
+       
     override func viewDidAppear(animated: Bool) {
         println(memberScroll.frame)
         

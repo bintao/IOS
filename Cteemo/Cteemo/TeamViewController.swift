@@ -74,7 +74,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
             
             println("not joined team yet")
             
-        }
+            }
         }
 
     }
@@ -85,6 +85,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
           }
     
     override func viewDidAppear(animated: Bool) {
+        
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
         if TeamInfoGlobal.team_Intro != nil && TeamInfoGlobal.team_Intro != ""{
             self.performSegueWithIdentifier("presentMyTeam", sender: self)

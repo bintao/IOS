@@ -42,9 +42,7 @@ class MainViewController: UIViewController, UITabBarDelegate {
          
             self.performSegueWithIdentifier("login", sender: self)
             
-        }
-        
-        if !UserInfoGlobal.userIsLogined(){
+        }else if !UserInfoGlobal.userIsLogined(){
             
             // if user have't login let him login
             FBSession.activeSession().closeAndClearTokenInformation()
