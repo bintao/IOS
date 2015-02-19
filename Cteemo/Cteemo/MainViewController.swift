@@ -180,7 +180,7 @@ class MainViewController: UIViewController, UITabBarDelegate {
     
     
     @IBAction func returnToMain(segue : UIStoryboardSegue) {
-        
+        showTabb()
     }
     
 }
