@@ -26,6 +26,8 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
 
         if UserInfoGlobal.profile_ID == ""{
                 UserInfoGlobal.updateUserInfo()
+        }else{
+            self.performSegueWithIdentifier("presentMyTeam", sender: self)
         }
         
         var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
@@ -139,7 +141,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     
     @IBAction func returnToTeam(segue : UIStoryboardSegue) {
-        if TeamInfoGlobal.team_Intro != nil{
+        if UserInfoGlobal.profile_ID != nil{
             self.performSegueWithIdentifier("presentMyTeam", sender: self)
         }
     }

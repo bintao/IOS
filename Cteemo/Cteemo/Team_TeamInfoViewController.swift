@@ -68,7 +68,8 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     }
     
     func gotResult(prefix: String, result: AnyObject) {
-    
+        
+        println(result)
         if((result as [String:AnyObject])["status"] as String == "success")
         {
             TeamInfoGlobal.cleanUserData()
