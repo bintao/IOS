@@ -87,7 +87,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     override func viewDidAppear(animated: Bool) {
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
-        if TeamInfoGlobal.team_Intro != nil && TeamInfoGlobal.team_Intro != ""{
+        if TeamInfoGlobal.teamID != nil && TeamInfoGlobal.teamID != ""{
             self.performSegueWithIdentifier("presentMyTeam", sender: self)
         }
 
