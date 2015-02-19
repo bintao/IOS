@@ -44,11 +44,11 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
     }
     
     @IBAction func createTeam(sender: UIBarButtonItem) {
-        
+        if( teamName.text != "" ){
         var req = ARequest(prefix: "create_team/lol", method: requestType.POST, parameters: ["teamName":teamName.text, "teamIntro":teamIntro.text,"isSchool":true])
         req.delegate = self
         req.sendRequestWithToken(UserInfoGlobal.accessToken!)
-        
+        }
     }
     
     func gotResult(prefix: String, result: AnyObject) {
@@ -56,7 +56,6 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
         println(result)
 
         if(result["id"]? != nil){
-            
     
             
             var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)

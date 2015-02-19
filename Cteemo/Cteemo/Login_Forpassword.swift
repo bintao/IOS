@@ -51,7 +51,7 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
         }else if email.text == "" || email.text.rangeOfString("@")?.isEmpty == nil{
         displaySpeaker("Email Invalid")
         }
-        
+    
         
     
     }

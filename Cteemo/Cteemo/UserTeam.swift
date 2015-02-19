@@ -6,7 +6,9 @@
 //  Copyright (c) 2015年 Kedan Li. All rights reserved.
 //
 
-import Foundation
+
+import UIKit
+import Alamofire
 
 var TeamInfoGlobal: UserTeam = UserTeam()
 
@@ -18,9 +20,11 @@ class UserTeam: NSObject{
     var teamID : String?
     var team_isschool: Bool?
     var team_Intro : String?
-    var teamicon: UIImage?
+    //var teamicon_link : String?
+    
     
     var iscaptain : String?
+    var teamicon: UIImage?
     
     func setUp(){
         
@@ -38,6 +42,7 @@ class UserTeam: NSObject{
         teamID = data["teamID"] as? String
         teamName = data["teamName"] as? String
         iscaptain = data["iscaptain"] as? String
+       // teamicon_link = data["teamicon_link"] as? String
         saveUserData()
     }
     
@@ -56,15 +61,52 @@ class UserTeam: NSObject{
         teamicon = DataManager.getUserIconFromLocal()
     }
     
+    func getIconFromServer(){
+      //  var url = NSURL(string: teamicon_link!)
+        //var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
+        //teamicon = UIImage(data: data)
+        
+    }
+    
     func gotResult(prefix: String, result: [String : AnyObject]) {
         println(result)
     }
     //upload user information to the server
     
-    func uploadUserInfo(){
-        
+    func uploadTeamInfo(){
+       
+        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/my_team/lol")
+            .responseJSON { (_, _, JSON, _) in
+                var result: [String: AnyObject] = JSON as [String: AnyObject]
+                self.gotResult(result)
+        }
+
     }
     
+    func gotResult(result: [String: AnyObject]) {
+       
+        println(result)
+            if result["id"]? != nil {
+                TeamInfoGlobal.teamID = result["id"] as? String
+            }
+            if result["teamName"]? != nil {
+                TeamInfoGlobal.teamName = result["teamName"] as? String
+            }
+            if result["teamIntro"]? != nil {
+                TeamInfoGlobal.team_Intro = result["teamIntro"] as? String
+            }
+            var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
+                
+                if(captain != UserInfoGlobal.profile_ID){
+                    TeamInfoGlobal.iscaptain = "no"
+                }
+                else {
+                    TeamInfoGlobal.iscaptain = "yes"
+                }
+        
+        TeamInfoGlobal.saveUserData()
+
+    }
     //download user information from the server
     
     func downloadUserInfo(){

@@ -51,7 +51,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         if(prefix == "my_team/lol" ){
             if(result["id"]?  != nil ){
             // joined team
-          
+            println(result)
             var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
             
             if(captain != UserInfoGlobal.profile_ID){
@@ -93,7 +93,9 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     override func viewDidAppear(animated: Bool) {
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
+        
         if TeamInfoGlobal.teamID != nil && TeamInfoGlobal.teamID != ""{
+            TeamInfoGlobal.uploadTeamInfo()
             self.performSegueWithIdentifier("presentMyTeam", sender: self)
         }
 

@@ -123,10 +123,14 @@ class UserInformation: NSObject, RequestResultDelegate{
                 LolAPIGlobal.lolName = result["lolID"] as? String
             }
             
-            if result["LOLTeam"]? != nil {
-                TeamInfoGlobal.teamID = result["LOLTeam"] as? String
+            if result["LOLTeamID"]? != nil {
+                TeamInfoGlobal.teamID = result["LOLTeamID"] as? String
             }
-           
+            
+            if result["LOLTeam"]? != nil {
+                TeamInfoGlobal.teamName = result["LOLTeam"] as? String
+            }
+         UserInfoGlobal.saveUserData()
         }
     }
     

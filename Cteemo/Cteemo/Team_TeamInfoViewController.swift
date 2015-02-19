@@ -22,7 +22,6 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigation.title = TeamInfoGlobal.teamName
         
         capTain.setImage(UserInfoGlobal.icon, forState: UIControlState.Normal)
@@ -39,7 +38,6 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
             lab.text = members[index]
             lab.font = capTainName.font
             memberScroll.addSubview(lab)
-        
             
         }
         
