@@ -33,16 +33,15 @@ class MainViewController: UIViewController, UITabBarDelegate {
         team.alpha = 0
         me.alpha = 0
         
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         
-        
         if !UserInfo.userIsLogined(){
             
             // if user have't login let him login
-            FBSession.activeSession().closeAndClearTokenInformation()
-            self.performSegueWithIdentifier("login", sender: self)
+            logout()
             
         }else{
             
@@ -53,6 +52,8 @@ class MainViewController: UIViewController, UITabBarDelegate {
                 self.view.bringSubviewToFront(self.tabbar)
             }
         }
+
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -126,7 +127,7 @@ class MainViewController: UIViewController, UITabBarDelegate {
     func hideTabb(){
         tabbarShouldAppear = false
         if tabbar.alpha > 0{
-            UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
                 
                 self.tabbar.alpha = 0
                 self.tabbar.transform = CGAffineTransformMakeTranslation(0, self.tabbar.frame.height)

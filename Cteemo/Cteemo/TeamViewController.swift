@@ -23,20 +23,24 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        var manager = Manager.sharedInstance
-        manager.session.configuration.HTTPAdditionalHeaders = ["token": UserInfo.accessToken!]
-        
-        
-        var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
-        req.delegate = self
-        req.sendRequestWithToken(UserInfo.accessToken!)
-
-        otherChoices.backgroundColor = UIColor.clearColor()
-        
-        teams = ["My Boy","I'm the king","Sunrise","Cicicici","God of Michigan"]
         
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(animated: Bool) {
+        
+        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
+        
+        if UserInfo.accessToken != nil{
+        var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
+        req.delegate = self
+        req.sendRequestWithToken(UserInfo.accessToken!)
+        }
+        otherChoices.backgroundColor = UIColor.clearColor()
+        
+        teams = ["My Boy","I'm the king","Sunrise","Cicicici","God of Michigan"]
+
+    }
+    
     
     func gotResult(prefix: String, result: AnyObject) {
         println(prefix + "dsdd")
@@ -82,10 +86,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
             
         }
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
-    }
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier != "presentMyTeam"{

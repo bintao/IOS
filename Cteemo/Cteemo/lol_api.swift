@@ -38,7 +38,7 @@ class lol_api: NSObject{
         if result["id"] != nil{
             var idd: Int = result["id"] as Int
             UserInfo.lolID = "\(idd)"
-            UserInfo.lolLevel = result["summonerLevel"] as Int
+            UserInfo.lolLevel = result["summonerLevel"] as? String
             UserInfo.saveUserData()
             println(UserInfo.lolID)
             println(UserInfo.lolLevel)

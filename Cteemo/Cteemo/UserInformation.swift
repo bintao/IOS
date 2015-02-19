@@ -14,28 +14,28 @@ var UserInfo: UserInformation = UserInformation()
 class UserInformation: NSObject {
    
     // User profile
-    var email: String? = ""
-    var name: String? = ""
-    var fbid: String? = ""
-    var accessToken: String? = ""
-    var gender: String? = ""
-    var school: String? = ""
-    var intro: String? = ""
-    var lolID :String? = ""
-    var lolRank: String? = ""
-    var lolName: String? = ""
-    var profile_ID: String? = ""
-    var lolLevel : Int = 0
-    var lolIcon : String? = ""
+    var email: String?
+    var name: String?
+    var fbid: String?
+    var accessToken: String?
+    var gender: String?
+    var school: String?
+    var intro: String?
+    var lolID :String?
+    var lolRank: String?
+    var lolName: String?
+    var profile_ID: String?
+    var lolLevel : String?
+    var lolIcon : String?
     var icon: UIImage?
     
     //check if the user is logined
     func userIsLogined()->Bool{
-        
-        if accessToken == "" {
-            return false
-        }else{
+
+        if (accessToken?.isEmpty != nil) {
             return true
+        }else{
+            return false
         }
     }
     
@@ -53,13 +53,15 @@ class UserInformation: NSObject {
         school = data["school"] as? String
         intro = data["intro"] as? String
         
-        lolLevel = data["lolLevel"] as Int
+        lolLevel = data["lolLevel"] as? String
         lolRank = data["lolRank"] as? String
         lolName = data["lolName"] as? String
         profile_ID = data["profile_ID"] as? String
         lolIcon = data["lolIcon"] as? String
         
         icon = DataManager.getUserIconFromLocal()
+        
+        println(data)
     }
     
     //change user data and save
@@ -119,7 +121,7 @@ class UserInformation: NSObject {
         lolName = ""
         lolRank = ""
         profile_ID = ""
-        lolLevel = 0
+        lolLevel = ""
         lolIcon = ""
         DataManager.saveUserInfoToLocal(packaging())
     }

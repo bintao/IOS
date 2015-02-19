@@ -25,7 +25,7 @@
 	<key>profile_ID</key>
 	<string></string>
 	<key>lolLevel</key>
-	<integer>0</integer>
+	<string>0</string>
 	<key>lolIcon</key>
 	<string></string>
 </dict>

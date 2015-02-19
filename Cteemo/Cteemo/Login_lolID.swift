@@ -32,9 +32,9 @@ class Login_lolID: UIViewController, UIScrollViewDelegate{
     override func viewDidAppear(animated: Bool) {
         
   
-        if(UserInfo.lolLevel != 0 && UserInfo.lolRank != "" ){
+        if(UserInfo.lolLevel != "" && UserInfo.lolRank != "" ){
         self.lolname.text = UserInfo.lolName
-        self.lol_level.text = "Summoner's Level" + String(UserInfo.lolLevel)
+        self.lol_level.text = "Summoner's Level " + UserInfo.lolLevel!
         self.lol_rank.text = UserInfo.lolRank
         
         }

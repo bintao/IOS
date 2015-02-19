@@ -47,7 +47,21 @@ class DataManager: NSObject {
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         path = path.stringByAppendingPathComponent("UserInformation.plist")
         
-        let dict : NSDictionary = info as [String: AnyObject]
+        var data = [String: AnyObject]()
+        let arr = info.keys.array
+
+        for var index = 0; index < info.count; index++ {
+            
+            
+            if info[arr[index]]? != nil {
+                data[arr[index]] = info[arr[index]]!;
+            }else{
+                data[arr[index]] = nil
+            }
+        }
+        
+        let dict : NSDictionary = data
+
         dict.writeToFile(path, atomically: true)
         
     }
@@ -70,7 +84,17 @@ class DataManager: NSObject {
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         path = path.stringByAppendingPathComponent("UserTeam.plist")
         
-        let dict : NSDictionary = info
+        var data = [String: AnyObject]()
+        let arr = info.keys.array
+        for var index = 0; index < info.count; index++ {
+            if info[arr[index]]? != nil{
+                data[arr[index]] = info[arr[index]]!;
+            }else{
+                data[arr[index]] = nil
+            }
+        }
+        
+        let dict : NSDictionary = data
         dict.writeToFile(path, atomically: true)
         
     }

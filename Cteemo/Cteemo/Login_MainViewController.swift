@@ -38,7 +38,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     {
         
         // avoid running multiple time
-        if UserInfo.fbid!.isEmpty || UserInfo.gender!.isEmpty||UserInfo.name!.isEmpty{
+        if (UserInfo.fbid?.isEmpty == nil){
             
             UserInfo.gender = user.objectForKey("gender") as? String
             UserInfo.name = user.name
