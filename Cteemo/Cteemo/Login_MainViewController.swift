@@ -38,15 +38,17 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     {
         
         // avoid running multiple time
-        if (UserInfo.fbid?.isEmpty == nil){
+        if UserInfoGlobal.fbid!.isEmpty || UserInfoGlobal.gender!.isEmpty||UserInfoGlobal.name!.isEmpty{
             
-            UserInfo.gender = user.objectForKey("gender") as? String
-            UserInfo.name = user.name
-            UserInfo.fbid = user.objectForKey("id") as? String
+            // save user info from facebook
+            UserInfoGlobal.gender = user.objectForKey("gender") as? String
+            UserInfoGlobal.name = user.name
+            UserInfoGlobal.fbid = user.objectForKey("id") as? String
             if user.objectForKey("email") != nil{
-                UserInfo.email = user.objectForKey("email") as? String
+                UserInfoGlobal.email = user.objectForKey("email") as? String
             }
-            UserInfo.saveUserData()
+            
+            UserInfoGlobal.saveUserData()
             
         }
 
@@ -63,12 +65,12 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
             if !(error != nil)
             {
-                println(result)
+               
                 //get facebook token
                 var myToken = FBSession.activeSession().accessTokenData.accessToken
 
                 // get token from the server
-                var req = ARequest(prefix: "fb_login", method: requestType.POST, parameters: ["fbtoken": myToken, "fbid": UserInfo.fbid!,"fbemail":UserInfo.fbid!+"@cteemo.com"])
+                var req = ARequest(prefix: "fb_login", method: requestType.POST, parameters: ["fbtoken": myToken, "fbid": UserInfoGlobal.fbid!,"fbemail":UserInfoGlobal.fbid!+"@cteemo.com"])
                 req.delegate = self
                 req.sendRequest()
                 
@@ -85,15 +87,14 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     func gotResult(prefix: String, result: AnyObject) {
         
         if prefix == "fb_login"{
-        
-            println(result)
-            
             //save token
+            
             if result["token"]? != nil
             {
-                UserInfo.accessToken = result["token"] as? String
-                UserInfo.saveUserData()
+                UserInfoGlobal.accessToken = result["token"] as? String
+                UserInfoGlobal.saveUserData()
                 //get profile from the user
+                println( UserInfoGlobal.accessToken )
                 getProfileFromServer()
                 
             }else{
@@ -101,30 +102,36 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                 //facebook login failed
             }
             
-        }else if prefix == "profile" {
-            
+        }
+        
+        else if prefix == "profile" {
+            println(result)
+
             if result["username"]? != nil {
                 //old User
                 
-                UserInfo.profile_ID = result["id"] as? String
-                UserInfo.saveUserData()
+                UserInfoGlobal.updateUserInfo()
                 stopLoading()
                 self.performSegueWithIdentifier("exitToMain", sender: self)
                 
-            }else {
+                //self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
+            }
+            else {
                 
                 //new user
                 var facebookIcon: UIImage? = self.getPotraitFromFacebook() as UIImage
                 
                 if facebookIcon != nil{
-                    UserInfo.icon = facebookIcon
-                    UserInfo.saveUserIcon()
                     
+                    UserInfoGlobal.icon = facebookIcon
+                    UserInfoGlobal.saveUserIcon()
+            
                 }
                 stopLoading()
                 self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
                 
             }
+
             
         }
         
@@ -135,12 +142,11 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     
     func getProfileFromServer(){
         
-        var req = ARequest(prefix: "profile", method: requestType.POST)
+        var req = ARequest(prefix: "profile", method: requestType.GET)
         req.delegate = self
-        req.sendRequestWithToken(UserInfo.accessToken!)
+        req.sendRequestWithToken(UserInfoGlobal.accessToken!)
         
     }
-    
     
     func getFriends(){
         FBRequestConnection.startForMyFriendsWithCompletionHandler({ (connection, result, error: NSError!) -> Void in
@@ -160,7 +166,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     func getPotraitFromFacebook()->UIImage{
         
         var image:UIImage!
-        var str = "http://graph.facebook.com/\(UserInfo.fbid!)/picture?type=large"
+        var str = "http://graph.facebook.com/\(UserInfoGlobal.fbid!)/picture?type=large"
         var url = NSURL(string: str)
         var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
         image = UIImage(data: data)
@@ -184,7 +190,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     func loginView(loginView: FBLoginView!, handleError error: NSError!) {
         println(error)
     }
-
 
     @IBAction func returnToLoginMain(segue : UIStoryboardSegue) {
         

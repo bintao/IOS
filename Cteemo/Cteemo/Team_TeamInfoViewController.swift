@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Alamofire
 
-class Team_TeamInfoViewController: UIViewController {
+class Team_TeamInfoViewController: UIViewController{
 
     @IBOutlet var navigation : UINavigationItem!
 
@@ -22,15 +23,15 @@ class Team_TeamInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigation.title = TeamInfo.teamName
+        navigation.title = TeamInfoGlobal.teamName
         
-        capTain.setImage(UserInfo.icon, forState: UIControlState.Normal)
-        capTainName.text = UserInfo.name
+        capTain.setImage(UserInfoGlobal.icon, forState: UIControlState.Normal)
+        capTainName.text = UserInfoGlobal.name
         
         memberScroll.contentSize = CGSizeMake(75 * CGFloat(members.count), 75)
         for var index = 0; index < members.count; index++ {
             var but = UIButton(frame: CGRectMake(5 + 75 * CGFloat(index), 10, 65, 65))
-            but.setImage(UserInfo.icon, forState: UIControlState.Normal)
+            but.setImage(UserInfoGlobal.icon, forState: UIControlState.Normal)
             memberScroll.addSubview(but)
             
             var lab = UILabel(frame: CGRectMake(75 * CGFloat(index), 75, 75, 20))
@@ -38,6 +39,7 @@ class Team_TeamInfoViewController: UIViewController {
             lab.text = members[index]
             lab.font = capTainName.font
             memberScroll.addSubview(lab)
+        
             
         }
         
@@ -49,11 +51,14 @@ class Team_TeamInfoViewController: UIViewController {
         
         sender.setTitle("Cancel", forState: UIControlState.Normal)
     }
+   
+  
     
     override func viewDidAppear(animated: Bool) {
         println(memberScroll.frame)
+        
+    }
 
-<<<<<<< HEAD
     @IBAction func leaveteam(sender: AnyObject) {
         var manager = Manager.sharedInstance
         manager.session.configuration.HTTPAdditionalHeaders = ["token": UserInfoGlobal.accessToken!]
@@ -82,10 +87,7 @@ class Team_TeamInfoViewController: UIViewController {
     
     
     
-=======
->>>>>>> FETCH_HEAD
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

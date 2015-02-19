@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         DataManager.initializeUserInfo()
         
-        UserInfo.setUp()
+        UserInfoGlobal.setUp()
         
         // Override point for customization after application launch.
         return true
