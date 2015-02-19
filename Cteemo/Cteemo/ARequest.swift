@@ -17,6 +17,7 @@ protocol RequestResultDelegate: NSObjectProtocol{
 enum requestType {
     case GET
     case POST
+    case DELETE
 }
 
 //a request class
@@ -70,6 +71,14 @@ class ARequest: NSObject {
                         self.gotResult(JSON!)
                     }
             }
+        }else if requestType.DELETE == method{
+            var req = Alamofire.request(.DELETE, server + prefix, parameters: parameters)
+                .responseJSON { (_, _, JSON, _) in
+                    if JSON != nil{
+                        self.gotResult(JSON!)
+                    }
+            }
+
         }
     }
 

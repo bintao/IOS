@@ -85,12 +85,7 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
             var controller: Team_AddPhoto = segue.destinationViewController as Team_AddPhoto
             controller.sourceImage = self.sourceImage
         }
-        
-         if segue.identifier == "toTeamInfo"{
-            
-            var controller: Team_TeamInfoViewController = segue.destinationViewController as Team_TeamInfoViewController
-        }
-        
+                
     }
 
     func textViewShouldBeginEditing(textView: UITextView) -> Bool {
