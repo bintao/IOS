@@ -326,7 +326,7 @@ public class Manager {
     */
     public func request(URLRequest: URLRequestConvertible) -> Request {
         var dataTask: NSURLSessionDataTask?
-        dispatch_sync(queue){
+        dispatch_sync(queue) {
             dataTask = self.session.dataTaskWithRequest(URLRequest.URLRequest)
         }
 

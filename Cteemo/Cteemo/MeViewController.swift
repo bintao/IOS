@@ -15,7 +15,7 @@ class MeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var img = UIImageView(image: UserInfoGlobal.icon)
+        var img = UIImageView(image: UserInfo.icon)
         img.frame = CGRectMake(100, 100, 100, 100)
         self.view.addSubview(img)
         // Do any additional setup after loading the view.
@@ -29,7 +29,7 @@ class MeViewController: UIViewController {
     @IBAction func log_out(sender: UIButton) {
         
         //clean all saved user data
-        UserInfoGlobal.cleanUserData()
+        UserInfo.cleanUserData()
         // team data
 
          ((self.parentViewController as UINavigationController).parentViewController as MainViewController).logout()

@@ -65,9 +65,9 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         
         if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {
             
-            UserInfoGlobal.email = email.text
-            UserInfoGlobal.name = nickname.text
-            UserInfoGlobal.saveUserData()
+            UserInfo.email = email.text
+            UserInfo.name = nickname.text
+            UserInfo.saveUserData()
             
             self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
             

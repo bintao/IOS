@@ -8,17 +8,18 @@
 
 import Foundation
 
-var TeamInfoGlobal: UserTeam = UserTeam()
+var TeamInfo: UserTeam = UserTeam()
 
 class UserTeam: NSObject{
     
     // User team
     
-    var teamName: String?
-    var teamID : String?
-    var team_isschool: Bool?
-    var team_Intro : String?
-    var teamicon: UIImage?
+    var teamName: String = ""
+    var teamID : String = ""
+    var team_isschool: Bool!
+    var team_Intro : String = ""
+    var teamicon: UIImage!
+    
     
     func setUp(){
         
@@ -32,18 +33,19 @@ class UserTeam: NSObject{
     func setUserData(data: [String: AnyObject]){
  
         // team data
-        team_Intro = data["team_Intro"] as? String
-        teamID = data["teamID"] as? String
-        teamName = data["teamName"] as? String
+        team_Intro = data["team_Intro"] as String
+        teamID = data["teamID"] as String
+        teamName = data["teamName"] as String
+        
         saveUserData()
     }
     
     func packaging()->[String: AnyObject]{
-        var data:[String: AnyObject] = ["team_Intro" : team_Intro!,"teamID":teamID!,"teamName" :teamName!]
+        var data:[String: AnyObject] = ["team_Intro" : team_Intro,"teamID":teamID,"teamName" :teamName]
         return data
     }
     
-    func saveTeamIcon(){
+    func saveUserIcon(){
         if teamicon != nil{
             
         }

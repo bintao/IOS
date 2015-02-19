@@ -23,72 +23,70 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if UserInfoGlobal.profile_ID == ""{
-                UserInfoGlobal.updateUserInfo()
-        }
-        
-        var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
-        req.delegate = self
-        req.sendRequestWithToken(UserInfoGlobal.accessToken!)
-        
-        
-        otherChoices.backgroundColor = UIColor.clearColor()
-        
-        teams = ["My Boy","I'm the king","Sunrise","Cicicici","God of Michigan"]
         
         // Do any additional setup after loading the view.
     }
+    override func viewDidAppear(animated: Bool) {
+        
+        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
+        
+        if UserInfo.accessToken != nil{
+        var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
+        req.delegate = self
+        req.sendRequestWithToken(UserInfo.accessToken!)
+        }
+        otherChoices.backgroundColor = UIColor.clearColor()
+        
+        teams = ["My Boy","I'm the king","Sunrise","Cicicici","God of Michigan"]
+
+    }
+    
     
     func gotResult(prefix: String, result: AnyObject) {
-       
-        if(prefix == "my_team/lol" ){
-        if(result["id"]?  != nil ){
-            // joined team
-          
-            var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
-            
-            if(captain != UserInfoGlobal.profile_ID){
-                println("You are not a captain.")
-               // UserInfoGlobal.iscaptain = "no"
-                UserInfoGlobal.saveUserData()
-            }
-                
-            else {
-                
-                println("You are a captain.")
-               // UserInfoGlobal.iscaptain = "yes"
-                UserInfoGlobal.saveUserData()
-            }
-
-            TeamInfoGlobal.teamID = result["id"] as? String
-            TeamInfoGlobal.teamName = result["teamName"] as? String
-            TeamInfoGlobal.team_Intro = result["teamIntro"] as? String
-            
-            TeamInfoGlobal.saveUserData()
-            
-            self.performSegueWithIdentifier("presentMyTeam", sender: self)
-            
-            
-        }
-            
-        else {
-            
-            println("not joined team yet")
-            
-        }
-        }
-
+        println(prefix + "dsdd")
+        println(result)
     }
     
     
     func gotTeam(result: [String: AnyObject]){
         
-          }
-    
-    override func viewDidAppear(animated: Bool) {
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
+        println(result)
+        
+        if(result["id"]?  != nil ){
+            // joined team
+            
+            var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
+            
+            if(captain != UserInfo.profile_ID){
+                println("You are not a captain.")
+                println(UserInfo.profile_ID)
+            }
+                
+            else {
+                
+                self.performSegueWithIdentifier("presentMyTeam", sender: self)
+                
+                println("You are a captain.")
+                
+            }
+            
+            
+            TeamInfo.teamID = result["id"] as String
+            TeamInfo.teamName = result["teamName"] as String
+            TeamInfo.team_Intro = result["teamIntro"] as String
+            
+            TeamInfo.saveUserData()
+            println(TeamInfo.teamID)
+            println(TeamInfo.teamName)
+            println(TeamInfo.team_Intro)
+            
+        }
+        else {
+            println("not joined team yet")
+            
+        }
     }
+
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier != "presentMyTeam"{
@@ -134,9 +132,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     }
     
     
-    @IBAction func returnToTeam(segue : UIStoryboardSegue) {
-        
-    }
     
     
     /*

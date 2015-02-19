@@ -33,8 +33,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                     var img : UIImage = UIImage(named: str)!
                     imageArray.append(img)
             }
-        
-        
         //imageScrollimageScrollView.contentSize = image.size
         
     }

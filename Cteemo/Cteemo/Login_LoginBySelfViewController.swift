@@ -9,18 +9,18 @@
 import UIKit
 import Alamofire
 
-class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate, RequestResultDelegate{
-    
+class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate{
+
     @IBOutlet var bg : UIImageView!
     
     @IBOutlet var email : UITextField!
     @IBOutlet var password : UITextField!
     
     @IBOutlet var back : UIButton!
-    
+
     @IBOutlet var login : UIButton!
     @IBOutlet var forgotPass : UIView!
-    
+
     @IBOutlet var loadingView : UIImageView!
     @IBOutlet var loading : UIActivityIndicatorView!
     
@@ -33,16 +33,20 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
         
         //add tap gesture to board
         self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "backGroundTapped:"))
-        
+
         // Do any additional setup after loading the view, typically from a nib.
     }
-    
+
     //login
     @IBAction func loginWithUserAndPass(){
         if  (password.text != nil) && email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil {
-            var req = ARequest(prefix: "login", method: requestType.POST, parameters: ["email": email.text, "password":password.text ])
-            req.delegate = self
-            req.sendRequest()
+
+            var req = Alamofire.request(.POST, "http://54.149.235.253:5000/login", parameters: ["email": email.text, "password":password.text ])
+                .responseJSON { (_, _, JSON, _) in
+                    var result: [String: AnyObject] = JSON as [String: AnyObject]
+                    self.gotLoginResult(result)
+                    
+                }
             self.startLoading()
             
         }else{
@@ -55,48 +59,59 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             }
             else{
                 displaySpeaker("email is invalid")
-                
             }
-            
+        
         }
     }
-    
-    func gotResult(prefix: String, result: AnyObject) {
+
+    func gotLoginResult(result: [String: AnyObject]){
+
+            stopLoading()
         
-        stopLoading()
-        
-        if prefix == "login"{
+             if result["token"]?  != nil{
+            // login success
             
-            if result["token"]? != nil{
-                // login success
-                UserInfoGlobal.updateUserInfo()
-                self.performSegueWithIdentifier("loginSucc", sender: self)
-                
-            }else{
+            UserInfo.accessToken = result["token"] as? String
+            UserInfo.email = email.text
+            // Creating an Instance of the Alamofire Manager
+            var manager = Manager.sharedInstance
+            
+            // Specifying the Headers we need
+            manager.session.configuration.HTTPAdditionalHeaders = [
+                "token": UserInfo.accessToken!
+            ]
+            
+            var req = Alamofire.request(.GET, "http://54.149.235.253:5000/profile", parameters: nil)
+                .responseJSON { (_, _, JSON, _) in
+                    var result: [String: AnyObject] = JSON as [String: AnyObject]
+                    self.gotProfileResult(result)
+            }
+            
+            UserInfo.saveUserData()
+
+            UserInfo.downloadUserInfo()
+            
+        }else{
                 if((result["message"] as String).rangeOfString("password")?.isEmpty != nil){
                     displaySpeaker("email and password not matched")
                 }
                 else if ((result["message"] as String).rangeOfString("ascii")?.isEmpty != nil)
                 {
-                    
                     displaySpeaker("请不要输入中文，please type english!")
                 }
-                else if ((result["message"] as String).rangeOfString("Account")?.isEmpty != nil)
-                {
+               else if ((result["message"] as String).rangeOfString("Account")?.isEmpty != nil)
+                 {
                     displaySpeaker("Your Account not activated. Please check your email")
                 }
-            }
-
         }
     }
-    
-    
+
     func gotProfileResult(result: [String: AnyObject]){
         
         stopLoading()
         
     }
-    
+
     
     // display the speaker on teemo
     func displaySpeaker(text: String){
@@ -105,13 +120,13 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
         
         if teemoSpeaker.alpha != 1{
             UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                
+            
                 self.teemoSpeaker.alpha = 1
-                
+            
                 }
-                , completion: {
-                    (value: Bool) in
-                    
+            , completion: {
+                (value: Bool) in
+                
             })
         }
     }
@@ -130,7 +145,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
                     
             })
         }
-        
+
     }
     
     
@@ -171,7 +186,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
+
+
 }
 

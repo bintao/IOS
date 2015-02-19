@@ -92,7 +92,7 @@ class ARequest: NSObject {
         var manager1 = Manager.sharedInstance
         //manager.requestSerializer = [AFJSONRequestSerializer serializer]
         manager1.session.configuration.HTTPAdditionalHeaders = [
-            "token": UserInfoGlobal.accessToken!
+            "token": UserInfo.accessToken!
         ]
         
         var parameters = NSMutableDictionary()
@@ -106,7 +106,7 @@ class ARequest: NSObject {
         
         var manager = AFURLSessionManager(sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
         manager.session.configuration.HTTPAdditionalHeaders = [
-            "token": UserInfoGlobal.accessToken!
+            "token": UserInfo.accessToken!
         ]
         
         uploadRequest = manager.uploadTaskWithStreamedRequest(request, progress: nil) { (response, obj, error) -> Void in
@@ -116,6 +116,7 @@ class ARequest: NSObject {
             }
         }
         uploadRequest?.resume()
+        
     }
 
     

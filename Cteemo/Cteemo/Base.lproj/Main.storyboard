@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -114,7 +114,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <exit id="2pp-Wd-a8q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1384" y="37"/>
+            <point key="canvasLocation" x="2192" y="-291"/>
         </scene>
         <!--Login Login By Self View Controller-->
         <scene sceneID="ToN-RI-bck">
@@ -306,13 +306,12 @@
                         <outlet property="messageDisplay" destination="voG-dk-kKL" id="cNj-nV-NfD"/>
                         <outlet property="password" destination="aHA-Cp-TT3" id="Dd5-f6-u0m"/>
                         <outlet property="teemoSpeaker" destination="xzk-Hb-dPp" id="ebC-jq-qfD"/>
-                        <segue destination="7LM-Ig-88d" kind="unwind" identifier="loginSucc" unwindAction="returnToMain:" id="MrS-to-JF8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Z26-4V-JeQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="7LM-Ig-88d" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="95" y="473"/>
+            <point key="canvasLocation" x="895" y="489"/>
         </scene>
         <!--Login Create View Controller-->
         <scene sceneID="2bj-h2-56j">
@@ -644,7 +643,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5V2-re-qgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="UVh-MB-tYB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1633" y="1077"/>
+            <point key="canvasLocation" x="1913" y="845"/>
         </scene>
         <!--Login Add Photo-->
         <scene sceneID="rFt-8Y-mJN">
@@ -1806,22 +1805,16 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="dwP-Q5-qV9">
-                        <barButtonItem key="rightBarButtonItem" image="more111.png" id="xLF-d3-XXF">
-                            <connections>
-                                <action selector="leaveteam:" destination="hEF-di-Hta" id="pmx-H6-q5b"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="more111.png" id="xLF-d3-XXF"/>
                     </navigationItem>
                     <connections>
                         <outlet property="capTain" destination="0PV-pF-ZOy" id="q1P-B0-9Zy"/>
                         <outlet property="capTainName" destination="dLQ-Ch-b9H" id="eU6-UE-6PK"/>
                         <outlet property="memberScroll" destination="awa-X6-gY3" id="WmH-sa-ywW"/>
                         <outlet property="navigation" destination="dwP-Q5-qV9" id="ESu-7v-6I0"/>
-                        <segue destination="vGF-HT-bC3" kind="unwind" identifier="returnToTeam" unwindAction="returnToTeam:" id="RSJ-Qn-vLa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX3-eO-xmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="vGF-HT-bC3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6275" y="1146"/>
         </scene>
