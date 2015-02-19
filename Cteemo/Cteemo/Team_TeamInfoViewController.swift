@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Alamofire
 
-class Team_TeamInfoViewController: UIViewController {
+class Team_TeamInfoViewController: UIViewController{
 
     @IBOutlet var navigation : UINavigationItem!
 
@@ -38,6 +39,7 @@ class Team_TeamInfoViewController: UIViewController {
             lab.text = members[index]
             lab.font = capTainName.font
             memberScroll.addSubview(lab)
+        
             
         }
         
@@ -49,12 +51,43 @@ class Team_TeamInfoViewController: UIViewController {
         
         sender.setTitle("Cancel", forState: UIControlState.Normal)
     }
+   
+  
     
     override func viewDidAppear(animated: Bool) {
         println(memberScroll.frame)
-
+        
     }
 
+    @IBAction func leaveteam(sender: AnyObject) {
+        var manager = Manager.sharedInstance
+        manager.session.configuration.HTTPAdditionalHeaders = ["token": UserInfoGlobal.accessToken!]
+        var req = Alamofire.request(.DELETE, "http://54.149.235.253:5000/create_team/lol")
+            .responseJSON { (_, _, JSON, _) in
+                if JSON != nil{
+                    if((JSON as [String:AnyObject])["status"] as String == "success")
+                    {
+                self.performSegueWithIdentifier("returnToTeam", sender: self)
+                    println((JSON as [String:AnyObject])["status"])
+                    }
+                }
+                
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "returnToTeam"{
+            
+            var controller: TeamViewController = segue.destinationViewController as TeamViewController
+        }
+        
+    }
+    func gotResult(prefix: String, result: AnyObject) {
+    
+    
+    
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

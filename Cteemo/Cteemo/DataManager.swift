@@ -48,13 +48,16 @@ class DataManager: NSObject {
     }
     
     class func saveUserInfoToLocal(info: [String: AnyObject?]){
+        
         let fileManager = NSFileManager()
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         path = path.stringByAppendingPathComponent("UserInformation.plist")
         
         let dict : NSDictionary = info as [String: AnyObject]
-        dict.writeToFile(path, atomically: true)
         
+        dict.writeToFile(path, atomically: true)
+
+
     }
     
     class func getTeamInfo()->[String: AnyObject]{

@@ -91,8 +91,6 @@ class LolAPI: NSObject{
         
             self.saveLOLData()
             
-            
-            
             if(result["summonerLevel"] as Int == 30){
             self.getSummonerLeague(lolID!)
             }

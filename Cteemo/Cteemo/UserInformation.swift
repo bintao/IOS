@@ -22,9 +22,11 @@ class UserInformation: NSObject, RequestResultDelegate{
     var school: String?
     var intro: String?
     var profile_icon_Link: String?
-
+    
     var profile_ID: String?
-
+    //var iscaptain: String?
+    
+    
     var icon: UIImage?
     
     //check if the user is logined
@@ -49,6 +51,8 @@ class UserInformation: NSObject, RequestResultDelegate{
         school = data["school"] as? String
         intro = data["intro"] as? String
         profile_ID = data["profile_ID"] as? String
+        
+        //iscaptain = data["iscpatain"] as? String
         
         profile_icon_Link = data["profile_icon_Link"] as? String
 
@@ -145,6 +149,8 @@ class UserInformation: NSObject, RequestResultDelegate{
         intro = ""
         profile_ID = ""
         profile_icon_Link = ""
+        //iscaptain = ""
+        
         DataManager.saveUserInfoToLocal(packaging())
     }
     

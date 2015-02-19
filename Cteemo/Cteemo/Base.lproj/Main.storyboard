@@ -967,7 +967,7 @@
                                     <action selector="submitProfile:" destination="UYe-Qw-NJx" eventType="touchUpInside" id="8tW-0E-tKs"/>
                                 </connections>
                             </button>
-                            <view alpha="0.0" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEx-Up-Tcd">
+                            <view alpha="0.0" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEx-Up-Tcd">
                                 <rect key="frame" x="374" y="28" width="130" height="106"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="speaker.png" translatesAutoresizingMaskIntoConstraints="NO" id="cdT-rb-Sbx">
@@ -1806,16 +1806,22 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="dwP-Q5-qV9">
-                        <barButtonItem key="rightBarButtonItem" image="more111.png" id="xLF-d3-XXF"/>
+                        <barButtonItem key="rightBarButtonItem" image="more111.png" id="xLF-d3-XXF">
+                            <connections>
+                                <action selector="leaveteam:" destination="hEF-di-Hta" id="pmx-H6-q5b"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="capTain" destination="0PV-pF-ZOy" id="q1P-B0-9Zy"/>
                         <outlet property="capTainName" destination="dLQ-Ch-b9H" id="eU6-UE-6PK"/>
                         <outlet property="memberScroll" destination="awa-X6-gY3" id="WmH-sa-ywW"/>
                         <outlet property="navigation" destination="dwP-Q5-qV9" id="ESu-7v-6I0"/>
+                        <segue destination="vGF-HT-bC3" kind="unwind" identifier="returnToTeam" unwindAction="returnToTeam:" id="RSJ-Qn-vLa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX3-eO-xmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="vGF-HT-bC3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6122" y="1509"/>
         </scene>

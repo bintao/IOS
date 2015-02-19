@@ -37,14 +37,21 @@ class MainViewController: UIViewController, UITabBarDelegate {
     
     override func viewDidAppear(animated: Bool) {
         
+        if (UserInfoGlobal.accessToken == "" )
+        {
+         
+            self.performSegueWithIdentifier("login", sender: self)
+            
+        }
         
         if !UserInfoGlobal.userIsLogined(){
             
             // if user have't login let him login
             FBSession.activeSession().closeAndClearTokenInformation()
             self.performSegueWithIdentifier("login", sender: self)
-            
-        }else{
+
+        }
+        else{
             
             LolAPIGlobal.getlolvision()
 

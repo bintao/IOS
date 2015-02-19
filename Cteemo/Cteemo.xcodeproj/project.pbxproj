@@ -313,7 +313,6 @@
 			children = (
 				42B74FC11A812416008B575C /* TeamViewController.swift */,
 				42855B9C1A8459A600EB9546 /* Team_JoinTeamViewController.swift */,
-				421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */,
 				42855BA11A846C0000EB9546 /* Team_FindTeamPostsViewController.swift */,
 				42855BA71A84803000EB9546 /* Team_CreateTeamViewController.swift */,
 				A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */,
@@ -403,6 +402,7 @@
 				42B859EC1A74840F00FD4642 /* AppDelegate.swift */,
 				42B859F31A74840F00FD4642 /* Main.storyboard */,
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
+				421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */,
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
 				42B74FBE1A812416008B575C /* MainViewController.swift */,
 				42B74FBF1A812416008B575C /* TournamentViewController.swift */,

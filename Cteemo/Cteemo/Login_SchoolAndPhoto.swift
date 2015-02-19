@@ -90,7 +90,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             }
             else {
                 //can't find lolID
-                self.displaySpeaker("We can't find your lolID information please check your ID")
+            self.displaySpeaker("We can't find your lolID information please check your ID")
             }
             
             var re = ARequest()

@@ -20,7 +20,6 @@ class UserTeam: NSObject{
     var team_Intro : String?
     var teamicon: UIImage?
     
-    
     func setUp(){
         
         var data:[String: AnyObject] = DataManager.getUserInfo()
@@ -36,7 +35,6 @@ class UserTeam: NSObject{
         team_Intro = data["team_Intro"] as? String
         teamID = data["teamID"] as? String
         teamName = data["teamName"] as? String
-        
         saveUserData()
     }
     

@@ -34,12 +34,7 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
             .responseJSON { (_, _, JSON, _) in
                 println(JSON)
                 if JSON != nil{
-                    
                     println(JSON)
-                    var result: [AnyObject] = [AnyObject]()
-                    result = JSON as [AnyObject]
-                    
-                    self.gotResult(result)
                 }
                 self.stopLoading()
                 

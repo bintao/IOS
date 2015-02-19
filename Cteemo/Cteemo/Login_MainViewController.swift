@@ -65,7 +65,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
             if !(error != nil)
             {
-                println(result)
+               
                 //get facebook token
                 var myToken = FBSession.activeSession().accessTokenData.accessToken
 
@@ -112,9 +112,9 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                 
                 UserInfoGlobal.updateUserInfo()
                 stopLoading()
-                //self.performSegueWithIdentifier("exitToMain", sender: self)
+                self.performSegueWithIdentifier("exitToMain", sender: self)
                 
-                self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
+                //self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
             }
             else {
                 
