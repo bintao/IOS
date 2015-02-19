@@ -71,6 +71,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     
         if((result as [String:AnyObject])["status"] as String == "success")
         {
+            TeamInfoGlobal.cleanUserData()
             self.performSegueWithIdentifier("returnToTeam", sender: self)
         }
     }
