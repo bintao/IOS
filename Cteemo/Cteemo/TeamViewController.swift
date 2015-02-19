@@ -28,10 +28,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
                 UserInfoGlobal.updateUserInfo()
         }
         
-        var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
-        req.delegate = self
-        req.sendRequestWithToken(UserInfoGlobal.accessToken!)
-        
+        updateTeam()
         
         otherChoices.backgroundColor = UIColor.clearColor()
         
@@ -40,10 +37,19 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
     }
     
+    func updateTeam(){
+        var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
+        req.delegate = self
+        req.sendRequestWithToken(UserInfoGlobal.accessToken!)
+
+    }
+    
     func gotResult(prefix: String, result: AnyObject) {
        
+        println(result)
+
         if(prefix == "my_team/lol" ){
-        if(result["id"]?  != nil ){
+            if(result["id"]?  != nil ){
             // joined team
           
             var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
@@ -82,7 +88,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     func gotTeam(result: [String: AnyObject]){
         
-          }
+    }
     
     override func viewDidAppear(animated: Bool) {
         

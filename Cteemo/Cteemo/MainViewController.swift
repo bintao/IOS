@@ -181,6 +181,10 @@ class MainViewController: UIViewController, UITabBarDelegate {
     
     @IBAction func returnToMain(segue : UIStoryboardSegue) {
         showTabb()
+        
+        if segue.identifier == "exitToMain"{
+            println(self.childViewControllers[2])
+        }
     }
     
 }
