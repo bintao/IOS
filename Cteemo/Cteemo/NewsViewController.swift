@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, RequestResultDelegate {
     
     @IBOutlet var imageScrollView : CustomPosterView!
     @IBOutlet var newsTable : UITableView!
@@ -28,15 +28,20 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         imageArray = [UIImage]()
         
+        var req = ARequest(prefix: "news_list/all/0", method: requestType.GET)
+        req.delegate = self
+        req.sendRequest()
+        
         for var index = 1; index <= 3; index++ {
             var str = "img\(index).jpg"
                     var img : UIImage = UIImage(named: str)!
                     imageArray.append(img)
             }
-        
-        
-        //imageScrollimageScrollView.contentSize = image.size
-        
+    }
+    
+    func gotResult(prefix: String, result: AnyObject) {
+        println(result)
+       // if prefix.substringToIndex(9)
     }
     
     override func viewDidAppear(animated: Bool) {

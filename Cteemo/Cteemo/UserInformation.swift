@@ -44,9 +44,6 @@ class UserInformation: NSObject, RequestResultDelegate{
         
         
         var data:[String: AnyObject] = DataManager.getUserInfo()
-        print("???")
-        print(data)
-        print("???")
 
         name = data["name"] as String
         fbid = data["fbid"] as String
@@ -88,7 +85,7 @@ class UserInformation: NSObject, RequestResultDelegate{
     }
     
     func gotResult(prefix: String, result: [String : AnyObject]) {
-        println(result)
+
     }
     //upload user information to the server
    
@@ -105,10 +102,6 @@ class UserInformation: NSObject, RequestResultDelegate{
     
     func gotResult(prefix: String, result: AnyObject) {
         if prefix == "profile"{
-            
-            println("!!!!!!!!")
-
-            println(result)
             
             if result["username"]? != nil {
                 UserInfoGlobal.name = result["username"] as String

@@ -321,6 +321,14 @@
 			name = Team;
 			sourceTree = "<group>";
 		};
+		427037191A96F99A007B6B97 /* News */ = {
+			isa = PBXGroup;
+			children = (
+				42B74FC21A812416008B575C /* NewsViewController.swift */,
+			);
+			name = News;
+			sourceTree = "<group>";
+		};
 		428F6E731A7F2F3C007C21AC /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -409,7 +417,7 @@
 				425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */,
 				427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */,
 				421D56511A832452005E56F0 /* Team */,
-				42B74FC21A812416008B575C /* NewsViewController.swift */,
+				427037191A96F99A007B6B97 /* News */,
 				42B74FC31A812416008B575C /* MeViewController.swift */,
 				42B74FBD1A812220008B575C /* Login */,
 				42B85A411A74A81A00FD4642 /* UserInformation.swift */,

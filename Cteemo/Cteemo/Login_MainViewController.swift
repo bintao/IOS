@@ -97,7 +97,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                 UserInfoGlobal.accessToken = result["token"] as String
                 UserInfoGlobal.saveUserData()
                 //get profile from the user
-                println( UserInfoGlobal.accessToken )
                 getProfileFromServer()
                 
             }else{
@@ -108,7 +107,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         }
         
         else if prefix == "profile" {
-            println(result)
 
             if result["username"]? != nil {
                 //old User
@@ -156,7 +154,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
             if error == nil {
                 var friendObjects = result["data"] as [NSDictionary]
                 for friendObject in friendObjects {
-                    println(friendObject["id"] as NSString)
                 }
             } else {
                 println("Error requesting friends list form facebook")

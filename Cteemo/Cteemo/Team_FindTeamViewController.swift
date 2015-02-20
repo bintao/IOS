@@ -32,13 +32,11 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         ]
         
         startLoading()
-        println(searchBar.text)
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/search_team/lol", parameters: [ "teamName":searchBar.text])
             .responseJSON { (_, _, JSON, _) in
                 if JSON != nil{
                 var result: [AnyObject] = [AnyObject]()
                 result = JSON as [AnyObject]
-                println(result)
                 
                 self.gotResult(result)
                 }

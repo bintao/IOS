@@ -51,7 +51,6 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     }
        
     override func viewDidAppear(animated: Bool) {
-        println(memberScroll.frame)
         
     }
 
@@ -65,7 +64,6 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     
     func gotResult(prefix: String, result: AnyObject) {
         
-        println(result)
         if((result as [String:AnyObject])["status"] as String == "success")
         {
             TeamInfoGlobal.cleanUserData()
