@@ -78,11 +78,7 @@ class UserTeam: NSObject{
     }
     
     func gotResult(prefix: String, result: [String : AnyObject]) {
-<<<<<<< HEAD
     
-=======
-
->>>>>>> FETCH_HEAD
     }
     //upload user information to the server
     
@@ -98,7 +94,6 @@ class UserTeam: NSObject{
     
     func gotResult(result: [String: AnyObject]) {
        
-<<<<<<< HEAD
             if result["id"]? != nil {
                 TeamInfoGlobal.teamID = result["id"] as String
             }
@@ -130,26 +125,6 @@ class UserTeam: NSObject{
                     TeamInfoGlobal.iscaptain = "yes"
                     
                 }
-=======
-        if result["id"]? != nil {
-            TeamInfoGlobal.teamID = result["id"] as String
-        }
-        
-        if result["teamName"]? != nil {
-            TeamInfoGlobal.teamName = result["teamName"] as String
-        }
-        
-        if result["teamIntro"]? != nil {
-            TeamInfoGlobal.team_Intro = result["teamIntro"] as String
-        }
-        
-        var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
-        
-        if(captain != UserInfoGlobal.profile_ID){
-            TeamInfoGlobal.iscaptain = "no"
-        }else{
-            TeamInfoGlobal.iscaptain = "yes"
->>>>>>> FETCH_HEAD
         }
         
         TeamInfoGlobal.saveUserData()
@@ -164,7 +139,8 @@ class UserTeam: NSObject{
     
     }
     func downloadUserInfo(){
-
+        //InteractingWithServer.getUserProfile(self.accessToken)
+      
     }
     
     //Save User Data to local

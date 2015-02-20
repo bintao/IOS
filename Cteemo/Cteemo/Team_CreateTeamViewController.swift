@@ -53,11 +53,8 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
     
     func gotResult(prefix: String, result: AnyObject) {
         
-<<<<<<< HEAD
     
 
-=======
->>>>>>> FETCH_HEAD
         if(result["id"]? != nil){
     
             

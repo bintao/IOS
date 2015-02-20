@@ -10,7 +10,7 @@
 import UIKit
 import Alamofire
 
-class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, RequestResultDelegate {
+class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var loading : UIActivityIndicatorView!
     @IBOutlet var resultTable : UITableView!
     
@@ -22,9 +22,14 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
     }
     
     func search(){
-
+        
+        var manager = Manager.sharedInstance
+        // Specifying the Headers we need
+        manager.session.configuration.HTTPAdditionalHeaders = [
+            "token": UserInfoGlobal.accessToken
+        ]
+        
         startLoading()
-<<<<<<< HEAD
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/team_post", parameters:[String: AnyObject]())
             .responseJSON { (_, _, JSON, _) in
         
@@ -34,19 +39,11 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
                 self.stopLoading()
                 
         }
-=======
-        var req = ARequest(prefix: "team_post", method: requestType.GET)
-        req.delegate = self
-        req.sendRequestWithToken(UserInfoGlobal.accessToken)
-
->>>>>>> FETCH_HEAD
     }
     
-    func gotResult(prefix: String, result: AnyObject) {
-        if prefix == "team_post"{
-            println(result)
-        }
-        stopLoading()
+    func gotResult(result: [AnyObject]){
+        teams = result
+        resultTable.reloadData()
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

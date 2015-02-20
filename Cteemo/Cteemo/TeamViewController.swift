@@ -19,8 +19,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     @IBOutlet var otherChoices : UITableView!
     
-    // other joined teams      not used in the first
-    //var teams: [String] = [String]()
+    var teams: [String] = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,14 +30,13 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         if(UserInfoGlobal.accessToken != ""){
             updateTeam()
         }
-        otherChoices.backgroundColor = UIColor.whiteColor()
+        otherChoices.backgroundColor = UIColor.clearColor()
         
-        //teams = ["My Boy","I'm the king","Sunrise","Cicicici","God of Michigan"]
+        teams = ["My Boy","I'm the king","Sunrise","Cicicici","God of Michigan"]
         
         // Do any additional setup after loading the view.
     }
     
-    // update team information
     func updateTeam(){
         var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
         req.delegate = self
@@ -49,42 +47,38 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     func gotResult(prefix: String, result: AnyObject) {
 
         if(prefix == "my_team/lol" ){
-<<<<<<< HEAD
             if(result["id"]?  != nil ){
             // joined team
     
             var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
-=======
->>>>>>> FETCH_HEAD
             
-            if(result["id"]? != nil ){
+            if(captain != UserInfoGlobal.profile_ID){
+                println("You are not a captain.")
+                TeamInfoGlobal.iscaptain = "no"
+            }
                 
-                // joined team
-                println(result)
-                var captain = ((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String
+            else {
                 
-                if(captain != UserInfoGlobal.profile_ID){
-                    println("You are not a captain.")
-                    TeamInfoGlobal.iscaptain = "no"
-                }else{
-                    println("You are a captain.")
-                    TeamInfoGlobal.iscaptain = "yes"
-                }
-                
-                TeamInfoGlobal.teamID = result["id"] as String
-                TeamInfoGlobal.teamName = result["teamName"] as String
-                TeamInfoGlobal.team_Intro = result["teamIntro"] as String
-                
-                TeamInfoGlobal.saveUserData()
-                
-                self.performSegueWithIdentifier("presentMyTeam", sender: self)
+                println("You are a captain.")
+               TeamInfoGlobal.iscaptain = "yes"
+            }
+
+            TeamInfoGlobal.teamID = result["id"] as String
+            TeamInfoGlobal.teamName = result["teamName"] as String
+            TeamInfoGlobal.team_Intro = result["teamIntro"] as String
             
-            }else{
+            TeamInfoGlobal.saveUserData()
             
-                println("not joined team yet")
+            self.performSegueWithIdentifier("presentMyTeam", sender: self)
+            
+            
+        }
+            
+        else {
+            
+            println("not joined team yet")
             
             }
-            
         }
 
     }
@@ -112,7 +106,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return teams.count
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -125,7 +119,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
-        /*
         var backButton = UIButton()
         backButton.frame.size = createTeam.frame.size
         backButton.setImage(UIImage(named: "white"), forState: UIControlState.Normal)
@@ -140,7 +133,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         teamName.textColor = UIColor.darkGrayColor()
         teamName.font = UIFont(name: "AvenirNext-Medium", size: 18)
         cell.addSubview(teamName)
-        */
         
         return cell
     }
