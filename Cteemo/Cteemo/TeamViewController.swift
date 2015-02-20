@@ -45,13 +45,11 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     }
     
     func gotResult(prefix: String, result: AnyObject) {
-       
-        println(result)
 
         if(prefix == "my_team/lol" ){
             if(result["id"]?  != nil ){
             // joined team
-            println(result)
+    
             var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
             
             if(captain != UserInfoGlobal.profile_ID){

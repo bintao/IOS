@@ -32,9 +32,9 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         startLoading()
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/team_post", parameters:[String: AnyObject]())
             .responseJSON { (_, _, JSON, _) in
-                println(JSON)
+        
                 if JSON != nil{
-                    println(JSON)
+                 
                 }
                 self.stopLoading()
                 

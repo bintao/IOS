@@ -44,10 +44,7 @@ class UserInformation: NSObject, RequestResultDelegate{
         
         
         var data:[String: AnyObject] = DataManager.getUserInfo()
-        print("???")
-        print(data)
-        print("???")
-
+        println(data)
         name = data["name"] as String
         fbid = data["fbid"] as String
         accessToken = data["accessToken"] as String
@@ -88,7 +85,7 @@ class UserInformation: NSObject, RequestResultDelegate{
     }
     
     func gotResult(prefix: String, result: [String : AnyObject]) {
-        println(result)
+        
     }
     //upload user information to the server
    
@@ -105,20 +102,22 @@ class UserInformation: NSObject, RequestResultDelegate{
     
     func gotResult(prefix: String, result: AnyObject) {
         if prefix == "profile"{
-            
-            println("!!!!!!!!")
+         
 
-            println(result)
-            
+     
+    
             if result["username"]? != nil {
                 UserInfoGlobal.name = result["username"] as String
             }
+            else{ UserInfoGlobal.name = ""}
             if result["id"]? != nil {
                 UserInfoGlobal.profile_ID = result["id"] as String
             }
+             else{ UserInfoGlobal.profile_ID = ""}
             if result["intro"]? != nil {
                 UserInfoGlobal.intro = result["intro"] as String
             }
+            else{ UserInfoGlobal.intro = ""}
             if result["profile_icon"]? != nil {
                 UserInfoGlobal.profile_icon_Link = result["profile_icon"] as String
                 getIconFromServer()
@@ -126,19 +125,24 @@ class UserInformation: NSObject, RequestResultDelegate{
             if result["school"]? != nil {
                 UserInfoGlobal.school = result["school"] as String
             }
+            else{ UserInfoGlobal.school = ""}
             
             if result["lolID"]? != nil {
                 LolAPIGlobal.lolName = result["lolID"] as String
             }
-            
+            else{ LolAPIGlobal.lolName = ""}
             if result["LOLTeamID"]? != nil {
                 TeamInfoGlobal.teamID = result["LOLTeamID"] as String
             }
+            else{ TeamInfoGlobal.teamID  = ""}
             
             if result["LOLTeam"]? != nil {
                 TeamInfoGlobal.teamName = result["LOLTeam"] as String
             }
+            else { TeamInfoGlobal.teamName = ""}
          UserInfoGlobal.saveUserData()
+        TeamInfoGlobal.saveUserData()
+        LolAPIGlobal.saveLOLData()
         }
     }
     
@@ -146,7 +150,9 @@ class UserInformation: NSObject, RequestResultDelegate{
     //Save User Data to local
     
     func saveUserData(){
+        
         var data:[String: AnyObject] = packaging()
+        println(data)
         DataManager.saveUserInfoToLocal(data)
     }
     

@@ -17,7 +17,7 @@ class CustomPosterView: UIView {
     var pagec: UIPageControl!
     
     var images: [UIImage]!
-    
+
     func setup(imgs: [UIImage]){
         
         var gestureReco = UIPanGestureRecognizer(target: self, action: "dragged:")
@@ -40,7 +40,7 @@ class CustomPosterView: UIView {
         pagec.currentPage = 0
         pagec.numberOfPages = images.count
         self.addSubview(pagec)
-        
+    
     }
     
     func dragged(sender: UIPanGestureRecognizer){
@@ -135,6 +135,7 @@ class CustomPosterView: UIView {
         self.previous.transform = CGAffineTransformMakeTranslation(0, 0)
         
     }
+    
     /*
     // MARK: - Navigation
 

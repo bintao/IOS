@@ -127,6 +127,8 @@ Get Team Post
 curl localhost:5000/team_post -X GET --header "token: from login api"
 
 
+
+Create News
 curl 54.149.235.253:4000/news -X PUT -d "title=new1" -d "abstract=bla bla bla" -d "news_pic=http://www.cnbeta.com" -d "content=bla bla bla"
 
 Edit News
@@ -139,7 +141,7 @@ Upload News Image
 curl --form file=@icon.png --form press=OK 54.149.235.253:4000/upload_news_image/ -X POST
 
 Get News List
-curl 54.149.235.253:4000/news_list/tagA+tagB/page #
+curl 54.149.235.253:4000/news_list/all/page #
 
 Search News List
 curl 54.149.235.253:4000/search_news -X POST -d "search=test" -d "tags=[]" -d "page=0"
@@ -157,5 +159,3 @@ Load Article:
 curl 54.149.235.253:4000/load_article/http://www.engadget.com/2015/01/01/us-supreme-court-moving-to-digital-filing-system-in-2016/ -X GET
 
 S3_KEY=mykey S3_SECRET=mysecret application
-
-

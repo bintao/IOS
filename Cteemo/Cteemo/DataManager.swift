@@ -96,7 +96,6 @@ class DataManager: NSObject {
     
     class func saveLOLInfoToLocal(info: [String: AnyObject]){
        
-        println(info)
         let fileManager = NSFileManager()
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         path = path.stringByAppendingPathComponent("LOLInfo.plist")

@@ -29,10 +29,6 @@ class MeViewController: UIViewController {
     @IBAction func log_out(sender: UIButton) {
         
         //clean all saved user data
-        UserInfoGlobal.cleanUserData()
-        TeamInfoGlobal.cleanUserData()
-        LolAPIGlobal.cleanUserData()
-        // team data
 
          ((self.parentViewController as UINavigationController).parentViewController as MainViewController).logout()
         

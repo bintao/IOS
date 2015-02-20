@@ -12,5 +12,7 @@
 	<string></string>
 	<key>iscaptain</key>
 	<string></string>
+	<key>teamicon_link</key>
+	<string></string>
 </dict>
 </plist>

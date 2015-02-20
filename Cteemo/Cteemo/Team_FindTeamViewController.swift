@@ -38,7 +38,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
                 if JSON != nil{
                 var result: [AnyObject] = [AnyObject]()
                 result = JSON as [AnyObject]
-                println(result)
+               
                 
                 self.gotResult(result)
                 }

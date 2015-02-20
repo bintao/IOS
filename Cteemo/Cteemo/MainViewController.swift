@@ -164,20 +164,27 @@ class MainViewController: UIViewController, UITabBarDelegate {
     
     func logout(){
         hideTabb()
-        
+    
+        // clean facebook login
+        if UserInfoGlobal.fbid != "" {
+            
+            
+            if FBSession.activeSession().state == FBSessionState.Open{
+                FBSession.activeSession().closeAndClearTokenInformation()
+            }else{
+                
+                FBSession.activeSession().openWithCompletionHandler { (session, state, error) -> Void in
+                    // logout if needed
+                    FBSession.activeSession().closeAndClearTokenInformation()
+                }
+            }
+        }
         UserInfoGlobal.cleanUserData()
         TeamInfoGlobal.cleanUserData()
         LolAPIGlobal.cleanUserData()
-        // clean facebook login
-        if FBSession.activeSession().state == FBSessionState.Open{
-            FBSession.activeSession().closeAndClearTokenInformation()
-        }else{
-            
-            FBSession.activeSession().openWithCompletionHandler { (session, state, error) -> Void in
-                // logout if needed
-                FBSession.activeSession().closeAndClearTokenInformation()
-            }
-        }
+        
+        
+
         self.performSegueWithIdentifier("login", sender: self)
     }
     

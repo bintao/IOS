@@ -31,7 +31,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
             loginView.readPermissions = ["public_profile", "email", "user_friends"]
         
         var lk = UserInfoGlobal.packaging()
-        print(lk)
     }
     
     //save and update user data
@@ -97,7 +96,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                 UserInfoGlobal.accessToken = result["token"] as String
                 UserInfoGlobal.saveUserData()
                 //get profile from the user
-                println( UserInfoGlobal.accessToken )
+                println( UserInfoGlobal.accessToken)
                 getProfileFromServer()
                 
             }else{
@@ -108,7 +107,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         }
         
         else if prefix == "profile" {
-            println(result)
+  
 
             if result["username"]? != nil {
                 //old User

@@ -69,7 +69,10 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
             
             if result["token"]? != nil{
                 // login success
+                UserInfoGlobal.accessToken = result["token"] as String
+                UserInfoGlobal.saveUserData()
                 UserInfoGlobal.updateUserInfo()
+                
                 self.performSegueWithIdentifier("loginSucc", sender: self)
                 
             }else{

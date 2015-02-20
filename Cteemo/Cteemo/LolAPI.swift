@@ -31,11 +31,14 @@ class LolAPI: NSObject{
         lolName = data["lolName"] as String
         lolIcon = data["lolIcon"] as String
         lolpatch = data["lolpatch"] as String
+    
     }
     
     func packaging()->[String: AnyObject]{
+    
         var data:[String: AnyObject] = ["lolID": lolID,"lolName":lolName,"lolRank":lolRank,"lolLevel": lolLevel,"lolIcon":lolIcon,"lolpatch":lolpatch]
         return data
+        
     }
 
     func cleanUserData(){
@@ -69,25 +72,27 @@ class LolAPI: NSObject{
         if result["id"] != nil{
           
             
-            println(result)
-            
             if result["id"]? != nil {
                 var idd: Int! = result["id"] as? Int!
                 self.lolID = "\(idd)"
             }
+            else {LolAPIGlobal.lolID = ""}
             
             if result["name"]? != nil {
                 LolAPIGlobal.lolName = result["name"] as String
             }
+            else {LolAPIGlobal.lolName = ""}
             
             if result["profileIconId"]? != nil {
                 LolAPIGlobal.lolIcon = result["profileIconId"] as String
             }
+            else {LolAPIGlobal.lolIcon = ""}
             
             if result["summonerLevel"]? != nil {
                 var idd: Int! = result["summonerLevel"] as Int!
                 self.lolLevel = "\(idd)"
             }
+            else {LolAPIGlobal.lolLevel = ""}
         
             self.saveLOLData()
             
@@ -111,7 +116,6 @@ class LolAPI: NSObject{
     func getLeagueResult(result: [String: AnyObject]){
         
        // (result["entries"] as [String: AnyObject])["entries"]
-        println(result[LolAPIGlobal.lolID])
         println (((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"])
         
         var tier : String = (((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"] as String) + " "+(((((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["entries"] as [AnyObject])[0] as [String: AnyObject])["division"] as String)
