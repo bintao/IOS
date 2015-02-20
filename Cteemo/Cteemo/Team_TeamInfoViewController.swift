@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
-
+    
     @IBOutlet var navigation : UINavigationItem!
 
     @IBOutlet var memberScroll : UIScrollView!

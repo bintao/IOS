@@ -27,9 +27,9 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         if UserInfoGlobal.profile_ID == ""{
                 UserInfoGlobal.updateUserInfo()
         }
-        
-        updateTeam()
-        
+        if(UserInfoGlobal.accessToken != nil && UserInfoGlobal.accessToken != ""){
+            updateTeam()
+        }
         otherChoices.backgroundColor = UIColor.clearColor()
         
         teams = ["My Boy","I'm the king","Sunrise","Cicicici","God of Michigan"]

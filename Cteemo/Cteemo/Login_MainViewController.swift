@@ -112,6 +112,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                 
                 UserInfoGlobal.updateUserInfo()
                 stopLoading()
+                
                 self.performSegueWithIdentifier("exitToMain", sender: self)
                 
                 //self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
@@ -174,7 +175,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         return image
     }
 
-    
+
     //loading view display while login
     func startLoading(){
         self.view.bringSubviewToFront(loadingView)
