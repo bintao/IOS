@@ -34,7 +34,7 @@ class Login_lolID: UIViewController, UIScrollViewDelegate{
   
         if(LolAPIGlobal.lolLevel != "" && LolAPIGlobal.lolRank != "" ){
         self.lolname.text = LolAPIGlobal.lolName
-        self.lol_level.text = "Summoner's Level" + LolAPIGlobal.lolLevel!
+        self.lol_level.text = "Summoner's Level" + LolAPIGlobal.lolLevel
         self.lol_rank.text = LolAPIGlobal.lolRank
         
         }

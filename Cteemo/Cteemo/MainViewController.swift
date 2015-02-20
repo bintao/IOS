@@ -37,7 +37,7 @@ class MainViewController: UIViewController, UITabBarDelegate {
     
     override func viewDidAppear(animated: Bool) {
         
-        if (UserInfoGlobal.accessToken == "" )
+        if UserInfoGlobal.accessToken == ""
         {
          
             self.performSegueWithIdentifier("login", sender: self)
@@ -165,6 +165,9 @@ class MainViewController: UIViewController, UITabBarDelegate {
     func logout(){
         hideTabb()
         
+        UserInfoGlobal.cleanUserData()
+        TeamInfoGlobal.cleanUserData()
+        LolAPIGlobal.cleanUserData()
         // clean facebook login
         if FBSession.activeSession().state == FBSessionState.Open{
             FBSession.activeSession().closeAndClearTokenInformation()

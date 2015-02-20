@@ -59,7 +59,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         
         var req = ARequest(prefix: "create_team/lol", method: requestType.DELETE)
         req.delegate = self
-        req.sendRequestWithToken(UserInfoGlobal.accessToken!)
+        req.sendRequestWithToken(UserInfoGlobal.accessToken)
 
     }
     

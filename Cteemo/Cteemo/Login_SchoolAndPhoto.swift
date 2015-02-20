@@ -51,12 +51,12 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     
     @IBAction func submitProfile(sender: UIButton) {
         
-        if (UserInfoGlobal.accessToken? != nil && lolName.text != "" && school.text != "" ){
+        if (UserInfoGlobal.accessToken != "" && lolName.text != "" && school.text != "" ){
             
             //upload user profile
-            var req = ARequest(prefix: "profile", method: requestType.POST, parameters: ["username": UserInfoGlobal.name!, "school":school.text,"lolID":lolName.text])
+            var req = ARequest(prefix: "profile", method: requestType.POST, parameters: ["username": UserInfoGlobal.name, "school":school.text,"lolID":lolName.text])
             req.delegate = self
-            req.sendRequestWithToken(UserInfoGlobal.accessToken!)
+            req.sendRequestWithToken(UserInfoGlobal.accessToken)
             
             
         }
@@ -83,7 +83,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             
             UserInfoGlobal.saveUserData()
             
-            if (LolAPIGlobal.lolID != nil){
+            if (LolAPIGlobal.lolID != ""){
                 
                // self.performSegueWithIdentifier("gotololID", sender: self)
                 
@@ -97,7 +97,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             re.uploadPhoto()
         }else if prefix == LolAPIGlobal.key {
             println(result)
-            LolAPIGlobal.getIDresult((result as [String: AnyObject])[LolAPIGlobal.lolName!] as [String: AnyObject])
+            LolAPIGlobal.getIDresult((result as [String: AnyObject])[LolAPIGlobal.lolName] as [String: AnyObject])
             println(LolAPIGlobal.lolID)
             
         }

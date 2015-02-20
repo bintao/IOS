@@ -16,14 +16,14 @@ class UserTeam: NSObject{
     
     // User team
     
-    var teamName: String?
-    var teamID : String?
-    var team_isschool: Bool?
-    var team_Intro : String?
+    var teamName: String = ""
+    var teamID : String = ""
+    var team_isschool: String = ""
+    var team_Intro : String = ""
     //var teamicon_link : String?
     
     
-    var iscaptain : String?
+    var iscaptain : String = ""
     var teamicon: UIImage?
     
     func setUp(){
@@ -38,16 +38,16 @@ class UserTeam: NSObject{
     func setUserData(data: [String: AnyObject]){
  
         // team data
-        team_Intro = data["team_Intro"] as? String
-        teamID = data["teamID"] as? String
-        teamName = data["teamName"] as? String
-        iscaptain = data["iscaptain"] as? String
+        team_Intro = data["team_Intro"] as String
+        teamID = data["teamID"] as String
+        teamName = data["teamName"] as String
+        iscaptain = data["iscaptain"] as String
        // teamicon_link = data["teamicon_link"] as? String
         saveUserData()
     }
     
     func packaging()->[String: AnyObject]{
-        var data:[String: AnyObject] = ["team_Intro" : team_Intro!,"teamID":teamID!,"teamName" :teamName!,"iscaptain": iscaptain!]
+        var data:[String: AnyObject] = ["team_Intro" : team_Intro,"teamID":teamID,"teamName" :teamName,"iscaptain": iscaptain]
         return data
     }
     
@@ -87,13 +87,13 @@ class UserTeam: NSObject{
        
         println(result)
             if result["id"]? != nil {
-                TeamInfoGlobal.teamID = result["id"] as? String
+                TeamInfoGlobal.teamID = result["id"] as String
             }
             if result["teamName"]? != nil {
-                TeamInfoGlobal.teamName = result["teamName"] as? String
+                TeamInfoGlobal.teamName = result["teamName"] as String
             }
             if result["teamIntro"]? != nil {
-                TeamInfoGlobal.team_Intro = result["teamIntro"] as? String
+                TeamInfoGlobal.team_Intro = result["teamIntro"] as String
             }
             var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
                 

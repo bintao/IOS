@@ -47,23 +47,13 @@ class DataManager: NSObject {
         
     }
     
-    class func saveUserInfoToLocal(info: [String: AnyObject?]){
+    class func saveUserInfoToLocal(info: [String: AnyObject]){
         
         let fileManager = NSFileManager()
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         path = path.stringByAppendingPathComponent("UserInformation.plist")
         
-        var data = [String: AnyObject]()
-        let arr = info.keys.array
-        for var index = 0; index < info.count; index++ {
-            if info[arr[index]]? != nil{
-                data[arr[index]] = info[arr[index]]!;
-            }else{
-                data[arr[index]] = nil
-            }
-        }
-        
-        let dict : NSDictionary = data
+        let dict : NSDictionary = info
         dict.writeToFile(path, atomically: true)
 
 
@@ -81,23 +71,13 @@ class DataManager: NSObject {
         
     }
     
-    class func saveTeamInfoToLocal(info: [String: AnyObject?]){
+    class func saveTeamInfoToLocal(info: [String: AnyObject]){
         
         let fileManager = NSFileManager()
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         path = path.stringByAppendingPathComponent("UserTeam.plist")
         
-        var data = [String: AnyObject]()
-        let arr = info.keys.array
-        for var index = 0; index < info.count; index++ {
-            if info[arr[index]]? != nil{
-                data[arr[index]] = info[arr[index]]!;
-            }else{
-                data[arr[index]] = nil
-            }
-        }
-        
-        let dict : NSDictionary = data
+        let dict : NSDictionary = info
         dict.writeToFile(path, atomically: true)
         
     }
@@ -114,25 +94,14 @@ class DataManager: NSObject {
         
     }
     
-    class func saveLOLInfoToLocal(info: [String: AnyObject?]){
+    class func saveLOLInfoToLocal(info: [String: AnyObject]){
        
         println(info)
         let fileManager = NSFileManager()
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         path = path.stringByAppendingPathComponent("LOLInfo.plist")
         
-        
-        var data = [String: AnyObject]()
-        let arr = info.keys.array
-        for var index = 0; index < info.count; index++ {
-            if info[arr[index]]? != nil{
-                data[arr[index]] = info[arr[index]]!;
-            }else{
-                data[arr[index]] = nil
-            }
-        }
-        
-        let dict : NSDictionary = data
+        let dict : NSDictionary = info
         dict.writeToFile(path, atomically: true)
         
     }

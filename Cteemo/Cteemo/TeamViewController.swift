@@ -27,7 +27,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         if UserInfoGlobal.profile_ID == ""{
                 UserInfoGlobal.updateUserInfo()
         }
-        if(UserInfoGlobal.accessToken != nil && UserInfoGlobal.accessToken != ""){
+        if(UserInfoGlobal.accessToken != ""){
             updateTeam()
         }
         otherChoices.backgroundColor = UIColor.clearColor()
@@ -40,7 +40,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     func updateTeam(){
         var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
         req.delegate = self
-        req.sendRequestWithToken(UserInfoGlobal.accessToken!)
+        req.sendRequestWithToken(UserInfoGlobal.accessToken)
 
     }
     
@@ -65,9 +65,9 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
                TeamInfoGlobal.iscaptain = "yes"
             }
 
-            TeamInfoGlobal.teamID = result["id"] as? String
-            TeamInfoGlobal.teamName = result["teamName"] as? String
-            TeamInfoGlobal.team_Intro = result["teamIntro"] as? String
+            TeamInfoGlobal.teamID = result["id"] as String
+            TeamInfoGlobal.teamName = result["teamName"] as String
+            TeamInfoGlobal.team_Intro = result["teamIntro"] as String
             
             TeamInfoGlobal.saveUserData()
             
@@ -94,7 +94,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
         
-        if TeamInfoGlobal.teamID != nil && TeamInfoGlobal.teamID != ""{
+        if TeamInfoGlobal.teamID != ""{
             TeamInfoGlobal.uploadTeamInfo()
             self.performSegueWithIdentifier("presentMyTeam", sender: self)
         }

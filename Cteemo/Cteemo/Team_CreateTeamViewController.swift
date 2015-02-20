@@ -47,7 +47,7 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
         if( teamName.text != "" ){
         var req = ARequest(prefix: "create_team/lol", method: requestType.POST, parameters: ["teamName":teamName.text, "teamIntro":teamIntro.text,"isSchool":true])
         req.delegate = self
-        req.sendRequestWithToken(UserInfoGlobal.accessToken!)
+        req.sendRequestWithToken(UserInfoGlobal.accessToken)
         }
     }
     
@@ -71,9 +71,9 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
                 TeamInfoGlobal.iscaptain = "yes"
             }
             
-            TeamInfoGlobal.teamID = result["id"] as? String
-            TeamInfoGlobal.teamName = result["teamName"] as? String
-            TeamInfoGlobal.team_Intro = result["teamIntro"] as? String
+            TeamInfoGlobal.teamID = result["id"] as String
+            TeamInfoGlobal.teamName = result["teamName"] as String
+            TeamInfoGlobal.team_Intro = result["teamIntro"] as String
             
             TeamInfoGlobal.saveUserData()
             

@@ -30,6 +30,8 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
             self.facebook.addSubview(loginView)
             loginView.readPermissions = ["public_profile", "email", "user_friends"]
         
+        var lk = UserInfoGlobal.packaging()
+        print(lk)
     }
     
     //save and update user data
@@ -38,17 +40,41 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     {
         
         // avoid running multiple time
-        if UserInfoGlobal.fbid!.isEmpty || UserInfoGlobal.gender!.isEmpty||UserInfoGlobal.name!.isEmpty{
+        if UserInfoGlobal.fbid == "" || UserInfoGlobal.gender == "" || UserInfoGlobal.name == ""{
             
             // save user info from facebook
-            UserInfoGlobal.gender = user.objectForKey("gender") as? String
+            UserInfoGlobal.gender = user.objectForKey("gender") as String
             UserInfoGlobal.name = user.name
-            UserInfoGlobal.fbid = user.objectForKey("id") as? String
+            UserInfoGlobal.fbid = user.objectForKey("id") as String
             if user.objectForKey("email") != nil{
-                UserInfoGlobal.email = user.objectForKey("email") as? String
+                UserInfoGlobal.email = user.objectForKey("email") as String
             }
             
             UserInfoGlobal.saveUserData()
+            
+            startLoading()
+            //facebook logedin
+
+            FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
+                if !(error != nil)
+                {
+                    
+                    //get facebook token
+                    var myToken = FBSession.activeSession().accessTokenData.accessToken
+                    
+                    // get token from the server
+                    var req = ARequest(prefix: "fb_login", method: requestType.POST, parameters: ["fbtoken": myToken, "fbid": UserInfoGlobal.fbid,"fbemail":UserInfoGlobal.fbid+"@cteemo.com"])
+                    req.delegate = self
+                    req.sendRequest()
+                    self.startLoading()
+                    
+                }
+                else
+                {
+                    println("Error")
+                }
+            })
+
             
         }
 
@@ -57,30 +83,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     }
     
     
-    //facebook logedin
     func loginViewShowingLoggedInUser(loginView: FBLoginView!) {
-        
-        startLoading()
-        
-        FBRequestConnection.startForMeWithCompletionHandler({connection, result, error in
-            if !(error != nil)
-            {
-               
-                //get facebook token
-                var myToken = FBSession.activeSession().accessTokenData.accessToken
-
-                // get token from the server
-                var req = ARequest(prefix: "fb_login", method: requestType.POST, parameters: ["fbtoken": myToken, "fbid": UserInfoGlobal.fbid!,"fbemail":UserInfoGlobal.fbid!+"@cteemo.com"])
-                req.delegate = self
-                req.sendRequest()
-                
-            }
-            else
-            {
-                println("Error")
-            }
-        })
-        
         
     }
     
@@ -91,7 +94,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
             
             if result["token"]? != nil
             {
-                UserInfoGlobal.accessToken = result["token"] as? String
+                UserInfoGlobal.accessToken = result["token"] as String
                 UserInfoGlobal.saveUserData()
                 //get profile from the user
                 println( UserInfoGlobal.accessToken )
@@ -111,7 +114,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                 //old User
                 
                 UserInfoGlobal.updateUserInfo()
-                stopLoading()
                 
                 self.performSegueWithIdentifier("exitToMain", sender: self)
                 
@@ -128,11 +130,11 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                     UserInfoGlobal.saveUserIcon()
             
                 }
-                stopLoading()
                 self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
                 
             }
-
+            
+            stopLoading()
             
         }
         
@@ -145,7 +147,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         
         var req = ARequest(prefix: "profile", method: requestType.GET)
         req.delegate = self
-        req.sendRequestWithToken(UserInfoGlobal.accessToken!)
+        req.sendRequestWithToken(UserInfoGlobal.accessToken)
         
     }
     
@@ -167,7 +169,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     func getPotraitFromFacebook()->UIImage{
         
         var image:UIImage!
-        var str = "http://graph.facebook.com/\(UserInfoGlobal.fbid!)/picture?type=large"
+        var str = "http://graph.facebook.com/\(UserInfoGlobal.fbid)/picture?type=large"
         var url = NSURL(string: str)
         var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
         image = UIImage(data: data)

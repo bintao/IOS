@@ -5,7 +5,7 @@
 	<key>teamName</key>
 	<string></string>
 	<key>team_isschool</key>
-	<false/>
+	<string></string>
 	<key>team_Intro</key>
 	<string></string>
 	<key>teamID</key>
