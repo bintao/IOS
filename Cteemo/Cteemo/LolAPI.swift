@@ -69,7 +69,8 @@ class LolAPI: NSObject{
 
     
     func getIDresult(result: [String: AnyObject]){
-        if result["id"] != nil{
+       
+        if result["id"]? != nil{
           
             
             if result["id"]? != nil {
@@ -84,13 +85,14 @@ class LolAPI: NSObject{
             else {LolAPIGlobal.lolName = ""}
             
             if result["profileIconId"]? != nil {
-                LolAPIGlobal.lolIcon = result["profileIconId"] as String
+                var iconid: Int! = result["profileIconId"] as? Int!
+                self.lolIcon = "\(iconid)"
             }
             else {LolAPIGlobal.lolIcon = ""}
             
             if result["summonerLevel"]? != nil {
-                var idd: Int! = result["summonerLevel"] as Int!
-                self.lolLevel = "\(idd)"
+                var levelid: Int! = result["summonerLevel"] as Int!
+                self.lolLevel = "\(levelid)"
             }
             else {LolAPIGlobal.lolLevel = ""}
         
@@ -98,6 +100,7 @@ class LolAPI: NSObject{
             
             if(result["summonerLevel"] as Int == 30){
             self.getSummonerLeague(lolID)
+                
             }
         }
         

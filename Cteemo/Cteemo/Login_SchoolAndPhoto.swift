@@ -50,13 +50,24 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     
     
     @IBAction func submitProfile(sender: UIButton) {
-        
+
+        //upload user profile
+
         if (UserInfoGlobal.accessToken != "" && lolName.text != "" && school.text != "" ){
+            if (LolAPIGlobal.lolID != ""){
+                
+                var req = ARequest(prefix: "profile", method: requestType.POST, parameters: ["username": UserInfoGlobal.name, "school":school.text,"lolID":lolName.text])
+                req.delegate = self
+                req.sendRequestWithToken(UserInfoGlobal.accessToken)
+        
+            }
+            else {
+                //can't find lolID
+                self.displaySpeaker("We can't find your lolID information please check your ID")
+            }
+
             
-            //upload user profile
-            var req = ARequest(prefix: "profile", method: requestType.POST, parameters: ["username": UserInfoGlobal.name, "school":school.text,"lolID":lolName.text])
-            req.delegate = self
-            req.sendRequestWithToken(UserInfoGlobal.accessToken)
+         
             
             
         }
@@ -82,22 +93,18 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             UserInfoGlobal.school = self.school.text
             
             UserInfoGlobal.saveUserData()
-            
-            if (LolAPIGlobal.lolID != ""){
-                
-               // self.performSegueWithIdentifier("gotololID", sender: self)
-                
-            }
-            else {
-                //can't find lolID
-            self.displaySpeaker("We can't find your lolID information please check your ID")
-            }
-            
             var re = ARequest()
             re.uploadPhoto()
+          self.performSegueWithIdentifier("gotololid", sender: self)
+            
         }else if prefix == LolAPIGlobal.key {
-                     LolAPIGlobal.getIDresult((result as [String: AnyObject])[LolAPIGlobal.lolName] as [String: AnyObject])
-        
+            
+            println(result)
+            println(LolAPIGlobal.lolName)
+            if(result as [String: AnyObject])[LolAPIGlobal.lolName] as [String: AnyObject]? != nil{
+            
+                LolAPIGlobal.getIDresult((result as [String: AnyObject])[LolAPIGlobal.lolName] as [String: AnyObject])
+            }
             
         }
         
@@ -153,8 +160,11 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     
     func textFieldDidEndEditing(textField: UITextField) {
         if textField == lolName {
-            
+            if(self.lolName.text != ""){
+            LolAPIGlobal.lolName = self.lolName.text
+            LolAPIGlobal.saveLOLData()
             LolAPIGlobal.getSummonerID(self.lolName.text, loginView: Login_SchoolAndPhoto())
+            }
         }
     }
 
