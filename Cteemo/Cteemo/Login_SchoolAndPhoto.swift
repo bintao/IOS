@@ -73,7 +73,10 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         if prefix == "profile"{
             
             LolAPIGlobal.lolName = self.lolName.text
+<<<<<<< HEAD
       
+=======
+>>>>>>> FETCH_HEAD
             if self.gender.selectedSegmentIndex == 1{
                 UserInfoGlobal.gender = "Female"
             }else{
@@ -96,8 +99,12 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             var re = ARequest()
             re.uploadPhoto()
         }else if prefix == LolAPIGlobal.key {
+<<<<<<< HEAD
                      LolAPIGlobal.getIDresult((result as [String: AnyObject])[LolAPIGlobal.lolName] as [String: AnyObject])
         
+=======
+            LolAPIGlobal.getIDresult((result as [String: AnyObject])[LolAPIGlobal.lolName] as [String: AnyObject])
+>>>>>>> FETCH_HEAD
             
         }
         
@@ -109,8 +116,13 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         
         didFinishPickingMediaWithInfo info: NSDictionary!) {
             
+<<<<<<< HEAD
             self.dismissViewControllerAnimated(true, completion: nil);
          
+=======
+            self.dismissViewControllerAnimated(true, completion: nil)
+            
+>>>>>>> FETCH_HEAD
             sourceImage =  info.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
             self.performSegueWithIdentifier("addImage", sender: self)
             
