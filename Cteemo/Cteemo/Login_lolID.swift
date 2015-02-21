@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import WebKit
 
 class Login_lolID: UIViewController, UIScrollViewDelegate{
 
@@ -21,9 +22,9 @@ class Login_lolID: UIViewController, UIScrollViewDelegate{
 
 
     @IBOutlet weak var lol_level: UILabel!
-
+    
     override func viewDidLoad() {
-        //add tap gesture to board
+       
         
         if(LolAPIGlobal.lolLevel != "" && LolAPIGlobal.lolID != "" ){
             
@@ -35,7 +36,16 @@ class Login_lolID: UIViewController, UIScrollViewDelegate{
             else {
             self.lol_rank.text = "Play more rank ~ ~ "
             }
-            lol_icon.image = LolAPIGlobal.getlolIcon(LolAPIGlobal.lolpatch, id: LolAPIGlobal.lolIcon)
+            
+            ImageLoader.sharedLoader.imageForUrl(LolAPIGlobal.lolIcon, completionHandler:{(image: UIImage?, url: String) in
+                println(url)
+                if image? != nil {
+                    self.lol_icon.image = image?.roundCornersToCircle()
+                }
+                else {
+                    self.lol_icon.image = UIImage(named: "error.png")!
+                }})
+            
             
         }
 

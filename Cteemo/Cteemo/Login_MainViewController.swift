@@ -112,11 +112,11 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
             if result["username"]? != nil {
                 //old User
                 
-                UserInfoGlobal.updateUserInfo()
+                //UserInfoGlobal.updateUserInfo()
                 
-                self.performSegueWithIdentifier("exitToMain", sender: self)
+                //self.performSegueWithIdentifier("exitToMain", sender: self)
                 
-                //self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
+                self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
             }
             else {
                 
@@ -151,7 +151,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     }
     
     func getFriends(){
-        FBRequestConnection.startForMyFriendsWithCompletionHandler({ (connection, result, error: NSError!) -> Void in
+    FBRequestConnection.startForMyFriendsWithCompletionHandler({ (connection, result, error: NSError!) -> Void in
             if error == nil {
                 var friendObjects = result["data"] as [NSDictionary]
                 for friendObject in friendObjects {

@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 
+
 var LolAPIGlobal: LolAPI = LolAPI()
 
 class LolAPI: NSObject{
@@ -21,6 +22,8 @@ class LolAPI: NSObject{
     var lolLevel : String = ""
     var lolIcon : String = ""
     var lolpatch : String = ""
+    
+   
     
     func setUp(){
         
@@ -85,7 +88,9 @@ class LolAPI: NSObject{
             
             if result["profileIconId"]? != nil {
                 var iconid: Int! = result["profileIconId"] as? Int!
-                self.lolIcon = "\(iconid)"
+                
+                var str = "http://ddragon.leagueoflegends.com/cdn/"+LolAPIGlobal.lolpatch+"/img/profileicon/"+"\(iconid)"+".png"
+                self.lolIcon = str
             }
             else {LolAPIGlobal.lolIcon = ""}
             
@@ -161,25 +166,7 @@ class LolAPI: NSObject{
     }
     
     
-    func getlolIcon(vision : String , id :String)->UIImage{
-        var image:UIImage!
-        var str = "http://ddragon.leagueoflegends.com/cdn/"+LolAPIGlobal.lolpatch+"/img/profileicon/"+id+".png"
-        println(str)
-
-        
-        var url = NSURL(string: str)
-        
-        if( NSData(contentsOfURL: url!)? != nil ){
-        var data: NSData = NSData(contentsOfURL: url!)!
-        
-        image = UIImage(data: data)!
-        image = image.roundCornersToCircle()
-        }
-        return image
-        
-        
-    }
-    
+   
     
     
 }

@@ -160,5 +160,14 @@ class DataManager: NSObject {
         var imagePath = paths.stringByAppendingPathComponent("teamicon.png")
         UIImagePNGRepresentation(icon).writeToFile(imagePath, atomically: true)
     }
+    
+    class func saveLolIconFromLocal(icon: UIImage){
+        
+        let fileManager = NSFileManager()
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var imagePath = paths.stringByAppendingPathComponent("lolicon.png")
+        UIImagePNGRepresentation(icon).writeToFile(imagePath, atomically: true)
+    }
+
 
 }

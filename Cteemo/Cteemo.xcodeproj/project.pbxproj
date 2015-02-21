@@ -106,6 +106,8 @@
 		A1B8E9601A7B20F2009BE011 /* Forma 1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9531A7B20F2009BE011 /* Forma 1.png */; };
 		A1B8E9621A7B20F2009BE011 /* hentiao2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9551A7B20F2009BE011 /* hentiao2.png */; };
 		A1B8E9631A7B20F2009BE011 /* OK.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9561A7B20F2009BE011 /* OK.png */; };
+		A1EB12041A99263800FC8388 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB12031A99263800FC8388 /* ImageLoader.swift */; };
+		A1EB12091A99277900FC8388 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EB12081A99277900FC8388 /* error.png */; };
 		A1F138861A8346C9007DE5A2 /* LolAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F138851A8346C9007DE5A2 /* LolAPI.swift */; };
 /* End PBXBuildFile section */
 
@@ -283,6 +285,8 @@
 		A1B8E9531A7B20F2009BE011 /* Forma 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Forma 1.png"; sourceTree = "<group>"; };
 		A1B8E9551A7B20F2009BE011 /* hentiao2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hentiao2.png; sourceTree = "<group>"; };
 		A1B8E9561A7B20F2009BE011 /* OK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OK.png; sourceTree = "<group>"; };
+		A1EB12031A99263800FC8388 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		A1EB12081A99277900FC8388 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
 		A1F138851A8346C9007DE5A2 /* LolAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LolAPI.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -421,6 +425,7 @@
 				42B85A421A74A81A00FD4642 /* DataManager.swift */,
 				42B85A431A74A81A00FD4642 /* InteractingWithServer.swift */,
 				A1010D461A7B2ACF00256208 /* ARequest.swift */,
+				A1EB12031A99263800FC8388 /* ImageLoader.swift */,
 				4267D82E1A8011D20054E800 /* ImageProcessor.swift */,
 				42B859EE1A74840F00FD4642 /* Cteemo.xcdatamodeld */,
 				42B85A3C1A74A0D800FD4642 /* Reachability.h */,
@@ -461,6 +466,7 @@
 		42B85A131A74897A00FD4642 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A1EB12081A99277900FC8388 /* error.png */,
 				88535F561A89C91A00F38098 /* News */,
 				A1B8E9641A7B215C009BE011 /* Team */,
 				42B85A191A748C1500FD4642 /* Login */,
@@ -680,6 +686,7 @@
 				A1B8E9631A7B20F2009BE011 /* OK.png in Resources */,
 				88535F551A89C84B00F38098 /* SUMMARY.png in Resources */,
 				42041AF91A816EE400623C70 /* SUITCASE.png in Resources */,
+				A1EB12091A99277900FC8388 /* error.png in Resources */,
 				42B85A251A748CDB00FD4642 /* button.png in Resources */,
 				42AB57DA1A7F391A00C7799E /* tableback.png in Resources */,
 				42B85A241A748CDB00FD4642 /* backG.png in Resources */,
@@ -769,6 +776,7 @@
 				42B85A451A74A81A00FD4642 /* DataManager.swift in Sources */,
 				42B74FC41A812416008B575C /* MainViewController.swift in Sources */,
 				42B0A3391A898BD200EA908C /* AFHTTPSessionManager.m in Sources */,
+				A1EB12041A99263800FC8388 /* ImageLoader.swift in Sources */,
 				42B0A33A1A898BD200EA908C /* AFNetworkReachabilityManager.m in Sources */,
 				A1F138861A8346C9007DE5A2 /* LolAPI.swift in Sources */,
 				42B0A3371A898BD200EA908C /* AFHTTPRequestOperation.m in Sources */,
