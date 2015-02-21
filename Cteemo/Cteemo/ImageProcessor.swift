@@ -196,7 +196,7 @@ extension UIImage {
         var transparentImage = UIImage(CGImage: CGImageCreateWithMask(CGBitmapContextCreateImage(context), imageRefWithPadding(padding, size: rect.size)))
         return transparentImage
     }
-
+    
     // Creates a mask that makes the outer edges transparent and everything else opaque
     // The size must include the entire mask (opaque part + transparent border)
     // The caller is responsible for releasing the returned reference by calling CGImageRelease
@@ -217,7 +217,7 @@ extension UIImage {
         return maskImageRef
     }
     
-
+    
     // MARK: Crop
     
     func crop(bounds: CGRect) -> UIImage?
@@ -251,12 +251,12 @@ extension UIImage {
         var ratio: CGFloat!
         
         switch contentMode {
-            case .ScaleToFill:
-                ratio = 1
-            case .ScaleAspectFill:
-                ratio = max(horizontalRatio, verticalRatio)
-            case .ScaleAspectFit:
-                ratio = min(horizontalRatio, verticalRatio)
+        case .ScaleToFill:
+            ratio = 1
+        case .ScaleAspectFill:
+            ratio = max(horizontalRatio, verticalRatio)
+        case .ScaleAspectFit:
+            ratio = min(horizontalRatio, verticalRatio)
         }
         
         let rect = CGRect(x: 0, y: 0, width: self.size.width * ratio, height: self.size.height * ratio)
@@ -277,8 +277,8 @@ extension UIImage {
         CGContextSetInterpolationQuality(context, CGInterpolationQuality(3))
         
         
- //       CGContextSetInterpolationQuality(context, CGInterpolationQuality(kCGInterpolationHigh.value))
-                
+        //       CGContextSetInterpolationQuality(context, CGInterpolationQuality(kCGInterpolationHigh.value))
+        
         // Draw into the context; this scales the image
         CGContextDrawImage(context, rect, self.CGImage)
         
@@ -286,7 +286,7 @@ extension UIImage {
         var newImage = UIImage(CGImage: CGBitmapContextCreateImage(context))
         return newImage;
     }
-
+    
     
     // MARK: Corner Radius
     
@@ -330,6 +330,32 @@ extension UIImage {
         var image = UIImage(CGImage: CGBitmapContextCreateImage(context), scale:scale, orientation: .Up)
         UIGraphicsEndImageContext()
         return image
+    }
+    
+    func setGradientToImage(frame:CGRect, locationList: [CGFloat], colorList: [CGFloat], startPoint: CGPoint, endPoint: CGPoint)->UIImage
+    {
+        // Allocate color space
+        var colorSpace = CGColorSpaceCreateDeviceRGB()
+        let componentCount : UInt = UInt(locationList.count)
+        //allocate myGradient
+        //var locationList: [CGFloat] = [0.0,1.0]
+        //var colorList: [CGFloat] = [253.0/255.0, 76.0/255.0, 83.0 / 255.0, 1.0, 1.0, 1.0, 1.0, 0.0]
+        var myGradient   = CGGradientCreateWithColorComponents(colorSpace, colorList, locationList, componentCount)
+        
+        // Allocate bitmap context
+        
+        let bitmapInfo = CGBitmapInfo(CGImageAlphaInfo.PremultipliedLast.rawValue)
+        let bitmapContext = CGBitmapContextCreate(nil, UInt(frame.width), UInt(frame.height), 8, 0, colorSpace, bitmapInfo)
+        
+        //Draw Gradient Here
+        
+        CGContextDrawLinearGradient(bitmapContext, myGradient, startPoint, endPoint, 0)
+        // Create a CGImage from context
+        var cgImage = CGBitmapContextCreateImage(bitmapContext)
+        // Create a UIImage from CGImage
+        var uiImage = UIImage(CGImage: cgImage)
+        
+        return uiImage!
     }
     
     func roundCorners(cornerRadius:CGFloat, border:CGFloat, color:UIColor) -> UIImage?
@@ -406,5 +432,7 @@ extension UIImage {
         }
         return placeholder
     }
-   
+    
+    
+    
 }
