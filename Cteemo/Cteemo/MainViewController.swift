@@ -36,7 +36,8 @@ class MainViewController: UIViewController, UITabBarDelegate {
     }
     
     override func viewDidAppear(animated: Bool) {
-        
+       
+        LolAPIGlobal.getlolvision()
         if UserInfoGlobal.accessToken == ""
         {
          
@@ -51,7 +52,7 @@ class MainViewController: UIViewController, UITabBarDelegate {
         }
         else{
             
-            LolAPIGlobal.getlolvision()
+            
 
             news.alpha = 1
             

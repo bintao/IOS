@@ -25,21 +25,43 @@ class Login_lolID: UIViewController, UIScrollViewDelegate{
     override func viewDidLoad() {
         //add tap gesture to board
         
+        if(LolAPIGlobal.lolLevel != "" && LolAPIGlobal.lolID != "" ){
+            
+            self.lolname.text = LolAPIGlobal.lolName
+            self.lol_level.text = "Level:" + LolAPIGlobal.lolLevel
+            if LolAPIGlobal.lolRank !=  ""{
+            self.lol_rank.text = LolAPIGlobal.lolRank
+            }
+            else {
+            self.lol_rank.text = "Play more rank ~ ~ "
+            }
+            lol_icon.image = LolAPIGlobal.getlolIcon(LolAPIGlobal.lolpatch, id: LolAPIGlobal.lolIcon)
+            
+        }
+
         
         
     }
     
     override func viewDidAppear(animated: Bool) {
         
-  
-        if(LolAPIGlobal.lolLevel != "" && LolAPIGlobal.lolRank != "" ){
-        self.lolname.text = LolAPIGlobal.lolName
-        self.lol_level.text = "Summoner's Level" + LolAPIGlobal.lolLevel
-        self.lol_rank.text = LolAPIGlobal.lolRank
         
-        }
-    }
+          }
 
+    @IBAction func start(sender: UIButton) {
+        
+        self.performSegueWithIdentifier("lollogin", sender: self)
+      
+        
+    }
+    
+    @IBAction func changeinfo(sender: AnyObject) {
+        
+        LolAPIGlobal.cleanUserData()
+        self.performSegueWithIdentifier("returnToSchool", sender: self)
+        
+    }
+    
     @IBAction func gotololid(segue : UIStoryboardSegue) {
         
     }

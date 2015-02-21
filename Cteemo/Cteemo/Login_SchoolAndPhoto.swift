@@ -160,14 +160,22 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     
     func textFieldDidEndEditing(textField: UITextField) {
         if textField == lolName {
-            if(self.lolName.text != ""){
-            LolAPIGlobal.lolName = self.lolName.text
+            if self.lolName.text != "" && self.lolName.endEditing(true){
+                
+                var str: String = self.lolName.text.lowercaseString
+                var newStr = str.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
+            println (newStr)
+        
+            LolAPIGlobal.lolName = newStr
             LolAPIGlobal.saveLOLData()
-            LolAPIGlobal.getSummonerID(self.lolName.text, loginView: Login_SchoolAndPhoto())
+            LolAPIGlobal.getSummonerID(LolAPIGlobal.lolName, loginView: Login_SchoolAndPhoto())
+          
             }
         }
     }
-
+   
+   
+    
     func displaySpeaker(text: String){
         messageDisplay.text = text
         

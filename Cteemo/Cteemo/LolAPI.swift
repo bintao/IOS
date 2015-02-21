@@ -47,7 +47,6 @@ class LolAPI: NSObject{
         lolRank = ""
         lolLevel = ""
         lolIcon = ""
-        lolpatch = ""
         DataManager.saveLOLInfoToLocal(packaging())
     }
     
@@ -100,7 +99,10 @@ class LolAPI: NSObject{
             
             if(result["summonerLevel"] as Int == 30){
             self.getSummonerLeague(lolID)
-                
+            }
+            else {
+            LolAPIGlobal.lolRank = ""
+            
             }
         }
         
@@ -111,8 +113,10 @@ class LolAPI: NSObject{
         var url = "https://na.api.pvp.net/api/lol/na/v2.5/league/by-summoner/"+lolID+"/entry?api_key="+key
         Alamofire.request(.GET,url)
             .responseJSON { (_, _, JSON, _) in
+                if JSON as [String: AnyObject]? != nil{
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
                 self.getLeagueResult(result)
+                }
         }
     }
     
@@ -120,13 +124,20 @@ class LolAPI: NSObject{
         
        // (result["entries"] as [String: AnyObject])["entries"]
         println (((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"])
+        if (((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"]? != nil){
+            var tier : String = (((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"] as String) + " "+(((((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["entries"] as [AnyObject])[0] as [String: AnyObject])["division"] as String)
+            
+            print(tier)
+            
+            LolAPIGlobal.lolRank = tier
+            LolAPIGlobal.saveLOLData()
+        }
+        else {
         
-        var tier : String = (((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"] as String) + " "+(((((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["entries"] as [AnyObject])[0] as [String: AnyObject])["division"] as String)
-        
-        print(tier)
-        
-        LolAPIGlobal.lolRank = tier
-        LolAPIGlobal.saveLOLData()
+            LolAPIGlobal.lolRank = ""
+            LolAPIGlobal.saveLOLData()
+        }
+      
     
     }
     
@@ -136,11 +147,13 @@ class LolAPI: NSObject{
         Alamofire.request(.GET,url)
             .responseJSON { (_, _, JSON, _) in
                 if JSON != nil{
+                
                 var result: [String: AnyObject] = (JSON as [String: AnyObject])["n"] as [String: AnyObject]
-                    if result["profileicon"] != nil {
                     
+                    if result["profileicon"]? != nil {
                         LolAPIGlobal.lolpatch = result["profileicon"] as String
                         LolAPIGlobal.saveLOLData()
+                        println(LolAPIGlobal.lolpatch)
                     }
                 }
         }
@@ -149,14 +162,21 @@ class LolAPI: NSObject{
     
     
     func getlolIcon(vision : String , id :String)->UIImage{
-        
         var image:UIImage!
-        var str = "http://ddragon.leagueoflegends.com/cdn/"+vision+"/img/profileicon/"+id+".png"
+        var str = "http://ddragon.leagueoflegends.com/cdn/"+LolAPIGlobal.lolpatch+"/img/profileicon/"+id+".png"
+        println(str)
+
+        
         var url = NSURL(string: str)
-        var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
-        image = UIImage(data: data)
+        
+        if( NSData(contentsOfURL: url!)? != nil ){
+        var data: NSData = NSData(contentsOfURL: url!)!
+        
+        image = UIImage(data: data)!
         image = image.roundCornersToCircle()
+        }
         return image
+        
         
     }
     

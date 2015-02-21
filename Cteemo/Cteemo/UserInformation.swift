@@ -44,7 +44,6 @@ class UserInformation: NSObject, RequestResultDelegate{
         
         
         var data:[String: AnyObject] = DataManager.getUserInfo()
-        println(data)
         name = data["name"] as String
         fbid = data["fbid"] as String
         accessToken = data["accessToken"] as String
@@ -152,7 +151,6 @@ class UserInformation: NSObject, RequestResultDelegate{
     func saveUserData(){
         
         var data:[String: AnyObject] = packaging()
-        println(data)
         DataManager.saveUserInfoToLocal(data)
     }
     
@@ -167,7 +165,6 @@ class UserInformation: NSObject, RequestResultDelegate{
         intro = ""
         profile_ID = ""
         profile_icon_Link = ""
-        //iscaptain = ""
         
         DataManager.saveUserInfoToLocal(packaging())
     }

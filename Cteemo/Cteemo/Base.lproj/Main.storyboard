@@ -879,26 +879,6 @@
                                 <rect key="frame" x="9" y="6" width="600" height="600"/>
                                 <gestureRecognizers/>
                             </imageView>
-                            <view alpha="0.0" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bxm-x0-IFn">
-                                <rect key="frame" x="19" y="16" width="130" height="106"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="Q5Z-KQ-uza"/>
-                                    <constraint firstAttribute="height" constant="106" id="kG2-5s-HVa"/>
-                                </constraints>
-                            </view>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YwW-jw-l8Y" userLabel="back">
-                                <rect key="frame" x="19" y="16" width="69" height="63"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="69" id="j42-qj-j0d"/>
-                                    <constraint firstAttribute="height" constant="63" id="oEk-vP-lOV"/>
-                                </constraints>
-                                <state key="normal" image="arrow.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="b8U-VU-yhg" kind="unwind" unwindAction="returnToLoginMain:" id="A7n-jI-A48"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K2v-Qi-IqW">
                                 <rect key="frame" x="232" y="20" width="140" height="140"/>
                                 <constraints>
@@ -967,7 +947,7 @@
                                     <action selector="submitProfile:" destination="UYe-Qw-NJx" eventType="touchUpInside" id="8tW-0E-tKs"/>
                                 </connections>
                             </button>
-                            <view alpha="0.0" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEx-Up-Tcd">
+                            <view alpha="0.0" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sEx-Up-Tcd">
                                 <rect key="frame" x="374" y="28" width="130" height="106"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="speaker.png" translatesAutoresizingMaskIntoConstraints="NO" id="cdT-rb-Sbx">
@@ -992,11 +972,13 @@
                             <constraint firstItem="K2v-Qi-IqW" firstAttribute="leading" secondItem="jbP-Sc-4H2" secondAttribute="leading" constant="-7" id="1s0-7u-A5g"/>
                             <constraint firstItem="K2v-Qi-IqW" firstAttribute="trailing" secondItem="jbP-Sc-4H2" secondAttribute="trailing" constant="7" id="2tj-bH-0r9"/>
                             <constraint firstAttribute="centerY" secondItem="Rzm-Ne-k2Q" secondAttribute="centerY" constant="-180" id="7A0-cI-SZa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sEx-Up-Tcd" secondAttribute="trailing" constant="80" id="ECp-ka-sUn"/>
                             <constraint firstItem="K2v-Qi-IqW" firstAttribute="bottom" secondItem="jbP-Sc-4H2" secondAttribute="bottom" constant="7" id="Go6-2v-6ff"/>
                             <constraint firstItem="fsd-6F-wiq" firstAttribute="leading" secondItem="l4Q-0i-Kpt" secondAttribute="leading" id="Mjd-di-xfG"/>
                             <constraint firstAttribute="trailing" secondItem="0yt-ES-pKy" secondAttribute="trailing" id="R1S-aS-Cwf"/>
                             <constraint firstAttribute="centerX" secondItem="Rzm-Ne-k2Q" secondAttribute="centerX" id="Wab-M6-tfh"/>
                             <constraint firstItem="0yt-ES-pKy" firstAttribute="top" secondItem="2KZ-sM-RiY" secondAttribute="top" id="Xjl-aw-XLN"/>
+                            <constraint firstItem="sEx-Up-Tcd" firstAttribute="top" secondItem="FKE-ic-Mf8" secondAttribute="bottom" constant="80" id="ZkN-GB-dL9"/>
                             <constraint firstItem="K2v-Qi-IqW" firstAttribute="bottom" secondItem="l4Q-0i-Kpt" secondAttribute="bottom" constant="-90" id="dhR-ky-1Kp"/>
                             <constraint firstItem="0yt-ES-pKy" firstAttribute="leading" secondItem="2KZ-sM-RiY" secondAttribute="leading" id="ekR-ui-tJJ"/>
                             <constraint firstItem="fsd-6F-wiq" firstAttribute="trailing" secondItem="vu3-vO-HJm" secondAttribute="trailing" id="fQS-Hl-pkk"/>
@@ -1029,7 +1011,7 @@
                         <outlet property="teemoSpeaker" destination="sEx-Up-Tcd" id="u39-mq-IWQ"/>
                         <segue destination="A7H-Sn-HAT" kind="presentation" identifier="searchSchool" id="a4j-wu-9T7"/>
                         <segue destination="b8U-VU-yhg" kind="unwind" identifier="goToMain" unwindAction="returnToMain:" id="Lvf-Ad-Zdo"/>
-                        <segue destination="hGg-dP-nKv" kind="presentation" identifier="gotololid" id="5mw-gu-fBC"/>
+                        <segue destination="hGg-dP-nKv" kind="presentation" identifier="gotololid" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="5mw-gu-fBC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8tZ-nF-zbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1046,61 +1028,71 @@
                         <viewControllerLayoutGuide type="bottom" id="TqT-1B-ylU"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jtk-Kv-A8n">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="～～，我们已经在召唤师峡谷找到你的信息" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8K-O7-IVy">
-                                <rect key="frame" x="119" y="64" width="323" height="21"/>
+                                <rect key="frame" x="38" y="54" width="323" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vsf-92-vkC">
-                                <rect key="frame" x="329" y="128" width="156" height="35"/>
+                                <rect key="frame" x="249" y="121" width="156" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HYq-Ux-cG0">
-                                <rect key="frame" x="329" y="171" width="156" height="35"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="249" y="164" width="156" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="va5-pi-n3y">
-                                <rect key="frame" x="329" y="214" width="156" height="35"/>
+                                <rect key="frame" x="249" y="207" width="156" height="35"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjz-LX-ark">
-                                <rect key="frame" x="79" y="393" width="272" height="30"/>
+                                <rect key="frame" x="63" y="369" width="272" height="30"/>
                                 <state key="normal" title="开始征战">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="start:" destination="hGg-dP-nKv" eventType="touchUpInside" id="d7g-mb-px3"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5y9-En-eRP">
-                                <rect key="frame" x="192" y="458" width="60" height="30"/>
+                                <rect key="frame" x="169" y="437" width="60" height="30"/>
                                 <state key="normal" title="更改信息">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="changeinfo:" destination="hGg-dP-nKv" eventType="touchUpInside" id="Pdt-o3-AXv"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kj0-OO-tPC">
-                                <rect key="frame" x="119" y="121" width="160" height="150"/>
+                                <rect key="frame" x="38" y="114" width="157" height="150"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="lol_icon" destination="Kj0-OO-tPC" id="PaQ-gU-W68"/>
                         <outlet property="lol_level" destination="va5-pi-n3y" id="JHf-DN-KYa"/>
                         <outlet property="lol_rank" destination="HYq-Ux-cG0" id="rRC-Kv-NIT"/>
                         <outlet property="lolname" destination="vsf-92-vkC" id="fdf-is-J4B"/>
+                        <segue destination="pyF-AT-Tke" kind="unwind" identifier="returnToSchool" unwindAction="returnToLoginSchoolAndPhoto:" id="goV-02-SxW"/>
+                        <segue destination="HIH-ZW-Nle" kind="presentation" identifier="lollogin" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="UzT-Rw-Rg6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pPe-ip-jUE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="pyF-AT-Tke" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2269" y="-1014"/>
+            <point key="canvasLocation" x="2395.5" y="-1027.5"/>
         </scene>
         <!--Login School Search View Controller-->
         <scene sceneID="0lh-eR-vWe">
@@ -1206,29 +1198,29 @@
                         <viewControllerLayoutGuide type="bottom" id="gln-TI-KTO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AN9-uh-Jld">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UdM-rk-mRB">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="H1f-h2-IZO" kind="embed" id="THd-JU-SSq"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWH-b0-Mgz">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="uo7-Z5-I2u" kind="embed" id="bi2-tI-a4O"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bfr-qm-21q">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="6wq-2a-6ip" kind="embed" id="Syh-Cy-1p9"/>
                                 </connections>
                             </containerView>
                             <tabBar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-fj-NMG">
-                                <rect key="frame" x="0.0" y="551" width="600" height="49"/>
+                                <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <items>
                                     <tabBarItem title="News" image="news" id="zZK-do-3gd"/>
                                     <tabBarItem title="Tournament" image="tournament" id="iT3-z9-s9u"/>
@@ -1243,7 +1235,7 @@
                                 </connections>
                             </tabBar>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ak-9E-5oQ">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="3UP-8o-hbt" kind="embed" id="okI-eB-3lP"/>
                                 </connections>
@@ -2296,7 +2288,7 @@
         <image name="white.png" width="1200" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WGx-hs-GOh"/>
+        <segue reference="9wu-Y0-gi9"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
 </document>
