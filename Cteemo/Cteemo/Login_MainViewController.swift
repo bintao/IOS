@@ -112,11 +112,13 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
             if result["username"]? != nil {
                 //old User
                 
-                //UserInfoGlobal.updateUserInfo()
+                UserInfoGlobal.updateUserInfo()
                 
-                //self.performSegueWithIdentifier("exitToMain", sender: self)
+                self.performSegueWithIdentifier("exitToMain", sender: self)
                 
-                self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
+                UserInfoGlobal.getIconFromServer()
+                
+                //self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
             }
             else {
                 
@@ -127,8 +129,10 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                     
                     UserInfoGlobal.icon = facebookIcon
                     UserInfoGlobal.saveUserIcon()
+                    UserInfoGlobal.uploadUserIcon()
             
                 }
+                
                 self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
                 
             }

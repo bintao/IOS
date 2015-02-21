@@ -22,7 +22,6 @@ enum requestType {
 
 //a request class
 class ARequest: NSObject {
-  
     
     var delegate:RequestResultDelegate?
     
@@ -95,8 +94,9 @@ class ARequest: NSObject {
         sendRequest()
         
     }
+    
     // upload photo
-    func uploadPhoto(){
+    func uploadPhoto(fileName:String){
         
         var manager1 = Manager.sharedInstance
         //manager.requestSerializer = [AFJSONRequestSerializer serializer]
@@ -105,9 +105,9 @@ class ARequest: NSObject {
         ]
         
         var parameters = NSMutableDictionary()
-        var filePath = NSURL(fileURLWithPath: DataManager.getUserIconPath())!
-        
-        var request = AFHTTPRequestSerializer().multipartFormRequestWithMethod("POST", URLString: "http://54.149.235.253:5000/upload_profile_icon", parameters: parameters, constructingBodyWithBlock: { (formData) -> Void in
+        var filePath = NSURL(fileURLWithPath: DataManager.getURLPath() + fileName)!
+                
+        var request = AFHTTPRequestSerializer().multipartFormRequestWithMethod("POST", URLString: server + prefix, parameters: parameters, constructingBodyWithBlock: { (formData) -> Void in
             formData.appendPartWithFileURL(filePath, name: "upload", fileName: "upload", mimeType: "image/png", error: nil)
             return
             }, error: nil)

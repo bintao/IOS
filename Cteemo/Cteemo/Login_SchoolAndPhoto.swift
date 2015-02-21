@@ -93,8 +93,11 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             UserInfoGlobal.school = self.school.text
             
             UserInfoGlobal.saveUserData()
-            var re = ARequest()
-            re.uploadPhoto()
+            
+            var req = ARequest(prefix: "upload_profile_icon", method: requestType.POST)
+            req.delegate = self
+            req.uploadPhoto("icon.png")
+
           self.performSegueWithIdentifier("gotololid", sender: self)
             
         }else if prefix == LolAPIGlobal.key {
