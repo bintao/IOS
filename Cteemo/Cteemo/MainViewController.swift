@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import Alamofire
 
-class MainViewController: UIViewController, UITabBarDelegate {
+class MainViewController: UIViewController, UITabBarDelegate, RequestResultDelegate{
     
     @IBOutlet var tabbar: UITabBar!
     
@@ -163,6 +164,7 @@ class MainViewController: UIViewController, UITabBarDelegate {
         }
     }
     
+    
     func logout(){
         hideTabb()
     
@@ -189,6 +191,19 @@ class MainViewController: UIViewController, UITabBarDelegate {
         self.performSegueWithIdentifier("login", sender: self)
     }
     
+    
+    func postsomething() {
+        
+        //localhost:5000/team_post -X POST --header "token: from login api" -d "content=I want to find someone to talk"
+        var req = ARequest(prefix: "team_post", method: requestType.POST, parameters: ["content":"bintao here"])
+        req.delegate = self
+        req.sendRequestWithToken(UserInfoGlobal.accessToken)
+        
+    }
+    func gotResult(prefix: String, result: AnyObject) {
+        
+        println(result)
+    }
     
     @IBAction func returnToMain(segue : UIStoryboardSegue) {
         showTabb()

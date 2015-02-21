@@ -30,11 +30,10 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         ]
         
         startLoading()
-        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/team_post", parameters:[String: AnyObject]())
+        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/team_post")
             .responseJSON { (_, _, JSON, _) in
-        
                 if JSON != nil{
-                 
+                 println(JSON)
                 }
                 self.stopLoading()
                 
