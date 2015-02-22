@@ -56,7 +56,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
                 println("You are not a captain.")
                 TeamInfoGlobal.iscaptain = "no"
             }
-                
+        
             else {
                 
                 println("You are a captain.")

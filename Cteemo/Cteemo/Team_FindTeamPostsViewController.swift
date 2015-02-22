@@ -82,6 +82,7 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         
         var contactCaptain = UIButton(frame: CGRectMake(self.view.frame.width - 60, 20, 40, 40))
         contactCaptain.setImage(UIImage(named: "adddd"), forState: UIControlState.Normal)
+        contactCaptain.addTarget(self, action: "contactCap:", forControlEvents: UIControlEvents.TouchUpInside)
         cell.addSubview(contactCaptain)
         
         /*
@@ -106,6 +107,13 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         */
         return cell
     }
+    
+    func contactCap(sender : AnyObject){
+        
+        
+    
+    }
+    
     
     //loading view display while login
     func startLoading(){

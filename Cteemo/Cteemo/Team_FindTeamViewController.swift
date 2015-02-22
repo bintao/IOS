@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate{
+class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate,RequestResultDelegate{
     
     
     @IBOutlet var search: UISearchBar!
@@ -18,13 +18,15 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
     
     var teams: [AnyObject] = [AnyObject]()
     
+    
     override func viewDidLoad()
     {
         resultTable.backgroundColor = UIColor.clearColor()
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
-        
+        searchBar.resignFirstResponder()
+        if UserInfoGlobal.accessToken != ""{
         var manager = Manager.sharedInstance
         // Specifying the Headers we need
         manager.session.configuration.HTTPAdditionalHeaders = [
@@ -36,20 +38,22 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/search_team/lol", parameters: [ "teamName":searchBar.text])
             .responseJSON { (_, _, JSON, _) in
                 if JSON != nil{
+                self.teams = JSON as [AnyObject]
+                println(JSON)
                 var result: [AnyObject] = [AnyObject]()
                 result = JSON as [AnyObject]
-               
-                
                 self.gotResult(result)
                 }
                 self.stopLoading()
-
+            }
         }
     }
     
     func gotResult(result: [AnyObject]){
+        
         teams = result
         resultTable.reloadData()
+            
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -89,10 +93,60 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         
         var contactCaptain = UIButton(frame: CGRectMake(self.view.frame.width - 60, 20, 40, 40))
         contactCaptain.setImage(UIImage(named: "adddd"), forState: UIControlState.Normal)
+        contactCaptain.addTarget(self, action: "contactCap:", forControlEvents: UIControlEvents.TouchUpInside)
+        contactCaptain.tag = indexPath.row
         cell.addSubview(contactCaptain)
 
                return cell
     }
+
+    
+    func contactCap(sender : UIButton){
+        
+        println(sender.tag)
+        if (teams[sender.tag] as [String : AnyObject])["teamName"]? != nil{
+            
+        var teamname = (teams[sender.tag] as [String : AnyObject])["teamName"] as String
+        
+        let alert = SCLAlertView()
+        alert.addButton("Join team now!"){
+            self.startLoading()
+            var req = ARequest(prefix: "my_team/lol", method: requestType.POST, parameters: ["teamName": teamname])
+            req.delegate = self
+            req.sendRequestWithToken(UserInfoGlobal.accessToken)
+            self.stopLoading()
+        
+            }
+       
+        alert.showCteemo("Join team request", subTitle: "i want to join "+teamname, closeButtonTitle: "cancel")
+        }
+        
+        /*
+        self.startLoading()
+        var req = ARequest(prefix: "my_team/lol", method: requestType.POST, parameters: ["teamName": teamname])
+        req.delegate = self
+        req.sendRequestWithToken(UserInfoGlobal.accessToken)
+        self.stopLoading()
+        }
+        */
+    
+    }
+    
+    func gotResult(prefix: String, result: AnyObject) {
+    
+    
+        println(result)
+    
+    }
+    
+    func searchBarShouldEndEditing(searchBar: UISearchBar) -> Bool {
+        search.resignFirstResponder()
+        return true
+    }
+    
+    
+    // background tapped
+    
     
     //loading view display while login
     func startLoading(){

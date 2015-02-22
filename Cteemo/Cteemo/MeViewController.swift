@@ -25,7 +25,7 @@ class MeViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
     @IBAction func log_out(sender: UIButton) {
         
         //clean all saved user data
@@ -33,6 +33,7 @@ class MeViewController: UIViewController {
          ((self.parentViewController as UINavigationController).parentViewController as MainViewController).logout()
         
     }
+    
     /*
     // MARK: - Navigation
 

@@ -107,14 +107,13 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         }
         
         else if prefix == "profile" {
-  
 
             if result["username"]? != nil {
                 //old User
                 
-                //UserInfoGlobal.updateUserInfo()
+                UserInfoGlobal.updateUserInfo()
                 
-                //self.performSegueWithIdentifier("exitToMain", sender: self)
+               // self.performSegueWithIdentifier("exitToMain", sender: self)
                 
                 self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
             }
