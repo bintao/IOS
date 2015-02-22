@@ -8,7 +8,7 @@
 import UIKit
 import Foundation
 
-
+// the class used to download image from URL
 class ImageLoader {
     
     var cache = NSCache()

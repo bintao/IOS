@@ -8,12 +8,13 @@
 
 import UIKit
 
-class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, RequestResultDelegate {
     
-    @IBOutlet var imageScrollView : CustomPosterView!
     @IBOutlet var newsTable : UITableView!
     @IBOutlet var menu: UIBarButtonItem!
 
+    var currentChosen:Int = 0
+    
     var imageArray : [UIImage]!
     
     //@IBOutlet var menu : UIBarButtonItem!
@@ -34,14 +35,23 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                     imageArray.append(img)
             }
         
-        
+        //get news
+        var req = ARequest(prefix: "news_list/all/0", method: requestType.GET)
+        req.server = "http://54.149.235.253:4000/"
+        req.delegate = self
+        req.sendRequest()
         //imageScrollimageScrollView.contentSize = image.size
         
     }
     
+    func gotResult(prefix: String, result: AnyObject) {
+        if (prefix as NSString).substringToIndex(13) == "news_list/all" {
+            println(result)
+        }
+    }
+    
     override func viewDidAppear(animated: Bool) {
-        imageScrollView.setup(imageArray)
-        
+
     }
     
 

@@ -66,7 +66,17 @@ class UserInformation: NSObject, RequestResultDelegate{
         return data
     }
     
+    func uploadUserIcon(){
+        if icon != nil{
+            var req = ARequest(prefix: "upload_profile_icon", method: requestType.POST)
+            req.delegate = self
+            req.uploadPhoto("icon.png")
+        }
+    }
+    
     func saveUserIcon(){
+        "http://54.149.235.253:5000/upload_profile_icon"
+
         if icon != nil{
             DataManager.saveUserIconFromLocal(UserInfoGlobal.icon!)
         }
@@ -77,9 +87,16 @@ class UserInformation: NSObject, RequestResultDelegate{
     }
     
     func getIconFromServer(){
-        var url = NSURL(string: profile_icon_Link)
-        var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
-        icon = UIImage(data: data)
+
+        ImageLoader.sharedLoader.imageForUrl(profile_icon_Link, completionHandler:{(image: UIImage?, url: String) in
+            println(url)
+            if image? != nil {
+                self.icon = image
+                self.saveUserIcon()
+            }
+            else {
+                self.icon = UIImage(named: "error.png")!
+            }})
 
     }
     
