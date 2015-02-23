@@ -33,6 +33,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
             var str = "img\(index).jpg"
                     var img : UIImage = UIImage(named: str)!
                     imageArray.append(img)
+            
             }
         
         //get news
@@ -45,13 +46,16 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func gotResult(prefix: String, result: AnyObject) {
-        if (prefix as NSString).substringToIndex(13) == "news_list/all" {
+        if (prefix as NSString).substringToIndex(15) == "news_list/all/0" {
             println(result)
+            var newsInfo = ["news":result]
+            //save user info and update image files
+            DataManager.saveNewsInfoToLocal(newsInfo)
         }
     }
     
     override func viewDidAppear(animated: Bool) {
-
+        
     }
     
 

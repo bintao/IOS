@@ -59,12 +59,59 @@ class DataManager: NSObject {
         savePlistFile(info, fileName: "LOLInfo.plist")
     }
     
-    class func getNewsInfo()->[String: AnyObject]{
-        return DataManager.getPlistFile("News.plist")
+    class func getNewsInfo()->[AnyObject]{
+        return (DataManager.getPlistFile("News.plist") as [String:AnyObject])["news"] as [AnyObject]
     }
     
     class func saveNewsInfoToLocal(info: [String: AnyObject]){
-        savePlistFile(info, fileName: "News.plist")
+
+        if checkIfFileExist("News.plist"){
+            
+            // clean old image file if exist
+            var localInfo = getNewsInfo()
+            
+            for var index = 0; index < localInfo.count; index++ {
+                
+                // determine if the image is found in the old array
+                var found:Bool = false
+                
+                for var index1 = 0; index1 < (info["news"] as [AnyObject]).count; index1++ {
+                    if (localInfo[index] as [String:AnyObject])["news_pic"] as String == ((info["news"] as [AnyObject])[index1] as [String:AnyObject])["news_pic"] as String{
+                        found = true
+                        break;
+                    }
+                }
+                if !found {
+                    // delete the image in local
+                    DataManager.deleFileInLocal("news\(index).png")
+                }
+            }
+        }
+        
+    DataManager.savePlistFile(info, fileName: "News.plist")
+        
+        
+        for var index = 0; index < (info["news"] as [AnyObject]).count; index++ {
+            
+            var imageURL = ((info["news"] as [AnyObject])[index] as [String:AnyObject])["news_pic"] as String
+            
+            if imageURL != "" && !checkIfFileExist("news\(index).png"){
+                var imgName = "news\(index).png"
+                ImageLoader.sharedLoader.imageForUrl(imageURL, completionHandler:{(image: UIImage?, url: String) in
+                    println(image)
+                    if image? != nil {
+                        DataManager.saveImageToLocal(image!, name: imgName)
+                    }
+                    else {
+                    }})
+
+                
+            }
+        
+        }
+
+       
+        
     }
 
 
@@ -92,10 +139,12 @@ class DataManager: NSObject {
     
     
     class func saveImageToLocal(image: UIImage, name: String){
-        
+        println(image)
         let fileManager = NSFileManager()
         var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         var imagePath = paths.stringByAppendingPathComponent(name)
+        println(name
+        )
         UIImagePNGRepresentation(image).writeToFile(imagePath, atomically: true)
         
     }
@@ -137,6 +186,35 @@ class DataManager: NSObject {
         dict.writeToFile(path, atomically: true)
     }
     
+    class func checkIfFileExist(fileName: String)->Bool{
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        
+        var getImagePath = paths.stringByAppendingPathComponent(fileName)
+        
+        var checkValidation = NSFileManager.defaultManager()
+        
+        if (checkValidation.fileExistsAtPath(getImagePath))
+        {
+            return true
+        }
+        else
+        {
+            return false
+        }
+    }
+    
+    class func deleFileInLocal(fileName: String){
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        
+        var getImagePath = paths.stringByAppendingPathComponent(fileName)
+        
+        var manager = NSFileManager.defaultManager()
+        
+        manager.removeItemAtPath(getImagePath, error: nil)
+    }
+    
+    class func removeFile(){
+    }
     
     //for uploadImage
         
