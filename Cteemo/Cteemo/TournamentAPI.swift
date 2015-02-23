@@ -20,11 +20,15 @@ class TournamentAPI: NSObject{
    /* POST https://challonge.com/api/tournaments.{json|xml}
     
     http://api.challonge.com/v1/documents/tournaments/create
+    tournament[name]	Your event's name/title (Max: 60 characters)
+    tournament[tournament_type]	Single elimination (default), double elimination, round robin, swiss
     
+    ,"tournament[tournament_type]":type
     */
-    func createTournament(name:String,type:String,url:String,intro:String){
+    
+    func createTournament(name:String,intro:String){
         
-        var par : [String: AnyObject] = ["api_key":key,"tournament[name]":name,"tournament[tournament_type]":type,"tournament[url]":url,"tournament[description]":intro,"tournament[open_signup]":false]
+        var par : [String: AnyObject] = ["api_key":key,"tournament[name]":name,"tournament[url]":name,"tournament[description]":intro,"tournament[open_signup]":false]
         var req = Alamofire.request(.POST, "https://challonge.com/api/tournaments.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
@@ -42,7 +46,7 @@ class TournamentAPI: NSObject{
         var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+id+".json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
-                println(result)
+                println(JSON)
                 
                 }
         }
@@ -52,7 +56,7 @@ class TournamentAPI: NSObject{
     func showTournamentMember(id :String){
     
         var par : [String: AnyObject] = ["api_key":key]
-        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+id+"/participants.json",parameters:par)
+        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/:"+id+"/participants.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
                 println(result)
@@ -60,8 +64,22 @@ class TournamentAPI: NSObject{
         }
     
     
+    }
+    
+    
+    func JoinTournament(id: String, name : String,email : String)
+    {
+    
+        var par : [String: AnyObject] = ["api_key":key,"participant[name]":name,"participant[email]":email]
+        var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+id+"/participants.json",parameters:par)
+            .responseJSON { (_, _, JSON, _) in
+                var result: [String: AnyObject] = JSON as [String: AnyObject]
+                println(result)
+                
+        }
+
+    
     
     }
-
 
 }

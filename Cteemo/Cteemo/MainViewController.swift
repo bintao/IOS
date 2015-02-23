@@ -37,7 +37,7 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
     }
     
     override func viewDidAppear(animated: Bool) {
-       
+        
         LolAPIGlobal.getlolvision()
         if UserInfoGlobal.accessToken == ""
         {

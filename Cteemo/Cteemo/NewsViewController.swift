@@ -43,7 +43,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func gotResult(prefix: String, result: AnyObject) {
         if (prefix as NSString).substringToIndex(15) == "news_list/all/0" {
-            println(result)
+            
             var newsInfo = ["news":result]
             //save user info and update image files
             DataManager.saveNewsInfoToLocal(newsInfo)
@@ -77,7 +77,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         
         if indexPath.row == 0{
-            println("sssds")
             return self.view.frame.width * 0.67
         }else{
             return 120
