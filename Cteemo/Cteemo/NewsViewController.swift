@@ -20,22 +20,12 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     //@IBOutlet var menu : UIBarButtonItem!
     var hotImageIcon : UIButton!
     
-    
-    var newsArr: [AnyObject] = ["news1", "news2", "news3", "news4"]
-    var hotImage = UIImageView(image: UIImage(named: "RED"))
-    
+    var newsArr: [AnyObject]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        imageArray = [UIImage]()
-        
-        for var index = 1; index <= 3; index++ {
-            var str = "img\(index).jpg"
-                    var img : UIImage = UIImage(named: str)!
-                    imageArray.append(img)
-            
-            }
-        
+        newsArr = DataManager.getNewsInfo()
+        imageArray = DataManager.getNewsImages()
         //get news
         var req = ARequest(prefix: "news_list/all/0", method: requestType.GET)
         req.server = "http://54.149.235.253:4000/"
@@ -51,6 +41,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
             var newsInfo = ["news":result]
             //save user info and update image files
             DataManager.saveNewsInfoToLocal(newsInfo)
+            
         }
     }
     
@@ -78,17 +69,70 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 100
+        
+        if indexPath.row == 0{
+            println("sssds")
+            return self.view.frame.width * 0.67
+        }else{
+            return 120
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        var cellImage = UIImageView(frame: CGRectMake(0, 10, 125, 85))
-        cellImage.backgroundColor = UIColor.darkGrayColor()
+        
+
+        var cellImage = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, 120))
+        cellImage.image = imageArray[indexPath.row]
         cell.addSubview(cellImage)
         
+        var img = UIImage()
+        img = img.setGradientToImage(cellImage.frame, locationList: [0.0,1.0], colorList: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.2], startPoint: CGPointMake(0, 120), endPoint: CGPointMake(cellImage.frame.width + 200, -30))
+       // img = img.setGradientToImage(cellImage.frame, locationList: [0.0,1.0], colorList: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0], startPoint: CGPointMake(60, 120), endPoint: CGPointMake(-40, 0))
+        //img = img.setGradientToImage(cellImage.frame, locationList: [0.0,1.0], colorList: [253.0/255.0, 76.0/255.0, 83.0 / 255.0, 1.0, 1.0, 1.0, 1.0, 0.0], startPoint: CGPointMake(0, 0), endPoint: CGPointMake(cellImage.frame.width +, 0))
+        var coverImage = UIImageView(frame: cellImage.frame)
+        coverImage.image = img
+        cell.addSubview(coverImage)
+        var coverImage2 = coverImage
+        cell.addSubview(coverImage2)
+
+        var title = UITextView(frame: CGRectMake(15, 10, self.view.frame.width - 100, 70))
+        title.font = UIFont(name: "Palatino-Roman", size: 18)
+        title.text = (newsArr[indexPath.row] as [String : AnyObject])["title"] as String
+        title.textColor = UIColor.blackColor()
+        title.backgroundColor = UIColor.clearColor()
+        title.textAlignment = NSTextAlignment.Left
+        title.scrollEnabled = false
+        cell.addSubview(title)
+
+        var time = UILabel(frame: CGRectMake(20, 85, self.view.frame.width - 100, 20))
+        time.font = UIFont(name: "Palatino-Bold", size: 14)
+        time.text = (newsArr[indexPath.row] as [String : AnyObject])["date"] as? String
+        var index = countElements(time.text!) - 7
+        time.text = (time.text! as NSString).substringToIndex(index)
+        time.textColor = UIColor.grayColor()
+        time.alpha = 0.8
+        time.backgroundColor = UIColor.clearColor()
+        time.textAlignment = NSTextAlignment.Left
+        cell.addSubview(time)
+
+
+        var line = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, 0.7))
+        line.backgroundColor = UIColor.lightGrayColor()
+        cell.addSubview(line)
+        
+        if indexPath.row == 0{
+            coverImage.removeFromSuperview()
+            cellImage.frame.size = CGSizeMake(self.view.frame.width, self.view.frame.width * 0.67)
+        }
+        
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        println(indexPath.row)
+
     }
 
     /*

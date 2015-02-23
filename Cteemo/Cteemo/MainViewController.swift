@@ -53,8 +53,6 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
         }
         else{
             
-            
-
             news.alpha = 1
             
             if tabbarShouldAppear {

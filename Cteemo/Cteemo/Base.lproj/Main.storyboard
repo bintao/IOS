@@ -1315,9 +1315,10 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="C51-WV-99a">
-                                <rect key="frame" x="109" y="235" width="320" height="371"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="C51-WV-99a">
+                                <rect key="frame" x="0.0" y="64" width="659" height="552"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="LdS-rq-4W4" id="PEl-Mq-Z51"/>
                                     <outlet property="delegate" destination="LdS-rq-4W4" id="Ggr-kp-Fyk"/>
@@ -1325,13 +1326,6 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="C51-WV-99a" secondAttribute="trailing" id="6gU-x0-SZP"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="C51-WV-99a" secondAttribute="bottom" constant="50" id="TaV-3b-uh2"/>
-                            <constraint firstItem="C51-WV-99a" firstAttribute="leading" secondItem="WtU-bt-fut" secondAttribute="leadingMargin" id="bIT-eR-Xyd"/>
-                            <constraint firstItem="C51-WV-99a" firstAttribute="top" secondItem="LaT-Tw-FOq" secondAttribute="bottom" id="fvb-F1-3di"/>
-                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="NEWS" id="7pj-tk-u0A">
@@ -1351,7 +1345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hg7-iQ-n8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5443" y="-2215"/>
+            <point key="canvasLocation" x="5253" y="-2500"/>
         </scene>
         <!--TOURNAMENT-->
         <scene sceneID="Vq6-t2-acB">

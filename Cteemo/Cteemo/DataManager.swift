@@ -63,6 +63,21 @@ class DataManager: NSObject {
         return (DataManager.getPlistFile("News.plist") as [String:AnyObject])["news"] as [AnyObject]
     }
     
+    class func getNewsImages()->[UIImage]{
+        
+        var imgArr = [UIImage]()
+        
+        for var index = 0; index < 10; index++ {
+            if DataManager.checkIfFileExist("news\(index).png"){
+                imgArr.append(DataManager.getImageFromLocal("news\(index).png")!)
+            }else{
+                imgArr.append(UIImage(named: "img1.jpg")!)
+            }
+        }
+        
+        return imgArr
+    }
+    
     class func saveNewsInfoToLocal(info: [String: AnyObject]){
 
         if checkIfFileExist("News.plist"){
