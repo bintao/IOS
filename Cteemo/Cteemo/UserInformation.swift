@@ -52,7 +52,6 @@ class UserInformation: NSObject, RequestResultDelegate{
         school = data["school"] as String
         intro = data["intro"] as String
         profile_ID = data["profile_ID"] as String
-        
         profile_icon_Link = data["profile_icon_Link"] as String
 
         icon = DataManager.getUserIconFromLocal()

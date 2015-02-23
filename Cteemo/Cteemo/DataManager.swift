@@ -60,7 +60,11 @@ class DataManager: NSObject {
     }
     
     class func getNewsInfo()->[AnyObject]{
-        return (DataManager.getPlistFile("News.plist") as [String:AnyObject])["news"] as [AnyObject]
+        if DataManager.checkIfFileExist("News.plist"){
+            return (DataManager.getPlistFile("News.plist") as [String:AnyObject])["news"] as [AnyObject]
+        }else {
+            return [AnyObject]()
+        }
     }
     
     class func getNewsImages()->[UIImage]{

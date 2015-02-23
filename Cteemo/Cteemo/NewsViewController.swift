@@ -24,8 +24,8 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        newsArr = DataManager.getNewsInfo()
-        imageArray = DataManager.getNewsImages()
+        
+        reloadata()
         //get news
         var req = ARequest(prefix: "news_list/all/0", method: requestType.GET)
         req.server = "http://54.149.235.253:4000/"
@@ -34,6 +34,12 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         //imageScrollimageScrollView.contentSize = image.size
         
     }
+    //reload data of the news
+    func reloadata(){
+        newsArr = DataManager.getNewsInfo()
+        imageArray = DataManager.getNewsImages()
+        newsTable.reloadData()
+    }
     
     func gotResult(prefix: String, result: AnyObject) {
         if (prefix as NSString).substringToIndex(15) == "news_list/all/0" {
@@ -41,7 +47,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
             var newsInfo = ["news":result]
             //save user info and update image files
             DataManager.saveNewsInfoToLocal(newsInfo)
-            
+            self.reloadata()
         }
     }
     
@@ -100,10 +106,11 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         var title = UITextView(frame: CGRectMake(15, 10, self.view.frame.width - 100, 70))
         title.font = UIFont(name: "Palatino-Roman", size: 18)
         title.text = (newsArr[indexPath.row] as [String : AnyObject])["title"] as String
-        title.textColor = UIColor.blackColor()
+        title.textColor = UIColor.darkGrayColor()
         title.backgroundColor = UIColor.clearColor()
         title.textAlignment = NSTextAlignment.Left
         title.scrollEnabled = false
+        title.editable = false
         cell.addSubview(title)
 
         var time = UILabel(frame: CGRectMake(20, 85, self.view.frame.width - 100, 20))
