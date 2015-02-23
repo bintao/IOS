@@ -12,15 +12,21 @@ class Bracket: UIViewController {
     
     @IBOutlet weak var cen: UIImageView!
     
+    @IBOutlet weak var webview: UIWebView!
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
+        let url = NSURL(string: "http://challonge.com/UIUC/module?theme=100&multiplier=0.9&match_width_multiplier=1.2.png")
+        let request = NSURLRequest(URL: url!)
+        self.webview.loadRequest(request)
+        
     }
     
     override func viewDidAppear(animated: Bool) {
-     
-        self.spawnImage()
+        
+        //self.spawnImage()
         
     }
     override func didReceiveMemoryWarning() {
