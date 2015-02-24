@@ -25,8 +25,9 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        reloadata()
-        //get news
+        newsArr = DataManager.getNewsInfo()
+        imageArray = DataManager.getNewsImages()        //get news
+
         var req = ARequest(prefix: "news_list/all/0", method: requestType.GET)
         req.server = "http://54.149.235.253:4000/"
         req.delegate = self
@@ -34,11 +35,9 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         //imageScrollimageScrollView.contentSize = image.size
         
     }
+    
     //reload data of the news
     func reloadata(){
-        newsArr = DataManager.getNewsInfo()
-        imageArray = DataManager.getNewsImages()
-        newsTable.reloadData()
     }
     
     func gotResult(prefix: String, result: AnyObject) {
@@ -47,8 +46,39 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
             var newsInfo = ["news":result]
             //save user info and update image files
             DataManager.saveNewsInfoToLocal(newsInfo)
-            self.reloadata()
+            newsArr = result as [AnyObject]
+            downloadNewsPictureImages(newsInfo)
+        
         }
+    }
+    
+    func downloadNewsPictureImages(info: [String:AnyObject]){
+        
+        for var index = 0; index < (info["news"] as [AnyObject]).count; index++ {
+            
+            var imageURL = ((info["news"] as [AnyObject])[index] as [String:AnyObject])["news_pic"] as String
+            
+            if imageURL != "" && !DataManager.checkIfFileExist((imageURL as NSString).substringFromIndex(countElements(imageURL) - 10) as String) {
+
+                var imgarr = (imageURL as NSString).substringFromIndex(countElements(imageURL) - 10) as String
+
+                
+                ImageLoader.sharedLoader.imageForUrl(imageURL, completionHandler:{(image: UIImage?, url: String) in
+                    println(image)
+                    if image? != nil {
+                        DataManager.saveImageToLocal(image!, name: "\(imgarr).png")
+                        //reload data after all images are downloaded
+                            self.imageArray = DataManager.getNewsImages()
+                            self.newsTable.reloadData()
+                        println("dddddddddd")
+
+                    }
+                    else {
+                    }})
+                
+            }
+            }
+
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -103,7 +133,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.addSubview(coverImage2)
 
         var title = UITextView(frame: CGRectMake(15, 10, self.view.frame.width - 100, 70))
-        title.font = UIFont(name: "Palatino-Roman", size: 18)
+        title.font = UIFont(name: "Palatino-Roman", size: 20)
         title.text = (newsArr[indexPath.row] as [String : AnyObject])["title"] as String
         title.textColor = UIColor.darkGrayColor()
         title.backgroundColor = UIColor.clearColor()
@@ -131,6 +161,14 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         if indexPath.row == 0{
             coverImage.removeFromSuperview()
             cellImage.frame.size = CGSizeMake(self.view.frame.width, self.view.frame.width * 0.67)
+            title.frame.origin = CGPointMake(15, self.view.frame.width * 0.67 - 90)
+            title.textColor = UIColor.whiteColor()
+            title.font = UIFont(name: "Palatino-Bold", size: 22)
+            
+            time.frame.origin = CGPointMake(20, self.view.frame.width * 0.67 - 30)
+            time.textColor = UIColor.whiteColor()
+
+
         }
         
         return cell

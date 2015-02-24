@@ -69,11 +69,17 @@ class DataManager: NSObject {
     
     class func getNewsImages()->[UIImage]{
         
+        
+        var newsArr = DataManager.getNewsInfo()
+        
         var imgArr = [UIImage]()
         
-        for var index = 0; index < 10; index++ {
-            if DataManager.checkIfFileExist("news\(index).png"){
-                imgArr.append(DataManager.getImageFromLocal("news\(index).png")!)
+        for var index = 0; index < newsArr.count; index++ {
+            
+            var imgarr = (newsArr[index] as [String:AnyObject])["news_pic"] as String
+            
+            if imgarr != "" && DataManager.checkIfFileExist("\((imgarr as NSString).substringFromIndex(countElements(imgarr) - 10)).png"){
+                imgArr.append(DataManager.getImageFromLocal("\((imgarr as NSString).substringFromIndex(countElements(imgarr) - 10)).png")!)
             }else{
                 imgArr.append(UIImage(named: "img1.jpg")!)
             }
@@ -102,34 +108,13 @@ class DataManager: NSObject {
                 }
                 if !found {
                     // delete the image in local
-                    DataManager.deleFileInLocal("news\(index).png")
+                    var imgarr = (localInfo[index] as [String:AnyObject])["news_pic"] as String
+                    DataManager.deleFileInLocal("\((imgarr as NSString).substringFromIndex(countElements(imgarr) - 10)).png")
                 }
             }
         }
         
     DataManager.savePlistFile(info, fileName: "News.plist")
-        
-        
-        for var index = 0; index < (info["news"] as [AnyObject]).count; index++ {
-            
-            var imageURL = ((info["news"] as [AnyObject])[index] as [String:AnyObject])["news_pic"] as String
-            
-            if imageURL != "" && !checkIfFileExist("news\(index).png"){
-                var imgName = "news\(index).png"
-                ImageLoader.sharedLoader.imageForUrl(imageURL, completionHandler:{(image: UIImage?, url: String) in
-                    println(image)
-                    if image? != nil {
-                        DataManager.saveImageToLocal(image!, name: imgName)
-                    }
-                    else {
-                    }})
-
-                
-            }
-        
-        }
-
-       
         
     }
 
