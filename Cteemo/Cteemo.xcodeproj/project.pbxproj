@@ -17,6 +17,7 @@
 		4215A6701A7B45E1002EB62E /* speaker.png in Resources */ = {isa = PBXBuildFile; fileRef = 4215A66F1A7B45E1002EB62E /* speaker.png */; };
 		4215A6721A7D7616002EB62E /* API in Resources */ = {isa = PBXBuildFile; fileRef = 4215A6711A7D7616002EB62E /* API */; };
 		421D565C1A8339D2005E56F0 /* Team_FindTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */; };
+		423142F91A9C40180033B3E7 /* NewsDisplayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 423142F81A9C40180033B3E7 /* NewsDisplayViewController.swift */; };
 		424AF75E1A872DA20033B863 /* adddd.png in Resources */ = {isa = PBXBuildFile; fileRef = 424AF75D1A872DA20033B863 /* adddd.png */; };
 		425E8FE51A8B19BF00A06752 /* CustomPosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */; };
 		4260F3FC1A886D6000A6F39D /* Team_TeamInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4260F3FB1A886D6000A6F39D /* Team_TeamInfoViewController.swift */; };
@@ -185,6 +186,7 @@
 		4215A66F1A7B45E1002EB62E /* speaker.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = speaker.png; sourceTree = "<group>"; };
 		4215A6711A7D7616002EB62E /* API */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = API; sourceTree = "<group>"; };
 		421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_FindTeamViewController.swift; sourceTree = "<group>"; };
+		423142F81A9C40180033B3E7 /* NewsDisplayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewsDisplayViewController.swift; sourceTree = "<group>"; };
 		424AF75D1A872DA20033B863 /* adddd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = adddd.png; sourceTree = "<group>"; };
 		425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPosterView.swift; sourceTree = "<group>"; };
 		4260F3FB1A886D6000A6F39D /* Team_TeamInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_TeamInfoViewController.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 			isa = PBXGroup;
 			children = (
 				42B74FC21A812416008B575C /* NewsViewController.swift */,
+				423142F81A9C40180033B3E7 /* NewsDisplayViewController.swift */,
 			);
 			name = "New Group";
 			sourceTree = "<group>";
@@ -802,6 +805,7 @@
 				425E8FE51A8B19BF00A06752 /* CustomPosterView.swift in Sources */,
 				42855BA81A84803000EB9546 /* Team_CreateTeamViewController.swift in Sources */,
 				42B74FC51A812416008B575C /* TournamentViewController.swift in Sources */,
+				423142F91A9C40180033B3E7 /* NewsDisplayViewController.swift in Sources */,
 				42B85A441A74A81A00FD4642 /* UserInformation.swift in Sources */,
 				427D7A911A85C36000BFB2DA /* CustomSwitcher.swift in Sources */,
 				A14E3C1F1A9B20E7003C837F /* SOXPanRotateZoomImageView.swift in Sources */,

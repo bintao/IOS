@@ -13,9 +13,12 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var newsTable : UITableView!
     @IBOutlet var menu: UIBarButtonItem!
 
+    var newsDisplay : NewsDisplayViewController!
+
     var currentChosen:Int = 0
     
     var imageArray : [UIImage]!
+    var originalImage :[UIImage]!
     
     //@IBOutlet var menu : UIBarButtonItem!
     var hotImageIcon : UIButton!
@@ -26,7 +29,8 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewDidLoad()
         
         newsArr = DataManager.getNewsInfo()
-        imageArray = DataManager.getNewsImages()        //get news
+        imageArray = DataManager.getNewsImages()      
+        originalImage = DataManager.getNewsImages()
 
         var req = ARequest(prefix: "news_list/all/0", method: requestType.GET)
         req.server = "http://54.149.235.253:4000/"
@@ -69,22 +73,17 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                         DataManager.saveImageToLocal(image!, name: "\(imgarr).png")
                         //reload data after all images are downloaded
                             self.imageArray = DataManager.getNewsImages()
+                            self.originalImage = DataManager.getNewsImages()
                             self.newsTable.reloadData()
-                        println("dddddddddd")
 
                     }
                     else {
                     }})
                 
-            }
+                }
             }
 
     }
-    
-    override func viewDidAppear(animated: Bool) {
-        
-    }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -180,9 +179,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         var countUp = 0
         var countDown = 0
         
-        println(tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0))!.convertRect(tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0))!.frame, toView: self.view))
-
-        UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             
 
             // hide cover
@@ -196,7 +193,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 if tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0)) != nil{
 
-                    tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0))!.transform = CGAffineTransformMakeTranslation(0 , -200)
+                    tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0))!.transform = CGAffineTransformMakeTranslation(0 , -300)
                 }
                 upbound--
                 countUp++
@@ -205,7 +202,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
             while(countDown < 4 && downbound < self.newsArr.count){
                 println(downbound)
                 if tableView.cellForRowAtIndexPath(NSIndexPath(forRow: downbound, inSection: 0)) != nil{
-                    tableView.cellForRowAtIndexPath(NSIndexPath(forRow: downbound, inSection: 0))!.transform = CGAffineTransformMakeTranslation(0 , 200)
+                    tableView.cellForRowAtIndexPath(NSIndexPath(forRow: downbound, inSection: 0))!.transform = CGAffineTransformMakeTranslation(0 , 300)
                 }
                 downbound++
                 countDown++
@@ -215,10 +212,33 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
             }
             , completion: {
                 (value: Bool) in
+                
+                self.displayNews(indexPath.row)
         })
-        //self.performSegueWithIdentifier("displayNews", sender: self)
+        
     }
 
+    func displayNews(newsNum: Int){
+
+        var center = newsTable.convertPoint(newsTable.cellForRowAtIndexPath(NSIndexPath(forRow: newsNum, inSection: 0))!.center, toView: UIApplication.sharedApplication().keyWindow)
+                
+        println(center)
+        
+        newsDisplay = self.storyboard!.instantiateViewControllerWithIdentifier("newsDisplay")! as NewsDisplayViewController
+        println(originalImage)
+        
+        newsDisplay.newsInfo = newsArr[newsNum] as [String: AnyObject]
+        newsDisplay.backImg = originalImage[newsNum]
+        newsDisplay.transformPoint = center      // 3
+        newsDisplay.parentView = self
+        
+        self.addChildViewController(newsDisplay)
+        newsDisplay.didMoveToParentViewController(self)
+        self.view.addSubview(newsDisplay.view)
+        //Do any additional setup after loading the view.
+        //self.view.backgroundColor = UIColor(red: 240.0/255, green: 242.0/255, blue: 245.0/255, alpha: 1)
+        
+    }
     /*
     // MARK: - Navigation
 
