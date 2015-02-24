@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -1278,6 +1278,24 @@
             </objects>
             <point key="canvasLocation" x="3429" y="-218"/>
         </scene>
+        <!--lkjs-->
+        <scene sceneID="dRS-Ew-yne">
+            <objects>
+                <viewController id="3Oh-X7-Cyo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qM4-NR-iBe"/>
+                        <viewControllerLayoutGuide type="bottom" id="h47-dr-pT2"/>
+                    </layoutGuides>
+                    <view key="view" alpha="0.0" contentMode="scaleToFill" id="nTr-cJ-M4S">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="lkjs" id="DXF-RR-yvZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9bX-3D-zzW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5999" y="-2898"/>
+        </scene>
         <!--Replies-->
         <scene sceneID="OcL-AN-Zhm">
             <objects>
@@ -1341,11 +1359,12 @@
                     <connections>
                         <outlet property="menu" destination="KYe-v5-qNK" id="mo9-LR-YxL"/>
                         <outlet property="newsTable" destination="C51-WV-99a" id="3tx-yw-kUI"/>
+                        <segue destination="3Oh-X7-Cyo" kind="show" identifier="displayNews" id="J4G-gB-lH0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Hg7-iQ-n8y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5253" y="-2500"/>
+            <point key="canvasLocation" x="5141" y="-2768"/>
         </scene>
         <!--TOURNAMENT-->
         <scene sceneID="Vq6-t2-acB">
@@ -2095,7 +2114,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2tQ-ZQ-rrO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>

@@ -117,20 +117,17 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
-
+        var imgHeight = imageArray[indexPath.row].size.width * 120 / self.view.frame.width
         var cellImage = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, 120))
-        cellImage.image = imageArray[indexPath.row]
+        // crop the part image in the center
+        cellImage.image = imageArray[indexPath.row].crop(CGRectMake(0, (imageArray[indexPath.row].size.height - imgHeight) / 2, imageArray[indexPath.row].size.width, imgHeight))
         cell.addSubview(cellImage)
         
         var img = UIImage()
         img = img.setGradientToImage(cellImage.frame, locationList: [0.0,1.0], colorList: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.2], startPoint: CGPointMake(0, 120), endPoint: CGPointMake(cellImage.frame.width + 200, -30))
-       // img = img.setGradientToImage(cellImage.frame, locationList: [0.0,1.0], colorList: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0], startPoint: CGPointMake(60, 120), endPoint: CGPointMake(-40, 0))
-        //img = img.setGradientToImage(cellImage.frame, locationList: [0.0,1.0], colorList: [253.0/255.0, 76.0/255.0, 83.0 / 255.0, 1.0, 1.0, 1.0, 1.0, 0.0], startPoint: CGPointMake(0, 0), endPoint: CGPointMake(cellImage.frame.width +, 0))
         var coverImage = UIImageView(frame: cellImage.frame)
         coverImage.image = img
         cell.addSubview(coverImage)
-        var coverImage2 = coverImage
-        cell.addSubview(coverImage2)
 
         var title = UITextView(frame: CGRectMake(15, 10, self.view.frame.width - 100, 70))
         title.font = UIFont(name: "Palatino-Roman", size: 20)
@@ -140,6 +137,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         title.textAlignment = NSTextAlignment.Left
         title.scrollEnabled = false
         title.editable = false
+        title.selectable = false
         cell.addSubview(title)
 
         var time = UILabel(frame: CGRectMake(20, 85, self.view.frame.width - 100, 20))
@@ -161,6 +159,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         if indexPath.row == 0{
             coverImage.removeFromSuperview()
             cellImage.frame.size = CGSizeMake(self.view.frame.width, self.view.frame.width * 0.67)
+            cellImage.image = imageArray[indexPath.row]
             title.frame.origin = CGPointMake(15, self.view.frame.width * 0.67 - 90)
             title.textColor = UIColor.whiteColor()
             title.font = UIFont(name: "Palatino-Bold", size: 22)
@@ -168,15 +167,56 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
             time.frame.origin = CGPointMake(20, self.view.frame.width * 0.67 - 30)
             time.textColor = UIColor.whiteColor()
 
-
         }
         
         return cell
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        println(indexPath.row)
+        
+        var upbound = indexPath.row - 1
+        var downbound = indexPath.row + 1
 
+        var countUp = 0
+        var countDown = 0
+        
+        println(tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0))!.convertRect(tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0))!.frame, toView: self.view))
+
+        UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            
+
+            // hide cover
+            if indexPath.row != 0{
+                (tableView.cellForRowAtIndexPath(NSIndexPath(forRow: indexPath.row, inSection: 0))?.subviews[2] as UIView).alpha = 0
+                
+            }
+
+            
+            while(countUp < 4 && upbound >= 0){
+                
+                if tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0)) != nil{
+
+                    tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0))!.transform = CGAffineTransformMakeTranslation(0 , -200)
+                }
+                upbound--
+                countUp++
+            }
+            
+            while(countDown < 4 && downbound < self.newsArr.count){
+                println(downbound)
+                if tableView.cellForRowAtIndexPath(NSIndexPath(forRow: downbound, inSection: 0)) != nil{
+                    tableView.cellForRowAtIndexPath(NSIndexPath(forRow: downbound, inSection: 0))!.transform = CGAffineTransformMakeTranslation(0 , 200)
+                }
+                downbound++
+                countDown++
+            }
+
+            
+            }
+            , completion: {
+                (value: Bool) in
+        })
+        //self.performSegueWithIdentifier("displayNews", sender: self)
     }
 
     /*
