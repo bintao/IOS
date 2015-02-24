@@ -134,9 +134,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         title.textColor = UIColor.darkGrayColor()
         title.backgroundColor = UIColor.clearColor()
         title.textAlignment = NSTextAlignment.Left
-        title.scrollEnabled = false
-        title.editable = false
-        title.selectable = false
+        title.userInteractionEnabled = false
         cell.addSubview(title)
 
         var time = UILabel(frame: CGRectMake(20, 85, self.view.frame.width - 100, 20))
@@ -193,7 +191,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 if tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0)) != nil{
 
-                    tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0))!.transform = CGAffineTransformMakeTranslation(0 , -300)
+                    tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0))!.transform = CGAffineTransformMakeTranslation(0 , -500)
                 }
                 upbound--
                 countUp++
@@ -202,7 +200,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
             while(countDown < 4 && downbound < self.newsArr.count){
                 println(downbound)
                 if tableView.cellForRowAtIndexPath(NSIndexPath(forRow: downbound, inSection: 0)) != nil{
-                    tableView.cellForRowAtIndexPath(NSIndexPath(forRow: downbound, inSection: 0))!.transform = CGAffineTransformMakeTranslation(0 , 300)
+                    tableView.cellForRowAtIndexPath(NSIndexPath(forRow: downbound, inSection: 0))!.transform = CGAffineTransformMakeTranslation(0 , 500)
                 }
                 downbound++
                 countDown++

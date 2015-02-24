@@ -336,13 +336,13 @@
 			name = Team;
 			sourceTree = "<group>";
 		};
-		4257F3DD1A99435F007F2E1C /* New Group */ = {
+		4257F3DD1A99435F007F2E1C /* News */ = {
 			isa = PBXGroup;
 			children = (
 				42B74FC21A812416008B575C /* NewsViewController.swift */,
 				423142F81A9C40180033B3E7 /* NewsDisplayViewController.swift */,
 			);
-			name = "New Group";
+			name = News;
 			sourceTree = "<group>";
 		};
 		428F6E731A7F2F3C007C21AC /* Products */ = {
@@ -432,7 +432,7 @@
 				425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */,
 				427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */,
 				421D56511A832452005E56F0 /* Team */,
-				4257F3DD1A99435F007F2E1C /* New Group */,
+				4257F3DD1A99435F007F2E1C /* News */,
 				42B74FC31A812416008B575C /* MeViewController.swift */,
 				42B74FBD1A812220008B575C /* Login */,
 				A1EB12191A99C61900FC8388 /* Tournament */,
