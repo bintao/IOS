@@ -830,7 +830,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Team_TeamInfoViewController.swift"
-            timestampString = "446276620.432783"
+            timestampString = "446438000.836861"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "66"
@@ -853,36 +853,6 @@
             endingLineNumber = "74"
             landmarkName = "gotResult(_:result:)"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Cteemo.TeamViewController.gotResult (Cteemo.TeamViewController)(Swift.String, result : Swift.AnyObject) -&gt; ()"
-                  moduleName = "Cteemo"
-                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/TeamViewController.swift"
-                  timestampString = "446419738.876671"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "4308">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Cteemo.TeamViewController.gotResult (Cteemo.TeamViewController)(Swift.String, result : Swift.AnyObject) -&gt; ()"
-                  moduleName = "Cteemo"
-                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/TeamViewController.swift"
-                  timestampString = "446419738.876905"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "4736">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

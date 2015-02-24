@@ -53,11 +53,19 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
     
     func gotResult(prefix: String, result: AnyObject) {
         
-    
+        println(result)
+        if result["message"]? != nil{
+        
+            if (result["message"] as String).rangeOfString("Tried to save")?.isEmpty != nil{
+            
+                     let alert = SCLAlertView()
+                     alert.showError("Team name exised", subTitle: "Please enter team name again", closeButtonTitle: "OK!")
+            
+            }
+        }
 
         if(result["id"]? != nil){
-    
-            
+
             var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
             
             if(captain != UserInfoGlobal.profile_ID){
