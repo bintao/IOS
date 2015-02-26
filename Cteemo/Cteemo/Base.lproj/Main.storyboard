@@ -1351,9 +1351,6 @@
                     <navigationItem key="navigationItem" title="NEWS" id="7pj-tk-u0A">
                         <barButtonItem key="leftBarButtonItem" image="SUMMARY.png" id="KYe-v5-qNK">
                             <color key="tintColor" red="0.99215686270000003" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="clickMenu:" destination="LdS-rq-4W4" id="17r-iC-uRC"/>
-                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>

@@ -11,7 +11,7 @@ import UIKit
 class NewsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate, RequestResultDelegate {
     
     @IBOutlet var newsTable : UITableView!
-    @IBOutlet var menu: UIBarButtonItem!
+    var menu: UIBarButtonItem!
 
     var newsDisplay : NewsDisplayViewController!
 
@@ -28,6 +28,8 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        menu.target = self
+        menu.action = Selector("clickMenu:")
         newsArr = DataManager.getNewsInfo()
         imageArray = DataManager.getNewsImages()      
         originalImage = DataManager.getNewsImages()
@@ -42,6 +44,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //reload data of the news
     func reloadata(){
+        
     }
     
     func gotResult(prefix: String, result: AnyObject) {
@@ -90,10 +93,27 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func clickMenu(sender: AnyObject) {
+    func clickMenu(sender: AnyObject) {
         
     }
     
+    //neturn from news detail
+    func clickReturn(sender: AnyObject) {
+        
+        UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            self.newsDisplay.view.transform = CGAffineTransformMakeTranslation(self.view.frame.width, 0)
+            
+            },completion: {
+                (value: Bool) in
+                self.newsDisplay.view.removeFromSuperview()
+                self.newsDisplay.removeFromParentViewController()
+                self.newsDisplay = nil
+                self.menu.action = Selector("clickMenu:")
+                self.menu.image = UIImage(named: "SUMMARY")
+
+        })
+
+    }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
@@ -233,6 +253,10 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.addChildViewController(newsDisplay)
         newsDisplay.didMoveToParentViewController(self)
         self.view.addSubview(newsDisplay.view)
+        
+        menu.action = Selector("clickReturn:")
+        menu.image = UIImage(named: "left")
+        newsTable.reloadData()
         //Do any additional setup after loading the view.
         //self.view.backgroundColor = UIColor(red: 240.0/255, green: 242.0/255, blue: 245.0/255, alpha: 1)
         
