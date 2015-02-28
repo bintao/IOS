@@ -70,14 +70,7 @@ class TournamentViewController: UIViewController {
         
 
     }
-    
-    @IBAction func viewTournament(){
-        
-        self.performSegueWithIdentifier("bracket", sender: self)
-        //"http://images.challonge.com/UIUC.png"
-        
-    }
-    
+
     
     @IBAction func returnToTournament(segue : UIStoryboardSegue) {
         

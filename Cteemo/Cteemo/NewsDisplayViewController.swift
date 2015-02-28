@@ -29,11 +29,11 @@ class NewsDisplayViewController: UIViewController, UIScrollViewDelegate{
         backImage.image = backImg
         self.view.addSubview(backImage)
         
-        var upBoard = UIView(frame: CGRectMake(0, 0, backImage.frame.width, (backImage.frame.height - 120) / 2))
+        var upBoard = UIView(frame: CGRectMake(0, 0, backImage.frame.width, (backImage.frame.height - parentView.tableHeight) / 2))
         upBoard.backgroundColor = UIColor.whiteColor()
         backImage.addSubview(upBoard)
         
-        var downBoard = UIView(frame: CGRectMake(0, (backImage.frame.height - 120) / 2 + 120, backImage.frame.width, (backImage.frame.height - 120) / 2))
+        var downBoard = UIView(frame: CGRectMake(0, (backImage.frame.height - parentView.tableHeight) / 2 + parentView.tableHeight, backImage.frame.width, (backImage.frame.height - parentView.tableHeight) / 2))
         downBoard.backgroundColor = UIColor.whiteColor()
         backImage.addSubview(downBoard)
         
@@ -42,6 +42,10 @@ class NewsDisplayViewController: UIViewController, UIScrollViewDelegate{
         scroller.contentSize = CGSizeMake(scroller.frame.width, 1000)
         self.view.addSubview(scroller)
         
+        var gesture = UIScreenEdgePanGestureRecognizer(target: self, action: "returnToNews:")
+        gesture.edges = UIRectEdge.Left
+        scroller.addGestureRecognizer(gesture)
+        self.view.addGestureRecognizer(gesture)
         
         backImage.transform = CGAffineTransformMakeTranslation(0, transformPoint.y - backImage.center.y - parentView.newsTable.frame.origin.y)
         
@@ -54,7 +58,13 @@ class NewsDisplayViewController: UIViewController, UIScrollViewDelegate{
                 self.backImage.transform = CGAffineTransformMakeTranslation(0, 0)
                 (self.backImage.subviews[0] as UIView).center = CGPointMake((self.backImage.subviews[0] as UIView).center.x, (self.backImage.subviews[0] as UIView).center.y - (self.backImage.subviews[0] as UIView).frame.height)
             (self.backImage.subviews[1] as UIView).center = CGPointMake((self.backImage.subviews[1] as UIView).center.x, (self.backImage.subviews[1] as UIView).center.y + (self.backImage.subviews[1] as UIView).frame.height)
+            
+            self.parentView.menu.tintColor = self.parentView.view.tintColor
+
             }
+            
+
+            
             , completion: {
                 (value: Bool) in
                 
@@ -77,7 +87,13 @@ class NewsDisplayViewController: UIViewController, UIScrollViewDelegate{
         // Dispose of any resources that can be recreated.
     }
     
-
+    func returnToNews(gesture: UIScreenEdgePanGestureRecognizer){
+        self.view.transform = CGAffineTransformMakeTranslation(gesture.translationInView(self.view).x, 0)
+        self.view.alpha = (self.view.frame.width - gesture.translationInView(self.view).x) / self.view.frame.width
+        if gesture.state == UIGestureRecognizerState.Cancelled || gesture.state == UIGestureRecognizerState.Ended{
+            parentView.clickReturn()
+        }
+    }
     /*
     // MARK: - Navigation
 

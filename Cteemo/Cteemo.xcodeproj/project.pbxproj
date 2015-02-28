@@ -578,9 +578,9 @@
 		A1EB121C1A99C66C00FC8388 /* data */ = {
 			isa = PBXGroup;
 			children = (
+				42B85A421A74A81A00FD4642 /* DataManager.swift */,
 				A1F138851A8346C9007DE5A2 /* LolAPI.swift */,
 				A1A858371A8C7DC1001BF576 /* LOLInfo.plist */,
-				42B85A421A74A81A00FD4642 /* DataManager.swift */,
 				427D7A941A85CBDE00BFB2DA /* UserTeam.plist */,
 				427D7A921A85CBA600BFB2DA /* UserTeam.swift */,
 				42B85A411A74A81A00FD4642 /* UserInformation.swift */,

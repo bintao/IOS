@@ -67,10 +67,7 @@ class DataManager: NSObject {
         }
     }
     
-    class func getNewsImages()->[UIImage]{
-        
-        
-        var newsArr = DataManager.getNewsInfo()
+    class func getNewsImages(newsArr:[AnyObject])->[UIImage]{
         
         var imgArr = [UIImage]()
         
@@ -90,6 +87,7 @@ class DataManager: NSObject {
     
     class func saveNewsInfoToLocal(info: [String: AnyObject]){
 
+        /*
         if checkIfFileExist("News.plist"){
             
             // clean old image file if exist
@@ -106,13 +104,14 @@ class DataManager: NSObject {
                         break;
                     }
                 }
+                
                 if !found {
                     // delete the image in local
                     var imgarr = (localInfo[index] as [String:AnyObject])["news_pic"] as String
                     DataManager.deleFileInLocal("\((imgarr as NSString).substringFromIndex(countElements(imgarr) - 10)).png")
                 }
             }
-        }
+        }*/
         
     DataManager.savePlistFile(info, fileName: "News.plist")
         
