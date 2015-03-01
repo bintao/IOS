@@ -36,7 +36,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         
         // Do any additional setup after loading the view.
     }
-    
+
     func updateTeam(){
         var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
         req.delegate = self

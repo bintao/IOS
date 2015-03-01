@@ -65,13 +65,10 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
                 //can't find lolID
                 self.displaySpeaker("We can't find your lolID information please check your ID")
             }
-
-            
-         
-            
             
         }
         else{
+            
             //lol ID or school is empty
             self.displaySpeaker("lolID or school is empty")
             
@@ -98,9 +95,10 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             req.delegate = self
             req.uploadPhoto("icon.png")
 
-          self.performSegueWithIdentifier("gotololid", sender: self)
+            self.performSegueWithIdentifier("gotololid", sender: self)
             
-        }else if prefix == LolAPIGlobal.key {
+        }
+        else if prefix == LolAPIGlobal.key {
             
             println(result)
             println(LolAPIGlobal.lolName)

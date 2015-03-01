@@ -132,6 +132,13 @@
 		A14E3C1F1A9B20E7003C837F /* SOXPanRotateZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E3C1E1A9B20E7003C837F /* SOXPanRotateZoomImageView.swift */; };
 		A14E3C211A9B21F8003C837F /* Bracket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E3C201A9B21F8003C837F /* Bracket.swift */; };
 		A16023F61A87356E00CFAACA /* Login_lolID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16023F51A87356E00CFAACA /* Login_lolID.swift */; };
+		A18BF4261AA2F7BD000678F3 /* Tournament_joined.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */; };
+		A18BF4311AA2F8EC000678F3 /* Email_Password Page_Bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF42B1AA2F8EC000678F3 /* Email_Password Page_Bg.png */; };
+		A18BF4321AA2F8EC000678F3 /* Email_Password_Nickname_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF42C1AA2F8EC000678F3 /* Email_Password_Nickname_BG.png */; };
+		A18BF4331AA2F8EC000678F3 /* Login_Login page button.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF42D1AA2F8EC000678F3 /* Login_Login page button.png */; };
+		A18BF4341AA2F8EC000678F3 /* LOGIN_SIGN UP PAGE _BG.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF42E1AA2F8EC000678F3 /* LOGIN_SIGN UP PAGE _BG.png */; };
+		A18BF4351AA2F8EC000678F3 /* NEW SUMMONER PAGE_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF42F1AA2F8EC000678F3 /* NEW SUMMONER PAGE_BG.png */; };
+		A18BF4361AA2F8EC000678F3 /* Teemo_Login Page.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF4301AA2F8EC000678F3 /* Teemo_Login Page.png */; };
 		A1A858381A8C7DC1001BF576 /* LOLInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1A858371A8C7DC1001BF576 /* LOLInfo.plist */; };
 		A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */; };
 		A1B8E9581A7B20F2009BE011 /* 奖杯2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */; };
@@ -352,6 +359,13 @@
 		A14E3C1E1A9B20E7003C837F /* SOXPanRotateZoomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOXPanRotateZoomImageView.swift; sourceTree = "<group>"; };
 		A14E3C201A9B21F8003C837F /* Bracket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bracket.swift; sourceTree = "<group>"; };
 		A16023F51A87356E00CFAACA /* Login_lolID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_lolID.swift; sourceTree = "<group>"; };
+		A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament_joined.swift; sourceTree = "<group>"; };
+		A18BF42B1AA2F8EC000678F3 /* Email_Password Page_Bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email_Password Page_Bg.png"; sourceTree = "<group>"; };
+		A18BF42C1AA2F8EC000678F3 /* Email_Password_Nickname_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Email_Password_Nickname_BG.png; sourceTree = "<group>"; };
+		A18BF42D1AA2F8EC000678F3 /* Login_Login page button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Login_Login page button.png"; sourceTree = "<group>"; };
+		A18BF42E1AA2F8EC000678F3 /* LOGIN_SIGN UP PAGE _BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LOGIN_SIGN UP PAGE _BG.png"; sourceTree = "<group>"; };
+		A18BF42F1AA2F8EC000678F3 /* NEW SUMMONER PAGE_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NEW SUMMONER PAGE_BG.png"; sourceTree = "<group>"; };
+		A18BF4301AA2F8EC000678F3 /* Teemo_Login Page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Teemo_Login Page.png"; sourceTree = "<group>"; };
 		A1A858371A8C7DC1001BF576 /* LOLInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LOLInfo.plist; sourceTree = "<group>"; };
 		A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯1.png"; sourceTree = "<group>"; };
 		A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯2.png"; sourceTree = "<group>"; };
@@ -553,6 +567,7 @@
 		42B85A131A74897A00FD4642 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A18BF42A1AA2F8DF000678F3 /* lollog */,
 				A13918E61AA2C11B00CD232A /* Tournament */,
 				A13918E41AA2B2D300CD232A /* juxing.png */,
 				A13918DF1AA2B26500CD232A /* annie.jpg */,
@@ -648,6 +663,19 @@
 			name = Tournament;
 			sourceTree = "<group>";
 		};
+		A18BF42A1AA2F8DF000678F3 /* lollog */ = {
+			isa = PBXGroup;
+			children = (
+				A18BF42B1AA2F8EC000678F3 /* Email_Password Page_Bg.png */,
+				A18BF42C1AA2F8EC000678F3 /* Email_Password_Nickname_BG.png */,
+				A18BF42D1AA2F8EC000678F3 /* Login_Login page button.png */,
+				A18BF42E1AA2F8EC000678F3 /* LOGIN_SIGN UP PAGE _BG.png */,
+				A18BF42F1AA2F8EC000678F3 /* NEW SUMMONER PAGE_BG.png */,
+				A18BF4301AA2F8EC000678F3 /* Teemo_Login Page.png */,
+			);
+			name = lollog;
+			sourceTree = "<group>";
+		};
 		A1B8E9641A7B215C009BE011 /* Team */ = {
 			isa = PBXGroup;
 			children = (
@@ -683,6 +711,7 @@
 		A1EB12191A99C61900FC8388 /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
+				A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */,
 				A13919291AA2CD6700CD232A /* Tournament_game.swift */,
 				A14E3C201A9B21F8003C837F /* Bracket.swift */,
 				A1EB12131A99AAE700FC8388 /* TournamentAPI.swift */,
@@ -847,6 +876,7 @@
 				88535F551A89C84B00F38098 /* SUMMARY.png in Resources */,
 				42041AF91A816EE400623C70 /* SUITCASE.png in Resources */,
 				A1EB12091A99277900FC8388 /* error.png in Resources */,
+				A18BF4361AA2F8EC000678F3 /* Teemo_Login Page.png in Resources */,
 				42B85A251A748CDB00FD4642 /* button.png in Resources */,
 				42AB57DA1A7F391A00C7799E /* tableback.png in Resources */,
 				A13918E01AA2B26500CD232A /* annie.jpg in Resources */,
@@ -861,11 +891,13 @@
 				42041AF11A81665E00623C70 /* white.png in Resources */,
 				42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */,
 				A13919221AA2C21D00CD232A /* Start time.png in Resources */,
+				A18BF4321AA2F8EC000678F3 /* Email_Password_Nickname_BG.png in Resources */,
 				A1B8E95E1A7B20F2009BE011 /* 战队2.png in Resources */,
 				42B85A2A1A748CDB00FD4642 /* PHOTO icons.png in Resources */,
 				42B859F51A74840F00FD4642 /* Main.storyboard in Resources */,
 				42041AE91A815E1600623C70 /* addfriendsbutton.png in Resources */,
 				A13919201AA2C21D00CD232A /* red small button.png in Resources */,
+				A18BF4341AA2F8EC000678F3 /* LOGIN_SIGN UP PAGE _BG.png in Resources */,
 				A139190A1AA2C21D00CD232A /* 大框.png in Resources */,
 				A13919191AA2C21D00CD232A /* lose button.png in Resources */,
 				A13919081AA2C21D00CD232A /* 3v3 black button.png in Resources */,
@@ -874,6 +906,8 @@
 				A1B8E95B1A7B20F2009BE011 /* 新闻1.png in Resources */,
 				42E5E7911A7762DB004A781E /* teemoDouble.png in Resources */,
 				A139190B1AA2C21D00CD232A /* 红色框.png in Resources */,
+				A18BF4311AA2F8EC000678F3 /* Email_Password Page_Bg.png in Resources */,
+				A18BF4331AA2F8EC000678F3 /* Login_Login page button.png in Resources */,
 				88535F5A1A89DFF400F38098 /* img1.jpg in Resources */,
 				A13919231AA2C21D00CD232A /* teemo with words icons.png in Resources */,
 				42B859FA1A74840F00FD4642 /* LaunchScreen.xib in Resources */,
@@ -897,6 +931,7 @@
 				A1B8E95D1A7B20F2009BE011 /* 战队1.png in Resources */,
 				A139190F1AA2C21D00CD232A /* BO3.png in Resources */,
 				42B85A2F1A74947E00FD4642 /* textField.png in Resources */,
+				A18BF4351AA2F8EC000678F3 /* NEW SUMMONER PAGE_BG.png in Resources */,
 				A13919171AA2C21D00CD232A /* free button.png in Resources */,
 				A13919151AA2C21D00CD232A /* Double - Elimination.png in Resources */,
 				A13919141AA2C21D00CD232A /* date icons.png in Resources */,
@@ -971,6 +1006,7 @@
 				42B85A451A74A81A00FD4642 /* DataManager.swift in Sources */,
 				42B74FC41A812416008B575C /* MainViewController.swift in Sources */,
 				42B0A3391A898BD200EA908C /* AFHTTPSessionManager.m in Sources */,
+				A18BF4261AA2F7BD000678F3 /* Tournament_joined.swift in Sources */,
 				A1EB12041A99263800FC8388 /* ImageLoader.swift in Sources */,
 				42B0A33A1A898BD200EA908C /* AFNetworkReachabilityManager.m in Sources */,
 				A1F138861A8346C9007DE5A2 /* LolAPI.swift in Sources */,

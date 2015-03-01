@@ -37,14 +37,22 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         println(searchBar.text)
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/search_team/lol", parameters: [ "teamName":searchBar.text])
             .responseJSON { (_, _, JSON, _) in
-                if JSON != nil{
-                self.teams = JSON as [AnyObject]
-                println(JSON)
-                var result: [AnyObject] = [AnyObject]()
-                result = JSON as [AnyObject]
-                self.gotResult(result)
-                }
                 self.stopLoading()
+                if (JSON as [String: AnyObject])["message"] as String? != nil
+                {
+                 let alert1 = SCLAlertView()
+                  alert1.showError("Unauthorized", subTitle: "Try logout and login again", closeButtonTitle: "OK")
+                }
+                else{
+                println(UserInfoGlobal.accessToken)
+                if JSON? != nil{
+                    println(JSON)
+                    self.teams = JSON as [AnyObject]
+                    var result: [AnyObject] = [AnyObject]()
+                    result = JSON as [AnyObject]
+                    self.gotResult(result)
+                }
+                }
             }
         }
     }

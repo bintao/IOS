@@ -74,7 +74,7 @@ class TournamentViewController: UIViewController {
     
     @IBAction func returnToTournament(segue : UIStoryboardSegue) {
         
-        
+    
     }
     
     

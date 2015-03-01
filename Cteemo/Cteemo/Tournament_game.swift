@@ -31,18 +31,19 @@ class Tournament_game: UIViewController {
     
     @IBAction func leagueoflegend(){
         
-        
         let alert1 = SCLAlertView()
         
         alert1.addButton("Join") {
             
-            Tournament.JoinTournament("UIUC",name: TeamInfoGlobal.teamName,email:"")
+            Tournament.JoinTournament("UIUC_League",name: TeamInfoGlobal.teamName,email:"")
             
             self.performSegueWithIdentifier("joined", sender: self)
             
         }
-        if TeamInfoGlobal.teamName != ""{
+        if TeamInfoGlobal.teamName != ""
+        {
         alert1.showCteemo("League of Legends Tournament", subTitle:TeamInfoGlobal.teamName+" want to join League of legends", closeButtonTitle: "Cancle")
+            
         }
         else{
         let alert2 = SCLAlertView()
@@ -61,7 +62,6 @@ class Tournament_game: UIViewController {
         alert2.addButton("Join") {
             
             Tournament.JoinTournament("UIUC",name: TeamInfoGlobal.teamName,email:"")
-            
             self.performSegueWithIdentifier("joined", sender: self)
             
         }
@@ -73,7 +73,6 @@ class Tournament_game: UIViewController {
     
     @IBAction func hearthstone(){
         
-        
         let alert3 = SCLAlertView()
         
         alert3.addButton("Join") {
@@ -83,12 +82,13 @@ class Tournament_game: UIViewController {
             self.performSegueWithIdentifier("joined", sender: self)
             
         }
+        
         alert3.showCteemo("Hearthstone Tournament", subTitle:TeamInfoGlobal.teamName+" want to join Hearthstone Tournament", closeButtonTitle: "Cancle")
         
     }
     
     
-    @IBAction func returnToTournamentgame(segue : UIStoryboardSegue) {
+    @IBAction func returnTogame(segue : UIStoryboardSegue) {
         
         
     }

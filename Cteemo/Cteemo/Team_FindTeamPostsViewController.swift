@@ -18,9 +18,12 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
     
     override func viewDidLoad() {
         resultTable.backgroundColor = UIColor.clearColor()
-        search()
+        
     }
+    override func viewDidAppear(animated: Bool) {
+        search()
     
+    }
     func search(){
         
         var manager = Manager.sharedInstance
@@ -32,10 +35,18 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         startLoading()
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/team_post")
             .responseJSON { (_, _, JSON, _) in
+                 self.stopLoading()
+                if (JSON as [String: AnyObject])["message"] as String? != nil
+                {
+                    let alert1 = SCLAlertView()
+                    alert1.showError("Unauthorized", subTitle: "Try logout and login again", closeButtonTitle: "OK")
+                }
+                else{
                 if JSON != nil{
                  println(JSON)
                 }
-                self.stopLoading()
+                }
+               
                 
         }
     }

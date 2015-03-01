@@ -42,9 +42,9 @@ class Login_AddPhoto: UIViewController, UIScrollViewDelegate{
 
         cutImage()
         self.performSegueWithIdentifier("returnWithPhoto", sender: self)
+        
     }
     
-
     
     func cutImage(){
                 

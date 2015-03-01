@@ -63,7 +63,6 @@ class Login_SchoolSearchViewController: UIViewController, UITextFieldDelegate , 
         
         cell.addSubview(school)
 
-        
         return cell
     }
     

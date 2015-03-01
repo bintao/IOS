@@ -45,9 +45,10 @@ class TournamentAPI: NSObject{
         var par : [String: AnyObject] = ["api_key":key,"include_participants":1]
         var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+id+".json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
+                if JSON? != nil{
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
                 println(JSON)
-                
+                }
                 }
         }
     
