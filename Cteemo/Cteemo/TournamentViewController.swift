@@ -29,7 +29,7 @@ class TournamentViewController: UIViewController {
     
     
      @IBAction func createTournament(){
-        
+
         
         let alert1 = SCLAlertView()
         

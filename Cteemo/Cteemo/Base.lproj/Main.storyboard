@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -1386,38 +1386,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Can-zk-1pl">
-                                <rect key="frame" x="89" y="276" width="197" height="46"/>
-                                <color key="backgroundColor" red="0.16470588235294117" green="0.51372549019607838" blue="0.81960784313725488" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Join Tournament">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="annie.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="4tU-it-v0j">
+                                <rect key="frame" x="0.0" y="64" width="375" height="203"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4I-3x-P63">
+                                <rect key="frame" x="24" y="338" width="327" height="52"/>
+                                <state key="normal" title="UIUC Tournament" backgroundImage="juxing.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="joinTournament" destination="Rve-Jr-xA2" eventType="touchUpInside" id="4a2-tm-aT3"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFg-U8-7fB">
-                                <rect key="frame" x="89" y="364" width="197" height="46"/>
-                                <color key="backgroundColor" red="0.87058823529411766" green="0.41568627450980394" blue="0.13725490196078433" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="View Tournament">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="gcO-xg-BL5" kind="show" identifier="bracket" id="a5d-ir-yQy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JSl-aC-SFO">
-                                <rect key="frame" x="89" y="180" width="197" height="46"/>
-                                <color key="backgroundColor" red="0.32549019607843138" green="0.77647058823529413" blue="0.36862745098039218" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Create Tournament">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="createTournament" destination="Rve-Jr-xA2" eventType="touchUpInside" id="1oo-92-V5V"/>
+                                    <segue destination="lki-Wn-9da" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="gzI-np-zXb"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="TOURNAMENT" id="z3H-L7-ZWi"/>
@@ -1427,6 +1409,154 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ri6-du-Sxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5572.5" y="-1196.5"/>
+        </scene>
+        <!--Tournament game-->
+        <scene sceneID="PL8-7R-Wb3">
+            <objects>
+                <viewController id="lki-Wn-9da" customClass="Tournament_game" customModule="Cteemo" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lbP-t6-8Cm"/>
+                        <viewControllerLayoutGuide type="bottom" id="LFT-wW-9Xr"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="J0K-dX-QwD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="flG-ca-zWJ">
+                                <rect key="frame" x="77" y="289" width="221" height="46"/>
+                                <color key="backgroundColor" red="0.32549019610000002" green="0.77647058820000003" blue="0.36862745099999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="League of Legends">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="leagueoflegend" destination="lki-Wn-9da" eventType="touchUpInside" id="ABp-Qe-UyN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T72-Ua-eay">
+                                <rect key="frame" x="77" y="372" width="221" height="46"/>
+                                <color key="backgroundColor" red="0.1647058824" green="0.51372549020000002" blue="0.81960784310000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Dota2 Tournament">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="dota2" destination="lki-Wn-9da" eventType="touchUpInside" id="HNm-hc-mUQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFb-92-BUw">
+                                <rect key="frame" x="77" y="458" width="221" height="46"/>
+                                <color key="backgroundColor" red="0.87058823529999996" green="0.41568627450000001" blue="0.13725490200000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Hearthstone Tournament">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="hearthstone" destination="lki-Wn-9da" eventType="touchUpInside" id="caC-XS-DNM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qXG-8k-SwU">
+                                <rect key="frame" x="16" y="11" width="63" height="41"/>
+                                <state key="normal" backgroundImage="arrow.png">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="1w4-ua-ZRN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Tournament" id="A6y-mn-aLn">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="CGB-P7-RIF">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="VmU-Nn-God">
+                                                <rect key="frame" x="44" y="260" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" backgroundImage="arrow.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <connections>
+                                                <action selector="back" destination="lki-Wn-9da" id="eWf-CM-xHs"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="annie.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MwW-JP-8fp">
+                                <rect key="frame" x="-3" y="44" width="380" height="206"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="UOt-dG-afN" kind="presentation" identifier="joined" id="lIQ-1W-vhb"/>
+                        <segue destination="2ph-eq-TCe" kind="unwind" identifier="returnTournament" unwindAction="returnToTournament:" id="9V5-xZ-CrA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q3f-3u-YWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="2ph-eq-TCe" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="6219.5" y="-1403.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="DA9-Pm-SbH">
+            <objects>
+                <viewController id="UOt-dG-afN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Jqk-i0-zSb"/>
+                        <viewControllerLayoutGuide type="bottom" id="tOL-Cu-XsS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="f5e-gd-NsC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A14-oa-Pgf">
+                                <rect key="frame" x="136" y="158" width="102" height="30"/>
+                                <state key="normal" title="Check Bracket">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gcO-xg-BL5" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="N0z-Wp-Xsm"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaS-r8-asG">
+                                <rect key="frame" x="136" y="207" width="96" height="30"/>
+                                <state key="normal" title="Group chat">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVS-0r-BbE">
+                                <rect key="frame" x="110" y="258" width="182" height="30"/>
+                                <state key="normal" title="play next match( get code)">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogq-Nq-YCH">
+                                <rect key="frame" x="143" y="328" width="83" height="30"/>
+                                <state key="normal" title="report result">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="mpp-Wv-Oz0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Tournament" id="mu2-q6-Mb3">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="as0-rJ-pUP">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="HZ1-KH-eNF">
+                                                <rect key="frame" x="42" y="35" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" backgroundImage="arrow.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hQ6-KD-TU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6674.5" y="-1403.5"/>
         </scene>
         <!--Bracket-->
         <scene sceneID="xeu-cT-e9Q">
@@ -1440,20 +1570,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fce-dh-btS">
-                                <rect key="frame" x="0.0" y="104" width="375" height="563"/>
+                            <webView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fce-dh-btS">
+                                <rect key="frame" x="0.0" y="78" width="375" height="583"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LN1-uX-pjh">
-                                <rect key="frame" x="23" y="28" width="46" height="30"/>
-                                <state key="normal" title="back">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="fgf-hg-7Wj" kind="unwind" unwindAction="returnToTournament:" id="kLV-kU-2GH"/>
-                                </connections>
-                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="GKm-ul-haN">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="dhf-HO-Dv0">
+                                        <barButtonItem key="leftBarButtonItem" style="plain" id="lY8-w3-l6V">
+                                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="b3s-zz-n2v">
+                                                <rect key="frame" x="125" y="109" width="46" height="30"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <state key="normal" backgroundImage="arrow.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1463,6 +1600,7 @@
                             <constraint firstItem="fce-dh-btS" firstAttribute="top" secondItem="gbZ-Ef-J59" secondAttribute="bottom" id="y0r-Od-ovU"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="webview" destination="fce-dh-btS" id="8ey-CM-gOv"/>
                         <segue destination="fgf-hg-7Wj" kind="unwind" unwindAction="returnToTournament:" id="OO8-he-hAN"/>
@@ -1471,7 +1609,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqR-jC-m8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="fgf-hg-7Wj" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6124" y="-1802"/>
+            <point key="canvasLocation" x="7192.5" y="-1718.5"/>
         </scene>
         <!--TEAM-->
         <scene sceneID="dgm-0z-Qiv">
@@ -2306,7 +2444,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vr9-Ym-tFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7294" y="-1233.5"/>
+            <point key="canvasLocation" x="7329" y="-793.5"/>
         </scene>
     </scenes>
     <resources>
@@ -2314,6 +2452,7 @@
         <image name="PHOTO icons.png" width="165" height="165"/>
         <image name="SUBMIT.png" width="438" height="96"/>
         <image name="SUMMARY.png" width="60" height="58"/>
+        <image name="annie.jpg" width="900" height="636"/>
         <image name="arrow.png" width="69" height="63"/>
         <image name="backG.png" width="750" height="1334"/>
         <image name="circleCropper.png" width="1000" height="1000"/>
@@ -2321,6 +2460,7 @@
         <image name="flag" width="30" height="30"/>
         <image name="hentiao2.png" width="750" height="4"/>
         <image name="joinTeam.png" width="90" height="90"/>
+        <image name="juxing.png" width="710" height="295"/>
         <image name="lock1.png" width="54" height="57"/>
         <image name="more111.png" width="60" height="60"/>
         <image name="news" width="30" height="30"/>

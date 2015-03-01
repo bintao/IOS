@@ -38,11 +38,11 @@ class TournamentAPI: NSObject{
     }
     
     
-
-
+    
+    //show Tournament
     func showTournament(id: String){
     
-        var par : [String: AnyObject] = ["api_key":key]
+        var par : [String: AnyObject] = ["api_key":key,"include_participants":1]
         var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+id+".json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
@@ -53,20 +53,28 @@ class TournamentAPI: NSObject{
     
     //https://api.challonge.com/v1/tournaments/{tournament}/participants.{json|xml}
 
-    func showTournamentMember(id :String){
+    func getTournamentList(){
     
         var par : [String: AnyObject] = ["api_key":key]
-        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/:"+id+"/participants.json",parameters:par)
+        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
-                var result: [String: AnyObject] = JSON as [String: AnyObject]
-                println(result)
+                print(JSON)
                 
         }
-    
-    
     }
     
+    //Delete Tournament
+    func deleteTournament(id:String){
+        
+        var par : [String: AnyObject] = ["api_key":key]
+        var req = Alamofire.request(.DELETE, "https://api.challonge.com/v1/tournaments/"+id+".json",parameters:par)
+            .responseJSON { (_, _, JSON, _) in
+                print(JSON)
+                
+        }
+    }
     
+    //joinTournaent
     func JoinTournament(id: String, name : String,email : String)
     {
     
