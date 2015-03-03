@@ -27,6 +27,7 @@
 		427D7A911A85C36000BFB2DA /* CustomSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */; };
 		427D7A931A85CBA600BFB2DA /* UserTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D7A921A85CBA600BFB2DA /* UserTeam.swift */; };
 		427D7A951A85CBDE00BFB2DA /* UserTeam.plist in Resources */ = {isa = PBXBuildFile; fileRef = 427D7A941A85CBDE00BFB2DA /* UserTeam.plist */; };
+		427F2F851AA583A600A26325 /* tableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 427F2F841AA583A600A26325 /* tableCell.xib */; };
 		42855B9D1A8459A600EB9546 /* Team_JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42855B9C1A8459A600EB9546 /* Team_JoinTeamViewController.swift */; };
 		42855BA21A846C0000EB9546 /* Team_FindTeamPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42855BA11A846C0000EB9546 /* Team_FindTeamPostsViewController.swift */; };
 		42855BA41A847CCC00EB9546 /* CAMERA.png in Resources */ = {isa = PBXBuildFile; fileRef = 42855BA31A847CCC00EB9546 /* CAMERA.png */; };
@@ -239,6 +240,7 @@
 		427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwitcher.swift; sourceTree = "<group>"; };
 		427D7A921A85CBA600BFB2DA /* UserTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTeam.swift; sourceTree = "<group>"; };
 		427D7A941A85CBDE00BFB2DA /* UserTeam.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserTeam.plist; sourceTree = "<group>"; };
+		427F2F841AA583A600A26325 /* tableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tableCell.xib; sourceTree = "<group>"; };
 		42855B9C1A8459A600EB9546 /* Team_JoinTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_JoinTeamViewController.swift; sourceTree = "<group>"; };
 		42855BA11A846C0000EB9546 /* Team_FindTeamPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_FindTeamPostsViewController.swift; sourceTree = "<group>"; };
 		42855BA31A847CCC00EB9546 /* CAMERA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CAMERA.png; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 				4215A6711A7D7616002EB62E /* API */,
 				42B859EC1A74840F00FD4642 /* AppDelegate.swift */,
 				42B859F31A74840F00FD4642 /* Main.storyboard */,
+				427F2F841AA583A600A26325 /* tableCell.xib */,
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
 				A14E3C1E1A9B20E7003C837F /* SOXPanRotateZoomImageView.swift */,
@@ -869,6 +872,7 @@
 				A139191E1AA2C21D00CD232A /* Public.png in Resources */,
 				42041AF71A816EE400623C70 /* box1.png in Resources */,
 				42B85A291A748CDB00FD4642 /* me_icons1.png in Resources */,
+				427F2F851AA583A600A26325 /* tableCell.xib in Resources */,
 				42B85A271A748CDB00FD4642 /* Inkinesss.png in Resources */,
 				4215A6721A7D7616002EB62E /* API in Resources */,
 				A139190E1AA2C21D00CD232A /* 小框.png in Resources */,

@@ -8,12 +8,16 @@
 
 import UIKit
 
-class Tournament_game: UIViewController {
+class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var Tournamentname :String = ""
     var TournamentType :String = ""
     var joinTeam :String = ""
     var teams: [AnyObject] = [AnyObject]()
+    
+    var numberOfData = 3
+    
+    @IBOutlet var tableData: UITableView!
     
     override func viewDidLoad() {
         Tournament.showTournament("UIUC")
@@ -23,12 +27,34 @@ class Tournament_game: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        
+        
+        var cell2 = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[0] as? UITableViewCell
+        cell.addSubview(cell2!.contentView)
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 130
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return numberOfData
+    }
+
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     
+    
+    /*
     @IBAction func leagueoflegend(){
         
         let alert1 = SCLAlertView()
@@ -51,7 +77,7 @@ class Tournament_game: UIViewController {
         }
         
     }
-    
+    */
     
     
     
