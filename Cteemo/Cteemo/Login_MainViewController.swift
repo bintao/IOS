@@ -114,11 +114,11 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                 
                 UserInfoGlobal.updateUserInfo()
                 
-                //self.performSegueWithIdentifier("exitToMain", sender: self)
+                self.performSegueWithIdentifier("exitToMain", sender: self)
                 
                 UserInfoGlobal.getIconFromServer()
                 
-                self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
+                //self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
             }
             else {
                 

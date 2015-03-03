@@ -36,15 +36,16 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/team_post")
             .responseJSON { (_, _, JSON, _) in
                  self.stopLoading()
-                if (JSON as [String: AnyObject])["message"] as String? != nil
+                  if  ((JSON as [AnyObject])[0] as [String: AnyObject])["user_profile"]? != nil
                 {
-                    let alert1 = SCLAlertView()
-                    alert1.showError("Unauthorized", subTitle: "Try logout and login again", closeButtonTitle: "OK")
+                    if JSON != nil{
+                        println(JSON)
+                    }
                 }
                 else{
-                if JSON != nil{
-                 println(JSON)
-                }
+                    let alert1 = SCLAlertView()
+                    alert1.showError("Unauthorized", subTitle: "Try logout and login again", closeButtonTitle: "OK")
+               
                 }
                
                 
