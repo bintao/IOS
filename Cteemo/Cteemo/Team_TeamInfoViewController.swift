@@ -26,8 +26,8 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         super.viewDidLoad()
         TeamInfoGlobal.uploadTeamInfo()
         navigation.title = TeamInfoGlobal.teamName
-        println(TeamInfoGlobal.teamicon_link)
-    
+        println(UserInfoGlobal.profile_icon_Link)
+        
         capTain.setImage(UserInfoGlobal.icon, forState: UIControlState.Normal)
         capTainName.text = UserInfoGlobal.name
         
@@ -57,8 +57,8 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     override func viewDidAppear(animated: Bool) {
         println(memberScroll.frame)
         if TeamInfoGlobal.teamicon != nil{
-        self.teamicon.image = TeamInfoGlobal.teamicon
-        
+            
+        self.teamicon.image = DataManager.getTeamIconFromLocal()
         
         }
         else if TeamInfoGlobal.teamicon_link != ""{
@@ -71,6 +71,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
                     self.teamicon.image = UIImage(named: "error.png")!
                 }})
         }
+        
 
     }
 
