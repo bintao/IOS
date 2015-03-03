@@ -15,6 +15,8 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
 
     @IBOutlet var memberScroll : UIScrollView!
    
+    @IBOutlet weak var teamicon: UIImageView!
+    
     @IBOutlet var capTain : UIButton!
     @IBOutlet var capTainName : UILabel!
 
@@ -22,8 +24,10 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        TeamInfoGlobal.uploadTeamInfo()
         navigation.title = TeamInfoGlobal.teamName
-        
+        println(TeamInfoGlobal.teamicon_link)
+    
         capTain.setImage(UserInfoGlobal.icon, forState: UIControlState.Normal)
         capTainName.text = UserInfoGlobal.name
         
@@ -52,7 +56,22 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
        
     override func viewDidAppear(animated: Bool) {
         println(memberScroll.frame)
+        if TeamInfoGlobal.teamicon != nil{
+        self.teamicon.image = TeamInfoGlobal.teamicon
         
+        
+        }
+        else if TeamInfoGlobal.teamicon_link != ""{
+            ImageLoader.sharedLoader.imageForUrl(TeamInfoGlobal.teamicon_link, completionHandler:{(image: UIImage?, url: String) in
+                println(url)
+                if image? != nil {
+                    self.teamicon.image = image
+                }
+                else {
+                    self.teamicon.image = UIImage(named: "error.png")!
+                }})
+        }
+
     }
 
     @IBAction func leaveteam(sender: AnyObject) {

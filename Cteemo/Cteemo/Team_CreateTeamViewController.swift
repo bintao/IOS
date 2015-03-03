@@ -41,18 +41,22 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
         if TeamInfoGlobal.teamicon != nil{
             iconDisplay.image = TeamInfoGlobal.teamicon
         }
+        
     }
     
     @IBAction func createTeam(sender: UIBarButtonItem) {
         if( teamName.text != "" ){
-        var req = ARequest(prefix: "create_team/lol", method: requestType.POST, parameters: ["teamName":teamName.text, "teamIntro":teamIntro.text,"isSchool":true])
-        req.delegate = self
-        req.sendRequestWithToken(UserInfoGlobal.accessToken)
+        var req = Alamofire.request(.POST, "http://54.149.235.253:5000/create_team/lol", parameters: ["teamName":teamName.text, "teamIntro":teamIntro.text,"isSchool":true])
+            .responseJSON { (_, _, JSON, _) in
+                if JSON != nil{
+                   var result: [String: AnyObject] = JSON as [String: AnyObject]
+                self.getResult(result)
+                }
+            }
         }
-    }
+        }
     
-    func gotResult(prefix: String, result: AnyObject) {
-        
+    func getResult(result: [String: AnyObject]) {
         println(result)
         if result["message"]? != nil{
         
@@ -64,31 +68,33 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
             }
         }
 
-        if(result["id"]? != nil){
-
-            var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
+       if(result["id"]? != nil){
+            TeamInfoGlobal.gotResult(result)
+        
+            println(TeamInfoGlobal.teamName+TeamInfoGlobal.team_isschool+TeamInfoGlobal.iscaptain)
+            var req1 = ARequest(prefix: "upload_team_icon/lol", method: requestType.POST)
+            req1.delegate = self
+            req1.uploadPhoto("teamicon.png")
             
-            if(captain != UserInfoGlobal.profile_ID){
-                println("You are not a captain.")
-                TeamInfoGlobal.iscaptain = "no"
-            }
-                
-            else {
-                
-                println("You are a captain.")
-                TeamInfoGlobal.iscaptain = "yes"
-            }
-            
-            TeamInfoGlobal.teamID = result["id"] as String
-            TeamInfoGlobal.teamName = result["teamName"] as String
-            TeamInfoGlobal.team_Intro = result["teamIntro"] as String
-            
-            TeamInfoGlobal.saveUserData()
             
             self.performSegueWithIdentifier("toTeamInfo", sender: self)
         }
 
     }
+    
+    
+    func gotResult(prefix: String, result: AnyObject) {
+    
+    print(result)
+        
+        if result["teamIcon"]? != nil {
+            
+            TeamInfoGlobal.teamicon_link = result["teamIcon"] as String
+        }
+        else {TeamInfoGlobal.teamicon_link = "" }
+        
+    }
+    
     
     //get photo for team
     @IBAction func getPhoto(){

@@ -95,7 +95,11 @@ class ARequest: NSObject {
         
     }
     
-    // upload photo
+    
+    
+    
+   
+     //upload photo
     func uploadPhoto(fileName:String){
         
         var manager1 = Manager.sharedInstance
@@ -105,8 +109,8 @@ class ARequest: NSObject {
         ]
         
         var parameters = NSMutableDictionary()
-        var filePath = NSURL(fileURLWithPath: DataManager.getURLPath() + fileName)!//
-                
+        var filePath = NSURL(fileURLWithPath: DataManager.getURLPath().stringByAppendingPathComponent(fileName))!
+        println(filePath)
         var request = AFHTTPRequestSerializer().multipartFormRequestWithMethod("POST", URLString: server + prefix, parameters: parameters, constructingBodyWithBlock: { (formData) -> Void in
             formData.appendPartWithFileURL(filePath, name: "upload", fileName: "upload", mimeType: "image/png", error: nil)
             return
@@ -119,7 +123,6 @@ class ARequest: NSObject {
         ]
         
         uploadRequest = manager.uploadTaskWithStreamedRequest(request, progress: nil) { (response, obj, error) -> Void in
-            
             if obj != nil{
                 self.gotResult(obj)
             }

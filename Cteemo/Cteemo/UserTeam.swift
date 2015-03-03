@@ -61,7 +61,7 @@ class UserTeam: NSObject{
     
     func saveTeamIcon(){
         if teamicon != nil{
-            
+            DataManager.saveTeamIconFromLocal(self.teamicon!)
         }
     }
     
@@ -71,9 +71,16 @@ class UserTeam: NSObject{
     
     func getIconFromServer(){
         
-        var url = NSURL(string: teamicon_link)
-        var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
-        teamicon = UIImage(data: data)
+        ImageLoader.sharedLoader.imageForUrl(self.teamicon_link, completionHandler:{(image: UIImage?, url: String) in
+            println(url)
+            if image? != nil {
+                self.teamicon = image
+                self.saveTeamIcon()
+            }
+            else {
+                self.teamicon = UIImage(named: "error.png")!
+            }})
+
         
     }
     
@@ -93,7 +100,7 @@ class UserTeam: NSObject{
     }
     
     func gotResult(result: [String: AnyObject]) {
-       
+     
             if result["id"]? != nil {
                 TeamInfoGlobal.teamID = result["id"] as String
             }
@@ -107,11 +114,16 @@ class UserTeam: NSObject{
             }
               else {TeamInfoGlobal.team_Intro = ""}
         
-             var captain_icon = ((result["captain"] as [AnyObject])[0] as [String: AnyObject])  ["profile_icon"] as String
+            if result["teamIcon"]? != nil {
+                
+                self.teamicon_link = result["teamIcon"] as String
+            }
+            else {self.teamicon_link = "" }
         
+            if ((result["captain"] as [AnyObject])[0] as [String: AnyObject])  ["profile_icon"]? != nil{
+             var captain_icon = ((result["captain"] as [AnyObject])[0] as [String: AnyObject])  ["profile_icon"] as String
+            }
             if result["id"]? != nil{
-            
-            var icon = toImage(captain_icon)?
         
             // self.memberInfo.insert(icon!, atIndex: 0)
         
@@ -128,16 +140,11 @@ class UserTeam: NSObject{
         }
         
         TeamInfoGlobal.saveUserData()
+        self.getIconFromServer()
 
     }
     //download user information from the server
-    func toImage(icon_url :String)->UIImage? {
-        var url = NSURL(string: icon_url)
-        var data: NSData = NSData(contentsOfURL: url! as NSURL, options: nil, error: nil)!
-        var icon = UIImage(data: data)?
-        return icon
     
-    }
     func downloadUserInfo(){
         //InteractingWithServer.getUserProfile(self.accessToken)
       

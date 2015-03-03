@@ -59,6 +59,8 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
                 var req = ARequest(prefix: "profile", method: requestType.POST, parameters: ["username": UserInfoGlobal.name, "school":school.text,"lolID":lolName.text])
                 req.delegate = self
                 req.sendRequestWithToken(UserInfoGlobal.accessToken)
+                
+               
         
             }
             else {
@@ -91,16 +93,15 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             
             UserInfoGlobal.saveUserData()
             
-            var req = ARequest(prefix: "upload_profile_icon", method: requestType.POST)
-            req.delegate = self
-            req.uploadPhoto("icon.png")
+            var req1 = ARequest(prefix: "upload_profile_icon", method: requestType.POST)
+            req1.delegate = self
+            req1.uploadPhoto("icon.png")
 
             self.performSegueWithIdentifier("gotololid", sender: self)
             
         }
         else if prefix == LolAPIGlobal.key {
             
-            println(result)
             println(LolAPIGlobal.lolName)
             if(result as [String: AnyObject])[LolAPIGlobal.lolName] as [String: AnyObject]? != nil{
             
@@ -109,6 +110,11 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             
         }
         
+        else if prefix == "upload_profile_icon"{
+        
+        println(result)
+        
+        }
     }
     
     
@@ -168,7 +174,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
                 
                 var str: String = self.lolName.text.lowercaseString
                 var newStr = str.stringByReplacingOccurrencesOfString(" ", withString: "", options: NSStringCompareOptions.LiteralSearch, range: nil)
-            println (newStr)
+           
         
             LolAPIGlobal.lolName = newStr
             LolAPIGlobal.saveLOLData()

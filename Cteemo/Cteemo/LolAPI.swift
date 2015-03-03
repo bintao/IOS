@@ -68,8 +68,24 @@ class LolAPI: NSObject{
         req.delegate = loginView
         req.sendRequest()
     }
-
     
+    func uploadlolinfo(){
+    
+        if self.lolName != "" {
+            var url = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/"+self.lolName+"?api_key="+key
+            Alamofire.request(.GET,url)
+                .responseJSON { (_, _, JSON, _) in
+                    if JSON as [String: AnyObject]? != nil{
+                        var result: [String: AnyObject] = JSON as [String: AnyObject]
+                        self.getIDresult(result)
+                    }
+            }
+
+        
+        }
+    
+    
+    }
     func getIDresult(result: [String: AnyObject]){
        
         if result["id"]? != nil{
@@ -132,7 +148,7 @@ class LolAPI: NSObject{
         if (((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"]? != nil){
             var tier : String = (((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"] as String) + " "+(((((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["entries"] as [AnyObject])[0] as [String: AnyObject])["division"] as String)
             
-            print(tier)
+            println(tier)
             
             LolAPIGlobal.lolRank = tier
             LolAPIGlobal.saveLOLData()

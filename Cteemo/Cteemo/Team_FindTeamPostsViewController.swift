@@ -42,6 +42,10 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
                         println(JSON)
                     }
                 }
+                else if JSON == nil{
+                
+                
+                }
                 else{
                     let alert1 = SCLAlertView()
                     alert1.showError("Unauthorized", subTitle: "Try logout and login again", closeButtonTitle: "OK")
