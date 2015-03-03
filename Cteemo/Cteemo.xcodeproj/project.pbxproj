@@ -105,7 +105,7 @@
 		A139190F1AA2C21D00CD232A /* BO3.png in Resources */ = {isa = PBXBuildFile; fileRef = A13918EE1AA2C21D00CD232A /* BO3.png */; };
 		A13919101AA2C21D00CD232A /* camera icons (report result).png in Resources */ = {isa = PBXBuildFile; fileRef = A13918EF1AA2C21D00CD232A /* camera icons (report result).png */; };
 		A13919111AA2C21D00CD232A /* create button.png in Resources */ = {isa = PBXBuildFile; fileRef = A13918F01AA2C21D00CD232A /* create button.png */; };
-		A13919121AA2C21D00CD232A /* create game.png in Resources */ = {isa = PBXBuildFile; fileRef = A13918F11AA2C21D00CD232A /* create game.png */; };
+		A13919121AA2C21D00CD232A /* creategame.png in Resources */ = {isa = PBXBuildFile; fileRef = A13918F11AA2C21D00CD232A /* creategame.png */; };
 		A13919131AA2C21D00CD232A /* create tournament bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A13918F21AA2C21D00CD232A /* create tournament bg.png */; };
 		A13919141AA2C21D00CD232A /* date icons.png in Resources */ = {isa = PBXBuildFile; fileRef = A13918F31AA2C21D00CD232A /* date icons.png */; };
 		A13919151AA2C21D00CD232A /* Double - Elimination.png in Resources */ = {isa = PBXBuildFile; fileRef = A13918F41AA2C21D00CD232A /* Double - Elimination.png */; };
@@ -332,7 +332,7 @@
 		A13918EE1AA2C21D00CD232A /* BO3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BO3.png; sourceTree = "<group>"; };
 		A13918EF1AA2C21D00CD232A /* camera icons (report result).png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "camera icons (report result).png"; sourceTree = "<group>"; };
 		A13918F01AA2C21D00CD232A /* create button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create button.png"; sourceTree = "<group>"; };
-		A13918F11AA2C21D00CD232A /* create game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create game.png"; sourceTree = "<group>"; };
+		A13918F11AA2C21D00CD232A /* creategame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = creategame.png; sourceTree = "<group>"; };
 		A13918F21AA2C21D00CD232A /* create tournament bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "create tournament bg.png"; sourceTree = "<group>"; };
 		A13918F31AA2C21D00CD232A /* date icons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "date icons.png"; sourceTree = "<group>"; };
 		A13918F41AA2C21D00CD232A /* Double - Elimination.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Double - Elimination.png"; sourceTree = "<group>"; };
@@ -636,7 +636,7 @@
 				A13918EE1AA2C21D00CD232A /* BO3.png */,
 				A13918EF1AA2C21D00CD232A /* camera icons (report result).png */,
 				A13918F01AA2C21D00CD232A /* create button.png */,
-				A13918F11AA2C21D00CD232A /* create game.png */,
+				A13918F11AA2C21D00CD232A /* creategame.png */,
 				A13918F21AA2C21D00CD232A /* create tournament bg.png */,
 				A13918F31AA2C21D00CD232A /* date icons.png */,
 				A13918F41AA2C21D00CD232A /* Double - Elimination.png */,
@@ -858,7 +858,7 @@
 				A1010D491A7B2F9100256208 /* school button icon.png in Resources */,
 				429FD0A41A801F25003BA84D /* circleCropper.png in Resources */,
 				424AF75E1A872DA20033B863 /* adddd.png in Resources */,
-				A13919121AA2C21D00CD232A /* create game.png in Resources */,
+				A13919121AA2C21D00CD232A /* creategame.png in Resources */,
 				42855BA41A847CCC00EB9546 /* CAMERA.png in Resources */,
 				A1B8E95C1A7B20F2009BE011 /* joinTeam.png in Resources */,
 				A139190D1AA2C21D00CD232A /* 时间框.png in Resources */,

@@ -10,6 +10,12 @@ import UIKit
 
 class TournamentViewController: UIViewController {
     
+    @IBOutlet var constrain: NSLayoutConstraint!
+    
+    @IBOutlet var create: UIButton!
+    @IBOutlet var currentGame: UIButton!
+    @IBOutlet var result: UIButton!
+
     var Tournamentname :String = ""
     var TournamentType :String = ""
     var joinTeam :String = ""
@@ -17,7 +23,7 @@ class TournamentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        constrain.constant = self.view.frame.width / 3
         // Do any additional setup after loading the view.
     }
 
@@ -76,7 +82,6 @@ class TournamentViewController: UIViewController {
         
     
     }
-    
     
     
     /*

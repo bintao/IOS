@@ -263,7 +263,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
             }
             
-            
             while(countUp < 4 && upbound >= 0){
                 
                 if tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0)) != nil{
