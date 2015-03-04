@@ -22,7 +22,7 @@ class UserInformation: NSObject, RequestResultDelegate{
     var school: String = ""
     var intro: String = ""
     var profile_icon_Link: String = ""
-    
+    var tokenVaild : String = ""
     var profile_ID: String = ""
     //var iscaptain: String?
     
@@ -53,7 +53,7 @@ class UserInformation: NSObject, RequestResultDelegate{
         intro = data["intro"] as String
         profile_ID = data["profile_ID"] as String
         profile_icon_Link = data["profile_icon_Link"] as String
-
+        tokenVaild = data["tokenVaild"] as String
         icon = DataManager.getUserIconFromLocal()
     }
     
@@ -61,7 +61,7 @@ class UserInformation: NSObject, RequestResultDelegate{
 
     
     func packaging()->[String: AnyObject]{
-        var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "school": school, "intro": intro,"profile_ID":profile_ID, "profile_icon_Link": profile_icon_Link]
+        var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "school": school, "intro": intro,"profile_ID":profile_ID, "profile_icon_Link": profile_icon_Link,"tokenVaild":tokenVaild]
         return data
     }
     
@@ -116,11 +116,13 @@ class UserInformation: NSObject, RequestResultDelegate{
     }
     
     func gotResult(prefix: String, result: AnyObject) {
+        
         if prefix == "profile"{
-         
-
-     
-    
+            
+            if ((result as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
+            UserInfoGlobal.tokenVaild = "false"
+            }
+            else {UserInfoGlobal.tokenVaild = "true"}
             if result["username"]? != nil {
                 UserInfoGlobal.name = result["username"] as String
             }
@@ -155,9 +157,10 @@ class UserInformation: NSObject, RequestResultDelegate{
                 TeamInfoGlobal.teamName = result["LOLTeam"] as String
             }
             else { TeamInfoGlobal.teamName = ""}
-         UserInfoGlobal.saveUserData()
-        TeamInfoGlobal.saveUserData()
-        LolAPIGlobal.saveLOLData()
+            
+            UserInfoGlobal.saveUserData()
+            TeamInfoGlobal.saveUserData()
+            LolAPIGlobal.saveLOLData()
         }
     }
     
@@ -181,7 +184,7 @@ class UserInformation: NSObject, RequestResultDelegate{
         intro = ""
         profile_ID = ""
         profile_icon_Link = ""
-        
+        tokenVaild = ""
         DataManager.saveUserInfoToLocal(packaging())
     }
     

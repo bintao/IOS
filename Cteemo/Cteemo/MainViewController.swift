@@ -59,6 +59,14 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
                 showTabb()
                 self.view.bringSubviewToFront(self.tabbar)
             }
+            UserInfoGlobal.updateUserInfo()
+            if UserInfoGlobal.tokenVaild == "false"{
+                let alert1 = SCLAlertView()
+                alert1.addButton("Log out now"){
+                 self.logout()
+                }
+                alert1.showError("Unauthorized", subTitle: "Try logout and login again", closeButtonTitle: "OK")
+            }
         }
     }
     

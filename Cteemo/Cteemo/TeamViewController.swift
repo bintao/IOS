@@ -10,7 +10,7 @@
 import UIKit
 import Alamofire
 
-class TeamViewController: UIViewController , UITableViewDataSource, UITableViewDelegate, RequestResultDelegate {
+class TeamViewController: UIViewController , UITableViewDataSource, UITableViewDelegate, RequestResultDelegate{
     
     var hasOwnteam = false
     
@@ -30,9 +30,9 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         if(UserInfoGlobal.accessToken != ""){
             updateTeam()
         }
-        otherChoices.backgroundColor = UIColor.clearColor()
+        //otherChoices.backgroundColor = UIColor.clearColor()
         
-        teams = ["My Boy","I'm the king","Sunrise","Cicicici","God of Michigan"]
+        teams = []
         
         // Do any additional setup after loading the view.
     }
@@ -47,43 +47,24 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     func gotResult(prefix: String, result: AnyObject) {
 
         if(prefix == "my_team/lol" ){
-            if(result["id"]?  != nil ){
-            // joined team
-    
-            var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
-            
-            if(captain != UserInfoGlobal.profile_ID){
-                println("You are not a captain.")
-                TeamInfoGlobal.iscaptain = "no"
-            }
-        
-            else {
-                
-                println("You are a captain.")
-               TeamInfoGlobal.iscaptain = "yes"
-            }
-
-            TeamInfoGlobal.teamID = result["id"] as String
-            TeamInfoGlobal.teamName = result["teamName"] as String
-            TeamInfoGlobal.team_Intro = result["teamIntro"] as String
-            
-            TeamInfoGlobal.saveUserData()
+       if(result["id"]?  != nil ){
+            TeamInfoGlobal.gotResult(result as [String : AnyObject])
+            println(TeamInfoGlobal.team_Intro)
+            println(TeamInfoGlobal.teamID)
+            println(TeamInfoGlobal.teamName)
             
             self.performSegueWithIdentifier("presentMyTeam", sender: self)
             
-            
-        }
-            
-        else {
-            
-            println("not joined team yet")
+            }
+            else {
+              println("not joined team yet")
             
             }
         }
 
     }
     
-    
+   
     func gotTeam(result: [String: AnyObject]){
         
     }

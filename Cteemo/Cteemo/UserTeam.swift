@@ -100,7 +100,8 @@ class UserTeam: NSObject{
     }
     
     func gotResult(result: [String: AnyObject]) {
-     
+        
+            
             if result["id"]? != nil {
                 TeamInfoGlobal.teamID = result["id"] as String
             }
@@ -120,22 +121,18 @@ class UserTeam: NSObject{
             }
             else {self.teamicon_link = "" }
         
-            if ((result["captain"] as [AnyObject])[0] as [String: AnyObject])  ["profile_icon"]? != nil{
+            if ((result["captain"] as [AnyObject])[0] as [String: AnyObject]) ["profile_icon"]? != nil{
              var captain_icon = ((result["captain"] as [AnyObject])[0] as [String: AnyObject])  ["profile_icon"] as String
             }
+        
             if result["id"]? != nil{
-        
-            // self.memberInfo.insert(icon!, atIndex: 0)
-        
                 var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
         
                 if(captain != UserInfoGlobal.profile_ID){
                     TeamInfoGlobal.iscaptain = "no"
                 }
                 else {
-                    
                     TeamInfoGlobal.iscaptain = "yes"
-                    
                 }
         }
         

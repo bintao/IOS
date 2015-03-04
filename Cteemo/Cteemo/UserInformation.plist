@@ -20,5 +20,7 @@
 	<string></string>
 	<key>profile_icon_Link</key>
 	<string></string>
+	<key>tokenVaild</key>
+	<string></string>
 </dict>
 </plist>

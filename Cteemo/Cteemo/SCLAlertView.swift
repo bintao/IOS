@@ -421,7 +421,10 @@ public class SCLAlertView: UIViewController {
             self.view.alpha = 0
             }, completion: { finished in
                 self.view.removeFromSuperview()
+                
         })
+        
+      
     }
 
     // Helper function to convert from RGB to UIColor
