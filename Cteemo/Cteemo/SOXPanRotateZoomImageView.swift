@@ -72,7 +72,7 @@ class SOXPanRotateZoomImageView: UIImageView, UIGestureRecognizerDelegate {
         let newPosition = CGPointMake(previousLocation.x + translation.x, previousLocation.y + translation.y)
         self.center = newPosition
     }
-    
+
     func handlePinch(gesture: UIPinchGestureRecognizer) {
         gesture.view!.transform = CGAffineTransformScale(gesture.view!.transform, gesture.scale, gesture.scale);
         gesture.scale = 1;

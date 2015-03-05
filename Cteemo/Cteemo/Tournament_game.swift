@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -22,13 +23,8 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     override func viewDidLoad() {
         
-        var par : [String: AnyObject] = ["api_key":Tournament.key]
-        var req = Alamofire.request(.GET,"https://api.challonge.com/v1/tournaments.json",parameters:par)
-            .responseJSON { (_, _, JSON, _) in
-                
-            self.numberOfData = (JSON as NSArray).count
-            println(self.numberOfData)
-        }
+        Tournament.getTournamentList()
+        
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
@@ -44,12 +40,13 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
+    {
         return 130
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        return Tournament.totalnumber.toInt()!
     }
 
     
@@ -117,7 +114,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         alert3.showCteemo("Hearthstone Tournament", subTitle:TeamInfoGlobal.teamName+" want to join Hearthstone Tournament", closeButtonTitle: "Cancle")
         
-    }
+        }
     
     
     @IBAction func returnTogame(segue : UIStoryboardSegue) {

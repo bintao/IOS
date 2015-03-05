@@ -6,3 +6,4 @@
 
 #import "Reachability.h"
 #import "AFNetworking.h"
+#import "SwiftyJSON.h"

@@ -23,6 +23,7 @@ class TournamentViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        Tournament.getTournamentList()
         constrain.constant = self.view.frame.width / 3
         // Do any additional setup after loading the view.
     }
