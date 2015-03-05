@@ -93,6 +93,7 @@
 		A1010D471A7B2ACF00256208 /* ARequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1010D461A7B2ACF00256208 /* ARequest.swift */; };
 		A1010D491A7B2F9100256208 /* school button icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D481A7B2F9100256208 /* school button icon.png */; };
 		A1010D4B1A7B385700256208 /* school.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D4A1A7B385700256208 /* school.png */; };
+		A103113D1AA80A2F000B7BB3 /* tournamentNew.png in Resources */ = {isa = PBXBuildFile; fileRef = A103113C1AA80A2F000B7BB3 /* tournamentNew.png */; };
 		A12FDD8A1A85EF9B00DF278F /* Team_AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */; };
 		A13918E01AA2B26500CD232A /* annie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A13918DF1AA2B26500CD232A /* annie.jpg */; };
 		A13918E51AA2B2D300CD232A /* juxing.png in Resources */ = {isa = PBXBuildFile; fileRef = A13918E41AA2B2D300CD232A /* juxing.png */; };
@@ -323,6 +324,7 @@
 		A1010D461A7B2ACF00256208 /* ARequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ARequest.swift; sourceTree = "<group>"; };
 		A1010D481A7B2F9100256208 /* school button icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "school button icon.png"; sourceTree = "<group>"; };
 		A1010D4A1A7B385700256208 /* school.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school.png; sourceTree = "<group>"; };
+		A103113C1AA80A2F000B7BB3 /* tournamentNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tournamentNew.png; sourceTree = "<group>"; };
 		A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_AddPhoto.swift; sourceTree = "<group>"; };
 		A13918DF1AA2B26500CD232A /* annie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = annie.jpg; sourceTree = "<group>"; };
 		A13918E41AA2B2D300CD232A /* juxing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = juxing.png; sourceTree = "<group>"; };
@@ -633,6 +635,7 @@
 		A13918E61AA2C11B00CD232A /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
+				A103113C1AA80A2F000B7BB3 /* tournamentNew.png */,
 				A14422421AA5925900A7BF6C /* result2.png */,
 				A14422431AA5925900A7BF6C /* shoubin.png */,
 				A13918E71AA2C21D00CD232A /* 3v3 black button.png */,
@@ -918,6 +921,7 @@
 				42E5E7911A7762DB004A781E /* teemoDouble.png in Resources */,
 				A139190B1AA2C21D00CD232A /* 红色框.png in Resources */,
 				A18BF4311AA2F8EC000678F3 /* Email_Password Page_Bg.png in Resources */,
+				A103113D1AA80A2F000B7BB3 /* tournamentNew.png in Resources */,
 				A18BF4331AA2F8EC000678F3 /* Login_Login page button.png in Resources */,
 				88535F5A1A89DFF400F38098 /* img1.jpg in Resources */,
 				A13919231AA2C21D00CD232A /* teemo with words icons.png in Resources */,

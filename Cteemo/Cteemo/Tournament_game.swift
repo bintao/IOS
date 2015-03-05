@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -20,8 +21,14 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     @IBOutlet var tableData: UITableView!
     
     override func viewDidLoad() {
-        Tournament.showTournament("UIUC")
-        //Tournament.getTournamentList()
+        
+        var par : [String: AnyObject] = ["api_key":Tournament.key]
+        var req = Alamofire.request(.GET,"https://api.challonge.com/v1/tournaments.json",parameters:par)
+            .responseJSON { (_, _, JSON, _) in
+                
+            self.numberOfData = (JSON as NSArray).count
+            println(self.numberOfData)
+        }
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
@@ -30,7 +37,6 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         cell.selectionStyle = UITableViewCellSelectionStyle.None
-        
         
         var cell2 = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[0] as? UITableViewCell
         cell.addSubview(cell2!.contentView)
@@ -43,7 +49,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return numberOfData
+        return 4
     }
 
     

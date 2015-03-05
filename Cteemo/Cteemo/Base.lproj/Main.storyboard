@@ -2417,7 +2417,7 @@
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
-                            <color key="textColor" patternImage="812405AA-6388-4A4A-9AD9-46962520E8CE" colorSpace="pattern"/>
+                            <color key="textColor" patternImage="0EB18098-5602-4C4D-9752-E06A582D3918" colorSpace="pattern"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2576,7 +2576,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="812405AA-6388-4A4A-9AD9-46962520E8CE" width="512" height="512">
+        <image name="0EB18098-5602-4C4D-9752-E06A582D3918" width="512" height="512">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW

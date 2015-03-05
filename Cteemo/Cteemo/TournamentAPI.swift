@@ -15,6 +15,7 @@ var Tournament: TournamentAPI = TournamentAPI()
 
 class TournamentAPI: NSObject{
     
+    
     let key = "OzVqaaqFdjiuTGPbbeQfvpgHxnIcquz6yh5LSwep"
     
    /* POST https://challonge.com/api/tournaments.{json|xml}
@@ -37,8 +38,6 @@ class TournamentAPI: NSObject{
     
     }
     
-    
-    
     //show Tournament
     func showTournament(id: String){
     
@@ -59,8 +58,7 @@ class TournamentAPI: NSObject{
         var par : [String: AnyObject] = ["api_key":key]
         var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
-                print(JSON)
-                
+         
         }
     }
     
