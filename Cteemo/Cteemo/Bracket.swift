@@ -26,7 +26,7 @@ class Bracket: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        //self.spawnImage()
+      
         
     }
     override func didReceiveMemoryWarning() {
@@ -35,29 +35,7 @@ class Bracket: UIViewController {
         
     }
     
-    func spawnImage() {
-        var url = "http://images.challonge.com/UIUC.png"
-        
-        ImageLoader.sharedLoader.imageForUrl(url, completionHandler:{(image: UIImage?, url: String) in
-            println(url)
-            if image? != nil {
-                
-                let imageView = SOXPanRotateZoomImageView(image: image)
-                
-                imageView.center = self.cen.center
-                self.view.addSubview(imageView)
-                
-            }
-            else {
-                let image = UIImage(named: "error.png")!
-                let imageView = SOXPanRotateZoomImageView(image: image)
-                imageView.center = self.view.center
-                self.view.addSubview(imageView)
-            }}
-        )
-        
-    }
-
+   
     
 }
 

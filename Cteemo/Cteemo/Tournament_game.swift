@@ -35,7 +35,11 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         var cell2 = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[0] as? UITableViewCell
+        
+        //func setcell2(gameName : String,name :String,rule:String,joined:String,time:String,maxteam:String)
+        
         cell.addSubview(cell2!.contentView)
+        
         
         return cell
     }

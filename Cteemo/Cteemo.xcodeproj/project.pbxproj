@@ -96,6 +96,10 @@
 		A103113D1AA80A2F000B7BB3 /* tournamentNew.png in Resources */ = {isa = PBXBuildFile; fileRef = A103113C1AA80A2F000B7BB3 /* tournamentNew.png */; };
 		A12FDD8A1A85EF9B00DF278F /* Team_AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */; };
 		A13811CE1AA818A100E8293D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13811C51AA8182400E8293D /* SwiftyJSON.framework */; };
+		A13811D51AA8E9F900E8293D /* tournamentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13811D41AA8E9F900E8293D /* tournamentViewCell.swift */; };
+		A13811D81AA9016500E8293D /* hearthstone.png in Resources */ = {isa = PBXBuildFile; fileRef = A13811D61AA9016500E8293D /* hearthstone.png */; };
+		A13811D91AA9016500E8293D /* lol.png in Resources */ = {isa = PBXBuildFile; fileRef = A13811D71AA9016500E8293D /* lol.png */; };
+		A13811DB1AA902C400E8293D /* Dota2.png in Resources */ = {isa = PBXBuildFile; fileRef = A13811DA1AA902C400E8293D /* Dota2.png */; };
 		A13918E01AA2B26500CD232A /* annie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A13918DF1AA2B26500CD232A /* annie.jpg */; };
 		A13918E51AA2B2D300CD232A /* juxing.png in Resources */ = {isa = PBXBuildFile; fileRef = A13918E41AA2B2D300CD232A /* juxing.png */; };
 		A13919081AA2C21D00CD232A /* 3v3 black button.png in Resources */ = {isa = PBXBuildFile; fileRef = A13918E71AA2C21D00CD232A /* 3v3 black button.png */; };
@@ -134,7 +138,6 @@
 		A139192A1AA2CD6700CD232A /* Tournament_game.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13919291AA2CD6700CD232A /* Tournament_game.swift */; };
 		A14422441AA5925900A7BF6C /* result2.png in Resources */ = {isa = PBXBuildFile; fileRef = A14422421AA5925900A7BF6C /* result2.png */; };
 		A14422451AA5925900A7BF6C /* shoubin.png in Resources */ = {isa = PBXBuildFile; fileRef = A14422431AA5925900A7BF6C /* shoubin.png */; };
-		A14E3C1F1A9B20E7003C837F /* SOXPanRotateZoomImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E3C1E1A9B20E7003C837F /* SOXPanRotateZoomImageView.swift */; };
 		A14E3C211A9B21F8003C837F /* Bracket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E3C201A9B21F8003C837F /* Bracket.swift */; };
 		A16023F61A87356E00CFAACA /* Login_lolID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16023F51A87356E00CFAACA /* Login_lolID.swift */; };
 		A18BF4261AA2F7BD000678F3 /* Tournament_joined.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */; };
@@ -363,6 +366,10 @@
 		A103113C1AA80A2F000B7BB3 /* tournamentNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tournamentNew.png; sourceTree = "<group>"; };
 		A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_AddPhoto.swift; sourceTree = "<group>"; };
 		A13811BD1AA8182400E8293D /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
+		A13811D41AA8E9F900E8293D /* tournamentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tournamentViewCell.swift; sourceTree = "<group>"; };
+		A13811D61AA9016500E8293D /* hearthstone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hearthstone.png; sourceTree = "<group>"; };
+		A13811D71AA9016500E8293D /* lol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lol.png; sourceTree = "<group>"; };
+		A13811DA1AA902C400E8293D /* Dota2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dota2.png; sourceTree = "<group>"; };
 		A13918DF1AA2B26500CD232A /* annie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = annie.jpg; sourceTree = "<group>"; };
 		A13918E41AA2B2D300CD232A /* juxing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = juxing.png; sourceTree = "<group>"; };
 		A13918E71AA2C21D00CD232A /* 3v3 black button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3v3 black button.png"; sourceTree = "<group>"; };
@@ -401,7 +408,6 @@
 		A13919291AA2CD6700CD232A /* Tournament_game.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament_game.swift; sourceTree = "<group>"; };
 		A14422421AA5925900A7BF6C /* result2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = result2.png; sourceTree = "<group>"; };
 		A14422431AA5925900A7BF6C /* shoubin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoubin.png; sourceTree = "<group>"; };
-		A14E3C1E1A9B20E7003C837F /* SOXPanRotateZoomImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SOXPanRotateZoomImageView.swift; sourceTree = "<group>"; };
 		A14E3C201A9B21F8003C837F /* Bracket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bracket.swift; sourceTree = "<group>"; };
 		A16023F51A87356E00CFAACA /* Login_lolID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_lolID.swift; sourceTree = "<group>"; };
 		A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament_joined.swift; sourceTree = "<group>"; };
@@ -561,7 +567,6 @@
 				427F2F841AA583A600A26325 /* tableCell.xib */,
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
-				A14E3C1E1A9B20E7003C837F /* SOXPanRotateZoomImageView.swift */,
 				42B74FBE1A812416008B575C /* MainViewController.swift */,
 				425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */,
 				427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */,
@@ -686,6 +691,9 @@
 			isa = PBXGroup;
 			children = (
 				A103113C1AA80A2F000B7BB3 /* tournamentNew.png */,
+				A13811D61AA9016500E8293D /* hearthstone.png */,
+				A13811D71AA9016500E8293D /* lol.png */,
+				A13811DA1AA902C400E8293D /* Dota2.png */,
 				A14422421AA5925900A7BF6C /* result2.png */,
 				A14422431AA5925900A7BF6C /* shoubin.png */,
 				A13918E71AA2C21D00CD232A /* 3v3 black button.png */,
@@ -773,6 +781,7 @@
 		A1EB12191A99C61900FC8388 /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
+				A13811D41AA8E9F900E8293D /* tournamentViewCell.swift */,
 				A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */,
 				A13919291AA2CD6700CD232A /* Tournament_game.swift */,
 				A14E3C201A9B21F8003C837F /* Bracket.swift */,
@@ -964,8 +973,10 @@
 				A139191E1AA2C21D00CD232A /* Public.png in Resources */,
 				A14422441AA5925900A7BF6C /* result2.png in Resources */,
 				42041AF71A816EE400623C70 /* box1.png in Resources */,
+				A13811D91AA9016500E8293D /* lol.png in Resources */,
 				42B85A291A748CDB00FD4642 /* me_icons1.png in Resources */,
 				427F2F851AA583A600A26325 /* tableCell.xib in Resources */,
+				A13811D81AA9016500E8293D /* hearthstone.png in Resources */,
 				42B85A271A748CDB00FD4642 /* Inkinesss.png in Resources */,
 				4215A6721A7D7616002EB62E /* API in Resources */,
 				A139190E1AA2C21D00CD232A /* 小框.png in Resources */,
@@ -993,6 +1004,7 @@
 				42B85A2A1A748CDB00FD4642 /* PHOTO icons.png in Resources */,
 				42B859F51A74840F00FD4642 /* Main.storyboard in Resources */,
 				42041AE91A815E1600623C70 /* addfriendsbutton.png in Resources */,
+				A13811DB1AA902C400E8293D /* Dota2.png in Resources */,
 				A13919201AA2C21D00CD232A /* red small button.png in Resources */,
 				A18BF4341AA2F8EC000678F3 /* LOGIN_SIGN UP PAGE _BG.png in Resources */,
 				A139190A1AA2C21D00CD232A /* 大框.png in Resources */,
@@ -1093,7 +1105,6 @@
 				423142F91A9C40180033B3E7 /* NewsDisplayViewController.swift in Sources */,
 				42B85A441A74A81A00FD4642 /* UserInformation.swift in Sources */,
 				427D7A911A85C36000BFB2DA /* CustomSwitcher.swift in Sources */,
-				A14E3C1F1A9B20E7003C837F /* SOXPanRotateZoomImageView.swift in Sources */,
 				42B0A33B1A898BD200EA908C /* AFSecurityPolicy.m in Sources */,
 				42B0A33F1A898BD200EA908C /* AFURLSessionManager.m in Sources */,
 				A1EB121B1A99C64E00FC8388 /* SCLAlertView.swift in Sources */,
@@ -1110,6 +1121,7 @@
 				42B0A33A1A898BD200EA908C /* AFNetworkReachabilityManager.m in Sources */,
 				A1F138861A8346C9007DE5A2 /* LolAPI.swift in Sources */,
 				42B0A3371A898BD200EA908C /* AFHTTPRequestOperation.m in Sources */,
+				A13811D51AA8E9F900E8293D /* tournamentViewCell.swift in Sources */,
 				42B85A181A748B2E00FD4642 /* Login_SchoolSearchViewController.swift in Sources */,
 				42855BA21A846C0000EB9546 /* Team_FindTeamPostsViewController.swift in Sources */,
 				A12FDD8A1A85EF9B00DF278F /* Team_AddPhoto.swift in Sources */,

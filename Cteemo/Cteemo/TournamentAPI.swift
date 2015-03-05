@@ -27,6 +27,8 @@ class TournamentAPI: NSObject{
     var startTime : [AnyObject] = [AnyObject]()
     var totalMember : [AnyObject] = [AnyObject]()
     var tournamentType : [AnyObject] = [AnyObject]()
+    var groupstage: [AnyObject] = [AnyObject]()
+    var maxteam :[AnyObject] = [AnyObject]()
     
     
    /* POST https://challonge.com/api/tournaments.{json|xml}
@@ -102,6 +104,12 @@ class TournamentAPI: NSObject{
                 }
                 else {
                     self.gameName.append("noGame")
+                }
+                if let group = myjson[i]["tournament"]["group_stages_enabled"].int{
+                        self.groupstage.append(group)
+                }
+                if let max = myjson[i]["tournament"]["signup_cap"].int{
+                    self.groupstage.append(max)
                 }
                 
                     
