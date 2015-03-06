@@ -31,13 +31,13 @@
                             <constraint firstAttribute="height" constant="25" id="aXW-Ud-YUC"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7E-3I-ivk">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7E-3I-ivk">
                         <rect key="frame" x="29" y="99" width="42" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXm-E4-Nhv">
+                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXm-E4-Nhv">
                         <rect key="frame" x="127" y="59" width="193" height="65"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mode_time框子.png" translatesAutoresizingMaskIntoConstraints="NO" id="QgR-us-ZcP">
@@ -95,15 +95,6 @@
                             <constraint firstAttribute="width" constant="2" id="c89-vY-Ol0"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zb-ry-bW6">
-                        <rect key="frame" x="188" y="30" width="42" height="21"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="15" id="7Zd-BA-yGg"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZQg-lM-bfc">
                         <rect key="frame" x="318" y="60" width="46" height="50"/>
                         <constraints>
@@ -115,34 +106,36 @@
                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                         </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vxA-U6-tQy">
-                        <rect key="frame" x="21" y="43" width="58" height="57"/>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6ZT-Ll-VPk">
+                        <rect key="frame" x="21" y="42" width="58" height="56"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="57" id="jZK-9u-Pgu"/>
-                            <constraint firstAttribute="width" constant="57" id="zba-Re-rJR"/>
+                            <constraint firstAttribute="width" constant="57" id="X9Z-3Z-HEg"/>
+                            <constraint firstAttribute="height" constant="57" id="t5N-ia-pap"/>
                         </constraints>
-                        <state key="normal" title="Button" image="CAMERA.png">
-                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                        </state>
-                    </button>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zb-ry-bW6">
+                        <rect key="frame" x="148" y="31" width="42" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="15" id="7Zd-BA-yGg"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="trailingMargin" secondItem="LXm-E4-Nhv" secondAttribute="trailing" constant="15" id="1fy-HD-4sa"/>
-                    <constraint firstItem="vxA-U6-tQy" firstAttribute="trailing" secondItem="K7E-3I-ivk" secondAttribute="trailing" id="5IB-T9-PTy"/>
                     <constraint firstItem="LXm-E4-Nhv" firstAttribute="top" secondItem="XB2-Pg-XuX" secondAttribute="bottom" constant="25" id="8v3-t7-DDT"/>
-                    <constraint firstItem="vxA-U6-tQy" firstAttribute="leading" secondItem="NGF-C6-wfB" secondAttribute="leadingMargin" constant="15" id="JAR-Qp-d4a"/>
                     <constraint firstAttribute="trailing" secondItem="XB2-Pg-XuX" secondAttribute="trailing" id="P5L-LF-fpt"/>
                     <constraint firstItem="XB2-Pg-XuX" firstAttribute="leading" secondItem="NGF-C6-wfB" secondAttribute="leading" id="a9g-8S-V7A"/>
                     <constraint firstItem="XB2-Pg-XuX" firstAttribute="top" secondItem="NGF-C6-wfB" secondAttribute="top" id="eOC-y5-sIL"/>
                     <constraint firstAttribute="bottomMargin" secondItem="LXm-E4-Nhv" secondAttribute="bottom" constant="15" id="izx-TL-0cE"/>
-                    <constraint firstItem="ka1-Nj-spM" firstAttribute="top" secondItem="vxA-U6-tQy" secondAttribute="top" id="nXu-rS-4ch"/>
-                    <constraint firstItem="vxA-U6-tQy" firstAttribute="leading" secondItem="K7E-3I-ivk" secondAttribute="leading" id="r5X-Bu-BHE"/>
                     <constraint firstItem="LXm-E4-Nhv" firstAttribute="leading" secondItem="ka1-Nj-spM" secondAttribute="trailing" constant="15" id="rlG-vC-cdN"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="JoinedFree" destination="ZQg-lM-bfc" id="epg-1u-Ug8"/>
-                <outlet property="gameIcon" destination="vxA-U6-tQy" id="goq-2A-cWP"/>
+                <outlet property="gameicon" destination="6ZT-Ll-VPk" id="JmF-ZZ-8go"/>
                 <outlet property="joinedteam" destination="W5p-me-B4a" id="HCd-oa-Jd5"/>
                 <outlet property="maxteams" destination="wOY-fs-Ufb" id="68K-aI-RWw"/>
                 <outlet property="name" destination="2Zb-ry-bW6" id="tWb-ms-rpO"/>
@@ -150,11 +143,10 @@
                 <outlet property="time" destination="nGC-Dg-oaA" id="dfv-35-XoH"/>
                 <outlet property="tournamentRule" destination="eEu-aG-pf6" id="S2c-UN-99D"/>
             </connections>
-            <point key="canvasLocation" x="236.5" y="5"/>
+            <point key="canvasLocation" x="236.5" y="-1"/>
         </tableViewCell>
     </objects>
     <resources>
-        <image name="CAMERA.png" width="247" height="247"/>
         <image name="free button.png" width="84" height="84"/>
         <image name="mode_time框子.png" width="419" height="137"/>
     </resources>

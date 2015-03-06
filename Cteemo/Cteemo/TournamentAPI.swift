@@ -109,8 +109,9 @@ class TournamentAPI: NSObject{
                         self.groupstage.append(group)
                 }
                 if let max = myjson[i]["tournament"]["signup_cap"].int{
-                    self.groupstage.append(max)
+                    self.maxteam.append(max)
                 }
+                else{ self.maxteam.append(256)}
                 
                     
                 }

@@ -16,7 +16,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     var TournamentType :String = ""
     var joinTeam :String = ""
     var teams: [AnyObject] = [AnyObject]()
-    
+    var cellcount = 0
     var numberOfData = 3
     
     @IBOutlet var tableData: UITableView!
@@ -34,13 +34,17 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
-        var cell2 = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[0] as? UITableViewCell
+        let cell2 = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[0] as? tournamentViewCell
+   
+            
+            cell2?.setCell(Tournament.gameName[cellcount] as String, name: Tournament.tournamentName[cellcount] as String, rule: Tournament.tournamentType[cellcount] as String, time:Tournament.startTime[cellcount] as String,joined: Tournament.totalMember[cellcount] as Int, maxteam:Tournament.maxteam[cellcount] as Int)
+        
         
         //func setcell2(gameName : String,name :String,rule:String,joined:String,time:String,maxteam:String)
         
         cell.addSubview(cell2!.contentView)
         
-        
+        cellcount++
         return cell
     }
     

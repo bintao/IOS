@@ -121,9 +121,8 @@ class UserTeam: NSObject{
             }
             else {self.teamicon_link = "" }
         
-            if ((result["captain"] as [AnyObject])[0] as [String: AnyObject]) ["profile_icon"]? != nil{
-             var captain_icon = ((result["captain"] as [AnyObject])[0] as [String: AnyObject])  ["profile_icon"] as String
-            }
+        
+        
         
             if result["id"]? != nil{
                 var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)

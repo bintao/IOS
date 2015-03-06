@@ -10,10 +10,7 @@ import Foundation
 
 
 class tournamentViewCell: UITableViewCell {
-
-
-
-    @IBOutlet weak var gameIcon: UIButton!
+    
     
     @IBOutlet weak var name: UILabel!
 
@@ -29,9 +26,10 @@ class tournamentViewCell: UITableViewCell {
     
     @IBOutlet weak var tournamentRule: UITextView!
     
+    @IBOutlet weak var gameicon: UIImageView!
     
     
-    func setCell(gameName : String,name :String,rule:String,joined:Int,time:String,maxteam:Int) {
+    func setCell(gameName : String,name :String,rule:String,time:String,joined:Int,maxteam:Int) {
     
         self.name.text = name
         self.time.text = time
@@ -40,13 +38,13 @@ class tournamentViewCell: UITableViewCell {
         self.tournamentRule.text = rule
         
         if gameName == "Dota 2"{
-           self.gameIcon.imageView?.image = UIImage(named: "Dota2.png")!
+           self.gameicon.image = UIImage(named: "Dota2.png")!
         }
         else if gameName == "League of Legends"{
-            self.gameIcon.imageView?.image = UIImage(named: "lol.png")!
+            self.gameicon.image = UIImage(named: "lol.png")!
         }
         else if gameName == "Hearthstone: Heroes of Warcraft"{
-            self.gameIcon.imageView?.image = UIImage(named: "hearthstone.png")!
+            self.gameicon.image = UIImage(named: "hearthstone.png")!
         }
         
     

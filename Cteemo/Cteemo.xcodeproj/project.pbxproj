@@ -140,6 +140,8 @@
 		A14422451AA5925900A7BF6C /* shoubin.png in Resources */ = {isa = PBXBuildFile; fileRef = A14422431AA5925900A7BF6C /* shoubin.png */; };
 		A14E3C211A9B21F8003C837F /* Bracket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E3C201A9B21F8003C837F /* Bracket.swift */; };
 		A16023F61A87356E00CFAACA /* Login_lolID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16023F51A87356E00CFAACA /* Login_lolID.swift */; };
+		A171F9261AA931FC00CEC4D5 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13811C51AA8182400E8293D /* SwiftyJSON.framework */; };
+		A171F9271AA931FC00CEC4D5 /* SwiftyJSON.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = A13811C51AA8182400E8293D /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A18BF4261AA2F7BD000678F3 /* Tournament_joined.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */; };
 		A18BF4311AA2F8EC000678F3 /* Email_Password Page_Bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF42B1AA2F8EC000678F3 /* Email_Password Page_Bg.png */; };
 		A18BF4321AA2F8EC000678F3 /* Email_Password_Nickname_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF42C1AA2F8EC000678F3 /* Email_Password_Nickname_BG.png */; };
@@ -245,6 +247,13 @@
 			remoteGlobalIDString = 2E4FEFDA19575BE100351305;
 			remoteInfo = "SwiftyJSON iOS";
 		};
+		A171F9281AA931FC00CEC4D5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A13811BD1AA8182400E8293D /* SwiftyJSON.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2E4FEFDA19575BE100351305;
+			remoteInfo = "SwiftyJSON iOS";
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -254,6 +263,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				A171F9271AA931FC00CEC4D5 /* SwiftyJSON.framework in Copy Framework */,
 				42AB57DC1A7F3D4800C7799E /* Alamofire.framework in Copy Framework */,
 			);
 			name = "Copy Framework";
@@ -444,6 +454,7 @@
 			files = (
 				A13811CE1AA818A100E8293D /* SwiftyJSON.framework in Frameworks */,
 				42B85A3A1A749F6E00FD4642 /* FBAudienceNetwork.framework in Frameworks */,
+				A171F9261AA931FC00CEC4D5 /* SwiftyJSON.framework in Frameworks */,
 				42B85A381A749F6E00FD4642 /* Bolts.framework in Frameworks */,
 				42B85A391A749F6E00FD4642 /* FacebookSDK.framework in Frameworks */,
 				42AB57DB1A7F3D4800C7799E /* Alamofire.framework in Frameworks */,
@@ -822,6 +833,7 @@
 			dependencies = (
 				A13811CD1AA8189400E8293D /* PBXTargetDependency */,
 				42AB57DE1A7F3D4800C7799E /* PBXTargetDependency */,
+				A171F9291AA931FC00CEC4D5 /* PBXTargetDependency */,
 			);
 			name = Cteemo;
 			productName = Cteemo;
@@ -1154,6 +1166,11 @@
 			isa = PBXTargetDependency;
 			name = "SwiftyJSON iOS";
 			targetProxy = A13811CC1AA8189400E8293D /* PBXContainerItemProxy */;
+		};
+		A171F9291AA931FC00CEC4D5 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "SwiftyJSON iOS";
+			targetProxy = A171F9281AA931FC00CEC4D5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
