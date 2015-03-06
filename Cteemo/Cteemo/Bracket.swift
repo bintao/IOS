@@ -10,7 +10,8 @@ import UIKit
 
 class Bracket: UIViewController {
     
-    @IBOutlet weak var cen: UIImageView!
+ 
+    var url : String = ""
     
     @IBOutlet weak var webview: UIWebView!
     
@@ -18,7 +19,7 @@ class Bracket: UIViewController {
         
         super.viewDidLoad()
         
-        let url = NSURL(string: "http://challonge.com/UIUC_Hearthstone/module?theme=100&multiplier=0.9&match_width_multiplier=1.2.png")
+        let url = NSURL(string: "http://challonge.com/"+self.url+"/module?theme=100&multiplier=0.9&match_width_multiplier=1.2.png")
         let request = NSURLRequest(URL: url!)
         self.webview.loadRequest(request)
         

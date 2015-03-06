@@ -94,6 +94,10 @@
 		A1010D491A7B2F9100256208 /* school button icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D481A7B2F9100256208 /* school button icon.png */; };
 		A1010D4B1A7B385700256208 /* school.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D4A1A7B385700256208 /* school.png */; };
 		A103113D1AA80A2F000B7BB3 /* tournamentNew.png in Resources */ = {isa = PBXBuildFile; fileRef = A103113C1AA80A2F000B7BB3 /* tournamentNew.png */; };
+		A12405A31AA9688100B5B992 /* addmember.png in Resources */ = {isa = PBXBuildFile; fileRef = A12405A01AA9688100B5B992 /* addmember.png */; };
+		A12405A41AA9688100B5B992 /* bracket.png in Resources */ = {isa = PBXBuildFile; fileRef = A12405A11AA9688100B5B992 /* bracket.png */; };
+		A12405A51AA9688100B5B992 /* info.png in Resources */ = {isa = PBXBuildFile; fileRef = A12405A21AA9688100B5B992 /* info.png */; };
+		A12405AD1AA9691500B5B992 /* delete.png in Resources */ = {isa = PBXBuildFile; fileRef = A12405AC1AA9691500B5B992 /* delete.png */; };
 		A12FDD8A1A85EF9B00DF278F /* Team_AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */; };
 		A13811CE1AA818A100E8293D /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A13811C51AA8182400E8293D /* SwiftyJSON.framework */; };
 		A13811D51AA8E9F900E8293D /* tournamentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13811D41AA8E9F900E8293D /* tournamentViewCell.swift */; };
@@ -374,6 +378,10 @@
 		A1010D481A7B2F9100256208 /* school button icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "school button icon.png"; sourceTree = "<group>"; };
 		A1010D4A1A7B385700256208 /* school.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school.png; sourceTree = "<group>"; };
 		A103113C1AA80A2F000B7BB3 /* tournamentNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tournamentNew.png; sourceTree = "<group>"; };
+		A12405A01AA9688100B5B992 /* addmember.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = addmember.png; sourceTree = "<group>"; };
+		A12405A11AA9688100B5B992 /* bracket.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bracket.png; sourceTree = "<group>"; };
+		A12405A21AA9688100B5B992 /* info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = info.png; sourceTree = "<group>"; };
+		A12405AC1AA9691500B5B992 /* delete.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = delete.png; sourceTree = "<group>"; };
 		A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_AddPhoto.swift; sourceTree = "<group>"; };
 		A13811BD1AA8182400E8293D /* SwiftyJSON.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SwiftyJSON.xcodeproj; path = "SwiftyJSON-master/SwiftyJSON.xcodeproj"; sourceTree = "<group>"; };
 		A13811D41AA8E9F900E8293D /* tournamentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tournamentViewCell.swift; sourceTree = "<group>"; };
@@ -701,6 +709,10 @@
 		A13918E61AA2C11B00CD232A /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
+				A12405A01AA9688100B5B992 /* addmember.png */,
+				A12405AC1AA9691500B5B992 /* delete.png */,
+				A12405A11AA9688100B5B992 /* bracket.png */,
+				A12405A21AA9688100B5B992 /* info.png */,
 				A103113C1AA80A2F000B7BB3 /* tournamentNew.png */,
 				A13811D61AA9016500E8293D /* hearthstone.png */,
 				A13811D71AA9016500E8293D /* lol.png */,
@@ -971,6 +983,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A1A858381A8C7DC1001BF576 /* LOLInfo.plist in Resources */,
+				A12405A31AA9688100B5B992 /* addmember.png in Resources */,
 				A1010D491A7B2F9100256208 /* school button icon.png in Resources */,
 				429FD0A41A801F25003BA84D /* circleCropper.png in Resources */,
 				424AF75E1A872DA20033B863 /* adddd.png in Resources */,
@@ -987,6 +1000,7 @@
 				42041AF71A816EE400623C70 /* box1.png in Resources */,
 				A13811D91AA9016500E8293D /* lol.png in Resources */,
 				42B85A291A748CDB00FD4642 /* me_icons1.png in Resources */,
+				A12405A41AA9688100B5B992 /* bracket.png in Resources */,
 				427F2F851AA583A600A26325 /* tableCell.xib in Resources */,
 				A13811D81AA9016500E8293D /* hearthstone.png in Resources */,
 				42B85A271A748CDB00FD4642 /* Inkinesss.png in Resources */,
@@ -1008,6 +1022,7 @@
 				A139191B1AA2C21D00CD232A /* money icons.png in Resources */,
 				88535F611A89E00000F38098 /* img3.jpg in Resources */,
 				A13919211AA2C21D00CD232A /* School Tournament.png in Resources */,
+				A12405AD1AA9691500B5B992 /* delete.png in Resources */,
 				42041AF11A81665E00623C70 /* white.png in Resources */,
 				42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */,
 				A13919221AA2C21D00CD232A /* Start time.png in Resources */,
@@ -1033,6 +1048,7 @@
 				88535F5A1A89DFF400F38098 /* img1.jpg in Resources */,
 				A13919231AA2C21D00CD232A /* teemo with words icons.png in Resources */,
 				42B859FA1A74840F00FD4642 /* LaunchScreen.xib in Resources */,
+				A12405A51AA9688100B5B992 /* info.png in Resources */,
 				42B85A161A7489CF00FD4642 /* loading_page.png in Resources */,
 				A139191F1AA2C21D00CD232A /* red button 大.png in Resources */,
 				42B85A231A748CDB00FD4642 /* arrow.png in Resources */,

@@ -37,7 +37,7 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXm-E4-Nhv">
+                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXm-E4-Nhv">
                         <rect key="frame" x="127" y="59" width="193" height="65"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mode_time框子.png" translatesAutoresizingMaskIntoConstraints="NO" id="QgR-us-ZcP">
@@ -114,7 +114,7 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zb-ry-bW6">
-                        <rect key="frame" x="148" y="31" width="42" height="21"/>
+                        <rect key="frame" x="127" y="33" width="193" height="21"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="15" id="7Zd-BA-yGg"/>
                         </constraints>
@@ -143,7 +143,7 @@
                 <outlet property="time" destination="nGC-Dg-oaA" id="dfv-35-XoH"/>
                 <outlet property="tournamentRule" destination="eEu-aG-pf6" id="S2c-UN-99D"/>
             </connections>
-            <point key="canvasLocation" x="236.5" y="-1"/>
+            <point key="canvasLocation" x="236.5" y="-3"/>
         </tableViewCell>
     </objects>
     <resources>

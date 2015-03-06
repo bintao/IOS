@@ -1379,13 +1379,13 @@
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CL6-4R-IeD">
-                                <rect key="frame" x="0.0" y="267" width="375" height="94"/>
+                                <rect key="frame" x="0.0" y="267" width="375" height="70"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0C-Ug-YXw">
-                                        <rect key="frame" x="0.0" y="0.0" width="129" height="94"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="129" height="70"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNT-xF-r22">
-                                                <rect key="frame" x="28" y="10" width="74" height="74"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNT-xF-r22">
+                                                <rect key="frame" x="40" y="9" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="pNT-xF-r22" secondAttribute="height" multiplier="1:1" id="R2K-lv-Qdg"/>
                                                 </constraints>
@@ -1394,7 +1394,7 @@
                                                 </state>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XMd-xy-CiE">
-                                                <rect key="frame" x="128" y="10" width="1" height="74"/>
+                                                <rect key="frame" x="128" y="10" width="1" height="50"/>
                                                 <color key="backgroundColor" red="0.99215686270000003" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="1" id="XiU-Vf-wb6"/>
@@ -1417,38 +1417,11 @@
                                             <constraint firstAttribute="centerY" secondItem="pNT-xF-r22" secondAttribute="centerY" id="WDI-Hi-3pb"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZG-N5-0Ur">
-                                        <rect key="frame" x="129" y="0.0" width="117" height="94"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dm7-VD-EjP">
-                                                <rect key="frame" x="22" y="10" width="74" height="74"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="Dm7-VD-EjP" secondAttribute="height" multiplier="1:1" id="EII-sl-Z6y"/>
-                                                </constraints>
-                                                <state key="normal" image="shoubin.png">
-                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="117" id="AOK-jR-tNI"/>
-                                            <constraint firstItem="Dm7-VD-EjP" firstAttribute="top" secondItem="jZG-N5-0Ur" secondAttribute="top" constant="10" id="ItF-r8-bW0"/>
-                                            <constraint firstAttribute="bottom" secondItem="Dm7-VD-EjP" secondAttribute="bottom" constant="10" id="XvF-5d-fpB"/>
-                                            <constraint firstAttribute="centerX" secondItem="Dm7-VD-EjP" secondAttribute="centerX" id="pY2-j3-EjZ"/>
-                                            <constraint firstAttribute="centerY" secondItem="Dm7-VD-EjP" secondAttribute="centerY" id="yrP-kj-1DY"/>
-                                        </constraints>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="ItF-r8-bW0"/>
-                                            </mask>
-                                        </variation>
-                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6f7-SZ-3ki">
-                                        <rect key="frame" x="246" y="0.0" width="129" height="94"/>
+                                        <rect key="frame" x="246" y="0.0" width="129" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSS-wr-pqF">
-                                                <rect key="frame" x="28" y="10" width="74" height="74"/>
+                                                <rect key="frame" x="40" y="10" width="50" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="WSS-wr-pqF" secondAttribute="height" multiplier="1:1" id="n2P-XS-gZH"/>
                                                 </constraints>
@@ -1457,7 +1430,7 @@
                                                 </state>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5EQ-V1-pCm">
-                                                <rect key="frame" x="0.0" y="10" width="1" height="74"/>
+                                                <rect key="frame" x="0.0" y="10" width="1" height="50"/>
                                                 <color key="backgroundColor" red="0.99215686270000003" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="1" id="EaY-oS-mvH"/>
@@ -1486,6 +1459,33 @@
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZG-N5-0Ur">
+                                        <rect key="frame" x="129" y="0.0" width="117" height="70"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dm7-VD-EjP">
+                                                <rect key="frame" x="34" y="9" width="50" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="Dm7-VD-EjP" secondAttribute="height" multiplier="1:1" id="EII-sl-Z6y"/>
+                                                </constraints>
+                                                <state key="normal" image="shoubin.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="117" id="AOK-jR-tNI"/>
+                                            <constraint firstItem="Dm7-VD-EjP" firstAttribute="top" secondItem="jZG-N5-0Ur" secondAttribute="top" constant="10" id="ItF-r8-bW0"/>
+                                            <constraint firstAttribute="bottom" secondItem="Dm7-VD-EjP" secondAttribute="bottom" constant="10" id="XvF-5d-fpB"/>
+                                            <constraint firstAttribute="centerX" secondItem="Dm7-VD-EjP" secondAttribute="centerX" id="pY2-j3-EjZ"/>
+                                            <constraint firstAttribute="centerY" secondItem="Dm7-VD-EjP" secondAttribute="centerY" id="yrP-kj-1DY"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="ItF-r8-bW0"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -1497,47 +1497,30 @@
                                     <constraint firstItem="6f7-SZ-3ki" firstAttribute="leading" secondItem="jZG-N5-0Ur" secondAttribute="trailing" id="NFT-GO-U54"/>
                                     <constraint firstAttribute="bottom" secondItem="r0C-Ug-YXw" secondAttribute="bottom" id="QwN-Hg-97v"/>
                                     <constraint firstAttribute="centerX" secondItem="jZG-N5-0Ur" secondAttribute="centerX" id="Y4p-aQ-XPk"/>
-                                    <constraint firstAttribute="width" secondItem="CL6-4R-IeD" secondAttribute="height" multiplier="375:94" id="cRG-oQ-h06"/>
+                                    <constraint firstAttribute="width" secondItem="CL6-4R-IeD" secondAttribute="height" multiplier="375:70" id="cRG-oQ-h06"/>
                                     <constraint firstItem="jZG-N5-0Ur" firstAttribute="top" secondItem="CL6-4R-IeD" secondAttribute="top" id="oL2-6h-Ew0"/>
                                     <constraint firstAttribute="bottom" secondItem="jZG-N5-0Ur" secondAttribute="bottom" id="qbT-ff-leT"/>
                                     <constraint firstAttribute="bottom" secondItem="6f7-SZ-3ki" secondAttribute="bottom" id="vWO-cL-3pS"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5l-Aa-doP">
-                                <rect key="frame" x="0.0" y="361" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="337" width="375" height="80"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4I-3x-P63">
-                                        <rect key="frame" x="15" y="10" width="345" height="60"/>
-                                        <state key="normal" backgroundImage="juxing.png">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4I-3x-P63">
+                                        <rect key="frame" x="12" y="8" width="350" height="64"/>
+                                        <state key="normal" image="tournamentNew.png">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
                                             <segue destination="lki-Wn-9da" kind="show" identifier="gotoGame" id="gzI-np-zXb"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UIUC Tournament" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fuf-0R-7a2">
-                                        <rect key="frame" x="85" y="29" width="138" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" image="School Tournament.png" translatesAutoresizingMaskIntoConstraints="NO" id="U0k-aE-qOo">
-                                        <rect key="frame" x="15" y="15" width="50" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" secondItem="U0k-aE-qOo" secondAttribute="height" multiplier="1:1" id="Vam-SL-NEj"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Fuf-0R-7a2" firstAttribute="leading" secondItem="U0k-aE-qOo" secondAttribute="trailing" constant="20" id="4SI-20-2Do"/>
                                     <constraint firstAttribute="height" constant="80" id="9rU-x1-Jfo"/>
                                     <constraint firstItem="A4I-3x-P63" firstAttribute="leading" secondItem="C5l-Aa-doP" secondAttribute="leading" constant="15" id="AIA-tE-6yS"/>
-                                    <constraint firstItem="U0k-aE-qOo" firstAttribute="leading" secondItem="C5l-Aa-doP" secondAttribute="leading" constant="15" id="JfO-EW-dIv"/>
-                                    <constraint firstAttribute="bottom" secondItem="U0k-aE-qOo" secondAttribute="bottom" constant="15" id="P5M-zD-Evf"/>
                                     <constraint firstItem="A4I-3x-P63" firstAttribute="top" secondItem="C5l-Aa-doP" secondAttribute="top" constant="10" id="U3R-ER-gv0"/>
                                     <constraint firstAttribute="bottom" secondItem="A4I-3x-P63" secondAttribute="bottom" constant="10" id="XGO-D1-JRk"/>
-                                    <constraint firstAttribute="centerY" secondItem="Fuf-0R-7a2" secondAttribute="centerY" id="ePc-yE-E1q"/>
-                                    <constraint firstItem="U0k-aE-qOo" firstAttribute="top" secondItem="C5l-Aa-doP" secondAttribute="top" constant="15" id="fyn-20-uUb"/>
                                     <constraint firstAttribute="trailing" secondItem="A4I-3x-P63" secondAttribute="trailing" constant="15" id="mOd-BW-Vtp"/>
                                 </constraints>
                             </view>
@@ -1621,48 +1604,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A14-oa-Pgf">
-                                <rect key="frame" x="136" y="158" width="102" height="30"/>
-                                <state key="normal" title="Check Bracket">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IPH-ij-aaq">
+                                <rect key="frame" x="-2" y="0.0" width="382" height="56"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A14-oa-Pgf">
+                                <rect key="frame" x="24" y="139" width="330" height="66"/>
+                                <state key="normal" image="bracket.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="gcO-xg-BL5" kind="presentation" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="N0z-Wp-Xsm"/>
+                                    <action selector="bracket:" destination="UOt-dG-afN" eventType="touchUpInside" id="7Bd-kE-dXw"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaS-r8-asG">
-                                <rect key="frame" x="136" y="207" width="96" height="30"/>
-                                <state key="normal" title="Group chat">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JaS-r8-asG">
+                                <rect key="frame" x="54" y="313" width="266" height="65"/>
+                                <state key="normal" image="addmember.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addMember:" destination="UOt-dG-afN" eventType="touchUpInside" id="E6b-Pq-Nrs"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVS-0r-BbE">
-                                <rect key="frame" x="110" y="258" width="182" height="30"/>
-                                <state key="normal" title="play next match( get code)">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gVS-0r-BbE">
+                                <rect key="frame" x="57" y="226" width="261" height="66"/>
+                                <state key="normal" image="info.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="info:" destination="UOt-dG-afN" eventType="touchUpInside" id="zXI-jF-x41"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogq-Nq-YCH">
-                                <rect key="frame" x="143" y="328" width="83" height="30"/>
-                                <state key="normal" title="report result">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ogq-Nq-YCH">
+                                <rect key="frame" x="10" y="406" width="359" height="66"/>
+                                <state key="normal" image="delete.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="deleteMember:" destination="UOt-dG-afN" eventType="touchUpInside" id="Afb-Ol-M00"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsl-Vo-d3n">
-                                <rect key="frame" x="16" y="20" width="46" height="30"/>
-                                <state key="normal" title="Back">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsl-Vo-d3n">
+                                <rect key="frame" x="7" y="2" width="62" height="51"/>
+                                <state key="normal" image="arrow.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="5Pl-2H-vwE" kind="unwind" unwindAction="returnTogame:" id="Jzs-UN-phJ"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRT-lz-kK5">
+                                <rect key="frame" x="59" y="17" width="275" height="21"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="vHw-Aw-1VQ" kind="presentation" identifier="reportResult" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="wg1-F3-uQr"/>
+                        <outlet property="titel" destination="QRT-lz-kK5" id="PM3-Hb-aDK"/>
+                        <segue destination="vHw-Aw-1VQ" kind="presentation" identifier="info" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="wg1-F3-uQr"/>
+                        <segue destination="gcO-xg-BL5" kind="presentation" identifier="bracket" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="Gna-II-wt2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQ6-KD-TU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1701,14 +1705,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ipo-a1-zqJ">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </imageView>
                             <webView contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fce-dh-btS">
-                                <rect key="frame" x="0.0" y="109" width="375" height="583"/>
+                                <rect key="frame" x="0.0" y="58" width="380" height="609"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
                             </webView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8Z-4J-cD9">
-                                <rect key="frame" x="16" y="9" width="35" height="30"/>
-                                <state key="normal" title="Back">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8Z-4J-cD9">
+                                <rect key="frame" x="16" y="4" width="61" height="51"/>
+                                <state key="normal" image="arrow.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -1726,7 +1734,6 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="webview" destination="fce-dh-btS" id="8ey-CM-gOv"/>
-                        <segue destination="fgf-hg-7Wj" kind="unwind" unwindAction="returnToTournament:" id="OO8-he-hAN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqR-jC-m8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2417,7 +2424,7 @@
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
-                            <color key="textColor" patternImage="634804D4-1481-4972-8264-A387D9724BDD" colorSpace="pattern"/>
+                            <color key="textColor" patternImage="E11DB49C-E890-4807-9D1E-8FEBC0082C18" colorSpace="pattern"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2576,7 +2583,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="634804D4-1481-4972-8264-A387D9724BDD" width="512" height="512">
+        <image name="CAMERA.png" width="247" height="247"/>
+        <image name="E11DB49C-E890-4807-9D1E-8FEBC0082C18" width="512" height="512">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW
@@ -20132,23 +20140,24 @@ D+oAEA/vABAP9wAQD/oAEA//ABAQBwAQEAoAEBAcABAQHwAQECQAAAAAAAAEAQAAAAAAAABSAAAAAAAA
 AAAAAAAAABAQJg
 </mutableData>
         </image>
-        <image name="CAMERA.png" width="247" height="247"/>
         <image name="Login_Login page button.png" width="228" height="86"/>
         <image name="NEW SUMMONER PAGE_BG.png" width="640" height="1134"/>
         <image name="PHOTO icons.png" width="165" height="165"/>
         <image name="SUBMIT.png" width="438" height="96"/>
         <image name="SUMMARY.png" width="60" height="58"/>
-        <image name="School Tournament.png" width="78" height="78"/>
+        <image name="addmember.png" width="261" height="66"/>
         <image name="annie.jpg" width="900" height="636"/>
         <image name="arrow.png" width="69" height="63"/>
         <image name="backG.png" width="750" height="1334"/>
+        <image name="bracket.png" width="261" height="66"/>
         <image name="circleCropper.png" width="1000" height="1000"/>
         <image name="createTeam.png" width="90" height="90"/>
         <image name="creategame.png" width="70" height="70"/>
+        <image name="delete.png" width="261" height="66"/>
         <image name="flag" width="30" height="30"/>
         <image name="hentiao2.png" width="750" height="4"/>
+        <image name="info.png" width="261" height="66"/>
         <image name="joinTeam.png" width="90" height="90"/>
-        <image name="juxing.png" width="710" height="295"/>
         <image name="lock1.png" width="54" height="57"/>
         <image name="more111.png" width="60" height="60"/>
         <image name="news" width="30" height="30"/>
@@ -20161,6 +20170,7 @@ AAAAAAAAABAQJg
         <image name="teemoDouble.png" width="200" height="256"/>
         <image name="textField.png" width="500" height="120"/>
         <image name="tournament" width="30" height="30"/>
+        <image name="tournamentNew.png" width="604" height="126"/>
         <image name="user" width="30" height="30"/>
         <image name="white.png" width="1200" height="1200"/>
     </resources>
