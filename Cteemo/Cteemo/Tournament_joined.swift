@@ -78,9 +78,8 @@ class Tournament_joined: UIViewController {
             
             Tournament.deleteMemberByname(self.url, member: name.text)
             
-            
         }
-        alert1.showError("Delete Member from "+self.Tournamentname, subTitle:"", closeButtonTitle: "Cancle")
+        alert1.showCteemo("Delete Member", subTitle:" i want delete", closeButtonTitle: "Cancle")
 
         
     }
@@ -88,7 +87,7 @@ class Tournament_joined: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "bracket"{
-            
+           
             var controller: Bracket = segue.destinationViewController as Bracket
        
             controller.url = Tournament.tournamentUrl[self.gamenumber] as String

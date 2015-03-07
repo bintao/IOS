@@ -53,7 +53,21 @@ class TournamentAPI: NSObject{
         }
     
     }
+    func resetdata(){
+        
+        self.tournamentName.removeAll()
+        self.tournamentName.removeAll()
+        self.tournamentUrl.removeAll()
+        self.tournamentID .removeAll()
+        self.gameName.removeAll()
+        self.startTime.removeAll()
+        self.totalMember.removeAll()
+        self.tournamentType.removeAll()
+        self.groupstage.removeAll()
+        self.maxteam.removeAll()
     
+    
+    }
     //show Tournament
     func showTournament(id: String){
     
@@ -70,7 +84,7 @@ class TournamentAPI: NSObject{
     //https://api.challonge.com/v1/tournaments/{tournament}/participants.{json|xml}
 
     func getTournamentList(){
-    
+        
         var par : [String: AnyObject] = ["api_key":Tournament.key]
         var req = Alamofire.request(.GET,"https://api.challonge.com/v1/tournaments.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
@@ -220,7 +234,6 @@ class TournamentAPI: NSObject{
         }
         
         if s == 0 { println("no team find") }
-    
     }
     
 }

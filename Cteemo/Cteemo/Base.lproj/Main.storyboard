@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -1504,7 +1504,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C5l-Aa-doP">
-                                <rect key="frame" x="0.0" y="337" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="337" width="375" height="85"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A4I-3x-P63">
                                         <rect key="frame" x="12" y="8" width="350" height="64"/>
@@ -1517,7 +1517,7 @@
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="9rU-x1-Jfo"/>
+                                    <constraint firstAttribute="height" constant="85" id="9rU-x1-Jfo"/>
                                     <constraint firstItem="A4I-3x-P63" firstAttribute="leading" secondItem="C5l-Aa-doP" secondAttribute="leading" constant="15" id="AIA-tE-6yS"/>
                                     <constraint firstItem="A4I-3x-P63" firstAttribute="top" secondItem="C5l-Aa-doP" secondAttribute="top" constant="10" id="U3R-ER-gv0"/>
                                     <constraint firstAttribute="bottom" secondItem="A4I-3x-P63" secondAttribute="bottom" constant="10" id="XGO-D1-JRk"/>
@@ -1548,7 +1548,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ri6-du-Sxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5753.5" y="-1277.5"/>
+            <point key="canvasLocation" x="5709.5" y="-1249.5"/>
         </scene>
         <!--Tournament game-->
         <scene sceneID="PL8-7R-Wb3">
@@ -1590,7 +1590,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3f-3u-YWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6219.5" y="-1403.5"/>
+            <point key="canvasLocation" x="6233.5" y="-1467.5"/>
         </scene>
         <!--Tournament joined-->
         <scene sceneID="DA9-Pm-SbH">
@@ -1672,7 +1672,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQ6-KD-TU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="5Pl-2H-vwE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6723.5" y="-1411.5"/>
+            <point key="canvasLocation" x="6701.5" y="-1467.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="BIq-j8-huV">
@@ -1691,7 +1691,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzV-DN-9jM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7290.5" y="-1204.5"/>
+            <point key="canvasLocation" x="7290.5" y="-1095.5"/>
         </scene>
         <!--Bracket-->
         <scene sceneID="xeu-cT-e9Q">
@@ -1723,6 +1723,12 @@
                                     <segue destination="fgf-hg-7Wj" kind="unwind" unwindAction="returnToJoined:" id="Zvk-L6-hDk"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvd-Ee-qEj">
+                                <rect key="frame" x="50" y="19" width="275" height="21"/>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1733,6 +1739,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="titel" destination="Nvd-Ee-qEj" id="9ta-4V-j2P"/>
                         <outlet property="webview" destination="fce-dh-btS" id="8ey-CM-gOv"/>
                     </connections>
                 </viewController>
@@ -2424,7 +2431,7 @@
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
-                            <color key="textColor" patternImage="E11DB49C-E890-4807-9D1E-8FEBC0082C18" colorSpace="pattern"/>
+                            <color key="textColor" patternImage="A8FCDCBA-E2A6-4286-8D39-DE1CE2D638AD" colorSpace="pattern"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2583,8 +2590,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CAMERA.png" width="247" height="247"/>
-        <image name="E11DB49C-E890-4807-9D1E-8FEBC0082C18" width="512" height="512">
+        <image name="A8FCDCBA-E2A6-4286-8D39-DE1CE2D638AD" width="512" height="512">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW
@@ -20140,6 +20146,7 @@ D+oAEA/vABAP9wAQD/oAEA//ABAQBwAQEAoAEBAcABAQHwAQECQAAAAAAAAEAQAAAAAAAABSAAAAAAAA
 AAAAAAAAABAQJg
 </mutableData>
         </image>
+        <image name="CAMERA.png" width="247" height="247"/>
         <image name="Login_Login page button.png" width="228" height="86"/>
         <image name="NEW SUMMONER PAGE_BG.png" width="640" height="1134"/>
         <image name="PHOTO icons.png" width="165" height="165"/>

@@ -16,29 +16,42 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     var TournamentType :String = ""
     var joinTeam :String = ""
     var teams: [AnyObject] = [AnyObject]()
-    var cellcount = 0
     
+    var cellcount = 0
     //select tournament in list
     var gamenumber = 0
     // total number of tournamnet
     var numberOfData = 3
+    var refreshControl = UIRefreshControl()
     
     @IBOutlet var tableData: UITableView!
     
     override func viewDidLoad() {
-        
-        Tournament.getTournamentList()
-        
         super.viewDidLoad()
+       
+       //self.refreshControl.addTarget(self, action: Selector("flashdata"), forControlEvents: UIControlEvents.ValueChanged)
+       //self.refreshControl.attributedTitle = NSAttributedString(string: "reload data form servers")
         
-        // Do any additional setup after loading the view.
+       //tableData.addSubview(refreshControl)
+        
+        //Do any additional setup after loading the view.
     }
     
+    func flashdata() {
+    
+        Tournament.getTournamentList()
+        self.cellcount = 0
+        tableData.reloadData()
+        self.refreshControl.endRefreshing()
+    
+    }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         let cell2 = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[0] as? tournamentViewCell
+            println(Tournament.gameName.count)
             
             cell2?.setCell(Tournament.gameName[cellcount] as String, name: Tournament.tournamentName[cellcount] as String, rule: Tournament.tournamentType[cellcount] as String, time:Tournament.startTime[cellcount] as String,joined: Tournament.totalMember[cellcount] as Int, maxteam:Tournament.maxteam[cellcount] as Int)
 
@@ -48,7 +61,9 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         cell.addSubview(cell2!.contentView)
         
+        if cellcount < Tournament.totalnumber.toInt()! - 1{
         self.cellcount++
+        }
         return cell
     }
     
@@ -71,7 +86,6 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
             controller.url = Tournament.tournamentUrl[self.gamenumber] as String
             
         }
-        
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
@@ -80,6 +94,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        println(Tournament.totalnumber)
         return Tournament.totalnumber.toInt()!
     }
 
@@ -91,64 +106,8 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     
     
-    /*
-    @IBAction func leagueoflegend(){
-        
-        let alert1 = SCLAlertView()
-        
-        alert1.addButton("Join") {
-            
-            Tournament.JoinTournament("UIUC_League",name: TeamInfoGlobal.teamName,email:"")
-            
-            self.performSegueWithIdentifier("joined", sender: self)
-            
-        }
-        if TeamInfoGlobal.teamName != ""
-        {
-        alert1.showCteemo("League of Legends Tournament", subTitle:TeamInfoGlobal.teamName+" want to join League of legends", closeButtonTitle: "Cancle")
-            
-        }
-        else{
-        let alert2 = SCLAlertView()
-        alert2.showError("Join Tournament", subTitle: "You must join a team before join tournament", closeButtonTitle: "OK")
-        }
-        
-    }
-    */
     
     
-    
-    @IBAction func dota2(){
-        
-        let alert2 = SCLAlertView()
-        
-        alert2.addButton("Join") {
-            
-            Tournament.JoinTournament("UIUC",name: TeamInfoGlobal.teamName,email:"")
-            self.performSegueWithIdentifier("joined", sender: self)
-            
-        }
-        
-        alert2.showCteemo("Join Dota2 Tournament", subTitle:TeamInfoGlobal.teamName+" want to join Dota2 ", closeButtonTitle: "Cancle")
-        
-    }
-    
-    
-    @IBAction func hearthstone(){
-        
-        let alert3 = SCLAlertView()
-        
-        alert3.addButton("Join") {
-            
-            Tournament.JoinTournament("UIUC",name: TeamInfoGlobal.teamName,email:"")
-            
-            self.performSegueWithIdentifier("joined", sender: self)
-            
-        }
-        
-        alert3.showCteemo("Hearthstone Tournament", subTitle:TeamInfoGlobal.teamName+" want to join Hearthstone Tournament", closeButtonTitle: "Cancle")
-        
-        }
     
     
     @IBAction func returnTogame(segue : UIStoryboardSegue) {

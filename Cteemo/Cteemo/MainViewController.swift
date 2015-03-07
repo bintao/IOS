@@ -28,6 +28,7 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
         self.tabbar.transform = CGAffineTransformMakeTranslation(0, self.tabbar.frame.height)
         self.tabbar.alpha = 0
         
+        
         // doens't appear if user haven't login
         news.alpha = 0
         tournament.alpha = 0
@@ -37,7 +38,7 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
     }
     
     override func viewDidAppear(animated: Bool) {
-        
+        Tournament.getTournamentList()
         LolAPIGlobal.getlolvision()
         if UserInfoGlobal.accessToken == ""
         {
@@ -152,6 +153,7 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
             })
         }
     }
+    
     //display the tab bar
     func showTabb(){
         tabbarShouldAppear = true
