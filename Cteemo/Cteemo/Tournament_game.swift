@@ -17,7 +17,6 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     var joinTeam :String = ""
     var teams: [AnyObject] = [AnyObject]()
     
-    var cellcount = 0
     //select tournament in list
     var gamenumber = 0
     // total number of tournamnet
@@ -40,7 +39,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     func flashdata() {
     
         Tournament.getTournamentList()
-        self.cellcount = 0
+      
         tableData.reloadData()
         self.refreshControl.endRefreshing()
     
@@ -51,19 +50,15 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
         let cell2 = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[0] as? tournamentViewCell
-            println(Tournament.gameName.count)
-            
-            cell2?.setCell(Tournament.gameName[cellcount] as String, name: Tournament.tournamentName[cellcount] as String, rule: Tournament.tournamentType[cellcount] as String, time:Tournament.startTime[cellcount] as String,joined: Tournament.totalMember[cellcount] as Int, maxteam:Tournament.maxteam[cellcount] as Int)
-
+        
+            cell2?.setCell(Tournament.gameName[indexPath.row] as String, name: Tournament.tournamentName[indexPath.row] as String, rule: Tournament.tournamentType[indexPath.row] as String, time:Tournament.startTime[indexPath.row] as String,joined: Tournament.totalMember[indexPath.row] as Int, maxteam:Tournament.maxteam[indexPath.row] as Int)
+        
         
         cell2?.JoinedFree.addTarget(self, action: "joinTournament:", forControlEvents: UIControlEvents.TouchUpInside)
         cell2?.JoinedFree.tag = indexPath.row
         
         cell.addSubview(cell2!.contentView)
-        
-        if cellcount < Tournament.totalnumber.toInt()! - 1{
-        self.cellcount++
-        }
+
         return cell
     }
     
