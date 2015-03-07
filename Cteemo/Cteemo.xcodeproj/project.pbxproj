@@ -75,7 +75,6 @@
 		42B85A2B1A748CDB00FD4642 /* SUBMIT.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A221A748CDB00FD4642 /* SUBMIT.png */; };
 		42B85A2D1A748D4E00FD4642 /* arrowTurned.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A2C1A748D4E00FD4642 /* arrowTurned.png */; };
 		42B85A2F1A74947E00FD4642 /* textField.png in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A2E1A74947E00FD4642 /* textField.png */; };
-		42B85A381A749F6E00FD4642 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B85A351A749F6E00FD4642 /* Bolts.framework */; };
 		42B85A391A749F6E00FD4642 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B85A361A749F6E00FD4642 /* FacebookSDK.framework */; };
 		42B85A3A1A749F6E00FD4642 /* FBAudienceNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 42B85A371A749F6E00FD4642 /* FBAudienceNetwork.framework */; };
 		42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B85A3D1A74A0D800FD4642 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
@@ -357,7 +356,6 @@
 		42B85A221A748CDB00FD4642 /* SUBMIT.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SUBMIT.png; sourceTree = "<group>"; };
 		42B85A2C1A748D4E00FD4642 /* arrowTurned.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowTurned.png; sourceTree = "<group>"; };
 		42B85A2E1A74947E00FD4642 /* textField.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = textField.png; sourceTree = "<group>"; };
-		42B85A351A749F6E00FD4642 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		42B85A361A749F6E00FD4642 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		42B85A371A749F6E00FD4642 /* FBAudienceNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FBAudienceNetwork.framework; sourceTree = "<group>"; };
 		42B85A3B1A74A0D700FD4642 /* Cteemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cteemo-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -463,7 +461,6 @@
 				A13811CE1AA818A100E8293D /* SwiftyJSON.framework in Frameworks */,
 				42B85A3A1A749F6E00FD4642 /* FBAudienceNetwork.framework in Frameworks */,
 				A171F9261AA931FC00CEC4D5 /* SwiftyJSON.framework in Frameworks */,
-				42B85A381A749F6E00FD4642 /* Bolts.framework in Frameworks */,
 				42B85A391A749F6E00FD4642 /* FacebookSDK.framework in Frameworks */,
 				42AB57DB1A7F3D4800C7799E /* Alamofire.framework in Frameworks */,
 			);
@@ -557,7 +554,6 @@
 		42B859DE1A74840E00FD4642 = {
 			isa = PBXGroup;
 			children = (
-				42B85A351A749F6E00FD4642 /* Bolts.framework */,
 				42B85A361A749F6E00FD4642 /* FacebookSDK.framework */,
 				42B85A371A749F6E00FD4642 /* FBAudienceNetwork.framework */,
 				42B859E91A74840F00FD4642 /* Cteemo */,
@@ -1300,8 +1296,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Cteemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Cteemo/Cteemo-Bridging-Header.h";
@@ -1323,8 +1323,12 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Cteemo/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Cteemo/Cteemo-Bridging-Header.h";

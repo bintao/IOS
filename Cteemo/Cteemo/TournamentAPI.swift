@@ -33,7 +33,9 @@ class TournamentAPI: NSObject{
     // for teams
     var teams :[AnyObject] = [AnyObject]()
     
-    
+    func getArray(){
+        
+    }
    /* POST https://challonge.com/api/tournaments.{json|xml}
     
     http://api.challonge.com/v1/documents/tournaments/create
@@ -77,6 +79,7 @@ class TournamentAPI: NSObject{
                 if JSON? != nil{
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
                 println(JSON)
+                
                 }
                 }
         }
@@ -88,6 +91,7 @@ class TournamentAPI: NSObject{
         var par : [String: AnyObject] = ["api_key":Tournament.key]
         var req = Alamofire.request(.GET,"https://api.challonge.com/v1/tournaments.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
+                
                 let myjson = SwiftyJSON.JSON(JSON!)
                 self.totalnumber = "\(SwiftyJSON.JSON(JSON!).count)"
                 for i in 0...myjson.count-1{
