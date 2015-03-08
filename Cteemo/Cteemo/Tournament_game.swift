@@ -28,10 +28,10 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
        
-       //self.refreshControl.addTarget(self, action: Selector("flashdata"), forControlEvents: UIControlEvents.ValueChanged)
-       //self.refreshControl.attributedTitle = NSAttributedString(string: "reload data form servers")
+       self.refreshControl.addTarget(self, action: Selector("flashdata"), forControlEvents: UIControlEvents.ValueChanged)
+       self.refreshControl.attributedTitle = NSAttributedString(string: "reload data form servers")
         
-       //tableData.addSubview(refreshControl)
+       tableData.addSubview(refreshControl)
         
         //Do any additional setup after loading the view.
     }
@@ -46,20 +46,17 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
+        let cell2 = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[0] as tournamentViewCell
         
-        let cell2 = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[0] as? tournamentViewCell
+            cell2.setCell(Tournament.gameName[indexPath.row] as String, name: Tournament.tournamentName[indexPath.row] as String, rule: Tournament.tournamentType[indexPath.row] as String, time:Tournament.startTime[indexPath.row] as String,joined: Tournament.totalMember[indexPath.row] as Int, maxteam:Tournament.maxteam[indexPath.row] as Int)
+        cell2.setNeedsUpdateConstraints()
         
-            cell2?.setCell(Tournament.gameName[indexPath.row] as String, name: Tournament.tournamentName[indexPath.row] as String, rule: Tournament.tournamentType[indexPath.row] as String, time:Tournament.startTime[indexPath.row] as String,joined: Tournament.totalMember[indexPath.row] as Int, maxteam:Tournament.maxteam[indexPath.row] as Int)
+        cell2.JoinedFree.addTarget(self, action: "joinTournament:", forControlEvents: UIControlEvents.TouchUpInside)
+        cell2.JoinedFree.tag = indexPath.row
         
-        
-        cell2?.JoinedFree.addTarget(self, action: "joinTournament:", forControlEvents: UIControlEvents.TouchUpInside)
-        cell2?.JoinedFree.tag = indexPath.row
-        
-        cell.addSubview(cell2!.contentView)
+       
 
-        return cell
+        return cell2
     }
     
     func joinTournament(sender : UIButton){
@@ -98,11 +95,6 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
-    
-    
-    
     
     
     @IBAction func returnTogame(segue : UIStoryboardSegue) {

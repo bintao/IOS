@@ -862,7 +862,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubP-CX-JdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="qsJ-qK-8VB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="7543" y="573"/>
+            <point key="canvasLocation" x="8101" y="438"/>
         </scene>
         <!--Login School And Photo-->
         <scene sceneID="Hsk-5t-R6U">
@@ -1586,7 +1586,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="tableData" destination="0cI-SZ-tFv" id="5gJ-K4-A2I"/>
-                        <segue destination="UOt-dG-afN" kind="presentation" identifier="joined" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="lIQ-1W-vhb"/>
+                        <segue destination="UOt-dG-afN" kind="show" identifier="joined" id="EvO-B5-HMM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3f-3u-YWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1605,10 +1605,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="IPH-ij-aaq">
-                                <rect key="frame" x="-2" y="0.0" width="382" height="56"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A14-oa-Pgf">
                                 <rect key="frame" x="24" y="139" width="330" height="66"/>
                                 <state key="normal" image="bracket.png">
@@ -1654,18 +1650,11 @@
                                     <segue destination="5Pl-2H-vwE" kind="unwind" unwindAction="returnTogame:" id="Jzs-UN-phJ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRT-lz-kK5">
-                                <rect key="frame" x="59" y="17" width="275" height="21"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="20"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="titel" destination="QRT-lz-kK5" id="PM3-Hb-aDK"/>
                         <segue destination="vHw-Aw-1VQ" kind="presentation" identifier="info" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="wg1-F3-uQr"/>
                         <segue destination="gcO-xg-BL5" kind="presentation" identifier="bracket" modalPresentationStyle="currentContext" modalTransitionStyle="crossDissolve" id="Gna-II-wt2"/>
                     </connections>
@@ -2392,7 +2381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUE-Xr-Mfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7418" y="182.5"/>
+            <point key="canvasLocation" x="7393" y="355.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4FT-0R-U4A">
@@ -2432,7 +2421,7 @@
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
-                            <color key="textColor" patternImage="D8BBA348-43D1-4B6D-A4EA-04C9C2EC53BC" colorSpace="pattern"/>
+                            <color key="textColor" patternImage="5FC9331A-5CC5-48C3-81D9-DD23D369D72C" colorSpace="pattern"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2591,8 +2580,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="CAMERA.png" width="247" height="247"/>
-        <image name="D8BBA348-43D1-4B6D-A4EA-04C9C2EC53BC" width="512" height="512">
+        <image name="5FC9331A-5CC5-48C3-81D9-DD23D369D72C" width="512" height="512">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW
@@ -20148,6 +20136,7 @@ D+oAEA/vABAP9wAQD/oAEA//ABAQBwAQEAoAEBAcABAQHwAQECQAAAAAAAAEAQAAAAAAAABSAAAAAAAA
 AAAAAAAAABAQJg
 </mutableData>
         </image>
+        <image name="CAMERA.png" width="247" height="247"/>
         <image name="Login_Login page button.png" width="228" height="86"/>
         <image name="NEW SUMMONER PAGE_BG.png" width="640" height="1134"/>
         <image name="PHOTO icons.png" width="165" height="165"/>

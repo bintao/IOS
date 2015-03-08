@@ -18,7 +18,6 @@ class tournamentViewCell: UITableViewCell {
     
     @IBOutlet weak var JoinedFree: UIButton!
     
-    @IBOutlet weak var time: UITextView!
     
     @IBOutlet weak var maxteams: UILabel!
 
@@ -32,7 +31,6 @@ class tournamentViewCell: UITableViewCell {
     func setCell(gameName : String,name :String,rule:String,time:String,joined:Int,maxteam:Int) {
     
         self.name.text = name
-        self.time.text = time
         self.maxteams.text = "\(maxteam)"
         self.joinedteam.text = "\(joined)"
         self.tournamentRule.text = rule

@@ -25,11 +25,9 @@ class Tournament_joined: UIViewController {
     
     override func viewDidLoad() {
         
-        titel.text = self.url
+        //titel.text = self.url
         self.Tournamentname = Tournament.tournamentName[self.gamenumber] as String
-        
-        println(self.url)
-        
+                
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
