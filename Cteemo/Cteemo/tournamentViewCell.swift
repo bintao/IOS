@@ -17,9 +17,7 @@ class tournamentViewCell: UITableViewCell {
     @IBOutlet weak var rewards: UILabel!
     
     @IBOutlet weak var JoinedFree: UIButton!
-    
-    @IBOutlet weak var time: UITextView!
-    
+        
     @IBOutlet weak var maxteams: UILabel!
 
     @IBOutlet weak var joinedteam: UILabel!
@@ -32,10 +30,10 @@ class tournamentViewCell: UITableViewCell {
     func setCell(gameName : String,name :String,rule:String,time:String,joined:Int,maxteam:Int) {
     
         self.name.text = name
-        self.time.text = time
         self.maxteams.text = "\(maxteam)"
         self.joinedteam.text = "\(joined)"
         self.tournamentRule.text = rule
+        
         
         if gameName == "Dota 2"{
            self.gameicon.image = UIImage(named: "Dota2.png")!
