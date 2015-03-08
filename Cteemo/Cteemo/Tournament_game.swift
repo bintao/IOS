@@ -52,6 +52,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         let cell2 = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[0] as? tournamentViewCell
             println(Tournament.gameName.count)
+cell2?.sizeThatFits(<#size: CGSize#>)
             
             cell2?.setCell(Tournament.gameName[cellcount] as String, name: Tournament.tournamentName[cellcount] as String, rule: Tournament.tournamentType[cellcount] as String, time:Tournament.startTime[cellcount] as String,joined: Tournament.totalMember[cellcount] as Int, maxteam:Tournament.maxteam[cellcount] as Int)
 

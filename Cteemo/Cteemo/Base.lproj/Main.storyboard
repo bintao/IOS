@@ -1562,10 +1562,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="annie.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MwW-JP-8fp">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="annie.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="MwW-JP-8fp">
                                 <rect key="frame" x="-3" y="0.0" width="380" height="206"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MwW-JP-8fp" secondAttribute="height" multiplier="190:103" id="oEH-fI-meK"/>
+                                </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0cI-SZ-tFv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0cI-SZ-tFv">
                                 <rect key="frame" x="0.0" y="206" width="375" height="461"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -1576,10 +1579,17 @@
                         </subviews>
                         <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="0cI-SZ-tFv" firstAttribute="top" secondItem="MwW-JP-8fp" secondAttribute="bottom" id="6Q1-7m-jGU"/>
+                            <constraint firstItem="LFT-wW-9Xr" firstAttribute="top" secondItem="0cI-SZ-tFv" secondAttribute="bottom" id="7BN-RE-EgN"/>
+                            <constraint firstItem="MwW-JP-8fp" firstAttribute="top" secondItem="J0K-dX-QwD" secondAttribute="top" id="Agc-l8-JLH"/>
                             <constraint firstAttribute="trailing" secondItem="0cI-SZ-tFv" secondAttribute="trailing" id="COM-Jq-ReG"/>
+                            <constraint firstAttribute="trailing" secondItem="MwW-JP-8fp" secondAttribute="trailing" id="JQk-lD-O3b"/>
                             <constraint firstItem="LFT-wW-9Xr" firstAttribute="top" secondItem="0cI-SZ-tFv" secondAttribute="bottom" id="PPt-bL-O2C"/>
+                            <constraint firstItem="MwW-JP-8fp" firstAttribute="leading" secondItem="J0K-dX-QwD" secondAttribute="leading" id="PXt-87-Ize"/>
+                            <constraint firstAttribute="trailing" secondItem="0cI-SZ-tFv" secondAttribute="trailing" id="Px2-pH-pG8"/>
                             <constraint firstItem="0cI-SZ-tFv" firstAttribute="top" secondItem="MwW-JP-8fp" secondAttribute="bottom" id="Tmp-O8-R1T"/>
                             <constraint firstItem="0cI-SZ-tFv" firstAttribute="leading" secondItem="J0K-dX-QwD" secondAttribute="leading" id="ft9-Dq-JeG"/>
+                            <constraint firstItem="0cI-SZ-tFv" firstAttribute="leading" secondItem="J0K-dX-QwD" secondAttribute="leading" id="iT9-vc-ncr"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -2431,7 +2441,7 @@
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
-                            <color key="textColor" patternImage="A8FCDCBA-E2A6-4286-8D39-DE1CE2D638AD" colorSpace="pattern"/>
+                            <color key="textColor" patternImage="6465264E-B755-4C13-827D-1289597157BB" colorSpace="pattern"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2590,7 +2600,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="A8FCDCBA-E2A6-4286-8D39-DE1CE2D638AD" width="512" height="512">
+        <image name="6465264E-B755-4C13-827D-1289597157BB" width="512" height="512">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGTk9YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK8QEQcI
 ExQZHh8nKzIzNDw/QkhLVSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NW
@@ -20131,9 +20141,9 @@ tc42zrbPN8+40DnQutE80b7SP9LB00TTxtRJ1MvVTtXR1lXW2Ndc1+DYZNjo2WzZ8dp22vvbgNwF3Ird
 EN2W3hzeot8p36/gNuC94UThzOJT4tvjY+Pr5HPk/OWE5g3mlucf56noMui86Ubp0Opb6uXrcOv77Ibt
 Ee2c7ijutO9A78zwWPDl8XLx//KM8xnzp/Q09ML1UPXe9m32+/eK+Bn4qPk4+cf6V/rn+3f8B/yY/Sn9
 uv5L/tz/bf//gAjSLC0uL1okY2xhc3NuYW1lWCRjbGFzc2VzXU5TTXV0YWJsZURhdGGjLjAxVk5TRGF0
-YVhOU09iamVjdF8QOnt7MCwgMH0sIHsyLjUzNTMwMTIwMDQ1NjQ1ODhlKzMwLCAyLjUzNTMwMTIwMDQ1
-NjQ1ODhlKzMwfX1fEDp7ezAsIDB9LCB7Mi41MzUzMDEyMDA0NTY0NTg4ZSszMCwgMi41MzUzMDEyMDA0
-NTY0NTg4ZSszMH190ywtNTY3OlskY2xhc3NoaW50c18QFE5TQ0dJbWFnZVNuYXBzaG90UmVwozg5MV8Q
+YVhOU09iamVjdF8QOnt7MCwgMH0sIHsxLjAxNDEyMDQ4MDE4MjU4MzVlKzMxLCAxLjAxNDEyMDQ4MDE4
+MjU4MzVlKzMxfX1fEDp7ezAsIDB9LCB7MS4wMTQxMjA0ODAxODI1ODM1ZSszMSwgMS4wMTQxMjA0ODAx
+ODI1ODM1ZSszMX190ywtNTY3OlskY2xhc3NoaW50c18QFE5TQ0dJbWFnZVNuYXBzaG90UmVwozg5MV8Q
 FE5TQ0dJbWFnZVNuYXBzaG90UmVwWk5TSW1hZ2VSZXChO18QEE5TQ2FjaGVkSW1hZ2VSZXDSLC09PldO
 U0FycmF5oj0x0iwtQEFeTlNNdXRhYmxlQXJyYXmjQD0x00NECkVGR1dOU1doaXRlXE5TQ29sb3JTcGFj
 ZUQwIDAAEAOAD9IsLUlKV05TQ29sb3KiSTHSLC1MTVdOU0ltYWdlokwxXxAPTlNLZXllZEFyY2hpdmVy
