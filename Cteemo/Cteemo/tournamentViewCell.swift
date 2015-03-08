@@ -17,8 +17,7 @@ class tournamentViewCell: UITableViewCell {
     @IBOutlet weak var rewards: UILabel!
     
     @IBOutlet weak var JoinedFree: UIButton!
-    
-    
+
     @IBOutlet weak var maxteams: UILabel!
 
     @IBOutlet weak var joinedteam: UILabel!
@@ -34,6 +33,7 @@ class tournamentViewCell: UITableViewCell {
         self.maxteams.text = "\(maxteam)"
         self.joinedteam.text = "\(joined)"
         self.tournamentRule.text = rule
+        
         
         if gameName == "Dota 2"{
            self.gameicon.image = UIImage(named: "Dota2.png")!

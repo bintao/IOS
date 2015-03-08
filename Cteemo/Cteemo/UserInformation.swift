@@ -42,7 +42,6 @@ class UserInformation: NSObject, RequestResultDelegate{
     //setUp the local user data
     func setUp(){
         
-        
         var data:[String: AnyObject] = DataManager.getUserInfo()
         name = data["name"] as String
         fbid = data["fbid"] as String
