@@ -164,6 +164,7 @@
 		A1B8E9601A7B20F2009BE011 /* Forma 1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9531A7B20F2009BE011 /* Forma 1.png */; };
 		A1B8E9621A7B20F2009BE011 /* hentiao2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9551A7B20F2009BE011 /* hentiao2.png */; };
 		A1B8E9631A7B20F2009BE011 /* OK.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9561A7B20F2009BE011 /* OK.png */; };
+		A1BF3BFA1AAC06FC002A900C /* libPods-RongCloudIMKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BF3BF91AAC06FC002A900C /* libPods-RongCloudIMKit.a */; };
 		A1CEFEA21AABE71D002D5956 /* tableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CEFEA11AABE71D002D5956 /* tableCell.xib */; };
 		A1EB12041A99263800FC8388 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB12031A99263800FC8388 /* ImageLoader.swift */; };
 		A1EB12091A99277900FC8388 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EB12081A99277900FC8388 /* error.png */; };
@@ -446,6 +447,7 @@
 		A1B8E9531A7B20F2009BE011 /* Forma 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Forma 1.png"; sourceTree = "<group>"; };
 		A1B8E9551A7B20F2009BE011 /* hentiao2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hentiao2.png; sourceTree = "<group>"; };
 		A1B8E9561A7B20F2009BE011 /* OK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OK.png; sourceTree = "<group>"; };
+		A1BF3BF91AAC06FC002A900C /* libPods-RongCloudIMKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-RongCloudIMKit.a"; path = "Pods/build/Debug-iphoneos/libPods-RongCloudIMKit.a"; sourceTree = "<group>"; };
 		A1CEFEA11AABE71D002D5956 /* tableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tableCell.xib; sourceTree = "<group>"; };
 		A1EB12031A99263800FC8388 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		A1EB12081A99277900FC8388 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
@@ -460,6 +462,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1BF3BFA1AAC06FC002A900C /* libPods-RongCloudIMKit.a in Frameworks */,
 				A13811CE1AA818A100E8293D /* SwiftyJSON.framework in Frameworks */,
 				42B85A3A1A749F6E00FD4642 /* FBAudienceNetwork.framework in Frameworks */,
 				A171F9261AA931FC00CEC4D5 /* SwiftyJSON.framework in Frameworks */,
@@ -840,6 +843,7 @@
 		BD154B94C5E0850B25F2391A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A1BF3BF91AAC06FC002A900C /* libPods-RongCloudIMKit.a */,
 				6F309FA0C2CD8693C64BBAF4 /* libPods.a */,
 			);
 			name = Frameworks;

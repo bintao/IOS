@@ -41,12 +41,6 @@
                             <constraint firstAttribute="height" constant="25" id="aXW-Ud-YUC"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7E-3I-ivk">
-                        <rect key="frame" x="29" y="99" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LXm-E4-Nhv">
                         <rect key="frame" x="127" y="59" width="193" height="65"/>
                         <subviews>
@@ -150,7 +144,6 @@
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="centerY" secondItem="6ZT-Ll-VPk" secondAttribute="centerY" id="02t-PV-lOi"/>
-                    <constraint firstItem="K7E-3I-ivk" firstAttribute="trailing" secondItem="6ZT-Ll-VPk" secondAttribute="trailing" id="0sh-f9-NYv"/>
                     <constraint firstAttribute="trailingMargin" secondItem="LXm-E4-Nhv" secondAttribute="trailing" constant="15" id="1fy-HD-4sa"/>
                     <constraint firstItem="LXm-E4-Nhv" firstAttribute="top" secondItem="XB2-Pg-XuX" secondAttribute="bottom" constant="25" id="8v3-t7-DDT"/>
                     <constraint firstAttribute="bottomMargin" secondItem="ka1-Nj-spM" secondAttribute="bottom" constant="5" id="BwD-ah-oMX"/>
@@ -158,7 +151,6 @@
                     <constraint firstItem="LXm-E4-Nhv" firstAttribute="top" secondItem="2Zb-ry-bW6" secondAttribute="bottom" constant="3" id="Nxf-Nz-LTX"/>
                     <constraint firstAttribute="trailing" secondItem="XB2-Pg-XuX" secondAttribute="trailing" id="P5L-LF-fpt"/>
                     <constraint firstItem="ka1-Nj-spM" firstAttribute="top" secondItem="XB2-Pg-XuX" secondAttribute="bottom" constant="5" id="PCX-p1-Ye2"/>
-                    <constraint firstItem="K7E-3I-ivk" firstAttribute="leading" secondItem="6ZT-Ll-VPk" secondAttribute="leading" id="TTn-7p-Rfs"/>
                     <constraint firstItem="6ZT-Ll-VPk" firstAttribute="leading" secondItem="NGF-C6-wfB" secondAttribute="leadingMargin" constant="13" id="Z6r-bD-hbv"/>
                     <constraint firstItem="XB2-Pg-XuX" firstAttribute="leading" secondItem="NGF-C6-wfB" secondAttribute="leading" id="a9g-8S-V7A"/>
                     <constraint firstItem="ka1-Nj-spM" firstAttribute="leading" secondItem="6ZT-Ll-VPk" secondAttribute="trailing" constant="10" id="aV4-SR-7ta"/>
@@ -186,7 +178,6 @@
                 <outlet property="joinedteam" destination="W5p-me-B4a" id="HCd-oa-Jd5"/>
                 <outlet property="maxteams" destination="wOY-fs-Ufb" id="68K-aI-RWw"/>
                 <outlet property="name" destination="2Zb-ry-bW6" id="tWb-ms-rpO"/>
-                <outlet property="rewards" destination="K7E-3I-ivk" id="Unk-Kf-rfm"/>
                 <outlet property="tournamentRule" destination="eEu-aG-pf6" id="S2c-UN-99D"/>
             </connections>
             <point key="canvasLocation" x="236.5" y="-3"/>

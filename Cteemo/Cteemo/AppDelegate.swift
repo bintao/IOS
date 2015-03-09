@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,9 +18,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        DataManager.initializeUserInfo()
+            DataManager.initializeUserInfo()
         
-        UserInfoGlobal.setUp()
+            UserInfoGlobal.setUp()
+            RCIM.initWithAppKey("bmdehs6pdve3s", deviceToken: nil)
+      
+            
+            var types: UIUserNotificationType = UIUserNotificationType.Badge |
+                UIUserNotificationType.Alert |
+                UIUserNotificationType.Sound
+            
+        
+        
+        application.registerForRemoteNotifications()
+        
+        var viewController: ViewController =
         
         // Override point for customization after application launch.
         return true
