@@ -42,8 +42,8 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
                 println(JSON)
                 if ((JSON as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
                     
-                    let alert1 = SCLAlertView()
-                    alert1.showError("Unauthorized", subTitle: "Try logout and login again", closeButtonTitle: "OK")
+                    
+                    
                     
                 }
                 else if JSON? != nil{
@@ -127,7 +127,6 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         
             }
        
-        alert.showCteemo("Join team request", subTitle: "i want to join "+teamname, closeButtonTitle: "cancel")
         }
         
         /*

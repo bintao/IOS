@@ -49,15 +49,7 @@ class Tournament_joined: UIViewController {
     
     @IBAction func addMember(sender: AnyObject) {
         
-        let alert1 = SCLAlertView()
-        let name =  alert1.addTextField(title: "Team Name")
-        
-        alert1.addButton("Join") {
-            
-            Tournament.JoinTournament(self.url,name: name.text,email:"")
-            
-        }
-            alert1.showCteemo(self.Tournamentname, subTitle:"I want to join Tournamnet!", closeButtonTitle: "Cancle")
+       
         
         
     }
@@ -66,18 +58,7 @@ class Tournament_joined: UIViewController {
     @IBAction func deleteMember(sender: AnyObject) {
         
         
-        
-        let alert1 = SCLAlertView()
-        let name =  alert1.addTextField(title: "Team Name")
-        
-        alert1.addButton("Delete") {
-            println(name.text)
-           
-            
-            Tournament.deleteMemberByname(self.url, member: name.text)
-            
-        }
-        alert1.showCteemo("Delete Member", subTitle:" i want delete", closeButtonTitle: "Cancle")
+      
 
         
     }

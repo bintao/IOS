@@ -37,9 +37,7 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
             .responseJSON { (_, _, JSON, _) in
                  self.stopLoading()
                 if ((JSON as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
-                    
-                    let alert1 = SCLAlertView()
-                    alert1.showError("Unauthorized", subTitle: "Try logout and login again", closeButtonTitle: "OK")
+                  
                     
                 }
                 else if(JSON != nil){

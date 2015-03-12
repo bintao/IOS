@@ -170,8 +170,11 @@
 		A1EB12041A99263800FC8388 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB12031A99263800FC8388 /* ImageLoader.swift */; };
 		A1EB12091A99277900FC8388 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EB12081A99277900FC8388 /* error.png */; };
 		A1EB12141A99AAE700FC8388 /* TournamentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB12131A99AAE700FC8388 /* TournamentAPI.swift */; };
-		A1EB121B1A99C64E00FC8388 /* SCLAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB121A1A99C64E00FC8388 /* SCLAlertView.swift */; };
 		A1F138861A8346C9007DE5A2 /* LolAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F138851A8346C9007DE5A2 /* LolAPI.swift */; };
+		A1F3AA601AB1753F00CD5ACE /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F3AA5C1AB1753F00CD5ACE /* chat.png */; };
+		A1F3AA611AB1753F00CD5ACE /* checkin.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F3AA5D1AB1753F00CD5ACE /* checkin.png */; };
+		A1F3AA621AB1753F00CD5ACE /* playnext.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F3AA5E1AB1753F00CD5ACE /* playnext.png */; };
+		A1F3AA631AB1753F00CD5ACE /* report.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F3AA5F1AB1753F00CD5ACE /* report.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -454,8 +457,11 @@
 		A1EB12031A99263800FC8388 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		A1EB12081A99277900FC8388 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
 		A1EB12131A99AAE700FC8388 /* TournamentAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentAPI.swift; sourceTree = "<group>"; };
-		A1EB121A1A99C64E00FC8388 /* SCLAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SCLAlertView.swift; sourceTree = "<group>"; };
 		A1F138851A8346C9007DE5A2 /* LolAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LolAPI.swift; sourceTree = "<group>"; };
+		A1F3AA5C1AB1753F00CD5ACE /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
+		A1F3AA5D1AB1753F00CD5ACE /* checkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkin.png; sourceTree = "<group>"; };
+		A1F3AA5E1AB1753F00CD5ACE /* playnext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playnext.png; sourceTree = "<group>"; };
+		A1F3AA5F1AB1753F00CD5ACE /* report.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = report.png; sourceTree = "<group>"; };
 		D66CAABF31ABBC71AB17BDA8 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -602,7 +608,6 @@
 				42B74FBD1A812220008B575C /* Login */,
 				A1EB12191A99C61900FC8388 /* Tournament */,
 				A1EB121C1A99C66C00FC8388 /* data */,
-				A1EB121A1A99C64E00FC8388 /* SCLAlertView.swift */,
 				A1010D461A7B2ACF00256208 /* ARequest.swift */,
 				A1EB12031A99263800FC8388 /* ImageLoader.swift */,
 				4267D82E1A8011D20054E800 /* ImageProcessor.swift */,
@@ -725,6 +730,10 @@
 			isa = PBXGroup;
 			children = (
 				A12405A01AA9688100B5B992 /* addmember.png */,
+				A1F3AA5C1AB1753F00CD5ACE /* chat.png */,
+				A1F3AA5D1AB1753F00CD5ACE /* checkin.png */,
+				A1F3AA5E1AB1753F00CD5ACE /* playnext.png */,
+				A1F3AA5F1AB1753F00CD5ACE /* report.png */,
 				A12405AC1AA9691500B5B992 /* delete.png */,
 				A12405A11AA9688100B5B992 /* bracket.png */,
 				A12405A21AA9688100B5B992 /* info.png */,
@@ -1059,6 +1068,7 @@
 				42B859F51A74840F00FD4642 /* Main.storyboard in Resources */,
 				42041AE91A815E1600623C70 /* addfriendsbutton.png in Resources */,
 				A13811DB1AA902C400E8293D /* Dota2.png in Resources */,
+				A1F3AA631AB1753F00CD5ACE /* report.png in Resources */,
 				A13919201AA2C21D00CD232A /* red small button.png in Resources */,
 				A18BF4341AA2F8EC000678F3 /* LOGIN_SIGN UP PAGE _BG.png in Resources */,
 				A139190A1AA2C21D00CD232A /* 大框.png in Resources */,
@@ -1078,6 +1088,7 @@
 				A12405A51AA9688100B5B992 /* info.png in Resources */,
 				42B85A161A7489CF00FD4642 /* loading_page.png in Resources */,
 				A139191F1AA2C21D00CD232A /* red button 大.png in Resources */,
+				A1F3AA611AB1753F00CD5ACE /* checkin.png in Resources */,
 				42B85A231A748CDB00FD4642 /* arrow.png in Resources */,
 				426CD2EC1A89649D0042F4F7 /* config.png in Resources */,
 				427D7A951A85CBDE00BFB2DA /* UserTeam.plist in Resources */,
@@ -1092,11 +1103,13 @@
 				42ABFAC41A8A869000DC5D1F /* minussss.png in Resources */,
 				A139191C1AA2C21D00CD232A /* next button(black).png in Resources */,
 				42041AE51A81592600623C70 /* left.png in Resources */,
+				A1F3AA601AB1753F00CD5ACE /* chat.png in Resources */,
 				42B85A2D1A748D4E00FD4642 /* arrowTurned.png in Resources */,
 				A1B8E95D1A7B20F2009BE011 /* 战队1.png in Resources */,
 				A139190F1AA2C21D00CD232A /* BO3.png in Resources */,
 				42B85A2F1A74947E00FD4642 /* textField.png in Resources */,
 				A18BF4351AA2F8EC000678F3 /* NEW SUMMONER PAGE_BG.png in Resources */,
+				A1F3AA621AB1753F00CD5ACE /* playnext.png in Resources */,
 				A13919171AA2C21D00CD232A /* free button.png in Resources */,
 				A13919151AA2C21D00CD232A /* Double - Elimination.png in Resources */,
 				A13919141AA2C21D00CD232A /* date icons.png in Resources */,
@@ -1194,7 +1207,6 @@
 				427D7A911A85C36000BFB2DA /* CustomSwitcher.swift in Sources */,
 				42B0A33B1A898BD200EA908C /* AFSecurityPolicy.m in Sources */,
 				42B0A33F1A898BD200EA908C /* AFURLSessionManager.m in Sources */,
-				A1EB121B1A99C64E00FC8388 /* SCLAlertView.swift in Sources */,
 				429FD09F1A801607003BA84D /* Login_AddPhoto.swift in Sources */,
 				42B0A3381A898BD200EA908C /* AFHTTPRequestOperationManager.m in Sources */,
 				A1EB12141A99AAE700FC8388 /* TournamentAPI.swift in Sources */,

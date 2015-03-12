@@ -63,10 +63,10 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
             UserInfoGlobal.updateUserInfo()
             if UserInfoGlobal.tokenVaild == "false"{
                 let alert1 = SCLAlertView()
-                alert1.addButton("Log out now"){
-                 self.logout()
-                }
-                alert1.showError("Unauthorized", subTitle: "Try logout and login again", closeButtonTitle: "OK")
+                alert1.addButton("ok", actionBlock:{ (Void) in
+                    self.logout()
+                })
+                alert1.showError(self, title: "Unauthorized", subTitle: "Try logout and login again", closeButtonTitle: nil, duration: 0.0)
             }
         }
     }

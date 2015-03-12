@@ -1,2 +1,3 @@
  pod 'RongCloudIMKit', '~> 1.3.4'
  pod 'MMProgressHUD'
+ pod 'SCLAlertView-Objective-C'

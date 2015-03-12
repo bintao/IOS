@@ -58,8 +58,11 @@ class MeViewController: UIViewController  {
     @IBAction func rongtest(sender: AnyObject) {
         
             MMProgressHUD.showWithTitle("loding")
-        //"b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw=="
-        RCIM.connectWithToken("7x76uvK+HezAQrol9PiVez7ZGryb3Xip4jqmBYclOnCJR3FPmXnaduTsDmLmL4i9YaRWLt+8R/F+Dp6+HsM1Qw==", completion: { (userId:String!) -> Void in
+        //KgLJaeVjsIyWv3PRLdqkYriSPvCjR9Lj4In18RCEVuwrzFaSzav844KZM4q65MyO9TmJ6QHsPsU= " 1
+        
+        //"b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw==" 88
+        
+        RCIM.connectWithToken("KgLJaeVjsIyWv3PRLdqkYriSPvCjR9Lj4In18RCEVuwrzFaSzav844KZM4q65MyO9TmJ6QHsPsU=", completion: { (userId:String!) -> Void in
             
             NSLog("Login successfully with userId: %@.",userId)
             
@@ -85,19 +88,21 @@ class MeViewController: UIViewController  {
     
     @IBAction func getlist(sender: AnyObject) {
         
-        MMProgressHUD.showWithTitle("loding")
         //"b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw=="
-        RCIM.connectWithToken("7x76uvK+HezAQrol9PiVez7ZGryb3Xip4jqmBYclOnCJR3FPmXnaduTsDmLmL4i9YaRWLt+8R/F+Dp6+HsM1Qw==", completion: { (userId:String!) -> Void in
+        var alert = SCLAlertView()
+        
+        alert.showWaiting(self.parentViewController, title: "wait", subTitle: "blabla", closeButtonTitle: nil, duration: 0.0)
+        RCIM.connectWithToken("b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw==", completion: { (userId:String!) -> Void in
             
             NSLog("Login successfully with userId: %@.",userId)
             
-            var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat("12", title: "cteemo", completion: nil)
+            var chatViewController : RCChatViewController = RCIM.sharedRCIM().createCustomerService("KEFU1426185510333", title: "cteemo", completion: nil)
             
             ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
             
             self.navigationController?.pushViewController(chatViewController, animated: true)
             
-            MMProgressHUD.dismissWithSuccess("Success")
+            alert.hideView()
             
             }){
                 (status:RCConnectErrorCode) -> Void in
@@ -105,9 +110,22 @@ class MeViewController: UIViewController  {
                 NSLog("Login failed")
                 MMProgressHUD.dismissWithError("Error")
                 
+            alert.hideView()
         }
 
     }
+    
+    
+    
+    @IBAction func group(sender: AnyObject) {
+        
+        
+        
+        
+        
+    }
+    
+    
     
     @IBAction func log_out(sender: UIButton) {
         

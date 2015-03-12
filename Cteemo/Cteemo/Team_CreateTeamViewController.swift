@@ -63,7 +63,8 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
             if (result["message"] as String).rangeOfString("Tried to save")?.isEmpty != nil{
             
                      let alert = SCLAlertView()
-                     alert.showError("Team name exised", subTitle: "Please enter team name again", closeButtonTitle: "OK!")
+                alert.showError(self, title: "Team name exised", subTitle: "Please enter team name again", closeButtonTitle: "ok", duration: 0.0)
+                
             
             }
         }
