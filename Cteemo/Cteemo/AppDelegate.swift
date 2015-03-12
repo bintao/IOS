@@ -30,13 +30,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UserInfoGlobal.setUp()
         RCIM.initWithAppKey("bmdehs6pdve3s", deviceToken: nil)
+        
         var settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Badge |
             UIUserNotificationType.Alert |
             UIUserNotificationType.Sound, categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
         
+        
+        if (UIApplication.sharedApplication().respondsToSelector(Selector("registerForRemoteNotifications")))
+        {
+            UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+            
+        }
+        else{
         UIApplication.sharedApplication().registerForRemoteNotificationTypes(UIRemoteNotificationType.Badge | UIRemoteNotificationType.Alert | UIRemoteNotificationType.Sound)
-        
+        }
         // Override point for customization after application launch.
         return true
     }

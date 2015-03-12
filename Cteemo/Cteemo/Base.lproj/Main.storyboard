@@ -1569,7 +1569,7 @@
                                     <constraint firstAttribute="width" secondItem="MwW-JP-8fp" secondAttribute="height" multiplier="190:103" id="oEH-fI-meK"/>
                                 </constraints>
                             </imageView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0cI-SZ-tFv">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="87" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="0cI-SZ-tFv">
                                 <rect key="frame" x="0.0" y="206" width="375" height="461"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <connections>
@@ -1601,7 +1601,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3f-3u-YWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6233.5" y="-1467.5"/>
+            <point key="canvasLocation" x="6218.5" y="-1467.5"/>
         </scene>
         <!--Tournament joined-->
         <scene sceneID="DA9-Pm-SbH">
@@ -1734,7 +1734,7 @@
                 <exit id="fgf-hg-7Wj" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqR-jC-m8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7290.5" y="-1942.5"/>
+            <point key="canvasLocation" x="7250.5" y="-1968.5"/>
         </scene>
         <!--TEAM-->
         <scene sceneID="dgm-0z-Qiv">
@@ -2419,7 +2419,7 @@
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
-                            <color key="textColor" patternImage="2871C04B-2409-4B87-9E60-33118A5E432D" colorSpace="pattern"/>
+                            <color key="textColor" patternImage="C7DA9FA5-8297-4702-8420-249ED580BF1D" colorSpace="pattern"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2497,6 +2497,24 @@
                                     <action selector="log_out:" destination="rdl-cK-aoW" eventType="touchUpInside" id="wrT-su-qK2"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5I-cT-jk1">
+                                <rect key="frame" x="216" y="153" width="168" height="30"/>
+                                <state key="normal" title="rongtest">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="rongtest:" destination="rdl-cK-aoW" eventType="touchUpInside" id="1AB-t0-zkb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVO-Gh-7TI">
+                                <rect key="frame" x="277" y="253" width="56" height="30"/>
+                                <state key="normal" title="getlist">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getlist:" destination="rdl-cK-aoW" eventType="touchUpInside" id="218-hw-744"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2504,6 +2522,7 @@
                     <navigationItem key="navigationItem" title="ME" id="LQC-UO-xCD"/>
                     <connections>
                         <outlet property="logout" destination="mRW-AM-Dt0" id="4fq-Ga-Cux"/>
+                        <outlet property="rong" destination="c5I-cT-jk1" id="E04-zg-0jD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cwi-CY-dJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2578,7 +2597,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="2871C04B-2409-4B87-9E60-33118A5E432D" width="750" height="1334">
+        <image name="C7DA9FA5-8297-4702-8420-249ED580BF1D" width="750" height="1334">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBMU
 GR4fJSYsLzU4VSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBz

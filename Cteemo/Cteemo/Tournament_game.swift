@@ -53,10 +53,9 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         cell2.JoinedFree.addTarget(self, action: "joinTournament:", forControlEvents: UIControlEvents.TouchUpInside)
         cell2.JoinedFree.tag = indexPath.row
-
         return cell2
     }
-    
+        
     func joinTournament(sender : UIButton){
         
         println(sender.tag)
