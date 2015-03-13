@@ -38,18 +38,10 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
         
     }
     
+    
     override func viewDidAppear(animated: Bool) {
         Tournament.getTournamentList()
         LolAPIGlobal.getlolvision()
-    RCIM.connectWithToken("b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw==", completion: { (userId:String!) -> Void in
-            
-            NSLog("Login successfully with userId: %@.",userId)
-            
-            }){
-                (status:RCConnectErrorCode) -> Void in
-                println(RCConnectErrorCode)
-                NSLog("Login failed")
-        }
         
         if UserInfoGlobal.accessToken == ""
         {
@@ -61,16 +53,26 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
             // if user have't login let him login
             FBSession.activeSession().closeAndClearTokenInformation()
             self.performSegueWithIdentifier("login", sender: self)
-
+       
         }
         else{
             
-            news.alpha = 1
+                news.alpha = 1
+            RCIM.connectWithToken("b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw==", completion: { (userId:String!) -> Void in
+                
+                NSLog("Login successfully with userId: %@.",userId)
+                
+                }){
+                    (status:RCConnectErrorCode) -> Void in
+                    println(RCConnectErrorCode)
+                    NSLog("Login failed")
+            }
             
             if tabbarShouldAppear {
                 showTabb()
                 self.view.bringSubviewToFront(self.tabbar)
             }
+            
             UserInfoGlobal.updateUserInfo()
             if UserInfoGlobal.tokenVaild == "false"{
                 let alert1 = SCLAlertView()
@@ -219,6 +221,7 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
         req.sendRequestWithToken(UserInfoGlobal.accessToken)
         
     }
+    
     func gotResult(prefix: String, result: AnyObject) {
         
         println(result)
