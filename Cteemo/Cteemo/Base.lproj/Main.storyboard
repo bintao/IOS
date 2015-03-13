@@ -2436,7 +2436,7 @@
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
-                            <color key="textColor" patternImage="A9E30BEA-065D-48F2-B180-1151C2883365" colorSpace="pattern"/>
+                            <color key="textColor" patternImage="D85E5FAB-E10E-45ED-9AD7-A528F3F44761" colorSpace="pattern"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2623,7 +2623,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="A9E30BEA-065D-48F2-B180-1151C2883365" width="750" height="1334">
+        <image name="CAMERA.png" width="247" height="247"/>
+        <image name="D85E5FAB-E10E-45ED-9AD7-A528F3F44761" width="750" height="1334">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBMU
 GR4fJSYsLzU4VSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBz
@@ -2639,7 +2640,6 @@ lwGaAaEBqQG2AbsBvQG/AcQBzAHPAdQB3AHfAfEB9AH5AAAAAAAAAgEAAAAAAAAAPwAAAAAAAAAAAAAA
 AAAAAfs
 </mutableData>
         </image>
-        <image name="CAMERA.png" width="247" height="247"/>
         <image name="Login_Login page button.png" width="228" height="86"/>
         <image name="NEW SUMMONER PAGE_BG.png" width="640" height="1134"/>
         <image name="PHOTO icons.png" width="165" height="165"/>

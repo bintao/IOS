@@ -167,6 +167,7 @@
 		A1BF3BFA1AAC06FC002A900C /* libPods-RongCloudIMKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BF3BF91AAC06FC002A900C /* libPods-RongCloudIMKit.a */; };
 		A1CEFEA21AABE71D002D5956 /* tableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CEFEA11AABE71D002D5956 /* tableCell.xib */; };
 		A1DCEAF01AAED19500DE2DD5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DCEAEF1AAED19500DE2DD5 /* QuartzCore.framework */; };
+		A1E57CE91AB2D8DA00FDF193 /* chuishi.png in Resources */ = {isa = PBXBuildFile; fileRef = A1E57CE81AB2D8DA00FDF193 /* chuishi.png */; };
 		A1EB12041A99263800FC8388 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB12031A99263800FC8388 /* ImageLoader.swift */; };
 		A1EB12091A99277900FC8388 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EB12081A99277900FC8388 /* error.png */; };
 		A1EB12141A99AAE700FC8388 /* TournamentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB12131A99AAE700FC8388 /* TournamentAPI.swift */; };
@@ -454,6 +455,7 @@
 		A1BF3BF91AAC06FC002A900C /* libPods-RongCloudIMKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-RongCloudIMKit.a"; path = "Pods/build/Debug-iphoneos/libPods-RongCloudIMKit.a"; sourceTree = "<group>"; };
 		A1CEFEA11AABE71D002D5956 /* tableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tableCell.xib; sourceTree = "<group>"; };
 		A1DCEAEF1AAED19500DE2DD5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A1E57CE81AB2D8DA00FDF193 /* chuishi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chuishi.png; sourceTree = "<group>"; };
 		A1EB12031A99263800FC8388 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		A1EB12081A99277900FC8388 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
 		A1EB12131A99AAE700FC8388 /* TournamentAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentAPI.swift; sourceTree = "<group>"; };
@@ -729,6 +731,7 @@
 		A13918E61AA2C11B00CD232A /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
+				A1E57CE81AB2D8DA00FDF193 /* chuishi.png */,
 				A12405A01AA9688100B5B992 /* addmember.png */,
 				A1F3AA5C1AB1753F00CD5ACE /* chat.png */,
 				A1F3AA5D1AB1753F00CD5ACE /* checkin.png */,
@@ -1093,6 +1096,7 @@
 				426CD2EC1A89649D0042F4F7 /* config.png in Resources */,
 				427D7A951A85CBDE00BFB2DA /* UserTeam.plist in Resources */,
 				A1B8E9591A7B20F2009BE011 /* 我.png in Resources */,
+				A1E57CE91AB2D8DA00FDF193 /* chuishi.png in Resources */,
 				A13919101AA2C21D00CD232A /* camera icons (report result).png in Resources */,
 				A13919281AA2C21D00CD232A /* write sth button.png in Resources */,
 				A13919111AA2C21D00CD232A /* create button.png in Resources */,

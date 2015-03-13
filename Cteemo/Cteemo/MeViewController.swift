@@ -18,9 +18,7 @@ class MeViewController: UIViewController  {
     
     override func viewDidLoad() {
         
-       self.navigationController?.navigationBar.barTintColor = UIColorFromRGB(0xE74C3C)
         super.viewDidLoad()
-        
         var img = UIImageView(image: UserInfoGlobal.icon)
         img.frame = CGRectMake(100, 100, 100, 100)
         self.view.addSubview(img)
@@ -57,30 +55,22 @@ class MeViewController: UIViewController  {
 
     @IBAction func rongtest(sender: AnyObject) {
         
-            MMProgressHUD.showWithTitle("loding")
         //KgLJaeVjsIyWv3PRLdqkYriSPvCjR9Lj4In18RCEVuwrzFaSzav844KZM4q65MyO9TmJ6QHsPsU= " 1
         
         //"b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw==" 88
         
-        RCIM.connectWithToken("KgLJaeVjsIyWv3PRLdqkYriSPvCjR9Lj4In18RCEVuwrzFaSzav844KZM4q65MyO9TmJ6QHsPsU=", completion: { (userId:String!) -> Void in
-            
-            NSLog("Login successfully with userId: %@.",userId)
+
             
             var chatViewController : RCChatViewController = RCIM.sharedRCIM().createPrivateChat("88", title: "self answer", completion:nil)
-            
+        
+        UINavigationBar.appearance().tintColor = UserInfoGlobal.UIColorFromRGB(0xE74C3C)
+        
             ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
             
             self.navigationController?.pushViewController(chatViewController, animated: true)
             
                 MMProgressHUD.dismissWithSuccess("Success")
-            
-            }){
-                (status:RCConnectErrorCode) -> Void in
-                println(RCConnectErrorCode)
-                NSLog("Login failed")
-                MMProgressHUD.dismissWithError("Error")
-                
-        }
+        
         
         
     }
@@ -89,30 +79,17 @@ class MeViewController: UIViewController  {
     @IBAction func getlist(sender: AnyObject) {
         
         //"b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw=="
-        var alert = SCLAlertView()
-        
-        alert.showWaiting(self.parentViewController, title: "wait", subTitle: "blabla", closeButtonTitle: nil, duration: 0.0)
-        RCIM.connectWithToken("b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw==", completion: { (userId:String!) -> Void in
-            
-            NSLog("Login successfully with userId: %@.",userId)
+       
             
             var chatViewController : RCChatViewController = RCIM.sharedRCIM().createCustomerService("KEFU1426185510333", title: "cteemo", completion: nil)
-            
+        
+        UINavigationBar.appearance().tintColor = UserInfoGlobal.UIColorFromRGB(0xE74C3C)
+        
             ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
             
             self.navigationController?.pushViewController(chatViewController, animated: true)
-            
-            alert.hideView()
-            
-            }){
-                (status:RCConnectErrorCode) -> Void in
-                println(RCConnectErrorCode)
-                NSLog("Login failed")
-                MMProgressHUD.dismissWithError("Error")
-                
-            alert.hideView()
-        }
-
+        
+        
     }
     
     

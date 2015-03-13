@@ -29,6 +29,7 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
         self.tabbar.alpha = 0
         
         
+
         // doens't appear if user haven't login
         news.alpha = 0
         tournament.alpha = 0
@@ -40,6 +41,16 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
     override func viewDidAppear(animated: Bool) {
         Tournament.getTournamentList()
         LolAPIGlobal.getlolvision()
+    RCIM.connectWithToken("b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw==", completion: { (userId:String!) -> Void in
+            
+            NSLog("Login successfully with userId: %@.",userId)
+            
+            }){
+                (status:RCConnectErrorCode) -> Void in
+                println(RCConnectErrorCode)
+                NSLog("Login failed")
+        }
+        
         if UserInfoGlobal.accessToken == ""
         {
          

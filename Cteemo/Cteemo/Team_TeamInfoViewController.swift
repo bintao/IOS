@@ -24,6 +24,8 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         TeamInfoGlobal.uploadTeamInfo()
         navigation.title = TeamInfoGlobal.teamName
         println(UserInfoGlobal.profile_icon_Link)
@@ -56,6 +58,9 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
        
     override func viewDidAppear(animated: Bool) {
         println(memberScroll.frame)
+        
+         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
+        
         if TeamInfoGlobal.teamicon != nil{
             
         self.teamicon.image = DataManager.getTeamIconFromLocal()
@@ -98,11 +103,23 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
     @IBAction func toTeamInfo(segue : UIStoryboardSegue) {
         
     }
 
 
+    @IBAction func groupchat(sender: AnyObject) {
+        
+        var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat("12", title: "cteemo", completion: nil)
+        
+        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        
+        chatViewController.navigationController?.navigationBar.tintColor = UserInfoGlobal.UIColorFromRGB(0xE74C3C)
+
+        self.navigationController?.pushViewController(chatViewController, animated: true)
+    }
 
     /*
     // MARK: - Navigation

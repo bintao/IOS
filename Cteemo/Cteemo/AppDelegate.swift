@@ -31,13 +31,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UserInfoGlobal.setUp()
         RCIM.initWithAppKey("bmdehs6pdve3s", deviceToken: nil)
         
-        var settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Badge |
-            UIUserNotificationType.Alert |
-            UIUserNotificationType.Sound, categories: nil)
+       
         
-        
+       // check ios 8.0 or higher
         if (UIApplication.sharedApplication().respondsToSelector(Selector("registerForRemoteNotifications")))
         {
+            
+            
+            var settings = UIUserNotificationSettings(forTypes: UIUserNotificationType.Badge |
+                UIUserNotificationType.Alert |
+                UIUserNotificationType.Sound, categories: nil)
+
             UIApplication.sharedApplication().registerUserNotificationSettings(settings)
             application.registerForRemoteNotifications()
             
