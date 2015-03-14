@@ -91,7 +91,7 @@ class TournamentAPI: NSObject{
         var par : [String: AnyObject] = ["api_key":Tournament.key]
         var req = Alamofire.request(.GET,"https://api.challonge.com/v1/tournaments.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
-            
+                if JSON != nil{
                 let myjson = SwiftyJSON.JSON(JSON!)
                 self.totalnumber = "\(SwiftyJSON.JSON(JSON!).count)"
                 var totaltournament = myjson.count
@@ -206,6 +206,7 @@ class TournamentAPI: NSObject{
     
                 
                 println(self.totalnumber)
+        }
         }
     }
     

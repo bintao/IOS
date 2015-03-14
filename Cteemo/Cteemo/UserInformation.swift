@@ -120,6 +120,7 @@ class UserInformation: NSObject, RequestResultDelegate{
             
             if ((result as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
             UserInfoGlobal.tokenVaild = "false"
+        
             }
             else {UserInfoGlobal.tokenVaild = "true"}
             if result["username"]? != nil {

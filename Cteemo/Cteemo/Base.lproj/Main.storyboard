@@ -2045,7 +2045,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiL-Yu-z6V">
-                                        <rect key="frame" x="128" y="37" width="60" height="60"/>
+                                        <rect key="frame" x="308" y="29" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="akR-LK-Ian"/>
                                             <constraint firstAttribute="height" constant="60" id="phx-ak-Ovg"/>
@@ -2062,16 +2062,20 @@
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="1Je-W4-F2I"/>
+                                    <constraint firstAttribute="trailing" secondItem="wiL-Yu-z6V" secondAttribute="trailing" constant="20" id="NRC-Fz-DZK"/>
                                     <constraint firstAttribute="centerY" secondItem="wiL-Yu-z6V" secondAttribute="centerY" id="Pmv-Hb-igU"/>
                                     <constraint firstAttribute="trailing" secondItem="wiL-Yu-z6V" secondAttribute="trailing" constant="30" id="SRo-1Q-1mg"/>
                                     <constraint firstAttribute="height" constant="10" id="WZc-cG-76r"/>
                                     <constraint firstAttribute="centerX" secondItem="wiL-Yu-z6V" secondAttribute="centerX" id="c89-aI-rmA"/>
                                     <constraint firstAttribute="width" constant="600" id="fde-5N-wGy"/>
+                                    <constraint firstAttribute="centerX" secondItem="wiL-Yu-z6V" secondAttribute="centerX" constant="70" id="ilP-80-sn9"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="WZc-cG-76r"/>
                                         <exclude reference="SRo-1Q-1mg"/>
+                                        <exclude reference="c89-aI-rmA"/>
+                                        <exclude reference="ilP-80-sn9"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -2134,8 +2138,12 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="awa-X6-gY3">
                                 <rect key="frame" x="99" y="274" width="501" height="92"/>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="joinTeam.png" translatesAutoresizingMaskIntoConstraints="NO" id="TKm-Hg-VRb">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joinTeam.png" translatesAutoresizingMaskIntoConstraints="NO" id="TKm-Hg-VRb">
                                 <rect key="frame" x="236" y="86" width="129" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="c9h-lQ-gXQ"/>
+                                    <constraint firstAttribute="width" constant="129" id="jF2-V0-BTL"/>
+                                </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xu1-kQ-cTq">
                                 <rect key="frame" x="0.0" y="378" width="600" height="10"/>
@@ -2149,6 +2157,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerY" secondItem="TKm-Hg-VRb" secondAttribute="centerY" id="0yh-IT-IIa"/>
                             <constraint firstItem="fSe-Ff-3ec" firstAttribute="trailing" secondItem="awa-X6-gY3" secondAttribute="trailing" id="1CX-q4-xoH"/>
                             <constraint firstItem="YV6-dc-kLW" firstAttribute="leading" secondItem="Wbv-cg-afh" secondAttribute="leading" id="2Vg-7Z-Tn7"/>
                             <constraint firstItem="fSe-Ff-3ec" firstAttribute="top" secondItem="YV6-dc-kLW" secondAttribute="bottom" id="4zZ-4E-elm"/>
@@ -2157,6 +2166,7 @@
                             <constraint firstItem="YV6-dc-kLW" firstAttribute="top" secondItem="LY9-oo-41W" secondAttribute="bottom" id="82h-rm-8b2"/>
                             <constraint firstItem="ve9-3K-VfH" firstAttribute="top" secondItem="fSe-Ff-3ec" secondAttribute="bottom" id="Fbn-Df-YyM"/>
                             <constraint firstItem="fSe-Ff-3ec" firstAttribute="leading" secondItem="Wbv-cg-afh" secondAttribute="leading" id="Fjb-9j-NaV"/>
+                            <constraint firstItem="TKm-Hg-VRb" firstAttribute="top" secondItem="LY9-oo-41W" secondAttribute="bottom" constant="22" id="FlL-0B-CYW"/>
                             <constraint firstAttribute="trailing" secondItem="YV6-dc-kLW" secondAttribute="trailing" id="Fzf-In-Agp"/>
                             <constraint firstItem="Xu1-kQ-cTq" firstAttribute="leading" secondItem="Wbv-cg-afh" secondAttribute="leadingMargin" constant="-20" id="HwU-co-BSr"/>
                             <constraint firstItem="ve9-3K-VfH" firstAttribute="leading" secondItem="awa-X6-gY3" secondAttribute="leading" id="IJO-9Y-rrz"/>
@@ -2164,6 +2174,7 @@
                             <constraint firstItem="chR-Zo-MaF" firstAttribute="top" secondItem="Xu1-kQ-cTq" secondAttribute="bottom" constant="280" id="MPG-SC-uSJ"/>
                             <constraint firstAttribute="trailingMargin" secondItem="awa-X6-gY3" secondAttribute="trailing" id="Ops-7p-Y71"/>
                             <constraint firstItem="awa-X6-gY3" firstAttribute="leading" secondItem="ve9-3K-VfH" secondAttribute="trailing" id="Rd6-9I-RpV"/>
+                            <constraint firstAttribute="centerX" secondItem="TKm-Hg-VRb" secondAttribute="centerX" id="WL6-Yx-73B"/>
                             <constraint firstItem="ve9-3K-VfH" firstAttribute="leading" secondItem="Wbv-cg-afh" secondAttribute="leading" id="aci-5f-4Fd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="smJ-cy-Ixv" secondAttribute="trailing" id="fuE-6J-qE4"/>
                             <constraint firstItem="ve9-3K-VfH" firstAttribute="bottom" secondItem="awa-X6-gY3" secondAttribute="bottom" id="fwo-dG-Bif"/>
@@ -2175,6 +2186,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="0yh-IT-IIa"/>
                                 <exclude reference="IJO-9Y-rrz"/>
                                 <exclude reference="Ops-7p-Y71"/>
                                 <exclude reference="iUu-7n-Lsw"/>
@@ -2462,10 +2474,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2tQ-ZQ-rrO">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
-                            <color key="textColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
+                            <color key="textColor" red="0.28018465910000001" green="0.28018465910000001" blue="0.28018465910000001" alpha="1" colorSpace="calibratedRGB"/>
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                         </textAttributes>
                     </navigationBar>
@@ -2491,7 +2503,7 @@
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="25"/>
-                            <color key="textColor" patternImage="CBA493D8-6CB3-4AC9-B64A-444C57732B02" colorSpace="pattern"/>
+                            <color key="textColor" red="0.28018465910000001" green="0.28018465910000001" blue="0.28018465910000001" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2525,7 +2537,7 @@
                         <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
-                            <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="textColor" red="0.28018465910000001" green="0.28018465910000001" blue="0.28018465910000001" alpha="1" colorSpace="calibratedRGB"/>
                             <offsetWrapper key="textShadowOffset" horizontal="0.0" vertical="0.0"/>
                         </textAttributes>
                     </navigationBar>
@@ -2619,8 +2631,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="9DI-OT-qNJ">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="25"/>
+                            <color key="textColor" red="0.28018465910000001" green="0.28018465910000001" blue="0.28018465910000001" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -2679,22 +2693,6 @@
     </scenes>
     <resources>
         <image name="CAMERA.png" width="247" height="247"/>
-        <image name="CBA493D8-6CB3-4AC9-B64A-444C57732B02" width="750" height="1334">
-            <mutableData key="keyedArchiveRepresentation">
-YnBsaXN0MDDUAQIDBAUGOzxYJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK0HCBMU
-GR4fJSYsLzU4VSRudWxs1QkKCwwNDg8QERJWTlNTaXplViRjbGFzc1xOU0ltYWdlRmxhZ3NWTlNSZXBz
-V05TQ29sb3KAAoAMEiTAAACAA4AKW3s3NTAsIDEzMzR90hUKFhhaTlMub2JqZWN0c6EXgASACdIVChoY
-ohscgAWABoAJEAXTIAohIiMkV05TLmJhc2VbTlMucmVsYXRpdmWAAIAIgAdfEHxmaWxlOi8vL0FwcGxp
-Y2F0aW9ucy9YY29kZS5hcHAvQ29udGVudHMvUGx1Z0lucy9JREVJbnRlcmZhY2VCdWlsZGVyS2l0Lmlk
-ZXBsdWdpbi9Db250ZW50cy9SZXNvdXJjZXMvSUJNaXNzaW5nSW1hZ2VHbHlwaC50aWZm0icoKSpaJGNs
-YXNzbmFtZVgkY2xhc3Nlc1VOU1VSTKIpK1hOU09iamVjdNInKC0uV05TQXJyYXmiLSvTMDEKMjM0V05T
-V2hpdGVcTlNDb2xvclNwYWNlRDAgMAAQA4AL0icoNjdXTlNDb2xvcqI2K9InKDk6V05TSW1hZ2WiOStf
-EA9OU0tleWVkQXJjaGl2ZXLRPT5Ucm9vdIABAAgAEQAaACMALQAyADcARQBLAFYAXQBkAHEAeACAAIIA
-hACJAIsAjQCZAJ4AqQCrAK0ArwC0ALcAuQC7AL0AvwDGAM4A2gDcAN4A4AFfAWQBbwF4AX4BgQGKAY8B
-lwGaAaEBqQG2AbsBvQG/AcQBzAHPAdQB3AHfAfEB9AH5AAAAAAAAAgEAAAAAAAAAPwAAAAAAAAAAAAAA
-AAAAAfs
-</mutableData>
-        </image>
         <image name="Login_Login page button.png" width="228" height="86"/>
         <image name="NEW SUMMONER PAGE_BG.png" width="640" height="1134"/>
         <image name="PHOTO icons.png" width="165" height="165"/>

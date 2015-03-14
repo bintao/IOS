@@ -28,20 +28,20 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
         self.tabbar.transform = CGAffineTransformMakeTranslation(0, self.tabbar.frame.height)
         self.tabbar.alpha = 0
         
-        
-
+    
         // doens't appear if user haven't login
         news.alpha = 0
         tournament.alpha = 0
         team.alpha = 0
         me.alpha = 0
         
+        Tournament.getTournamentList()
+        LolAPIGlobal.getlolvision()
+        
     }
     
     
     override func viewDidAppear(animated: Bool) {
-        Tournament.getTournamentList()
-        LolAPIGlobal.getlolvision()
         
         if UserInfoGlobal.accessToken == ""
         {
@@ -66,7 +66,7 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
                     (status:RCConnectErrorCode) -> Void in
                     println(RCConnectErrorCode)
                     NSLog("Login failed")
-            }
+                }
             
             if tabbarShouldAppear {
                 showTabb()
@@ -74,13 +74,7 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
             }
             
             UserInfoGlobal.updateUserInfo()
-            if UserInfoGlobal.tokenVaild == "false"{
-                let alert1 = SCLAlertView()
-                alert1.addButton("ok", actionBlock:{ (Void) in
-                    self.logout()
-                })
-                alert1.showError(self, title: "Unauthorized", subTitle: "Try logout and login again", closeButtonTitle: nil, duration: 0.0)
-            }
+            
         }
     }
     
@@ -212,6 +206,15 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
         self.performSegueWithIdentifier("login", sender: self)
     }
     
+    func tokennotvaild(){
+    
+        let alert1 = SCLAlertView()
+        alert1.addButton("ok", actionBlock:{ (Void) in
+            self.logout()
+        })
+        alert1.showError(self, title: "Unauthorized", subTitle: "Try logout and login again", closeButtonTitle: nil, duration: 0.0)
+    
+    }
     
     func postsomething() {
         

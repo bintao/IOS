@@ -58,7 +58,10 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
             }
             else {
               println("not joined team yet")
-            
+            if ((result as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
+               
+                 ((self.parentViewController as UINavigationController).parentViewController as MainViewController).tokennotvaild()
+            }
             }
         }
 

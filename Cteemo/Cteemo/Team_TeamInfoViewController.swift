@@ -116,8 +116,6 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
         
-        chatViewController.navigationController?.navigationBar.tintColor = UserInfoGlobal.UIColorFromRGB(0xE74C3C)
-        
         self.navigationController?.pushViewController(chatViewController, animated: true)
     }
 

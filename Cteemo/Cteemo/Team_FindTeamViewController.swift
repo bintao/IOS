@@ -42,9 +42,6 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
                 println(JSON)
                 if ((JSON as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
                     
-                    
-                    
-                    
                 }
                 else if JSON? != nil{
                     println(JSON)
