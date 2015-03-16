@@ -25,7 +25,6 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         TeamInfoGlobal.uploadTeamInfo()
         navigation.title = TeamInfoGlobal.teamName
         println(UserInfoGlobal.profile_icon_Link)
@@ -81,10 +80,15 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     }
 
     @IBAction func leaveteam(sender: AnyObject) {
+        let alert1 = SCLAlertView()
         
-        var req = ARequest(prefix: "create_team/lol", method: requestType.DELETE)
-        req.delegate = self
-        req.sendRequestWithToken(UserInfoGlobal.accessToken)
+        alert1.addButton("ok", actionBlock:{ (Void) in
+            var req = ARequest(prefix: "create_team/lol", method: requestType.DELETE)
+            req.delegate = self
+            req.sendRequestWithToken(UserInfoGlobal.accessToken)
+        })
+       alert1.showNotice(self.parentViewController?.parentViewController, title: "Leave Team", subTitle: "Do you want to leave " + TeamInfoGlobal.teamName, closeButtonTitle: "cancel", duration: 0.0)
+        
 
     }
     

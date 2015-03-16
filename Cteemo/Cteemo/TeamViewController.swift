@@ -15,7 +15,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     var hasOwnteam = false
     
     @IBOutlet weak var createTeam : UIView!
-    @IBOutlet var teamInfo : UIView!
+    
     
     @IBOutlet var otherChoices : UITableView!
     
@@ -23,6 +23,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+    
 
         if UserInfoGlobal.profile_ID == ""{
                 UserInfoGlobal.updateUserInfo()
