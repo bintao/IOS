@@ -1383,7 +1383,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "94515d65-7a94-4a9c-9e38-414de6e784a4";
 				SWIFT_OBJC_BRIDGING_HEADER = "Cteemo/Cteemo-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1411,7 +1411,7 @@
 					"$(PROJECT_DIR)/Pods/build/Debug-iphoneos",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "94515d65-7a94-4a9c-9e38-414de6e784a4";
 				SWIFT_OBJC_BRIDGING_HEADER = "Cteemo/Cteemo-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 1;
 			};

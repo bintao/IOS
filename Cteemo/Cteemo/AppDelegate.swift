@@ -32,7 +32,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         RCIM.initWithAppKey("bmdehs6pdve3s", deviceToken: nil)
         
        
-        
+        println("1111111111111")
        // check ios 8.0 or higher
         if (UIApplication.sharedApplication().respondsToSelector(Selector("registerForRemoteNotifications")))
         {
@@ -56,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
         application.registerForRemoteNotifications()
+        
     }
     
     func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forRemoteNotification userInfo: [NSObject : AnyObject], completionHandler: () -> Void) {
@@ -67,9 +68,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        println("asdasdasdadsasdasd")
         RCIM.sharedRCIM().setDeviceToken(deviceToken)
+        println(deviceToken)
+        
     }
     
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        println(error)
+    }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
         return FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
@@ -103,6 +110,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     // MARK: - Core Data stack
+    
+    
 
     lazy var applicationDocumentsDirectory: NSURL = {
         // The directory the application uses to store the Core Data store file. This code uses a directory named "com.KedanLi.com.Cteemo" in the application's documents Application Support directory.
