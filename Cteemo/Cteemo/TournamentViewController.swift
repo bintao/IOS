@@ -24,7 +24,7 @@ class TournamentViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         
       //  ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
-        
+     
     }
     
     

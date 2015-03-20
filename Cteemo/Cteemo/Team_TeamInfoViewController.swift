@@ -96,10 +96,10 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         println(result)
         if (result as [String:AnyObject])["status"]? != nil{
         if((result as [String:AnyObject])["status"] as String == "success")
-        {
-            TeamInfoGlobal.cleanUserData()
-            self.performSegueWithIdentifier("returnToTeam", sender: self)
-        }
+            {
+                TeamInfoGlobal.cleanUserData()
+                self.performSegueWithIdentifier("returnToTeam", sender: self)
+            }
         }
     }
     override func didReceiveMemoryWarning() {
@@ -117,11 +117,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     @IBAction func groupchat(sender: AnyObject) {
         
         var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat("12", title: "cteemo", completion: nil)
-    
-        var temp = groupChatView()
-        temp.currentTarget = "12"
-        temp.conversationType =
-            
+        
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
         
         self.navigationController?.pushViewController(chatViewController, animated: true)

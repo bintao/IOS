@@ -6,12 +6,8 @@
 //  Copyright (c) 2015年 Kedan Li. All rights reserved.
 //
 /*
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-// Override point for customization after application launch.
 
 // 初始化 SDK，传入 App Key，deviceToken 暂时为空，等待获取权限。
-
 #ifdef __IPHONE_8_0
 // 在 iOS 8 下注册苹果推送，申请推送权限。
 */
@@ -26,13 +22,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        
+        application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
         DataManager.initializeUserInfo()
         
         UserInfoGlobal.setUp()
         RCIM.initWithAppKey("bmdehs6pdve3s", deviceToken: nil)
         
-       
-        println("1111111111111")
        // check ios 8.0 or higher
         if (UIApplication.sharedApplication().respondsToSelector(Selector("registerForRemoteNotifications")))
         {
@@ -68,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        println("asdasdasdadsasdasd")
+        
         RCIM.sharedRCIM().setDeviceToken(deviceToken)
         println(deviceToken)
         

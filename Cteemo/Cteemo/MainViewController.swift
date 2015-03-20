@@ -9,7 +9,9 @@
 import UIKit
 import Alamofire
 
-class MainViewController: UIViewController, UITabBarDelegate, RequestResultDelegate{
+
+
+class MainViewController: UIViewController, UITabBarDelegate, RequestResultDelegate ,RCIMReceiveMessageDelegate {
     
     @IBOutlet var tabbar: UITabBar!
     
@@ -18,29 +20,48 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
     @IBOutlet var tournament: UIView!
     @IBOutlet var me: UIView!
     
-    var tabbarShouldAppear = true
     
+    var tabbarShouldAppear = true
+    var count = 0
     var content : UIViewController!
     
-    
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabbar.transform = CGAffineTransformMakeTranslation(0, self.tabbar.frame.height)
         self.tabbar.alpha = 0
         
-    
         // doens't appear if user haven't login
         news.alpha = 0
         tournament.alpha = 0
         team.alpha = 0
         me.alpha = 0
         
+        var tabItem : UIViewController = self.tabBarController?.viewControllers![2] as UIViewController
+        
+         count = RCIM.sharedRCIM().getUnreadCount(RCConversationType.onversationType_GROUP, targetId: "12")
+        println(count)
+        tabItem.tabBarItem.badgeValue = "1"
+        
+        RCIM.sharedRCIM().setReceiveMessageDelegate(self)
+        
         Tournament.getTournamentList()
         LolAPIGlobal.getlolvision()
         
     }
     
-    
+    func didReceivedMessage(message: RCMessage!, left: Int32) {
+        
+       var tabItem : UIViewController = self.tabBarController?.viewControllers![2] as UIViewController
+        
+        if message.targetId == "12" && message.conversationType == RCConversationType.onversationType_GROUP{
+            count = count + 1
+            println(count)
+            tabItem.tabBarItem.badgeValue = "23423"
+        }
+        
+        
+    }
     override func viewDidAppear(animated: Bool) {
         
         if UserInfoGlobal.accessToken == ""
@@ -60,6 +81,7 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
                 news.alpha = 1
     //KgLJaeVjsIyWv3PRLdqkYriSPvCjR9Lj4In18RCEVuwrzFaSzav844KZM4q65MyO9TmJ6QHsPsU=
        //b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw==
+    //IfuRRCJ++gao7GfGCX29w7iSPvCjR9Lj4In18RCEVuyIQxsli/DBrjC+DNC/ikEI4AeBXxP4o0E=
             RCIM.connectWithToken("KgLJaeVjsIyWv3PRLdqkYriSPvCjR9Lj4In18RCEVuwrzFaSzav844KZM4q65MyO9TmJ6QHsPsU=", completion: { (userId:String!) -> Void in
                 
                 NSLog("Login successfully with userId: %@.",userId)
