@@ -58,7 +58,9 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
         else{
             
                 news.alpha = 1
-            RCIM.connectWithToken("b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw==", completion: { (userId:String!) -> Void in
+    //KgLJaeVjsIyWv3PRLdqkYriSPvCjR9Lj4In18RCEVuwrzFaSzav844KZM4q65MyO9TmJ6QHsPsU=
+       //b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw==
+            RCIM.connectWithToken("KgLJaeVjsIyWv3PRLdqkYriSPvCjR9Lj4In18RCEVuwrzFaSzav844KZM4q65MyO9TmJ6QHsPsU=", completion: { (userId:String!) -> Void in
                 
                 NSLog("Login successfully with userId: %@.",userId)
                 
@@ -84,31 +86,34 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
     }
     
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
-        if item.title! == "News"{
+        
+      
+        if item.title! == "News" && news.alpha != 1 {
             self.view.bringSubviewToFront(news)
-            news.alpha = 0
             displayView(news)
             self.view.bringSubviewToFront(tabbar)
-        }else if item.title! == "Tournament"{
+        }else if item.title! == "Tournament" && tournament.alpha != 1{
             self.view.bringSubviewToFront(tournament)
-            tournament.alpha = 0
             displayView(tournament)
             self.view.bringSubviewToFront(tabbar)
-        }else if item.title! == "Team"{
+        }else if item.title! == "Team" && team.alpha != 1{
             self.view.bringSubviewToFront(team)
-            team.alpha = 0
             displayView(team)
             self.view.bringSubviewToFront(tabbar)
-        }else if item.title! == "Me"{
+        }else if item.title! == "Me" && me.alpha != 1{
             self.view.bringSubviewToFront(me)
-            me.alpha = 0
             displayView(me)
             self.view.bringSubviewToFront(tabbar)
         }
+        
+        
     }
     
     func displayView(content: UIView){
-        
+        news.alpha = 0
+        tournament.alpha = 0
+        team.alpha = 0
+        me.alpha = 0
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             
             content.alpha = 1
@@ -200,9 +205,8 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
         UserInfoGlobal.cleanUserData()
         TeamInfoGlobal.cleanUserData()
         LolAPIGlobal.cleanUserData()
+        RCIM.sharedRCIM().disconnect()
         
-        
-
         self.performSegueWithIdentifier("login", sender: self)
     }
     

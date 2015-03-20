@@ -117,10 +117,15 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     @IBAction func groupchat(sender: AnyObject) {
         
         var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat("12", title: "cteemo", completion: nil)
-        
+    
+        var temp = groupChatView()
+        temp.currentTarget = "12"
+        temp.conversationType =
+            
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
         
         self.navigationController?.pushViewController(chatViewController, animated: true)
+
     }
 
     /*

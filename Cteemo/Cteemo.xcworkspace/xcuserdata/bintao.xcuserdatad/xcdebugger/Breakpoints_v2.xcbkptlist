@@ -452,11 +452,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/MainViewController.swift"
-            timestampString = "448167428.285479"
+            timestampString = "448322023.436517"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "188"
-            endingLineNumber = "188"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "logout()"
             landmarkType = "5">
          </BreakpointContent>
@@ -1231,7 +1231,23 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "20"
             endingLineNumber = "20"
-            landmarkName = "viewDidLoad()"
+            landmarkName = "groupchat"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/Team_TeamInfoViewController.swift"
+            timestampString = "448502824.270907"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "groupchat(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
