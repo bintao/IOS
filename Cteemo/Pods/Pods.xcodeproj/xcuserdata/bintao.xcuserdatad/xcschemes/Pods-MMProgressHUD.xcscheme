@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9FD80F165DA5CFC841CD68A7"
-               BuildableName = "libPods-RongCloudIMKit.a"
-               BlueprintName = "Pods-RongCloudIMKit"
+               BlueprintIdentifier = "02777CADF41162160F05C773"
+               BuildableName = "libPods-MMProgressHUD.a"
+               BlueprintName = "Pods-MMProgressHUD"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

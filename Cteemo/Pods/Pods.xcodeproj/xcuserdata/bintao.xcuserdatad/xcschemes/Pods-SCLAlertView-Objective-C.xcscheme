@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9FD80F165DA5CFC841CD68A7"
-               BuildableName = "libPods-RongCloudIMKit.a"
-               BlueprintName = "Pods-RongCloudIMKit"
+               BlueprintIdentifier = "B20D1A2275C060EA1A22D6EB"
+               BuildableName = "libPods-SCLAlertView-Objective-C.a"
+               BlueprintName = "Pods-SCLAlertView-Objective-C"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
