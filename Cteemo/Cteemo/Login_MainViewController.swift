@@ -91,9 +91,11 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         if prefix == "fb_login"{
             //save token
             
-            if result["token"]? != nil
+            if result["token"]? != nil && result["rongToken"]? != nil
             {
                 UserInfoGlobal.accessToken = result["token"] as String
+                UserInfoGlobal.rongToken = (result["rongToken"] as [String: AnyObject])["token"] as String
+                UserInfoGlobal.saveUserData()
                 UserInfoGlobal.saveUserData()
                 //get profile from the user
                 println( UserInfoGlobal.accessToken)
@@ -118,9 +120,9 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                 
                 //TeamInfoGlobal.uploadTeamInfo()
                 
-                self.performSegueWithIdentifier("exitToMain", sender: self)
+                //self.performSegueWithIdentifier("exitToMain", sender: self)
                 
-                //self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
+                self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
             }
             else {
                 

@@ -67,9 +67,10 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
         
         if prefix == "login"{
             
-            if result["token"]? != nil{
+            if result["token"]? != nil && result["rongToken"]? != nil{
                 // login success
                 UserInfoGlobal.accessToken = result["token"] as String
+                UserInfoGlobal.rongToken = (result["rongToken"] as [String: AnyObject])["token"] as String
                 UserInfoGlobal.saveUserData()
                 UserInfoGlobal.updateUserInfo()
                 

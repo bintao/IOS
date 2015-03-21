@@ -22,5 +22,7 @@
 	<string></string>
 	<key>tokenVaild</key>
 	<string></string>
+	<key>rongToken</key>
+	<string></string>
 </dict>
 </plist>

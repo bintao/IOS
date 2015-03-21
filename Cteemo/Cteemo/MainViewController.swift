@@ -86,12 +86,9 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         }
         else{
             
-            
-    //KgLJaeVjsIyWv3PRLdqkYriSPvCjR9Lj4In18RCEVuwrzFaSzav844KZM4q65MyO9TmJ6QHsPsU=
-       //b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw==
-    //IfuRRCJ++gao7GfGCX29w7iSPvCjR9Lj4In18RCEVuyIQxsli/DBrjC+DNC/ikEI4AeBXxP4o0E=
-           
-            RCIM.connectWithToken("IfuRRCJ++gao7GfGCX29w7iSPvCjR9Lj4In18RCEVuyIQxsli/DBrjC+DNC/ikEI4AeBXxP4o0E=", completion: { (userId:String!) -> Void in
+        
+            if UserInfoGlobal.rongToken != ""{
+            RCIM.connectWithToken(UserInfoGlobal.rongToken, completion: { (userId:String!) -> Void in
                 
                 NSLog("Login successfully with userId: %@.",userId)
                 
@@ -99,6 +96,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                     (status:RCConnectErrorCode) -> Void in
                     println(RCConnectErrorCode)
                     NSLog("Login failed")
+            }
             }
 
             
