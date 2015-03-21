@@ -29,7 +29,8 @@ class MeViewController: UIViewController  {
     
     
     override func viewDidAppear(animated: Bool) {
-          ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
+        
+        
     }
 
     
@@ -55,9 +56,6 @@ class MeViewController: UIViewController  {
 
     @IBAction func rongtest(sender: AnyObject) {
         
-        //KgLJaeVjsIyWv3PRLdqkYriSPvCjR9Lj4In18RCEVuwrzFaSzav844KZM4q65MyO9TmJ6QHsPsU= " 1
-        
-        //"b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw==" 88
         
             var chatViewController : RCChatViewController = RCIM.sharedRCIM().createPrivateChat("1", title: "self answer", completion:nil)
         
@@ -66,8 +64,7 @@ class MeViewController: UIViewController  {
             ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
             
             self.navigationController?.pushViewController(chatViewController, animated: true)
-            
-                MMProgressHUD.dismissWithSuccess("Success")
+        
         
         
         

@@ -11,7 +11,7 @@ import Alamofire
 
 
 
-class MainViewController: UIViewController, UITabBarDelegate, RequestResultDelegate ,RCIMReceiveMessageDelegate {
+class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDelegate , RCIMReceiveMessageDelegate {
     
     @IBOutlet var tabbar: UITabBar!
     
@@ -22,6 +22,7 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
     
     
     var tabbarShouldAppear = true
+    var firstlogin = true
     var count = 0
     var content : UIViewController!
     
@@ -37,11 +38,11 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
         team.alpha = 0
         me.alpha = 0
         
-        var tabItem : UIViewController = self.tabBarController?.viewControllers![2] as UIViewController
+         var tabItem  = self.tabbar.items![2] as UITabBarItem
         
          count = RCIM.sharedRCIM().getUnreadCount(RCConversationType.onversationType_GROUP, targetId: "12")
         println(count)
-        tabItem.tabBarItem.badgeValue = "1"
+        tabItem.badgeValue = "0"
         
         RCIM.sharedRCIM().setReceiveMessageDelegate(self)
         
@@ -52,12 +53,19 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
     
     func didReceivedMessage(message: RCMessage!, left: Int32) {
         
-       var tabItem : UIViewController = self.tabBarController?.viewControllers![2] as UIViewController
+      
         
         if message.targetId == "12" && message.conversationType == RCConversationType.onversationType_GROUP{
-            count = count + 1
-            println(count)
-            tabItem.tabBarItem.badgeValue = "23423"
+            
+            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+            dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
+                dispatch_async(dispatch_get_main_queue(), {
+                    self.count = self.count + 1
+                     var tabItem  = self.tabbar.items![2] as UITabBarItem
+                    tabItem.badgeValue = "\(self.count)"
+                })
+            })
+           
         }
         
         
@@ -78,11 +86,12 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
         }
         else{
             
-                news.alpha = 1
+            
     //KgLJaeVjsIyWv3PRLdqkYriSPvCjR9Lj4In18RCEVuwrzFaSzav844KZM4q65MyO9TmJ6QHsPsU=
        //b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw==
     //IfuRRCJ++gao7GfGCX29w7iSPvCjR9Lj4In18RCEVuyIQxsli/DBrjC+DNC/ikEI4AeBXxP4o0E=
-            RCIM.connectWithToken("KgLJaeVjsIyWv3PRLdqkYriSPvCjR9Lj4In18RCEVuwrzFaSzav844KZM4q65MyO9TmJ6QHsPsU=", completion: { (userId:String!) -> Void in
+           
+            RCIM.connectWithToken("IfuRRCJ++gao7GfGCX29w7iSPvCjR9Lj4In18RCEVuyIQxsli/DBrjC+DNC/ikEI4AeBXxP4o0E=", completion: { (userId:String!) -> Void in
                 
                 NSLog("Login successfully with userId: %@.",userId)
                 
@@ -90,14 +99,18 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
                     (status:RCConnectErrorCode) -> Void in
                     println(RCConnectErrorCode)
                     NSLog("Login failed")
-                }
+            }
+
             
-            if tabbarShouldAppear {
+            if tabbarShouldAppear && firstlogin {
+                news.alpha = 1
                 showTabb()
                 self.view.bringSubviewToFront(self.tabbar)
+                firstlogin = false
+                
+                UserInfoGlobal.updateUserInfo()
+                
             }
-            
-            UserInfoGlobal.updateUserInfo()
             
         }
     }
@@ -109,7 +122,7 @@ class MainViewController: UIViewController, UITabBarDelegate, RequestResultDeleg
     
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem!) {
         
-      
+        
         if item.title! == "News" && news.alpha != 1 {
             self.view.bringSubviewToFront(news)
             displayView(news)

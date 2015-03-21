@@ -1234,7 +1234,11 @@
                             <tabBar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-fj-NMG">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <items>
-                                    <tabBarItem title="News" image="news" id="zZK-do-3gd"/>
+                                    <tabBarItem title="News" image="news" id="zZK-do-3gd">
+                                        <connections>
+                                            <outlet property="animation" destination="ZWv-gr-okH" id="lRv-Q9-hud"/>
+                                        </connections>
+                                    </tabBarItem>
                                     <tabBarItem title="Tournament" image="tournament" id="iT3-z9-s9u"/>
                                     <tabBarItem title="Team" image="flag" id="kGG-rg-Xuk"/>
                                     <tabBarItem title="Me" image="user" id="Yps-TO-rjE"/>
@@ -1287,6 +1291,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VxQ-Kp-HYI" sceneMemberID="firstResponder"/>
+                <customObject id="ZWv-gr-okH" customClass="RAMLeftRotationAnimation" customModule="Cteemo" customModuleProvider="target"/>
             </objects>
             <point key="canvasLocation" x="3429" y="-218"/>
         </scene>
