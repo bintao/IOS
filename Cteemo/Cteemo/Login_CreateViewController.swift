@@ -27,6 +27,8 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet var teemoSpeaker : UIView!
     @IBOutlet var messageDisplay : UITextView!
     
+    var savepass : String = ""
+    
     override func viewDidLoad() {
         //add tap gesture to board
         self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "backGroundTapped:"))
@@ -37,15 +39,20 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         
         
         if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != ""&&nickname.text != ""{
+            if UserInfoGlobal.email == email.text {
             
+             self.emailverfication()
+                
+            }
+            else{
             var req = Alamofire.request(.POST, "http://54.149.235.253:5000/create_user", parameters: ["email": email.text, "password":password.text])
                 .responseJSON { (_, _, JSON, _) in
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
                 self.gotCreateResult(result)
+            }
+        self.startLoading()
         }
             
-        self.startLoading()
-       
         }else if email.text == "" || email.text.rangeOfString("@")?.isEmpty == nil{
             displaySpeaker("Email Invalid")
         }
@@ -65,35 +72,10 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         
         if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {
             
-            UserInfoGlobal.email = email.text
-            UserInfoGlobal.name = nickname.text
             let pass = self.password.text
-            UserInfoGlobal.saveUserData()
+            self.savepass = pass
             
-            let alert1 = SCLAlertView()
-            
-            alert1.addButton("Verificaed!!", actionBlock:{ (Void) in
-                
-                var req = Alamofire.request(.POST, "http://54.149.235.253:5000/login", parameters: ["email": UserInfoGlobal.email, "password": pass ])
-                    .responseJSON { (_, _, JSON, _) in
-                    
-                        println(JSON)
-                        var result = JSON as [String : AnyObject]
-                        
-                       if result["token"]? != nil && result["rongToken"]? != nil{
-                        
-                        UserInfoGlobal.accessToken = result["token"] as String
-                        UserInfoGlobal.rongToken = (result["rongToken"] as [String: AnyObject])["token"] as String
-                        UserInfoGlobal.saveUserData()
-                        UserInfoGlobal.updateUserInfo()
-                        self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
-                        }
-                        
-                }
-            })
-            
-            alert1.showCustom(self, image: UIImage(named: "email2.png")!, color: UserInfoGlobal.UIColorFromRGB(0x3498DB), title: "Email Verification", subTitle: "Please check your email ",closeButtonTitle: nil, duration: 0.0)
-            
+            self.emailverfication()
             
             
         }else{
@@ -111,7 +93,44 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         
     }
     
+    func emailverfication(){
     
+        UserInfoGlobal.email = email.text
+        UserInfoGlobal.name = nickname.text
+        
+        UserInfoGlobal.saveUserData()
+        
+        let alert1 = SCLAlertView()
+        
+        alert1.addButton("Verificaed!!", actionBlock:{ (Void) in
+            
+            var req = Alamofire.request(.POST, "http://54.149.235.253:5000/login", parameters: ["email": UserInfoGlobal.email, "password": self.savepass ])
+                .responseJSON { (_, _, JSON, _) in
+                    
+                    println(JSON)
+                    var result = JSON as [String : AnyObject]
+                    
+                    if result["token"]? != nil && result["rongToken"]? != nil{
+                        
+                        UserInfoGlobal.accessToken = result["token"] as String
+                        UserInfoGlobal.rongToken = (result["rongToken"] as [String: AnyObject])["token"] as String
+                        UserInfoGlobal.saveUserData()
+                        UserInfoGlobal.updateUserInfo()
+                        self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
+                    }
+                    else{
+                        
+                        alert1.showCustom(self, image: UIImage(named: "email2.png")!, color: UserInfoGlobal.UIColorFromRGB(0x3498DB), title: "Verification failed ", subTitle: "Please check " + UserInfoGlobal.email + ". May be in spam box. ",closeButtonTitle: nil, duration: 0.0)
+                        
+                    }
+                    
+            }
+        })
+        
+        alert1.showCustom(self, image: UIImage(named: "email2.png")!, color: UserInfoGlobal.UIColorFromRGB(0x3498DB), title: "Email Verification", subTitle: "Please check " + UserInfoGlobal.email,closeButtonTitle: "change Email", duration: 0.0)
+    
+    
+    }
     
     // display the speaker on teemo
     func displaySpeaker(text: String){
