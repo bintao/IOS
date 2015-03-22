@@ -8,10 +8,11 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 
 
-class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDelegate , RCIMReceiveMessageDelegate {
+class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDelegate , RCIMReceiveMessageDelegate , RCIMUserInfoFetcherDelegagte {
     
     @IBOutlet var tabbar: UITabBar!
     
@@ -51,11 +52,45 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
     }
     
+    
+    func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!){
+        
+        println(userId)
+        
+        var manager = Manager.sharedInstance
+        // Specifying the Headers we need
+        manager.session.configuration.HTTPAdditionalHeaders = [
+            "token": UserInfoGlobal.accessToken
+        ]
+         var user  = RCUserInfo.alloc()
+        user.userId = userId
+        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/view_profile/" + userId)
+            .responseJSON { (_, _, JSON, _) in
+                
+                if JSON != nil {
+                let myjson = SwiftyJSON.JSON(JSON!)
+                println(myjson)
+                 if let icon = myjson["profile_icon"].string{
+                    user.portraitUri = icon
+                    println(icon)
+                    }
+                    if let name = myjson["username"].string{
+                    user.name = name
+                     println(name)
+                    }
+                    return completion(user)
+                }
+            
+        }
+      
+        
+    }
+    
     func didReceivedMessage(message: RCMessage!, left: Int32) {
         
       
         
-        if message.targetId == "12" && message.conversationType == RCConversationType.onversationType_GROUP{
+        if message.targetId == "1" && message.conversationType == RCConversationType.onversationType_GROUP{
             
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
@@ -85,10 +120,12 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
        
         }
         else{
-            
-        
+           
+            println(UserInfoGlobal.rongToken)
+            RCIM.setUserInfoFetcherWithDelegate(self, isCacheUserInfo: true)
             if UserInfoGlobal.rongToken != ""{
-            RCIM.connectWithToken(UserInfoGlobal.rongToken, completion: { (userId:String!) -> Void in
+            
+                RCIM.connectWithToken(UserInfoGlobal.rongToken, completion: { (userId:String!) -> Void in
                 
                 NSLog("Login successfully with userId: %@.",userId)
                 
@@ -96,7 +133,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                     (status:RCConnectErrorCode) -> Void in
                     println(RCConnectErrorCode)
                     NSLog("Login failed")
-            }
+                }
             }
 
             

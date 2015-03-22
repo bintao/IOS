@@ -23,7 +23,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
     {
         resultTable.backgroundColor = UIColor.clearColor()
     }
-    
+
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
         if UserInfoGlobal.accessToken != ""{

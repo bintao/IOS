@@ -164,7 +164,6 @@ class UserTeam: NSObject{
         team_Intro = ""
         iscaptain = ""
         teamicon_link = ""
-        
         var data:[String: AnyObject] = packaging()
         DataManager.saveTeamInfoToLocal(data)
     }

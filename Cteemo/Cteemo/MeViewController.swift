@@ -57,7 +57,7 @@ class MeViewController: UIViewController  {
     @IBAction func rongtest(sender: AnyObject) {
         
         
-            var chatViewController : RCChatViewController = RCIM.sharedRCIM().createPrivateChat("1", title: "self answer", completion:nil)
+            var chatViewController : RCChatViewController = RCIM.sharedRCIM().createPrivateChat("17", title: "self answer", completion:nil)
         
         UINavigationBar.appearance().tintColor = UserInfoGlobal.UIColorFromRGB(0xE74C3C)
         
@@ -75,7 +75,6 @@ class MeViewController: UIViewController  {
         
         //"b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw=="
        
-            
             var chatViewController : RCChatViewController = RCIM.sharedRCIM().createCustomerService("KEFU1426185510333", title: "cteemo", completion: nil)
         
         UINavigationBar.appearance().tintColor = UserInfoGlobal.UIColorFromRGB(0xE74C3C)
@@ -90,9 +89,6 @@ class MeViewController: UIViewController  {
     
     
     @IBAction func group(sender: AnyObject) {
-        
-        
-        
         
         
     }

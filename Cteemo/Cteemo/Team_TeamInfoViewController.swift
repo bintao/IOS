@@ -27,8 +27,24 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         
         TeamInfoGlobal.uploadTeamInfo()
         navigation.title = TeamInfoGlobal.teamName
-        println(UserInfoGlobal.profile_icon_Link)
         
+        
+        // Do any additional setup after loading the view.
+    }
+    
+    //Enable editing member
+    @IBAction func editMember(sender: UIButton){
+        
+        sender.setTitle("Cancel", forState: UIControlState.Normal)
+    }
+       
+    override func viewDidAppear(animated: Bool) {
+       
+       
+        TeamInfoGlobal.uploadTeamInfo()
+        navigation.title = TeamInfoGlobal.teamName
+       
+
         capTain.setImage(UserInfoGlobal.icon, forState: UIControlState.Normal)
         capTainName.text = UserInfoGlobal.name
         
@@ -45,18 +61,6 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
             memberScroll.addSubview(lab)
             
         }
-        
-        // Do any additional setup after loading the view.
-    }
-    
-    //Enable editing member
-    @IBAction func editMember(sender: UIButton){
-        
-        sender.setTitle("Cancel", forState: UIControlState.Normal)
-    }
-       
-    override func viewDidAppear(animated: Bool) {
-        println(memberScroll.frame)
         
          ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
         
@@ -116,7 +120,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
 
     @IBAction func groupchat(sender: AnyObject) {
         
-        var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat("12", title: "cteemo", completion: nil)
+        var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat("1", title: "cteemo", completion: nil)
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
         

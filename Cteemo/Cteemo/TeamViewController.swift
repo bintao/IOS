@@ -26,14 +26,14 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
 
         if UserInfoGlobal.profile_ID == ""{
-                UserInfoGlobal.updateUserInfo()
+            UserInfoGlobal.updateUserInfo()
         }
+        
         if(UserInfoGlobal.accessToken != ""){
             updateTeam()
         }
         //otherChoices.backgroundColor = UIColor.clearColor()
-        
-        teams = []
+    
         
         // Do any additional setup after loading the view.
     }
@@ -48,6 +48,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     func gotResult(prefix: String, result: AnyObject) {
 
         if(prefix == "my_team/lol" ){
+            
        if(result["id"]?  != nil ){
             TeamInfoGlobal.gotResult(result as [String : AnyObject])
             println(TeamInfoGlobal.team_Intro)

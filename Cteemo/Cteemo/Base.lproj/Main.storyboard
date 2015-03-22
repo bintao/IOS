@@ -1527,6 +1527,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93808843570264544" green="0.93808843570264544" blue="0.93808843570264544" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="4tU-it-v0j" firstAttribute="top" secondItem="u2k-pL-fgA" secondAttribute="bottom" id="3sM-Ax-YpT"/>
                             <constraint firstItem="C5l-Aa-doP" firstAttribute="leading" secondItem="HA5-bj-XDP" secondAttribute="leading" id="9M7-lw-Bfb"/>
@@ -1704,64 +1705,15 @@
         <scene sceneID="xeu-cT-e9Q">
             <objects>
                 <viewController id="gcO-xg-BL5" customClass="Bracket" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gbZ-Ef-J59"/>
-                        <viewControllerLayoutGuide type="bottom" id="vOh-BM-fVQ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dqA-rP-ejw" customClass="Brake">
+                    <webView key="view" contentMode="scaleToFill" id="ZGZ-hy-wIY">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L8Z-4J-cD9">
-                                <rect key="frame" x="16" y="4" width="61" height="51"/>
-                                <state key="normal" image="arrow.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="fgf-hg-7Wj" kind="unwind" unwindAction="returnToJoined:" id="Zvk-L6-hDk"/>
-                                </connections>
-                            </button>
-                            <webView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fce-dh-btS">
-                                <rect key="frame" x="0.0" y="63" width="380" height="609"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
-                            </webView>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="fce-dh-btS" firstAttribute="leading" secondItem="dqA-rP-ejw" secondAttribute="leadingMargin" id="06F-VG-cg9"/>
-                            <constraint firstItem="fce-dh-btS" firstAttribute="top" secondItem="L8Z-4J-cD9" secondAttribute="bottom" constant="50" id="JTt-cf-5Sy"/>
-                            <constraint firstAttribute="trailing" secondItem="fce-dh-btS" secondAttribute="trailing" id="LKE-D8-Ui1"/>
-                            <constraint firstItem="vOh-BM-fVQ" firstAttribute="top" secondItem="fce-dh-btS" secondAttribute="bottom" id="Pv1-qV-ryU"/>
-                            <constraint firstItem="fce-dh-btS" firstAttribute="leading" secondItem="dqA-rP-ejw" secondAttribute="leadingMargin" constant="-20" id="QMv-6h-oFg"/>
-                            <constraint firstItem="fce-dh-btS" firstAttribute="leading" secondItem="dqA-rP-ejw" secondAttribute="leading" id="RZl-YA-fLX"/>
-                            <constraint firstItem="vOh-BM-fVQ" firstAttribute="top" secondItem="fce-dh-btS" secondAttribute="bottom" id="jfv-8m-Uo8"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="fce-dh-btS" secondAttribute="bottom" id="jpf-7C-Ysh"/>
-                            <constraint firstItem="fce-dh-btS" firstAttribute="top" secondItem="L8Z-4J-cD9" secondAttribute="bottom" constant="90" id="mdP-BZ-CvH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fce-dh-btS" secondAttribute="trailing" id="qxp-w7-MXq"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fce-dh-btS" secondAttribute="trailing" constant="-21" id="xtY-Fi-vUs"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="06F-VG-cg9"/>
-                                <exclude reference="JTt-cf-5Sy"/>
-                                <exclude reference="LKE-D8-Ui1"/>
-                                <exclude reference="QMv-6h-oFg"/>
-                                <exclude reference="RZl-YA-fLX"/>
-                                <exclude reference="jpf-7C-Ysh"/>
-                                <exclude reference="mdP-BZ-CvH"/>
-                                <exclude reference="qxp-w7-MXq"/>
-                                <exclude reference="xtY-Fi-vUs"/>
-                                <exclude reference="Pv1-qV-ryU"/>
-                                <exclude reference="jfv-8m-Uo8"/>
-                            </mask>
-                        </variation>
-                    </view>
+                    </webView>
                     <connections>
-                        <outlet property="webview" destination="fce-dh-btS" id="8ey-CM-gOv"/>
+                        <outlet property="webview" destination="ZGZ-hy-wIY" id="e5u-ZY-TFC"/>
                     </connections>
                 </viewController>
-                <exit id="fgf-hg-7Wj" userLabel="Exit" sceneMemberID="exit"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqR-jC-m8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7250.5" y="-1968.5"/>
@@ -1956,6 +1908,7 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.90196079015731812" green="0.90196079015731812" blue="0.90196079015731812" alpha="0.52000000000000002" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="JJ9-JL-gTV" firstAttribute="leading" secondItem="18A-Rx-6LD" secondAttribute="leading" id="3MA-wO-pj4"/>
                             <constraint firstItem="MP3-zR-KRT" firstAttribute="top" secondItem="JnM-SF-KZf" secondAttribute="bottom" id="6mX-j3-voP"/>
@@ -2178,6 +2131,7 @@
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="fSe-Ff-3ec" firstAttribute="trailing" secondItem="awa-X6-gY3" secondAttribute="trailing" id="1CX-q4-xoH"/>
                             <constraint firstItem="YV6-dc-kLW" firstAttribute="leading" secondItem="Wbv-cg-afh" secondAttribute="leading" id="2Vg-7Z-Tn7"/>
@@ -2620,6 +2574,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="ME" id="LQC-UO-xCD"/>

@@ -198,6 +198,9 @@ class UserInformation: NSObject, RequestResultDelegate{
         profile_icon_Link = ""
         tokenVaild = ""
         DataManager.saveUserInfoToLocal(packaging())
+        DataManager.deleFileInLocal("icon.png")
+        DataManager.deleFileInLocal("lolicon.png")
+        DataManager.deleFileInLocal("teamicon.png")
     }
     
    
