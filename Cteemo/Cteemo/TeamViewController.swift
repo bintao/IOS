@@ -45,6 +45,8 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     func gotResult(prefix: String, result: AnyObject) {
 
         if(prefix == "my_team/lol" ){
+        
+        println(result)
             
        if(result["id"]?  != nil ){
             TeamInfoGlobal.gotResult(result as [String : AnyObject])
@@ -77,17 +79,17 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
             UserInfoGlobal.updateUserInfo()
         }
         
+        if TeamInfoGlobal.teamID != ""{
+            TeamInfoGlobal.uploadTeamInfo()
+        }
+
         if(UserInfoGlobal.accessToken != ""){
             updateTeam()
         }
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
         
-        if TeamInfoGlobal.teamID != ""{
-            TeamInfoGlobal.uploadTeamInfo()
-            self.performSegueWithIdentifier("presentMyTeam", sender: self)
-        }
-
+       
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

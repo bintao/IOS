@@ -64,7 +64,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         
          ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
         
-        if TeamInfoGlobal.teamicon != nil{
+        if TeamInfoGlobal.teamicon != nil && DataManager.getTeamIconFromLocal() != nil{
             
         self.teamicon.image = DataManager.getTeamIconFromLocal()
         

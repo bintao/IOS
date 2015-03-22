@@ -110,8 +110,9 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
     func contactCap(sender : UIButton){
         
         println(sender.tag)
+        
         if (teams[sender.tag] as [String : AnyObject])["teamName"]? != nil{
-            
+        
         var teamname = (teams[sender.tag] as [String : AnyObject])["teamName"] as String
         
         let alert = SCLAlertView()
@@ -123,17 +124,12 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
             self.stopLoading()
         
             }
+            
+        alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Join Team request", subTitle: "I want to be part of " + teamname,closeButtonTitle: "Cancel", duration: 0.0)
        
         }
         
-        /*
-        self.startLoading()
-        var req = ARequest(prefix: "my_team/lol", method: requestType.POST, parameters: ["teamName": teamname])
-        req.delegate = self
-        req.sendRequestWithToken(UserInfoGlobal.accessToken)
-        self.stopLoading()
-        }
-        */
+      
     
     }
     

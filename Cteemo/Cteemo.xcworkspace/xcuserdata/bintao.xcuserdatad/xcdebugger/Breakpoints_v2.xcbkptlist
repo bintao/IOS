@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TeamViewController.swift"
-            timestampString = "448748155.905603"
+            timestampString = "448750352.920261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "gotResult(_:result:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -834,9 +834,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "5">
+            endingLineNumber = "42">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -850,9 +848,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "76"
-            endingLineNumber = "76"
-            landmarkName = "getResult(_:)"
-            landmarkType = "5">
+            endingLineNumber = "76">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -866,9 +862,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
-            endingLineNumber = "72"
-            landmarkName = "getResult(_:)"
-            landmarkType = "5">
+            endingLineNumber = "72">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -882,9 +876,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "getResult(_:)"
-            landmarkType = "5">
+            endingLineNumber = "59">
             <Locations>
                <Location
                   shouldBeEnabled = "No"
@@ -960,9 +952,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "78"
-            endingLineNumber = "78"
-            landmarkName = "getResult(_:)"
-            landmarkType = "5">
+            endingLineNumber = "78">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1008,9 +998,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "75"
-            endingLineNumber = "75"
-            landmarkName = "getResult(_:)"
-            landmarkType = "5">
+            endingLineNumber = "75">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1024,9 +1012,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "gotResult(_:result:)"
-            landmarkType = "5">
+            endingLineNumber = "91">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1498,11 +1484,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TeamViewController.swift"
-            timestampString = "448748155.905603"
+            timestampString = "448750352.920261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1514,27 +1500,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TeamViewController.swift"
-            timestampString = "448748155.905603"
+            timestampString = "448750352.920261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "89"
-            endingLineNumber = "89"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cteemo/TeamViewController.swift"
-            timestampString = "448748155.905603"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1638,15 +1608,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TeamViewController.swift"
-            timestampString = "448748405.697823"
+            timestampString = "448750352.920261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "gotResult(_:result:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -1792,6 +1762,38 @@
             startingLineNumber = "90"
             endingLineNumber = "90"
             landmarkName = "gotResult(_:result:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/Team_FindTeamViewController.swift"
+            timestampString = "448751252.214869"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "contactCap(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/Team_FindTeamViewController.swift"
+            timestampString = "448751252.214869"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
+            landmarkName = "contactCap(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
