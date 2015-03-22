@@ -157,6 +157,7 @@
 		A18BF4341AA2F8EC000678F3 /* LOGIN_SIGN UP PAGE _BG.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF42E1AA2F8EC000678F3 /* LOGIN_SIGN UP PAGE _BG.png */; };
 		A18BF4351AA2F8EC000678F3 /* NEW SUMMONER PAGE_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF42F1AA2F8EC000678F3 /* NEW SUMMONER PAGE_BG.png */; };
 		A18BF4361AA2F8EC000678F3 /* Teemo_Login Page.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF4301AA2F8EC000678F3 /* Teemo_Login Page.png */; };
+		A18DF20B1ABE2317002B354F /* email2.png in Resources */ = {isa = PBXBuildFile; fileRef = A18DF20A1ABE2317002B354F /* email2.png */; };
 		A1A858381A8C7DC1001BF576 /* LOLInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1A858371A8C7DC1001BF576 /* LOLInfo.plist */; };
 		A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */; };
 		A1B8E9581A7B20F2009BE011 /* 奖杯2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */; };
@@ -453,6 +454,7 @@
 		A18BF42E1AA2F8EC000678F3 /* LOGIN_SIGN UP PAGE _BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LOGIN_SIGN UP PAGE _BG.png"; sourceTree = "<group>"; };
 		A18BF42F1AA2F8EC000678F3 /* NEW SUMMONER PAGE_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NEW SUMMONER PAGE_BG.png"; sourceTree = "<group>"; };
 		A18BF4301AA2F8EC000678F3 /* Teemo_Login Page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Teemo_Login Page.png"; sourceTree = "<group>"; };
+		A18DF20A1ABE2317002B354F /* email2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email2.png; sourceTree = "<group>"; };
 		A1A858371A8C7DC1001BF576 /* LOLInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LOLInfo.plist; sourceTree = "<group>"; };
 		A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯1.png"; sourceTree = "<group>"; };
 		A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯2.png"; sourceTree = "<group>"; };
@@ -671,6 +673,7 @@
 				A18BF42A1AA2F8DF000678F3 /* lollog */,
 				A13918E61AA2C11B00CD232A /* Tournament */,
 				A13918E41AA2B2D300CD232A /* juxing.png */,
+				A18DF20A1ABE2317002B354F /* email2.png */,
 				A13918DF1AA2B26500CD232A /* annie.jpg */,
 				A1EB12081A99277900FC8388 /* error.png */,
 				88535F561A89C91A00F38098 /* News */,
@@ -1197,6 +1200,7 @@
 				A13919141AA2C21D00CD232A /* date icons.png in Resources */,
 				A139191D1AA2C21D00CD232A /* NEXT ROUND BUTTON.png in Resources */,
 				42041AE71A81594900623C70 /* right.png in Resources */,
+				A18DF20B1ABE2317002B354F /* email2.png in Resources */,
 				A13919261AA2C21D00CD232A /* Tournament.zip in Resources */,
 				4260F4031A886F1E00A6F39D /* more111.png in Resources */,
 				A139190C1AA2C21D00CD232A /* 框.png in Resources */,

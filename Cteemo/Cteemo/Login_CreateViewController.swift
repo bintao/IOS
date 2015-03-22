@@ -67,9 +67,34 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
             
             UserInfoGlobal.email = email.text
             UserInfoGlobal.name = nickname.text
+            let pass = self.password.text
             UserInfoGlobal.saveUserData()
             
-            self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
+            let alert1 = SCLAlertView()
+            
+            alert1.addButton("Verificaed!!", actionBlock:{ (Void) in
+                
+                var req = Alamofire.request(.POST, "http://54.149.235.253:5000/login", parameters: ["email": UserInfoGlobal.email, "password": pass ])
+                    .responseJSON { (_, _, JSON, _) in
+                    
+                        println(JSON)
+                        var result = JSON as [String : AnyObject]
+                        
+                       if result["token"]? != nil && result["rongToken"]? != nil{
+                        
+                        UserInfoGlobal.accessToken = result["token"] as String
+                        UserInfoGlobal.rongToken = (result["rongToken"] as [String: AnyObject])["token"] as String
+                        UserInfoGlobal.saveUserData()
+                        UserInfoGlobal.updateUserInfo()
+                        self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
+                        }
+                        
+                }
+            })
+            
+            alert1.showCustom(self, image: UIImage(named: "email2.png")!, color: UserInfoGlobal.UIColorFromRGB(0x3498DB), title: "Email Verification", subTitle: "Please check your email ",closeButtonTitle: nil, duration: 0.0)
+            
+            
             
         }else{
             if((result["message"] as String).rangeOfString("Validation")?.isEmpty != nil){

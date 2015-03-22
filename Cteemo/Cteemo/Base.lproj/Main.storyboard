@@ -2056,12 +2056,6 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chuishi.png" translatesAutoresizingMaskIntoConstraints="NO" id="bmC-j9-XEw">
                                         <rect key="frame" x="16" y="28" width="64" height="69"/>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Battle Chat Room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gl0-Z3-XT2">
-                                        <rect key="frame" x="99" y="52" width="356" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                        <color key="textColor" red="0.28018465909090906" green="0.28018465909090906" blue="0.28018465909090906" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiL-Yu-z6V">
                                         <rect key="frame" x="308" y="29" width="60" height="60"/>
                                         <constraints>
@@ -2076,6 +2070,12 @@
                                             <action selector="groupchat:" destination="hEF-di-Hta" eventType="touchUpInside" id="rw2-bC-zOK"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Battle Chat Room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gl0-Z3-XT2">
+                                        <rect key="frame" x="99" y="52" width="356" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <color key="textColor" red="0.28018465909090906" green="0.28018465909090906" blue="0.28018465909090906" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2170,6 +2170,11 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="7nw-wI-Yg4"/>
                                     <constraint firstAttribute="width" constant="600" id="ECP-Ut-Tkg"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="ECP-Ut-Tkg"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2191,6 +2196,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="smJ-cy-Ixv" secondAttribute="trailing" id="fuE-6J-qE4"/>
                             <constraint firstItem="ve9-3K-VfH" firstAttribute="bottom" secondItem="awa-X6-gY3" secondAttribute="bottom" id="fwo-dG-Bif"/>
                             <constraint firstItem="chR-Zo-MaF" firstAttribute="top" secondItem="smJ-cy-Ixv" secondAttribute="bottom" constant="180" id="k8h-pa-znb"/>
+                            <constraint firstItem="Xu1-kQ-cTq" firstAttribute="leading" secondItem="Wbv-cg-afh" secondAttribute="leadingMargin" id="mxH-FE-CEc"/>
                             <constraint firstItem="smJ-cy-Ixv" firstAttribute="leading" secondItem="Wbv-cg-afh" secondAttribute="leadingMargin" id="n2q-0Z-cde"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xu1-kQ-cTq" secondAttribute="trailing" constant="-20" id="oIS-e6-LVy"/>
                         </constraints>
@@ -2735,7 +2741,7 @@
         <image name="white.png" width="1200" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9wu-Y0-gi9"/>
+        <segue reference="WGx-hs-GOh"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
 </document>
