@@ -87,7 +87,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     }
     
     func gotResult(prefix: String, result: AnyObject) {
-        
+        println(result)
         if prefix == "fb_login"{
             //save token
             
@@ -96,7 +96,8 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                 UserInfoGlobal.accessToken = result["token"] as String
                 UserInfoGlobal.rongToken = (result["rongToken"] as [String: AnyObject])["token"] as String
                 UserInfoGlobal.saveUserData()
-                UserInfoGlobal.saveUserData()
+                
+                
                 //get profile from the user
                 println( UserInfoGlobal.accessToken)
                 getProfileFromServer()
@@ -109,7 +110,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         }
         
         else if prefix == "profile" {
-
+            
             if result["username"]? != nil {
                 //old User
             

@@ -29,9 +29,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
             UserInfoGlobal.updateUserInfo()
         }
         
-        if(UserInfoGlobal.accessToken != ""){
-            updateTeam()
-        }
         //otherChoices.backgroundColor = UIColor.clearColor()
     
         
@@ -75,6 +72,14 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     }
     
     override func viewDidAppear(animated: Bool) {
+        
+        if UserInfoGlobal.profile_ID == ""{
+            UserInfoGlobal.updateUserInfo()
+        }
+        
+        if(UserInfoGlobal.accessToken != ""){
+            updateTeam()
+        }
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
         

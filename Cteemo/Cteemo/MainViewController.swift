@@ -42,8 +42,9 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
          var tabItem  = self.tabbar.items![2] as UITabBarItem
         
          count = RCIM.sharedRCIM().getUnreadCount(RCConversationType.onversationType_GROUP, targetId: "12")
+        
         println(count)
-        tabItem.badgeValue = "0"
+        tabItem.badgeValue = nil
         
         RCIM.sharedRCIM().setReceiveMessageDelegate(self)
         
@@ -52,6 +53,14 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
     }
     
+    
+    func clearnteambadge(){
+    
+        var tabItem  = self.tabbar.items![2] as UITabBarItem
+        self.count = 0
+        tabItem.badgeValue = nil
+        
+    }
     
     func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!){
         
@@ -62,8 +71,9 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         manager.session.configuration.HTTPAdditionalHeaders = [
             "token": UserInfoGlobal.accessToken
         ]
-         var user  = RCUserInfo.alloc()
+        var user  = RCUserInfo.alloc()
         user.userId = userId
+        if userId != UserInfoGlobal.profile_ID{
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/view_profile/" + userId)
             .responseJSON { (_, _, JSON, _) in
                 
@@ -81,6 +91,14 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                     return completion(user)
                 }
             
+            }
+        }
+        else{
+        
+        user.portraitUri = UserInfoGlobal.profile_icon_Link
+        user.name = UserInfoGlobal.name
+        
+        return completion(user)
         }
       
         
@@ -88,7 +106,6 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
     
     func didReceivedMessage(message: RCMessage!, left: Int32) {
         
-      
         
         if message.targetId == "1" && message.conversationType == RCConversationType.onversationType_GROUP{
             

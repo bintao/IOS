@@ -1,7 +1,7 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/MMProgressHUD" "${PODS_ROOT}/Headers/Public/RongCloudIMKit" "${PODS_ROOT}/Headers/Public/SCLAlertView-Objective-C"
-LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/RongCloudIMKit/iOS_IMKit_v_1_3_4"
+LIBRARY_SEARCH_PATHS = "$(PODS_ROOT)/RongCloudIMKit/iOS_IMKit"
 OTHER_CFLAGS = $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/MMProgressHUD" -isystem "${PODS_ROOT}/Headers/Public/RongCloudIMKit" -isystem "${PODS_ROOT}/Headers/Public/SCLAlertView-Objective-C"
-OTHER_LDFLAGS = -ObjC -l"Pods-MMProgressHUD" -l"Pods-RongCloudIMKit" -l"Pods-SCLAlertView-Objective-C" -l"c++" -l"iOS_IMKit_v1_3_4" -l"sqlite3" -l"stdc++" -l"z" -framework "AVFoundation" -framework "AudioToolbox" -framework "CFNetwork" -framework "CoreAudio" -framework "CoreGraphics" -framework "CoreImage" -framework "CoreLocation" -framework "CoreMedia" -framework "CoreTelephony" -framework "CoreVideo" -framework "Foundation" -framework "MapKit" -framework "OpenGLES" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit"
+OTHER_LDFLAGS = -ObjC -l"Pods-MMProgressHUD" -l"Pods-RongCloudIMKit" -l"Pods-SCLAlertView-Objective-C" -l"c++" -l"iOS_IMKit" -l"sqlite3" -l"stdc++" -l"xml2" -l"z" -framework "AVFoundation" -framework "AudioToolbox" -framework "CFNetwork" -framework "CoreAudio" -framework "CoreGraphics" -framework "CoreImage" -framework "CoreLocation" -framework "CoreMedia" -framework "CoreTelephony" -framework "CoreVideo" -framework "Foundation" -framework "MapKit" -framework "OpenGLES" -framework "QuartzCore" -framework "SystemConfiguration" -framework "UIKit"
 OTHER_LIBTOOLFLAGS = $(OTHER_LDFLAGS)
 PODS_ROOT = ${SRCROOT}/Pods

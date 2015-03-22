@@ -40,7 +40,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
        
     override func viewDidAppear(animated: Bool) {
        
-       
+        
         TeamInfoGlobal.uploadTeamInfo()
         navigation.title = TeamInfoGlobal.teamName
        
@@ -120,8 +120,11 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
 
     @IBAction func groupchat(sender: AnyObject) {
         
+        
+        
         var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat("1", title: "cteemo", completion: nil)
         
+        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).clearnteambadge()
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
         
         self.navigationController?.pushViewController(chatViewController, animated: true)

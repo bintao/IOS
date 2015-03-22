@@ -28,13 +28,15 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
     @IBOutlet var messageDisplay : UITextView!
     
     
-    override func viewDidLoad(){
+    override func viewDidLoad()
+    {
+       
         super.viewDidLoad()
         
         //add tap gesture to board
         self.bg.addGestureRecognizer(UITapGestureRecognizer(target: self, action: "backGroundTapped:"))
         
-        // Do any additional setup after loading the view, typically from a nib.
+        
     }
     
     //login
