@@ -10,11 +10,13 @@
 import UIKit
 import Alamofire
 
+
 class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet var loading : UIActivityIndicatorView!
     @IBOutlet var resultTable : UITableView!
     
     var teams: [AnyObject] = [AnyObject]()
+    
     
     override func viewDidLoad() {
         resultTable.backgroundColor = UIColor.clearColor()
@@ -42,6 +44,11 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
                 }
                 else if(JSON != nil){
                    println(JSON)
+                    self.teams = JSON as [AnyObject]
+                    var result: [AnyObject] = [AnyObject]()
+                    result = JSON as [AnyObject]
+                    self.gotResult(result)
+                    
                 }
                
                 
@@ -50,8 +57,14 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
     
     func gotResult(result: [AnyObject]){
         teams = result
-        resultTable.reloadData()
+        println(teams.count)
+        
+        self.resultTable.reloadData()
+        
+       
     }
+    
+    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return teams.count
@@ -77,13 +90,15 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         
         var teamName = UILabel(frame: CGRectMake(85, 15, 200, 27))
         teamName.textColor = UIColor.darkGrayColor()
-        teamName.text = (teams[indexPath.row] as [String: AnyObject])["teamName"] as? String
+        teamName.text = "Cteemo"
         teamName.font = UIFont(name: "AvenirNext-Medium", size: 18)
         cell.addSubview(teamName)
         
         
         var captain = UILabel(frame: CGRectMake(85, 45, 200, 27))
-        captain.text = "Captain: " + ((teams[indexPath.row] as [String: AnyObject])["captain"] as String)
+        var name = ((teams[indexPath.row] as [String: AnyObject])["user_profile"] as [String: AnyObject])["username"] as String
+        
+        captain.text = "Captain: " + name
         captain.textColor = UIColor.darkGrayColor()
         captain.font = UIFont(name: "AvenirNext-Regular", size: 13)
         cell.addSubview(captain)
@@ -93,7 +108,7 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         contactCaptain.addTarget(self, action: "contactCap:", forControlEvents: UIControlEvents.TouchUpInside)
         cell.addSubview(contactCaptain)
         
-        /*
+        
         var joinTeam = UIButton(frame: CGRectMake(self.view.frame.width / 2, 80, self.view.frame.width / 2, 30))
         joinTeam.backgroundColor = self.navigationController!.view.tintColor!
         cell.addSubview(joinTeam)
@@ -112,7 +127,7 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         join.textColor = UIColor.whiteColor()
         join.font = UIFont(name: "AvenirNext-Medium", size: 17)
         cell.addSubview(join)
-        */
+
         return cell
     }
     

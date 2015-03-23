@@ -62,6 +62,8 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
     }
     
+    
+    // 融云得到用户头像
     func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!){
         
         println(userId)
@@ -73,10 +75,12 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         ]
         var user  = RCUserInfo.alloc()
         user.userId = userId
+        
+        
+        //从服务器获取用户资料
         if userId != UserInfoGlobal.profile_ID{
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/view_profile/" + userId)
             .responseJSON { (_, _, JSON, _) in
-                
                 if JSON != nil {
                 let myjson = SwiftyJSON.JSON(JSON!)
                 println(myjson)
@@ -93,6 +97,8 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
             
             }
         }
+            
+        //当用户是自己时候从本地缓存
         else{
         
         user.portraitUri = UserInfoGlobal.profile_icon_Link
@@ -104,9 +110,11 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
     }
     
+    
+    //融云收到新信息
     func didReceivedMessage(message: RCMessage!, left: Int32) {
         
-        
+        //得到组群信息并且设置角标
         if message.targetId == "1" && message.conversationType == RCConversationType.onversationType_GROUP{
             
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
@@ -122,23 +130,30 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
         
     }
+    
+    
     override func viewDidAppear(animated: Bool) {
         
+        //当用户没有token时跳转到登录界面
         if UserInfoGlobal.accessToken == ""
         {
          
             self.performSegueWithIdentifier("login", sender: self)
             
-        }else if !UserInfoGlobal.userIsLogined(){
+            
+        }
+        //当用户没有成功登录跳转到登录
+        else if !UserInfoGlobal.userIsLogined(){
             
             // if user have't login let him login
             FBSession.activeSession().closeAndClearTokenInformation()
             self.performSegueWithIdentifier("login", sender: self)
        
         }
+            
+        //当用户有token时候跟融云链接并且更新信息
         else{
-           
-            println(UserInfoGlobal.rongToken)
+           self.postsomething()
             RCIM.setUserInfoFetcherWithDelegate(self, isCacheUserInfo: true)
             if UserInfoGlobal.rongToken != ""{
             

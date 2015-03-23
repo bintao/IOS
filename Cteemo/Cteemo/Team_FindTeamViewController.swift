@@ -80,7 +80,18 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         backButton.setImage(UIImage(named: "white"), forState: UIControlState.Normal)
         cell.addSubview(backButton)
         
+        
+        
         var cellIcon = UIImageView(image: UIImage(named: "Forma 1"))
+        var iconurl = (teams[indexPath.row] as [String: AnyObject])["teamIcon"] as? String
+        
+        ImageLoader.sharedLoader.imageForUrl(iconurl!, completionHandler:{(image: UIImage?, url: String) in
+            println(url)
+            if image? != nil {
+                cellIcon.image = image
+            }
+            })
+
         cellIcon.frame = CGRectMake(10, 10, 60, 60)
         cell.addSubview(cellIcon)
         
