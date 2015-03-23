@@ -153,7 +153,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
             
         //当用户有token时候跟融云链接并且更新信息
         else{
-           self.postsomething()
+         
             RCIM.setUserInfoFetcherWithDelegate(self, isCacheUserInfo: true)
             if UserInfoGlobal.rongToken != ""{
             

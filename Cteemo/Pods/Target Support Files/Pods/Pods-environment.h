@@ -22,6 +22,6 @@
 // SCLAlertView-Objective-C
 #define COCOAPODS_POD_AVAILABLE_SCLAlertView_Objective_C
 #define COCOAPODS_VERSION_MAJOR_SCLAlertView_Objective_C 0
-#define COCOAPODS_VERSION_MINOR_SCLAlertView_Objective_C 5
-#define COCOAPODS_VERSION_PATCH_SCLAlertView_Objective_C 9
+#define COCOAPODS_VERSION_MINOR_SCLAlertView_Objective_C 6
+#define COCOAPODS_VERSION_PATCH_SCLAlertView_Objective_C 1
 

@@ -2004,10 +2004,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="smJ-cy-Ixv">
-                                <rect key="frame" x="0.0" y="367" width="600" height="117"/>
+                                <rect key="frame" x="0.0" y="366" width="600" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="chuishi.png" translatesAutoresizingMaskIntoConstraints="NO" id="bmC-j9-XEw">
-                                        <rect key="frame" x="16" y="28" width="64" height="69"/>
+                                        <rect key="frame" x="16" y="24" width="64" height="69"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wiL-Yu-z6V">
                                         <rect key="frame" x="308" y="29" width="60" height="60"/>
@@ -2023,20 +2023,21 @@
                                             <action selector="groupchat:" destination="hEF-di-Hta" eventType="touchUpInside" id="rw2-bC-zOK"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Battle Chat Room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gl0-Z3-XT2">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Battle Chat Room" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gl0-Z3-XT2">
                                         <rect key="frame" x="99" y="52" width="356" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <color key="textColor" red="0.28018465909090906" green="0.28018465909090906" blue="0.28018465909090906" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="1Je-W4-F2I"/>
+                                    <constraint firstAttribute="centerY" secondItem="gl0-Z3-XT2" secondAttribute="centerY" id="LOj-dR-qvM"/>
                                     <constraint firstAttribute="trailing" secondItem="wiL-Yu-z6V" secondAttribute="trailing" constant="20" id="NRC-Fz-DZK"/>
                                     <constraint firstAttribute="centerY" secondItem="wiL-Yu-z6V" secondAttribute="centerY" id="Pmv-Hb-igU"/>
                                     <constraint firstAttribute="trailing" secondItem="wiL-Yu-z6V" secondAttribute="trailing" constant="30" id="SRo-1Q-1mg"/>
                                     <constraint firstAttribute="height" constant="10" id="WZc-cG-76r"/>
+                                    <constraint firstAttribute="centerX" secondItem="gl0-Z3-XT2" secondAttribute="centerX" id="aWm-3v-yor"/>
                                     <constraint firstAttribute="centerX" secondItem="wiL-Yu-z6V" secondAttribute="centerX" id="c89-aI-rmA"/>
                                     <constraint firstAttribute="centerX" secondItem="wiL-Yu-z6V" secondAttribute="centerX" constant="70" id="ilP-80-sn9"/>
                                 </constraints>
@@ -2122,13 +2123,26 @@
                                     <constraint firstAttribute="height" constant="10" id="5zt-dc-BDM"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="10" id="7nw-wI-Yg4"/>
                                     <constraint firstAttribute="width" constant="600" id="ECP-Ut-Tkg"/>
+                                    <constraint firstAttribute="width" constant="600" id="l37-nf-2eL"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="ECP-Ut-Tkg"/>
+                                        <exclude reference="l37-nf-2eL"/>
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pfs-sD-czl">
+                                <rect key="frame" x="80" y="474" width="166" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Find Teammate">
+                                    <color key="titleColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="0ai-g6-4HN" kind="show" id="qhj-Av-FEh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2180,6 +2194,64 @@
                 <exit id="vGF-HT-bC3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6361" y="1373"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0gI-8c-SHm">
+            <objects>
+                <viewController id="0ai-g6-4HN" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="d2R-XA-2ch"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lbz-y9-kLD"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="anA-Hx-IA6">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xms-KG-LGb">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0RL-SI-q9o">
+                                        <rect key="frame" x="0.0" y="84" width="600" height="45"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utD-5Y-b0V" customClass="CustomSwitcher" customModule="Cteemo" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="utD-5Y-b0V" secondAttribute="trailing" constant="2" id="BKx-qc-vCS"/>
+                                            <constraint firstItem="utD-5Y-b0V" firstAttribute="leading" secondItem="0RL-SI-q9o" secondAttribute="leading" constant="2" id="E2f-po-f1x"/>
+                                            <constraint firstAttribute="height" constant="45" id="LQl-4H-rKQ"/>
+                                            <constraint firstItem="utD-5Y-b0V" firstAttribute="top" secondItem="0RL-SI-q9o" secondAttribute="top" constant="2" id="Mko-dk-WKM"/>
+                                            <constraint firstAttribute="bottom" secondItem="utD-5Y-b0V" secondAttribute="bottom" constant="2" id="TJ7-tW-duw"/>
+                                        </constraints>
+                                    </view>
+                                    <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3bE-ZA-MPI">
+                                        <rect key="frame" x="0.0" y="165" width="600" height="435"/>
+                                    </containerView>
+                                    <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hP-jX-8SR">
+                                        <rect key="frame" x="0.0" y="141" width="600" height="459"/>
+                                    </containerView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="1hP-jX-8SR" secondAttribute="trailing" id="0X8-yY-NvW"/>
+                                    <constraint firstItem="3bE-ZA-MPI" firstAttribute="leading" secondItem="Xms-KG-LGb" secondAttribute="leading" id="3hM-FW-hid"/>
+                                    <constraint firstAttribute="trailing" secondItem="0RL-SI-q9o" secondAttribute="trailing" id="XGU-AB-rPE"/>
+                                    <constraint firstItem="3bE-ZA-MPI" firstAttribute="top" secondItem="0RL-SI-q9o" secondAttribute="bottom" id="kYL-SX-AP8"/>
+                                    <constraint firstAttribute="trailing" secondItem="3bE-ZA-MPI" secondAttribute="trailing" id="nRy-f0-2LF"/>
+                                    <constraint firstItem="1hP-jX-8SR" firstAttribute="leading" secondItem="Xms-KG-LGb" secondAttribute="leading" id="pQ4-M1-hdR"/>
+                                    <constraint firstItem="1hP-jX-8SR" firstAttribute="top" secondItem="0RL-SI-q9o" secondAttribute="bottom" id="pan-Zx-LeL"/>
+                                    <constraint firstItem="0RL-SI-q9o" firstAttribute="leading" secondItem="Xms-KG-LGb" secondAttribute="leading" id="scG-8j-BE9"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z9M-Dw-6oU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7094" y="1293"/>
         </scene>
         <!--CREATE TEAM-->
         <scene sceneID="S1Y-3s-Tgk">
@@ -2348,17 +2420,17 @@
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="9KK-6D-s5j" firstAttribute="top" secondItem="M4Z-yE-JUv" secondAttribute="bottom" constant="20" id="497-8N-w24"/>
                             <constraint firstItem="OQP-Gp-9ol" firstAttribute="leading" secondItem="l3b-dI-OSP" secondAttribute="leading" id="4FY-Rg-T9I"/>
                             <constraint firstItem="UEp-9C-E24" firstAttribute="top" secondItem="9KK-6D-s5j" secondAttribute="bottom" id="5Om-qb-hyf"/>
-                            <constraint firstItem="vFb-Sf-obK" firstAttribute="top" secondItem="OQP-Gp-9ol" secondAttribute="bottom" id="6ys-Ti-lDh"/>
                             <constraint firstItem="UEp-9C-E24" firstAttribute="leading" secondItem="l3b-dI-OSP" secondAttribute="leading" id="Bft-4Q-g0p"/>
                             <constraint firstItem="9KK-6D-s5j" firstAttribute="leading" secondItem="l3b-dI-OSP" secondAttribute="leading" id="FJ1-Av-75e"/>
+                            <constraint firstItem="vFb-Sf-obK" firstAttribute="top" secondItem="OQP-Gp-9ol" secondAttribute="bottom" id="MRA-bZ-jGI"/>
                             <constraint firstAttribute="trailing" secondItem="OQP-Gp-9ol" secondAttribute="trailing" id="fKM-ER-rV0"/>
                             <constraint firstItem="OQP-Gp-9ol" firstAttribute="top" secondItem="9KK-6D-s5j" secondAttribute="bottom" id="hSE-SH-cme"/>
                             <constraint firstAttribute="trailing" secondItem="9KK-6D-s5j" secondAttribute="trailing" id="lse-SO-55G"/>
                             <constraint firstAttribute="trailing" secondItem="UEp-9C-E24" secondAttribute="trailing" id="ni3-Bq-yJ4"/>
-                            <constraint firstItem="vFb-Sf-obK" firstAttribute="top" secondItem="UEp-9C-E24" secondAttribute="bottom" id="pGw-BW-EIy"/>
+                            <constraint firstItem="vFb-Sf-obK" firstAttribute="top" secondItem="UEp-9C-E24" secondAttribute="bottom" id="qUh-3o-wS4"/>
+                            <constraint firstItem="9KK-6D-s5j" firstAttribute="top" secondItem="M4Z-yE-JUv" secondAttribute="bottom" constant="20" id="xgp-eU-oAe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Join a Team" id="ZwZ-yb-h7A"/>

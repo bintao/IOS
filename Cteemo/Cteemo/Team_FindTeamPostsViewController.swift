@@ -20,6 +20,8 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
     
     override func viewDidLoad() {
         resultTable.backgroundColor = UIColor.clearColor()
+       resultTable.delegate = self
+        resultTable.dataSource = self
         
     }
     override func viewDidAppear(animated: Bool) {
@@ -103,15 +105,16 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         captain.font = UIFont(name: "AvenirNext-Regular", size: 13)
         cell.addSubview(captain)
         
-        var contactCaptain = UIButton(frame: CGRectMake(self.view.frame.width - 60, 20, 40, 40))
-        contactCaptain.setImage(UIImage(named: "adddd"), forState: UIControlState.Normal)
-        contactCaptain.addTarget(self, action: "contactCap:", forControlEvents: UIControlEvents.TouchUpInside)
-        cell.addSubview(contactCaptain)
-        
         
         var joinTeam = UIButton(frame: CGRectMake(self.view.frame.width / 2, 80, self.view.frame.width / 2, 30))
         joinTeam.backgroundColor = self.navigationController!.view.tintColor!
         cell.addSubview(joinTeam)
+        
+         var contact = UIButton(frame: CGRectMake(0, 80, self.view.frame.width / 2, 30))
+        
+        contact.backgroundColor = self.navigationController!.view.tintColor!
+        
+        cell.addSubview(contact)
         
         
         var ccaptain = UILabel(frame: CGRectMake(0, 80, self.view.frame.width / 2, 30))

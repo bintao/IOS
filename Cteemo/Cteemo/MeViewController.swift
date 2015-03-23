@@ -65,15 +65,11 @@ class MeViewController: UIViewController  {
             
             self.navigationController?.pushViewController(chatViewController, animated: true)
         
-        
-        
-        
     }
     
     
     @IBAction func getlist(sender: AnyObject) {
         
-        //"b3rDNPQmJIpBeq1QXvNOez7ZGryb3Xip4jqmBYclOnCJR3FPmXnadpAdgB2RyT/oEB5/N5xrURN+Dp6+HsM1Qw=="
        
             var chatViewController : RCChatViewController = RCIM.sharedRCIM().createCustomerService("KEFU1426185510333", title: "cteemo", completion: nil)
         
@@ -89,6 +85,8 @@ class MeViewController: UIViewController  {
     
     
     @IBAction func group(sender: AnyObject) {
+     
+        
         
         
     }

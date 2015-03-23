@@ -1,7 +1,7 @@
 PODS:
   - MMProgressHUD (0.3.0)
   - RongCloudIMKit (1.4.1.1)
-  - SCLAlertView-Objective-C (0.5.9)
+  - SCLAlertView-Objective-C (0.6.1)
 
 DEPENDENCIES:
   - MMProgressHUD
@@ -11,6 +11,6 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   MMProgressHUD: a524179e2ece5ba76f5228f9368a6918f617510e
   RongCloudIMKit: 9f73ec4aba9bff5fb8185ea6996e94e1e10e40b2
-  SCLAlertView-Objective-C: 39e9c3a9135603f587ff2890217ed52a58bb0eab
+  SCLAlertView-Objective-C: da92da8bfd193d813e71b13ed11b6d5aa3b96cc3
 
 COCOAPODS: 0.35.0
