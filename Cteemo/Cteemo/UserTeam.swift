@@ -15,7 +15,7 @@ var TeamInfoGlobal: UserTeam = UserTeam()
 class UserTeam: NSObject{
     
     // User team
-    
+    var findplayer = false
     var teamName: String = ""
     var teamID : String = ""
     var team_isschool: String = ""

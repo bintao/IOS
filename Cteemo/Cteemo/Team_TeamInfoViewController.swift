@@ -138,6 +138,15 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         self.navigationController?.pushViewController(chatViewController, animated: true)
 
     }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "findteammate"{
+            
+            var controller: Team_JoinTeamViewController = segue.destinationViewController as Team_JoinTeamViewController
+            controller.join = true
+            
+        }
+    }
 
     /*
     // MARK: - Navigation

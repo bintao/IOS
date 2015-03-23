@@ -70,7 +70,6 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         if segue.identifier == "joined"{
             
             var controller: Tournament_joined = segue.destinationViewController as Tournament_joined
-            
             controller.gamenumber = self.gamenumber
             controller.url = Tournament.tournamentUrl[self.gamenumber] as String
             

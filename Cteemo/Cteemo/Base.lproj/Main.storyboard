@@ -2140,7 +2140,7 @@
                                     <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="0ai-g6-4HN" kind="show" id="qhj-Av-FEh"/>
+                                    <segue destination="blR-Dl-a0a" kind="show" identifier="findteammate" id="Jfk-nv-LO1"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2163,10 +2163,12 @@
                             <constraint firstItem="ve9-3K-VfH" firstAttribute="leading" secondItem="Wbv-cg-afh" secondAttribute="leading" id="aci-5f-4Fd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="smJ-cy-Ixv" secondAttribute="trailing" id="fuE-6J-qE4"/>
                             <constraint firstItem="ve9-3K-VfH" firstAttribute="bottom" secondItem="awa-X6-gY3" secondAttribute="bottom" id="fwo-dG-Bif"/>
+                            <constraint firstItem="chR-Zo-MaF" firstAttribute="top" secondItem="Pfs-sD-czl" secondAttribute="bottom" constant="80" id="hea-NM-JsI"/>
                             <constraint firstItem="chR-Zo-MaF" firstAttribute="top" secondItem="smJ-cy-Ixv" secondAttribute="bottom" constant="180" id="k8h-pa-znb"/>
                             <constraint firstItem="Xu1-kQ-cTq" firstAttribute="leading" secondItem="Wbv-cg-afh" secondAttribute="leadingMargin" id="mxH-FE-CEc"/>
                             <constraint firstItem="smJ-cy-Ixv" firstAttribute="leading" secondItem="Wbv-cg-afh" secondAttribute="leadingMargin" id="n2q-0Z-cde"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Xu1-kQ-cTq" secondAttribute="trailing" constant="-20" id="oIS-e6-LVy"/>
+                            <constraint firstAttribute="centerX" secondItem="Pfs-sD-czl" secondAttribute="centerX" id="vg3-rX-0eE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dwP-Q5-qV9">
@@ -2193,65 +2195,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX3-eO-xmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="vGF-HT-bC3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6361" y="1373"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="0gI-8c-SHm">
-            <objects>
-                <viewController id="0ai-g6-4HN" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="d2R-XA-2ch"/>
-                        <viewControllerLayoutGuide type="bottom" id="Lbz-y9-kLD"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="anA-Hx-IA6">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xms-KG-LGb">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0RL-SI-q9o">
-                                        <rect key="frame" x="0.0" y="84" width="600" height="45"/>
-                                        <subviews>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="utD-5Y-b0V" customClass="CustomSwitcher" customModule="Cteemo" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="45"/>
-                                            </view>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="utD-5Y-b0V" secondAttribute="trailing" constant="2" id="BKx-qc-vCS"/>
-                                            <constraint firstItem="utD-5Y-b0V" firstAttribute="leading" secondItem="0RL-SI-q9o" secondAttribute="leading" constant="2" id="E2f-po-f1x"/>
-                                            <constraint firstAttribute="height" constant="45" id="LQl-4H-rKQ"/>
-                                            <constraint firstItem="utD-5Y-b0V" firstAttribute="top" secondItem="0RL-SI-q9o" secondAttribute="top" constant="2" id="Mko-dk-WKM"/>
-                                            <constraint firstAttribute="bottom" secondItem="utD-5Y-b0V" secondAttribute="bottom" constant="2" id="TJ7-tW-duw"/>
-                                        </constraints>
-                                    </view>
-                                    <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3bE-ZA-MPI">
-                                        <rect key="frame" x="0.0" y="165" width="600" height="435"/>
-                                    </containerView>
-                                    <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1hP-jX-8SR">
-                                        <rect key="frame" x="0.0" y="141" width="600" height="459"/>
-                                    </containerView>
-                                </subviews>
-                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="1hP-jX-8SR" secondAttribute="trailing" id="0X8-yY-NvW"/>
-                                    <constraint firstItem="3bE-ZA-MPI" firstAttribute="leading" secondItem="Xms-KG-LGb" secondAttribute="leading" id="3hM-FW-hid"/>
-                                    <constraint firstAttribute="trailing" secondItem="0RL-SI-q9o" secondAttribute="trailing" id="XGU-AB-rPE"/>
-                                    <constraint firstItem="3bE-ZA-MPI" firstAttribute="top" secondItem="0RL-SI-q9o" secondAttribute="bottom" id="kYL-SX-AP8"/>
-                                    <constraint firstAttribute="trailing" secondItem="3bE-ZA-MPI" secondAttribute="trailing" id="nRy-f0-2LF"/>
-                                    <constraint firstItem="1hP-jX-8SR" firstAttribute="leading" secondItem="Xms-KG-LGb" secondAttribute="leading" id="pQ4-M1-hdR"/>
-                                    <constraint firstItem="1hP-jX-8SR" firstAttribute="top" secondItem="0RL-SI-q9o" secondAttribute="bottom" id="pan-Zx-LeL"/>
-                                    <constraint firstItem="0RL-SI-q9o" firstAttribute="leading" secondItem="Xms-KG-LGb" secondAttribute="leading" id="scG-8j-BE9"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="z9M-Dw-6oU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7094" y="1293"/>
+            <point key="canvasLocation" x="5898" y="542"/>
         </scene>
         <!--CREATE TEAM-->
         <scene sceneID="S1Y-3s-Tgk">
@@ -2377,7 +2321,7 @@
             </objects>
             <point key="canvasLocation" x="6743" y="384"/>
         </scene>
-        <!--Join a Team-->
+        <!--Team Join Team View Controller-->
         <scene sceneID="bpP-pN-ogk">
             <objects>
                 <viewController id="blR-Dl-a0a" customClass="Team_JoinTeamViewController" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -2433,7 +2377,7 @@
                             <constraint firstItem="9KK-6D-s5j" firstAttribute="top" secondItem="M4Z-yE-JUv" secondAttribute="bottom" constant="20" id="xgp-eU-oAe"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Join a Team" id="ZwZ-yb-h7A"/>
+                    <navigationItem key="navigationItem" id="ZwZ-yb-h7A"/>
                     <connections>
                         <outlet property="postView" destination="OQP-Gp-9ol" id="Hh2-sM-r3V"/>
                         <outlet property="searchView" destination="UEp-9C-E24" id="a9g-sF-Nj1"/>
@@ -2497,7 +2441,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUE-Xr-Mfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7393" y="355.5"/>
+            <point key="canvasLocation" x="7416" y="355.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4FT-0R-U4A">
@@ -2769,6 +2713,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WGx-hs-GOh"/>
+        <segue reference="Jfk-nv-LO1"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
 </document>

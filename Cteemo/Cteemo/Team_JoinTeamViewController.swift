@@ -17,17 +17,34 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
     @IBOutlet var searchView: UIView!
 
     var container : UIViewController!
-
+    var join  = false
     
     override func viewDidLoad() {
         self.postView.alpha = 1
         self.searchView.alpha = 0
+        
+        if join {
+            
+            self.navigationItem.title = "Find Teammate"
+            TeamInfoGlobal.findplayer = true
+       
+        }
+        else{
+            
+            self.navigationItem.title = "Join a Team"
+            
+            
+        }
+
+        
     }
     
     override func viewDidAppear(animated: Bool) {
         var choices = ["POSTS","SEARCH"]
+        
         switcher.setup(choices, colorSelected: self.navigationController!.view.tintColor!, colorDefault: UIColor.whiteColor())
         switcher.delegate = self
+        
     }
     
     func customSwitcherSwitched(switcher: CustomSwitcher) {
@@ -43,7 +60,7 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
             
             self.postView.alpha = 1
             self.searchView.alpha = 0
-
+            
             }
             , completion: {
                 (value: Bool) in
