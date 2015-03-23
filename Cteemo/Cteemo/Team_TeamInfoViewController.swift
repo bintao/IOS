@@ -44,7 +44,8 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         TeamInfoGlobal.uploadTeamInfo()
         navigation.title = TeamInfoGlobal.teamName
        
-
+        if TeamInfoGlobal.teamName != "" && TeamInfoGlobal.teamID != "" {
+        
         capTain.setImage(UserInfoGlobal.icon, forState: UIControlState.Normal)
         capTainName.text = UserInfoGlobal.name
         
@@ -78,6 +79,13 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
                 else {
                     self.teamicon.image = UIImage(named: "error.png")!
                 }})
+        }
+            
+        }
+        else{
+        
+            self.performSegueWithIdentifier("returnToTeam", sender: self)
+
         }
         
 

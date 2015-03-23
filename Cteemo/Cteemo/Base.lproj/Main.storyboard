@@ -1253,7 +1253,7 @@
                                 </connections>
                             </containerView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1Ak-9E-5oQ" firstAttribute="leading" secondItem="AN9-uh-Jld" secondAttribute="leading" id="2I9-DS-H6c"/>
                             <constraint firstItem="1Ak-9E-5oQ" firstAttribute="top" secondItem="AN9-uh-Jld" secondAttribute="top" id="45x-S5-b8z"/>
