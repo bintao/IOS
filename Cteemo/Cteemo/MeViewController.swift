@@ -17,19 +17,43 @@ class MeViewController: UIViewController  {
 
     @IBOutlet var usericon: UIImageView!
     
+    @IBOutlet var unreadmessage: UIButton!
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
         self.usericon.image = UserInfoGlobal.icon
         
         
-       
         // Do any additional setup after loading the view.
     }
     
     
     override func viewDidAppear(animated: Bool) {
         
+        var num = RCIM.sharedRCIM().totalUnreadCount
+        
+        if num < 99 && num > 0 {
+            
+            self.unreadmessage.imageView?.image = UIImage(named: "free button.png")!
+            unreadmessage.titleLabel?.text = "\(num)"
+            
+        }
+        else if num > 0{
+            
+            self.unreadmessage.imageView?.image = UIImage(named: "free button.png")!
+            unreadmessage.titleLabel?.text = "99"
+            
+        }
+        
+        self.usericon.image = UserInfoGlobal.icon
+        self.school.text = UserInfoGlobal.school
+        self.username.text = UserInfoGlobal.name
+        
+        
+        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
         
     }
 
@@ -45,11 +69,14 @@ class MeViewController: UIViewController  {
     
     func UIColorFromRGB(rgbValue: UInt) -> UIColor {
         return UIColor(
+            
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
             green: CGFloat((rgbValue & 0x00FF00) >> 8) / 255.0,
             blue: CGFloat(rgbValue & 0x0000FF) / 255.0,
             alpha: CGFloat(1.0)
+            
         )
+        
     }
 
 
@@ -65,12 +92,17 @@ class MeViewController: UIViewController  {
     
     @IBAction func getlist(sender: AnyObject) {
         
-       
+        
+        self.unreadmessage.titleLabel?.text = ""
+        self.unreadmessage.imageView?.image = nil
+        
         var list : RCChatListViewController =  RCIM.sharedRCIM().createConversationList { () -> Void in
-            println("sdsd")
+            
         }
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        
+        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).cleanbadge()
         
         self.navigationController?.pushViewController(list, animated: true)
         
@@ -93,6 +125,7 @@ class MeViewController: UIViewController  {
     
     @IBAction func customservers(sender: AnyObject) {
         
+        
         var chatViewController : RCChatViewController = RCIM.sharedRCIM().createCustomerService("KEFU1426185510333", title: "cteemo", completion: nil)
         
         UINavigationBar.appearance().tintColor = UserInfoGlobal.UIColorFromRGB(0xE74C3C)
@@ -101,18 +134,20 @@ class MeViewController: UIViewController  {
         
         self.navigationController?.pushViewController(chatViewController, animated: true)
         
-      
-        
-        
-        
     }
     
     
     @IBAction func log_out(sender: UIButton) {
         
         //clean all saved user data
-
-         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).logout()
+        
+        let alert1 = SCLAlertView()
+        alert1.addButton("logout", actionBlock:{ (Void) in
+            
+             ((self.parentViewController as UINavigationController).parentViewController as MainViewController).logout()
+            
+        })
+       alert1.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Log out CTeemo", subTitle: "Play tournament next time~ ",closeButtonTitle: "Cancel", duration: 0.0)
         
     }
     

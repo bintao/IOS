@@ -24,6 +24,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
     
     var tabbarShouldAppear = true
     var firstlogin = true
+    var groupcount = 0
     var count = 0
     var content : UIViewController!
     
@@ -39,12 +40,6 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         team.alpha = 0
         me.alpha = 0
         
-         var tabItem  = self.tabbar.items![2] as UITabBarItem
-        
-         count = RCIM.sharedRCIM().getUnreadCount(RCConversationType.onversationType_GROUP, targetId: "12")
-        
-        println(count)
-        tabItem.badgeValue = nil
         
         RCIM.sharedRCIM().setReceiveMessageDelegate(self)
         
@@ -57,16 +52,22 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
     func clearnteambadge(){
     
         var tabItem  = self.tabbar.items![2] as UITabBarItem
-        self.count = 0
+        self.groupcount = 0
         tabItem.badgeValue = nil
         
+    }
+    
+    func cleanbadge(){
+        
+        var tabItem  = self.tabbar.items![3] as UITabBarItem
+        self.count = 0
+        tabItem.badgeValue = nil
+    
     }
     
     
     // 融云得到用户头像
     func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!){
-        
-        println(userId)
         
         var manager = Manager.sharedInstance
         // Specifying the Headers we need
@@ -120,12 +121,30 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
                 dispatch_async(dispatch_get_main_queue(), {
-                    self.count = self.count + 1
+                    
+                     self.groupcount = self.groupcount + 1
                      var tabItem  = self.tabbar.items![2] as UITabBarItem
-                    tabItem.badgeValue = "\(self.count)"
+                     tabItem.badgeValue = "\(self.groupcount)"
+                    
                 })
             })
-           
+        
+        }
+            
+        else if message.targetId != "KEFU1426185510333"{
+        
+            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+            dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
+                dispatch_async(dispatch_get_main_queue(),{
+                  
+                    self.count = self.count + 1
+                    var tabItem  = self.tabbar.items![3] as UITabBarItem
+                    tabItem.badgeValue = "\(self.count)"
+                    
+                })
+            })
+        
+        
         }
         
         
