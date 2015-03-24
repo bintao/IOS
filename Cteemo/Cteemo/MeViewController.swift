@@ -10,18 +10,18 @@ import UIKit
 
 class MeViewController: UIViewController  {
 
-    @IBOutlet weak var logout: UIButton!
     
-    @IBOutlet var rong: UIButton!
-    
+    @IBOutlet var username: UILabel!
+   
+    @IBOutlet var school: UILabel!
 
+    @IBOutlet var usericon: UIImageView!
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        var img = UIImageView(image: UserInfoGlobal.icon)
-        img.frame = CGRectMake(100, 100, 100, 100)
-        self.view.addSubview(img)
+        self.usericon.image = UserInfoGlobal.icon
+        
         
        
         // Do any additional setup after loading the view.
@@ -54,52 +54,58 @@ class MeViewController: UIViewController  {
 
 
 
-    @IBAction func rongtest(sender: AnyObject) {
+    @IBAction func myinfo(sender: AnyObject) {
         
         
-            var chatViewController : RCChatViewController = RCIM.sharedRCIM().createPrivateChat("17", title: "self answer", completion:nil)
         
-        UINavigationBar.appearance().tintColor = UserInfoGlobal.UIColorFromRGB(0xE74C3C)
-        
-            ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
-            
-            self.navigationController?.pushViewController(chatViewController, animated: true)
         
     }
+   
     
     
     @IBAction func getlist(sender: AnyObject) {
         
        
-            var chatViewController : RCChatViewController = RCIM.sharedRCIM().createCustomerService("KEFU1426185510333", title: "cteemo", completion: nil)
-        
-        UINavigationBar.appearance().tintColor = UserInfoGlobal.UIColorFromRGB(0xE74C3C)
-        
-            ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
-            
-            self.navigationController?.pushViewController(chatViewController, animated: true)
-        
-        
-    }
-    
-    
-    
-    @IBAction func group(sender: AnyObject) {
-     
-        
-       
-        
         var list : RCChatListViewController =  RCIM.sharedRCIM().createConversationList { () -> Void in
             println("sdsd")
         }
         
-         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
         
         self.navigationController?.pushViewController(list, animated: true)
         
         
     }
     
+
+    
+    @IBAction func aboutCteemo(sender: AnyObject) {
+        
+        
+        
+    }
+    
+    @IBAction func facebookshare(sender: AnyObject) {
+        
+        
+        
+    }
+    
+    @IBAction func customservers(sender: AnyObject) {
+        
+        var chatViewController : RCChatViewController = RCIM.sharedRCIM().createCustomerService("KEFU1426185510333", title: "cteemo", completion: nil)
+        
+        UINavigationBar.appearance().tintColor = UserInfoGlobal.UIColorFromRGB(0xE74C3C)
+        
+        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        
+        self.navigationController?.pushViewController(chatViewController, animated: true)
+        
+      
+        
+        
+        
+    }
     
     
     @IBAction func log_out(sender: UIButton) {
