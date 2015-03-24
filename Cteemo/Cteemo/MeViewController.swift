@@ -87,6 +87,15 @@ class MeViewController: UIViewController  {
     @IBAction func group(sender: AnyObject) {
      
         
+       
+        
+        var list : RCChatListViewController =  RCIM.sharedRCIM().createConversationList { () -> Void in
+            println("sdsd")
+        }
+        
+         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        
+        self.navigationController?.pushViewController(list, animated: true)
         
         
     }

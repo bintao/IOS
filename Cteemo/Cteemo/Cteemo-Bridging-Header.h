@@ -10,5 +10,6 @@
 #import "RCIM.h"
 #import "RCChatViewController.h"
 
+#import "RCChatListViewController.h"
 #import "MMProgressHUD.h"
 #import "SCLAlertView.h"

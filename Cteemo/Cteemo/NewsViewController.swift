@@ -35,7 +35,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        /*
         menu.target = self
         menu.action = Selector("clickMenu:")
         newsArr = DataManager.getNewsInfo()
@@ -46,6 +46,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         //imageScrollimageScrollView.contentSize = image.size
         updateNews(0)
+    */
     }
     
     //update the data of the news
