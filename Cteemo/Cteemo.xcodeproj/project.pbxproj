@@ -176,6 +176,7 @@
 		A1B8E9631A7B20F2009BE011 /* OK.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9561A7B20F2009BE011 /* OK.png */; };
 		A1BECE471ABB7D5B00CDE9A6 /* groupChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BECE461ABB7D5B00CDE9A6 /* groupChatView.swift */; };
 		A1BF3BFA1AAC06FC002A900C /* libPods-RongCloudIMKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BF3BF91AAC06FC002A900C /* libPods-RongCloudIMKit.a */; };
+		A1C885D91AC29CF500AA7888 /* Team_playerpost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C885D81AC29CF500AA7888 /* Team_playerpost.swift */; };
 		A1CEFEA21AABE71D002D5956 /* tableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CEFEA11AABE71D002D5956 /* tableCell.xib */; };
 		A1DCEAF01AAED19500DE2DD5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DCEAEF1AAED19500DE2DD5 /* QuartzCore.framework */; };
 		A1E57CE91AB2D8DA00FDF193 /* chuishi.png in Resources */ = {isa = PBXBuildFile; fileRef = A1E57CE81AB2D8DA00FDF193 /* chuishi.png */; };
@@ -476,6 +477,7 @@
 		A1B8E9561A7B20F2009BE011 /* OK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OK.png; sourceTree = "<group>"; };
 		A1BECE461ABB7D5B00CDE9A6 /* groupChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupChatView.swift; sourceTree = "<group>"; };
 		A1BF3BF91AAC06FC002A900C /* libPods-RongCloudIMKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-RongCloudIMKit.a"; path = "Pods/build/Debug-iphoneos/libPods-RongCloudIMKit.a"; sourceTree = "<group>"; };
+		A1C885D81AC29CF500AA7888 /* Team_playerpost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_playerpost.swift; sourceTree = "<group>"; };
 		A1CEFEA11AABE71D002D5956 /* tableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tableCell.xib; sourceTree = "<group>"; };
 		A1DCEAEF1AAED19500DE2DD5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A1E57CE81AB2D8DA00FDF193 /* chuishi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chuishi.png; sourceTree = "<group>"; };
@@ -526,6 +528,7 @@
 				42855BA71A84803000EB9546 /* Team_CreateTeamViewController.swift */,
 				A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */,
 				4260F3FB1A886D6000A6F39D /* Team_TeamInfoViewController.swift */,
+				A1C885D81AC29CF500AA7888 /* Team_playerpost.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -1293,6 +1296,7 @@
 				42B74FC91A812416008B575C /* MeViewController.swift in Sources */,
 				42B85A121A74888500FD4642 /* Login_SchoolAndPhoto.swift in Sources */,
 				A11FED831ABD4D060075B627 /* RAMBounceAnimation.swift in Sources */,
+				A1C885D91AC29CF500AA7888 /* Team_playerpost.swift in Sources */,
 				4267D82F1A8011D20054E800 /* ImageProcessor.swift in Sources */,
 				421D565C1A8339D2005E56F0 /* Team_FindTeamViewController.swift in Sources */,
 				42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */,

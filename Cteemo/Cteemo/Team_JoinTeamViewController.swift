@@ -16,14 +16,13 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
     @IBOutlet var postbutton: UIButton!
     @IBOutlet var postView: UIView!
     @IBOutlet var searchView: UIView!
+    @IBOutlet var playerView: UIView!
 
     var container : UIViewController!
     var join  = false
     
     override func viewDidLoad() {
-        self.postView.alpha = 1
-        self.searchView.alpha = 0
-        
+       
         if join {
             
             self.navigationItem.title = "Find Teammate"
@@ -40,8 +39,12 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
     }
     
     override func viewDidAppear(animated: Bool) {
-        var choices = ["POSTS","SEARCH"]
+        var choices = ["TEAMS","PLAYERS","SEARCH"]
         
+        self.postView.alpha = 1
+        self.searchView.alpha = 0
+        self.playerView.alpha = 0
+       
         switcher.setup(choices, colorSelected: self.navigationController!.view.tintColor!, colorDefault: UIColor.whiteColor())
         switcher.delegate = self
         
@@ -52,7 +55,13 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
             postSelect()
             postbutton.alpha = 1
             
-        }else if switcher.chosenBox == 1{
+        }
+        else if switcher.chosenBox == 1{
+        
+            playerSelect()
+            postbutton.alpha = 1
+        }
+        else if switcher.chosenBox == 2{
             searchSelect()
             postbutton.alpha = 0
         }
@@ -63,6 +72,7 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
             
             self.postView.alpha = 1
             self.searchView.alpha = 0
+           self.playerView.alpha = 0
             
             }
             , completion: {
@@ -71,6 +81,19 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
         })
     }
     
+    func playerSelect(){
+        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
+            
+            self.postView.alpha = 0
+            self.searchView.alpha = 0
+            self.playerView.alpha = 1
+            
+            }
+            , completion: {
+                (value: Bool) in
+                
+        })
+    }
     
     func searchSelect(){
 
@@ -78,6 +101,7 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
             
             self.postView.alpha = 0
             self.searchView.alpha = 1
+            self.playerView.alpha = 0
             
             }
             , completion: {

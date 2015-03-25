@@ -21,6 +21,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet var school : UITextField!
     
     var sourceImage: UIImage!
+    var name: String = ""
     
     @IBOutlet var teemoSpeaker : UIView!
     @IBOutlet var messageDisplay : UITextView!
@@ -56,7 +57,9 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         if (UserInfoGlobal.accessToken != "" && lolName.text != "" && school.text != "" ){
             if (LolAPIGlobal.lolID != ""){
                 
-                var req = ARequest(prefix: "profile", method: requestType.POST, parameters: ["username": UserInfoGlobal.name, "school":school.text,"lolID":lolName.text])
+                println(UserInfoGlobal.name)
+                
+                var req = ARequest(prefix: "profile", method: requestType.POST, parameters: ["username": name, "school":school.text,"lolID":lolName.text])
                 req.delegate = self
                 req.sendRequestWithToken(UserInfoGlobal.accessToken)
                 

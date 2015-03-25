@@ -16,6 +16,7 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
     @IBOutlet var resultTable : UITableView!
     
     var teams: [AnyObject] = [AnyObject]()
+    var players : [AnyObject] = [AnyObject]()
     
     
     override func viewDidLoad() {
@@ -37,12 +38,13 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         ]
         
         startLoading()
-        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/team_post")
+        
+        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/team_post", parameters: ["page": 0])
             .responseJSON { (_, _, JSON, _) in
                  self.stopLoading()
                 if ((JSON as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
                   
-                    
+        
                 }
                 else if(JSON != nil){
                    println(JSON)
@@ -52,7 +54,6 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
                     self.gotResult(result)
                     
                 }
-               
                 
         }
     }

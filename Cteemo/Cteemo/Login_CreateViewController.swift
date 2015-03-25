@@ -205,7 +205,17 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         self.loading.stopAnimating()
     }
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "addSchoolAndPhoto"{
+            
+            var controller: Login_SchoolAndPhoto = segue.destinationViewController as Login_SchoolAndPhoto
+            controller.name = self.nickname.text
+            
+        }
+        
+    }
+
     
     
     
