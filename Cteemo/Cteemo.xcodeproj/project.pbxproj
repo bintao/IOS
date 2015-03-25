@@ -148,6 +148,7 @@
 		A14422441AA5925900A7BF6C /* result2.png in Resources */ = {isa = PBXBuildFile; fileRef = A14422421AA5925900A7BF6C /* result2.png */; };
 		A14422451AA5925900A7BF6C /* shoubin.png in Resources */ = {isa = PBXBuildFile; fileRef = A14422431AA5925900A7BF6C /* shoubin.png */; };
 		A14E3C211A9B21F8003C837F /* Bracket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E3C201A9B21F8003C837F /* Bracket.swift */; };
+		A15D187C1AC233EB00C7E83E /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = A15D187B1AC233EB00C7E83E /* post.png */; };
 		A16023F61A87356E00CFAACA /* Login_lolID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16023F51A87356E00CFAACA /* Login_lolID.swift */; };
 		A171F9271AA931FC00CEC4D5 /* SwiftyJSON.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = A13811C51AA8182400E8293D /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A18BF4261AA2F7BD000678F3 /* Tournament_joined.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */; };
@@ -446,6 +447,7 @@
 		A14422421AA5925900A7BF6C /* result2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = result2.png; sourceTree = "<group>"; };
 		A14422431AA5925900A7BF6C /* shoubin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoubin.png; sourceTree = "<group>"; };
 		A14E3C201A9B21F8003C837F /* Bracket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bracket.swift; sourceTree = "<group>"; };
+		A15D187B1AC233EB00C7E83E /* post.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = post.png; sourceTree = "<group>"; };
 		A16023F51A87356E00CFAACA /* Login_lolID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_lolID.swift; sourceTree = "<group>"; };
 		A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament_joined.swift; sourceTree = "<group>"; };
 		A18BF42B1AA2F8EC000678F3 /* Email_Password Page_Bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email_Password Page_Bg.png"; sourceTree = "<group>"; };
@@ -881,6 +883,7 @@
 			isa = PBXGroup;
 			children = (
 				426CD2EB1A89649D0042F4F7 /* config.png */,
+				A15D187B1AC233EB00C7E83E /* post.png */,
 				42ABFAC31A8A869000DC5D1F /* minussss.png */,
 				424AF75D1A872DA20033B863 /* adddd.png */,
 				42855BA31A847CCC00EB9546 /* CAMERA.png */,
@@ -1209,6 +1212,7 @@
 				A13918E51AA2B2D300CD232A /* juxing.png in Resources */,
 				42B85A2B1A748CDB00FD4642 /* SUBMIT.png in Resources */,
 				42B859F71A74840F00FD4642 /* Images.xcassets in Resources */,
+				A15D187C1AC233EB00C7E83E /* post.png in Resources */,
 				A13919271AA2C21D00CD232A /* win button_.png in Resources */,
 				42B85A281A748CDB00FD4642 /* lock1.png in Resources */,
 				A13919091AA2C21D00CD232A /* 5V5框.png in Resources */,

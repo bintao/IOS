@@ -35,7 +35,9 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
 
     }
     override func viewDidAppear(animated: Bool) {
+        
         var choices = ["SCHOOL","PUBLIC"]
+        
         schoolPublicIn.setup(choices, colorSelected: self.navigationController!.view.tintColor!, colorDefault: UIColor.whiteColor())
         
         if TeamInfoGlobal.teamicon != nil{
@@ -63,7 +65,7 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
             if (result["message"] as String).rangeOfString("Tried to save")?.isEmpty != nil{
             
                      let alert = SCLAlertView()
-                alert.showError(self, title: "Team name exised", subTitle: "Please enter team name again", closeButtonTitle: "ok", duration: 0.0)
+                alert.showError(self.parentViewController?.parentViewController, title: "Team name exised", subTitle: "Please enter team name again", closeButtonTitle: "ok", duration: 0.0)
                 
             
             }

@@ -73,7 +73,7 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80
+        return 110
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -107,12 +107,12 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         
         
         var joinTeam = UIButton(frame: CGRectMake(self.view.frame.width / 2, 80, self.view.frame.width / 2, 30))
-        joinTeam.backgroundColor = self.navigationController!.view.tintColor!
+        joinTeam.backgroundColor = UserInfoGlobal.UIColorFromRGB(0xE74A52)
         cell.addSubview(joinTeam)
         
          var contact = UIButton(frame: CGRectMake(0, 80, self.view.frame.width / 2, 30))
         
-        contact.backgroundColor = self.navigationController!.view.tintColor!
+        contact.backgroundColor = UserInfoGlobal.UIColorFromRGB(0xE74A52)
         
         cell.addSubview(contact)
         
@@ -130,7 +130,7 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         join.textColor = UIColor.whiteColor()
         join.font = UIFont(name: "AvenirNext-Medium", size: 17)
         cell.addSubview(join)
-
+        
         return cell
     }
     

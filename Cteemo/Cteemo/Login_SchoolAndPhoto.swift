@@ -111,7 +111,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         }
         
         else if prefix == "upload_profile_icon"{
-        
+    
         println(result)
         
         }

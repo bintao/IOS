@@ -13,6 +13,7 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
     
     @IBOutlet var switcher: CustomSwitcher!
 
+    @IBOutlet var postbutton: UIButton!
     @IBOutlet var postView: UIView!
     @IBOutlet var searchView: UIView!
 
@@ -33,7 +34,6 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
             
             self.navigationItem.title = "Join a Team"
             
-            
         }
 
         
@@ -50,8 +50,11 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
     func customSwitcherSwitched(switcher: CustomSwitcher) {
         if switcher.chosenBox == 0{
             postSelect()
+            postbutton.alpha = 1
+            
         }else if switcher.chosenBox == 1{
             searchSelect()
+            postbutton.alpha = 0
         }
     }
     

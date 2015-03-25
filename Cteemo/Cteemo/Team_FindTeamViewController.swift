@@ -44,7 +44,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
                 var req = Alamofire.request(.GET, "http://54.149.235.253:5000/search_profile", parameters: [ "username":searchBar.text])
                     .responseJSON { (_, _, JSON, _) in
                         self.stopLoading()
-                        
+                    
                         println(JSON)
                         if ((JSON as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
                             

@@ -45,8 +45,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     func gotResult(prefix: String, result: AnyObject) {
 
         if(prefix == "my_team/lol" ){
-        
-        println(result)
             
        if(result["id"]?  != nil ){
             TeamInfoGlobal.gotResult(result as [String : AnyObject])
