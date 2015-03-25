@@ -149,6 +149,8 @@
 		A14422451AA5925900A7BF6C /* shoubin.png in Resources */ = {isa = PBXBuildFile; fileRef = A14422431AA5925900A7BF6C /* shoubin.png */; };
 		A14E3C211A9B21F8003C837F /* Bracket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E3C201A9B21F8003C837F /* Bracket.swift */; };
 		A15D187C1AC233EB00C7E83E /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = A15D187B1AC233EB00C7E83E /* post.png */; };
+		A15D188A1AC261E400C7E83E /* Teampostview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D18891AC261E400C7E83E /* Teampostview.swift */; };
+		A15D188C1AC2632D00C7E83E /* postsomething.png in Resources */ = {isa = PBXBuildFile; fileRef = A15D188B1AC2632D00C7E83E /* postsomething.png */; };
 		A16023F61A87356E00CFAACA /* Login_lolID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16023F51A87356E00CFAACA /* Login_lolID.swift */; };
 		A171F9271AA931FC00CEC4D5 /* SwiftyJSON.framework in Copy Framework */ = {isa = PBXBuildFile; fileRef = A13811C51AA8182400E8293D /* SwiftyJSON.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		A18BF4261AA2F7BD000678F3 /* Tournament_joined.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */; };
@@ -448,6 +450,8 @@
 		A14422431AA5925900A7BF6C /* shoubin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoubin.png; sourceTree = "<group>"; };
 		A14E3C201A9B21F8003C837F /* Bracket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bracket.swift; sourceTree = "<group>"; };
 		A15D187B1AC233EB00C7E83E /* post.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = post.png; sourceTree = "<group>"; };
+		A15D18891AC261E400C7E83E /* Teampostview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teampostview.swift; sourceTree = "<group>"; };
+		A15D188B1AC2632D00C7E83E /* postsomething.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postsomething.png; sourceTree = "<group>"; };
 		A16023F51A87356E00CFAACA /* Login_lolID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_lolID.swift; sourceTree = "<group>"; };
 		A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament_joined.swift; sourceTree = "<group>"; };
 		A18BF42B1AA2F8EC000678F3 /* Email_Password Page_Bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email_Password Page_Bg.png"; sourceTree = "<group>"; };
@@ -515,6 +519,7 @@
 			isa = PBXGroup;
 			children = (
 				42B74FC11A812416008B575C /* TeamViewController.swift */,
+				A15D18891AC261E400C7E83E /* Teampostview.swift */,
 				421D565B1A8339D2005E56F0 /* Team_FindTeamViewController.swift */,
 				42855B9C1A8459A600EB9546 /* Team_JoinTeamViewController.swift */,
 				42855BA11A846C0000EB9546 /* Team_FindTeamPostsViewController.swift */,
@@ -675,6 +680,7 @@
 				A18BF42A1AA2F8DF000678F3 /* lollog */,
 				A13918E61AA2C11B00CD232A /* Tournament */,
 				A13918E41AA2B2D300CD232A /* juxing.png */,
+				A15D188B1AC2632D00C7E83E /* postsomething.png */,
 				A18DF20A1ABE2317002B354F /* email2.png */,
 				A13918DF1AA2B26500CD232A /* annie.jpg */,
 				A1EB12081A99277900FC8388 /* error.png */,
@@ -1173,6 +1179,7 @@
 				A13919231AA2C21D00CD232A /* teemo with words icons.png in Resources */,
 				42B859FA1A74840F00FD4642 /* LaunchScreen.xib in Resources */,
 				A12405A51AA9688100B5B992 /* info.png in Resources */,
+				A15D188C1AC2632D00C7E83E /* postsomething.png in Resources */,
 				42B85A161A7489CF00FD4642 /* loading_page.png in Resources */,
 				A139191F1AA2C21D00CD232A /* red button 大.png in Resources */,
 				A1F3AA611AB1753F00CD5ACE /* checkin.png in Resources */,
@@ -1319,6 +1326,7 @@
 				42B0A3371A898BD200EA908C /* AFHTTPRequestOperation.m in Sources */,
 				A11FED871ABD4D060075B627 /* RAMTransitionItemAnimation.swift in Sources */,
 				A13811D51AA8E9F900E8293D /* tournamentViewCell.swift in Sources */,
+				A15D188A1AC261E400C7E83E /* Teampostview.swift in Sources */,
 				42B85A181A748B2E00FD4642 /* Login_SchoolSearchViewController.swift in Sources */,
 				42855BA21A846C0000EB9546 /* Team_FindTeamPostsViewController.swift in Sources */,
 				A12FDD8A1A85EF9B00DF278F /* Team_AddPhoto.swift in Sources */,

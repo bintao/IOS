@@ -86,5 +86,12 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
         })
     }
     
+    @IBAction func TeamJoinview(segue : UIStoryboardSegue) {
+    
+        
+        
+    }
+
+    
     
 }
