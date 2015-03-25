@@ -240,6 +240,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
             }
         
         }
+        
         else if (teams[sender.tag] as? [String: AnyObject])?["teamName"] != nil{
         
         var teamname = (teams[sender.tag] as [String: AnyObject])["teamName"] as String
@@ -255,8 +256,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
             }
             
         alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Join Team request", subTitle: "I want to be part of " + teamname,closeButtonTitle: "Cancel", duration: 0.0)
-       
-        
+    
         }
         
       

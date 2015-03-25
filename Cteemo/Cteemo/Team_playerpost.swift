@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 
-class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDelegate,RequestResultDelegate {
 
     
     @IBOutlet var resultTable: UITableView!
@@ -142,39 +142,98 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         
         var joinTeam = UIButton(frame: CGRectMake(self.view.frame.width / 2, 80, self.view.frame.width / 2, 30))
-        joinTeam.backgroundColor = UIColor.whiteColor()
+          joinTeam.setBackgroundImage(UIImage(named: "postbu.png")!, forState: UIControlState())
+        
+        joinTeam.addTarget(self, action: "invite:", forControlEvents: UIControlEvents.TouchUpInside)
+        joinTeam.tag = indexPath.row
         cell.addSubview(joinTeam)
         
         var contact = UIButton(frame: CGRectMake(0, 80, self.view.frame.width / 2, 30))
         
-        contact.backgroundColor = UIColor.whiteColor()
-        
+        contact.setBackgroundImage(UIImage(named: "postsomething.png")!, forState: UIControlState())
+        contact.addTarget(self, action: "contactplayer:", forControlEvents: UIControlEvents.TouchUpInside)
+         contact.tag = indexPath.row
         cell.addSubview(contact)
         
         
         var ccaptain = UILabel(frame: CGRectMake(0, 80, self.view.frame.width / 2, 30))
         ccaptain.text = "Contact Player"
         ccaptain.textAlignment = NSTextAlignment.Center
-        ccaptain.textColor = UserInfoGlobal.UIColorFromRGB(0xE74A52)
+        ccaptain.textColor = UIColor.whiteColor()
         ccaptain.font = UIFont(name: "AvenirNext-Medium", size: 17)
         cell.addSubview(ccaptain)
         
         var join = UILabel(frame: CGRectMake(self.view.frame.width / 2, 80, self.view.frame.width / 2, 30))
         join.text = "Invite him !!"
         join.textAlignment = NSTextAlignment.Center
-        join.textColor = UserInfoGlobal.UIColorFromRGB(0xE74A52)
+        join.textColor = UIColor.whiteColor()
         join.font = UIFont(name: "AvenirNext-Medium", size: 17)
         cell.addSubview(join)
         
         return cell
     }
     
-    func contactCap(sender : AnyObject){
+    
+    
+    
+    func contactplayer(sender : AnyObject){
         
+        if ((teams[sender.tag] as? [String: AnyObject])?["user_profile"] as? [String : AnyObject])?["id"] != nil {
+            
+            var id = ((teams[sender.tag] as [String: AnyObject])["user_profile"] as [String : AnyObject])["id"]  as String
+            
+            var name = ((teams[sender.tag] as [String: AnyObject])["user_profile"] as [String : AnyObject])["username"]  as String
+            
+            var content = (teams[sender.tag] as [String: AnyObject])["content"] as String
+            
+          
+            println(sender.tag)
+
+            
+            var chatViewController : RCChatViewController = RCIM.sharedRCIM().createPrivateChat(id, title: name , completion: nil)
+            
+            self.navigationController?.pushViewController(chatViewController, animated: true)
+            
+            
+        }
+
+
+    }
+    
+    func invite(sender : AnyObject){
+        
+        
+        if ((teams[sender.tag] as? [String: AnyObject])?["user_profile"] as? [String : AnyObject])?["id"] != nil {
+            
+            var username = ""
+            
+            var id = ((teams[sender.tag] as [String: AnyObject])["user_profile"] as [String : AnyObject])["id"] as String
+            
+            if (teams[sender.tag] as? [String: AnyObject])?["username"] != nil{
+                username = (teams[sender.tag] as [String: AnyObject])["username"] as String
+            }
+            let alert = SCLAlertView()
+            alert.addButton("Sent Invite!"){
+                self.startLoading()
+                var req = ARequest(prefix: "manage_team/lol", method: requestType.POST, parameters: ["profileID": id])
+                req.delegate = self
+                req.sendRequestWithToken(UserInfoGlobal.accessToken)
+                self.stopLoading()
+                
+            }
+            
+            alert.showCustom(self.parentViewController?.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Invite request", subTitle: "I want to invite " + username,closeButtonTitle: "Cancel", duration: 0.0)
+            
+        }
         
         
     }
     
+    func gotResult(prefix: String, result: AnyObject) {
+        
+        
+            println(result)
+    }
     
     //loading view display while login
     func startLoading(){

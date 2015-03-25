@@ -34,16 +34,16 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
             self.navigationItem.title = "Join a Team"
             
         }
-
+        self.postView.alpha = 1
+        self.searchView.alpha = 0
+        self.playerView.alpha = 0
         
     }
     
     override func viewDidAppear(animated: Bool) {
         var choices = ["TEAMS","PLAYERS","SEARCH"]
         
-        self.postView.alpha = 1
-        self.searchView.alpha = 0
-        self.playerView.alpha = 0
+        
        
         switcher.setup(choices, colorSelected: self.navigationController!.view.tintColor!, colorDefault: UIColor.whiteColor())
         switcher.delegate = self

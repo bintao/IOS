@@ -109,6 +109,7 @@
 		A13811D81AA9016500E8293D /* hearthstone.png in Resources */ = {isa = PBXBuildFile; fileRef = A13811D61AA9016500E8293D /* hearthstone.png */; };
 		A13811D91AA9016500E8293D /* lol.png in Resources */ = {isa = PBXBuildFile; fileRef = A13811D71AA9016500E8293D /* lol.png */; };
 		A13811DB1AA902C400E8293D /* Dota2.png in Resources */ = {isa = PBXBuildFile; fileRef = A13811DA1AA902C400E8293D /* Dota2.png */; };
+		A1385AE71AC361A80061FBCC /* postbu.png in Resources */ = {isa = PBXBuildFile; fileRef = A1385AE61AC361A80061FBCC /* postbu.png */; };
 		A13918E01AA2B26500CD232A /* annie.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A13918DF1AA2B26500CD232A /* annie.jpg */; };
 		A13918E51AA2B2D300CD232A /* juxing.png in Resources */ = {isa = PBXBuildFile; fileRef = A13918E41AA2B2D300CD232A /* juxing.png */; };
 		A13919081AA2C21D00CD232A /* 3v3 black button.png in Resources */ = {isa = PBXBuildFile; fileRef = A13918E71AA2C21D00CD232A /* 3v3 black button.png */; };
@@ -411,6 +412,7 @@
 		A13811D61AA9016500E8293D /* hearthstone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hearthstone.png; sourceTree = "<group>"; };
 		A13811D71AA9016500E8293D /* lol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lol.png; sourceTree = "<group>"; };
 		A13811DA1AA902C400E8293D /* Dota2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Dota2.png; sourceTree = "<group>"; };
+		A1385AE61AC361A80061FBCC /* postbu.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = postbu.png; sourceTree = "<group>"; };
 		A13918DF1AA2B26500CD232A /* annie.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = annie.jpg; sourceTree = "<group>"; };
 		A13918E41AA2B2D300CD232A /* juxing.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = juxing.png; sourceTree = "<group>"; };
 		A13918E71AA2C21D00CD232A /* 3v3 black button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "3v3 black button.png"; sourceTree = "<group>"; };
@@ -684,6 +686,7 @@
 				A13918E61AA2C11B00CD232A /* Tournament */,
 				A13918E41AA2B2D300CD232A /* juxing.png */,
 				A15D188B1AC2632D00C7E83E /* postsomething.png */,
+				A1385AE61AC361A80061FBCC /* postbu.png */,
 				A18DF20A1ABE2317002B354F /* email2.png */,
 				A13918DF1AA2B26500CD232A /* annie.jpg */,
 				A1EB12081A99277900FC8388 /* error.png */,
@@ -1200,6 +1203,7 @@
 				A1B8E95F1A7B20F2009BE011 /* createTeam.png in Resources */,
 				42ABFAC41A8A869000DC5D1F /* minussss.png in Resources */,
 				A139191C1AA2C21D00CD232A /* next button(black).png in Resources */,
+				A1385AE71AC361A80061FBCC /* postbu.png in Resources */,
 				42041AE51A81592600623C70 /* left.png in Resources */,
 				A1F3AA601AB1753F00CD5ACE /* chat.png in Resources */,
 				42B85A2D1A748D4E00FD4642 /* arrowTurned.png in Resources */,
