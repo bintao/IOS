@@ -113,6 +113,8 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         
         if TeamInfoGlobal.findplayer {
             
+             if (teams[indexPath.row] as? [String: AnyObject])?["username"]? != nil{
+            
             if !((teams[indexPath.row] as? [String: AnyObject])?["profile_icon"]? is NSNull){
                 
             iconurl = (teams[indexPath.row] as [String: AnyObject])["profile_icon"] as String
@@ -128,13 +130,15 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
             
             }
             
-            if (teams[indexPath.row] as? [String: AnyObject])?["username"]? != nil{
+           
             name =  (teams[indexPath.row] as [String: AnyObject])["username"] as String
             }
             
             
             }
-        else {
+            
+        else
+        {
             if  (teams[indexPath.row] as? [String: AnyObject])?["teamIcon"] != nil {
               
                 

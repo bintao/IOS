@@ -24,14 +24,19 @@ class MeViewController: UIViewController  {
         
         super.viewDidLoad()
         
-        self.usericon.image = UserInfoGlobal.icon
-        
+    
         
         // Do any additional setup after loading the view.
     }
     
     
     override func viewDidAppear(animated: Bool) {
+        
+        ImageLoader.sharedLoader.imageForUrl(UserInfoGlobal.profile_icon_Link, completionHandler:{(image: UIImage?, url: String) in
+            if image? != nil {
+                self.usericon.image = image
+            }
+        })
         
         var num = RCIM.sharedRCIM().totalUnreadCount
         

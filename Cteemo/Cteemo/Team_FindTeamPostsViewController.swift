@@ -16,7 +16,6 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
     @IBOutlet var resultTable : UITableView!
     
     var teams: [AnyObject] = [AnyObject]()
-    var players : [AnyObject] = [AnyObject]()
     
     
     override func viewDidLoad() {
@@ -79,6 +78,22 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        var iconurl :String = ""
+        var username :String = ""
+        
+        if ((teams[indexPath.row] as? [String: AnyObject])?["user_profile"] as? [String: AnyObject])?["profile_icon"]? != nil
+        {
+            
+            iconurl = ((teams[indexPath.row] as [String: AnyObject])["user_profile"] as [String: AnyObject])["profile_icon"] as String
+            if !(((teams[indexPath.row] as? [String: AnyObject])?["user_profile"] as? [String: AnyObject])?["username"]? is NSNull){
+                
+                username = ((teams[indexPath.row] as [String: AnyObject])["user_profile"] as [String: AnyObject])["username"] as String
+                
+            }
+
+            
+        }
+        
         
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         cell.selectionStyle = UITableViewCellSelectionStyle.None
@@ -87,7 +102,16 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         backButton.setImage(UIImage(named: "white"), forState: UIControlState.Normal)
         cell.addSubview(backButton)
         
-        var cellIcon = UIImageView(image: UIImage(named: "Forma 1"))
+        var cellIcon = UIImageView(image: nil)
+        
+        ImageLoader.sharedLoader.imageForUrl(iconurl, completionHandler:{(image: UIImage?, url: String) in
+            if image? != nil {
+                cellIcon.image = image
+            }else{
+                
+                cellIcon.image = UIImage(named: "Forma 1")
+            }
+        })
         cellIcon.frame = CGRectMake(10, 10, 60, 60)
         cell.addSubview(cellIcon)
         
@@ -99,21 +123,20 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         
         
         var captain = UILabel(frame: CGRectMake(85, 45, 200, 27))
-        var name = ((teams[indexPath.row] as [String: AnyObject])["user_profile"] as [String: AnyObject])["username"] as String
         
-        captain.text = "Captain: " + name
+        captain.text = "Captain: " + username
         captain.textColor = UIColor.darkGrayColor()
         captain.font = UIFont(name: "AvenirNext-Regular", size: 13)
         cell.addSubview(captain)
         
         
         var joinTeam = UIButton(frame: CGRectMake(self.view.frame.width / 2, 80, self.view.frame.width / 2, 30))
-        joinTeam.backgroundColor = UserInfoGlobal.UIColorFromRGB(0xE74A52)
+        joinTeam.backgroundColor = UIColor.whiteColor()
         cell.addSubview(joinTeam)
         
          var contact = UIButton(frame: CGRectMake(0, 80, self.view.frame.width / 2, 30))
         
-        contact.backgroundColor = UserInfoGlobal.UIColorFromRGB(0xE74A52)
+        contact.backgroundColor = UIColor.whiteColor()
         
         cell.addSubview(contact)
         
@@ -121,14 +144,14 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         var ccaptain = UILabel(frame: CGRectMake(0, 80, self.view.frame.width / 2, 30))
         ccaptain.text = "Contact Captain"
         ccaptain.textAlignment = NSTextAlignment.Center
-        ccaptain.textColor = UIColor.whiteColor()
+        ccaptain.textColor = UserInfoGlobal.UIColorFromRGB(0xE74A52)
         ccaptain.font = UIFont(name: "AvenirNext-Medium", size: 17)
         cell.addSubview(ccaptain)
         
         var join = UILabel(frame: CGRectMake(self.view.frame.width / 2, 80, self.view.frame.width / 2, 30))
         join.text = "I want to join!"
         join.textAlignment = NSTextAlignment.Center
-        join.textColor = UIColor.whiteColor()
+        join.textColor = UserInfoGlobal.UIColorFromRGB(0xE74A52)
         join.font = UIFont(name: "AvenirNext-Medium", size: 17)
         cell.addSubview(join)
         
