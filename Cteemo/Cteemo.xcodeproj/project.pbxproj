@@ -179,11 +179,14 @@
 		A1BF3BFA1AAC06FC002A900C /* libPods-RongCloudIMKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BF3BF91AAC06FC002A900C /* libPods-RongCloudIMKit.a */; };
 		A1C885D91AC29CF500AA7888 /* Team_playerpost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C885D81AC29CF500AA7888 /* Team_playerpost.swift */; };
 		A1CEFEA21AABE71D002D5956 /* tableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CEFEA11AABE71D002D5956 /* tableCell.xib */; };
+		A1DA6E081AC389C60092C8A4 /* joinTeamButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A1DA6E071AC389C60092C8A4 /* joinTeamButton.png */; };
+		A1DA6E101AC38DC00092C8A4 /* heise.png in Resources */ = {isa = PBXBuildFile; fileRef = A1DA6E0F1AC38DC00092C8A4 /* heise.png */; };
 		A1DCEAF01AAED19500DE2DD5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DCEAEF1AAED19500DE2DD5 /* QuartzCore.framework */; };
 		A1E57CE91AB2D8DA00FDF193 /* chuishi.png in Resources */ = {isa = PBXBuildFile; fileRef = A1E57CE81AB2D8DA00FDF193 /* chuishi.png */; };
 		A1EB12041A99263800FC8388 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB12031A99263800FC8388 /* ImageLoader.swift */; };
 		A1EB12091A99277900FC8388 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EB12081A99277900FC8388 /* error.png */; };
 		A1EB12141A99AAE700FC8388 /* TournamentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB12131A99AAE700FC8388 /* TournamentAPI.swift */; };
+		A1EF3F781AC3A65B003D3B7D /* Team_requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF3F771AC3A65B003D3B7D /* Team_requests.swift */; };
 		A1F138861A8346C9007DE5A2 /* LolAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F138851A8346C9007DE5A2 /* LolAPI.swift */; };
 		A1F3AA601AB1753F00CD5ACE /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F3AA5C1AB1753F00CD5ACE /* chat.png */; };
 		A1F3AA611AB1753F00CD5ACE /* checkin.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F3AA5D1AB1753F00CD5ACE /* checkin.png */; };
@@ -481,11 +484,14 @@
 		A1BF3BF91AAC06FC002A900C /* libPods-RongCloudIMKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-RongCloudIMKit.a"; path = "Pods/build/Debug-iphoneos/libPods-RongCloudIMKit.a"; sourceTree = "<group>"; };
 		A1C885D81AC29CF500AA7888 /* Team_playerpost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_playerpost.swift; sourceTree = "<group>"; };
 		A1CEFEA11AABE71D002D5956 /* tableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tableCell.xib; sourceTree = "<group>"; };
+		A1DA6E071AC389C60092C8A4 /* joinTeamButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joinTeamButton.png; sourceTree = "<group>"; };
+		A1DA6E0F1AC38DC00092C8A4 /* heise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heise.png; sourceTree = "<group>"; };
 		A1DCEAEF1AAED19500DE2DD5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A1E57CE81AB2D8DA00FDF193 /* chuishi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chuishi.png; sourceTree = "<group>"; };
 		A1EB12031A99263800FC8388 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		A1EB12081A99277900FC8388 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
 		A1EB12131A99AAE700FC8388 /* TournamentAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentAPI.swift; sourceTree = "<group>"; };
+		A1EF3F771AC3A65B003D3B7D /* Team_requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_requests.swift; sourceTree = "<group>"; };
 		A1F138851A8346C9007DE5A2 /* LolAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LolAPI.swift; sourceTree = "<group>"; };
 		A1F3AA5C1AB1753F00CD5ACE /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
 		A1F3AA5D1AB1753F00CD5ACE /* checkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkin.png; sourceTree = "<group>"; };
@@ -531,6 +537,7 @@
 				A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */,
 				4260F3FB1A886D6000A6F39D /* Team_TeamInfoViewController.swift */,
 				A1C885D81AC29CF500AA7888 /* Team_playerpost.swift */,
+				A1EF3F771AC3A65B003D3B7D /* Team_requests.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -686,6 +693,7 @@
 				A13918E61AA2C11B00CD232A /* Tournament */,
 				A13918E41AA2B2D300CD232A /* juxing.png */,
 				A15D188B1AC2632D00C7E83E /* postsomething.png */,
+				A1DA6E0F1AC38DC00092C8A4 /* heise.png */,
 				A1385AE61AC361A80061FBCC /* postbu.png */,
 				A18DF20A1ABE2317002B354F /* email2.png */,
 				A13918DF1AA2B26500CD232A /* annie.jpg */,
@@ -894,6 +902,7 @@
 		A1B8E9641A7B215C009BE011 /* Team */ = {
 			isa = PBXGroup;
 			children = (
+				A1DA6E071AC389C60092C8A4 /* joinTeamButton.png */,
 				426CD2EB1A89649D0042F4F7 /* config.png */,
 				A15D187B1AC233EB00C7E83E /* post.png */,
 				42ABFAC31A8A869000DC5D1F /* minussss.png */,
@@ -1153,7 +1162,9 @@
 				42B85A241A748CDB00FD4642 /* backG.png in Resources */,
 				42855BA61A847D9F00EB9546 /* teambg .png in Resources */,
 				4215A6701A7B45E1002EB62E /* speaker.png in Resources */,
+				A1DA6E101AC38DC00092C8A4 /* heise.png in Resources */,
 				A139191A1AA2C21D00CD232A /* mode_time框子.png in Resources */,
+				A1DA6E081AC389C60092C8A4 /* joinTeamButton.png in Resources */,
 				A139191B1AA2C21D00CD232A /* money icons.png in Resources */,
 				88535F611A89E00000F38098 /* img3.jpg in Resources */,
 				A13919211AA2C21D00CD232A /* School Tournament.png in Resources */,
@@ -1287,6 +1298,7 @@
 				42B85A101A74884100FD4642 /* Login_CreateViewController.swift in Sources */,
 				A1010D471A7B2ACF00256208 /* ARequest.swift in Sources */,
 				42B859F21A74840F00FD4642 /* Login_MainViewController.swift in Sources */,
+				A1EF3F781AC3A65B003D3B7D /* Team_requests.swift in Sources */,
 				A14E3C211A9B21F8003C837F /* Bracket.swift in Sources */,
 				42B74FC81A812416008B575C /* NewsViewController.swift in Sources */,
 				42B0A33C1A898BD200EA908C /* AFURLConnectionOperation.m in Sources */,

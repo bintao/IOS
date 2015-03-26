@@ -34,9 +34,14 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
             self.navigationItem.title = "Join a Team"
             
         }
-        self.postView.alpha = 1
-        self.searchView.alpha = 0
-        self.playerView.alpha = 0
+        
+      
+        
+            self.postView.alpha = 1
+            self.searchView.alpha = 0
+            self.playerView.alpha = 0
+
+        
         
     }
     

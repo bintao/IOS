@@ -15,9 +15,9 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     var hasOwnteam = false
     
     @IBOutlet weak var createTeam : UIView!
+
+    @IBOutlet var request: UIButton!
     
-    
-    @IBOutlet var otherChoices : UITableView!
     
     var teams: [String] = [String]()
     
@@ -42,10 +42,15 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
 
     }
     
+    @IBAction func request(sender: AnyObject) {
+        
+       self.performSegueWithIdentifier("request", sender: self)
+        
+    }
     func gotResult(prefix: String, result: AnyObject) {
 
         if(prefix == "my_team/lol" ){
-            
+        println(result)
        if(result["id"]?  != nil ){
             TeamInfoGlobal.gotResult(result as [String : AnyObject])
             println(TeamInfoGlobal.team_Intro)
@@ -73,6 +78,8 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     override func viewDidAppear(animated: Bool) {
         
+        self.navigationController?.navigationBarHidden = false
+        
         if UserInfoGlobal.profile_ID == ""{
             UserInfoGlobal.updateUserInfo()
         }
@@ -86,9 +93,9 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         }
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
-        
-       
     }
+    
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier != "presentMyTeam"{

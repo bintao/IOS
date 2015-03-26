@@ -93,26 +93,67 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
 
     @IBAction func leaveteam(sender: AnyObject) {
         let alert1 = SCLAlertView()
+        let alert2 = SCLAlertView()
+        var manager = Manager.sharedInstance
+        // Specifying the Headers we need
+        manager.session.configuration.HTTPAdditionalHeaders = [
+            "token": UserInfoGlobal.accessToken
+        ]
         
-        alert1.addButton("ok", actionBlock:{ (Void) in
-            var req = ARequest(prefix: "create_team/lol", method: requestType.DELETE)
-            req.delegate = self
-            req.sendRequestWithToken(UserInfoGlobal.accessToken)
+        if TeamInfoGlobal.iscaptain == "yes"{
+        alert1.addButton("Delete", actionBlock:{ (Void) in
+            alert2.showWaiting(self.parentViewController?.parentViewController, title: "Wait a second", subTitle: "Quiting......", closeButtonTitle: nil, duration: 0.0)
+            var req = Alamofire.request(.DELETE, "http://54.149.235.253:5000/create_team/lol")
+                .responseJSON { (_, _, JSON, _) in
+                    alert2.hideView()
+                    if (JSON as [String:AnyObject])["status"]? != nil{
+                        if((JSON as [String:AnyObject])["status"] as String == "success")
+                        {
+                            TeamInfoGlobal.cleanUserData()
+                            self.performSegueWithIdentifier("returnToTeam", sender: self)
+                        }
+                    }
+            }
+        
         })
-       alert1.showNotice(self.parentViewController?.parentViewController, title: "Leave Team", subTitle: "Do you want to leave " + TeamInfoGlobal.teamName, closeButtonTitle: "cancel", duration: 0.0)
+            alert1.showNotice(self.parentViewController?.parentViewController, title: "Delete Team", subTitle: "You are a captain , Team need you." + TeamInfoGlobal.teamName, closeButtonTitle: "cancel", duration: 0.0)
+            
+        }
+        else if TeamInfoGlobal.iscaptain == "no"{
+            alert1.addButton("Leave", actionBlock:{ (Void) in
+                  alert2.showWaiting(self.parentViewController?.parentViewController, title: "Wait a second", subTitle: "Quiting......", closeButtonTitle: nil, duration: 0.0)
+                var req = Alamofire.request(.DELETE, "http://54.149.235.253:5000/my_team/lol")
+                    .responseJSON { (_, _, JSON, _) in
+                         alert2.hideView()
+                        if (JSON as [String:AnyObject])["status"]? != nil{
+                            if((JSON as [String:AnyObject])["status"] as String == "success")
+                            {
+                                TeamInfoGlobal.cleanUserData()
+                                self.performSegueWithIdentifier("returnToTeam", sender: self)
+                            }
+                        }
+                }
+                
+            })
+            alert1.showNotice(self.parentViewController?.parentViewController, title: "Leave Team", subTitle: "Do you want to leave " + TeamInfoGlobal.teamName, closeButtonTitle: "cancel", duration: 0.0)
+        }
+        else {
         
+        
+        
+        }
+        
+        
+       
 
     }
     
     func gotResult(prefix: String, result: AnyObject) {
-        println(result)
-        if (result as [String:AnyObject])["status"]? != nil{
-        if((result as [String:AnyObject])["status"] as String == "success")
-            {
-                TeamInfoGlobal.cleanUserData()
-                self.performSegueWithIdentifier("returnToTeam", sender: self)
-            }
+        
+        if prefix == "my_team//lol"{
+            println(result)
         }
+       
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
