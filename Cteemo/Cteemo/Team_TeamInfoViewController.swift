@@ -58,9 +58,9 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
                 }
                 else {
                      but.setImage(UIImage(named: "error.png")!, forState: UIControlState.Normal)
-                
+                    
                 }})
-           
+        
             memberScroll.addSubview(but)
             
             var lab = UILabel(frame: CGRectMake(75 * CGFloat(index), 75, 75, 20))
@@ -179,7 +179,6 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     @IBAction func groupchat(sender: AnyObject) {
         
         
-        
         var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat("1", title: "cteemo", completion: nil)
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).clearnteambadge()
@@ -188,6 +187,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         self.navigationController?.pushViewController(chatViewController, animated: true)
 
     }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "findteammate"{

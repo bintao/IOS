@@ -179,14 +179,28 @@ class UserTeam: NSObject{
                         for i in 0...member.count-1{
                             if let iconurl = myjson["members"][i]["profile_icon"].string
                             {
-                                self.memberIcon.append(iconurl)
+                                if self.memberIcon.count < self.memberCount{
+                                    self.memberIcon.append(iconurl)
+                                }
+                                else {
+                                    self.memberIcon[i] = iconurl
+                                }
                                 
                             }else{
+                                
                              self.memberIcon.append("")
                             
                             }
+                            
                             if let name = myjson["members"][i]["username"].string{
-                                self.memberName.append(name)
+                               
+                                
+                                if self.memberName.count < self.memberCount{
+                                    self.memberName.append(name)
+                                }
+                                else {
+                                    self.memberName[i] = name
+                                }
                             
                             }
                             else{
@@ -198,7 +212,13 @@ class UserTeam: NSObject{
                             
                             
                             if let id = myjson["members"][i]["profile_id"].string{
-                                self.memberId.append(id)
+                                
+                                if self.memberId.count < self.memberCount{
+                                    self.memberId.append(id)
+                                }
+                                else {
+                                    self.memberId[i] = id
+                                }
                                 
                             }
                             else{
@@ -285,6 +305,12 @@ class UserTeam: NSObject{
         captainId = ""
         var data:[String: AnyObject] = packaging()
         DataManager.saveTeamInfoToLocal(data)
+        self.memberCount = 0
+        self.memberIcon.removeAll()
+        self.memberId.removeAll()
+        self.memberName.removeAll()
+
+        
     }
     
 }

@@ -118,12 +118,10 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                 UserInfoGlobal.updateUserInfo()
                 
                 UserInfoGlobal.getIconFromServer()
-                
-                TeamInfoGlobal.uploadTeamInfo()
-                
+                //TeamInfoGlobal.uploadTeamInfo()
                 self.performSegueWithIdentifier("exitToMain", sender: self)
                 
-                //self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
+                
             }
             else {
                 

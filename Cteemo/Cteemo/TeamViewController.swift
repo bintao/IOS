@@ -29,8 +29,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
             UserInfoGlobal.updateUserInfo()
         }
         
-        //otherChoices.backgroundColor = UIColor.clearColor()
-    
         
         // Do any additional setup after loading the view.
     }

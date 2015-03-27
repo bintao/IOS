@@ -9,6 +9,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 
 class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegate{
@@ -45,6 +46,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         startLoading()
         
+        if TeamInfoGlobal.iscaptain == "no" || TeamInfoGlobal.iscaptain == ""{
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/invite_request/lol", parameters: ["page": 0])
             .responseJSON { (_, _, JSON, _) in
                 self.stopLoading()
@@ -58,8 +60,28 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                     result = JSON as [AnyObject]
                     self.gotResult(result)
                 }
-                
         }
+        }else if TeamInfoGlobal.iscaptain == "yes" {
+        
+            var req = Alamofire.request(.GET, "http://54.149.235.253:5000/join_request/lol", parameters: ["page": 0])
+                .responseJSON { (_, _, JSON, _) in
+                    self.stopLoading()
+                    println(JSON)
+                    if ((JSON as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
+                        
+                    }
+                    else if(JSON as? [AnyObject] != nil){
+                        println(JSON)
+                        var result: [AnyObject] = [AnyObject]()
+                        result = JSON as [AnyObject]
+                        self.gotResult(result)
+                    }
+            }
+        
+        
+        }
+        
+        
     }
     
     func gotResult(result: [AnyObject]){
@@ -189,8 +211,10 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
             if !((requests[sender.tag] as? [String: AnyObject])?["username"] is NSNull){
                 username = (requests[sender.tag] as [String: AnyObject])["username"] as String
             }
-            
+        
             let alert = SCLAlertView()
+            let alert1 = SCLAlertView()
+
             alert.addButton("Accept!"){
                 self.startLoading()
                 
@@ -204,10 +228,27 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                         
                         println(JSON)
                         if JSON == nil {
-                        self.search()
-                        
+                            
+                            
                         }
+                        else{
+                        let myjson = SwiftyJSON.JSON(JSON!)
+                      
+                        
+                            if let url = myjson["message"].string
+                            {
+                                if url.rangeOfString("joined")?.isEmpty != nil{
+                                    alert1.showError(self.parentViewController?.parentViewController, title: "Alreday joned a Team", subTitle: " Sorry you can't join", closeButtonTitle: nil, duration: 3.0)
+                                    
+                                }
+                                
+                            }
+                        }
+                        
+                        
+                       
                         self.stopLoading()
+                        self.search()
                     }
             
             }

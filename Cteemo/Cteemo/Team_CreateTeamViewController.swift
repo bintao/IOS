@@ -56,6 +56,14 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
                 }
             }
         }
+        else{
+            
+            let alert = SCLAlertView()
+            alert.showError(self.parentViewController?.parentViewController, title: "Empty Team name", subTitle: "Please fill your team name", closeButtonTitle: "ok", duration: 0.0)
+        
+        }
+
+        
         }
     
     func getResult(result: [String: AnyObject]) {
