@@ -14,5 +14,9 @@
 	<string></string>
 	<key>teamicon_link</key>
 	<string></string>
+	<key>captainName</key>
+	<string></string>
+	<key>captainId</key>
+	<string></string>
 </dict>
 </plist>

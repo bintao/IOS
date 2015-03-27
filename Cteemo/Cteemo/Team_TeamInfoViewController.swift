@@ -19,8 +19,6 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     
     @IBOutlet var capTain : UIButton!
     @IBOutlet var capTainName : UILabel!
-
-    var members = ["kedan", "jake", "Tom", "Father","BOSS"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,25 +37,36 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     }
        
     override func viewDidAppear(animated: Bool) {
-       
         
-        TeamInfoGlobal.uploadTeamInfo()
+        
         navigation.title = TeamInfoGlobal.teamName
        
         if TeamInfoGlobal.teamName != "" && TeamInfoGlobal.teamID != "" {
         
-        capTain.setImage(UserInfoGlobal.icon, forState: UIControlState.Normal)
-        capTainName.text = UserInfoGlobal.name
+        capTain.setImage(TeamInfoGlobal.captainIcon, forState: UIControlState.Normal)
+        capTainName.text = TeamInfoGlobal.captainName
+        var membersName = TeamInfoGlobal.memberName
+        var membersIcon = TeamInfoGlobal.memberIcon
         
-        memberScroll.contentSize = CGSizeMake(75 * CGFloat(members.count), 75)
-        for var index = 0; index < members.count; index++ {
+        memberScroll.contentSize = CGSizeMake(75 * CGFloat(membersName.count), 75)
+        for var index = 0; index < membersName.count; index++ {
             var but = UIButton(frame: CGRectMake(5 + 75 * CGFloat(index), 10, 65, 65))
-            but.setImage(UserInfoGlobal.icon, forState: UIControlState.Normal)
+            ImageLoader.sharedLoader.imageForUrl(TeamInfoGlobal.memberIcon[index] as String, completionHandler:{(image: UIImage?, url: String) in
+                
+                if image? != nil {
+                    but.setImage(image, forState: UIControlState.Normal)
+                }
+                else {
+                     but.setImage(UIImage(named: "error.png")!, forState: UIControlState.Normal)
+                
+                }})
+           
             memberScroll.addSubview(but)
             
             var lab = UILabel(frame: CGRectMake(75 * CGFloat(index), 75, 75, 20))
             lab.textAlignment = NSTextAlignment.Center
-            lab.text = members[index]
+            
+            lab.text = TeamInfoGlobal.memberName[index] as? String
             lab.font = capTainName.font
             memberScroll.addSubview(lab)
             

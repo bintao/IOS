@@ -103,7 +103,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         let alert1 = SCLAlertView()
         
         alert1.addButton("Verificaed!!", actionBlock:{ (Void) in
-            
+        
             var req = Alamofire.request(.POST, "http://54.149.235.253:5000/login", parameters: ["email": UserInfoGlobal.email, "password": self.savepass ])
                 .responseJSON { (_, _, JSON, _) in
                     

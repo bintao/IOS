@@ -119,7 +119,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                 
                 UserInfoGlobal.getIconFromServer()
                 
-                //TeamInfoGlobal.uploadTeamInfo()
+                TeamInfoGlobal.uploadTeamInfo()
                 
                 self.performSegueWithIdentifier("exitToMain", sender: self)
                 
@@ -183,6 +183,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         image = UIImage(data: data)
         image = image.roundCornersToCircle()
         return image
+        
     }
 
 

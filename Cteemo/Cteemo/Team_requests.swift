@@ -204,15 +204,15 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                         
                         println(JSON)
                         if JSON == nil {
-                        var button = self.navigationController?.navigationItem.backBarButtonItem?
-                    
+                        self.search()
+                        
                         }
                         self.stopLoading()
                     }
             
             }
             
-            alert.showCustom(self.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Invite request", subTitle: "I want to be part of " + username + "'s Team",closeButtonTitle: "Cancel", duration: 0.0)
+            alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Invite request", subTitle: "I want to be part of " + username + "'s Team",closeButtonTitle: "Cancel", duration: 0.0)
             
         }
         

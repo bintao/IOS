@@ -9,6 +9,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 var TeamInfoGlobal: UserTeam = UserTeam()
 
@@ -28,9 +29,17 @@ class UserTeam: NSObject{
     // all the memebers inthe team and their informations
     // get each icon as UIIMage from url and save in the array
     // save to local
+    var memberCount = 0
+    var memberIcon : [AnyObject] = [AnyObject]()
+    var memberName :[AnyObject] = [AnyObject]()
+    var memberId :[AnyObject] = [AnyObject]()
+
     
-    var memberInfo = [AnyObject]()
+    var captainId : String = ""
+    var captainName : String = ""
     
+    
+    var captainIcon : UIImage?
     var icon :UIImage?
     
     func setUp(){
@@ -50,12 +59,16 @@ class UserTeam: NSObject{
         teamName = data["teamName"] as String
         iscaptain = data["iscaptain"] as String
         teamicon_link = data["teamicon_link"] as String
+        
+        captainName  = data["captainName"] as String
+        captainId = data["captainId"] as String
+        
         saveUserData()
         
     }
     
     func packaging()->[String: AnyObject]{
-        var data:[String: AnyObject] = ["team_Intro" : team_Intro,"teamID":teamID,"teamName" :teamName,"iscaptain": iscaptain]
+        var data:[String: AnyObject] = ["team_Intro" : team_Intro,"teamID":teamID,"teamName" :teamName,"iscaptain": iscaptain, "captainName" : captainName ,"captainId" : captainId]
         return data
     }
     
@@ -93,15 +106,121 @@ class UserTeam: NSObject{
        
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/my_team/lol")
             .responseJSON { (_, _, JSON, _) in
-                var result: [String: AnyObject] = JSON as [String: AnyObject]
-                self.gotResult(result)
+               
+                let myjson = SwiftyJSON.JSON(JSON!)
+                
+                if let captainIcon = myjson["captain"][0]["profile_icon"].string{
+                   
+                    ImageLoader.sharedLoader.imageForUrl(captainIcon, completionHandler:{(image: UIImage?, url: String) in
+                        
+                        if image? != nil {
+                            self.captainIcon = image
+                        }
+                        else {
+                            self.captainIcon = UIImage(named: "error.png")!
+                        }})
+                } else {
+                    self.captainIcon = UIImage(named: "error.png")!
+                }
+                 if let name = myjson["captain"][0]["username"].string{
+                
+                    self.captainName = name
+                }
+                
+                if let name = myjson["captain"][0]["profile_id"].string{
+                    
+                    self.captainId = name
+                    if self.captainId == UserInfoGlobal.profile_ID{
+                    
+                    self.iscaptain = "yes"
+                    
+                    }
+                    else{
+                    self.iscaptain = "no"
+                    }
+                    
+                }
+                
+                println(self.captainName)
+                println(self.captainId)
+                
+                if let name = myjson["teamName"].string{
+                    
+                    self.teamName = name
+                    
+                }else{ self.teamName = ""}
+                
+                if let id = myjson["id"].string{
+                    
+                    self.teamID = id
+                    
+                }else{ self.teamID = ""}
+                
+                if let icon = myjson["teamIcon"].string{
+                    
+                    self.teamicon_link = icon
+                    
+                }else{ self.teamicon_link = ""}
+                
+                
+                println(self.teamName)
+                println(self.teamID)
+                println(self.teamicon_link)
+                
+                TeamInfoGlobal.saveUserData()
+                self.getIconFromServer()
+                
+                println(myjson["members"].array)
+                
+                if let member = myjson["members"].array
+                {
+                    if member.count > 0{
+                        self.memberCount = member.count
+                        for i in 0...member.count-1{
+                            if let iconurl = myjson["members"][i]["profile_icon"].string
+                            {
+                                self.memberIcon.append(iconurl)
+                                
+                            }else{
+                             self.memberIcon.append("")
+                            
+                            }
+                            if let name = myjson["members"][i]["username"].string{
+                                self.memberName.append(name)
+                            
+                            }
+                            else{
+                            
+                             self.memberName.append("noName")
+                            }
+                            
+                            println(self.memberName[i])
+                            
+                            
+                            if let id = myjson["members"][i]["profile_id"].string{
+                                self.memberId.append(id)
+                                
+                            }
+                            else{
+                                self.memberId.append("noID")
+                            }
+
+                            
+                        }
+                    
+                    }
+                    
+                   
+                }
         }
 
     }
+
+    
     
     func gotResult(result: [String: AnyObject]) {
         
-            
+            TeamInfoGlobal.iscaptain = "no"
             if result["id"]? != nil {
                 TeamInfoGlobal.teamID = result["id"] as String
             }
@@ -121,24 +240,22 @@ class UserTeam: NSObject{
             }
             else {self.teamicon_link = "" }
         
-        
-        
-        
             if result["id"]? != nil{
                 var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
         
-                if(captain != UserInfoGlobal.profile_ID){
-                    TeamInfoGlobal.iscaptain = "no"
-                }
-                else {
+                if(captain == UserInfoGlobal.profile_ID){
                     TeamInfoGlobal.iscaptain = "yes"
                 }
-        }
+            }
+        
         
         TeamInfoGlobal.saveUserData()
         self.getIconFromServer()
 
     }
+    
+    
+    
     //download user information from the server
     
     func downloadUserInfo(){
@@ -164,6 +281,8 @@ class UserTeam: NSObject{
         team_Intro = ""
         iscaptain = ""
         teamicon_link = ""
+        captainName = ""
+        captainId = ""
         var data:[String: AnyObject] = packaging()
         DataManager.saveTeamInfoToLocal(data)
     }

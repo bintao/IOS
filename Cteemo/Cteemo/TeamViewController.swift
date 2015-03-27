@@ -37,10 +37,13 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
 
     
     override func viewWillAppear(animated: Bool) {
+       
         
+     
         
-        println("team appear 9999999999")
     }
+    
+    
     func updateTeam(){
         var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
         req.delegate = self
@@ -58,6 +61,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
             println(TeamInfoGlobal.team_Intro)
             println(TeamInfoGlobal.teamID)
             println(TeamInfoGlobal.teamName)
+            println(TeamInfoGlobal.iscaptain)
             
             self.performSegueWithIdentifier("presentMyTeam", sender: self)
             
@@ -80,7 +84,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     override func viewDidAppear(animated: Bool) {
         
-        self.navigationController?.navigationBarHidden = false
         
         if UserInfoGlobal.profile_ID == ""{
             UserInfoGlobal.updateUserInfo()
