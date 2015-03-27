@@ -35,6 +35,12 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
     }
 
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        
+        println("team appear 9999999999")
+    }
     func updateTeam(){
         var req = ARequest(prefix:"my_team/lol" , method: requestType.GET, parameters: nil)
         req.delegate = self
@@ -42,11 +48,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
 
     }
     
-    @IBAction func request(sender: AnyObject) {
-        
-       self.performSegueWithIdentifier("request", sender: self)
-        
-    }
+   
     func gotResult(prefix: String, result: AnyObject) {
 
         if(prefix == "my_team/lol" ){
