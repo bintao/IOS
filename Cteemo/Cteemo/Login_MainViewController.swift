@@ -96,8 +96,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                 UserInfoGlobal.accessToken = result["token"] as String
                 UserInfoGlobal.rongToken = (result["rongToken"] as [String: AnyObject])["token"] as String
                 UserInfoGlobal.saveUserData()
-                
-                
+            
                 //get profile from the user
                 println( UserInfoGlobal.accessToken)
                 getProfileFromServer()

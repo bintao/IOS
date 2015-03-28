@@ -15,6 +15,7 @@ class Tournament_joined: UIViewController {
     
     var TournamentType :String = ""
     var joinTeam :String = ""
+    var memberID = 1
     var teams: [AnyObject] = [AnyObject]()
     
     var gamenumber = 0
@@ -27,12 +28,23 @@ class Tournament_joined: UIViewController {
         
         //titel.text = self.url
         self.Tournamentname = Tournament.tournamentName[self.gamenumber] as String
-                
+        self.url =  Tournament.tournamentUrl[self.gamenumber] as String
+        self.memberID = Tournament.findMemberID(self.url, member: TeamInfoGlobal.teamName)
+        
+       
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
     }
     
+    override func viewDidAppear(animated: Bool) {
+    
+    
+    
+    println(memberID)
+    
+    
+    }
     
     @IBAction func bracket(sender: AnyObject){
         
@@ -41,13 +53,10 @@ class Tournament_joined: UIViewController {
     }
     
     
-    @IBAction func info(sender: AnyObject) {
-        
-        
-    }
+  
     
     
-    @IBAction func addMember(sender: AnyObject) {
+    @IBAction func chat(sender: AnyObject) {
         
        
         
@@ -55,11 +64,28 @@ class Tournament_joined: UIViewController {
     }
     
    
-    @IBAction func deleteMember(sender: AnyObject) {
+    @IBAction func playnext(sender: AnyObject) {
         
         
       
 
+        
+    }
+    
+    
+    @IBAction func reportresult(sender: AnyObject) {
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    @IBAction func checkin(sender: AnyObject) {
+        
+        
         
     }
     

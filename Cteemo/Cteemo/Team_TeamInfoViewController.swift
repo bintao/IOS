@@ -182,11 +182,20 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat("1", title: "cteemo", completion: nil)
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).clearnteambadge()
+        
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
         
         self.navigationController?.pushViewController(chatViewController, animated: true)
-
+        
     }
+    
+    
+    
+    @IBAction func findteammate(sender: AnyObject) {
+        
+        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+    }
+    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         

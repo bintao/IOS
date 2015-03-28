@@ -221,6 +221,18 @@ class TournamentAPI: NSObject{
         }
     }
     
+    
+    func checkin(tournament : String,participant_id : String){
+        
+         var par : [String: AnyObject] = ["api_key":key]
+        var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+tournament+"/participants/"+participant_id+"/check_in.json",parameters:par)
+            .responseJSON { (_, _, JSON, _) in
+                print(JSON)
+                
+        }
+        
+    }
+    
     //joinTournaent
     func JoinTournament(id: String, name : String,email : String)
     {

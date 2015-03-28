@@ -65,8 +65,10 @@ class UserInformation: NSObject, RequestResultDelegate{
 
     
     func packaging()->[String: AnyObject]{
+        
         var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "school": school, "intro": intro,"profile_ID":profile_ID, "profile_icon_Link": profile_icon_Link,"tokenVaild":tokenVaild,"rongToken" :rongToken]
         return data
+        
     }
     
     func uploadUserIcon(){
@@ -165,6 +167,9 @@ class UserInformation: NSObject, RequestResultDelegate{
             UserInfoGlobal.saveUserData()
             TeamInfoGlobal.saveUserData()
             LolAPIGlobal.saveLOLData()
+        
+            
+            
         }
     }
     
