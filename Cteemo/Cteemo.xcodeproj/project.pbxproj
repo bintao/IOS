@@ -173,6 +173,9 @@
 		A1B5D8D01AC67819000BD6A6 /* checkinbg.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8CF1AC67819000BD6A6 /* checkinbg.png */; };
 		A1B5D8D21AC678AF000BD6A6 /* chatroom.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8D11AC678AF000BD6A6 /* chatroom.png */; };
 		A1B5D8D41AC79A5F000BD6A6 /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8D31AC79A5F000BD6A6 /* time.png */; };
+		A1B5D8DC1AC7CD6B000BD6A6 /* loginpage1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8D91AC7CD6B000BD6A6 /* loginpage1.png */; };
+		A1B5D8DD1AC7CD6B000BD6A6 /* loginpage2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8DA1AC7CD6B000BD6A6 /* loginpage2.png */; };
+		A1B5D8DE1AC7CD6B000BD6A6 /* startapplogin.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8DB1AC7CD6B000BD6A6 /* startapplogin.png */; };
 		A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */; };
 		A1B8E9581A7B20F2009BE011 /* 奖杯2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */; };
 		A1B8E9591A7B20F2009BE011 /* 我.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94C1A7B20F2009BE011 /* 我.png */; };
@@ -488,6 +491,9 @@
 		A1B5D8CF1AC67819000BD6A6 /* checkinbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkinbg.png; sourceTree = "<group>"; };
 		A1B5D8D11AC678AF000BD6A6 /* chatroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatroom.png; sourceTree = "<group>"; };
 		A1B5D8D31AC79A5F000BD6A6 /* time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time.png; sourceTree = "<group>"; };
+		A1B5D8D91AC7CD6B000BD6A6 /* loginpage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginpage1.png; sourceTree = "<group>"; };
+		A1B5D8DA1AC7CD6B000BD6A6 /* loginpage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginpage2.png; sourceTree = "<group>"; };
+		A1B5D8DB1AC7CD6B000BD6A6 /* startapplogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startapplogin.png; sourceTree = "<group>"; };
 		A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯1.png"; sourceTree = "<group>"; };
 		A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯2.png"; sourceTree = "<group>"; };
 		A1B8E94C1A7B20F2009BE011 /* 我.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我.png"; sourceTree = "<group>"; };
@@ -732,6 +738,9 @@
 		42B85A141A7489B700FD4642 /* StartPage */ = {
 			isa = PBXGroup;
 			children = (
+				A1B5D8D91AC7CD6B000BD6A6 /* loginpage1.png */,
+				A1B5D8DA1AC7CD6B000BD6A6 /* loginpage2.png */,
+				A1B5D8DB1AC7CD6B000BD6A6 /* startapplogin.png */,
 				42B85A151A7489CF00FD4642 /* loading_page.png */,
 			);
 			name = StartPage;
@@ -1243,9 +1252,11 @@
 				A1B8E9591A7B20F2009BE011 /* 我.png in Resources */,
 				A13E549A1AC6316C00FD45F6 /* Check in.png in Resources */,
 				A1E57CE91AB2D8DA00FDF193 /* chuishi.png in Resources */,
+				A1B5D8DC1AC7CD6B000BD6A6 /* loginpage1.png in Resources */,
 				A13919101AA2C21D00CD232A /* camera icons (report result).png in Resources */,
 				A13E54A01AC631D900FD45F6 /* playnextmatch.png in Resources */,
 				A13919281AA2C21D00CD232A /* write sth button.png in Resources */,
+				A1B5D8DD1AC7CD6B000BD6A6 /* loginpage2.png in Resources */,
 				A13919111AA2C21D00CD232A /* create button.png in Resources */,
 				A13919131AA2C21D00CD232A /* create tournament bg.png in Resources */,
 				88535F501A89A0CB00F38098 /* RED.png in Resources */,
@@ -1271,6 +1282,7 @@
 				A18DF20B1ABE2317002B354F /* email2.png in Resources */,
 				A13919261AA2C21D00CD232A /* Tournament.zip in Resources */,
 				4260F4031A886F1E00A6F39D /* more111.png in Resources */,
+				A1B5D8DE1AC7CD6B000BD6A6 /* startapplogin.png in Resources */,
 				A1B8E9621A7B20F2009BE011 /* hentiao2.png in Resources */,
 				A13919161AA2C21D00CD232A /* fire.png in Resources */,
 				A13918E51AA2B2D300CD232A /* juxing.png in Resources */,

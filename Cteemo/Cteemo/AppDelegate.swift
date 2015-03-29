@@ -22,6 +22,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        var backgroundImageNames = ["loginpage1","loginpage2", "startapplogin"]
+        var coverImageNames = ["loginpage1","loginpage2", "startapplogin"]
+        
+        self.introductionView = ZWIntroductionViewController(coverImageNames: coverImageNames, backgroundImageNames: backgroundImageNames)
+
+        self.introductionView!.didSelectedEnter = {
+            self.introductionView!.view.removeFromSuperview()
+            self.introductionView = nil;
+            
+        }
+        
+            
+            self.window = UIWindow()
+            self.window!.frame = UIScreen.mainScreen().bounds
+            self.window?.makeKeyAndVisible()
+            self.window?.addSubview(self.introductionView!.view)
         
         application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
         DataManager.initializeUserInfo()

@@ -1,16 +1,16 @@
 PODS:
-  - MMProgressHUD (0.3.0)
   - RongCloudIMKit (1.4.1.1)
   - SCLAlertView-Objective-C (0.6.1)
+  - ZWIntroductionViewController (0.2)
 
 DEPENDENCIES:
-  - MMProgressHUD
   - RongCloudIMKit (~> 1.4.1)
   - SCLAlertView-Objective-C
+  - ZWIntroductionViewController
 
 SPEC CHECKSUMS:
-  MMProgressHUD: a524179e2ece5ba76f5228f9368a6918f617510e
   RongCloudIMKit: 9f73ec4aba9bff5fb8185ea6996e94e1e10e40b2
   SCLAlertView-Objective-C: da92da8bfd193d813e71b13ed11b6d5aa3b96cc3
+  ZWIntroductionViewController: 0e732cb00c68ebd606e1403e17e0a7e3bb0cd9fa
 
 COCOAPODS: 0.35.0

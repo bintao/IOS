@@ -4,17 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-MMProgressHUD.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-RongCloudIMKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-SCLAlertView-Objective-C.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Pods-ZWIntroductionViewController.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>50ED8832A77B74424EB3F2AC</key>
+		<key>58761699351199CF973E3688</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A9DFBE3930C747BA729D640E</key>
+		<key>947873E6FA9591EC6B751F14</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BF119E569E892EAC0D0F3C12</key>
+		<key>E9926CCA5F3EA2969FBC1854</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E74720B6B857AEEAD67303FF</key>
+		<key>F9E45B7AF00A71DE2471F571</key>
 		<dict>
 			<key>primary</key>
 			<true/>

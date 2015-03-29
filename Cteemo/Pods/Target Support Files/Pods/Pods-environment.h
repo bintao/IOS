@@ -6,12 +6,6 @@
 // project.
 
 
-// MMProgressHUD
-#define COCOAPODS_POD_AVAILABLE_MMProgressHUD
-#define COCOAPODS_VERSION_MAJOR_MMProgressHUD 0
-#define COCOAPODS_VERSION_MINOR_MMProgressHUD 3
-#define COCOAPODS_VERSION_PATCH_MMProgressHUD 0
-
 // RongCloudIMKit
 #define COCOAPODS_POD_AVAILABLE_RongCloudIMKit
 // This library does not follow semantic-versioning,
@@ -24,4 +18,10 @@
 #define COCOAPODS_VERSION_MAJOR_SCLAlertView_Objective_C 0
 #define COCOAPODS_VERSION_MINOR_SCLAlertView_Objective_C 6
 #define COCOAPODS_VERSION_PATCH_SCLAlertView_Objective_C 1
+
+// ZWIntroductionViewController
+#define COCOAPODS_POD_AVAILABLE_ZWIntroductionViewController
+#define COCOAPODS_VERSION_MAJOR_ZWIntroductionViewController 0
+#define COCOAPODS_VERSION_MINOR_ZWIntroductionViewController 2
+#define COCOAPODS_VERSION_PATCH_ZWIntroductionViewController 0
 
