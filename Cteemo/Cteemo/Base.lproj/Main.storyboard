@@ -1936,6 +1936,9 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="member" destination="JtV-AJ-rWE" id="oFU-RW-HZn"/>
+                        <outlet property="time" destination="6OL-fP-zna" id="01u-9W-GEE"/>
+                        <outlet property="type" destination="PHW-iT-JjD" id="d0S-gd-0Bz"/>
                         <segue destination="gcO-xg-BL5" kind="show" identifier="bracket" id="Ehu-kk-tsB"/>
                         <segue destination="vHw-Aw-1VQ" kind="show" id="HCm-Jc-FY4"/>
                     </connections>

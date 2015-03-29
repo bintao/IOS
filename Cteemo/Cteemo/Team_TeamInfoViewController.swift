@@ -179,7 +179,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     @IBAction func groupchat(sender: AnyObject) {
         
         
-        var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat("1", title: "cteemo", completion: nil)
+        var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat(TeamInfoGlobal.teamID, title: TeamInfoGlobal.teamName, completion: nil)
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).clearnteambadge()
         

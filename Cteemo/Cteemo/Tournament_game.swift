@@ -14,13 +14,15 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     var Tournamentname :String = ""
     var TournamentType :String = ""
+    var starttime : String = ""
     var joinTeam :String = ""
+    
     var teams: [AnyObject] = [AnyObject]()
     
     //select tournament in list
     var gamenumber = 0
     // total number of tournamnet
-    var numberOfData = 3
+    var teamsnumber = 0
     var refreshControl = UIRefreshControl()
     
     @IBOutlet var tableData: UITableView!
@@ -61,6 +63,9 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         println(sender.tag)
         
         self.gamenumber = sender.tag
+        self.TournamentType = Tournament.tournamentType[sender.tag] as String
+        self.starttime = Tournament.startTime[sender.tag] as String
+        self.teamsnumber = Tournament.totalMember[sender.tag] as Int
         
         self.performSegueWithIdentifier("joined", sender: self)
     }
@@ -71,6 +76,9 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
             
             var controller: Tournament_joined = segue.destinationViewController as Tournament_joined
             controller.gamenumber = self.gamenumber
+            controller.starttime = self.starttime
+            controller.TournamentType = self.TournamentType
+            controller.totalmember = self.teamsnumber
             controller.url = Tournament.tournamentUrl[self.gamenumber] as String
             
         }

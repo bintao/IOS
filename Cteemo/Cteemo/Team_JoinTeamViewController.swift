@@ -12,7 +12,6 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
 
     
     @IBOutlet var switcher: CustomSwitcher!
-
     @IBOutlet var postbutton: UIButton!
     @IBOutlet var postView: UIView!
     @IBOutlet var searchView: UIView!

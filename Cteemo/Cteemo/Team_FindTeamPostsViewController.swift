@@ -20,7 +20,7 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
     
     override func viewDidLoad() {
         resultTable.backgroundColor = UIColor.clearColor()
-       resultTable.delegate = self
+        resultTable.delegate = self
         resultTable.dataSource = self
         
     }

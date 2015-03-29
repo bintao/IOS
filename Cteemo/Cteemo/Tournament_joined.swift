@@ -7,13 +7,15 @@
 //
 
 import UIKit
-
+import Alamofire
 
 class Tournament_joined: UIViewController {
     
     var Tournamentname :String = ""
-    
+    var totalmember = 0
+    var starttime :String = ""
     var TournamentType :String = ""
+    
     var joinTeam :String = ""
     var memberID = 1
     var teams: [AnyObject] = [AnyObject]()
@@ -21,27 +23,34 @@ class Tournament_joined: UIViewController {
     var gamenumber = 0
     var url :String = ""
     
+    @IBOutlet var type: UITextView!
 
-    @IBOutlet weak var titel: UILabel!
+    @IBOutlet var time: UITextView!
+
+    @IBOutlet var member: UITextView!
     
     override func viewDidLoad() {
         
         //titel.text = self.url
         self.Tournamentname = Tournament.tournamentName[self.gamenumber] as String
-        self.url =  Tournament.tournamentUrl[self.gamenumber] as String
+       
         self.memberID = Tournament.findMemberID(self.url, member: TeamInfoGlobal.teamName)
+        self.type.text = self.TournamentType
+        self.time.text = self.starttime
+        self.member.text = "\(self.totalmember)"
+        
+        super.viewDidLoad()
         
        
-        super.viewDidLoad()
+        
         
         // Do any additional setup after loading the view.
     }
     
     override func viewDidAppear(animated: Bool) {
     
-    
-    
-    println(memberID)
+  
+     ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
     
     
     }
@@ -59,7 +68,11 @@ class Tournament_joined: UIViewController {
     @IBAction func chat(sender: AnyObject) {
         
        
+        var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat("1", title: "cteemo", completion: nil)
         
+        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        
+        self.navigationController?.pushViewController(chatViewController, animated: true)
         
     }
     
@@ -86,6 +99,31 @@ class Tournament_joined: UIViewController {
     @IBAction func checkin(sender: AnyObject) {
         
         
+        var par : [String: AnyObject] = ["api_key":Tournament.key]
+        var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+self.url+"/participants/"+"\(self.memberID)"+"/check_in.json",parameters:par)
+            .responseJSON { (_, _, JSON, _) in
+                
+                var result = JSON as [String : AnyObject]
+                
+                if result["errors"]? != nil {
+                    
+                    let alert1 = SCLAlertView()
+                    alert1.showError(self.parentViewController?.parentViewController, title: "Check in faild", subTitle: "Please contact custom servers", closeButtonTitle: nil, duration: 3.0)
+                    
+                }
+                else {
+                    
+                    let alert1 = SCLAlertView()
+                    alert1.showSuccess(self.parentViewController?.parentViewController, title: "Check in Success", subTitle: TeamInfoGlobal.teamName + "ready for battle", closeButtonTitle: nil, duration: 3.0)
+                    
+                }
+       
+        
+        }
+        
+        
+
+       
         
     }
     
@@ -111,6 +149,7 @@ class Tournament_joined: UIViewController {
     
     
     @IBAction func returnToJoined(segue : UIStoryboardSegue) {
+        
         
         
     }
