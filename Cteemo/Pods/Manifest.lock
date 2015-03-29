@@ -1,16 +1,19 @@
 PODS:
+  - EAIntroView (2.7.0):
+    - EARestrictedScrollView (~> 0.1.0)
+  - EARestrictedScrollView (0.1.0)
   - RongCloudIMKit (1.4.1.1)
   - SCLAlertView-Objective-C (0.6.1)
-  - ZWIntroductionViewController (0.2)
 
 DEPENDENCIES:
+  - EAIntroView (~> 2.7.0)
   - RongCloudIMKit (~> 1.4.1)
   - SCLAlertView-Objective-C
-  - ZWIntroductionViewController
 
 SPEC CHECKSUMS:
+  EAIntroView: 2284bb6d9105035cb09f8952933e83591f0a81ca
+  EARestrictedScrollView: 6023847998f13e2d80dff2d575181c2598349507
   RongCloudIMKit: 9f73ec4aba9bff5fb8185ea6996e94e1e10e40b2
   SCLAlertView-Objective-C: da92da8bfd193d813e71b13ed11b6d5aa3b96cc3
-  ZWIntroductionViewController: 0e732cb00c68ebd606e1403e17e0a7e3bb0cd9fa
 
 COCOAPODS: 0.35.0

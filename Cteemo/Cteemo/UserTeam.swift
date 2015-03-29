@@ -268,7 +268,7 @@ class UserTeam: NSObject{
                 }
             }
         
-        
+    
         TeamInfoGlobal.saveUserData()
         self.getIconFromServer()
 

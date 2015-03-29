@@ -36,13 +36,12 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     @IBAction func editMember(sender: UIButton){
         
         
-        sender.setTitle("Cancel", forState: UIControlState.Normal)
-        
     }
        
     override func viewDidAppear(animated: Bool) {
         
         
+        TeamInfoGlobal.uploadTeamInfo()
         navigation.title = TeamInfoGlobal.teamName
        
         if TeamInfoGlobal.teamName != "" && TeamInfoGlobal.teamID != "" {
@@ -59,7 +58,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         }
         
         memberScroll.contentSize = CGSizeMake(75 * CGFloat(membersName.count), 75)
-        for var index = 0; index < membersName.count; index++ {
+        for var index = 0; index < TeamInfoGlobal.memberCount; index++ {
             var but = UIButton(frame: CGRectMake(5 + 75 * CGFloat(index), 10, 65, 65))
             ImageLoader.sharedLoader.imageForUrl(TeamInfoGlobal.memberIcon[index] as String, completionHandler:{(image: UIImage?, url: String) in
                 

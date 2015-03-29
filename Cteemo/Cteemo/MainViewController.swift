@@ -33,12 +33,15 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         super.viewDidLoad()
         self.tabbar.transform = CGAffineTransformMakeTranslation(0, self.tabbar.frame.height)
         self.tabbar.alpha = 0
-        
-        // doens't appear if user haven't login
         news.alpha = 0
         tournament.alpha = 0
         team.alpha = 0
         me.alpha = 0
+      
+        
+        
+        // doens't appear if user haven't login
+       
         
         
         RCIM.sharedRCIM().setReceiveMessageDelegate(self)
@@ -65,6 +68,9 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
     
     }
     
+    override func prefersStatusBarHidden() -> Bool {
+        return true
+    }
     
     // 融云得到用户头像
     func getUserInfoWithUserId(userId: String!, completion: ((RCUserInfo!) -> Void)!){

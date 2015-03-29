@@ -92,6 +92,9 @@
 		A1010D491A7B2F9100256208 /* school button icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D481A7B2F9100256208 /* school button icon.png */; };
 		A1010D4B1A7B385700256208 /* school.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D4A1A7B385700256208 /* school.png */; };
 		A103113D1AA80A2F000B7BB3 /* tournamentNew.png in Resources */ = {isa = PBXBuildFile; fileRef = A103113C1AA80A2F000B7BB3 /* tournamentNew.png */; };
+		A118449E1AC7E53300022E45 /* RMParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118449C1AC7E53300022E45 /* RMParallax.swift */; };
+		A118449F1AC7E53300022E45 /* RMParallaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118449D1AC7E53300022E45 /* RMParallaxItem.swift */; };
+		A11844A91AC879AA00022E45 /* Team_DeleteMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11844A81AC879AA00022E45 /* Team_DeleteMember.swift */; };
 		A11FED831ABD4D060075B627 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FED781ABD4D060075B627 /* RAMBounceAnimation.swift */; };
 		A11FED841ABD4D060075B627 /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FED7A1ABD4D060075B627 /* RAMFrameItemAnimation.swift */; };
 		A11FED851ABD4D060075B627 /* RAMFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FED7C1ABD4D060075B627 /* RAMFumeAnimation.swift */; };
@@ -411,6 +414,9 @@
 		A1010D481A7B2F9100256208 /* school button icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "school button icon.png"; sourceTree = "<group>"; };
 		A1010D4A1A7B385700256208 /* school.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school.png; sourceTree = "<group>"; };
 		A103113C1AA80A2F000B7BB3 /* tournamentNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tournamentNew.png; sourceTree = "<group>"; };
+		A118449C1AC7E53300022E45 /* RMParallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMParallax.swift; sourceTree = "<group>"; };
+		A118449D1AC7E53300022E45 /* RMParallaxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMParallaxItem.swift; sourceTree = "<group>"; };
+		A11844A81AC879AA00022E45 /* Team_DeleteMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_DeleteMember.swift; sourceTree = "<group>"; };
 		A11FED781ABD4D060075B627 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
 		A11FED7A1ABD4D060075B627 /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFrameItemAnimation.swift; sourceTree = "<group>"; };
 		A11FED7C1ABD4D060075B627 /* RAMFumeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFumeAnimation.swift; sourceTree = "<group>"; };
@@ -564,6 +570,7 @@
 				4260F3FB1A886D6000A6F39D /* Team_TeamInfoViewController.swift */,
 				A1C885D81AC29CF500AA7888 /* Team_playerpost.swift */,
 				A1EF3F771AC3A65B003D3B7D /* Team_requests.swift */,
+				A11844A81AC879AA00022E45 /* Team_DeleteMember.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -659,9 +666,9 @@
 				4215A6711A7D7616002EB62E /* API */,
 				42B859EC1A74840F00FD4642 /* AppDelegate.swift */,
 				42B859F31A74840F00FD4642 /* Main.storyboard */,
-				A1CEFEA11AABE71D002D5956 /* tableCell.xib */,
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
+				A1CEFEA11AABE71D002D5956 /* tableCell.xib */,
 				A1BECE461ABB7D5B00CDE9A6 /* groupChatView.swift */,
 				42B74FBE1A812416008B575C /* MainViewController.swift */,
 				425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */,
@@ -678,6 +685,7 @@
 				42B859EE1A74840F00FD4642 /* Cteemo.xcdatamodeld */,
 				42B85A3C1A74A0D800FD4642 /* Reachability.h */,
 				42B85A3D1A74A0D800FD4642 /* Reachability.m */,
+				A118449B1AC7E53300022E45 /* RMParallax */,
 				42B0A3231A898BD200EA908C /* AFNetworking */,
 				42B85A131A74897A00FD4642 /* Images */,
 				42B859EA1A74840F00FD4642 /* Supporting Files */,
@@ -788,6 +796,15 @@
 				88535F4F1A89A0CB00F38098 /* RED.png */,
 			);
 			name = News;
+			sourceTree = "<group>";
+		};
+		A118449B1AC7E53300022E45 /* RMParallax */ = {
+			isa = PBXGroup;
+			children = (
+				A118449C1AC7E53300022E45 /* RMParallax.swift */,
+				A118449D1AC7E53300022E45 /* RMParallaxItem.swift */,
+			);
+			path = RMParallax;
 			sourceTree = "<group>";
 		};
 		A11FED751ABD4D060075B627 /* RAMAnimatedTabBarController */ = {
@@ -1357,9 +1374,11 @@
 				42E5E78B1A773E56004A781E /* Login_LoginBySelfViewController.swift in Sources */,
 				42855B9D1A8459A600EB9546 /* Team_JoinTeamViewController.swift in Sources */,
 				4260F3FC1A886D6000A6F39D /* Team_TeamInfoViewController.swift in Sources */,
+				A118449E1AC7E53300022E45 /* RMParallax.swift in Sources */,
 				42B74FC71A812416008B575C /* TeamViewController.swift in Sources */,
 				A16023F61A87356E00CFAACA /* Login_lolID.swift in Sources */,
 				427D7A931A85CBA600BFB2DA /* UserTeam.swift in Sources */,
+				A11844A91AC879AA00022E45 /* Team_DeleteMember.swift in Sources */,
 				42B0A33D1A898BD200EA908C /* AFURLRequestSerialization.m in Sources */,
 				42B74FC91A812416008B575C /* MeViewController.swift in Sources */,
 				42B85A121A74888500FD4642 /* Login_SchoolAndPhoto.swift in Sources */,
@@ -1388,6 +1407,7 @@
 				42B859ED1A74840F00FD4642 /* AppDelegate.swift in Sources */,
 				42B0A33E1A898BD200EA908C /* AFURLResponseSerialization.m in Sources */,
 				A11FED881ABD4D060075B627 /* RAMAnimatedTabBarController.swift in Sources */,
+				A118449F1AC7E53300022E45 /* RMParallaxItem.swift in Sources */,
 				42B85A451A74A81A00FD4642 /* DataManager.swift in Sources */,
 				42B74FC41A812416008B575C /* MainViewController.swift in Sources */,
 				42B0A3391A898BD200EA908C /* AFHTTPSessionManager.m in Sources */,
