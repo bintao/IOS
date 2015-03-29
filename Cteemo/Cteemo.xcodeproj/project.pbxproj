@@ -172,6 +172,7 @@
 		A1A858381A8C7DC1001BF576 /* LOLInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1A858371A8C7DC1001BF576 /* LOLInfo.plist */; };
 		A1B5D8D01AC67819000BD6A6 /* checkinbg.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8CF1AC67819000BD6A6 /* checkinbg.png */; };
 		A1B5D8D21AC678AF000BD6A6 /* chatroom.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8D11AC678AF000BD6A6 /* chatroom.png */; };
+		A1B5D8D41AC79A5F000BD6A6 /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8D31AC79A5F000BD6A6 /* time.png */; };
 		A1B8E9571A7B20F2009BE011 /* 奖杯1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */; };
 		A1B8E9581A7B20F2009BE011 /* 奖杯2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */; };
 		A1B8E9591A7B20F2009BE011 /* 我.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E94C1A7B20F2009BE011 /* 我.png */; };
@@ -486,6 +487,7 @@
 		A1A858371A8C7DC1001BF576 /* LOLInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LOLInfo.plist; sourceTree = "<group>"; };
 		A1B5D8CF1AC67819000BD6A6 /* checkinbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkinbg.png; sourceTree = "<group>"; };
 		A1B5D8D11AC678AF000BD6A6 /* chatroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatroom.png; sourceTree = "<group>"; };
+		A1B5D8D31AC79A5F000BD6A6 /* time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time.png; sourceTree = "<group>"; };
 		A1B8E94A1A7B20F2009BE011 /* 奖杯1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯1.png"; sourceTree = "<group>"; };
 		A1B8E94B1A7B20F2009BE011 /* 奖杯2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "奖杯2.png"; sourceTree = "<group>"; };
 		A1B8E94C1A7B20F2009BE011 /* 我.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我.png"; sourceTree = "<group>"; };
@@ -855,6 +857,7 @@
 		A13918E61AA2C11B00CD232A /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
+				A1B5D8D31AC79A5F000BD6A6 /* time.png */,
 				A1E57CE81AB2D8DA00FDF193 /* chuishi.png */,
 				A13E54921AC6315B00FD45F6 /* bliz.png */,
 				A13E54931AC6315B00FD45F6 /* button_bra.png */,
@@ -1195,6 +1198,7 @@
 				A1DA6E081AC389C60092C8A4 /* joinTeamButton.png in Resources */,
 				A139191B1AA2C21D00CD232A /* money icons.png in Resources */,
 				88535F611A89E00000F38098 /* img3.jpg in Resources */,
+				A1B5D8D41AC79A5F000BD6A6 /* time.png in Resources */,
 				A13919211AA2C21D00CD232A /* School Tournament.png in Resources */,
 				A12405AD1AA9691500B5B992 /* delete.png in Resources */,
 				42041AF11A81665E00623C70 /* white.png in Resources */,

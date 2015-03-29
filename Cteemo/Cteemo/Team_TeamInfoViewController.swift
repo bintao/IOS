@@ -19,6 +19,8 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     
     @IBOutlet var capTain : UIButton!
     @IBOutlet var capTainName : UILabel!
+   
+    @IBOutlet var edit: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,11 +31,13 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         
         // Do any additional setup after loading the view.
     }
-    
+
     //Enable editing member
     @IBAction func editMember(sender: UIButton){
         
+        
         sender.setTitle("Cancel", forState: UIControlState.Normal)
+        
     }
        
     override func viewDidAppear(animated: Bool) {
@@ -47,6 +51,12 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         capTainName.text = TeamInfoGlobal.captainName
         var membersName = TeamInfoGlobal.memberName
         var membersIcon = TeamInfoGlobal.memberIcon
+            
+        if TeamInfoGlobal.iscaptain == "no"{
+            
+            self.edit.alpha = 0
+            
+        }
         
         memberScroll.contentSize = CGSizeMake(75 * CGFloat(membersName.count), 75)
         for var index = 0; index < membersName.count; index++ {
