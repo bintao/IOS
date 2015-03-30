@@ -90,6 +90,7 @@ class LolAPI: NSObject{
        
         if result["id"]? != nil{
           
+            println(result)
             
             if result["id"]? != nil {
                 var idd: Int! = result["id"] as? Int!

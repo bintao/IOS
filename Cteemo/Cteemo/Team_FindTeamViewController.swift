@@ -28,6 +28,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         resultTable.backgroundColor = UIColor.clearColor()
        
     }
+    
 
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
         searchBar.resignFirstResponder()
@@ -124,6 +125,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
                 
             school = (teams[indexPath.row] as [String: AnyObject])["school"] as String
             }
+                
             else{
             
             school = "No School"
@@ -173,7 +175,6 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
 
         cellIcon.frame = CGRectMake(10, 10, 60, 60)
         cell.addSubview(cellIcon)
-        
         
         var teamName = UILabel(frame: CGRectMake(85, 15, 200, 27))
         teamName.textColor = UIColor.darkGrayColor()
@@ -255,7 +256,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
             
             }
             
-        alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Join Team request", subTitle: "I want to be part of " + teamname,closeButtonTitle: "Cancel", duration: 0.0)
+            alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Join Team request", subTitle: "I want to be part of " + teamname,closeButtonTitle: "Cancel", duration: 0.0)
     
         }
         

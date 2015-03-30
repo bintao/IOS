@@ -129,6 +129,8 @@ class Team_DeleteMember: UIViewController, UITableViewDataSource, UITableViewDel
                         {
                             TeamInfoGlobal.deletemember(sender.tag)
                             self.resultTable.reloadData()
+                            
+                            
                         }
                     }
                     

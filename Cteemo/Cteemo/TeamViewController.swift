@@ -16,9 +16,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     @IBOutlet weak var createTeam : UIView!
 
-    @IBOutlet var request: UIButton!
-    
-    
     var teams: [String] = [String]()
     
     override func viewDidLoad() {
@@ -33,6 +30,17 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         // Do any additional setup after loading the view.
     }
 
+    func toTeammatedIfNeede(){
+        
+        if TeamInfoGlobal.teamID != "" && TeamInfoGlobal.teamName != "" {
+            
+            
+        self.performSegueWithIdentifier("presentMyTeam", sender: self)
+        
+            
+        }
+        
+    }
     
     override func viewWillAppear(animated: Bool) {
        

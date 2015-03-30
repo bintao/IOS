@@ -95,6 +95,7 @@
 		A118449E1AC7E53300022E45 /* RMParallax.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118449C1AC7E53300022E45 /* RMParallax.swift */; };
 		A118449F1AC7E53300022E45 /* RMParallaxItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A118449D1AC7E53300022E45 /* RMParallaxItem.swift */; };
 		A11844A91AC879AA00022E45 /* Team_DeleteMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11844A81AC879AA00022E45 /* Team_DeleteMember.swift */; };
+		A11844B31AC9C20A00022E45 /* Tournament_playnext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11844B21AC9C20A00022E45 /* Tournament_playnext.swift */; };
 		A11FED831ABD4D060075B627 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FED781ABD4D060075B627 /* RAMBounceAnimation.swift */; };
 		A11FED841ABD4D060075B627 /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FED7A1ABD4D060075B627 /* RAMFrameItemAnimation.swift */; };
 		A11FED851ABD4D060075B627 /* RAMFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FED7C1ABD4D060075B627 /* RAMFumeAnimation.swift */; };
@@ -417,6 +418,7 @@
 		A118449C1AC7E53300022E45 /* RMParallax.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMParallax.swift; sourceTree = "<group>"; };
 		A118449D1AC7E53300022E45 /* RMParallaxItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RMParallaxItem.swift; sourceTree = "<group>"; };
 		A11844A81AC879AA00022E45 /* Team_DeleteMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_DeleteMember.swift; sourceTree = "<group>"; };
+		A11844B21AC9C20A00022E45 /* Tournament_playnext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament_playnext.swift; sourceTree = "<group>"; };
 		A11FED781ABD4D060075B627 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
 		A11FED7A1ABD4D060075B627 /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFrameItemAnimation.swift; sourceTree = "<group>"; };
 		A11FED7C1ABD4D060075B627 /* RAMFumeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFumeAnimation.swift; sourceTree = "<group>"; };
@@ -992,6 +994,7 @@
 		A1EB12191A99C61900FC8388 /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
+				A11844B21AC9C20A00022E45 /* Tournament_playnext.swift */,
 				A13811D41AA8E9F900E8293D /* tournamentViewCell.swift */,
 				A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */,
 				A13919291AA2CD6700CD232A /* Tournament_game.swift */,
@@ -1406,6 +1409,7 @@
 				A1EB12141A99AAE700FC8388 /* TournamentAPI.swift in Sources */,
 				42B859ED1A74840F00FD4642 /* AppDelegate.swift in Sources */,
 				42B0A33E1A898BD200EA908C /* AFURLResponseSerialization.m in Sources */,
+				A11844B31AC9C20A00022E45 /* Tournament_playnext.swift in Sources */,
 				A11FED881ABD4D060075B627 /* RAMAnimatedTabBarController.swift in Sources */,
 				A118449F1AC7E53300022E45 /* RMParallaxItem.swift in Sources */,
 				42B85A451A74A81A00FD4642 /* DataManager.swift in Sources */,

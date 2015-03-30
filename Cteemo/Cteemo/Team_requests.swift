@@ -229,12 +229,16 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                         println(JSON)
                         if JSON == nil {
                             
+                            TeamInfoGlobal.uploadTeamInfo()
+                            
+                            ((((self.parentViewController as UINavigationController).parentViewController as MainViewController).childViewControllers[1] as  UINavigationController).childViewControllers[0] as TeamViewController).toTeammatedIfNeede()
+                            
                             
                         }
+                            
                         else{
                         let myjson = SwiftyJSON.JSON(JSON!)
                       
-                        
                             if let url = myjson["message"].string
                             {
                                 if url.rangeOfString("joined")?.isEmpty != nil{

@@ -12,7 +12,7 @@ import SwiftyJSON
 
 
 
-class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDelegate , RCIMReceiveMessageDelegate , RCIMUserInfoFetcherDelegagte {
+class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDelegate , RCIMReceiveMessageDelegate , RCIMUserInfoFetcherDelegagte  {
     
     @IBOutlet var tabbar: UITabBar!
     
@@ -45,7 +45,6 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
         
         RCIM.sharedRCIM().setReceiveMessageDelegate(self)
-        
         Tournament.getTournamentList()
         LolAPIGlobal.getlolvision()
         
@@ -157,6 +156,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
     }
     
     
+   
     override func viewDidAppear(animated: Bool) {
         
         //当用户没有token时跳转到登录界面
@@ -180,6 +180,8 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         else{
          
             RCIM.setUserInfoFetcherWithDelegate(self, isCacheUserInfo: true)
+            
+            
             if UserInfoGlobal.rongToken != ""{
             
                 RCIM.connectWithToken(UserInfoGlobal.rongToken, completion: { (userId:String!) -> Void in
@@ -226,6 +228,9 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         }else if item.title! == "Team" && team.alpha != 1{
             self.view.bringSubviewToFront(team)
             displayView(team)
+            
+           
+            
             self.view.bringSubviewToFront(tabbar)
         }else if item.title! == "Me" && me.alpha != 1{
             self.view.bringSubviewToFront(me)

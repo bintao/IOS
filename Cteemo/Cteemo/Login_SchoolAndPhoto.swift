@@ -21,7 +21,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     @IBOutlet var school : UITextField!
     
     var sourceImage: UIImage!
-    var name: String = ""
+    var name : String = ""
     
     @IBOutlet var teemoSpeaker : UIView!
     @IBOutlet var messageDisplay : UITextView!
@@ -56,14 +56,17 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
 
         if (UserInfoGlobal.accessToken != "" && lolName.text != "" && school.text != "" ){
             if (LolAPIGlobal.lolID != ""){
-                
+                var gender = ""
                 println(UserInfoGlobal.name)
+                if self.gender.selectedSegmentIndex == 1{
+                    gender = "Female"
+                }else{
+                    gender = "Male"
+                }
                 
-                var req = ARequest(prefix: "profile", method: requestType.POST, parameters: ["username": name, "school":school.text,"lolID":lolName.text])
+                var req = ARequest(prefix: "profile", method: requestType.POST, parameters: ["username": name, "school":school.text,"lolID":lolName.text, "intro" : gender])
                 req.delegate = self
                 req.sendRequestWithToken(UserInfoGlobal.accessToken)
-                
-               
         
             }
             else {
@@ -85,6 +88,8 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         
         if prefix == "profile"{
             
+            println(result)
+            
             LolAPIGlobal.lolName = self.lolName.text
       
             if self.gender.selectedSegmentIndex == 1{
@@ -92,7 +97,10 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             }else{
                 UserInfoGlobal.gender = "Male"
             }
+            
             UserInfoGlobal.school = self.school.text
+            
+            UserInfoGlobal.name = self.name
             
             UserInfoGlobal.saveUserData()
             
@@ -161,6 +169,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             return false
         }
         return true
+        
     }
     
     // keyboard customization

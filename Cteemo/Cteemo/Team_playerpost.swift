@@ -45,7 +45,6 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
                 self.stopLoading()
                 if ((JSON as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
                     
-                    
                 }
                 else if(JSON != nil){
                     println(JSON)
@@ -101,6 +100,7 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
             else {
             content = " nothing to say"
             }
+            
         }
         
       
@@ -212,6 +212,7 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
             if (teams[sender.tag] as? [String: AnyObject])?["username"] != nil{
                 username = (teams[sender.tag] as [String: AnyObject])["username"] as String
             }
+            
             let alert = SCLAlertView()
             alert.addButton("Sent Invite!"){
                 self.startLoading()
@@ -221,6 +222,7 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
                 self.stopLoading()
                 
             }
+            
             
             alert.showCustom(self.parentViewController?.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Invite request", subTitle: "I want to invite " + username,closeButtonTitle: "Cancel", duration: 0.0)
             

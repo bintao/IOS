@@ -36,6 +36,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     @IBAction func editMember(sender: UIButton){
         
         
+      
     }
        
     override func viewDidAppear(animated: Bool) {
@@ -48,8 +49,6 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         
         capTain.setImage(TeamInfoGlobal.captainIcon, forState: UIControlState.Normal)
         capTainName.text = TeamInfoGlobal.captainName
-        var membersName = TeamInfoGlobal.memberName
-        var membersIcon = TeamInfoGlobal.memberIcon
             
         if TeamInfoGlobal.iscaptain == "no"{
             
@@ -57,30 +56,40 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
             
         }
         
-        memberScroll.contentSize = CGSizeMake(75 * CGFloat(membersName.count), 75)
-        for var index = 0; index < TeamInfoGlobal.memberCount; index++ {
-            var but = UIButton(frame: CGRectMake(5 + 75 * CGFloat(index), 10, 65, 65))
-            ImageLoader.sharedLoader.imageForUrl(TeamInfoGlobal.memberIcon[index] as String, completionHandler:{(image: UIImage?, url: String) in
-                
-                if image? != nil {
-                    but.setImage(image, forState: UIControlState.Normal)
-                }
-                else {
-                     but.setImage(UIImage(named: "error.png")!, forState: UIControlState.Normal)
+            let subviews = self.memberScroll.subviews
+            
+            for subview in subviews{
+                subview.removeFromSuperview()
+            }
+            var membersName = TeamInfoGlobal.memberName
+            var membersIcon = TeamInfoGlobal.memberIcon
+            
+            memberScroll.contentSize = CGSizeMake(75 * CGFloat(membersName.count), 75)
+            for var index = 0; index < TeamInfoGlobal.memberCount; index++ {
+                var but = UIButton(frame: CGRectMake(5 + 75 * CGFloat(index), 10, 65, 65))
+                ImageLoader.sharedLoader.imageForUrl(TeamInfoGlobal.memberIcon[index] as String, completionHandler:{(image: UIImage?, url: String) in
                     
-                }})
-        
-            memberScroll.addSubview(but)
-            
-            var lab = UILabel(frame: CGRectMake(75 * CGFloat(index), 75, 75, 20))
-            lab.textAlignment = NSTextAlignment.Center
-            
-            lab.text = TeamInfoGlobal.memberName[index] as? String
-            lab.font = capTainName.font
-            memberScroll.addSubview(lab)
-            
-        }
-        
+                    if image? != nil {
+                        but.setImage(image, forState: UIControlState.Normal)
+                    }
+                    else {
+                        
+                        but.setImage(UIImage(named: "error.png")!, forState: UIControlState.Normal)
+                        
+                    }})
+                
+                memberScroll.addSubview(but)
+                
+                var lab = UILabel(frame: CGRectMake(75 * CGFloat(index), 75, 75, 20))
+                lab.textAlignment = NSTextAlignment.Center
+                
+                lab.text = TeamInfoGlobal.memberName[index] as? String
+                lab.font = capTainName.font
+                memberScroll.addSubview(lab)
+                
+            }
+
+     
          ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
         
         if TeamInfoGlobal.teamicon != nil && DataManager.getTeamIconFromLocal() != nil{
@@ -100,15 +109,18 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         }
             
         }
+            
         else{
-        
+            
             self.performSegueWithIdentifier("returnToTeam", sender: self)
-
+            
         }
         
 
     }
 
+    
+    
     @IBAction func leaveteam(sender: AnyObject) {
         let alert1 = SCLAlertView()
         let alert2 = SCLAlertView()
@@ -155,6 +167,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
             })
             alert1.showNotice(self.parentViewController?.parentViewController, title: "Leave Team", subTitle: "Do you want to leave " + TeamInfoGlobal.teamName, closeButtonTitle: "cancel", duration: 0.0)
         }
+            
         else {
         
         

@@ -1952,7 +1952,7 @@
                         <outlet property="time" destination="6OL-fP-zna" id="01u-9W-GEE"/>
                         <outlet property="type" destination="PHW-iT-JjD" id="d0S-gd-0Bz"/>
                         <segue destination="gcO-xg-BL5" kind="show" identifier="bracket" id="Ehu-kk-tsB"/>
-                        <segue destination="vHw-Aw-1VQ" kind="show" id="HCm-Jc-FY4"/>
+                        <segue destination="vHw-Aw-1VQ" kind="show" identifier="playnextgame" id="HCm-Jc-FY4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQ6-KD-TU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1983,7 +1983,7 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIh-zX-0Jo">
                                 <rect key="frame" x="99" y="446" width="177" height="36"/>
-                                <state key="normal" title="Get tournament code" backgroundImage="NEXT ROUND BUTTON.png">
+                                <state key="normal" title="Get tournament code" backgroundImage="postbu.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -2599,7 +2599,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX3-eO-xmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="vGF-HT-bC3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5258" y="675"/>
+            <point key="canvasLocation" x="5299" y="639"/>
         </scene>
         <!--CREATE TEAM-->
         <scene sceneID="S1Y-3s-Tgk">
@@ -2723,7 +2723,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgX-LB-i11" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wEk-h5-C70" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6636" y="762"/>
+            <point key="canvasLocation" x="6331" y="701"/>
         </scene>
         <!--Team Join Team View Controller-->
         <scene sceneID="bpP-pN-ogk">
@@ -3990,7 +3990,6 @@
         <image name="Inkinesss.png" width="749" height="609"/>
         <image name="Login_Login page button.png" width="228" height="86"/>
         <image name="NEW SUMMONER PAGE_BG.png" width="640" height="1134"/>
-        <image name="NEXT ROUND BUTTON.png" width="246" height="57"/>
         <image name="PHOTO icons.png" width="165" height="165"/>
         <image name="SUBMIT.png" width="438" height="96"/>
         <image name="SUMMARY.png" width="60" height="58"/>

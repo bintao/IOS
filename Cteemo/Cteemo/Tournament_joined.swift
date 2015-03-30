@@ -59,6 +59,7 @@ class Tournament_joined: UIViewController {
         
         self.performSegueWithIdentifier("bracket", sender: self)
         
+        
     }
     
     
@@ -68,7 +69,7 @@ class Tournament_joined: UIViewController {
     @IBAction func chat(sender: AnyObject) {
         
        
-        var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat("1", title: "cteemo", completion: nil)
+        var chatViewController : RCChatViewController = RCIM.sharedRCIM().createDiscussionChat(self.url, title: self.Tournamentname, completion: nil)
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
         
@@ -79,6 +80,8 @@ class Tournament_joined: UIViewController {
    
     @IBAction func playnext(sender: AnyObject) {
         
+        
+         self.performSegueWithIdentifier("playnextgame", sender: self)
         
       
 
@@ -134,6 +137,12 @@ class Tournament_joined: UIViewController {
             var controller: Bracket = segue.destinationViewController as Bracket
        
             controller.url = Tournament.tournamentUrl[self.gamenumber] as String
+            
+        }
+        else if segue.identifier == "playnextgame"{
+            
+            
+           
             
         }
         
