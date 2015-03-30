@@ -6,18 +6,6 @@
 // project.
 
 
-// EAIntroView
-#define COCOAPODS_POD_AVAILABLE_EAIntroView
-#define COCOAPODS_VERSION_MAJOR_EAIntroView 2
-#define COCOAPODS_VERSION_MINOR_EAIntroView 7
-#define COCOAPODS_VERSION_PATCH_EAIntroView 0
-
-// EARestrictedScrollView
-#define COCOAPODS_POD_AVAILABLE_EARestrictedScrollView
-#define COCOAPODS_VERSION_MAJOR_EARestrictedScrollView 0
-#define COCOAPODS_VERSION_MINOR_EARestrictedScrollView 1
-#define COCOAPODS_VERSION_PATCH_EARestrictedScrollView 0
-
 // RongCloudIMKit
 #define COCOAPODS_POD_AVAILABLE_RongCloudIMKit
 // This library does not follow semantic-versioning,

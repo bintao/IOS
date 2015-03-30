@@ -31,7 +31,7 @@ class Team_DeleteMember: UIViewController, UITableViewDataSource, UITableViewDel
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return TeamInfoGlobal.memberCount
+        return TeamInfoGlobal.memberName.count
         
     }
     
@@ -127,7 +127,8 @@ class Team_DeleteMember: UIViewController, UITableViewDataSource, UITableViewDel
                     if (JSON as [String:AnyObject])["status"]? != nil{
                         if((JSON as [String:AnyObject])["status"] as String == "success")
                         {
-                            
+                            TeamInfoGlobal.deletemember(sender.tag)
+                            self.resultTable.reloadData()
                         }
                     }
                     

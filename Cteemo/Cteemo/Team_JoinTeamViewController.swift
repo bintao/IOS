@@ -81,7 +81,7 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
             }
             , completion: {
                 (value: Bool) in
-                
+            
         })
     }
     

@@ -122,7 +122,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
     func didReceivedMessage(message: RCMessage!, left: Int32) {
         
         //得到组群信息并且设置角标
-        if message.targetId == "1" && message.conversationType == RCConversationType.onversationType_GROUP{
+        if  message.conversationType == RCConversationType.onversationType_GROUP{
             
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in

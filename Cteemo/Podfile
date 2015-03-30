@@ -1,3 +1,2 @@
  pod 'RongCloudIMKit', '~> 1.4.1'
  pod 'SCLAlertView-Objective-C'
- pod 'EAIntroView', '~> 2.7.0'

@@ -4,16 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-EAIntroView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-EARestrictedScrollView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-RongCloudIMKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>4ADA6DEC25EC162D08BD74D3</key>
+		<key>33B63ED2F26B8DF4BD00103D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7E183816CA443867C541512A</key>
+		<key>40134BAE19189E20D6CD5246</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>AC7FC3F0EEF05417E7E1409E</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BE4490BA2B51E8B47BF400D3</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E0BA21ADBAC5283BA1F33FC6</key>
+		<key>8E2F48A1B3363A0E463E2522</key>
 		<dict>
 			<key>primary</key>
 			<true/>

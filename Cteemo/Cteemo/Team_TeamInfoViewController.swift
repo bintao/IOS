@@ -40,7 +40,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
        
     override func viewDidAppear(animated: Bool) {
         
-        
+        self.memberScroll.reloadInputViews()
         TeamInfoGlobal.uploadTeamInfo()
         navigation.title = TeamInfoGlobal.teamName
        

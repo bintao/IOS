@@ -236,7 +236,14 @@ class UserTeam: NSObject{
 
     }
 
+    func deletemember(index: Int){
     
+        self.memberName.removeAtIndex(index)
+        self.memberId.removeAtIndex(index)
+        self.memberIcon.removeAtIndex(index)
+        self.memberCount = self.memberCount - 1
+    
+    }
     
     func gotResult(result: [String: AnyObject]) {
         
