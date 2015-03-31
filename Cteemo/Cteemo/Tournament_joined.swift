@@ -31,6 +31,8 @@ class Tournament_joined: UIViewController {
     
     override func viewDidLoad() {
         
+        
+        Tournament.getmatches(self.url, member : 24179900)
         //titel.text = self.url
         self.Tournamentname = Tournament.tournamentName[self.gamenumber] as String
        
@@ -49,7 +51,11 @@ class Tournament_joined: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
     
-  
+   
+        
+        
+    Tournament.tournamentStart(self.url)
+    
      ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
     
     
@@ -141,9 +147,11 @@ class Tournament_joined: UIViewController {
         }
         else if segue.identifier == "playnextgame"{
             
+             var controller: Tournament_playnext = segue.destinationViewController as Tournament_playnext
             
+            controller.member = 24179900
            
-            
+            controller.url = self.url
         }
         
 

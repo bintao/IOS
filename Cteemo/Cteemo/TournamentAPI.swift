@@ -251,12 +251,16 @@ class TournamentAPI: NSObject{
     
     }
     
+    
+    
+    
     func findMemberID(name: String,member :String) -> Int{
         var s : Int = 1
         var par : [String: AnyObject] = ["api_key":key]
         var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
              let myjson = SwiftyJSON.JSON(JSON!)
+            if myjson.count != 0{
             for i in 0...myjson.count-1{
                 if let k = myjson[i]["participant"]["name"].string{
                     
@@ -269,6 +273,7 @@ class TournamentAPI: NSObject{
                     }
                 }
             }
+        }
             
         }
           return s
@@ -311,5 +316,73 @@ class TournamentAPI: NSObject{
         
         if s == 0 { println("no team find") }
     }
+    
+    
+    
+    
+    func getmatches(url: String,member : Int){
+    //GET https://api.challonge.com/v1/tournaments/{tournament}/matches.{json|xml}
+        
+        var par : [String: AnyObject] = ["api_key":key,"participant_id" : member]
+        
+        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+url+"/matches.json",parameters:par)
+            .responseJSON { (_, _, JSON, _) in
+                
+                println(JSON)
+                
+                
+        }
+        
+    }
+    
+    
+    func tournamentStart(url: String){
+    //POST https://api.challonge.com/v1/tournaments/{tournament}/start.{json|xml}
+        
+        var par : [String: AnyObject] = ["api_key":key]
+        
+        var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/start.json",parameters:par)
+            .responseJSON { (_, _, JSON, _) in
+                
+                println(JSON)
+                
+                
+                
+        }
+
+        
+ 
+    }
+    
+    
+    
+    func checkinabort(url: String){
+        
+        //POST https://challonge.com/api/tournaments/{tournament}/abort_check_in.{json|xml}
+        
+        var par : [String: AnyObject] = ["api_key":key]
+        
+        var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/abort_check_in.json",parameters:par)
+            .responseJSON { (_, _, JSON, _) in
+                
+                println(JSON)
+                
+        }
+    }
+    
+    
+    func checkinfinish(url: String){
+        
+        //POST https://challonge.com/api/tournaments/{tournament}/process_check_ins.{json|xml}
+        var par : [String: AnyObject] = ["api_key":key]
+        
+        var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/process_check_ins.json",parameters:par)
+            .responseJSON { (_, _, JSON, _) in
+                
+                println(JSON)
+                
+        }
+    }
+    
     
 }

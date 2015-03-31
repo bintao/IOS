@@ -190,7 +190,10 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                 
                 }){
                     (status:RCConnectErrorCode) -> Void in
-                    println(RCConnectErrorCode)
+                    
+                
+                   // NSLog(RCConnectErrorCode)
+                    
                     NSLog("Login failed")
                 }
             }
@@ -228,9 +231,6 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         }else if item.title! == "Team" && team.alpha != 1{
             self.view.bringSubviewToFront(team)
             displayView(team)
-            
-           
-            
             self.view.bringSubviewToFront(tabbar)
         }else if item.title! == "Me" && me.alpha != 1{
             self.view.bringSubviewToFront(me)
