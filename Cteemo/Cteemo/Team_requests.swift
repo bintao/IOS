@@ -229,8 +229,6 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                         println(JSON)
                         if JSON == nil {
                             
-                            TeamInfoGlobal.uploadTeamInfo()
-                            
                             ((((self.parentViewController as UINavigationController).parentViewController as MainViewController).childViewControllers[1] as  UINavigationController).childViewControllers[0] as TeamViewController).toTeammatedIfNeede()
                             
                             
@@ -248,8 +246,6 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                                 
                             }
                         }
-                        
-                        
                        
                         self.stopLoading()
                         self.search()
@@ -291,6 +287,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                               self.search()
                             }
                         }
+                        
                          self.stopLoading()
                 }
              

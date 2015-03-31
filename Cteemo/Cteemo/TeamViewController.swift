@@ -32,12 +32,8 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
 
     func toTeammatedIfNeede(){
         
-        if TeamInfoGlobal.teamID != "" && TeamInfoGlobal.teamName != "" {
-            
-            
-        self.performSegueWithIdentifier("presentMyTeam", sender: self)
-        
-            
+        if(UserInfoGlobal.accessToken != ""){
+            updateTeam()
         }
         
     }
