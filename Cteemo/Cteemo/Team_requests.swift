@@ -50,11 +50,11 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/invite_request/lol", parameters: ["page": 0])
             .responseJSON { (_, _, JSON, _) in
                 self.stopLoading()
+                 println(JSON)
                 if ((JSON as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
-                    
+                     
                 }
-                else if(JSON != nil){
-                    println(JSON)
+                else if JSON != nil && JSON as? [AnyObject]? != nil {
                     self.requests = JSON as [AnyObject]
                     var result: [AnyObject] = [AnyObject]()
                     result = JSON as [AnyObject]

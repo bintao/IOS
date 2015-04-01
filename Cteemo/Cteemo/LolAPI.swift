@@ -8,7 +8,7 @@
 
 import UIKit
 import Alamofire
-
+import SwiftyJSON
 
 var LolAPIGlobal: LolAPI = LolAPI()
 
@@ -50,6 +50,7 @@ class LolAPI: NSObject{
         lolRank = ""
         lolLevel = ""
         lolIcon = ""
+        
         DataManager.saveLOLInfoToLocal(packaging())
     }
     
@@ -130,6 +131,7 @@ class LolAPI: NSObject{
         
     }
     
+    
     // get Summoner league data
     func getSummonerLeague(lolID :String){
         var url = "https://na.api.pvp.net/api/lol/na/v2.5/league/by-summoner/"+lolID+"/entry?api_key="+key
@@ -141,6 +143,8 @@ class LolAPI: NSObject{
                 }
         }
     }
+    
+    
     
     func getLeagueResult(result: [String: AnyObject]){
         
@@ -182,6 +186,32 @@ class LolAPI: NSObject{
         
     }
     
+      func getmatchhistory(){
+    
+        let url = "https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/25350780/recent?api_key="+self.key
+        println(url)
+        Alamofire.request(.GET,url)
+            .responseJSON { (_, _, JSON, _) in
+                if JSON != nil{
+                 println(JSON)
+                    if JSON != nil{
+                         let myjson = SwiftyJSON.JSON(JSON!)
+                        if let url = myjson["tournament"]["url"].string
+                        {
+                        }
+                    }
+                }
+        }
+        
+    }
+    
+        
+
+        
+        
+    
+    
+  
     
    
     

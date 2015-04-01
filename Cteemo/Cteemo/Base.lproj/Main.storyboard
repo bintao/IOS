@@ -1382,8 +1382,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CL6-4R-IeD">
                                 <rect key="frame" x="0.0" y="267" width="375" height="70"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="r0C-Ug-YXw">
-                                        <rect key="frame" x="0.0" y="0.0" width="129" height="70"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="r0C-Ug-YXw">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pNT-xF-r22">
                                                 <rect key="frame" x="40" y="10" width="50" height="50"/>
@@ -1394,8 +1394,8 @@
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XMd-xy-CiE">
-                                                <rect key="frame" x="128" y="10" width="1" height="50"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XMd-xy-CiE">
+                                                <rect key="frame" x="129" y="10" width="1" height="50"/>
                                                 <color key="backgroundColor" red="0.99215686270000003" green="0.29803921570000003" blue="0.32549019610000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="1" id="XiU-Vf-wb6"/>
@@ -1420,8 +1420,8 @@
                                             <constraint firstAttribute="centerY" secondItem="pNT-xF-r22" secondAttribute="centerY" id="WDI-Hi-3pb"/>
                                         </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6f7-SZ-3ki">
-                                        <rect key="frame" x="246" y="0.0" width="129" height="70"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6f7-SZ-3ki">
+                                        <rect key="frame" x="247" y="0.0" width="128" height="70"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5EQ-V1-pCm">
                                                 <rect key="frame" x="0.0" y="13" width="1" height="44"/>
@@ -1430,8 +1430,8 @@
                                                     <constraint firstAttribute="width" constant="1" id="EaY-oS-mvH"/>
                                                 </constraints>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSS-wr-pqF">
-                                                <rect key="frame" x="42" y="13" width="44" height="44"/>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WSS-wr-pqF">
+                                                <rect key="frame" x="41" y="13" width="44" height="44"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="WSS-wr-pqF" secondAttribute="height" multiplier="1:1" id="n2P-XS-gZH"/>
                                                 </constraints>
@@ -1464,8 +1464,8 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jZG-N5-0Ur">
-                                        <rect key="frame" x="129" y="0.0" width="117" height="70"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jZG-N5-0Ur">
+                                        <rect key="frame" x="130" y="0.0" width="117" height="70"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dm7-VD-EjP">
                                                 <rect key="frame" x="34" y="10" width="50" height="50"/>
@@ -1946,7 +1946,6 @@
                         <barButtonItem key="rightBarButtonItem" image="more111" id="OPn-YD-LXT"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="member" destination="JtV-AJ-rWE" id="oFU-RW-HZn"/>
                         <outlet property="time" destination="6OL-fP-zna" id="01u-9W-GEE"/>
@@ -1959,6 +1958,83 @@
                 <exit id="5Pl-2H-vwE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="6697.5" y="-1521.5"/>
+        </scene>
+        <!--Tournament startgame-->
+        <scene sceneID="QhA-4N-d8c">
+            <objects>
+                <viewController id="nmr-Dd-uLO" customClass="Tournament_startgame" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bfn-Fe-Hp0"/>
+                        <viewControllerLayoutGuide type="bottom" id="Lid-cl-jVj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="4gF-Op-EwO">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cz8-Tm-Hcj">
+                                <rect key="frame" x="99" y="450" width="177" height="30"/>
+                                <state key="normal" title="Game Started" backgroundImage="postsomething.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bCB-Ud-cqk">
+                                <rect key="frame" x="-1" y="95" width="376" height="151"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dkd-5D-cWm">
+                                        <rect key="frame" x="1" y="8" width="375" height="37"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Team Pick" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylY-qe-JZe">
+                                                <rect key="frame" x="20" y="8" width="226" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vow-5e-sB9">
+                                        <rect key="frame" x="8" y="51" width="360" height="92"/>
+                                    </scrollView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUz-jZ-5QT">
+                                <rect key="frame" x="-1" y="237" width="376" height="151"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ID-yw-0M2">
+                                        <rect key="frame" x="1" y="8" width="375" height="37"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opponetnt Team Pick" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsb-9r-SpE">
+                                                <rect key="frame" x="20" y="8" width="226" height="21"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" red="0.28018465910000001" green="0.28018465910000001" blue="0.28018465910000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x8F-jr-G5m">
+                                        <rect key="frame" x="8" y="51" width="360" height="80"/>
+                                    </scrollView>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJi-Tl-Z2P">
+                                        <rect key="frame" x="0.0" y="139" width="375" height="8"/>
+                                        <color key="backgroundColor" red="0.28018465910000001" green="0.28018465910000001" blue="0.28018465910000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="myteam" destination="Vow-5e-sB9" id="IHN-LZ-wyn"/>
+                        <outlet property="opponent" destination="x8F-jr-G5m" id="Mkc-rQ-zKv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="96W-k6-xBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7428.5" y="-1550.5"/>
         </scene>
         <!--Tournament playnext-->
         <scene sceneID="BIq-j8-huV">
@@ -1994,7 +2070,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EIh-zX-0Jo">
-                                <rect key="frame" x="99" y="446" width="177" height="36"/>
+                                <rect key="frame" x="98" y="438" width="177" height="36"/>
                                 <state key="normal" title="Get tournament code" backgroundImage="postbu.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -2035,6 +2111,16 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d8j-g2-ojT">
+                                <rect key="frame" x="98" y="497" width="177" height="30"/>
+                                <state key="normal" title="Start Game!" backgroundImage="postsomething.png">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="nmr-Dd-uLO" kind="show" id="m76-8i-4fN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2047,7 +2133,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzV-DN-9jM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7442.5" y="-1521.5"/>
+            <point key="canvasLocation" x="7090.5" y="-2673.5"/>
         </scene>
         <!--Bracket-->
         <scene sceneID="xeu-cT-e9Q">
@@ -2064,7 +2150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqR-jC-m8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7442.5" y="-2276.5"/>
+            <point key="canvasLocation" x="7742.5" y="-2640.5"/>
         </scene>
         <!--TEAM-->
         <scene sceneID="dgm-0z-Qiv">
@@ -4037,6 +4123,7 @@
         <image name="playnextmatch.png" width="169" height="149"/>
         <image name="post.png" width="108" height="108"/>
         <image name="postbu.png" width="250" height="60"/>
+        <image name="postsomething.png" width="250" height="60"/>
         <image name="reportresult.png" width="169" height="149"/>
         <image name="result2.png" width="128" height="128"/>
         <image name="right.png" width="24" height="42"/>

@@ -31,7 +31,9 @@ class Tournament_joined: UIViewController {
     
     override func viewDidLoad() {
         
-        
+        RCIMClient.sharedRCIMClient().joinChatRoom("Cteemo", messageCount: 0, completion: { () -> Void in
+            
+            }, error: nil)
         Tournament.getmatches(self.url, member : 24179900)
         //titel.text = self.url
         self.Tournamentname = Tournament.tournamentName[self.gamenumber] as String
@@ -50,9 +52,9 @@ class Tournament_joined: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-    
-   
+
         
+      
         
     Tournament.tournamentStart(self.url)
     
@@ -75,11 +77,18 @@ class Tournament_joined: UIViewController {
     @IBAction func chat(sender: AnyObject) {
         
        
-        var chatViewController : RCChatViewController = RCIM.sharedRCIM().createDiscussionChat(self.url, title: self.Tournamentname, completion: nil)
+        var temp = RCChatViewController.alloc()
         
+        temp.currentTarget = "Cteemo"
+        temp.conversationType = RCConversationType.onversationType_CHATROOM
+        temp.enableSettings = false
+        temp.currentTargetName = "Cteemo"
+    
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
         
-        self.navigationController?.pushViewController(chatViewController, animated: true)
+        
+        self.navigationController?.pushViewController(temp, animated: true)
+      
         
     }
     

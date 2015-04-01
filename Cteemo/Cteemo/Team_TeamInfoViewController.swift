@@ -38,15 +38,28 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         
       
     }
-       
+
     override func viewDidAppear(animated: Bool) {
-        
+      
+      
         self.memberScroll.reloadInputViews()
         TeamInfoGlobal.uploadTeamInfo()
         navigation.title = TeamInfoGlobal.teamName
        
         if TeamInfoGlobal.teamName != "" && TeamInfoGlobal.teamID != "" {
-        
+          
+            var grouplist = [AnyObject]()
+            
+            var team = RCGroup.alloc()
+            team.groupId = TeamInfoGlobal.teamID
+            team.groupName = TeamInfoGlobal.teamName
+            grouplist.append(team)
+            
+            
+            RCIM.sharedRCIM().syncGroups(grouplist, completion: { () -> Void in
+                
+                }, error: nil)
+            
         capTain.setImage(TeamInfoGlobal.captainIcon, forState: UIControlState.Normal)
         capTainName.text = TeamInfoGlobal.captainName
             
@@ -70,10 +83,11 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
                 ImageLoader.sharedLoader.imageForUrl(TeamInfoGlobal.memberIcon[index] as String, completionHandler:{(image: UIImage?, url: String) in
                     
                     if image? != nil {
+                        
                         but.setImage(image, forState: UIControlState.Normal)
+                        
                     }
                     else {
-                        
                         but.setImage(UIImage(named: "error.png")!, forState: UIControlState.Normal)
                         
                     }})
@@ -106,6 +120,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
                 else {
                     self.teamicon.image = UIImage(named: "error.png")!
                 }})
+            
         }
             
         }
@@ -200,6 +215,10 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
 
     @IBAction func groupchat(sender: AnyObject) {
         
+        
+       
+        
+
         
         var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat(TeamInfoGlobal.teamID, title: TeamInfoGlobal.teamName, completion: nil)
         

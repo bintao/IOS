@@ -109,10 +109,6 @@ class UserInformation: NSObject, RequestResultDelegate{
         
     }
     //upload user information to the server
-   
-    func uploadUserInfo(){
-
-    }
     
     //download user information from the server
     func updateUserInfo(){

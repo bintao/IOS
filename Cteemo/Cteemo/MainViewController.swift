@@ -137,7 +137,8 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         }
             
         else if message.targetId != "KEFU1426185510333"{
-        
+            
+            println(message.targetId)
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
                 dispatch_async(dispatch_get_main_queue(),{
