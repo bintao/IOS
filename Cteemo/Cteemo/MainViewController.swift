@@ -146,6 +146,8 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                     var tabItem  = self.tabbar.items![3] as UITabBarItem
                     tabItem.badgeValue = "\(self.count)"
                     
+                    ((self.childViewControllers[0] as  UINavigationController).childViewControllers[0] as MeViewController).updatemesage(self.count)
+                    
                 })
             })
         
@@ -192,7 +194,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                     (status:RCConnectErrorCode) -> Void in
                     
                 
-                   // NSLog(RCConnectErrorCode)
+                   println(status)
                     
                     NSLog("Login failed")
                 }
@@ -235,6 +237,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         }else if item.title! == "Me" && me.alpha != 1{
             self.view.bringSubviewToFront(me)
             displayView(me)
+            
             self.view.bringSubviewToFront(tabbar)
         }
         

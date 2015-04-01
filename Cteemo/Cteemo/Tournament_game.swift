@@ -46,6 +46,8 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         self.refreshControl.endRefreshing()
     
     }
+    
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell2 = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[0] as tournamentViewCell

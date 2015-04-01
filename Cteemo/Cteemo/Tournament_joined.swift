@@ -111,7 +111,7 @@ class Tournament_joined: UIViewController {
         var par : [String: AnyObject] = ["api_key":Tournament.key]
         var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+self.url+"/participants/"+"\(self.memberID)"+"/check_in.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
-                
+                if JSON != nil {
                 var result = JSON as [String : AnyObject]
                 
                 if result["errors"]? != nil {
@@ -124,8 +124,10 @@ class Tournament_joined: UIViewController {
                     
                     let alert1 = SCLAlertView()
                     alert1.showSuccess(self.parentViewController?.parentViewController, title: "Check in Success", subTitle: TeamInfoGlobal.teamName + "ready for battle", closeButtonTitle: nil, duration: 3.0)
-                    
                 }
+                    
+                    
+            }
        
         
         }
@@ -150,7 +152,7 @@ class Tournament_joined: UIViewController {
              var controller: Tournament_playnext = segue.destinationViewController as Tournament_playnext
             
             controller.member = 24179900
-           
+           controller.tournamentname = self.Tournamentname
             controller.url = self.url
         }
         

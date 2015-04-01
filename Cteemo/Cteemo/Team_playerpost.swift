@@ -12,24 +12,33 @@ import Alamofire
 
 class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDelegate,RequestResultDelegate {
 
-    
     @IBOutlet var resultTable: UITableView!
     
     @IBOutlet var loading: UIActivityIndicatorView!
     
     var teams: [AnyObject] = [AnyObject]()
     
+   
     
     override func viewDidLoad() {
         resultTable.backgroundColor = UIColor.clearColor()
         resultTable.delegate = self
         resultTable.dataSource = self
         
+        
+        
     }
     override func viewDidAppear(animated: Bool) {
         search()
+      
+        
         
     }
+    
+ 
+
+    
+    
     func search(){
         
         var manager = Manager.sharedInstance

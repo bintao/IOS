@@ -18,6 +18,8 @@ class Tournament_playnext:  UIViewController  {
     
     var opponentid = 0
     
+    var tournamentname = ""
+    
     @IBOutlet var time: UILabel!
 
     
@@ -96,7 +98,8 @@ class Tournament_playnext:  UIViewController  {
     @IBAction func getcode(sender: AnyObject) {
         
         ///challonge_result, method : get, parameters : tournamentId, tournamentName, matchId
-
+        var name = self.tournamentname + "chaox vs chaos"
+        Tournament.tournamentcode(name, pass:"123")
         var manager = Manager.sharedInstance
         // Specifying the Headers we need
         manager.session.configuration.HTTPAdditionalHeaders = [
@@ -106,7 +109,7 @@ class Tournament_playnext:  UIViewController  {
             var req = Alamofire.request(.GET, "http://54.149.235.253:5000/challonge_result",parameters: ["tournamentId": self.url,"tournamentName": self.url, "matchId" : self.matchid])
                 .responseJSON { (_, _, JSON, _) in
                   
-                    println(JSON)
+                    
             }
         
         

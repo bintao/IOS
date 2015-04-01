@@ -40,19 +40,6 @@ class MeViewController: UIViewController  {
         
         var num = RCIM.sharedRCIM().totalUnreadCount
         
-        if num < 99 && num > 0 {
-            
-            self.unreadmessage.imageView?.image = UIImage(named: "free button.png")!
-            unreadmessage.titleLabel?.text = "\(num)"
-            
-        }
-        else if num > 0{
-            
-            self.unreadmessage.imageView?.image = UIImage(named: "free button.png")!
-            unreadmessage.titleLabel?.text = "99"
-            
-        }
-        
         self.usericon.image = UserInfoGlobal.icon
         self.school.text = UserInfoGlobal.school
         self.username.text = UserInfoGlobal.name
@@ -62,6 +49,30 @@ class MeViewController: UIViewController  {
         
     }
 
+    func updatemesage(num : Int){
+        
+        println(num)
+        
+        if num < 99 && num > 0 {
+            
+             self.unreadmessage.setBackgroundImage(UIImage(named: "free button.png")!, forState: UIControlState.Normal)
+            self.unreadmessage.setTitle("\(num)", forState: UIControlState.Normal)
+           
+            
+        }
+        else if num > 0{
+            
+           self.unreadmessage.setBackgroundImage(UIImage(named: "free button.png")!, forState: UIControlState.Normal)
+            self.unreadmessage.setTitle("99", forState: UIControlState.Normal)
+        }
+        else if num == 0 {
+        
+             self.unreadmessage.setBackgroundImage(nil, forState: UIControlState.Normal)
+            self.unreadmessage.setTitle("", forState: UIControlState.Normal)
+        
+        }
+    
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -98,8 +109,8 @@ class MeViewController: UIViewController  {
     @IBAction func getlist(sender: AnyObject) {
         
         
-        self.unreadmessage.titleLabel?.text = ""
-        self.unreadmessage.imageView?.image = nil
+        self.unreadmessage.setBackgroundImage(nil, forState: UIControlState.Normal)
+        self.unreadmessage.setTitle("", forState: UIControlState.Normal)
         
         var list : RCChatListViewController =  RCIM.sharedRCIM().createConversationList { () -> Void in
             
@@ -127,6 +138,8 @@ class MeViewController: UIViewController  {
         
         
     }
+    
+    
     
     @IBAction func customservers(sender: AnyObject) {
         

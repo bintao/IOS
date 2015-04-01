@@ -8,6 +8,7 @@
 
 
 import UIKit
+import Foundation
 import Alamofire
 import SwiftyJSON
 
@@ -383,6 +384,50 @@ class TournamentAPI: NSObject{
                 
         }
     }
+    
+    /*
+
+
+    self.map = {"The Crystal Scar":8,
+    "Twisted Treeline":10,
+    "Summoner's Rift":11,
+    "Howling Abyss":12}
+    
+    
+    self.pick = {"BLIND PICK":1,
+    "DRAFT MODE":2,
+    "ALL RANDOM":4,
+    "TOURNAMENT DRAFT":6}
+    
+    
+    
+    self.spec = {'NONE':'NONE',
+    'ALL':'ALL',
+    'LOBBY':'LOBBYONLY'}
+
+    */
+    func tournamentcode(name:String, pass:String){
+    
+        var code = "pvpnet://lol/customgame/joinorcreate/map11/pick6/team5/specALL/"
+        
+        
+        let url = "54.149.235.253:5000/match_report/lol"
+        
+        let plainString = "{\"name\":\"\(name)\",\"extra\":\"\(name)\",\"password\":\"\(pass)\",\"report\":\"\(url)\"}"
+       
+        println(plainString)
+        
+        let plainData = (plainString as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
+        let base64String = plainData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+        println(base64String)
+        
+        println(code+base64String)
+    
+    }
+    
+   
+    
+   
     
     
 }
