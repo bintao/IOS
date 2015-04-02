@@ -72,16 +72,18 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         
          let alert = SCLAlertView()
         let alert1 = SCLAlertView()
+        let alert2 = SCLAlertView()
         var url = Tournament.tournamentUrl[sender.tag] as String
         var name = Tournament.tournamentName[sender.tag] as String
         var member = TeamInfoGlobal.teamName
         
         
-        
+        alert2.showWaiting(self.parentViewController?.parentViewController, title: "Loading", subTitle: "Cteemo is loading", closeButtonTitle: nil, duration: 0.0)
         var par : [String: AnyObject] = ["api_key":Tournament.key]
         var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 let myjson = SwiftyJSON.JSON(JSON!)
+                var s = 0
                 if myjson.count != 0{
                     for i in 0...myjson.count-1{
                         if let k = myjson[i]["participant"]["name"].string{
@@ -89,19 +91,21 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                             if k == member{
                                 println(k)
                                 if let n =  myjson[i]["participant"]["id"].int{
-                                    self.memberID = n
-                                    println(self.memberID)
+                                  
+                                    s = n
+                                  
                                 }
                             }
                         }
                     }//end for loop
-                
-                    if self.memberID != 0 {
                     
+                    alert2.hideView()
+                    
+                    if s != 0 {
+                          self.memberID = s
                           self.performSegueWithIdentifier("joined", sender: self)
                     
                     }// 在比赛中找到了成员
-                    
                     
                         
                     //当在比赛中找不到成员时候
