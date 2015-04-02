@@ -47,10 +47,8 @@ class Tournament_joined: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
 
-        self.findMemberID(self.url, member: TeamInfoGlobal.teamName)
         self.Tournamentname = Tournament.tournamentName[self.gamenumber] as String
         self.navigationController?.navigationItem.title = self.Tournamentname
-
         self.type.text = self.TournamentType
         self.time.text = self.starttime
         self.member.text = "\(self.totalmember)"
@@ -73,7 +71,6 @@ class Tournament_joined: UIViewController {
     
     @IBAction func chat(sender: AnyObject) {
         
-       println(self.memberID)
         
         var temp:RCChatViewController = RCChatViewController.alloc()
         
@@ -81,7 +78,7 @@ class Tournament_joined: UIViewController {
         temp.conversationType = RCConversationType.onversationType_CHATROOM
         temp.enableSettings = false
         temp.currentTargetName = "Cteemo"
-        
+    
         
         temp.portraitStyle = RCUserAvatarStyle.Cycle
         
