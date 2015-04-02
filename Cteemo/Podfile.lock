@@ -1,6 +1,6 @@
 PODS:
   - RongCloudIMKit (1.4.1.1)
-  - SCLAlertView-Objective-C (0.6.1)
+  - SCLAlertView-Objective-C (0.7.0)
 
 DEPENDENCIES:
   - RongCloudIMKit (~> 1.4.1)
@@ -8,6 +8,6 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   RongCloudIMKit: 17e2be1ee65ea6e65fbd28e66dbe50374b7c77ac
-  SCLAlertView-Objective-C: da92da8bfd193d813e71b13ed11b6d5aa3b96cc3
+  SCLAlertView-Objective-C: 0491ea966dba9b3713178e2ffbcd0a148dc5b271
 
 COCOAPODS: 0.35.0

@@ -184,32 +184,6 @@ class Tournament_joined: UIViewController {
     }
     
     
-    func findMemberID(name: String,member :String) {
-        var s : Int = 1
-        var par : [String: AnyObject] = ["api_key":Tournament.key]
-        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
-            .responseJSON { (_, _, JSON, _) in
-                let myjson = SwiftyJSON.JSON(JSON!)
-                if myjson.count != 0{
-                    for i in 0...myjson.count-1{
-                        if let k = myjson[i]["participant"]["name"].string{
-                            
-                            if k == member{
-                                println(k)
-                                if let n =  myjson[i]["participant"]["id"].int{
-                                    s = n
-                                    self.memberID = s
-                                    println(self.memberID)
-                                }
-                            }
-                        }
-                    }
-                }
-                
-        }
-        
-        
-    }
 
     
     
