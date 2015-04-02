@@ -1948,6 +1948,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="member" destination="JtV-AJ-rWE" id="oFU-RW-HZn"/>
+                        <outlet property="navigation" destination="AYr-7R-LjN" id="USU-3N-DMc"/>
                         <outlet property="time" destination="6OL-fP-zna" id="01u-9W-GEE"/>
                         <outlet property="type" destination="PHW-iT-JjD" id="d0S-gd-0Bz"/>
                         <segue destination="gcO-xg-BL5" kind="show" identifier="bracket" id="Ehu-kk-tsB"/>

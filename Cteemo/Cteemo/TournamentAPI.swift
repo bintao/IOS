@@ -33,7 +33,7 @@ class TournamentAPI: NSObject{
     
     // for teams
     var teams :[AnyObject] = [AnyObject]()
-    
+    var memberid = 0
     func getArray(){
         
     }
@@ -226,15 +226,13 @@ class TournamentAPI: NSObject{
   
     
     //joinTournaent
-    func JoinTournament(id: String, name : String,email : String)
+    func JoinTournament(id: String, name : String)
     {
-    
-        var par : [String: AnyObject] = ["api_key":key,"participant[name]":name,"participant[email]":email]
+        var par : [String: AnyObject] = ["api_key":key,"participant[name]":name]
         var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+id+"/participants.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
                 println(result)
-                
         }
 
     }
@@ -255,7 +253,7 @@ class TournamentAPI: NSObject{
     
     
     
-    func findMemberID(name: String,member :String) -> Int{
+    func findMemberID(name: String,member :String) {
         var s : Int = 1
         var par : [String: AnyObject] = ["api_key":key]
         var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
@@ -275,10 +273,10 @@ class TournamentAPI: NSObject{
                 }
             }
         }
-            
+             
         }
-          return s
-        
+        self.memberid = s
+       
     }
     
     
@@ -385,6 +383,9 @@ class TournamentAPI: NSObject{
         }
     }
     
+    
+
+    
     /*
 
 
@@ -410,7 +411,6 @@ class TournamentAPI: NSObject{
     
         var code = "pvpnet://lol/customgame/joinorcreate/map11/pick6/team5/specALL/"
         
-        
         let url = "54.149.235.253:5000/match_report/lol"
         
         let plainString = "{\"name\":\"\(name)\",\"extra\":\"\(name)\",\"password\":\"\(pass)\",\"report\":\"\(url)\"}"
@@ -425,6 +425,14 @@ class TournamentAPI: NSObject{
     
     }
     
+    
+    func findmember(){
+    
+    
+        
+        
+    
+    }
    
     
    

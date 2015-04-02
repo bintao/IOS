@@ -22,38 +22,12 @@ class MeViewController: UIViewController  {
     
     @IBOutlet var unreadmessage: UIButton!
     
+    var iconurl:String = ""
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
         
-        var manager = Manager.sharedInstance
-        // Specifying the Headers we need
-        manager.session.configuration.HTTPAdditionalHeaders = [
-            "token": UserInfoGlobal.accessToken
-        ]
-
-        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/profile")
-            .responseJSON { (_, _, JSON, _) in
-                if JSON != nil {
-                    
-                    println(JSON)
-                        let myjson = SwiftyJSON.JSON(JSON!)
-                    if let name = myjson["username"].string{
-                        self.username.text = name
-                    }
-                    else {
-                    
-                    self.username.text = ""
-                    }
-                    
-                    if let school = myjson["school"].string{
-                        self.school.text = school
-                    }
-                    
-                }
-
-        }
         
         
         // Do any additional setup after loading the view.
@@ -62,16 +36,48 @@ class MeViewController: UIViewController  {
     
     override func viewDidAppear(animated: Bool) {
         
+        
+        var manager = Manager.sharedInstance
+        // Specifying the Headers we need
+        manager.session.configuration.HTTPAdditionalHeaders = [
+            "token": UserInfoGlobal.accessToken
+        ]
+        
+        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/profile")
+            .responseJSON { (_, _, JSON, _) in
+                if JSON != nil {
+                    
+                    println(JSON)
+                    let myjson = SwiftyJSON.JSON(JSON!)
+                    if let name = myjson["username"].string{
+                        self.username.text = name
+                    }
+                    else {
+                        
+                        self.username.text = ""
+                    }
+                    
+                    if let school = myjson["school"].string{
+                        self.school.text = school
+                    }
+                    
+                    if let url = myjson["profile_icon"].string{
+                        self.iconurl = url
+                    }
+                    
+                }
+                
+        }
+
+        
         ImageLoader.sharedLoader.imageForUrl(UserInfoGlobal.profile_icon_Link, completionHandler:{(image: UIImage?, url: String) in
             if image? != nil {
                 self.usericon.image = image
             }
         })
-        
-        var num = RCIM.sharedRCIM().totalUnreadCount
-        
+        if UserInfoGlobal.icon != nil {
         self.usericon.image = UserInfoGlobal.icon
-        
+        }
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
         

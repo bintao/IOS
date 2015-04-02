@@ -34,7 +34,6 @@ class UserTeam: NSObject{
     var memberName :[AnyObject] = [AnyObject]()
     var memberId :[AnyObject] = [AnyObject]()
 
-    
     var captainId : String = ""
     var captainName : String = ""
     

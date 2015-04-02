@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import SwiftyJSON
 
 class Tournament_joined: UIViewController {
     
@@ -23,6 +24,8 @@ class Tournament_joined: UIViewController {
     var gamenumber = 0
     var url :String = ""
     
+    @IBOutlet var navigation: UINavigationItem!
+    
     @IBOutlet var type: UITextView!
 
     @IBOutlet var time: UITextView!
@@ -31,20 +34,11 @@ class Tournament_joined: UIViewController {
     
     override func viewDidLoad() {
         
-        RCIMClient.sharedRCIMClient().joinChatRoom("Cteemo", messageCount: 0, completion: { () -> Void in
-            
-            }, error: nil)
-        Tournament.getmatches(self.url, member : 24179900)
-        //titel.text = self.url
-        self.Tournamentname = Tournament.tournamentName[self.gamenumber] as String
-       
-        self.memberID = Tournament.findMemberID(self.url, member: TeamInfoGlobal.teamName)
-        self.type.text = self.TournamentType
-        self.time.text = self.starttime
-        self.member.text = "\(self.totalmember)"
-        
+    
         super.viewDidLoad()
-        
+        self.Tournamentname = Tournament.tournamentName[self.gamenumber] as String
+        Tournament.getmatches(self.url, member : 24179900)
+        navigation.title = self.Tournamentname
        
         
         
@@ -53,11 +47,14 @@ class Tournament_joined: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
 
-        
-      
-        
-    Tournament.tournamentStart(self.url)
-    
+        self.findMemberID(self.url, member: TeamInfoGlobal.teamName)
+        self.Tournamentname = Tournament.tournamentName[self.gamenumber] as String
+        self.navigationController?.navigationItem.title = self.Tournamentname
+
+        self.type.text = self.TournamentType
+        self.time.text = self.starttime
+        self.member.text = "\(self.totalmember)"
+        println(self.memberID)
      ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
     
     
@@ -76,14 +73,19 @@ class Tournament_joined: UIViewController {
     
     @IBAction func chat(sender: AnyObject) {
         
-       
-        var temp = RCChatViewController.alloc()
+       println(self.memberID)
+        
+        var temp:RCChatViewController = RCChatViewController.alloc()
         
         temp.currentTarget = "Cteemo"
         temp.conversationType = RCConversationType.onversationType_CHATROOM
         temp.enableSettings = false
         temp.currentTargetName = "Cteemo"
-    
+        
+        
+        temp.portraitStyle = RCUserAvatarStyle.Cycle
+        
+        
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
         
         
@@ -116,11 +118,13 @@ class Tournament_joined: UIViewController {
     
     @IBAction func checkin(sender: AnyObject) {
         
-        
+        println(self.memberID)
         var par : [String: AnyObject] = ["api_key":Tournament.key]
         var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+self.url+"/participants/"+"\(self.memberID)"+"/check_in.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
+                
                 if JSON != nil {
+                println(JSON)
                 var result = JSON as [String : AnyObject]
                 
                 if result["errors"]? != nil {
@@ -182,6 +186,34 @@ class Tournament_joined: UIViewController {
         
     }
     
+    
+    func findMemberID(name: String,member :String) {
+        var s : Int = 1
+        var par : [String: AnyObject] = ["api_key":Tournament.key]
+        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
+            .responseJSON { (_, _, JSON, _) in
+                let myjson = SwiftyJSON.JSON(JSON!)
+                if myjson.count != 0{
+                    for i in 0...myjson.count-1{
+                        if let k = myjson[i]["participant"]["name"].string{
+                            
+                            if k == member{
+                                println(k)
+                                if let n =  myjson[i]["participant"]["id"].int{
+                                    s = n
+                                    self.memberID = s
+                                    println(self.memberID)
+                                }
+                            }
+                        }
+                    }
+                }
+                
+        }
+        
+        
+    }
+
     
     
     /*

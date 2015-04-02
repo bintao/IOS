@@ -10,8 +10,6 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-
-
 class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDelegate , RCIMReceiveMessageDelegate , RCIMUserInfoFetcherDelegagte  {
     
     @IBOutlet var tabbar: UITabBar!

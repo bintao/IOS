@@ -193,7 +193,6 @@
 		A1B8E9601A7B20F2009BE011 /* Forma 1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9531A7B20F2009BE011 /* Forma 1.png */; };
 		A1B8E9621A7B20F2009BE011 /* hentiao2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9551A7B20F2009BE011 /* hentiao2.png */; };
 		A1B8E9631A7B20F2009BE011 /* OK.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B8E9561A7B20F2009BE011 /* OK.png */; };
-		A1BECE471ABB7D5B00CDE9A6 /* groupChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1BECE461ABB7D5B00CDE9A6 /* groupChatView.swift */; };
 		A1BF3BFA1AAC06FC002A900C /* libPods-RongCloudIMKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A1BF3BF91AAC06FC002A900C /* libPods-RongCloudIMKit.a */; };
 		A1C885D91AC29CF500AA7888 /* Team_playerpost.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1C885D81AC29CF500AA7888 /* Team_playerpost.swift */; };
 		A1CEFEA21AABE71D002D5956 /* tableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A1CEFEA11AABE71D002D5956 /* tableCell.xib */; };
@@ -516,7 +515,6 @@
 		A1B8E9531A7B20F2009BE011 /* Forma 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Forma 1.png"; sourceTree = "<group>"; };
 		A1B8E9551A7B20F2009BE011 /* hentiao2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hentiao2.png; sourceTree = "<group>"; };
 		A1B8E9561A7B20F2009BE011 /* OK.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OK.png; sourceTree = "<group>"; };
-		A1BECE461ABB7D5B00CDE9A6 /* groupChatView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = groupChatView.swift; sourceTree = "<group>"; };
 		A1BF3BF91AAC06FC002A900C /* libPods-RongCloudIMKit.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libPods-RongCloudIMKit.a"; path = "Pods/build/Debug-iphoneos/libPods-RongCloudIMKit.a"; sourceTree = "<group>"; };
 		A1C885D81AC29CF500AA7888 /* Team_playerpost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_playerpost.swift; sourceTree = "<group>"; };
 		A1CEFEA11AABE71D002D5956 /* tableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = tableCell.xib; sourceTree = "<group>"; };
@@ -673,7 +671,6 @@
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
 				A1CEFEA11AABE71D002D5956 /* tableCell.xib */,
-				A1BECE461ABB7D5B00CDE9A6 /* groupChatView.swift */,
 				42B74FBE1A812416008B575C /* MainViewController.swift */,
 				425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */,
 				427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */,
@@ -1398,7 +1395,6 @@
 				42B0A3481A89CFF800EA908C /* Login_Forpassword.swift in Sources */,
 				425E8FE51A8B19BF00A06752 /* CustomPosterView.swift in Sources */,
 				A11FED861ABD4D060075B627 /* RAMRotationAnimation.swift in Sources */,
-				A1BECE471ABB7D5B00CDE9A6 /* groupChatView.swift in Sources */,
 				42855BA81A84803000EB9546 /* Team_CreateTeamViewController.swift in Sources */,
 				42B74FC51A812416008B575C /* TournamentViewController.swift in Sources */,
 				A11FED841ABD4D060075B627 /* RAMFrameItemAnimation.swift in Sources */,

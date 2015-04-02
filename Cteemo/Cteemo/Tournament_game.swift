@@ -16,6 +16,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     var TournamentType :String = ""
     var starttime : String = ""
     var joinTeam :String = ""
+    var memberID = 0
     
     var teams: [AnyObject] = [AnyObject]()
     
@@ -69,7 +70,74 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         self.starttime = Tournament.startTime[sender.tag] as String
         self.teamsnumber = Tournament.totalMember[sender.tag] as Int
         
-        self.performSegueWithIdentifier("joined", sender: self)
+         let alert = SCLAlertView()
+        let alert1 = SCLAlertView()
+        var url = Tournament.tournamentUrl[sender.tag] as String
+        var name = Tournament.tournamentName[sender.tag] as String
+        var member = TeamInfoGlobal.teamID
+        
+
+        if TeamInfoGlobal.iscaptain == "yes"{
+            
+            
+            alert.addButton("Join!"){
+                
+                
+                var par : [String: AnyObject] = ["api_key":Tournament.key,"participant[name]":TeamInfoGlobal.teamName]
+                var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/participants.json",parameters:par)
+                    .responseJSON { (_, _, JSON, _) in
+                        println(JSON)
+                         let myjson = SwiftyJSON.JSON(JSON!)
+                        if JSON != nil {
+                      
+                        var result: [String: AnyObject] = JSON as [String: AnyObject]
+                            if result["errors"]? != nil {
+                                
+                                if let error = myjson["errors"][0].string
+                                {
+                                    println(error)
+                                    if error.rangeOfString("no longer be added")?.isEmpty != nil{
+                                    alert1.showError(self.parentViewController?.parentViewController, title: "Failed to Join", subTitle: "Game already Started", closeButtonTitle: "ok", duration: 0.0)
+                                    }
+                                    if error.rangeOfString("Name has already")?.isEmpty != nil{
+                                          self.performSegueWithIdentifier("joined", sender: self)
+                                        
+                                    } // already joined
+                                
+                                }// check errors
+                               
+                            
+                            }//error exis
+                            
+                            else if result["participant"]? != nil {
+                                
+                                 self.performSegueWithIdentifier("joined", sender: self)
+                        
+                        
+                            }//newuser joined
+                       
+                        }
+                        
+                       
+                        
+                }
+                
+                
+            }
+            alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Free Tournament!", subTitle: "Dear captain, Do you want to Join " + name,closeButtonTitle: "Cancel", duration: 0.0)
+        
+        
+        }
+        
+        else{
+            
+            alert.showWarning(self.parentViewController?.parentViewController, title: "Join failed", subTitle: "You must be the captain in able to Join Tournament", closeButtonTitle: "ok", duration: 0.0)
+            
+        }
+       
+
+
+       
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
