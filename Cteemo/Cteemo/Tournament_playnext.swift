@@ -100,23 +100,43 @@ class Tournament_playnext:  UIViewController  {
         ///challonge_result, method : get, parameters : tournamentId, tournamentName, matchId
         var name = self.tournamentname + "chaox vs chaos"
         Tournament.tournamentcode(name, pass:"123")
-        var manager = Manager.sharedInstance
-        // Specifying the Headers we need
-        manager.session.configuration.HTTPAdditionalHeaders = [
-            "token": UserInfoGlobal.accessToken
-        ]
-        
-            var req = Alamofire.request(.GET, "http://54.149.235.253:5000/challonge_result",parameters: ["tournamentId": self.url,"tournamentName": self.url, "matchId" : self.matchid])
-                .responseJSON { (_, _, JSON, _) in
-                  
-                    
-            }
-        
-        
+        sentemail ()
         
     }
     
     
     
+    func  sentemail (){
+
+
+
+        /*curl -s --user 'api:key-1c2afaf797833a0b50c0507c2131ec1'
+
+        https://api.mailgun.net/v3/www.cteemolol.com/messages
+
+        -F from='Excited User <mailgun@www.cteemolol.com>'
+
+        -F to=bintao@cteemo.com
+
+        -F subject='Hello'
+
+        -F text='Testing some Mailgun awesomness!'
+        */
+        
+        var manager = Manager.sharedInstance
+        // Specifying the Headers we need
+        manager.session.configuration.HTTPAdditionalHeaders = [
+            "api": "key-1c2afaf797833a0b50c0507c2131ec1"
+        ]
+        
+        var par : [String: AnyObject] = ["from":"Excited User <mailgun@www.cteemolol.com>","to" : "bintao@cteemo.com","subject":"Hello","text":"Testing some Mailgun awesomness!"]
+        
+        var req = Alamofire.request(.POST, "https://api.mailgun.net/v3/www.cteemolol.com/messages",parameters:par)
+            .responseJSON { (_, _, JSON, _) in
+                println(JSON)
+
+        }
+    
+    }
 
 }

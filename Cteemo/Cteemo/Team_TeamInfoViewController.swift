@@ -175,6 +175,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
                             {
                                 TeamInfoGlobal.cleanUserData()
                                 self.performSegueWithIdentifier("returnToTeam", sender: self)
+                                
                             }
                         }
                 }
