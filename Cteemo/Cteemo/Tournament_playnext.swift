@@ -34,8 +34,6 @@ class Tournament_playnext:  UIViewController  {
         var playerid2 = 0
         var par : [String: AnyObject] = ["api_key":Tournament.key,"participant_id" : myteamid]
         
-        println(self.url)
-        println(self.myteamid)
         
         var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+url+"/matches.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
@@ -82,7 +80,6 @@ class Tournament_playnext:  UIViewController  {
                 }
                 else{
                 
-                    
                 let alert1 = SCLAlertView()
                     alert1.addButton("ok"){
                     

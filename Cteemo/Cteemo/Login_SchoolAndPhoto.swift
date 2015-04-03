@@ -22,6 +22,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     
     var sourceImage: UIImage!
     var name : String = ""
+    var lolid : String = ""
     
     @IBOutlet var teemoSpeaker : UIView!
     @IBOutlet var messageDisplay : UITextView!
@@ -56,17 +57,8 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
 
         if (UserInfoGlobal.accessToken != "" && lolName.text != "" && school.text != "" ){
             if (LolAPIGlobal.lolID != ""){
-                var gender = ""
-                println(UserInfoGlobal.name)
-                if self.gender.selectedSegmentIndex == 1{
-                    gender = "Female"
-                }else{
-                    gender = "Male"
-                }
-                
-                var req = ARequest(prefix: "profile", method: requestType.POST, parameters: ["username": name, "school":school.text,"lolID":lolName.text, "intro" : gender])
-                req.delegate = self
-                req.sendRequestWithToken(UserInfoGlobal.accessToken)
+                self.lolid = lolName.text
+                self.performSegueWithIdentifier("gotololid", sender: self)
         
             }
             else {
@@ -86,32 +78,8 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     
     func gotResult(prefix: String, result: AnyObject) {
         
-        if prefix == "profile"{
-            
-            println(result)
-            
-            LolAPIGlobal.lolName = self.lolName.text
-      
-            if self.gender.selectedSegmentIndex == 1{
-                UserInfoGlobal.gender = "Female"
-            }else{
-                UserInfoGlobal.gender = "Male"
-            }
-            
-            UserInfoGlobal.school = self.school.text
-            
-            UserInfoGlobal.name = self.name
-            
-            UserInfoGlobal.saveUserData()
-            
-            var req1 = ARequest(prefix: "upload_profile_icon", method: requestType.POST)
-            req1.delegate = self
-            req1.uploadPhoto("icon.png")
-
-            self.performSegueWithIdentifier("gotololid", sender: self)
-            
-        }
-        else if prefix == LolAPIGlobal.key {
+        
+         if prefix == LolAPIGlobal.key {
             
             println(LolAPIGlobal.lolName)
             if(result as [String: AnyObject])[LolAPIGlobal.lolName] as [String: AnyObject]? != nil{
@@ -149,6 +117,23 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             controller.sourceImage = self.sourceImage
             
         }
+        if segue.identifier == "gotololid"{
+            
+            var controller: Login_lolID = segue.destinationViewController as Login_lolID
+            var gender = ""
+            if self.gender.selectedSegmentIndex == 1{
+                gender = "Female"
+            }else{
+                gender = "Male"
+            }
+            controller.gender = gender
+            controller.school = self.school.text
+            controller.name = self.name
+            controller.clolname = LolAPIGlobal.lolName
+            
+        }
+        
+        
         
     }
     

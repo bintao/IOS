@@ -115,6 +115,7 @@ class UserInformation: NSObject, RequestResultDelegate{
         var req = ARequest(prefix: "profile", method: requestType.GET)
         req.delegate = self
         req.sendRequestWithToken(UserInfoGlobal.accessToken)
+
     }
     
     func gotResult(prefix: String, result: AnyObject) {
@@ -159,12 +160,28 @@ class UserInformation: NSObject, RequestResultDelegate{
                 TeamInfoGlobal.teamName = result["LOLTeam"] as String
             }
             else { TeamInfoGlobal.teamName = ""}
+            if result["dotaID"]? != nil{
+            LolAPIGlobal.lolRank = result["dotaID"] as String
+            }
+            else{
+                
+                LolAPIGlobal.lolRank = ""
+           
+            }
+            if result["hstoneID"]? != nil{
+                
+                  LolAPIGlobal.lolID = result["hstoneID"] as String
+            }
+            else{
+            
+            LolAPIGlobal.lolID = ""
+            
+            }
             
             
             UserInfoGlobal.saveUserData()
             TeamInfoGlobal.saveUserData()
             LolAPIGlobal.saveLOLData()
-        
             
             
         }

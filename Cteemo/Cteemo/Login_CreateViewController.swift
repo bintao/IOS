@@ -115,7 +115,6 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
                         UserInfoGlobal.accessToken = result["token"] as String
                         UserInfoGlobal.rongToken = (result["rongToken"] as [String: AnyObject])["token"] as String
                         UserInfoGlobal.saveUserData()
-                        UserInfoGlobal.updateUserInfo()
                         self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
                     }
                     else{

@@ -40,6 +40,7 @@ class Tournament_startgame: UIViewController {
         
         let url = "https://na.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/NA1/25350780?api_key="+LolAPIGlobal.key
         
+        
         Alamofire.request(.GET,url)
             .responseJSON { (_, _, JSON, error) in
                 

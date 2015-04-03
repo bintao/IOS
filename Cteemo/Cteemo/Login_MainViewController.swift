@@ -21,6 +21,8 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     @IBOutlet var loadingView : UIImageView!
     @IBOutlet var loading : UIActivityIndicatorView!
     
+    var name:String = ""
+    
     override func viewDidLoad(){
         super.viewDidLoad()
                     
@@ -50,7 +52,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
             }
             
             UserInfoGlobal.saveUserData()
-            
+            self.name = user.name
             startLoading()
             //facebook logedin
 
@@ -135,6 +137,8 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
             
                 }
                 
+                
+                
                 self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
                 
             }
@@ -201,6 +205,17 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     }
 
     @IBAction func returnToLoginMain(segue : UIStoryboardSegue) {
+        
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "getSchoolAfterFacebook"{
+            
+            var controller: Login_SchoolAndPhoto = segue.destinationViewController as Login_SchoolAndPhoto
+            controller.name = self.name
+            
+        }
         
     }
     
