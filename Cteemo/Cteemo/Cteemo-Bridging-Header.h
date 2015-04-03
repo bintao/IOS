@@ -8,7 +8,6 @@
 #import "AFNetworking.h"
 #import "SwiftyJSON.h"
 #import "RCIM.h"
-
 #import "RCChatViewController.h"
 #import <RCChatListViewController.h>
 #import "SCLAlertView.h"

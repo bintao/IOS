@@ -139,20 +139,11 @@ class Tournament_startgame: UIViewController {
         self.myteam.contentSize = CGSizeMake(75 * CGFloat(blueteammember.count), 75)
         for var index = 0; index < blueteammember.count; index++ {
             
-            var url = "http://ddragon.leagueoflegends.com/cdn/"+LolAPIGlobal.lolpatch+"/img/profileicon/"+"\(blueteammember[index].iconid)"+".png"
+            var hero = "\(blueteammember[index].heropick)" + ".png"
             
             var but = UIButton(frame: CGRectMake(5 + 75 * CGFloat(index), 10, 65, 65))
-            ImageLoader.sharedLoader.imageForUrl(url, completionHandler:{(image: UIImage?, url: String) in
-                
-                if image? != nil {
-                    var temp = image?.roundCornersToCircle()
-                    but.setImage(temp, forState: UIControlState.Normal)
-                }
-                else {
-                    
-                    but.setImage(UIImage(named: "error.png")!, forState: UIControlState.Normal)
-                    
-                }})
+            
+            but.setImage(UIImage(named: hero)!, forState: UIControlState.Normal)
             
             myteam.addSubview(but)
             
@@ -163,6 +154,31 @@ class Tournament_startgame: UIViewController {
             myteam.addSubview(lab)
             
         }
+            
+            if redmember.count != 0 {
+            
+                self.opponent.contentSize = CGSizeMake(75 * CGFloat(redmember.count), 75)
+                for var index = 0; index < redmember.count; index++ {
+                    
+                    var hero = "\(redmember[index].heropick)" + ".png"
+                    
+                    var but = UIButton(frame: CGRectMake(5 + 75 * CGFloat(index), 10, 65, 65))
+                    
+                    but.setImage(UIImage(named: hero)!, forState: UIControlState.Normal)
+                    
+                    opponent.addSubview(but)
+                    
+                    var lab = UILabel(frame: CGRectMake(75 * CGFloat(index), 75, 75, 20))
+                    lab.textAlignment = NSTextAlignment.Center
+                    
+                    lab.text = redmember[index].name
+                    opponent.addSubview(lab)
+                }
+            
+            }
+            
+            
+            
         }
     }
     

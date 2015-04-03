@@ -46,7 +46,8 @@ class Tournament_joined: UIViewController {
     }
     
     override func viewDidAppear(animated: Bool) {
-
+        
+        self.searchmyid()
         self.Tournamentname = Tournament.tournamentName[self.gamenumber] as String
         self.navigationController?.navigationItem.title = self.Tournamentname
         self.type.text = self.TournamentType
@@ -167,7 +168,7 @@ class Tournament_joined: UIViewController {
             
              var controller: Tournament_playnext = segue.destinationViewController as Tournament_playnext
             
-            controller.member = 24179900
+            controller.myteamid = self.memberID
            controller.tournamentname = self.Tournamentname
             controller.url = self.url
         }
@@ -188,6 +189,38 @@ class Tournament_joined: UIViewController {
         
         
     }
+    
+    func searchmyid() {
+    
+        var myteamname = TeamInfoGlobal.teamName
+        var par : [String: AnyObject] = ["api_key":Tournament.key]
+        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+self.url+"/participants.json",parameters:par)
+            .responseJSON { (_, _, JSON, _) in
+                let myjson = SwiftyJSON.JSON(JSON!)
+                var s = 0
+                if myjson.count != 0{
+                    for i in 0...myjson.count-1{
+                        if let k = myjson[i]["participant"]["name"].string{
+                            
+                            if k == myteamname {
+                                
+                                if let n =  myjson[i]["participant"]["id"].int{
+                                    
+                                    self.memberID = n
+                                    
+                                }
+                        
+                            }
+                        }
+                    }//end for loop
+                }
+                
+        }
+   
+    
+    }
+    
+    
     
     
 

@@ -70,6 +70,10 @@ class LolAPI: NSObject{
         req.sendRequest()
     }
     
+    
+    
+    
+    
     func uploadlolinfo(){
     
         if self.lolName != "" {
@@ -84,9 +88,41 @@ class LolAPI: NSObject{
 
         
         }
+
+    }
+    
+    
+    
+    func uploadlolid(){
+    
+        if self.lolName != "" {
+            var url = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/"+self.lolName+"?api_key="+key
+            Alamofire.request(.GET,url)
+                .responseJSON { (_, _, JSON, _) in
+                    if JSON as [String: AnyObject]? != nil{
+                        var result: [String: AnyObject] = JSON as [String: AnyObject]
+                        if result["id"]? != nil{
+                            
+                            println(result)
+                            
+                            if result["id"]? != nil {
+                                var idd: Int! = result["id"] as? Int!
+                                self.lolID = "\(idd)"
+                            }
+                            else {LolAPIGlobal.lolID = ""}
+                          
+                            self.saveLOLData()
+                        }
+                    }
+            }
+            
+            
+        }
+
     
     
     }
+    
     func getIDresult(result: [String: AnyObject]){
        
         if result["id"]? != nil{

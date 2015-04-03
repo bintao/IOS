@@ -2130,9 +2130,11 @@
                         <outlet property="members" destination="MEf-xw-JwR" id="Rzy-0i-kau"/>
                         <outlet property="teamicon" destination="T2Y-4Q-Ay0" id="rbJ-bR-OjE"/>
                         <outlet property="time" destination="2wZ-0H-pLV" id="i7z-vr-X6v"/>
+                        <segue destination="65w-k8-pzF" kind="unwind" identifier="backtojoined" unwindAction="returnToJoined:" id="Xgm-l0-kry"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzV-DN-9jM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="65w-k8-pzF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="7090.5" y="-2673.5"/>
         </scene>

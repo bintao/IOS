@@ -20,11 +20,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-
-        if UserInfoGlobal.profile_ID == ""{
-            UserInfoGlobal.updateUserInfo()
-        }
         
         
         // Do any additional setup after loading the view.

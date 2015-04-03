@@ -12,7 +12,7 @@ import SwiftyJSON
 class Tournament_playnext:  UIViewController  {
 
     var url : String = ""
-    var member = 0
+    var myteamid = 0
     
     var matchid = 0
     
@@ -32,16 +32,16 @@ class Tournament_playnext:  UIViewController  {
     override func viewDidAppear(animated: Bool) {
         var playerid1 = 0
         var playerid2 = 0
-        var par : [String: AnyObject] = ["api_key":Tournament.key,"participant_id" : member]
+        var par : [String: AnyObject] = ["api_key":Tournament.key,"participant_id" : myteamid]
         
         println(self.url)
-        println(self.member)
+        println(self.myteamid)
         
         var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+url+"/matches.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 println(JSON)
                 
-                if JSON != nil {
+                if JSON != nil && JSON as? [String: AnyObject]? != nil {
                     
                 let myjson = SwiftyJSON.JSON(JSON!)
                     
@@ -67,7 +67,7 @@ class Tournament_playnext:  UIViewController  {
                     
                 }
                 
-                if playerid1 == self.member {
+                if playerid1 == self.myteamid {
                     
                     self.opponentid =  playerid2
                 }
@@ -80,6 +80,20 @@ class Tournament_playnext:  UIViewController  {
                     }
                     
                 }
+                else{
+                
+                    
+                let alert1 = SCLAlertView()
+                    alert1.addButton("ok"){
+                    
+                        self.performSegueWithIdentifier("backtojoined", sender: self)
+                    
+                    }
+                alert1.showError(self.parentViewController?.parentViewController, title: "Tournament not Start", subTitle: "Please wait until Tournament start", closeButtonTitle: nil, duration: 0.0)
+                println("sdsdd")
+                
+                
+                }
                 
                 println(self.opponentid)
                 
@@ -87,6 +101,7 @@ class Tournament_playnext:  UIViewController  {
                 
                 
         }
+       
         
         
       
@@ -98,9 +113,10 @@ class Tournament_playnext:  UIViewController  {
     @IBAction func getcode(sender: AnyObject) {
         
         ///challonge_result, method : get, parameters : tournamentId, tournamentName, matchId
-        var name = self.tournamentname + "chaox vs chaos"
+        var name = self.tournamentname + ""
         Tournament.tournamentcode(name, pass:"123")
-        sentemail ()
+        
+        
         
     }
     

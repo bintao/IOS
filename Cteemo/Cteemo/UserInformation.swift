@@ -160,6 +160,7 @@ class UserInformation: NSObject, RequestResultDelegate{
             }
             else { TeamInfoGlobal.teamName = ""}
             
+            
             UserInfoGlobal.saveUserData()
             TeamInfoGlobal.saveUserData()
             LolAPIGlobal.saveLOLData()

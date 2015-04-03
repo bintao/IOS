@@ -180,11 +180,6 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                 
         }
 
-        
-        
-        
-        
-
 
        
     }

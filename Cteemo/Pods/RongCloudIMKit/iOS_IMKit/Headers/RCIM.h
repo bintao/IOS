@@ -109,6 +109,18 @@
  所有 IM 相关界面、功能都由此调用和设置。
  */
 @interface RCIM : NSObject
+{
+    
+}
+/**
+ *  新消息提醒声音，默认YES开启，NO关闭.
+ */
+@property (nonatomic,assign) BOOL messageBeep;
+
+/**
+ *  本地新消息通知免打扰，默认NO关闭 YES则开启
+ */
+@property (nonatomic,assign) BOOL messageNotDisturb;
 
 /**
  获取界面组件的核心类单例。
@@ -610,9 +622,6 @@
 -(void) getConversationNotificationQuietHours:(void(^) (NSString *startTime,int spansMin)) successCompletion
          errorCompletion:(void(^)(RCErrorCode status))errorCompletion;
 
-/**
- *  本地通知状态，默认0为开启 非0则关闭
- */
-@property (nonatomic,assign) int appNotDistrubState;
+
 
 @end

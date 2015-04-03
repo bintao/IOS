@@ -90,11 +90,11 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                 println(myjson)
                  if let icon = myjson["profile_icon"].string{
                     user.portraitUri = icon
-                    println(icon)
+                   
                     }
                     if let name = myjson["username"].string{
                     user.name = name
-                     println(name)
+                 
                     }
                     return completion(user)
                 }
