@@ -15,7 +15,6 @@ class CustomPosterView: UIView {
     var next:UIImageView!
 
     var pagec: UIPageControl!
-    
     var images: [UIImage]!
 
     func setup(imgs: [UIImage]){

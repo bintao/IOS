@@ -36,6 +36,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
     override func viewDidAppear(animated: Bool) {
         if UserInfoGlobal.icon != nil{
             iconDisplay.image = UserInfoGlobal.icon
+            UserInfoGlobal.saveUserIcon()
         }
         
     }
@@ -89,14 +90,9 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
             
         }
         
-        else if prefix == "upload_profile_icon"{
-    
-        println(result)
-        
-        }
     }
     
-    
+
     // after got photo   go to cropping view
     func imagePickerController(picker: UIImagePickerController!,
         

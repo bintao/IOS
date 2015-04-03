@@ -22,6 +22,7 @@ class MeViewController: UIViewController  {
     
     @IBOutlet var unreadmessage: UIButton!
     
+    
     var iconurl:String = ""
     
     override func viewDidLoad() {
@@ -64,6 +65,7 @@ class MeViewController: UIViewController  {
                     if let url = myjson["profile_icon"].string{
                         self.iconurl = url
                     }
+                   
                     
                 }
                 

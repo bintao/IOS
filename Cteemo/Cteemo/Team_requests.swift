@@ -214,15 +214,53 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         
             let alert = SCLAlertView()
             let alert1 = SCLAlertView()
-
+        
+        
+        
+      
+        
             alert.addButton("Accept!"){
                 self.startLoading()
                 
-        
                 var manager = Manager.sharedInstance
                 manager.session.configuration.HTTPAdditionalHeaders = [
                     "token": UserInfoGlobal.accessToken
                 ]
+                
+                if TeamInfoGlobal.iscaptain == "yes"{
+                    
+                    var req = Alamofire.request(.POST, "http://54.149.235.253:5000/join_request/lol",parameters: ["profileID": id])
+                        .responseJSON { (_, _, JSON, _) in
+                            
+                            println(JSON)
+                            
+                            if JSON == nil {
+                                
+                                
+                                
+                            }
+                                
+                            else{
+                                let myjson = SwiftyJSON.JSON(JSON!)
+                                
+                                if let url = myjson["message"].string
+                                {
+                                    
+                                alert1.showError(self.parentViewController?.parentViewController, title: "Player already joined a team", subTitle: " Sorry you can't add him", closeButtonTitle: nil, duration: 3.0)
+                                    
+                                    
+                                }
+                            }
+                            
+                            self.stopLoading()
+                            self.search()
+                            
+                    }
+                    
+                    
+                }
+                    
+                else{
                 var req = Alamofire.request(.POST, "http://54.149.235.253:5000/invite_request/lol",parameters: ["profileID": id])
                     .responseJSON { (_, _, JSON, _) in
                         
@@ -250,12 +288,30 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                         self.stopLoading()
                         self.search()
                     }
+                    
+                }//is not captain
             
-            }
+            }//add button
+            
+        if TeamInfoGlobal.iscaptain == "yes"{
+            
+            alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Join request", subTitle: username + " Want join your team ",closeButtonTitle: "Cancel", duration: 0.0)
+        
+        }
+        else{
             
             alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Invite request", subTitle: "I want to be part of " + username + "'s Team",closeButtonTitle: "Cancel", duration: 0.0)
             
         }
+        
+       
+        
+        }
+        
+        
+        
+        
+        
         
         
     }
@@ -270,6 +326,8 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
             if !((requests[sender.tag] as? [String: AnyObject])?["username"] is NSNull){
                 username = (requests[sender.tag] as [String: AnyObject])["username"] as String
             }
+            
+            
             
             let alert = SCLAlertView()
             alert.addButton("Decline!"){

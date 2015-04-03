@@ -155,6 +155,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
                         if((JSON as [String:AnyObject])["status"] as String == "success")
                         {
                             TeamInfoGlobal.cleanUserData()
+                            TeamInfoGlobal.findplayer = false
                             self.performSegueWithIdentifier("returnToTeam", sender: self)
                         }
                     }
@@ -174,6 +175,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
                             if((JSON as [String:AnyObject])["status"] as String == "success")
                             {
                                 TeamInfoGlobal.cleanUserData()
+                                TeamInfoGlobal.findplayer = false
                                 self.performSegueWithIdentifier("returnToTeam", sender: self)
                                 
                             }
