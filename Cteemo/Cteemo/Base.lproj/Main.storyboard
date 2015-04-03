@@ -1974,7 +1974,7 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cz8-Tm-Hcj">
                                 <rect key="frame" x="99" y="450" width="177" height="30"/>
-                                <state key="normal" title="Game Started" backgroundImage="postsomething.png">
+                                <state key="normal" title="Game Finished" backgroundImage="postsomething.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -1985,7 +1985,7 @@
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dkd-5D-cWm">
                                         <rect key="frame" x="1" y="8" width="375" height="37"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Team Pick" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylY-qe-JZe">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="BlueTeam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ylY-qe-JZe">
                                                 <rect key="frame" x="20" y="8" width="226" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2001,12 +2001,12 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hUz-jZ-5QT">
-                                <rect key="frame" x="-1" y="237" width="376" height="151"/>
+                                <rect key="frame" x="-1" y="237" width="376" height="158"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ID-yw-0M2">
                                         <rect key="frame" x="1" y="8" width="375" height="37"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opponetnt Team Pick" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsb-9r-SpE">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="RedTeam" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fsb-9r-SpE">
                                                 <rect key="frame" x="20" y="8" width="226" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2016,15 +2016,31 @@
                                         <color key="backgroundColor" red="0.28018465910000001" green="0.28018465910000001" blue="0.28018465910000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x8F-jr-G5m">
-                                        <rect key="frame" x="8" y="51" width="360" height="80"/>
+                                        <rect key="frame" x="8" y="51" width="360" height="87"/>
                                     </scrollView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJi-Tl-Z2P">
-                                        <rect key="frame" x="0.0" y="139" width="375" height="8"/>
+                                        <rect key="frame" x="0.0" y="142" width="375" height="8"/>
                                         <color key="backgroundColor" red="0.28018465910000001" green="0.28018465910000001" blue="0.28018465910000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1w1-Ew-KAO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <color key="barTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <textAttributes key="titleTextAttributes">
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </textAttributes>
+                                <items>
+                                    <navigationItem title="Cteemo Game" id="tDX-O1-9LD"/>
+                                </items>
+                            </navigationBar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We have found your game!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbA-Pj-wcv">
+                                <rect key="frame" x="16" y="66" width="205" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -2035,7 +2051,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96W-k6-xBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7428.5" y="-1550.5"/>
+            <point key="canvasLocation" x="7529.5" y="-1746.5"/>
         </scene>
         <!--Tournament playnext-->
         <scene sceneID="BIq-j8-huV">
@@ -2086,7 +2102,7 @@
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vWm-4v-RZd">
                                         <rect key="frame" x="1" y="8" width="375" height="37"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opponent Information" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8l8-t4-0Pq">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How to Play" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8l8-t4-0Pq">
                                                 <rect key="frame" x="20" y="8" width="226" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2095,20 +2111,19 @@
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MEf-xw-JwR">
-                                        <rect key="frame" x="105" y="51" width="263" height="114"/>
-                                    </scrollView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cG0-W5-LJV">
-                                        <rect key="frame" x="88" y="51" width="4" height="128"/>
-                                        <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    </imageView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k5g-3k-deq">
                                         <rect key="frame" x="0.0" y="172" width="375" height="8"/>
                                         <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="T2Y-4Q-Ay0">
-                                        <rect key="frame" x="7" y="53" width="73" height="73"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K7c-TM-dzi">
+                                        <rect key="frame" x="21" y="53" width="67" height="66"/>
                                     </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" pagingEnabled="YES" text="亲爱的玩家：    Cteemo采用自动判定比赛胜负。 只要先按下Tournament code 然后在游戏里输入 code 。 当你开始比赛的时候按下 start game 即可。假如您对比赛结果有任何问题请联系客服举报。" translatesAutoresizingMaskIntoConstraints="NO" id="nVb-fL-UV7">
+                                        <rect key="frame" x="93" y="46" width="264" height="107"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -2119,7 +2134,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="nmr-Dd-uLO" kind="show" id="m76-8i-4fN"/>
+                                    <action selector="startmatchaction:" destination="vHw-Aw-1VQ" eventType="touchUpInside" id="tIM-Di-mEs"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2127,16 +2142,18 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="members" destination="MEf-xw-JwR" id="Rzy-0i-kau"/>
-                        <outlet property="teamicon" destination="T2Y-4Q-Ay0" id="rbJ-bR-OjE"/>
+                        <outlet property="icon" destination="K7c-TM-dzi" id="vc2-2r-xwJ"/>
+                        <outlet property="startmatch" destination="d8j-g2-ojT" id="ZxT-44-BMe"/>
+                        <outlet property="starttime" destination="2wZ-0H-pLV" id="p20-Q6-qSQ"/>
                         <outlet property="time" destination="2wZ-0H-pLV" id="i7z-vr-X6v"/>
                         <segue destination="65w-k8-pzF" kind="unwind" identifier="backtojoined" unwindAction="returnToJoined:" id="Xgm-l0-kry"/>
+                        <segue destination="nmr-Dd-uLO" kind="presentation" identifier="gamestart" modalPresentationStyle="currentContext" modalTransitionStyle="coverVertical" id="g9O-RP-TjL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzV-DN-9jM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="65w-k8-pzF" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="7090.5" y="-2673.5"/>
+            <point key="canvasLocation" x="7070.5" y="-2649.5"/>
         </scene>
         <!--Bracket-->
         <scene sceneID="xeu-cT-e9Q">

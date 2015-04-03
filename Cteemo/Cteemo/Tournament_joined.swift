@@ -24,6 +24,10 @@ class Tournament_joined: UIViewController {
     var gamenumber = 0
     var url :String = ""
     
+   
+    
+    
+    
     @IBOutlet var navigation: UINavigationItem!
     
     @IBOutlet var type: UITextView!
@@ -171,6 +175,7 @@ class Tournament_joined: UIViewController {
             controller.myteamid = self.memberID
            controller.tournamentname = self.Tournamentname
             controller.url = self.url
+            controller.starttimetext = self.starttime
         }
         
 

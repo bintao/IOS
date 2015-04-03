@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDelegate , RCIMReceiveMessageDelegate , RCIMUserInfoFetcherDelegagte  {
+class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDelegate , RCIMReceiveMessageDelegate , RCIMUserInfoFetcherDelegagte , RCIMConnectionStatusDelegate {
     
     @IBOutlet var tabbar: UITabBar!
     
@@ -47,6 +47,33 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         LolAPIGlobal.getlolvision()
         
     }
+    
+    
+     func responseConnectionStatus(status: RCConnectionStatus) {
+        
+        
+        if RCIMClient.sharedRCIMClient().getCurrentConnectionstatus().rawValue == 9 {
+            
+            RCIM.connectWithToken(UserInfoGlobal.rongToken, completion: { (userId:String!) -> Void in
+                
+                NSLog("Login successfully with userId: %@.",userId)
+                println(RCIMClient.sharedRCIMClient().getCurrentConnectionstatus().rawValue)
+                
+                println("ssdsd")
+                }){
+                    (status:RCConnectErrorCode) -> Void in
+                    
+                    
+                    println(status)
+                    
+                    NSLog("Login failed")
+            }
+
+            
+        }
+        
+    }
+    
     
     
     func clearnteambadge(){
@@ -186,9 +213,11 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
             if UserInfoGlobal.rongToken != ""{
             
                 RCIM.connectWithToken(UserInfoGlobal.rongToken, completion: { (userId:String!) -> Void in
-                
+                    
                 NSLog("Login successfully with userId: %@.",userId)
+                println(RCIMClient.sharedRCIMClient().getCurrentConnectionstatus().rawValue)
                 
+                println("ssdsd")
                 }){
                     (status:RCConnectErrorCode) -> Void in
                     
