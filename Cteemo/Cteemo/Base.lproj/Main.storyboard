@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1960,7 +1959,7 @@
             </objects>
             <point key="canvasLocation" x="6697.5" y="-1521.5"/>
         </scene>
-        <!--Tournament startgame-->
+        <!--Cteemo Game-->
         <scene sceneID="QhA-4N-d8c">
             <objects>
                 <viewController id="nmr-Dd-uLO" customClass="Tournament_startgame" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -1978,6 +1977,9 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="finishgame:" destination="nmr-Dd-uLO" eventType="touchUpInside" id="ZZq-hh-Pqx"/>
+                                </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bCB-Ud-cqk">
                                 <rect key="frame" x="-1" y="95" width="376" height="151"/>
@@ -2016,34 +2018,37 @@
                                         <color key="backgroundColor" red="0.28018465910000001" green="0.28018465910000001" blue="0.28018465910000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x8F-jr-G5m">
-                                        <rect key="frame" x="8" y="51" width="360" height="87"/>
+                                        <rect key="frame" x="8" y="51" width="360" height="93"/>
                                     </scrollView>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fJi-Tl-Z2P">
-                                        <rect key="frame" x="0.0" y="142" width="375" height="8"/>
+                                        <rect key="frame" x="0.0" y="150" width="375" height="8"/>
                                         <color key="backgroundColor" red="0.28018465910000001" green="0.28018465910000001" blue="0.28018465910000001" alpha="1" colorSpace="calibratedRGB"/>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1w1-Ew-KAO">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                <color key="barTintColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <textAttributes key="titleTextAttributes">
-                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </textAttributes>
-                                <items>
-                                    <navigationItem title="Cteemo Game" id="tDX-O1-9LD"/>
-                                </items>
-                            </navigationBar>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="We have found your game!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EbA-Pj-wcv">
                                 <rect key="frame" x="16" y="66" width="205" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Cteemo Game" id="RR0-1m-5V7">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="v3Q-mK-JLv">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="pMu-9u-kN1">
+                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title=".">
+                                    <color key="titleColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="myteam" destination="Vow-5e-sB9" id="IHN-LZ-wyn"/>
                         <outlet property="opponent" destination="x8F-jr-G5m" id="Mkc-rQ-zKv"/>
@@ -2074,13 +2079,13 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Next Game start:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hs4-ku-dQW">
                                         <rect key="frame" x="44" y="41" width="297" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2wZ-0H-pLV">
                                         <rect key="frame" x="44" y="60" width="297" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -2147,7 +2152,7 @@
                         <outlet property="starttime" destination="2wZ-0H-pLV" id="p20-Q6-qSQ"/>
                         <outlet property="time" destination="2wZ-0H-pLV" id="i7z-vr-X6v"/>
                         <segue destination="65w-k8-pzF" kind="unwind" identifier="backtojoined" unwindAction="returnToJoined:" id="Xgm-l0-kry"/>
-                        <segue destination="nmr-Dd-uLO" kind="presentation" identifier="gamestart" modalPresentationStyle="currentContext" modalTransitionStyle="coverVertical" id="g9O-RP-TjL"/>
+                        <segue destination="nmr-Dd-uLO" kind="show" identifier="gamestart" id="g9O-RP-TjL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OzV-DN-9jM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4126,7 +4131,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WGx-hs-GOh"/>
-        <segue reference="kPk-un-p50"/>
+        <segue reference="1TS-hj-YUx"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
 </document>

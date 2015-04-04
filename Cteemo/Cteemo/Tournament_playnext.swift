@@ -51,6 +51,7 @@ class Tournament_playnext:  UIViewController  {
         
         icon.image = UIImage(named: "error.png")!
         self.startmatch.alpha = 0
+        self.starttime.text = self.starttimetext
         
         
     }
@@ -140,7 +141,7 @@ class Tournament_playnext:  UIViewController  {
         var name = self.tournamentname + "\(self.player1)" + " vs " + "\(self.player2)"
         Tournament.tournamentcode(name, pass:"123")
         self.startmatch.alpha = 1
-        self.sentemail()
+        self.sentemail2()
         
     }
     
@@ -156,7 +157,7 @@ class Tournament_playnext:  UIViewController  {
                 if JSON != nil && JSON as? [String : AnyObject]? != nil {
                     let myjson = SwiftyJSON.JSON(JSON!)
                     
-                    
+                    println("sdsd")
                     if let gameStartTime = myjson["gameStartTime"].int
                     {
                         self.gameStartTime = gameStartTime
@@ -234,7 +235,6 @@ class Tournament_playnext:  UIViewController  {
                     let alert1 = SCLAlertView()
                     
                     alert1.showError(self.parentViewController?.parentViewController, title: "You must start game", subTitle: "Please start game before click", closeButtonTitle: "ok", duration: 0.0)
-                    
                 
                 }
                 
@@ -249,7 +249,11 @@ class Tournament_playnext:  UIViewController  {
         
         if segue.identifier == "gamestart"{
        
-        
+            var controller: Tournament_startgame = segue.destinationViewController as Tournament_startgame
+            
+            controller.blueteammember = self.blueteammember
+            controller.redmember = self.redmember
+            controller.gameID = self.gameID
             
         
         }
@@ -282,9 +286,48 @@ class Tournament_playnext:  UIViewController  {
         }
         
     
-        
-       
+    }
     
+    
+    
+    
+    func sentemail2(){
+        var par  = ["from":"Excited User <mailgun@www.cteemolol.com>","to" : "bintao@cteemo.com","subject":"Hello","text":"Testing some Mailgun awesomness!"]
+        
+        var url = "https://api:key-1c2afaf797833a0b50c0507fc2131ec1@api.mailgun.net/v3/www.cteemolol.com/messages"
+        
+        var manager1 = Manager.sharedInstance
+        //manager.requestSerializer = [AFJSONRequestSerializer serializer]
+        manager1.session.configuration.HTTPAdditionalHeaders = [
+            "token": UserInfoGlobal.accessToken
+        ]
+        
+        var parameters = NSMutableDictionary()
+        let fromuser = "Excited User <mailgun@cteemolol.com>"
+        let to = "bintao@cteemo.com"
+        let subject = "Hello"
+        let text = "Testing some Mailgun awesomness!"
+
+
+        var request = AFHTTPRequestSerializer().multipartFormRequestWithMethod("POST", URLString: url, parameters: parameters, constructingBodyWithBlock: { (form) -> Void in
+                form.appendPartWithFormData((fromuser as NSString).dataUsingEncoding(NSUTF8StringEncoding),name:"from")
+                 form.appendPartWithFormData((to as NSString).dataUsingEncoding(NSUTF8StringEncoding),name:"to")
+                form.appendPartWithFormData((subject as NSString).dataUsingEncoding(NSUTF8StringEncoding),name:"subject")
+                 form.appendPartWithFormData((text as NSString).dataUsingEncoding(NSUTF8StringEncoding),name:"text")
+            return
+            }, error: nil)
+        
+        
+        var manager = AFURLSessionManager(sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
+        manager.session.configuration.HTTPAdditionalHeaders = [
+            "token": UserInfoGlobal.accessToken
+        ]
+        
+        var uploadRequest: NSURLSessionUploadTask = manager.uploadTaskWithStreamedRequest(request, progress: nil) { (response, obj, error) -> Void in
+            if obj != nil{
+            }
+        }
+        uploadRequest.resume()
     
     }
 

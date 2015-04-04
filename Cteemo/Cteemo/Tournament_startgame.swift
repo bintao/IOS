@@ -31,48 +31,44 @@ class Tournament_startgame: UIViewController {
     
     var gametype = ""
     var gameStartTime = 0
-    
+    var gameID = 0
 
     var blueteammember :[matchmember] = []
     var redmember :[matchmember] = []
     
     override func viewDidLoad() {
         
-           
-    
-    }
-    
-    override func viewDidAppear(animated: Bool) {
         
+        println(self.gameID)
         let subviews = self.myteam.subviews
         
         for subview in subviews{
             subview.removeFromSuperview()
         }
-       
-        if blueteammember.count != 0 {
         
-        self.myteam.contentSize = CGSizeMake(75 * CGFloat(blueteammember.count), 75)
-        for var index = 0; index < blueteammember.count; index++ {
+        if blueteammember.count != 0 {
             
-            var hero = "\(blueteammember[index].heropick)" + ".png"
-            
-            var but = UIButton(frame: CGRectMake(5 + 75 * CGFloat(index), 10, 65, 65))
-            
-            but.setImage(UIImage(named: hero)!, forState: UIControlState.Normal)
-            
-            myteam.addSubview(but)
-            
-            var lab = UILabel(frame: CGRectMake(75 * CGFloat(index), 75, 75, 20))
-            lab.textAlignment = NSTextAlignment.Center
-            
-            lab.text = blueteammember[index].name
-            myteam.addSubview(lab)
-            
-        }
+            self.myteam.contentSize = CGSizeMake(75 * CGFloat(blueteammember.count), 75)
+            for var index = 0; index < blueteammember.count; index++ {
+                
+                var hero = "\(blueteammember[index].heropick)" + ".png"
+                
+                var but = UIButton(frame: CGRectMake(5 + 75 * CGFloat(index), 10, 65, 65))
+                
+                but.setImage(UIImage(named: hero)!, forState: UIControlState.Normal)
+                
+                myteam.addSubview(but)
+                
+                var lab = UILabel(frame: CGRectMake(75 * CGFloat(index), 75, 75, 20))
+                lab.textAlignment = NSTextAlignment.Center
+                
+                lab.text = blueteammember[index].name
+                myteam.addSubview(lab)
+                
+            }
             
             if redmember.count != 0 {
-            
+                
                 self.opponent.contentSize = CGSizeMake(75 * CGFloat(redmember.count), 75)
                 for var index = 0; index < redmember.count; index++ {
                     
@@ -90,51 +86,94 @@ class Tournament_startgame: UIViewController {
                     lab.text = redmember[index].name
                     opponent.addSubview(lab)
                 }
-            
+                
             }
             
             
             
         }
+
+    
     }
     
-
-    func finishgame(){
+    override func viewDidAppear(animated: Bool) {
+        
+        
     
-        let url = "https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/25350780/recent?api_key="+LolAPIGlobal.key
+    
+    
+    }
+    
+    
+    @IBAction func finishgame(sender: AnyObject) {
+        
+        
+        let url = "https://na.api.pvp.net/api/lol/na/v2.2/match/"+"1765292791"+"?api_key="+LolAPIGlobal.key
         println(url)
         Alamofire.request(.GET,url)
             .responseJSON { (_, _, JSON, _) in
-                
+                var participantId = 0
                 if JSON != nil{
                     let myjson = SwiftyJSON.JSON(JSON!)
-                    var match = myjson["games"][1]
-                    println(match)
                     
-                    if let win = myjson["games"][0]["stats"]["win"].bool
-                    {
-                        self.win = win
-                        println(self.win)
-                    }
+                    if let player = myjson["participantIdentities"].array{
+                    println(player)
                     
-                    if let myteamid = myjson["games"][0]["stats"]["team"].int{
+                    println(player.count)
+                    
+                    if player.count != 0 {
+                        
+                        for i in 0...player.count - 1
+                        {
+                            
+                            
+                            if let summonerid = myjson["participantIdentities"][i]["player"]["summonerId"].int
+                            {
+                                
+                                if LolAPIGlobal.lolID == "\(summonerid)"{
+                                
+                                    if let  id = myjson["participantIdentities"][i]["participantId"].int
+                                    {
+                                        
+                                        println(summonerid)
+                                    
+                                        if let winner = myjson["participants"][id-1]["stats"]["winner"].bool{
+                                        
+                                          
+                                        println(winner)
+                                        
+                                        }
+                                        
+                                    
+                                    }
+                                    
+                                }//check id
+                                
+                            }
+                            
+                        }//end for loop
                         
                       
-                        println(myteamid)
                         
-                    }
+                    }//playercount
                     
-                    if let gameType = myjson["games"][0]["gameType"].string{
                         
-                        self.gametype = gameType
-                        println(self.gametype)
-                        
-                    }
+                    }//player
                     
                     
-                }
-        }
+                }//jsonnil
+                
+        }//request end
+
+        
+        
+    }
+
+    func finishgame(){
     
+        //let url = "https://na.api.pvp.net/api/lol/na/v2.2/match/"+"\(self.gameID)"+"?api_key="+LolAPIGlobal.key
+        
+        
     
     }
     
