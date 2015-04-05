@@ -59,8 +59,7 @@ class Tournament_joined: UIViewController {
         self.member.text = "\(self.totalmember)"
         println(self.memberID)
      ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
-    
-    
+   
     }
     
     @IBAction func bracket(sender: AnyObject){

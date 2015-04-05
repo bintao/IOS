@@ -29,7 +29,7 @@ class Tournament_playnext:  UIViewController  {
     var gameID = 0
     var gameStartTime = 0
     
-    
+    var textfield : UITextField!
     var blueteammember :[matchmember] = []
     var redmember :[matchmember] = []
     
@@ -139,9 +139,9 @@ class Tournament_playnext:  UIViewController  {
     @IBAction func getcode(sender: AnyObject) {
         
         var name = self.tournamentname + "\(self.player1)" + " vs " + "\(self.player2)"
-        Tournament.tournamentcode(name, pass:"123")
+        var code = Tournament.tournamentcode(name, pass:"123")
         self.startmatch.alpha = 1
-        self.sentemail2()
+        self.sentemail(code)
         
     }
     
@@ -263,72 +263,59 @@ class Tournament_playnext:  UIViewController  {
     }
     
     
-    func  sentemail (){
+    func  sentemail (tournamentcode : String){
 
 
 
-        /*curl -s https://api:key-1c2afaf797833a0b50c0507fc2131ec1@api.mailgun.net/v3/www.cteemolol.com/messages
-        -F from='Excited User <mailgun@www.cteemolol.com>'
-        -F to=bintao@cteemo.com
-        -F subject='Hello'
-        -F text='Testing some Mailgun awesomness!'
+        /* curl -X POST https://api.sendgrid.com/api/mail.send.json -d api_user=bintao -dapi_key=ck80i539gz -d to=bintao@cteemo.com -d toname=bintao -d subject=chaos -dtext=chaos -d from=support@cteemo.com -d content=123123
         */
         
+        if UserInfoGlobal.email != "" {
         
-        var par  = ["from":"Excited User <mailgun@www.cteemolol.com>","to" : "bintao@cteemo.com","subject":"Hello","text":"Testing some Mailgun awesomness!"]
-        
-        var url = "https://api:key-1c2afaf797833a0b50c0507fc2131ec1@api.mailgun.net/v3/www.cteemolol.com/messages"
+        var par : [String: AnyObject] = ["api_user":"bintao","api_key":"ck80i539gz","to":UserInfoGlobal.email,"toname":"bintao","subject":"Touranment Code","text": tournamentcode,"from":"support@cteemo.com"]
+        println(UserInfoGlobal.email)
+        var url = "https://api.sendgrid.com/api/mail.send.json"
         var req = Alamofire.request(.POST, url, parameters: par)
             .responseJSON { (_, _, JSON, error) in
                 println(JSON)
-                println(error)
-
+                
+                let myjson = SwiftyJSON.JSON(JSON!)
+                if let message = myjson["message"].string
+                {
+                    if message == "success"{
+                    
+                    
+                        let alert1 = SCLAlertView()
+                        
+                         alert1.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "email2.png")!, color: UserInfoGlobal.UIColorFromRGB(0x3498DB), title: "Tournament code !", subTitle: "Please check " + UserInfoGlobal.email,closeButtonTitle: "ok", duration: 0.0)
+                    }
+                    
+                    
+                }
         }
         
-    
-    }
-    
-    
-    
-    
-    func sentemail2(){
-        var par  = ["from":"Excited User <mailgun@www.cteemolol.com>","to" : "bintao@cteemo.com","subject":"Hello","text":"Testing some Mailgun awesomness!"]
-        
-        var url = "https://api:key-1c2afaf797833a0b50c0507fc2131ec1@api.mailgun.net/v3/www.cteemolol.com/messages"
-        
-        var manager1 = Manager.sharedInstance
-        //manager.requestSerializer = [AFJSONRequestSerializer serializer]
-        manager1.session.configuration.HTTPAdditionalHeaders = [
-            "token": UserInfoGlobal.accessToken
-        ]
-        
-        var parameters = NSMutableDictionary()
-        let fromuser = "Excited User <mailgun@cteemolol.com>"
-        let to = "bintao@cteemo.com"
-        let subject = "Hello"
-        let text = "Testing some Mailgun awesomness!"
-
-
-        var request = AFHTTPRequestSerializer().multipartFormRequestWithMethod("POST", URLString: url, parameters: parameters, constructingBodyWithBlock: { (form) -> Void in
-                form.appendPartWithFormData((fromuser as NSString).dataUsingEncoding(NSUTF8StringEncoding),name:"from")
-                 form.appendPartWithFormData((to as NSString).dataUsingEncoding(NSUTF8StringEncoding),name:"to")
-                form.appendPartWithFormData((subject as NSString).dataUsingEncoding(NSUTF8StringEncoding),name:"subject")
-                 form.appendPartWithFormData((text as NSString).dataUsingEncoding(NSUTF8StringEncoding),name:"text")
-            return
-            }, error: nil)
-        
-        
-        var manager = AFURLSessionManager(sessionConfiguration: NSURLSessionConfiguration.defaultSessionConfiguration())
-        manager.session.configuration.HTTPAdditionalHeaders = [
-            "token": UserInfoGlobal.accessToken
-        ]
-        
-        var uploadRequest: NSURLSessionUploadTask = manager.uploadTaskWithStreamedRequest(request, progress: nil) { (response, obj, error) -> Void in
-            if obj != nil{
+        }
+        else {
+            
+            let alert1 = SCLAlertView()
+            
+            self.textfield = alert1.addTextField("email")
+            alert1.addButton("ok"){
+                if self.textfield.text != "" && self.textfield.text.rangeOfString("@")?.isEmpty != nil{
+                    UserInfoGlobal.email = self.textfield.text
+                    UserInfoGlobal.saveUserData()
+                }
+               
             }
+            
+            alert1.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "email2.png")!, color: UserInfoGlobal.UIColorFromRGB(0x3498DB), title: "Tournament code !", subTitle: "Please check " + UserInfoGlobal.email,closeButtonTitle: nil, duration: 0.0)
+        
         }
-        uploadRequest.resume()
+        
+        
     
     }
+    
+    
 
 }

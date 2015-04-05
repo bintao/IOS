@@ -44,12 +44,16 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         if UserInfoGlobal.fbid == "" || UserInfoGlobal.gender == "" || UserInfoGlobal.name == ""{
             
             // save user info from facebook
+            
+            
             UserInfoGlobal.gender = user.objectForKey("gender") as String
             UserInfoGlobal.name = user.name
             UserInfoGlobal.fbid = user.objectForKey("id") as String
             if user.objectForKey("email") != nil{
                 UserInfoGlobal.email = user.objectForKey("email") as String
             }
+            
+            println(user.objectForKey("email") as String)
             
             UserInfoGlobal.saveUserData()
             self.name = user.name

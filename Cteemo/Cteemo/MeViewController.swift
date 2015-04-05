@@ -37,13 +37,13 @@ class MeViewController: UIViewController  {
     
     override func viewDidAppear(animated: Bool) {
         
-        
+        if UserInfoGlobal.accessToken != ""{
         var manager = Manager.sharedInstance
         // Specifying the Headers we need
         manager.session.configuration.HTTPAdditionalHeaders = [
             "token": UserInfoGlobal.accessToken
         ]
-        
+    
         var req = Alamofire.request(.GET, "http://54.149.235.253:5000/profile")
             .responseJSON { (_, _, JSON, _) in
                 if JSON != nil {
@@ -69,6 +69,8 @@ class MeViewController: UIViewController  {
                     
                 }
                 
+            
+                
         }
 
         
@@ -79,6 +81,10 @@ class MeViewController: UIViewController  {
         })
         if UserInfoGlobal.icon != nil {
         self.usericon.image = UserInfoGlobal.icon
+        }
+        
+        
+            
         }
         
         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()

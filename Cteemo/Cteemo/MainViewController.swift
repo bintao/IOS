@@ -383,14 +383,6 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
     
     }
     
-    func postsomething() {
-        
-        //localhost:5000/team_post -X POST --header "token: from login api" -d "content=I want to find someone to talk"
-        var req = ARequest(prefix: "team_post", method: requestType.POST, parameters: ["content":"bintao here"])
-        req.delegate = self
-        req.sendRequestWithToken(UserInfoGlobal.accessToken)
-        
-    }
     
     func gotResult(prefix: String, result: AnyObject) {
         
