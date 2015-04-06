@@ -248,10 +248,6 @@ class Tournament_startgame: UIViewController {
         Alamofire.request(.PUT,url, parameters: par)
             .responseJSON { (_, _, JSON, _) in
                 
-                
-                println(JSON)
-                
-                
                 if JSON != nil{
                     
                     let alert1 = SCLAlertView()
