@@ -40,7 +40,7 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Zb-ry-bW6">
                                 <rect key="frame" x="196" y="5" width="102" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="5WR-5G-w4G"/>
+                                    <constraint firstAttribute="width" constant="115" id="5WR-5G-w4G"/>
                                     <constraint firstAttribute="height" constant="15" id="7Zd-BA-yGg"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="19" id="Okm-x3-YIk"/>
                                 </constraints>
@@ -108,7 +108,7 @@
                                 <rect key="frame" x="6" y="24" width="59" height="37"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="4hK-Ut-dcH"/>
+                                    <constraint firstAttribute="width" constant="70" id="4hK-Ut-dcH"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -131,6 +131,7 @@
                             <constraint firstAttribute="trailing" secondItem="LMx-vQ-OOO" secondAttribute="trailing" id="NXc-5t-TOp"/>
                             <constraint firstItem="eEu-aG-pf6" firstAttribute="top" secondItem="Cqg-qv-J4U" secondAttribute="bottom" id="O0F-6G-H6G"/>
                             <constraint firstItem="Cqg-qv-J4U" firstAttribute="leading" secondItem="LXm-E4-Nhv" secondAttribute="leading" id="P6z-ou-376"/>
+                            <constraint firstItem="eEu-aG-pf6" firstAttribute="leading" secondItem="LXm-E4-Nhv" secondAttribute="leading" constant="10" id="QV4-3g-7or"/>
                             <constraint firstAttribute="bottom" secondItem="wOY-fs-Ufb" secondAttribute="bottom" id="RXt-Tp-wpS"/>
                             <constraint firstAttribute="centerX" secondItem="LMx-vQ-OOO" secondAttribute="leading" id="V9H-6y-8II"/>
                             <constraint firstItem="Cqg-qv-J4U" firstAttribute="top" secondItem="LXm-E4-Nhv" secondAttribute="top" id="ZmS-7m-04M"/>
@@ -140,6 +141,7 @@
                             <constraint firstItem="W5p-me-B4a" firstAttribute="top" secondItem="LMx-vQ-OOO" secondAttribute="bottom" id="hEy-y4-pDu"/>
                             <constraint firstItem="eEu-aG-pf6" firstAttribute="trailing" secondItem="Cqg-qv-J4U" secondAttribute="trailing" id="hSi-uy-Ydt"/>
                             <constraint firstItem="wOY-fs-Ufb" firstAttribute="leading" secondItem="LMx-vQ-OOO" secondAttribute="leading" id="hln-Ul-03O"/>
+                            <constraint firstItem="wOY-fs-Ufb" firstAttribute="leading" secondItem="eEu-aG-pf6" secondAttribute="trailing" constant="50" id="oBC-4x-klO"/>
                             <constraint firstAttribute="centerY" secondItem="Cqg-qv-J4U" secondAttribute="centerY" multiplier="2" id="uuG-aH-i7Q"/>
                             <constraint firstItem="wOY-fs-Ufb" firstAttribute="leading" secondItem="W5p-me-B4a" secondAttribute="leading" id="wvy-HC-0zV"/>
                             <constraint firstAttribute="centerY" secondItem="LMx-vQ-OOO" secondAttribute="centerY" multiplier="2" id="ysI-tN-PxE"/>
@@ -148,11 +150,13 @@
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="uuG-aH-i7Q"/>
+                                <exclude reference="FYS-g5-XUv"/>
                                 <exclude reference="hSi-uy-Ydt"/>
                                 <exclude reference="zd8-KM-6HE"/>
                                 <exclude reference="7Ly-V0-RAL"/>
                                 <exclude reference="ysI-tN-PxE"/>
                                 <exclude reference="dfz-1Z-8ej"/>
+                                <exclude reference="oBC-4x-klO"/>
                             </mask>
                         </variation>
                     </view>

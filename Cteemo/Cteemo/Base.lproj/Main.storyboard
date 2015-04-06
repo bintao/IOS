@@ -1563,7 +1563,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ri6-du-Sxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5709.5" y="-1249.5"/>
+            <point key="canvasLocation" x="5543.5" y="-1343.5"/>
         </scene>
         <!--Tournament game-->
         <scene sceneID="PL8-7R-Wb3">
@@ -1614,7 +1614,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3f-3u-YWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6218.5" y="-1467.5"/>
+            <point key="canvasLocation" x="6054.5" y="-1483.5"/>
         </scene>
         <!--Tournament joined-->
         <scene sceneID="DA9-Pm-SbH">
