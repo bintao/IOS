@@ -129,7 +129,7 @@ class Tournament_startgame: UIViewController {
     @IBAction func finishgame(sender: AnyObject) {
         
         
-        let url = "https://na.api.pvp.net/api/lol/na/v2.2/match/"+"\(1785459922)"+"?api_key="+LolAPIGlobal.key
+        let url = "https://na.api.pvp.net/api/lol/na/v2.2/match/"+"\(self.gameID)"+"?api_key="+LolAPIGlobal.key
        
         Alamofire.request(.GET,url)
             .responseJSON { (_, _, JSON, _) in
