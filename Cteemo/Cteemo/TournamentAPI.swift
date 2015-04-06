@@ -411,9 +411,7 @@ class TournamentAPI: NSObject{
     
         var code = "pvpnet://lol/customgame/joinorcreate/map11/pick6/team5/specALL/"
         
-        let url = "54.149.235.253:5000/match_report/lol"
-        
-        let plainString = "{\"name\":\"\(name)\",\"extra\":\"\(name)\",\"password\":\"\(pass)\",\"report\":\"\(url)\"}"
+        let plainString = "{\"name\":\"\(name)\",\"extra\":\"\(name)\",\"password\":\"\(pass)\",\"report\":\"\"}"
        
         println(plainString)
         

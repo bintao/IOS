@@ -24,8 +24,6 @@ class Tournament_joined: UIViewController {
     var gamenumber = 0
     var url :String = ""
     
-   
-    
     
     
     @IBOutlet var navigation: UINavigationItem!
@@ -41,7 +39,6 @@ class Tournament_joined: UIViewController {
     
         super.viewDidLoad()
         self.Tournamentname = Tournament.tournamentName[self.gamenumber] as String
-        Tournament.getmatches(self.url, member : 24179900)
         navigation.title = self.Tournamentname
        
         
@@ -57,7 +54,8 @@ class Tournament_joined: UIViewController {
         self.type.text = self.TournamentType
         self.time.text = self.starttime
         self.member.text = "\(self.totalmember)"
-        println(self.memberID)
+        
+        
      ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
    
     }
@@ -76,26 +74,35 @@ class Tournament_joined: UIViewController {
     @IBAction func chat(sender: AnyObject) {
         
         
-        var temp:RCChatViewController = RCChatViewController.alloc()
-        
-        temp.currentTarget = "Cteemo"
-        temp.conversationType = RCConversationType.onversationType_CHATROOM
-        temp.enableSettings = false
-        temp.currentTargetName = "Cteemo"
-    
-        
-        temp.portraitStyle = RCUserAvatarStyle.Cycle
-        
-        
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
-        
-        
-        self.navigationController?.pushViewController(temp, animated: true)
+       self.enterchat()
       
         
     }
     
+  
+    @IBAction func chatroom(sender: AnyObject){
+        
+        self.enterchat()
+        
+        
+        
+    }
    
+    
+    
+    func enterchat()
+    {
+    
+        var temp = RCChatViewController()
+        temp.currentTarget = self.url
+        temp.conversationType = RCConversationType.onversationType_CHATROOM
+        temp.enableSettings = false
+        temp.currentTargetName = self.Tournamentname
+        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        self.navigationController?.pushViewController(temp, animated: true)
+    
+    
+    }
     @IBAction func playnext(sender: AnyObject) {
         
         
@@ -137,13 +144,13 @@ class Tournament_joined: UIViewController {
                 if result["errors"]? != nil {
                     
                     let alert1 = SCLAlertView()
-                    alert1.showError(self.parentViewController?.parentViewController, title: "Check in faild", subTitle: "Please contact custom servers", closeButtonTitle: nil, duration: 3.0)
+                    alert1.showError(self.parentViewController?.parentViewController, title: "Check in faild", subTitle: "Please contact custom servers", closeButtonTitle: "ok", duration: 0.0)
                     
                 }
                 else {
                     
                     let alert1 = SCLAlertView()
-                    alert1.showSuccess(self.parentViewController?.parentViewController, title: "Check in Success", subTitle: TeamInfoGlobal.teamName + "ready for battle", closeButtonTitle: nil, duration: 3.0)
+                    alert1.showSuccess(self.parentViewController?.parentViewController, title: "Check in Success", subTitle: TeamInfoGlobal.teamName + "ready for battle", closeButtonTitle: "ok", duration: 0.0)
                 }
                     
                     

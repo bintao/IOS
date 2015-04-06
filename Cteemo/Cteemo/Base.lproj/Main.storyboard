@@ -1875,13 +1875,6 @@
                                             <constraint firstAttribute="width" constant="140" id="EUc-HT-dIa"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chatroom.png" translatesAutoresizingMaskIntoConstraints="NO" id="Sgn-Rq-Cwa">
-                                        <rect key="frame" x="140" y="25" width="125" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="125" id="5gi-Lk-sJb"/>
-                                            <constraint firstAttribute="height" constant="50" id="Ok2-mD-wFS"/>
-                                        </constraints>
-                                    </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRx-xq-JL3">
                                         <rect key="frame" x="286" y="30" width="69" height="40"/>
                                         <constraints>
@@ -1895,18 +1888,36 @@
                                             <action selector="chat:" destination="UOt-dG-afN" eventType="touchUpInside" id="W4c-Xs-KNY"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dSi-tB-C0c">
+                                        <rect key="frame" x="154" y="28" width="111" height="42"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="0Tv-98-81G"/>
+                                            <constraint firstAttribute="width" constant="130" id="7ln-XO-rII"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="chatroom.png">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="7ln-XO-rII"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <action selector="chatroom:" destination="UOt-dG-afN" eventType="touchUpInside" id="skL-1g-qyp"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="GRx-xq-JL3" secondAttribute="trailing" constant="20" id="25X-8y-HN6"/>
                                     <constraint firstAttribute="centerY" secondItem="GRx-xq-JL3" secondAttribute="centerY" id="5TK-uT-SPz"/>
                                     <constraint firstItem="ZYd-VS-etV" firstAttribute="top" secondItem="2p4-qq-ZLS" secondAttribute="top" constant="-20" id="Dp5-OX-AlM"/>
-                                    <constraint firstItem="Sgn-Rq-Cwa" firstAttribute="leading" secondItem="ZYd-VS-etV" secondAttribute="trailing" id="Haq-M8-e1B"/>
-                                    <constraint firstAttribute="centerY" secondItem="Sgn-Rq-Cwa" secondAttribute="centerY" id="PJH-C1-A9z"/>
+                                    <constraint firstAttribute="centerY" secondItem="dSi-tB-C0c" secondAttribute="centerY" id="Pcg-Io-Qnw"/>
+                                    <constraint firstItem="dSi-tB-C0c" firstAttribute="leading" secondItem="ZYd-VS-etV" secondAttribute="trailing" constant="15" id="alJ-H0-SIU"/>
+                                    <constraint firstItem="GRx-xq-JL3" firstAttribute="leading" secondItem="dSi-tB-C0c" secondAttribute="trailing" constant="20" id="ami-Yf-EbX"/>
                                     <constraint firstAttribute="height" constant="100" id="eiF-2i-dKL"/>
                                     <constraint firstAttribute="bottom" secondItem="ZYd-VS-etV" secondAttribute="bottom" constant="20" id="n7K-tc-dGq"/>
                                     <constraint firstItem="ZYd-VS-etV" firstAttribute="leading" secondItem="2p4-qq-ZLS" secondAttribute="leading" id="rDS-dx-deU"/>
-                                    <constraint firstAttribute="centerY" secondItem="Sgn-Rq-Cwa" secondAttribute="centerY" id="rqR-5L-0me"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -2052,9 +2063,11 @@
                     <connections>
                         <outlet property="myteam" destination="Vow-5e-sB9" id="IHN-LZ-wyn"/>
                         <outlet property="opponent" destination="x8F-jr-G5m" id="Mkc-rQ-zKv"/>
+                        <segue destination="BD8-41-gPL" kind="unwind" identifier="backjoinedgame" unwindAction="returnToJoined:" id="wuT-Ss-Ddo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96W-k6-xBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="BD8-41-gPL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="7529.5" y="-1746.5"/>
         </scene>
@@ -4130,8 +4143,8 @@
         <image name="white.png" width="1200" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WGx-hs-GOh"/>
         <segue reference="1TS-hj-YUx"/>
+        <segue reference="WGx-hs-GOh"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
 </document>

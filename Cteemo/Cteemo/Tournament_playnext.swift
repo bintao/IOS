@@ -17,17 +17,19 @@ class Tournament_playnext:  UIViewController  {
     
     var matchid = 0
     
-    var opponentid = 0
-    
-    var player1 = 0
-    var player2 = 0
-    
+   
     var tournamentname = ""
-    
     
     var gametype = ""
     var gameID = 0
     var gameStartTime = 0
+    var player1 = 0
+    var player2 = 0
+    
+    
+    var mychampionpick = 0
+    var myteam = teamdata()
+    var oppteam = teamdata()
     
     var textfield : UITextField!
     var blueteammember :[matchmember] = []
@@ -66,70 +68,131 @@ class Tournament_playnext:  UIViewController  {
         
         var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+url+"/matches.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
-                println(JSON)
                 
-                if JSON != nil && JSON as? [String: AnyObject]? != nil {
+                if JSON != nil  {
                     
                 let myjson = SwiftyJSON.JSON(JSON!)
-                    
+               var scoreresult = ""
                 var count = myjson.count
-                    
-                if count != 0 {
-                if let id = myjson[count - 1]["match"]["id"].int
-                {
-                    self.matchid = id
-                    
-                }
-                if let player1 = myjson[count - 1]["match"]["player1_id"].int
-                {
-                    
-                   self.player1 = player1
-                    
-                }
                 
-                if let player2 = myjson[count - 1]["match"]["player2_id"].int
+                println(count)
+                if count != 0  {
+                    
+                println(myjson[count - 1]["match"]["state"])
+                if let state = myjson[count - 1]["match"]["state"].string
                 {
                     
-                    self.player2 = player2
+                    println("sdsdsd")
+                    if state != "complete" {
+                        
+                        println(JSON)
+                        if let id = myjson[count - 1]["match"]["id"].int
+                        {
+                            self.matchid = id
+                            
+                        }
+                        if let player = myjson[count - 1]["match"]["player1_id"].int
+                        {
+                            
+                            self.player1 = player
+                            
+                        }
+                        
+                        if let player = myjson[count - 1]["match"]["player2_id"].int
+                        {
+                            
+                            self.player2 = player
+                            
+                        }
+                        
+                        
+                        if self.player1 == 0 || self.player2 == 0 {
+                            
+                            let alert1 = SCLAlertView()
+                            alert1.addButton("ok"){
+                                
+                                self.performSegueWithIdentifier("backtojoined", sender: self)
+                                
+                            }
+                            alert1.showWarning(self.parentViewController?.parentViewController, title: "Opponent not ready", subTitle: "Please wait him ready", closeButtonTitle: nil, duration: 0.0)
+                        
+                        }
+                        
+                        if let result = myjson[count - 1]["match"]["scores_csv"].string
+                        {
+                            
+                            scoreresult = result
+                        }
+                        
+                        if self.player1 == self.myteamid {
+                            if scoreresult == ""{
+                                self.myteam.win =  0
+                                self.oppteam.win =  0
+                                
+                            }else{
+                            self.myteam.win =  Array(scoreresult.utf8).map { Int($0) }[0]
+                            self.oppteam.win =  Array(scoreresult.utf8).map { Int($0) }[2]
+                            }
+                            self.myteam.teamkey = 1
+                            self.myteam.teamid = self.player1
+                            self.oppteam.teamid = self.player2
+                        }
+                        else{
+                            if scoreresult == ""{
+                                self.myteam.win =  0
+                                self.oppteam.win =  0
+                            
+                            }else{
+                            self.myteam.win =  Array(scoreresult.utf8).map { Int($0) }[2]
+                            self.oppteam.win =  Array(scoreresult.utf8).map { Int($0) }[0]
+                            }
+                            self.myteam.teamkey = 2
+                            self.myteam.teamid = self.player2
+                            self.oppteam.teamid = self.player1
+                        }
+
                     
-                }
+                    
+                    }// check match complete
+                    
+                    else {
+                    
+                        let alert1 = SCLAlertView()
+                        alert1.addButton("ok"){
+                            
+                            self.performSegueWithIdentifier("backtojoined", sender: self)
+                            
+                        }
+                        alert1.showError(self.parentViewController?.parentViewController, title: "Your match is complete", subTitle: "Please check your score", closeButtonTitle: nil, duration: 0.0)
+                    
+                    
+                    }// match is complete
+                    
+                    
+                }//state
+          
                 
-                if self.player1 == self.myteamid {
-                    
-                    self.opponentid =  self.player2
-                }
+                }//count is 0 can't find
                 else{
                     
-                    self.opponentid =  self.player1
-                    
-                    }
-                
-                    }
-                    
-                }
-                else{
-                /*
-                let alert1 = SCLAlertView()
+                    let alert1 = SCLAlertView()
                     alert1.addButton("ok"){
-                    
+                        
                         self.performSegueWithIdentifier("backtojoined", sender: self)
+                        
+                    }
+                    alert1.showError(self.parentViewController?.parentViewController, title: "Tournament not Start", subTitle: "Please wait until Tournament start", closeButtonTitle: nil, duration: 0.0)
+                    
                     
                     }
-                alert1.showError(self.parentViewController?.parentViewController, title: "Tournament not Start", subTitle: "Please wait until Tournament start", closeButtonTitle: nil, duration: 0.0)
-                println("sdsdd")
-                */
-                
-                }
-                
-                println(self.opponentid)
+
+                    
+                }// check json
                 
                 println(self.matchid)
                 
                 
         }
-       
-        
-        
       
         
         
@@ -138,9 +201,9 @@ class Tournament_playnext:  UIViewController  {
     
     @IBAction func getcode(sender: AnyObject) {
         
-        var name = self.tournamentname + "\(self.player1)" + " vs " + "\(self.player2)"
+        var name = self.tournamentname + "\(self.matchid)"
         var code = Tournament.tournamentcode(name, pass:"123")
-        self.startmatch.alpha = 1
+      
         self.sentemail(code)
         
     }
@@ -157,7 +220,7 @@ class Tournament_playnext:  UIViewController  {
                 if JSON != nil && JSON as? [String : AnyObject]? != nil {
                     let myjson = SwiftyJSON.JSON(JSON!)
                     
-                    println("sdsd")
+                    
                     if let gameStartTime = myjson["gameStartTime"].int
                     {
                         self.gameStartTime = gameStartTime
@@ -192,6 +255,7 @@ class Tournament_playnext:  UIViewController  {
                                     if let summonerName = myjson["participants"][i]["summonerName"].string
                                     {
                                         member.name = summonerName
+                                        
                                     }
                                     
                                     if let championId = myjson["participants"][i]["championId"].int
@@ -202,6 +266,14 @@ class Tournament_playnext:  UIViewController  {
                                     if let summonerId = myjson["participants"][i]["summonerId"].int
                                     {
                                         member.summonerId = summonerId
+                                        if summonerId == LolAPIGlobal.lolID.toInt() {
+                                        
+                                            if let championId = myjson["participants"][i]["championId"].int
+                                            {
+                                                self.mychampionpick = championId
+                                            }
+                                        
+                                        }
                                     }
                                     if let iconid = myjson["participants"][i]["profileIconId"].int
                                     {
@@ -224,6 +296,7 @@ class Tournament_playnext:  UIViewController  {
                             
                             self.performSegueWithIdentifier("gamestart", sender: self)
                             
+                           
                         }
                         
                         
@@ -254,8 +327,11 @@ class Tournament_playnext:  UIViewController  {
             controller.blueteammember = self.blueteammember
             controller.redmember = self.redmember
             controller.gameID = self.gameID
-            
-        
+            controller.matchid = self.matchid
+            controller.url = self.url
+            controller.myteamdata = self.myteam
+            controller.oppteam = self.oppteam
+            controller.mychampion = self.mychampionpick
         }
     
     
@@ -284,7 +360,7 @@ class Tournament_playnext:  UIViewController  {
                 {
                     if message == "success"{
                     
-                    
+                        self.startmatch.alpha = 1
                         let alert1 = SCLAlertView()
                         
                          alert1.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "email2.png")!, color: UserInfoGlobal.UIColorFromRGB(0x3498DB), title: "Tournament code !", subTitle: "Please check " + UserInfoGlobal.email,closeButtonTitle: "ok", duration: 0.0)
@@ -308,7 +384,7 @@ class Tournament_playnext:  UIViewController  {
                
             }
             
-            alert1.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "email2.png")!, color: UserInfoGlobal.UIColorFromRGB(0x3498DB), title: "Tournament code !", subTitle: "Please check " + UserInfoGlobal.email,closeButtonTitle: nil, duration: 0.0)
+            alert1.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "email2.png")!, color: UserInfoGlobal.UIColorFromRGB(0x3498DB), title: "Type email !", subTitle: "we can't find you email" + UserInfoGlobal.email,closeButtonTitle: nil, duration: 0.0)
         
         }
         
