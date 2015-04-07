@@ -164,7 +164,7 @@ class Tournament_playnext:  UIViewController  {
                             
                         }
                         alert1.showError(self.parentViewController?.parentViewController, title: "Your match is complete", subTitle: "Please check your score", closeButtonTitle: nil, duration: 0.0)
-                    
+
                     
                     }// match is complete
                     
@@ -183,10 +183,10 @@ class Tournament_playnext:  UIViewController  {
                     }
                     alert1.showError(self.parentViewController?.parentViewController, title: "Tournament not Start", subTitle: "Please wait until Tournament start", closeButtonTitle: nil, duration: 0.0)
                     
-                    
+
                     }
 
-                    
+
                 }// check json
                 
                 println(self.matchid)
@@ -205,7 +205,6 @@ class Tournament_playnext:  UIViewController  {
         var code = Tournament.tournamentcode(name, pass:"123")
       
         self.sentemail(code)
-        
     }
     
     
@@ -333,7 +332,6 @@ class Tournament_playnext:  UIViewController  {
             controller.oppteam = self.oppteam
             controller.mychampion = self.mychampionpick
         }
-    
     
     
     }

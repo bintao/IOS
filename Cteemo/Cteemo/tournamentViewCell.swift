@@ -50,6 +50,11 @@ class tournamentViewCell: UITableViewCell {
         else if gameName == "Hearthstone: Heroes of Warcraft"{
             self.gameicon.image = UIImage(named: "hearthstone.png")!
         }
+        else {
+        
+        self.gameicon.image = UIImage(named: "lol.png")!
+        
+        }
         
     
     }
