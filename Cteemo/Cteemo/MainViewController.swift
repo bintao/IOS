@@ -61,7 +61,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                     (status:RCConnectErrorCode) -> Void in
                     
                     
-                    println(status)
+                    println(status.rawValue)
                     
                     NSLog("Login failed")
             }
@@ -208,7 +208,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
             
             
             if UserInfoGlobal.rongToken != ""{
-            
+                println(UserInfoGlobal.rongToken)
                 RCIM.connectWithToken(UserInfoGlobal.rongToken, completion: { (userId:String!) -> Void in
                     
                 NSLog("Login successfully with userId: %@.",userId)
@@ -219,7 +219,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                     (status:RCConnectErrorCode) -> Void in
                     
                 
-                   println(status)
+                   println(status.rawValue)
                     
                     NSLog("Login failed")
                 }

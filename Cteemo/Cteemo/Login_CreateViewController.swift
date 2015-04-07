@@ -47,8 +47,10 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
             else{
             var req = Alamofire.request(.POST, "http://54.149.235.253:5000/create_user", parameters: ["email": email.text, "password":password.text])
                 .responseJSON { (_, _, JSON, _) in
+                    if JSON != nil {
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
                 self.gotCreateResult(result)
+                    }
             }
         self.startLoading()
         }

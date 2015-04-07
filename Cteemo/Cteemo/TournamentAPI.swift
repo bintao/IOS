@@ -96,7 +96,7 @@ class TournamentAPI: NSObject{
                 let myjson = SwiftyJSON.JSON(JSON!)
                 self.totalnumber = myjson.count
                 var totaltournament = myjson.count
-                
+                    if myjson.count != 0 {
                 for i in 0...myjson.count-1{
                     if let url = myjson[i]["tournament"]["url"].string
                     {
@@ -205,7 +205,7 @@ class TournamentAPI: NSObject{
                     
                 }
     
-                
+            }
                 println(self.totalnumber)
         }
         }
