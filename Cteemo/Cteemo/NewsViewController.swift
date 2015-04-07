@@ -30,6 +30,10 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var newsArr: [AnyObject] = [AnyObject]()
     
+    var weburl :[AnyObject] = [AnyObject]()
+    
+    var website = ""
+    
     var isLoading:Bool = false
     
     override func viewDidLoad() {
@@ -60,11 +64,21 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     func gotResult(prefix: String, result: AnyObject) {
         if (prefix as NSString).substringFromIndex(36) == "/all/0" {
             
+              for var index = 0; index < (result as [AnyObject]).count; index++ {
+            
+                var weburl = ((result as [AnyObject])[index] as [String:AnyObject])["news_url"] as String
+                
+                self.weburl.append(weburl)
+                
+                
+            }
+            
             //need update
             if newsArr.count == 0 || (newsArr[0] as [String: AnyObject])["title"] as String != ((result as [AnyObject])[0] as [String: AnyObject])["title"] as String{
-            
+                
                 newsArr = result as [AnyObject]
                 var newsInfo = ["news":newsArr]
+                
             //save user info and update image files
                 DataManager.saveNewsInfoToLocal(newsInfo)
                 downloadNewsPictureImages(newsInfo)
@@ -96,6 +110,8 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         for var index = 0; index < (info["news"] as [AnyObject]).count; index++ {
             
             var imageURL = ((info["news"] as [AnyObject])[index] as [String:AnyObject])["news_pic"] as String
+            
+            
             
             if imageURL != "" && !DataManager.checkIfFileExist((imageURL as NSString).substringFromIndex(countElements(imageURL) - 10) as String) {
                 
@@ -248,78 +264,29 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+      
+        println(indexPath.row )
+       
+        self.website = self.weburl[indexPath.row] as String
+         println(website)
         
-        var upbound = indexPath.row - 1
-        var downbound = indexPath.row + 1
         
-        var countUp = 0
-        var countDown = 0
+       // gotonewsdetail
         
+          self.performSegueWithIdentifier("gotonewsdetail", sender: self)
         
-        UIView.animateWithDuration(0.5, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            
-            self.menu.tintColor = UIColor.whiteColor()
-            
-            // hide cover
-            if indexPath.row != 0{
-                (tableView.cellForRowAtIndexPath(NSIndexPath(forRow: indexPath.row, inSection: 0))?.subviews[2] as UIView).alpha = 0
-                
-            }
-            
-            while(countUp < 4 && upbound >= 0){
-                
-                if tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0)) != nil{
-                    
-                    tableView.cellForRowAtIndexPath(NSIndexPath(forRow: upbound, inSection: 0))!.transform = CGAffineTransformMakeTranslation(0 , -500)
-                }
-                upbound--
-                countUp++
-            }
-            
-            while(countDown < 4 && downbound < self.newsArr.count){
-                println(downbound)
-                if tableView.cellForRowAtIndexPath(NSIndexPath(forRow: downbound, inSection: 0)) != nil{
-                    tableView.cellForRowAtIndexPath(NSIndexPath(forRow: downbound, inSection: 0))!.transform = CGAffineTransformMakeTranslation(0 , 500)
-                }
-                downbound++
-                countDown++
-            }
-            
-            
-            }
-            , completion: {
-                (value: Bool) in
-                
-                self.displayNews(indexPath.row)
-        })
         
     }
     
-    func displayNews(newsNum: Int){
-        
-        var center = newsTable.convertPoint(newsTable.cellForRowAtIndexPath(NSIndexPath(forRow: newsNum, inSection: 0))!.center, toView: UIApplication.sharedApplication().keyWindow)
-        
-        println(center)
-        
-        newsDisplay = self.storyboard!.instantiateViewControllerWithIdentifier("newsDisplay")! as NewsDisplayViewController
-        println(originalImage)
-        
-        newsDisplay.newsInfo = newsArr[newsNum] as [String: AnyObject]
-        newsDisplay.backImg = originalImage[newsNum]
-        newsDisplay.transformPoint = center      // 3
-        newsDisplay.parentView = self
-        
-        self.addChildViewController(newsDisplay)
-        newsDisplay.didMoveToParentViewController(self)
-        self.view.addSubview(newsDisplay.view)
-        
-        menu.action = Selector("clickReturn")
-        menu.image = UIImage(named: "left")
-        newsTable.reloadData()
-        //Do any additional setup after loading the view.
-        //self.view.backgroundColor = UIColor(red: 240.0/255, green: 242.0/255, blue: 245.0/255, alpha: 1)
-        
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "gotonewsdetail"{
+            
+            var controller: NewsDisplayViewController = segue.destinationViewController as NewsDisplayViewController
+            controller.website = self.website
+        }
     }
+    
     
     func startLoading(){
         newsTable.userInteractionEnabled = false
