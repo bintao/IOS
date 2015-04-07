@@ -175,6 +175,8 @@ class Tournament_playnext:  UIViewController  {
                 }//count is 0 can't find
                 else{
                     
+                    /*
+                    
                     let alert1 = SCLAlertView()
                     alert1.addButton("ok"){
                         
@@ -183,7 +185,7 @@ class Tournament_playnext:  UIViewController  {
                     }
                     alert1.showError(self.parentViewController?.parentViewController, title: "Tournament not Start", subTitle: "Please wait until Tournament start", closeButtonTitle: nil, duration: 0.0)
                     
-
+                    */
                     }
 
 
