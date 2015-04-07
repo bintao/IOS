@@ -24,15 +24,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         
-        
-        
-      
-        
         application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
         DataManager.initializeUserInfo()
         
         UserInfoGlobal.setUp()
-        RCIM.initWithAppKey("bmdehs6pdve3s", deviceToken: nil)
+        RCIM.initWithAppKey("pkfcgjstfmcl8", deviceToken: nil)
         
        // check ios 8.0 or higher
         if (UIApplication.sharedApplication().respondsToSelector(Selector("registerForRemoteNotifications")))

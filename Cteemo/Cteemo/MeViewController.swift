@@ -185,7 +185,7 @@ class MeViewController: UIViewController  {
     
     @IBAction func customservers(sender: AnyObject) {
         
-        var chatViewController : RCChatViewController = RCIM.sharedRCIM().createCustomerService("KEFU1426185510333", title: "cteemo", completion: nil)
+        var chatViewController : RCChatViewController = RCIM.sharedRCIM().createCustomerService("KEFU1426185638731", title: "cteemo", completion: nil)
         
         UINavigationBar.appearance().tintColor = UserInfoGlobal.UIColorFromRGB(0xE74C3C)
         
