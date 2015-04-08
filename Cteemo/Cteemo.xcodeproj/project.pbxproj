@@ -82,6 +82,17 @@
 		42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A471A74A9FC00FD4642 /* UserInformation.plist */; };
 		42E5E78B1A773E56004A781E /* Login_LoginBySelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */; };
 		42E5E7911A7762DB004A781E /* teemoDouble.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5E7901A7762DB004A781E /* teemoDouble.png */; };
+		42F15D2A1ACF637D004D64EF /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42F15D291ACF637D004D64EF /* IntroViewController.swift */; };
+		42F15D341ACF649F004D64EF /* 3View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42F15D311ACF649F004D64EF /* 3View.xib */; };
+		42F15D351ACF649F004D64EF /* 3View1.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F15D321ACF649F004D64EF /* 3View1.png */; };
+		42F15D361ACF649F004D64EF /* 3View2.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F15D331ACF649F004D64EF /* 3View2.png */; };
+		42F15D3A1ACF64A7004D64EF /* 2View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42F15D371ACF64A7004D64EF /* 2View.xib */; };
+		42F15D3B1ACF64A7004D64EF /* 2View1.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F15D381ACF64A7004D64EF /* 2View1.png */; };
+		42F15D3C1ACF64A7004D64EF /* 2View2.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F15D391ACF64A7004D64EF /* 2View2.png */; };
+		42F15D411ACF64B4004D64EF /* 1View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42F15D3D1ACF64B4004D64EF /* 1View.xib */; };
+		42F15D421ACF64B4004D64EF /* 1View1.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F15D3E1ACF64B4004D64EF /* 1View1.png */; };
+		42F15D431ACF64B4004D64EF /* 1View2.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F15D3F1ACF64B4004D64EF /* 1View2.png */; };
+		42F15D441ACF64B4004D64EF /* 1View3.png in Resources */ = {isa = PBXBuildFile; fileRef = 42F15D401ACF64B4004D64EF /* 1View3.png */; };
 		7A6060D99C8BF9EC56339DDD /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F309FA0C2CD8693C64BBAF4 /* libPods.a */; };
 		88535F501A89A0CB00F38098 /* RED.png in Resources */ = {isa = PBXBuildFile; fileRef = 88535F4F1A89A0CB00F38098 /* RED.png */; };
 		88535F551A89C84B00F38098 /* SUMMARY.png in Resources */ = {isa = PBXBuildFile; fileRef = 88535F541A89C84B00F38098 /* SUMMARY.png */; };
@@ -555,6 +566,17 @@
 		42B85A471A74A9FC00FD4642 /* UserInformation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserInformation.plist; sourceTree = "<group>"; };
 		42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_LoginBySelfViewController.swift; sourceTree = "<group>"; };
 		42E5E7901A7762DB004A781E /* teemoDouble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teemoDouble.png; sourceTree = "<group>"; };
+		42F15D291ACF637D004D64EF /* IntroViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
+		42F15D311ACF649F004D64EF /* 3View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = 3View.xib; sourceTree = "<group>"; };
+		42F15D321ACF649F004D64EF /* 3View1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3View1.png; sourceTree = "<group>"; };
+		42F15D331ACF649F004D64EF /* 3View2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3View2.png; sourceTree = "<group>"; };
+		42F15D371ACF64A7004D64EF /* 2View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = 2View.xib; sourceTree = "<group>"; };
+		42F15D381ACF64A7004D64EF /* 2View1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2View1.png; sourceTree = "<group>"; };
+		42F15D391ACF64A7004D64EF /* 2View2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2View2.png; sourceTree = "<group>"; };
+		42F15D3D1ACF64B4004D64EF /* 1View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = 1View.xib; sourceTree = "<group>"; };
+		42F15D3E1ACF64B4004D64EF /* 1View1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1View1.png; sourceTree = "<group>"; };
+		42F15D3F1ACF64B4004D64EF /* 1View2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1View2.png; sourceTree = "<group>"; };
+		42F15D401ACF64B4004D64EF /* 1View3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1View3.png; sourceTree = "<group>"; };
 		6F309FA0C2CD8693C64BBAF4 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		88535F4F1A89A0CB00F38098 /* RED.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RED.png; sourceTree = "<group>"; };
 		88535F541A89C84B00F38098 /* SUMMARY.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SUMMARY.png; sourceTree = "<group>"; };
@@ -973,6 +995,17 @@
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
 				A1CEFEA11AABE71D002D5956 /* tableCell.xib */,
 				42B74FBE1A812416008B575C /* MainViewController.swift */,
+				42F15D291ACF637D004D64EF /* IntroViewController.swift */,
+				42F15D3D1ACF64B4004D64EF /* 1View.xib */,
+				42F15D3E1ACF64B4004D64EF /* 1View1.png */,
+				42F15D3F1ACF64B4004D64EF /* 1View2.png */,
+				42F15D401ACF64B4004D64EF /* 1View3.png */,
+				42F15D311ACF649F004D64EF /* 3View.xib */,
+				42F15D321ACF649F004D64EF /* 3View1.png */,
+				42F15D331ACF649F004D64EF /* 3View2.png */,
+				42F15D371ACF64A7004D64EF /* 2View.xib */,
+				42F15D381ACF64A7004D64EF /* 2View1.png */,
+				42F15D391ACF64A7004D64EF /* 2View2.png */,
 				425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */,
 				427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */,
 				421D56511A832452005E56F0 /* Team */,
@@ -1686,7 +1719,9 @@
 				A1B86E7E1ACE406E00942626 /* 107.png in Resources */,
 				A139191E1AA2C21D00CD232A /* Public.png in Resources */,
 				A1B86EC81ACE406E00942626 /* 50.png in Resources */,
+				42F15D351ACF649F004D64EF /* 3View1.png in Resources */,
 				A14422441AA5925900A7BF6C /* result2.png in Resources */,
+				42F15D3C1ACF64A7004D64EF /* 2View2.png in Resources */,
 				A1B86EDD1ACE406E00942626 /* 75.png in Resources */,
 				42041AF71A816EE400623C70 /* box1.png in Resources */,
 				A1B86F201ACE6D9A00942626 /* GOLD I.png in Resources */,
@@ -1726,6 +1761,7 @@
 				A1B86ECF1ACE406E00942626 /* 58.png in Resources */,
 				42B85A251A748CDB00FD4642 /* button.png in Resources */,
 				A1B86ED71ACE406E00942626 /* 67.png in Resources */,
+				42F15D431ACF64B4004D64EF /* 1View2.png in Resources */,
 				42AB57DA1A7F391A00C7799E /* tableback.png in Resources */,
 				A13E54971AC6315B00FD45F6 /* buttonchatroom.png in Resources */,
 				A1B86E971ACE406E00942626 /* 157.png in Resources */,
@@ -1733,11 +1769,13 @@
 				A1B86F261ACE6D9A00942626 /* PLATINUM I.png in Resources */,
 				A1B86EC31ACE406E00942626 /* 432.png in Resources */,
 				A13919251AA2C21D00CD232A /* Tournament Size.png in Resources */,
+				42F15D411ACF64B4004D64EF /* 1View.xib in Resources */,
 				A1B86EE41ACE406E00942626 /* 81.png in Resources */,
 				A1B86ED61ACE406E00942626 /* 64.png in Resources */,
 				A1B86E761ACE406E00942626 /* 1.png in Resources */,
 				42B85A241A748CDB00FD4642 /* backG.png in Resources */,
 				42855BA61A847D9F00EB9546 /* teambg .png in Resources */,
+				42F15D3A1ACF64A7004D64EF /* 2View.xib in Resources */,
 				A1B86E771ACE406E00942626 /* 10.png in Resources */,
 				A1B86EA21ACE406E00942626 /* 222.png in Resources */,
 				A13E54951AC6315B00FD45F6 /* bliz.png in Resources */,
@@ -1759,6 +1797,7 @@
 				A1B86F231ACE6D9A00942626 /* GOLD IV.png in Resources */,
 				A1B86F2B1ACE6D9A00942626 /* SILVER I.png in Resources */,
 				42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */,
+				42F15D361ACF649F004D64EF /* 3View2.png in Resources */,
 				A13919221AA2C21D00CD232A /* Start time.png in Resources */,
 				A18BF4321AA2F8EC000678F3 /* Email_Password_Nickname_BG.png in Resources */,
 				A1B8E95E1A7B20F2009BE011 /* 战队2.png in Resources */,
@@ -1769,6 +1808,7 @@
 				A1B86F2A1ACE6D9A00942626 /* PLATINUM V.png in Resources */,
 				A170B6C31AC508490012FE21 /* goutou.png in Resources */,
 				42B85A2A1A748CDB00FD4642 /* PHOTO icons.png in Resources */,
+				42F15D421ACF64B4004D64EF /* 1View1.png in Resources */,
 				42B859F51A74840F00FD4642 /* Main.storyboard in Resources */,
 				A1B86EDF1ACE406E00942626 /* 77.png in Resources */,
 				42041AE91A815E1600623C70 /* addfriendsbutton.png in Resources */,
@@ -1777,10 +1817,12 @@
 				A1F3AA631AB1753F00CD5ACE /* report.png in Resources */,
 				A1B86EC11ACE406E00942626 /* 429.png in Resources */,
 				A13919201AA2C21D00CD232A /* red small button.png in Resources */,
+				42F15D441ACF64B4004D64EF /* 1View3.png in Resources */,
 				A1B86EC91ACE406E00942626 /* 51.png in Resources */,
 				A1B86EC51ACE406E00942626 /* 45.png in Resources */,
 				A18BF4341AA2F8EC000678F3 /* LOGIN_SIGN UP PAGE _BG.png in Resources */,
 				A1B86E781ACE406E00942626 /* 101.png in Resources */,
+				42F15D3B1ACF64A7004D64EF /* 2View1.png in Resources */,
 				A13919191AA2C21D00CD232A /* lose button.png in Resources */,
 				A1B86EA81ACE406E00942626 /* 254.png in Resources */,
 				A13919081AA2C21D00CD232A /* 3v3 black button.png in Resources */,
@@ -1872,6 +1914,7 @@
 				A1385AE71AC361A80061FBCC /* postbu.png in Resources */,
 				42041AE51A81592600623C70 /* left.png in Resources */,
 				A1F3AA601AB1753F00CD5ACE /* chat.png in Resources */,
+				42F15D341ACF649F004D64EF /* 3View.xib in Resources */,
 				A1B86F1C1ACE6D9A00942626 /* DIAMOND II.png in Resources */,
 				A1B86EEA1ACE406F00942626 /* 89.png in Resources */,
 				42B85A2D1A748D4E00FD4642 /* arrowTurned.png in Resources */,
@@ -2003,6 +2046,7 @@
 				42B85A121A74888500FD4642 /* Login_SchoolAndPhoto.swift in Sources */,
 				A11FED831ABD4D060075B627 /* RAMBounceAnimation.swift in Sources */,
 				A1C885D91AC29CF500AA7888 /* Team_playerpost.swift in Sources */,
+				42F15D2A1ACF637D004D64EF /* IntroViewController.swift in Sources */,
 				4267D82F1A8011D20054E800 /* ImageProcessor.swift in Sources */,
 				421D565C1A8339D2005E56F0 /* Team_FindTeamViewController.swift in Sources */,
 				42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */,

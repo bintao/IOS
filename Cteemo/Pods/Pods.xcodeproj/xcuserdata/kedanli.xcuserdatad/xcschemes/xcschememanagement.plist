@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>4</integer>
 		</dict>
+		<key>Pods-SCLAlertView-Objective-C.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>8</integer>
+		</dict>
 		<key>Pods.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -22,7 +27,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>17D3E1AFA6B89E2E4A3321A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>2F710A7222ECF7D7272AB378</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>5366375E662402575616A810</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -33,6 +48,11 @@
 			<true/>
 		</dict>
 		<key>86F0B68BB7E550F7459AAD9E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F184BF606B4B67837ABB8208</key>
 		<dict>
 			<key>primary</key>
 			<true/>
