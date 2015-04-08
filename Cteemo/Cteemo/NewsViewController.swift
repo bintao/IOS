@@ -267,8 +267,13 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
       
         println(indexPath.row )
        
+        
+        if indexPath.row < self.weburl.count {
+            
         self.website = self.weburl[indexPath.row] as String
-         println(website)
+        
+        
+        }
         
         
        // gotonewsdetail
