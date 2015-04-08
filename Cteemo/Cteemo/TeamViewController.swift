@@ -82,10 +82,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     override func viewDidAppear(animated: Bool) {
         
         
-        if UserInfoGlobal.profile_ID == ""{
-            UserInfoGlobal.updateUserInfo()
-        }
-        
         if TeamInfoGlobal.teamID != ""{
             TeamInfoGlobal.uploadTeamInfo()
         }

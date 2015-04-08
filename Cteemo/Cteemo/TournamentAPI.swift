@@ -20,7 +20,7 @@ class TournamentAPI: NSObject{
     
     let key = "OzVqaaqFdjiuTGPbbeQfvpgHxnIcquz6yh5LSwep"
     // for tournament
-    var totalnumber :String = ""
+    var totalnumber = 0
     var tournamentName: [AnyObject] = [AnyObject]()
     var tournamentUrl: [AnyObject] = [AnyObject]()
     var tournamentID: [AnyObject] = [AnyObject]()
@@ -94,9 +94,9 @@ class TournamentAPI: NSObject{
             .responseJSON { (_, _, JSON, _) in
                 if JSON != nil{
                 let myjson = SwiftyJSON.JSON(JSON!)
-                self.totalnumber = "\(SwiftyJSON.JSON(JSON!).count)"
+                self.totalnumber = myjson.count
                 var totaltournament = myjson.count
-                
+                    if myjson.count != 0 {
                 for i in 0...myjson.count-1{
                     if let url = myjson[i]["tournament"]["url"].string
                     {
@@ -205,7 +205,7 @@ class TournamentAPI: NSObject{
                     
                 }
     
-                
+            }
                 println(self.totalnumber)
         }
         }
@@ -407,21 +407,19 @@ class TournamentAPI: NSObject{
     'LOBBY':'LOBBYONLY'}
 
     */
-    func tournamentcode(name:String, pass:String){
+    func tournamentcode(name:String, pass:String) -> String{
     
         var code = "pvpnet://lol/customgame/joinorcreate/map11/pick6/team5/specALL/"
         
-        let url = "54.149.235.253:5000/match_report/lol"
-        
-        let plainString = "{\"name\":\"\(name)\",\"extra\":\"\(name)\",\"password\":\"\(pass)\",\"report\":\"\(url)\"}"
+        let plainString = "{\"name\":\"\(name)\",\"extra\":\"\(name)\",\"password\":\"\(pass)\",\"report\":\"\"}"
        
         println(plainString)
         
         let plainData = (plainString as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
         let base64String = plainData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
-        println(base64String)
         
         println(code+base64String)
+        return code + base64String
     
     }
     

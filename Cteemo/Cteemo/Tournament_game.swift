@@ -205,8 +205,9 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        println(Tournament.totalnumber)
-        return Tournament.totalnumber.toInt()!
+        
+        return Tournament.totalnumber
+        
     }
 
     

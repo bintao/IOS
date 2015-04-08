@@ -39,9 +39,6 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
         
         // doens't appear if user haven't login
-       
-        
-        
         RCIM.sharedRCIM().setReceiveMessageDelegate(self)
         Tournament.getTournamentList()
         LolAPIGlobal.getlolvision()
@@ -64,7 +61,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                     (status:RCConnectErrorCode) -> Void in
                     
                     
-                    println(status)
+                    println(status.rawValue)
                     
                     NSLog("Login failed")
             }
@@ -161,7 +158,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
         }
             
-        else if message.targetId != "KEFU1426185510333"{
+        else if message.targetId != "KEFU1426185510333" && message.conversationType != RCConversationType.onversationType_CHATROOM {
             
             println(message.targetId)
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
@@ -211,7 +208,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
             
             
             if UserInfoGlobal.rongToken != ""{
-            
+                println(UserInfoGlobal.rongToken)
                 RCIM.connectWithToken(UserInfoGlobal.rongToken, completion: { (userId:String!) -> Void in
                     
                 NSLog("Login successfully with userId: %@.",userId)
@@ -222,7 +219,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                     (status:RCConnectErrorCode) -> Void in
                     
                 
-                   println(status)
+                   println(status.rawValue)
                     
                     NSLog("Login failed")
                 }
@@ -383,14 +380,6 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
     
     }
     
-    func postsomething() {
-        
-        //localhost:5000/team_post -X POST --header "token: from login api" -d "content=I want to find someone to talk"
-        var req = ARequest(prefix: "team_post", method: requestType.POST, parameters: ["content":"bintao here"])
-        req.delegate = self
-        req.sendRequestWithToken(UserInfoGlobal.accessToken)
-        
-    }
     
     func gotResult(prefix: String, result: AnyObject) {
         

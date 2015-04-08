@@ -121,6 +121,7 @@ class UserInformation: NSObject, RequestResultDelegate{
     func gotResult(prefix: String, result: AnyObject) {
         
         if prefix == "profile"{
+        
             
             if ((result as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
             UserInfoGlobal.tokenVaild = "false"
