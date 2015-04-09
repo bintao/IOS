@@ -82,6 +82,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         var par : [String: AnyObject] = ["api_key":Tournament.key]
         var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
+                
                 let myjson = SwiftyJSON.JSON(JSON!)
                 var s = 0
                 if myjson.count != 0{
@@ -98,9 +99,11 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                             }
                         }
                     }//end for loop
-                    
+                }
+                
+                
                     alert2.hideView()
-                    
+                
                     if s != 0 {
                           self.memberID = s
                           self.performSegueWithIdentifier("joined", sender: self)
@@ -111,12 +114,10 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                     //当在比赛中找不到成员时候
                     else{
                     
-                    
                         if TeamInfoGlobal.iscaptain == "yes"{
                             
                             
                             alert.addButton("Join!"){
-                                
                                 
                                 var par : [String: AnyObject] = ["api_key":Tournament.key,"participant[name]":TeamInfoGlobal.teamName]
                                 var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/participants.json",parameters:par)
@@ -168,19 +169,14 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                             
                             alert.showWarning(self.parentViewController?.parentViewController, title: "Join failed", subTitle: "You must be the captain in able to Join Tournament", closeButtonTitle: "ok", duration: 0.0)
                             
-                        }
+                        }// not captain
 
                     
-                    }
+                    }// can't find member
                     
                 
-                }
-                
-                
-                
-        }
-
-
+                }//end request
+        
        
     }
     
