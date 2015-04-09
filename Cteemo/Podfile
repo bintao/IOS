@@ -1,2 +1,2 @@
- pod 'RongCloudIMKit', '~> 1.4.1'
+ pod 'RongCloudIMKit', '1.4.2'
  pod 'SCLAlertView-Objective-C'
