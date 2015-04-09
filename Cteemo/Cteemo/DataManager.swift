@@ -146,8 +146,7 @@ class DataManager: NSObject {
         let fileManager = NSFileManager()
         var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
         var imagePath = paths.stringByAppendingPathComponent(name)
-        println(name
-        )
+        
         UIImagePNGRepresentation(image).writeToFile(imagePath, atomically: true)
         
     }

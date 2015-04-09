@@ -1006,6 +1006,7 @@
 		42B859E91A74840F00FD4642 /* Cteemo */ = {
 			isa = PBXGroup;
 			children = (
+				A12227311AD63C6F00D0C6CD /* intro */,
 				4215A6711A7D7616002EB62E /* API */,
 				42B859EC1A74840F00FD4642 /* AppDelegate.swift */,
 				42B859F31A74840F00FD4642 /* Main.storyboard */,
@@ -1013,25 +1014,6 @@
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
 				A1CEFEA11AABE71D002D5956 /* tableCell.xib */,
 				42B74FBE1A812416008B575C /* MainViewController.swift */,
-				42DBA6861AD60D6B001F57CE /* IntroViewController.swift */,
-				42F15D3D1ACF64B4004D64EF /* 1View.xib */,
-				42DBA6681AD5D489001F57CE /* Cloud右上角.png */,
-				42DBA6A61AD6301D001F57CE /* Start App .png */,
-				42DBA6A41AD63011001F57CE /* heart icon.png */,
-				42DBA6691AD5D489001F57CE /* Cloud左下角.png */,
-				42DBA6A21AD62FF3001F57CE /* 泳池爬梯.png */,
-				42DBA66B1AD5D489001F57CE /* Faster & easier.png */,
-				42DBA6A01AD62F3A001F57CE /* smile face icon.png */,
-				42DBA66C1AD5D489001F57CE /* LOGIN PAGE 1.png */,
-				42DBA66D1AD5D489001F57CE /* rocket.png */,
-				42F15D311ACF649F004D64EF /* 3View.xib */,
-				42DBA69E1AD62E0C001F57CE /* enjoy.png */,
-				42F15D371ACF64A7004D64EF /* 2View.xib */,
-				42DBA69C1AD62DD8001F57CE /* visible & paired.png */,
-				42DBA6751AD5F980001F57CE /* 左下角Starts.png */,
-				42DBA6791AD5F980001F57CE /* icon.png */,
-				42DBA67A1AD5F980001F57CE /* icons.png */,
-				42DBA67B1AD5F980001F57CE /* Loading png.png */,
 				425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */,
 				427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */,
 				421D56511A832452005E56F0 /* Team */,
@@ -1228,6 +1210,32 @@
 				A11FED801ABD4D060075B627 /* RAMTransitionItemAnimation.swift */,
 			);
 			path = TransitionAniamtions;
+			sourceTree = "<group>";
+		};
+		A12227311AD63C6F00D0C6CD /* intro */ = {
+			isa = PBXGroup;
+			children = (
+				42DBA6861AD60D6B001F57CE /* IntroViewController.swift */,
+				42F15D3D1ACF64B4004D64EF /* 1View.xib */,
+				42DBA6681AD5D489001F57CE /* Cloud右上角.png */,
+				42DBA6A61AD6301D001F57CE /* Start App .png */,
+				42DBA6A41AD63011001F57CE /* heart icon.png */,
+				42DBA6691AD5D489001F57CE /* Cloud左下角.png */,
+				42DBA6A21AD62FF3001F57CE /* 泳池爬梯.png */,
+				42DBA66B1AD5D489001F57CE /* Faster & easier.png */,
+				42DBA6A01AD62F3A001F57CE /* smile face icon.png */,
+				42DBA66C1AD5D489001F57CE /* LOGIN PAGE 1.png */,
+				42DBA66D1AD5D489001F57CE /* rocket.png */,
+				42F15D311ACF649F004D64EF /* 3View.xib */,
+				42DBA69E1AD62E0C001F57CE /* enjoy.png */,
+				42F15D371ACF64A7004D64EF /* 2View.xib */,
+				42DBA69C1AD62DD8001F57CE /* visible & paired.png */,
+				42DBA6751AD5F980001F57CE /* 左下角Starts.png */,
+				42DBA6791AD5F980001F57CE /* icon.png */,
+				42DBA67A1AD5F980001F57CE /* icons.png */,
+				42DBA67B1AD5F980001F57CE /* Loading png.png */,
+			);
+			name = intro;
 			sourceTree = "<group>";
 		};
 		A13811BE1AA8182400E8293D /* Products */ = {
