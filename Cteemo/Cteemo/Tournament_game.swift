@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -80,10 +78,10 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         alert2.showWaiting(self.parentViewController?.parentViewController, title: "Loading", subTitle: "Cteemo is loading", closeButtonTitle: nil, duration: 0.0)
         var par : [String: AnyObject] = ["api_key":Tournament.key]
-        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
-            .responseJSON { (_, _, JSON, _) in
+        var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
+            .responseJSON { (_, _, JSONdata, _) in
                 
-                let myjson = SwiftyJSON.JSON(JSON!)
+                let myjson = JSON(JSONdata!)
                 var s = 0
                 if myjson.count != 0{
                     for i in 0...myjson.count-1{
@@ -120,13 +118,13 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                             alert.addButton("Join!"){
                                 
                                 var par : [String: AnyObject] = ["api_key":Tournament.key,"participant[name]":TeamInfoGlobal.teamName]
-                                var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/participants.json",parameters:par)
-                                    .responseJSON { (_, _, JSON, _) in
-                                        println(JSON)
-                                        let myjson = SwiftyJSON.JSON(JSON!)
-                                        if JSON != nil {
+                                var req = request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/participants.json",parameters:par)
+                                    .responseJSON { (_, _, JSONdata, _) in
+                                    
+                                        let myjson = JSON(JSONdata!)
+                                        if JSONdata != nil {
                                             
-                                            var result: [String: AnyObject] = JSON as [String: AnyObject]
+                                            var result: [String: AnyObject] = JSONdata as [String: AnyObject]
                                             if result["errors"]? != nil {
                                                 
                                                 if let error = myjson["errors"][0].string

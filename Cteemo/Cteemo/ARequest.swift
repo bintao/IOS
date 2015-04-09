@@ -8,7 +8,6 @@
 //
 
 import UIKit
-import Alamofire
 
 protocol RequestResultDelegate: NSObjectProtocol{
     func gotResult(prefix:String ,result: AnyObject)
@@ -56,7 +55,7 @@ class ARequest: NSObject {
     func sendRequest(){
         
         if requestType.GET == method {
-            var req = Alamofire.request(.GET, server + prefix, parameters: parameters)
+            var req = request(.GET, server + prefix, parameters: parameters)
                 .responseJSON { (_, _, JSON, _) in
                     if JSON != nil{
                         self.gotResult(JSON!)
@@ -64,14 +63,14 @@ class ARequest: NSObject {
             }
         }else if requestType.POST == method{
         
-            var req = Alamofire.request(.POST, server + prefix, parameters: parameters)
+            var req = request(.POST, server + prefix, parameters: parameters)
                 .responseJSON { (_, _, JSON, _) in
                     if JSON != nil{
                         self.gotResult(JSON!)
                     }
             }
         }else if requestType.DELETE == method{
-            var req = Alamofire.request(.DELETE, server + prefix, parameters: parameters)
+            var req = request(.DELETE, server + prefix, parameters: parameters)
                 .responseJSON { (_, _, JSON, _) in
                     if JSON != nil{
                         self.gotResult(JSON!)

@@ -8,7 +8,7 @@
 //
 
 import UIKit
-import Alamofire
+
 
 class TeamViewController: UIViewController , UITableViewDataSource, UITableViewDelegate, RequestResultDelegate{
     

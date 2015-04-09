@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 var LolAPIGlobal: LolAPI = LolAPI()
 
@@ -78,7 +76,7 @@ class LolAPI: NSObject{
     
         if self.lolName != "" {
             var url = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/"+self.lolName+"?api_key="+key
-            Alamofire.request(.GET,url)
+            request(.GET,url)
                 .responseJSON { (_, _, JSON, _) in
                     if JSON as [String: AnyObject]? != nil{
                         var result: [String: AnyObject] = JSON as [String: AnyObject]
@@ -97,7 +95,7 @@ class LolAPI: NSObject{
     
         if self.lolName != "" {
             var url = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/"+self.lolName+"?api_key="+key
-            Alamofire.request(.GET,url)
+            request(.GET,url)
                 .responseJSON { (_, _, JSON, _) in
                     if JSON as [String: AnyObject]? != nil{
                         var result: [String: AnyObject] = JSON as [String: AnyObject]
@@ -171,7 +169,7 @@ class LolAPI: NSObject{
     // get Summoner league data
     func getSummonerLeague(lolID :String){
         var url = "https://na.api.pvp.net/api/lol/na/v2.5/league/by-summoner/"+lolID+"/entry?api_key="+key
-        Alamofire.request(.GET,url)
+        request(.GET,url)
             .responseJSON { (_, _, JSON, _) in
                 if JSON as [String: AnyObject]? != nil{
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
@@ -206,7 +204,7 @@ class LolAPI: NSObject{
     
     func getlolvision(){
         let url = "http://ddragon.leagueoflegends.com/realms/na.json"
-        Alamofire.request(.GET,url)
+       request(.GET,url)
             .responseJSON { (_, _, JSON, _) in
                 if JSON != nil{
                 
@@ -226,12 +224,12 @@ class LolAPI: NSObject{
     
         let url = "https://na.api.pvp.net/api/lol/na/v1.3/game/by-summoner/25350780/recent?api_key="+self.key
         println(url)
-        Alamofire.request(.GET,url)
-            .responseJSON { (_, _, JSON, _) in
-                if JSON != nil{
+       request(.GET,url)
+            .responseJSON { (_, _, JSONdata, _) in
+                if JSONdata != nil{
                  println(JSON)
-                    if JSON != nil{
-                         let myjson = SwiftyJSON.JSON(JSON!)
+                    if JSONdata != nil{
+                         let myjson = JSON(JSONdata!)
                         if let url = myjson["tournament"]["url"].string
                         {
                         }

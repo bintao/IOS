@@ -8,8 +8,6 @@
 
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 class matchmember {
     
@@ -131,11 +129,11 @@ class Tournament_startgame: UIViewController {
         
         let url = "https://na.api.pvp.net/api/lol/na/v2.2/match/"+"\(self.gameID)"+"?api_key="+LolAPIGlobal.key
        
-        Alamofire.request(.GET,url)
-            .responseJSON { (_, _, JSON, _) in
+        request(.GET,url)
+            .responseJSON { (_, _, JSONdata, _) in
                 var participantId = 0
-                if JSON != nil{
-                    let myjson = SwiftyJSON.JSON(JSON!)
+                if JSONdata != nil{
+                    let myjson = JSON(JSONdata!)
                     
                     if let player = myjson["participants"].array{
                     println( player)
@@ -245,7 +243,7 @@ class Tournament_startgame: UIViewController {
         
         let url = "https://api.challonge.com/v1/tournaments/"+self.url+"/matches/"+"\(self.matchid)"+".json"
         
-        Alamofire.request(.PUT,url, parameters: par)
+        request(.PUT,url, parameters: par)
             .responseJSON { (_, _, JSON, _) in
                 
                 if JSON != nil{

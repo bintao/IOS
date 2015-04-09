@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Alamofire
+
 
 class Teampostview: UIViewController,UITextViewDelegate,RequestResultDelegate {
     

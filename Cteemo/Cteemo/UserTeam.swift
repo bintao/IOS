@@ -8,8 +8,6 @@
 
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 var TeamInfoGlobal: UserTeam = UserTeam()
 
@@ -103,10 +101,10 @@ class UserTeam: NSObject{
     
     func uploadTeamInfo(){
        
-        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/my_team/lol")
-            .responseJSON { (_, _, JSON, _) in
+        var req = request(.GET, "http://54.149.235.253:5000/my_team/lol")
+            .responseJSON { (_, _, JSONdata, _) in
                
-                let myjson = SwiftyJSON.JSON(JSON!)
+                let myjson = JSON(JSONdata!)
                 
                 if let captainIcon = myjson["captain"][0]["profile_icon"].string{
                    

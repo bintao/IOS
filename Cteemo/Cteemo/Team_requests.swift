@@ -8,8 +8,7 @@
 
 
 import UIKit
-import Alamofire
-import SwiftyJSON
+
 
 
 class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegate{
@@ -47,7 +46,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         startLoading()
         
         if TeamInfoGlobal.iscaptain == "no" || TeamInfoGlobal.iscaptain == ""{
-        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/invite_request/lol", parameters: ["page": 0])
+        var req = request(.GET, "http://54.149.235.253:5000/invite_request/lol", parameters: ["page": 0])
             .responseJSON { (_, _, JSON, _) in
                 self.stopLoading()
                  println(JSON)
@@ -63,7 +62,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         }
         }else if TeamInfoGlobal.iscaptain == "yes" {
         
-            var req = Alamofire.request(.GET, "http://54.149.235.253:5000/join_request/lol", parameters: ["page": 0])
+            var req = request(.GET, "http://54.149.235.253:5000/join_request/lol", parameters: ["page": 0])
                 .responseJSON { (_, _, JSON, _) in
                     self.stopLoading()
                     println(JSON)
@@ -229,19 +228,17 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                 
                 if TeamInfoGlobal.iscaptain == "yes"{
                     
-                    var req = Alamofire.request(.POST, "http://54.149.235.253:5000/join_request/lol",parameters: ["profileID": id])
-                        .responseJSON { (_, _, JSON, _) in
+                    var req = request(.POST, "http://54.149.235.253:5000/join_request/lol",parameters: ["profileID": id])
+                        .responseJSON { (_, _, JSONdata, _) in
                             
-                            println(JSON)
-                            
-                            if JSON == nil {
+                            if JSONdata == nil {
                                 
                                 
                                 
                             }
                                 
                             else{
-                                let myjson = SwiftyJSON.JSON(JSON!)
+                                let myjson = JSON(JSONdata!)
                                 
                                 if let url = myjson["message"].string
                                 {
@@ -261,11 +258,11 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                 }
                     
                 else{
-                var req = Alamofire.request(.POST, "http://54.149.235.253:5000/invite_request/lol",parameters: ["profileID": id])
-                    .responseJSON { (_, _, JSON, _) in
+                var req = request(.POST, "http://54.149.235.253:5000/invite_request/lol",parameters: ["profileID": id])
+                    .responseJSON { (_, _, JSONdata, _) in
                         
-                        println(JSON)
-                        if JSON == nil {
+                        println(JSONdata)
+                        if JSONdata == nil {
                             
                             ((((self.parentViewController as UINavigationController).parentViewController as MainViewController).childViewControllers[1] as  UINavigationController).childViewControllers[0] as TeamViewController).toTeammatedIfNeede()
                             
@@ -273,7 +270,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                         }
                             
                         else{
-                        let myjson = SwiftyJSON.JSON(JSON!)
+                        let myjson = JSON(JSONdata!)
                       
                             if let url = myjson["message"].string
                             {
@@ -336,7 +333,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                 manager.session.configuration.HTTPAdditionalHeaders = [
                     "token": UserInfoGlobal.accessToken
                 ]
-                var req = Alamofire.request(.DELETE, "http://54.149.235.253:5000/invite_request/lol",parameters: ["profileID": id])
+                var req = request(.DELETE, "http://54.149.235.253:5000/invite_request/lol",parameters: ["profileID": id])
                     .responseJSON { (_, _, JSON, _) in
                         println(JSON)
                         if (JSON as [String:AnyObject])["status"]? != nil{

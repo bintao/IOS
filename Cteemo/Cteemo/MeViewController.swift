@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 
 class MeViewController: UIViewController  {
@@ -44,12 +42,12 @@ class MeViewController: UIViewController  {
             "token": UserInfoGlobal.accessToken
         ]
     
-        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/profile")
-            .responseJSON { (_, _, JSON, _) in
-                if JSON != nil {
+        var req = request(.GET, "http://54.149.235.253:5000/profile")
+            .responseJSON { (_, _, JSONdata, _) in
+                if JSONdata != nil {
                     
-                    println(JSON)
-                    let myjson = SwiftyJSON.JSON(JSON!)
+                
+                    let myjson = JSON(JSONdata!)
                     if let name = myjson["username"].string{
                         self.username.text = name
                     }

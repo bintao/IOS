@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     
@@ -148,7 +147,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         if TeamInfoGlobal.iscaptain == "yes"{
         alert1.addButton("Delete", actionBlock:{ (Void) in
             alert2.showWaiting(self.parentViewController?.parentViewController, title: "Wait a second", subTitle: "Quiting......", closeButtonTitle: nil, duration: 0.0)
-            var req = Alamofire.request(.DELETE, "http://54.149.235.253:5000/create_team/lol")
+            var req = request(.DELETE, "http://54.149.235.253:5000/create_team/lol")
                 .responseJSON { (_, _, JSON, _) in
                     alert2.hideView()
                     if (JSON as [String:AnyObject])["status"]? != nil{
@@ -168,7 +167,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         else if TeamInfoGlobal.iscaptain == "no"{
             alert1.addButton("Leave", actionBlock:{ (Void) in
                   alert2.showWaiting(self.parentViewController?.parentViewController, title: "Wait a second", subTitle: "Quiting......", closeButtonTitle: nil, duration: 0.0)
-                var req = Alamofire.request(.DELETE, "http://54.149.235.253:5000/my_team/lol")
+                var req = request(.DELETE, "http://54.149.235.253:5000/my_team/lol")
                     .responseJSON { (_, _, JSON, _) in
                          alert2.hideView()
                         if (JSON as [String:AnyObject])["status"]? != nil{

@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
+
 
 class Tournament_joined: UIViewController {
     
@@ -134,7 +133,7 @@ class Tournament_joined: UIViewController {
         
         println(self.memberID)
         var par : [String: AnyObject] = ["api_key":Tournament.key]
-        var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+self.url+"/participants/"+"\(self.memberID)"+"/check_in.json",parameters:par)
+        var req = request(.POST, "https://api.challonge.com/v1/tournaments/"+self.url+"/participants/"+"\(self.memberID)"+"/check_in.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 
                 if JSON != nil {
@@ -205,9 +204,9 @@ class Tournament_joined: UIViewController {
     
         var myteamname = TeamInfoGlobal.teamName
         var par : [String: AnyObject] = ["api_key":Tournament.key]
-        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+self.url+"/participants.json",parameters:par)
-            .responseJSON { (_, _, JSON, _) in
-                let myjson = SwiftyJSON.JSON(JSON!)
+        var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+self.url+"/participants.json",parameters:par)
+            .responseJSON { (_, _, JSONdata, _) in
+                let myjson = JSON(JSONdata!)
                 var s = 0
                 if myjson.count != 0{
                     for i in 0...myjson.count-1{

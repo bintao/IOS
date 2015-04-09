@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDelegate , RCIMReceiveMessageDelegate , RCIMUserInfoFetcherDelegagte , RCIMConnectionStatusDelegate {
     
@@ -107,10 +105,10 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
         //从服务器获取用户资料
         if userId != UserInfoGlobal.profile_ID{
-        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/view_profile/" + userId)
-            .responseJSON { (_, _, JSON, _) in
-                if JSON != nil {
-                let myjson = SwiftyJSON.JSON(JSON!)
+        var req = request(.GET, "http://54.149.235.253:5000/view_profile/" + userId)
+            .responseJSON { (_, _, JSONdata, _) in
+                if JSONdata != nil {
+                let myjson = JSON(JSONdata!)
                 println(myjson)
                  if let icon = myjson["profile_icon"].string{
                     user.portraitUri = icon

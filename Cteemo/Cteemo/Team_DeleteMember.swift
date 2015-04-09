@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
+
 
 
 class Team_DeleteMember: UIViewController, UITableViewDataSource, UITableViewDelegate{
@@ -118,7 +117,7 @@ class Team_DeleteMember: UIViewController, UITableViewDataSource, UITableViewDel
         alert1.addButton("Delete", actionBlock:{ (Void) in
             alert2.showWaiting(self.parentViewController?.parentViewController, title: "Wait a second", subTitle: "Quiting......", closeButtonTitle: nil, duration: 0.0)
             
-            var req = Alamofire.request(.DELETE, "http://54.149.235.253:5000/manage_team/lol",parameters: ["profileID": profileid ])
+            var req = request(.DELETE, "http://54.149.235.253:5000/manage_team/lol",parameters: ["profileID": profileid ])
                 .responseJSON { (_, _, JSON, _) in
                     alert2.hideView()
                     

@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-import SwiftyJSON
 
 
 class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate,RequestResultDelegate{
@@ -42,7 +40,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         startLoading()
             if TeamInfoGlobal.findplayer {
         
-                var req = Alamofire.request(.GET, "http://54.149.235.253:5000/search_profile", parameters: [ "username":searchBar.text])
+                var req = request(.GET, "http://54.149.235.253:5000/search_profile", parameters: [ "username":searchBar.text])
                     .responseJSON { (_, _, JSON, _) in
                         self.stopLoading()
                     
@@ -64,7 +62,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
             }
             else{
             
-                var req = Alamofire.request(.GET, "http://54.149.235.253:5000/search_team/lol", parameters: [ "teamName":searchBar.text])
+                var req = request(.GET, "http://54.149.235.253:5000/search_team/lol", parameters: [ "teamName":searchBar.text])
                     .responseJSON { (_, _, JSON, _) in
                         self.stopLoading()
                         

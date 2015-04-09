@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class Login_CreateViewController: UIViewController, UITextFieldDelegate{
     
@@ -45,7 +44,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
                 
             }
             else{
-            var req = Alamofire.request(.POST, "http://54.149.235.253:5000/create_user", parameters: ["email": email.text, "password":password.text])
+            var req = request(.POST, "http://54.149.235.253:5000/create_user", parameters: ["email": email.text, "password":password.text])
                 .responseJSON { (_, _, JSON, _) in
                     if JSON != nil {
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
@@ -106,7 +105,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         
         alert1.addButton("Verificaed!!", actionBlock:{ (Void) in
         
-            var req = Alamofire.request(.POST, "http://54.149.235.253:5000/login", parameters: ["email": UserInfoGlobal.email, "password": self.savepass ])
+            var req = request(.POST, "http://54.149.235.253:5000/login", parameters: ["email": UserInfoGlobal.email, "password": self.savepass ])
                 .responseJSON { (_, _, JSON, _) in
                     
                     println(JSON)

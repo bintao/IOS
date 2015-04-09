@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 
 class Login_Forpassword: UIViewController, UITextFieldDelegate{
@@ -40,7 +39,7 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
         
         if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) {
         
-        var req = Alamofire.request(.POST, "http://54.149.235.253:5000/forget_password", parameters: ["email": email.text,"username":"alex","school":"UIUC"])
+        var req = request(.POST, "http://54.149.235.253:5000/forget_password", parameters: ["email": email.text,"username":"alex","school":"UIUC"])
         .responseJSON { (_, _, JSON, _) in
         var result: [String: AnyObject] = JSON as [String: AnyObject]
         self.gotSubmitResult(result)

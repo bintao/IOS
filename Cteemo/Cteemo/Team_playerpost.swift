@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 
 class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDelegate,RequestResultDelegate {
@@ -49,7 +48,7 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         startLoading()
         
-        var req = Alamofire.request(.GET, "http://54.149.235.253:5000/player_post", parameters: ["page": 0])
+        var req = request(.GET, "http://54.149.235.253:5000/player_post", parameters: ["page": 0])
             .responseJSON { (_, _, JSON, _) in
                 self.stopLoading()
                 if ((JSON as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {

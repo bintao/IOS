@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import Alamofire
-
 
 class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, RequestResultDelegate{
     

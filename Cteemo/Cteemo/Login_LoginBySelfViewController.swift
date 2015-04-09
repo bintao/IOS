@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UITextFieldDelegate, RequestResultDelegate{
     

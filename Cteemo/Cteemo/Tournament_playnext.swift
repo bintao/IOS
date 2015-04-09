@@ -6,8 +6,7 @@
 //  Copyright (c) 2015年 Kedan Li. All rights reserved.
 //
 import UIKit
-import Alamofire
-import SwiftyJSON
+
 
 class Tournament_playnext:  UIViewController  {
 
@@ -66,12 +65,12 @@ class Tournament_playnext:  UIViewController  {
         var par : [String: AnyObject] = ["api_key":Tournament.key,"participant_id" : myteamid]
         
         
-        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+url+"/matches.json",parameters:par)
-            .responseJSON { (_, _, JSON, _) in
+        var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+url+"/matches.json",parameters:par)
+            .responseJSON { (_, _, JSONdata, _) in
                 
-                if JSON != nil  {
+                if JSONdata != nil  {
                     
-                let myjson = SwiftyJSON.JSON(JSON!)
+                let myjson = JSON(JSONdata!)
                var scoreresult = ""
                 var count = myjson.count
                 
@@ -215,11 +214,11 @@ class Tournament_playnext:  UIViewController  {
         let url = "https://na.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/NA1/"+LolAPIGlobal.lolID+"?api_key="+LolAPIGlobal.key
         
         
-        Alamofire.request(.GET,url)
-            .responseJSON { (_, _, JSON, error) in
+       request(.GET,url)
+            .responseJSON { (_, _, JSONdata, error) in
                 
-                if JSON != nil && JSON as? [String : AnyObject]? != nil {
-                    let myjson = SwiftyJSON.JSON(JSON!)
+                if JSONdata != nil && JSONdata as? [String : AnyObject]? != nil {
+                    let myjson = JSON(JSONdata!)
                     
                     
                     if let gameStartTime = myjson["gameStartTime"].int
@@ -351,11 +350,10 @@ class Tournament_playnext:  UIViewController  {
         var par : [String: AnyObject] = ["api_user":"bintao","api_key":"ck80i539gz","to":UserInfoGlobal.email,"toname":"bintao","subject":"Touranment Code","text": tournamentcode,"from":"support@cteemo.com"]
         println(UserInfoGlobal.email)
         var url = "https://api.sendgrid.com/api/mail.send.json"
-        var req = Alamofire.request(.POST, url, parameters: par)
-            .responseJSON { (_, _, JSON, error) in
-                println(JSON)
+        var req = request(.POST, url, parameters: par)
+            .responseJSON { (_, _, JSONdata, error) in
                 
-                let myjson = SwiftyJSON.JSON(JSON!)
+                let myjson = JSON(JSONdata!)
                 if let message = myjson["message"].string
                 {
                     if message == "success"{

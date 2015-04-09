@@ -9,8 +9,7 @@
 
 import UIKit
 import Foundation
-import Alamofire
-import SwiftyJSON
+
 
 
 var Tournament: TournamentAPI = TournamentAPI()
@@ -49,7 +48,7 @@ class TournamentAPI: NSObject{
     func createTournament(name:String,intro:String){
         
         var par : [String: AnyObject] = ["api_key":key,"tournament[name]":name,"tournament[url]":name,"tournament[description]":intro,"tournament[open_signup]":false]
-        var req = Alamofire.request(.POST, "https://challonge.com/api/tournaments.json",parameters:par)
+        var req = request(.POST, "https://challonge.com/api/tournaments.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
                 println(result)
@@ -75,7 +74,7 @@ class TournamentAPI: NSObject{
     func showTournament(id: String){
     
         var par : [String: AnyObject] = ["api_key":key,"include_participants":1]
-        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+id+".json",parameters:par)
+        var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+id+".json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 if JSON? != nil{
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
@@ -90,10 +89,10 @@ class TournamentAPI: NSObject{
     func getTournamentList(){
         
         var par : [String: AnyObject] = ["api_key":Tournament.key]
-        var req = Alamofire.request(.GET,"https://api.challonge.com/v1/tournaments.json",parameters:par)
-            .responseJSON { (_, _, JSON, _) in
-                if JSON != nil{
-                let myjson = SwiftyJSON.JSON(JSON!)
+        var req = request(.GET,"https://api.challonge.com/v1/tournaments.json",parameters:par)
+            .responseJSON { (_, _, JSONdata, _) in
+                if JSONdata != nil{
+                let myjson = JSON(JSONdata!)
                 self.totalnumber = myjson.count
                 var totaltournament = myjson.count
                     if myjson.count != 0 {
@@ -215,7 +214,7 @@ class TournamentAPI: NSObject{
     func deleteTournament(id:String){
         
         var par : [String: AnyObject] = ["api_key":key]
-        var req = Alamofire.request(.DELETE, "https://api.challonge.com/v1/tournaments/"+id+".json",parameters:par)
+        var req = request(.DELETE, "https://api.challonge.com/v1/tournaments/"+id+".json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 print(JSON)
                 
@@ -229,7 +228,7 @@ class TournamentAPI: NSObject{
     func JoinTournament(id: String, name : String)
     {
         var par : [String: AnyObject] = ["api_key":key,"participant[name]":name]
-        var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+id+"/participants.json",parameters:par)
+        var req = request(.POST, "https://api.challonge.com/v1/tournaments/"+id+"/participants.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 var result: [String: AnyObject] = JSON as [String: AnyObject]
                 println(result)
@@ -241,7 +240,7 @@ class TournamentAPI: NSObject{
     func getMembers(name:String){
     
         var par : [String: AnyObject] = ["api_key":key]
-        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
+        var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                println(JSON)
                 
@@ -256,9 +255,9 @@ class TournamentAPI: NSObject{
     func findMemberID(name: String,member :String) {
         var s : Int = 1
         var par : [String: AnyObject] = ["api_key":key]
-        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
-            .responseJSON { (_, _, JSON, _) in
-             let myjson = SwiftyJSON.JSON(JSON!)
+        var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
+            .responseJSON { (_, _, JSONdata, _) in
+             let myjson = JSON(JSONdata!)
             if myjson.count != 0{
             for i in 0...myjson.count-1{
                 if let k = myjson[i]["participant"]["name"].string{
@@ -286,7 +285,7 @@ class TournamentAPI: NSObject{
         var s = "\(id)"
         println(name)
         println(id)
-        var req = Alamofire.request(.DELETE, "https://api.challonge.com/v1/tournaments/"+name+"/participants/"+s+".json" ,parameters:par)
+        var req = request(.DELETE, "https://api.challonge.com/v1/tournaments/"+name+"/participants/"+s+".json" ,parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 println(JSON)
         }
@@ -295,9 +294,9 @@ class TournamentAPI: NSObject{
     func deleteMemberByname(name:String,member:String){
         var s : Int = 0
         var par : [String: AnyObject] = ["api_key":key]
-        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
-            .responseJSON { (_, _, JSON, _) in
-                let myjson = SwiftyJSON.JSON(JSON!)
+        var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
+            .responseJSON { (_, _, JSONdata, _) in
+                let myjson = JSON(JSONdata!)
                 for i in 0...myjson.count-1{
                     if let k = myjson[i]["participant"]["name"].string{
                         if k == member{
@@ -324,7 +323,7 @@ class TournamentAPI: NSObject{
         
         var par : [String: AnyObject] = ["api_key":key,"participant_id" : member]
         
-        var req = Alamofire.request(.GET, "https://api.challonge.com/v1/tournaments/"+url+"/matches.json",parameters:par)
+        var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+url+"/matches.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 
                 println(JSON)
@@ -340,7 +339,7 @@ class TournamentAPI: NSObject{
         
         var par : [String: AnyObject] = ["api_key":key]
         
-        var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/start.json",parameters:par)
+        var req = request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/start.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 
                 println(JSON)
@@ -361,7 +360,7 @@ class TournamentAPI: NSObject{
         
         var par : [String: AnyObject] = ["api_key":key]
         
-        var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/abort_check_in.json",parameters:par)
+        var req = request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/abort_check_in.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 
                 println(JSON)
@@ -375,7 +374,7 @@ class TournamentAPI: NSObject{
         //POST https://challonge.com/api/tournaments/{tournament}/process_check_ins.{json|xml}
         var par : [String: AnyObject] = ["api_key":key]
         
-        var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/process_check_ins.json",parameters:par)
+        var req = request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/process_check_ins.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
                 
                 println(JSON)
