@@ -25,6 +25,9 @@ class IntroViewController: UIViewController, UIScrollViewDelegate{
     
     @IBOutlet var controller: UIPageControl!
     
+    
+    var start: UIButton!
+
     var firstView: first!
     var secondView: second!
     var thirdView: third!
@@ -32,8 +35,14 @@ class IntroViewController: UIViewController, UIScrollViewDelegate{
     
     var currentPageNum = 0;
     
+    func startApp() {
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        start = nil
         
         scroller.contentSize = CGSizeMake(view.frame.width * 3, view.frame.height)
         scroller.showsHorizontalScrollIndicator = false
@@ -52,7 +61,6 @@ class IntroViewController: UIViewController, UIScrollViewDelegate{
         thirdView.center.x = thirdView.center.x + view.frame.width * 2
         scroller.addSubview(thirdView)
         
-        thirdView.toInitialState()
         scroller.backgroundColor = UIColor(red: 213/255.0, green: 231/255.0, blue: 239/255.0, alpha: 1)
         // Do any additional setup after loading the view, typically from a nib.
     }
@@ -60,6 +68,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate{
     override func viewDidAppear(animated: Bool) {
         firstView.setup()
         secondView.setup()
+        thirdView.setup()
     }
     
     func dragged(recognizer : UIPanGestureRecognizer) {
@@ -80,13 +89,26 @@ class IntroViewController: UIViewController, UIScrollViewDelegate{
         }
         if index >= 0 && index < view.frame.width * 2{
             secondView.moveEverythingAccordingToIndex(index)
-        }else if index < 0{
-
         }
         if index >= view.frame.width && index < view.frame.width * 3{
-            thirdView.moveEverythingAccordingToIndex(index - view.frame.width)
+            thirdView.moveEverythingAccordingToIndex(index)
         }
-        println(scroller.contentOffset.x)
+        
+        // for button
+        if index >= view.frame.width * 2{
+            if start == nil{
+                start = UIButton(frame: self.view.convertRect(self.thirdView.start.frame, fromView: thirdView))
+                start.setImage(UIImage(named: "Start App "), forState: UIControlState.Normal)
+                start.addTarget(self, action: "startApp", forControlEvents: UIControlEvents.TouchUpInside)
+                self.view.addSubview(start)
+            }
+        }else{
+            if start != nil{
+                start.removeFromSuperview()
+                start = nil
+            }
+        }
+        
     }
     
     func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
@@ -273,24 +295,63 @@ class second: UIView{
 
 class third: UIView{
     
-    @IBOutlet var lab1: UILabel!
-    
-    @IBOutlet var vertical: UIImageView!
-    @IBOutlet var horizontal: UIImageView!
-    
-    @IBOutlet var portrait: UILabel!
-    @IBOutlet var landscape: UILabel!
-    
-    func toInitialState(){
+    @IBOutlet var lab: UIImageView!
+    @IBOutlet var icons: UIView!
+    @IBOutlet var circle: UIImageView!
+    @IBOutlet var start: UIButton!
+
+    func setup(){
         
         self.backgroundColor = UIColor.clearColor()
+        
+        circle.frame.size = CGSizeMake(superview!.frame.width / 1.2, superview!.frame.width / 1.2)
+        circle.center = CGPointMake(superview!.center.x, superview!.center.y - 50)
+                
+        lab.frame.size = CGSizeMake(circle.frame.width, circle.frame.width / 3.5)
+        lab.center = CGPointMake(circle.center.x, circle.frame.origin.y + circle.frame.height + 10 + lab.frame.height / 2)
+        lab.transform = CGAffineTransformMake(0, 0, 0, 0, 0, 1000)
+        
+        icons.center = CGPointMake(circle.frame.origin.x + circle.frame.width / 4, circle.frame.origin.y + circle.frame.width / 4)
+        icons.alpha = 0
+        
+        start.frame.size = CGSizeMake((circle.frame.width - 50), (circle.frame.width - 50) * 0.4)
+        start.center = CGPointMake(circle.center.x, superview!.frame.height - circle.frame.width * 0.2 - 20)
+        start.transform = CGAffineTransformMakeScale(0, 0)
         
     }
     
     // width - width * 3
     func moveEverythingAccordingToIndex(index: CGFloat){
         
+        if index <= self.frame.width * 1.7{
+            icons.alpha = 0
+        }else if index > self.frame.width * 1.6 && index <= self.frame.width * 1.8{
+            let total = self.frame.width * 0.2
+            let current = index - self.frame.width * 1.6
+            icons.alpha = current / total
+        }else{
+            icons.alpha = 1
+        }
+
+        if index <= self.frame.width * 1.5{
+            lab.transform = CGAffineTransformMake(0, 0, 0, 0, 0, 1000)
+        }else if index > self.frame.width * 1.5 && index < self.frame.width * 2{
+            let total = self.frame.width * 0.5
+            let current = index - self.frame.width * 1.5
+            lab.transform = CGAffineTransformMake(current / total, 0, 0, current / total, 0, 1 / (current / total) / (current / total))
+        }else{
+            lab.transform = CGAffineTransformMake(1, 0, 0, 1, 0, 0)
+        }
         
+        if index <= self.frame.width * 1.9{
+            start.transform = CGAffineTransformMakeScale(0, 0)
+        }else if index > self.frame.width * 1.9 && index < self.frame.width * 2{
+            let total = self.frame.width * 0.1
+            let current = index - self.frame.width * 1.9
+            start.transform = CGAffineTransformMakeScale(current / total, current / total)
+        }else{
+            start.transform = CGAffineTransformMake(1, 0, 0, 1, index - self.frame.width * 2, 0)
+        }
     }
     
 }
