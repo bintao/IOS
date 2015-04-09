@@ -95,6 +95,8 @@
 		42DBA6911AD61699001F57CE /* Play Tournament with your friends.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DBA68C1AD61699001F57CE /* Play Tournament with your friends.png */; };
 		42DBA6921AD61699001F57CE /* smile face icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DBA68D1AD61699001F57CE /* smile face icon.png */; };
 		42DBA6931AD61699001F57CE /* Start App .png in Resources */ = {isa = PBXBuildFile; fileRef = 42DBA68E1AD61699001F57CE /* Start App .png */; };
+		42DBA69D1AD62DD8001F57CE /* visible & paired.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DBA69C1AD62DD8001F57CE /* visible & paired.png */; };
+		42DBA69F1AD62E0C001F57CE /* enjoy.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DBA69E1AD62E0C001F57CE /* enjoy.png */; };
 		42E5E78B1A773E56004A781E /* Login_LoginBySelfViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */; };
 		42E5E7911A7762DB004A781E /* teemoDouble.png in Resources */ = {isa = PBXBuildFile; fileRef = 42E5E7901A7762DB004A781E /* teemoDouble.png */; };
 		42F15D341ACF649F004D64EF /* 3View.xib in Resources */ = {isa = PBXBuildFile; fileRef = 42F15D311ACF649F004D64EF /* 3View.xib */; };
@@ -587,6 +589,8 @@
 		42DBA68C1AD61699001F57CE /* Play Tournament with your friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Play Tournament with your friends.png"; path = "../../../Page 3/Play Tournament with your friends.png"; sourceTree = "<group>"; };
 		42DBA68D1AD61699001F57CE /* smile face icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "smile face icon.png"; path = "../../../Page 3/smile face icon.png"; sourceTree = "<group>"; };
 		42DBA68E1AD61699001F57CE /* Start App .png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Start App .png"; path = "../../../Page 3/Start App .png"; sourceTree = "<group>"; };
+		42DBA69C1AD62DD8001F57CE /* visible & paired.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "visible & paired.png"; sourceTree = "<group>"; };
+		42DBA69E1AD62E0C001F57CE /* enjoy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enjoy.png; sourceTree = "<group>"; };
 		42E5E78A1A773E56004A781E /* Login_LoginBySelfViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_LoginBySelfViewController.swift; sourceTree = "<group>"; };
 		42E5E7901A7762DB004A781E /* teemoDouble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = teemoDouble.png; sourceTree = "<group>"; };
 		42F15D311ACF649F004D64EF /* 3View.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = 3View.xib; sourceTree = "<group>"; };
@@ -1020,11 +1024,13 @@
 				42DBA66D1AD5D489001F57CE /* rocket.png */,
 				42F15D311ACF649F004D64EF /* 3View.xib */,
 				42DBA68A1AD61699001F57CE /* 泳池爬梯.png */,
+				42DBA69E1AD62E0C001F57CE /* enjoy.png */,
 				42DBA68B1AD61699001F57CE /* heart icon.png */,
 				42DBA68C1AD61699001F57CE /* Play Tournament with your friends.png */,
 				42DBA68D1AD61699001F57CE /* smile face icon.png */,
 				42DBA68E1AD61699001F57CE /* Start App .png */,
 				42F15D371ACF64A7004D64EF /* 2View.xib */,
+				42DBA69C1AD62DD8001F57CE /* visible & paired.png */,
 				42DBA6751AD5F980001F57CE /* 左下角Starts.png */,
 				42DBA6791AD5F980001F57CE /* icon.png */,
 				42DBA67A1AD5F980001F57CE /* icons.png */,
@@ -1726,6 +1732,7 @@
 				424AF75E1A872DA20033B863 /* adddd.png in Resources */,
 				A13919121AA2C21D00CD232A /* creategame.png in Resources */,
 				A1B86E7A1ACE406E00942626 /* 103.png in Resources */,
+				42DBA69F1AD62E0C001F57CE /* enjoy.png in Resources */,
 				A1B86F181ACE6D9A00942626 /* BRONZE IV.png in Resources */,
 				A1B86EB71ACE406E00942626 /* 36.png in Resources */,
 				A1CEFEA21AABE71D002D5956 /* tableCell.xib in Resources */,
@@ -1843,6 +1850,7 @@
 				A1B86EC91ACE406E00942626 /* 51.png in Resources */,
 				A1B86EC51ACE406E00942626 /* 45.png in Resources */,
 				A18BF4341AA2F8EC000678F3 /* LOGIN_SIGN UP PAGE _BG.png in Resources */,
+				42DBA69D1AD62DD8001F57CE /* visible & paired.png in Resources */,
 				A1B86E781ACE406E00942626 /* 101.png in Resources */,
 				A13919191AA2C21D00CD232A /* lose button.png in Resources */,
 				A1B86EA81ACE406E00942626 /* 254.png in Resources */,

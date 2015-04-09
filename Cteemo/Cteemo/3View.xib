@@ -29,7 +29,7 @@
                         </imageView>
                     </subviews>
                 </view>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Play Tournament with your friends.png" id="uHn-Io-72O">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="enjoy.png" id="uHn-Io-72O">
                     <rect key="frame" x="40" y="377" width="240" height="68"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 </imageView>
@@ -53,8 +53,8 @@
         </view>
     </objects>
     <resources>
-        <image name="Play Tournament with your friends.png" width="489" height="154"/>
         <image name="Start App .png" width="266" height="112"/>
+        <image name="enjoy.png" width="523" height="118"/>
         <image name="heart icon.png" width="117" height="120"/>
         <image name="smile face icon.png" width="125" height="132"/>
         <image name="泳池爬梯.png" width="437" height="437"/>

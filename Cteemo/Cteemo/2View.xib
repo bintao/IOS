@@ -23,7 +23,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Cloud右上角.png" translatesAutoresizingMaskIntoConstraints="NO" id="xXH-K0-VUF">
                     <rect key="frame" x="150" y="360" width="240" height="222"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Faster &amp; easier.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jcm-CF-ams">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="visible &amp; paired.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jcm-CF-ams">
                     <rect key="frame" x="40" y="397" width="240" height="128"/>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="左下角Starts.png" translatesAutoresizingMaskIntoConstraints="NO" id="vQ8-3b-fRA">
@@ -36,7 +36,6 @@
                     <rect key="frame" x="0.0" y="45" width="150" height="170"/>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" red="0.40330152009999998" green="0.79270857409999995" blue="1" alpha="1" colorSpace="calibratedRGB"/>
             <color key="tintColor" red="0.10980392160000001" green="0.73333333329999995" blue="0.61568627450000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <nil key="simulatedStatusBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -56,10 +55,10 @@
     <resources>
         <image name="Cloud右上角.png" width="236" height="222"/>
         <image name="Cloud左下角.png" width="292" height="254"/>
-        <image name="Faster &amp; easier.png" width="422" height="80"/>
         <image name="Loading png.png" width="461" height="439"/>
         <image name="icon.png" width="150" height="170"/>
         <image name="icons.png" width="176" height="185"/>
+        <image name="visible &amp; paired.png" width="480" height="69"/>
         <image name="左下角Starts.png" width="92" height="93"/>
     </resources>
 </document>
