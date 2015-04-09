@@ -85,7 +85,6 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                 
                 let myjson = SwiftyJSON.JSON(JSON!)
                 var s = 0
-                println(myjson.count)
                 if myjson.count != 0{
                     for i in 0...myjson.count-1{
                         if let k = myjson[i]["participant"]["name"].string{
@@ -104,9 +103,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                 
                 
                     alert2.hideView()
-                    
-                    
-                    println(s)
+                
                     if s != 0 {
                           self.memberID = s
                           self.performSegueWithIdentifier("joined", sender: self)
@@ -116,13 +113,11 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                         
                     //当在比赛中找不到成员时候
                     else{
-                    println("sdsd")
                     
                         if TeamInfoGlobal.iscaptain == "yes"{
                             
                             
                             alert.addButton("Join!"){
-                                
                                 
                                 var par : [String: AnyObject] = ["api_key":Tournament.key,"participant[name]":TeamInfoGlobal.teamName]
                                 var req = Alamofire.request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/participants.json",parameters:par)
@@ -181,10 +176,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                     
                 
                 }//end request
-                
         
-
-
        
     }
     

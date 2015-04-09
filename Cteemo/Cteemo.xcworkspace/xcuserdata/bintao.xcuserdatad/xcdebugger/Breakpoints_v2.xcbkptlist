@@ -3621,52 +3621,6 @@
             timestampString = "450231283.102458"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "joinTournament(_:)"
-            landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Cteemo.Tournament_game.(joinTournament (Cteemo.Tournament_game) -&gt; (ObjectiveC.UIButton) -&gt; ()).(closure #1) with unmangled suffix &quot;_promote0&quot;"
-                  moduleName = "Cteemo"
-                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/Tournament_game.swift"
-                  timestampString = "450231283.829882"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "110"
-                  endingLineNumber = "110"
-                  offsetFromSymbolStart = "2846">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Cteemo.Tournament_game.(joinTournament (Cteemo.Tournament_game) -&gt; (ObjectiveC.UIButton) -&gt; ()).(closure #1) with unmangled suffix &quot;_promote0&quot;"
-                  moduleName = "Cteemo"
-                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/Tournament_game.swift"
-                  timestampString = "450231283.830039"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "110"
-                  endingLineNumber = "110"
-                  offsetFromSymbolStart = "5091">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cteemo/Tournament_game.swift"
-            timestampString = "450231283.102458"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
             startingLineNumber = "107"
             endingLineNumber = "107"
             landmarkName = "joinTournament(_:)"
