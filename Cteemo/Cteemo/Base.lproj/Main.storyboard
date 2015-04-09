@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="f8E-zJ-WcN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1281,28 +1282,28 @@
                         <viewControllerLayoutGuide type="bottom" id="gln-TI-KTO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="AN9-uh-Jld">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UdM-rk-mRB">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UdM-rk-mRB">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="H1f-h2-IZO" kind="embed" id="THd-JU-SSq"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aWH-b0-Mgz">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aWH-b0-Mgz">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="uo7-Z5-I2u" kind="embed" id="bi2-tI-a4O"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bfr-qm-21q">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bfr-qm-21q">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <connections>
                                     <segue destination="6wq-2a-6ip" kind="embed" id="Syh-Cy-1p9"/>
                                 </connections>
                             </containerView>
-                            <tabBar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" misplaced="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-fj-NMG">
+                            <tabBar clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yJ-fj-NMG">
                                 <rect key="frame" x="0.0" y="618" width="375" height="49"/>
                                 <items>
                                     <tabBarItem title="News" image="news" id="zZK-do-3gd"/>
@@ -1317,11 +1318,8 @@
                                     <outlet property="delegate" destination="HIH-ZW-Nle" id="4yR-up-wyI"/>
                                 </connections>
                             </tabBar>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1Ak-9E-5oQ">
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Ak-9E-5oQ">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <connections>
-                                    <segue destination="3UP-8o-hbt" kind="embed" id="okI-eB-3lP"/>
-                                </connections>
                             </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1355,6 +1353,7 @@
                         <outlet property="team" destination="aWH-b0-Mgz" id="Bnw-Io-Kn3"/>
                         <outlet property="tournament" destination="Bfr-qm-21q" id="9Wt-OA-Vhk"/>
                         <segue destination="vXZ-lx-hvc" kind="presentation" identifier="login" modalTransitionStyle="crossDissolve" id="PNZ-io-cdn"/>
+                        <segue destination="f8E-zJ-WcN" kind="presentation" identifier="showIntro" modalTransitionStyle="crossDissolve" id="by5-O3-YOF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VxQ-Kp-HYI" sceneMemberID="firstResponder"/>
@@ -1713,7 +1712,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tOL-Cu-XsS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="f5e-gd-NsC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lsl-Vo-d3n">
@@ -1725,14 +1724,14 @@
                                     <segue destination="5Pl-2H-vwE" kind="unwind" unwindAction="returnTogame:" id="Jzs-UN-phJ"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Inkinesss.png" translatesAutoresizingMaskIntoConstraints="NO" id="iQH-Ih-sLv">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Inkinesss.png" translatesAutoresizingMaskIntoConstraints="NO" id="iQH-Ih-sLv">
                                 <rect key="frame" x="26" y="84" width="50" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Kt5-bp-yyu"/>
                                     <constraint firstAttribute="width" constant="50" id="kQU-kg-Mbl"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ADMIN: Bintao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNq-Nm-9ns">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ADMIN: Bintao" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNq-Nm-9ns">
                                 <rect key="frame" x="101" y="94" width="200" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="rcN-bO-oGc"/>
@@ -1741,13 +1740,13 @@
                                 <color key="textColor" red="0.16078431372549021" green="0.45882352941176469" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Add Bintao CN in game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3d-tx-251">
-                                <rect key="frame" x="101" y="129" width="130" height="13"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Bintao CN in game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3d-tx-251">
+                                <rect key="frame" x="101" y="129" width="129.5" height="13"/>
                                 <fontDescription key="fontDescription" name="Marion-Regular" family="Marion" pointSize="13"/>
                                 <color key="textColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQI-gl-r2v">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mQI-gl-r2v">
                                 <rect key="frame" x="294" y="104" width="70" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="0g1-3t-3t2"/>
@@ -1760,10 +1759,10 @@
                                     <action selector="checkin:" destination="UOt-dG-afN" eventType="touchUpInside" id="D4b-4F-cQN"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WTP-a3-62e">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WTP-a3-62e">
                                 <rect key="frame" x="0.0" y="134" width="375" height="180"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mode_time_teams_kuang.png" translatesAutoresizingMaskIntoConstraints="NO" id="bRG-tB-lCZ">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mode_time_teams_kuang.png" translatesAutoresizingMaskIntoConstraints="NO" id="bRG-tB-lCZ">
                                         <rect key="frame" x="0.0" y="-10" width="375" height="180"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="180" id="COH-GF-MJz"/>
@@ -1789,7 +1788,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Teams" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JtV-AJ-rWE">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Teams" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JtV-AJ-rWE">
                                         <rect key="frame" x="257" y="80" width="80" height="45"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="45" id="KBX-Nt-CnK"/>
@@ -1823,7 +1822,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qwa-Z0-ShR">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qwa-Z0-ShR">
                                 <rect key="frame" x="26" y="284" width="100" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brakect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcy-6K-jEK">
@@ -1875,7 +1874,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zN9-cf-Dhv">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zN9-cf-Dhv">
                                 <rect key="frame" x="138" y="284" width="100" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="df3-05-Gbq">
@@ -1927,7 +1926,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="crt-bK-1nP">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="crt-bK-1nP">
                                 <rect key="frame" x="249" y="284" width="100" height="120"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rao-JV-EbV">
@@ -1985,7 +1984,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2p4-qq-ZLS">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2p4-qq-ZLS">
                                 <rect key="frame" x="0.0" y="414" width="375" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="bliz.png" translatesAutoresizingMaskIntoConstraints="NO" id="ZYd-VS-etV">
@@ -1999,7 +1998,7 @@
                                             </mask>
                                         </variation>
                                     </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRx-xq-JL3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRx-xq-JL3">
                                         <rect key="frame" x="286" y="30" width="69" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="3ds-A7-2fa"/>
@@ -2104,7 +2103,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Lid-cl-jVj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4gF-Op-EwO">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cz8-Tm-Hcj">
@@ -2369,7 +2368,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
             <objects>
                 <viewController id="gcO-xg-BL5" customClass="Bracket" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
                     <webView key="view" contentMode="scaleToFill" id="ZGZ-hy-wIY">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </webView>
@@ -2777,8 +2776,8 @@ Cteemo can determine your game result automatically. Please click “get tournam
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="awa-X6-gY3">
                                 <rect key="frame" x="99" y="274" width="501" height="92"/>
                             </scrollView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="joinTeam.png" translatesAutoresizingMaskIntoConstraints="NO" id="TKm-Hg-VRb">
-                                <rect key="frame" x="236" y="86" width="129" height="128"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="joinTeam.png" translatesAutoresizingMaskIntoConstraints="NO" id="TKm-Hg-VRb">
+                                <rect key="frame" x="235" y="86" width="129" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="128" id="c9h-lQ-gXQ"/>
                                     <constraint firstAttribute="width" constant="129" id="jF2-V0-BTL"/>
@@ -2972,7 +2971,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" text="Introduction:" translatesAutoresizingMaskIntoConstraints="NO" id="w9j-JW-7Mx">
-                                <rect key="frame" x="180" y="434" width="240" height="128"/>
+                                <rect key="frame" x="179" y="434" width="240" height="128"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="3lg-he-UzF"/>
                                     <constraint firstAttribute="height" constant="100" id="irn-6w-MRm"/>
@@ -3072,7 +3071,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9KK-6D-s5j">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9KK-6D-s5j">
                                 <rect key="frame" x="0.0" y="84" width="600" height="45"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i5j-GK-S6C" customClass="CustomSwitcher" customModule="Cteemo" customModuleProvider="target">
@@ -3165,14 +3164,14 @@ Cteemo can determine your game result automatically. Please click “get tournam
                         <viewControllerLayoutGuide type="bottom" id="auZ-qA-aSi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VrC-CK-rJE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="br9-cS-HNL">
                                 <rect key="frame" x="169" y="284" width="37" height="37"/>
                                 <color key="color" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lVO-Z3-MYq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lVO-Z3-MYq">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -3213,7 +3212,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                 <rect key="frame" x="10" y="74" width="37" height="37"/>
                                 <color key="color" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="miL-lL-h3s">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="miL-lL-h3s">
                                 <rect key="frame" x="0.0" y="84" width="600" height="516"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -3254,7 +3253,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                         <viewControllerLayoutGuide type="bottom" id="Pht-3l-dnz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Rsa-og-fgZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="459"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="a2b-7j-x7m">
@@ -3298,7 +3297,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                         <viewControllerLayoutGuide type="bottom" id="dda-A7-UqS"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SRC-Vc-mcP">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="435"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BT9-o2-JSh">
@@ -3444,10 +3443,10 @@ Cteemo can determine your game result automatically. Please click “get tournam
                         <viewControllerLayoutGuide type="bottom" id="XRL-ab-ggT"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vhA-jf-RXF">
-                        <rect key="frame" x="0.0" y="64" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eMO-n9-L85">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMO-n9-L85">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dhc-TY-OSc">
@@ -3545,7 +3544,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xlJ-RE-dnj">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlJ-RE-dnj">
                                 <rect key="frame" x="0.0" y="275" width="375" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chuishi.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jrp-wv-CD1">
@@ -3598,7 +3597,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Request" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqG-fU-ojD">
-                                        <rect key="frame" x="80" y="20" width="200" height="22"/>
+                                        <rect key="frame" x="80" y="19" width="200" height="21.5"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="1Vq-4p-vzl"/>
                                             <constraint firstAttribute="width" constant="200" id="xhg-ha-feY"/>
@@ -3680,7 +3679,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Zgo-0a-YGF">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zgo-0a-YGF">
                                 <rect key="frame" x="0.0" y="335" width="375" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chuishi.png" translatesAutoresizingMaskIntoConstraints="NO" id="IKM-vf-fUO">
@@ -3733,7 +3732,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="About US &amp; CTeemo Policy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXp-Wh-hhX">
-                                        <rect key="frame" x="80" y="21" width="200" height="20"/>
+                                        <rect key="frame" x="80" y="20" width="200" height="19.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="OxK-MR-mzG"/>
                                             <constraint firstAttribute="height" constant="24" id="rIB-48-SW0"/>
@@ -3796,7 +3795,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="x2z-Qw-fum">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x2z-Qw-fum">
                                 <rect key="frame" x="0.0" y="120" width="375" height="80"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="email2.png" translatesAutoresizingMaskIntoConstraints="NO" id="oSf-Gd-pDn">
@@ -3949,7 +3948,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yUc-L8-Xke">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUc-L8-Xke">
                                 <rect key="frame" x="0.0" y="215" width="375" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chuishi.png" translatesAutoresizingMaskIntoConstraints="NO" id="aeT-zb-ZCB">
@@ -4004,7 +4003,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom servers" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gqg-g5-kEy">
-                                        <rect key="frame" x="80" y="20" width="200" height="22"/>
+                                        <rect key="frame" x="80" y="19" width="200" height="21.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="iDV-MM-iD2"/>
                                             <constraint firstAttribute="height" constant="24" id="xdV-ae-vuj"/>
@@ -4082,7 +4081,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gyb-tJ-58K">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyb-tJ-58K">
                                 <rect key="frame" x="0.0" y="395" width="375" height="60"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chuishi.png" translatesAutoresizingMaskIntoConstraints="NO" id="d7d-mP-7LU">
@@ -4135,7 +4134,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnf-7b-fsV">
-                                        <rect key="frame" x="80" y="20" width="200" height="20"/>
+                                        <rect key="frame" x="80" y="20" width="200" height="20.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="78L-Vh-VLa"/>
                                             <constraint firstAttribute="height" constant="24" id="SxO-du-io3"/>
@@ -4308,7 +4307,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FVi-gW-5Rn">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVi-gW-5Rn">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -4365,7 +4364,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                         <viewControllerLayoutGuide type="bottom" id="m5D-Si-wwn"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Fth-Te-u7Q">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="459"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="R7e-FI-6qD">
@@ -4464,11 +4463,13 @@ Cteemo can determine your game result automatically. Please click “get tournam
                         <outlet property="back" destination="Rpc-ct-L0J" id="6cC-5W-8At"/>
                         <outlet property="controller" destination="n21-xc-v42" id="oGX-Ld-zgx"/>
                         <outlet property="scroller" destination="WTM-90-J56" id="5Od-2W-M1P"/>
+                        <segue destination="mpB-nH-LAw" kind="unwind" identifier="returnFromIntro" unwindAction="returnToMain:" id="Fd9-ho-HO0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0OW-VY-n7k" sceneMemberID="firstResponder"/>
+                <exit id="mpB-nH-LAw" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="3329" y="623"/>
+            <point key="canvasLocation" x="3356" y="-1042"/>
         </scene>
     </scenes>
     <resources>

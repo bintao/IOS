@@ -184,12 +184,14 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
    
     override func viewDidAppear(animated: Bool) {
         
+        if NSUserDefaults.standardUserDefaults().objectForKey("intro") == nil{
+            self.performSegueWithIdentifier("showIntro", sender: self)
+        }
+        
         //当用户没有token时跳转到登录界面
         if UserInfoGlobal.accessToken == ""
         {
-         
             self.performSegueWithIdentifier("login", sender: self)
-            
             
         }
         //当用户没有成功登录跳转到登录
@@ -392,6 +394,13 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         if segue.identifier == "exitToMain"{
             println(self.childViewControllers[2])
         }
+        
+        if segue.identifier == "returnFromIntro" {
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject("already Showed", forKey: "intro")
+            defaults.synchronize()
+        }
+        
     }
     
 }

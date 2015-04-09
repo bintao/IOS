@@ -36,7 +36,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate{
     var currentPageNum = 0;
     
     func startApp() {
-        
+        performSegueWithIdentifier("returnFromIntro", sender: self)
     }
     
     override func viewDidLoad() {
@@ -51,6 +51,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate{
         back.addGestureRecognizer(gestureReco)
         
         firstView = NSBundle.mainBundle().loadNibNamed("1View", owner: self, options: nil)[0] as first
+        firstView.alpha = 0
         scroller.addSubview(firstView)
         
         secondView = NSBundle.mainBundle().loadNibNamed("2View", owner: self, options: nil)[0] as second
@@ -69,6 +70,10 @@ class IntroViewController: UIViewController, UIScrollViewDelegate{
         firstView.setup()
         secondView.setup()
         thirdView.setup()
+        
+        UIView.animateWithDuration(0.5, animations: { () -> Void in
+            self.firstView.alpha = 1
+        })
     }
     
     func dragged(recognizer : UIPanGestureRecognizer) {
