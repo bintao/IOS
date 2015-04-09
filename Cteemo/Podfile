@@ -1,2 +1,5 @@
  pod 'RongCloudIMKit', '1.4.2'
+ use_frameworks!
  pod 'SCLAlertView-Objective-C'
+ pod 'Alamofire'
+ pod "SwiftyJSON", ">= 2.1.3"
