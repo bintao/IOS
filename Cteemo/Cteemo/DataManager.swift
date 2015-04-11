@@ -35,24 +35,24 @@ class DataManager: NSObject {
     }
     
     
-    class func getUserInfo()->[String: AnyObject]{
-        return DataManager.getPlistFile("UserInformation.plist")
+    class func getUserInfo()->[String: AnyObject]?{
+        return DataManager.getPlistFile("UserInformation.plist")?
     }
     
     class func saveUserInfoToLocal(info: [String: AnyObject]){
         DataManager.savePlistFile(info, fileName: "UserInformation.plist")
     }
     
-    class func getTeamInfo()->[String: AnyObject]{
-        return DataManager.getPlistFile("UserTeam.plist")
+    class func getTeamInfo()->[String: AnyObject]?{
+        return DataManager.getPlistFile("UserTeam.plist")?
     }
     
     class func saveTeamInfoToLocal(info: [String: AnyObject]){
         DataManager.savePlistFile(info, fileName: "UserTeam.plist")
     }
     
-    class func getLOLInfo()->[String: AnyObject]{
-        return DataManager.getPlistFile("LOLInfo.plist")
+    class func getLOLInfo()->[String: AnyObject]?{
+        return DataManager.getPlistFile("LOLInfo.plist")?
     }
     
     class func saveLOLInfoToLocal(info: [String: AnyObject]){
@@ -61,7 +61,7 @@ class DataManager: NSObject {
     
     class func getNewsInfo()->[AnyObject]{
         if DataManager.checkIfFileExist("News.plist"){
-            return (DataManager.getPlistFile("News.plist") as [String:AnyObject])["news"] as [AnyObject]
+            return (DataManager.getPlistFile("News.plist") as [String:AnyObject]!)["news"] as [AnyObject]
         }else {
             return [AnyObject]()
         }
@@ -166,7 +166,7 @@ class DataManager: NSObject {
         return image
     }
 
-    class func getPlistFile(fileName:String)->[String: AnyObject]{
+    class func getPlistFile(fileName:String)->[String: AnyObject]?{
         
         
         let fileManager = NSFileManager()
@@ -175,7 +175,7 @@ class DataManager: NSObject {
         
         let dict = NSDictionary(contentsOfFile: path)
         
-        return dict as [String: AnyObject]
+        return dict as [String: AnyObject]?
         
     }
     

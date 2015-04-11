@@ -24,7 +24,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
     {
         
         resultTable.backgroundColor = UIColor.clearColor()
-       
+        
     }
     
 

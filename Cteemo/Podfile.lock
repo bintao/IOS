@@ -1,13 +1,16 @@
 PODS:
-  - RongCloudIMKit (1.4.2)
+  - MJRefresh (1.4.4)
+  - RongCloudIMKit (1.4.3)
   - SCLAlertView-Objective-C (0.7.0)
 
 DEPENDENCIES:
-  - RongCloudIMKit (~> 1.4.1)
+  - MJRefresh
+  - RongCloudIMKit (>= 1.4.2)
   - SCLAlertView-Objective-C
 
 SPEC CHECKSUMS:
-  RongCloudIMKit: 144d1a4b6694acd1c01bd7f4c2815d7b6cd94ee0
+  MJRefresh: e4a25dd1f3afbe5c547ff0d434cb40997803bc81
+  RongCloudIMKit: 08f45ebb8eca63c47dd0034c631f5fc72a6d664d
   SCLAlertView-Objective-C: 0491ea966dba9b3713178e2ffbcd0a148dc5b271
 
-COCOAPODS: 0.35.0
+COCOAPODS: 0.36.3

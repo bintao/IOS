@@ -28,6 +28,7 @@ class UserInformation: NSObject, RequestResultDelegate{
     var rongToken: String = ""
     //var iscaptain: String?
     
+    var userDefault = NSUserDefaults.standardUserDefaults()
     
     var icon: UIImage?
     
@@ -44,20 +45,25 @@ class UserInformation: NSObject, RequestResultDelegate{
     //setUp the local user data
     func setUp(){
         
-        var data:[String: AnyObject] = DataManager.getUserInfo()
-        name = data["name"] as String
-        fbid = data["fbid"] as String
-        accessToken = data["accessToken"] as String
-        email = data["email"] as String
-        gender = data["gender"] as String
-        school = data["school"] as String
-        intro = data["intro"] as String
-        profile_ID = data["profile_ID"] as String
-        profile_icon_Link = data["profile_icon_Link"] as String
+        userDefault.objectForKey("name")
         
-        rongToken = data["rongToken"] as String
+        if DataManager.getUserInfo() != nil{
+            
+        var data:[String: AnyObject] = DataManager.getUserInfo()!
+            name = data["name"] as String
+            fbid = data["fbid"] as String
+            accessToken = data["accessToken"] as String
+            email = data["email"] as String
+            gender = data["gender"] as String
+            school = data["school"] as String
+            intro = data["intro"] as String
+            profile_ID = data["profile_ID"] as String
+            profile_icon_Link = data["profile_icon_Link"] as String
         
-        tokenVaild = data["tokenVaild"] as String
+            rongToken = data["rongToken"] as String
+            
+            tokenVaild = data["tokenVaild"] as String
+        }
         icon = DataManager.getUserIconFromLocal()
     }
     
@@ -201,12 +207,29 @@ class UserInformation: NSObject, RequestResultDelegate{
     
     func saveUserData(){
         
-        var data:[String: AnyObject] = packaging()
-        DataManager.saveUserInfoToLocal(data)
+        userDefault.setValue(email, forKey: "email")
+
+        userDefault.setValue(name, forKey: "name")
+
+        name = ""
+        fbid = ""
+        accessToken = ""
+        gender = ""
+        school = ""
+        intro = ""
+        profile_ID = ""
+        profile_icon_Link = ""
+        tokenVaild = ""
+
+        userDefault.synchronize()
+
     }
     
     //user logout, remove all local data
     func cleanUserData(){
+        
+        userDefault.removeObjectForKey("email")
+        
         email = ""
         name = ""
         fbid = ""
@@ -217,7 +240,7 @@ class UserInformation: NSObject, RequestResultDelegate{
         profile_ID = ""
         profile_icon_Link = ""
         tokenVaild = ""
-        DataManager.saveUserInfoToLocal(packaging())
+        userDefault.synchronize()
         DataManager.deleFileInLocal("icon.png")
         DataManager.deleFileInLocal("lolicon.png")
         DataManager.deleFileInLocal("teamicon.png")

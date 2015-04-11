@@ -24,14 +24,16 @@ class LolAPI: NSObject{
    
     
     func setUp(){
-        
-        var data:[String: AnyObject] = DataManager.getLOLInfo()
+        if DataManager.getLOLInfo() != nil {
+
+        var data:[String: AnyObject] = DataManager.getLOLInfo()!
         lolID = data["lolID"] as String
         lolLevel = data["lolLevel"] as String
         lolRank = data["lolRank"] as String
         lolName = data["lolName"] as String
         lolIcon = data["lolIcon"] as String
         lolpatch = data["lolpatch"] as String
+        }
     
     }
     

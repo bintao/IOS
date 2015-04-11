@@ -16,17 +16,32 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
     
     var teams: [AnyObject] = [AnyObject]()
     
+    var page = 0
     
     override func viewDidLoad() {
         resultTable.backgroundColor = UIColor.clearColor()
         resultTable.delegate = self
         resultTable.dataSource = self
         
+        
     }
+    
+    
     override func viewDidAppear(animated: Bool) {
         search()
-    
+       
+        
+        /*
+        self.resultTable.addLegendFooterWithRefreshingBlock { () -> Void in
+           
+            self.loadmoredata()
+            
+        }
+        
+        */
     }
+    
+    
     func search(){
         
         var manager = Manager.sharedInstance
@@ -37,7 +52,8 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         
         startLoading()
         
-        var req = request(.GET, "http://54.149.235.253:5000/team_post", parameters: ["page": 0])
+        
+        var req = request(.GET, "http://54.149.235.253:5000/team_post", parameters: ["page": self.page])
             .responseJSON { (_, _, JSON, _) in
                  self.stopLoading()
                 if ((JSON as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
@@ -55,6 +71,42 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
                 
         }
     }
+    
+    
+    
+    func loadmoredata(){
+        self.page = self.page + 1
+        
+        var manager = Manager.sharedInstance
+        // Specifying the Headers we need
+        manager.session.configuration.HTTPAdditionalHeaders = [
+            "token": UserInfoGlobal.accessToken
+        ]
+        startLoading()
+        var req = request(.GET, "http://54.149.235.253:5000/team_post", parameters: ["page": 0])
+            .responseJSON { (_, _, JSON, _) in
+                self.stopLoading()
+                if ((JSON as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
+                    
+                }
+                else if(JSON != nil){
+                    
+                    println(JSON)
+                    
+                    var result: [AnyObject] = [AnyObject]()
+                    result = JSON as [AnyObject]
+                    self.teams.append(result)
+                    
+                    self.resultTable.reloadData()
+                    self.resultTable.footer.endRefreshing()
+                }
+                
+        }
+
+    
+    
+    }
+    
     
     func gotResult(result: [AnyObject]){
         teams = result

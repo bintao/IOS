@@ -275,14 +275,25 @@ typedef NS_ENUM(NSUInteger, RCReceivedStatus)
 typedef NS_ENUM(NSInteger, RCErrorCode)
 {
     /** 未知错误 */
-    ErrorCode_UNKNOWN = -1,
+    ERRORCODE_UNKNOWN = -1,
     /** 超时错误 */
-    ErrorCode_TIMEOUT = 5004,
+    ERRORCODE_TIMEOUT = 5004,
     /**
      *  被对方加入黑名单时发送消息的状态
      */
-    REJECTED_BY_BLACKLIST = 405
-
+    REJECTED_BY_BLACKLIST = 405,
+    /**
+     *  不在讨论组中。
+     */
+    NOT_IN_DISCUSSION = 21406,
+    /**
+     *  不在群组中。
+     */
+    NOT_IN_GROUP = 22406,
+    /**
+     *  不在聊天室中。
+     */
+    NOT_IN_CHATROOM =23406
 };
 
 /**

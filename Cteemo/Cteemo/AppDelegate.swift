@@ -25,7 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         
         application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
-        DataManager.initializeUserInfo()
         
         UserInfoGlobal.setUp()
         RCIM.initWithAppKey("pkfcgjstfmcl8", deviceToken: nil)

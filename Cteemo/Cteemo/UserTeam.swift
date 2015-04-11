@@ -41,9 +41,10 @@ class UserTeam: NSObject{
     
     func setUp(){
         
-        var data:[String: AnyObject] = DataManager.getUserInfo()
-        setUserData(data)
-        
+        var data:[String: AnyObject]? = DataManager.getUserInfo()
+        if data != nil{
+            setUserData(data!)
+        }
     }
     
     //change user data and save

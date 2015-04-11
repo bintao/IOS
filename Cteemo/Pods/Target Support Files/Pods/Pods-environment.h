@@ -6,11 +6,17 @@
 // project.
 
 
+// MJRefresh
+#define COCOAPODS_POD_AVAILABLE_MJRefresh
+#define COCOAPODS_VERSION_MAJOR_MJRefresh 1
+#define COCOAPODS_VERSION_MINOR_MJRefresh 4
+#define COCOAPODS_VERSION_PATCH_MJRefresh 4
+
 // RongCloudIMKit
 #define COCOAPODS_POD_AVAILABLE_RongCloudIMKit
 #define COCOAPODS_VERSION_MAJOR_RongCloudIMKit 1
 #define COCOAPODS_VERSION_MINOR_RongCloudIMKit 4
-#define COCOAPODS_VERSION_PATCH_RongCloudIMKit 2
+#define COCOAPODS_VERSION_PATCH_RongCloudIMKit 3
 
 // SCLAlertView-Objective-C
 #define COCOAPODS_POD_AVAILABLE_SCLAlertView_Objective_C
