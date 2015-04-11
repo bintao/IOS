@@ -27,7 +27,7 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
 
     func toTeammatedIfNeede(){
         
-        if(UserInfoGlobal.accessToken != ""){
+        if(UserInfoGlobal.accessToken != nil){
             updateTeam()
         }
         
@@ -55,11 +55,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         println(result)
        if(result["id"]?  != nil ){
             TeamInfoGlobal.gotResult(result as [String : AnyObject])
-            println(TeamInfoGlobal.team_Intro)
-            println(TeamInfoGlobal.teamID)
-            println(TeamInfoGlobal.teamName)
-            println(TeamInfoGlobal.iscaptain)
-            
             self.performSegueWithIdentifier("presentMyTeam", sender: self)
             
             }
@@ -82,11 +77,11 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     override func viewDidAppear(animated: Bool) {
         
         
-        if TeamInfoGlobal.teamID != ""{
+        if TeamInfoGlobal.teamID != nil{
             TeamInfoGlobal.uploadTeamInfo()
         }
 
-        if(UserInfoGlobal.accessToken != ""){
+        if(UserInfoGlobal.accessToken != nil){
             updateTeam()
         }
         

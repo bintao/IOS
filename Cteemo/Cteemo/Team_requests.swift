@@ -21,6 +21,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     
     override func viewDidLoad() {
+        
         resultTable.backgroundColor = UIColor.clearColor()
         resultTable.delegate = self
         resultTable.dataSource = self
@@ -45,7 +46,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         startLoading()
         
-        if TeamInfoGlobal.iscaptain == "no" || TeamInfoGlobal.iscaptain == ""{
+        if TeamInfoGlobal.iscaptain == nil  {
         var req = request(.GET, "http://54.149.235.253:5000/invite_request/lol", parameters: ["page": 0])
             .responseJSON { (_, _, JSON, _) in
                 self.stopLoading()
@@ -226,7 +227,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                     "token": UserInfoGlobal.accessToken
                 ]
                 
-                if TeamInfoGlobal.iscaptain == "yes"{
+                if TeamInfoGlobal.iscaptain != nil && TeamInfoGlobal.iscaptain == "yes"{
                     
                     var req = request(.POST, "http://54.149.235.253:5000/join_request/lol",parameters: ["profileID": id])
                         .responseJSON { (_, _, JSONdata, _) in
@@ -290,7 +291,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
             
             }//add button
             
-        if TeamInfoGlobal.iscaptain == "yes"{
+        if TeamInfoGlobal.iscaptain != nil && TeamInfoGlobal.iscaptain == "yes"{
             
             alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Join request", subTitle: username + " Want join your team ",closeButtonTitle: "Cancel", duration: 0.0)
         

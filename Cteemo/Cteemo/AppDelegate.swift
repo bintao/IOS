@@ -27,6 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         application.setStatusBarStyle(UIStatusBarStyle.LightContent, animated: false)
         
         UserInfoGlobal.setUp()
+        
         RCIM.initWithAppKey("pkfcgjstfmcl8", deviceToken: nil)
         
        // check ios 8.0 or higher

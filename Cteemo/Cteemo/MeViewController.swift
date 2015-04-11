@@ -35,7 +35,7 @@ class MeViewController: UIViewController  {
     
     override func viewDidAppear(animated: Bool) {
         
-        if UserInfoGlobal.accessToken != ""{
+        if UserInfoGlobal.accessToken != nil{
         var manager = Manager.sharedInstance
         // Specifying the Headers we need
         manager.session.configuration.HTTPAdditionalHeaders = [
@@ -70,13 +70,16 @@ class MeViewController: UIViewController  {
             
                 
         }
-
-        
+            
+            
+    if UserInfoGlobal.profile_icon_Link != nil {
         ImageLoader.sharedLoader.imageForUrl(UserInfoGlobal.profile_icon_Link, completionHandler:{(image: UIImage?, url: String) in
             if image? != nil {
                 self.usericon.image = image
             }
         })
+        }
+            
         if UserInfoGlobal.icon != nil {
         self.usericon.image = UserInfoGlobal.icon
         }

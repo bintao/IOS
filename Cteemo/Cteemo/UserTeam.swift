@@ -15,61 +15,86 @@ class UserTeam: NSObject{
     
     // User team
     var findplayer = false
-    var teamName: String = ""
-    var teamID : String = ""
-    var team_isschool: String = ""
-    var team_Intro : String = ""
-    var teamicon_link : String = ""
     
-    var iscaptain : String = ""
+    var team_isschool: String = ""
+    
+    var teamName: String!
+    var teamID : String!
+    var team_Intro : String!
+    var teamicon_link : String!
+    var iscaptain : String!
+    var captainId : String!
+    var captainName : String!
+    
     var teamicon: UIImage?
     
     // all the memebers inthe team and their informations
     // get each icon as UIIMage from url and save in the array
     // save to local
+    
     var memberCount = 0
     var memberIcon : [AnyObject] = [AnyObject]()
     var memberName :[AnyObject] = [AnyObject]()
     var memberId :[AnyObject] = [AnyObject]()
+    
 
-    var captainId : String = ""
-    var captainName : String = ""
-    
-    
     var captainIcon : UIImage?
     var icon :UIImage?
     
+    var userDefault = NSUserDefaults.standardUserDefaults()
+    
+
     func setUp(){
-        
-        var data:[String: AnyObject]? = DataManager.getUserInfo()
-        if data != nil{
-            setUserData(data!)
+      
+        if userDefault.objectForKey("teamName") != nil {
+            
+            self.teamName = userDefault.objectForKey("teamName") as String
+            
         }
+        
+        if userDefault.objectForKey("teamID") != nil {
+            
+            self.teamID = userDefault.objectForKey("teamID") as String
+            
+        }
+        
+        
+        if userDefault.objectForKey("team_Intro") != nil {
+            
+            self.team_Intro = userDefault.objectForKey("team_Intro") as String
+            
+        }
+        
+        if userDefault.objectForKey("iscaptain") != nil {
+            
+            self.iscaptain = userDefault.objectForKey("iscaptain") as String
+            
+        }
+        
+        if userDefault.objectForKey("teamicon_link") != nil {
+            
+            self.teamicon_link = userDefault.objectForKey("teamicon_link") as String
+            
+        }
+        
+        if userDefault.objectForKey("captainName") != nil {
+            
+            self.captainName = userDefault.objectForKey("captainName") as String
+            
+        }
+        
+        
+        if userDefault.objectForKey("captainId") != nil {
+            
+            self.captainId = userDefault.objectForKey("captainId") as String
+            
+        }
+
+        
     }
     
     //change user data and save
-    
-    func setUserData(data: [String: AnyObject]){
- 
-        // team data
-        team_Intro = data["team_Intro"] as String
-        teamID = data["teamID"] as String
-        teamName = data["teamName"] as String
-        iscaptain = data["iscaptain"] as String
-        teamicon_link = data["teamicon_link"] as String
-        
-        captainName  = data["captainName"] as String
-        captainId = data["captainId"] as String
-        
-        saveUserData()
-        
-    }
-    
-    func packaging()->[String: AnyObject]{
-        var data:[String: AnyObject] = ["team_Intro" : team_Intro,"teamID":teamID,"teamName" :teamName,"iscaptain": iscaptain, "captainName" : captainName ,"captainId" : captainId]
-        return data
-    }
-    
+  
     func saveTeamIcon(){
         if teamicon != nil{
             DataManager.saveTeamIconFromLocal(self.teamicon!)
@@ -82,6 +107,7 @@ class UserTeam: NSObject{
     
     func getIconFromServer(){
         
+        if self.teamicon_link != nil {
         ImageLoader.sharedLoader.imageForUrl(self.teamicon_link, completionHandler:{(image: UIImage?, url: String) in
             println(url)
             if image? != nil {
@@ -91,7 +117,7 @@ class UserTeam: NSObject{
             else {
                 self.teamicon = UIImage(named: "error.png")!
             }})
-
+        }
         
     }
     
@@ -101,10 +127,17 @@ class UserTeam: NSObject{
     //upload user information to the server
     
     func uploadTeamInfo(){
-       
+        
+        if UserInfoGlobal.accessToken != nil {
+        var manager = Manager.sharedInstance
+        manager.session.configuration.HTTPAdditionalHeaders = [
+            "token": UserInfoGlobal.accessToken
+        ]
+
         var req = request(.GET, "http://54.149.235.253:5000/my_team/lol")
             .responseJSON { (_, _, JSONdata, _) in
                
+                if JSONdata != nil {
                 let myjson = JSON(JSONdata!)
                 
                 if let captainIcon = myjson["captain"][0]["profile_icon"].string{
@@ -128,37 +161,31 @@ class UserTeam: NSObject{
                 if let name = myjson["captain"][0]["profile_id"].string{
                     
                     self.captainId = name
-                    if self.captainId == UserInfoGlobal.profile_ID{
-                    
+                    if UserInfoGlobal.profile_ID != nil && self.captainId == UserInfoGlobal.profile_ID{
                     self.iscaptain = "yes"
                     
-                    }
-                    else{
-                    self.iscaptain = "no"
                     }
                     
                 }
                 
-                println(self.captainName)
-                println(self.captainId)
                 
                 if let name = myjson["teamName"].string{
                     
                     self.teamName = name
                     
-                }else{ self.teamName = ""}
+                }else{ self.teamName = nil}
                 
                 if let id = myjson["id"].string{
                     
                     self.teamID = id
                     
-                }else{ self.teamID = ""}
+                }else{ self.teamID = nil}
                 
                 if let icon = myjson["teamIcon"].string{
                     
                     self.teamicon_link = icon
                     
-                }else{ self.teamicon_link = ""}
+                }else{ self.teamicon_link = nil}
                 
                 
                 println(self.teamName)
@@ -230,7 +257,10 @@ class UserTeam: NSObject{
                     
                    
                 }
-        }
+                }
+        }// end request
+            
+        }// no token
 
     }
 
@@ -245,29 +275,28 @@ class UserTeam: NSObject{
     
     func gotResult(result: [String: AnyObject]) {
         
-            TeamInfoGlobal.iscaptain = "no"
             if result["id"]? != nil {
                 TeamInfoGlobal.teamID = result["id"] as String
             }
-            else {TeamInfoGlobal.teamID = ""}
+            else {TeamInfoGlobal.teamID = nil}
             if result["teamName"]? != nil {
                 TeamInfoGlobal.teamName = result["teamName"] as String
             }
-           else {TeamInfoGlobal.teamName = ""}
+           else {TeamInfoGlobal.teamName = nil}
             if result["teamIntro"]? != nil {
                 TeamInfoGlobal.team_Intro = result["teamIntro"] as String
             }
-              else {TeamInfoGlobal.team_Intro = ""}
+              else {TeamInfoGlobal.team_Intro = nil}
         
             if result["teamIcon"]? != nil {
                 
                 self.teamicon_link = result["teamIcon"] as String
             }
-            else {self.teamicon_link = "" }
+            else {self.teamicon_link = nil}
         
             if result["id"]? != nil{
                 var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
-        
+                println(TeamInfoGlobal.iscaptain)
                 if(captain == UserInfoGlobal.profile_ID){
                     TeamInfoGlobal.iscaptain = "yes"
                 }
@@ -281,35 +310,46 @@ class UserTeam: NSObject{
     
     
     
-    //download user information from the server
-    
-    func downloadUserInfo(){
-        //InteractingWithServer.getUserProfile(self.accessToken)
-      
-    }
-    
     //Save User Data to local
     
     func saveUserData(){
         
-        var data:[String: AnyObject] = packaging()
         
-        DataManager.saveTeamInfoToLocal(data)
+        userDefault.setValue(teamName, forKey: "teamName")
+        userDefault.setValue(teamID, forKey: "teamID")
+        userDefault.setValue(team_Intro, forKey: "team_Intro")
+        userDefault.setValue(iscaptain, forKey: "iscaptain")
+        userDefault.setValue(teamicon_link, forKey: "teamicon_link")
+        userDefault.setValue(captainName, forKey: "captainName")
+        userDefault.setValue(captainId, forKey: "captainId")
+        
+        userDefault.synchronize()
         
     }
     
     //user logout, remove all local data
     func cleanUserData(){
         
-        teamName = ""
-        teamID = ""
-        team_Intro = ""
-        iscaptain = ""
-        teamicon_link = ""
-        captainName = ""
-        captainId = ""
-        var data:[String: AnyObject] = packaging()
-        DataManager.saveTeamInfoToLocal(data)
+        
+        
+        self.teamName = nil
+        self.teamID = nil
+        self.team_Intro = nil
+        self.iscaptain = nil
+        self.teamicon_link = nil
+        self.captainName = nil
+        self.captainId = nil
+        self.teamicon = nil
+        
+        userDefault.removeObjectForKey("teamName")
+        userDefault.removeObjectForKey("teamID")
+        userDefault.removeObjectForKey("team_Intro")
+        userDefault.removeObjectForKey("iscaptain")
+        userDefault.removeObjectForKey("teamicon_link")
+         userDefault.removeObjectForKey("captainName")
+        userDefault.removeObjectForKey("captainId")
+        userDefault.synchronize()
+       
         self.memberCount = 0
         self.memberIcon.removeAll()
         self.memberId.removeAll()

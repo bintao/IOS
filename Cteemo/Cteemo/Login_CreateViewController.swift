@@ -38,7 +38,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         
         
         if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) && password.text != ""&&nickname.text != ""{
-            if UserInfoGlobal.email == email.text {
+            if UserInfoGlobal.email != nil && UserInfoGlobal.email == email.text {
             
              self.emailverfication()
                 

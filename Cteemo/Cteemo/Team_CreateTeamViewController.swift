@@ -80,8 +80,6 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
 
        if(result["id"]? != nil){
             TeamInfoGlobal.gotResult(result)
-        
-            println(TeamInfoGlobal.teamName+TeamInfoGlobal.team_isschool+TeamInfoGlobal.iscaptain)
             var req1 = ARequest(prefix: "upload_team_icon/lol", method: requestType.POST)
             req1.delegate = self
             req1.uploadPhoto("teamicon.png")

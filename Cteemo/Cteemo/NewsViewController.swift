@@ -209,17 +209,23 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
+        
+        println (imageArray.count)
+        
+        if imageArray.count != 0 {
         var imgHeight = imageArray[indexPath.row].size.width * tableHeight / self.view.frame.width
         var cellImage = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, tableHeight))
         // crop the part image in the center
         cellImage.image = imageArray[indexPath.row].crop(CGRectMake(0, (imageArray[indexPath.row].size.height - imgHeight) / 2, imageArray[indexPath.row].size.width, imgHeight))
         cell.addSubview(cellImage)
         
+        
         var img = UIImage()
         img = img.setGradientToImage(cellImage.frame, locationList: [0.0,1.0], colorList: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.2], startPoint: CGPointMake(0, tableHeight), endPoint: CGPointMake(cellImage.frame.width + 200, -30))
         var coverImage = UIImageView(frame: cellImage.frame)
         coverImage.image = img
         cell.addSubview(coverImage)
+        
         
         var title = UITextView(frame: CGRectMake(15, 10, self.view.frame.width - 100, 90))
         title.font = UIFont(name: "Palatino-Roman", size: 21)
@@ -246,7 +252,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         line.backgroundColor = UIColor.lightGrayColor()
         cell.addSubview(line)
         
-        if indexPath.row == 0{
+        if indexPath.row == 0 {
             coverImage.removeFromSuperview()
             cellImage.frame.size = CGSizeMake(self.view.frame.width, self.view.frame.width * 0.67)
             cellImage.image = imageArray[indexPath.row]
@@ -258,7 +264,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
             time.textColor = UIColor.whiteColor()
             
         }
-        
+        }
         return cell
     
     }

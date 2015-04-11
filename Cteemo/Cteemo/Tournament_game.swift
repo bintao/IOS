@@ -73,46 +73,50 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         let alert2 = SCLAlertView()
         var url = Tournament.tournamentUrl[sender.tag] as String
         var name = Tournament.tournamentName[sender.tag] as String
-        var member = TeamInfoGlobal.teamName
         
         
-        alert2.showWaiting(self.parentViewController?.parentViewController, title: "Loading", subTitle: "Cteemo is loading", closeButtonTitle: nil, duration: 0.0)
-        var par : [String: AnyObject] = ["api_key":Tournament.key]
-        var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
-            .responseJSON { (_, _, JSONdata, _) in
-                
-                let myjson = JSON(JSONdata!)
-                var s = 0
-                if myjson.count != 0{
-                    for i in 0...myjson.count-1{
-                        if let k = myjson[i]["participant"]["name"].string{
-                            
-                            if k == member{
-                                println(k)
-                                if let n =  myjson[i]["participant"]["id"].int{
-                                  
-                                    s = n
-                                  
+        if TeamInfoGlobal.teamName != nil {
+        
+            var member = TeamInfoGlobal.teamName
+            
+            
+            alert2.showWaiting(self.parentViewController?.parentViewController, title: "Loading", subTitle: "Cteemo is loading", closeButtonTitle: nil, duration: 0.0)
+            var par : [String: AnyObject] = ["api_key":Tournament.key]
+            var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
+                .responseJSON { (_, _, JSONdata, _) in
+                    
+                    let myjson = JSON(JSONdata!)
+                    var s = 0
+                    if myjson.count != 0{
+                        for i in 0...myjson.count-1{
+                            if let k = myjson[i]["participant"]["name"].string{
+                                
+                                if k == member{
+                                    println(k)
+                                    if let n =  myjson[i]["participant"]["id"].int{
+                                        
+                                        s = n
+                                        
+                                    }
                                 }
                             }
-                        }
-                    }//end for loop
-                }
-                
-                
+                        }//end for loop
+                    }
+                    
+                    
                     alert2.hideView()
-                
+                    
                     if s != 0 {
-                          self.memberID = s
-                          self.performSegueWithIdentifier("joined", sender: self)
-                    
-                    }// 在比赛中找到了成员
-                    
+                        self.memberID = s
+                        self.performSegueWithIdentifier("joined", sender: self)
                         
-                    //当在比赛中找不到成员时候
+                    }// 在比赛中找到了成员
+                        
+                        
+                        //当在比赛中找不到成员时候
                     else{
-                    
-                        if TeamInfoGlobal.iscaptain == "yes"{
+                        
+                        if TeamInfoGlobal.iscaptain != nil && TeamInfoGlobal.iscaptain == "yes"{
                             
                             
                             alert.addButton("Join!"){
@@ -120,7 +124,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                                 var par : [String: AnyObject] = ["api_key":Tournament.key,"participant[name]":TeamInfoGlobal.teamName]
                                 var req = request(.POST, "https://api.challonge.com/v1/tournaments/"+url+"/participants.json",parameters:par)
                                     .responseJSON { (_, _, JSONdata, _) in
-                                    
+                                        
                                         let myjson = JSON(JSONdata!)
                                         if JSONdata != nil {
                                             
@@ -168,14 +172,25 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                             alert.showWarning(self.parentViewController?.parentViewController, title: "Join failed", subTitle: "You must be the captain in able to Join Tournament", closeButtonTitle: "ok", duration: 0.0)
                             
                         }// not captain
-
-                    
+                        
+                        
                     }// can't find member
                     
-                
-                }//end request
+                    
+            }//end request
+            
+
         
-       
+        }// no team 
+        
+        else {
+        
+        
+            
+            alert.showWarning(self.parentViewController?.parentViewController, title: "Join failed", subTitle: "You must have a team before join a tournament", closeButtonTitle: "ok", duration: 0.0)
+            
+        }
+        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

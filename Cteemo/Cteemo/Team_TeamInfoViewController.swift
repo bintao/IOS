@@ -45,7 +45,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         TeamInfoGlobal.uploadTeamInfo()
         navigation.title = TeamInfoGlobal.teamName
        
-        if TeamInfoGlobal.teamName != "" && TeamInfoGlobal.teamID != "" {
+        if TeamInfoGlobal.teamName != nil && TeamInfoGlobal.teamID != nil {
           
             var grouplist = [AnyObject]()
             
@@ -62,7 +62,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         capTain.setImage(TeamInfoGlobal.captainIcon, forState: UIControlState.Normal)
         capTainName.text = TeamInfoGlobal.captainName
             
-        if TeamInfoGlobal.iscaptain == "no"{
+        if TeamInfoGlobal.iscaptain == nil {
             
             self.edit.alpha = 0
             
@@ -110,7 +110,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         self.teamicon.image = DataManager.getTeamIconFromLocal()
         
         }
-        else if TeamInfoGlobal.teamicon_link != ""{
+        else if TeamInfoGlobal.teamicon_link != nil{
             ImageLoader.sharedLoader.imageForUrl(TeamInfoGlobal.teamicon_link, completionHandler:{(image: UIImage?, url: String) in
                 println(url)
                 if image? != nil {
@@ -144,7 +144,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
             "token": UserInfoGlobal.accessToken
         ]
         
-        if TeamInfoGlobal.iscaptain == "yes"{
+        if TeamInfoGlobal.iscaptain != nil &&  TeamInfoGlobal.iscaptain == "yes"{
         alert1.addButton("Delete", actionBlock:{ (Void) in
             alert2.showWaiting(self.parentViewController?.parentViewController, title: "Wait a second", subTitle: "Quiting......", closeButtonTitle: nil, duration: 0.0)
             var req = request(.DELETE, "http://54.149.235.253:5000/create_team/lol")
@@ -164,7 +164,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
             alert1.showNotice(self.parentViewController?.parentViewController, title: "Delete Team", subTitle: "You are a captain , Team need you." + TeamInfoGlobal.teamName, closeButtonTitle: "cancel", duration: 0.0)
             
         }
-        else if TeamInfoGlobal.iscaptain == "no"{
+        else if TeamInfoGlobal.iscaptain == nil {
             alert1.addButton("Leave", actionBlock:{ (Void) in
                   alert2.showWaiting(self.parentViewController?.parentViewController, title: "Wait a second", subTitle: "Quiting......", closeButtonTitle: nil, duration: 0.0)
                 var req = request(.DELETE, "http://54.149.235.253:5000/my_team/lol")

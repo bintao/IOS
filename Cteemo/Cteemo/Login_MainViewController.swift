@@ -31,7 +31,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
             self.facebook.addSubview(loginView)
             loginView.readPermissions = ["public_profile", "email", "user_friends"]
         
-        var lk = UserInfoGlobal.packaging()
     }
     
     //save and update user data
@@ -40,10 +39,9 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     {
         
         // avoid running multiple time
-        if UserInfoGlobal.fbid == "" || UserInfoGlobal.gender == "" || UserInfoGlobal.name == ""{
+        if UserInfoGlobal.fbid == nil || UserInfoGlobal.gender == nil || UserInfoGlobal.name == nil{
             
             // save user info from facebook
-            
             
             UserInfoGlobal.gender = user.objectForKey("gender") as String
             UserInfoGlobal.name = user.name
@@ -101,10 +99,12 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                 UserInfoGlobal.accessToken = result["token"] as String
                 UserInfoGlobal.rongToken = (result["rongToken"] as [String: AnyObject])["token"] as String
                 UserInfoGlobal.saveUserData()
-            
+                
                 //get profile from the user
+                
                 println( UserInfoGlobal.accessToken)
                 getProfileFromServer()
+                
                 
             }else{
                 stopLoading()
@@ -139,8 +139,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                     UserInfoGlobal.uploadUserIcon()
             
                 }
-                
-                
                 
                 self.performSegueWithIdentifier("getSchoolAfterFacebook", sender: self)
                 

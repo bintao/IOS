@@ -54,8 +54,8 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
 
         //upload user profile
 
-        if (UserInfoGlobal.accessToken != "" && lolName.text != "" && school.text != "" ){
-            if (LolAPIGlobal.lolID != ""){
+        if (UserInfoGlobal.accessToken != nil && lolName.text != "" && school.text != "" ){
+            if (LolAPIGlobal.lolID != nil){
                 self.lolid = lolName.text
                 self.performSegueWithIdentifier("gotololid", sender: self)
         
@@ -81,7 +81,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
          if prefix == LolAPIGlobal.key {
             
             println(LolAPIGlobal.lolName)
-            if(result as [String: AnyObject])[LolAPIGlobal.lolName] as [String: AnyObject]? != nil{
+            if LolAPIGlobal.lolName != nil && (result as [String: AnyObject])[LolAPIGlobal.lolName] as [String: AnyObject]? != nil{
             
                 LolAPIGlobal.getIDresult((result as [String: AnyObject])[LolAPIGlobal.lolName] as [String: AnyObject])
             }
@@ -168,9 +168,12 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
            
         
             LolAPIGlobal.lolName = newStr
+            println(LolAPIGlobal.lolName)
+            println("sdsdsd")
             LolAPIGlobal.saveLOLData()
-            LolAPIGlobal.getSummonerID(LolAPIGlobal.lolName, loginView: Login_SchoolAndPhoto())
-          
+            println(LolAPIGlobal.lolName)
+            LolAPIGlobal.getSummonerID(newStr, loginView: Login_SchoolAndPhoto())
+                
             }
         }
     }

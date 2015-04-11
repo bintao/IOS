@@ -53,8 +53,6 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                 
                 NSLog("Login successfully with userId: %@.",userId)
                 println(RCIMClient.sharedRCIMClient().getCurrentConnectionstatus().rawValue)
-                
-                println("ssdsd")
                 }){
                     (status:RCConnectErrorCode) -> Void in
                     
@@ -63,8 +61,6 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                     
                     NSLog("Login failed")
             }
-
-            
         }
         
     }
@@ -182,12 +178,15 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
    
     override func viewDidAppear(animated: Bool) {
         
-        if NSUserDefaults.standardUserDefaults().objectForKey("intro") == nil{
+        
+        println(NSUserDefaults.standardUserDefaults().objectForKey("introview"))
+        
+        if NSUserDefaults.standardUserDefaults().objectForKey("introview") == nil{
             self.performSegueWithIdentifier("showIntro", sender: self)
         }
         
         //当用户没有token时跳转到登录界面
-        if UserInfoGlobal.accessToken == ""
+        if UserInfoGlobal.accessToken == nil
         {
             self.performSegueWithIdentifier("login", sender: self)
             
@@ -207,7 +206,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
             RCIM.setUserInfoFetcherWithDelegate(self, isCacheUserInfo: true)
             
             
-            if UserInfoGlobal.rongToken != ""{
+            if UserInfoGlobal.rongToken != nil{
                 println(UserInfoGlobal.rongToken)
                 RCIM.connectWithToken(UserInfoGlobal.rongToken, completion: { (userId:String!) -> Void in
                     
@@ -346,11 +345,13 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
     
     
     func logout(){
+        
+        
         hideTabb()
-    
+        
+
         // clean facebook login
-        if UserInfoGlobal.fbid != "" {
-            
+        if UserInfoGlobal.fbid != nil {
             
             if FBSession.activeSession().state == FBSessionState.Open{
                 FBSession.activeSession().closeAndClearTokenInformation()
@@ -362,13 +363,19 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                 }
             }
         }
-        UserInfoGlobal.cleanUserData()
-        TeamInfoGlobal.cleanUserData()
+        
+       UserInfoGlobal.cleanUserData()
         LolAPIGlobal.cleanUserData()
+        TeamInfoGlobal.cleanUserData()
+        
         RCIM.sharedRCIM().disconnect()
         
+        println(UserInfoGlobal.fbid)
+        
         self.performSegueWithIdentifier("login", sender: self)
+        
     }
+    
     
     func tokennotvaild(){
     
@@ -394,9 +401,10 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         }
         
         if segue.identifier == "returnFromIntro" {
-            let defaults = NSUserDefaults.standardUserDefaults()
-            defaults.setObject("already Showed", forKey: "intro")
-            defaults.synchronize()
+            
+             NSUserDefaults.standardUserDefaults().setObject("already Showed", forKey: "introview")
+             NSUserDefaults.standardUserDefaults().synchronize()
+            
         }
         
     }

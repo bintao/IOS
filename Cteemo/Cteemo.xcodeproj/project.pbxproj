@@ -26,7 +26,6 @@
 		426CD2EC1A89649D0042F4F7 /* config.png in Resources */ = {isa = PBXBuildFile; fileRef = 426CD2EB1A89649D0042F4F7 /* config.png */; };
 		427D7A911A85C36000BFB2DA /* CustomSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */; };
 		427D7A931A85CBA600BFB2DA /* UserTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D7A921A85CBA600BFB2DA /* UserTeam.swift */; };
-		427D7A951A85CBDE00BFB2DA /* UserTeam.plist in Resources */ = {isa = PBXBuildFile; fileRef = 427D7A941A85CBDE00BFB2DA /* UserTeam.plist */; };
 		42855B9D1A8459A600EB9546 /* Team_JoinTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42855B9C1A8459A600EB9546 /* Team_JoinTeamViewController.swift */; };
 		42855BA21A846C0000EB9546 /* Team_FindTeamPostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42855BA11A846C0000EB9546 /* Team_FindTeamPostsViewController.swift */; };
 		42855BA41A847CCC00EB9546 /* CAMERA.png in Resources */ = {isa = PBXBuildFile; fileRef = 42855BA31A847CCC00EB9546 /* CAMERA.png */; };
@@ -77,7 +76,6 @@
 		42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = 42B85A3D1A74A0D800FD4642 /* Reachability.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		42B85A441A74A81A00FD4642 /* UserInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B85A411A74A81A00FD4642 /* UserInformation.swift */; };
 		42B85A451A74A81A00FD4642 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42B85A421A74A81A00FD4642 /* DataManager.swift */; };
-		42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */ = {isa = PBXBuildFile; fileRef = 42B85A471A74A9FC00FD4642 /* UserInformation.plist */; };
 		42DBA66E1AD5D489001F57CE /* Cloud右上角.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DBA6681AD5D489001F57CE /* Cloud右上角.png */; };
 		42DBA66F1AD5D489001F57CE /* Cloud左下角.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DBA6691AD5D489001F57CE /* Cloud左下角.png */; };
 		42DBA6711AD5D489001F57CE /* Faster & easier.png in Resources */ = {isa = PBXBuildFile; fileRef = 42DBA66B1AD5D489001F57CE /* Faster & easier.png */; };
@@ -186,7 +184,6 @@
 		A18BF4351AA2F8EC000678F3 /* NEW SUMMONER PAGE_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF42F1AA2F8EC000678F3 /* NEW SUMMONER PAGE_BG.png */; };
 		A18BF4361AA2F8EC000678F3 /* Teemo_Login Page.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF4301AA2F8EC000678F3 /* Teemo_Login Page.png */; };
 		A18DF20B1ABE2317002B354F /* email2.png in Resources */ = {isa = PBXBuildFile; fileRef = A18DF20A1ABE2317002B354F /* email2.png */; };
-		A1A858381A8C7DC1001BF576 /* LOLInfo.plist in Resources */ = {isa = PBXBuildFile; fileRef = A1A858371A8C7DC1001BF576 /* LOLInfo.plist */; };
 		A1B5D8D01AC67819000BD6A6 /* checkinbg.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8CF1AC67819000BD6A6 /* checkinbg.png */; };
 		A1B5D8D21AC678AF000BD6A6 /* chatroom.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8D11AC678AF000BD6A6 /* chatroom.png */; };
 		A1B5D8D41AC79A5F000BD6A6 /* time.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8D31AC79A5F000BD6A6 /* time.png */; };
@@ -426,7 +423,6 @@
 		426CD2EB1A89649D0042F4F7 /* config.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = config.png; sourceTree = "<group>"; };
 		427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwitcher.swift; sourceTree = "<group>"; };
 		427D7A921A85CBA600BFB2DA /* UserTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTeam.swift; sourceTree = "<group>"; };
-		427D7A941A85CBDE00BFB2DA /* UserTeam.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserTeam.plist; sourceTree = "<group>"; };
 		42855B9C1A8459A600EB9546 /* Team_JoinTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_JoinTeamViewController.swift; sourceTree = "<group>"; };
 		42855BA11A846C0000EB9546 /* Team_FindTeamPostsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_FindTeamPostsViewController.swift; sourceTree = "<group>"; };
 		42855BA31A847CCC00EB9546 /* CAMERA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CAMERA.png; sourceTree = "<group>"; };
@@ -493,7 +489,6 @@
 		42B85A3D1A74A0D800FD4642 /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		42B85A411A74A81A00FD4642 /* UserInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInformation.swift; sourceTree = "<group>"; };
 		42B85A421A74A81A00FD4642 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
-		42B85A471A74A9FC00FD4642 /* UserInformation.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = UserInformation.plist; sourceTree = "<group>"; };
 		42DBA6681AD5D489001F57CE /* Cloud右上角.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cloud右上角.png"; sourceTree = "<group>"; };
 		42DBA6691AD5D489001F57CE /* Cloud左下角.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cloud左下角.png"; sourceTree = "<group>"; };
 		42DBA66B1AD5D489001F57CE /* Faster & easier.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Faster & easier.png"; sourceTree = "<group>"; };
@@ -602,7 +597,6 @@
 		A18BF42F1AA2F8EC000678F3 /* NEW SUMMONER PAGE_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NEW SUMMONER PAGE_BG.png"; sourceTree = "<group>"; };
 		A18BF4301AA2F8EC000678F3 /* Teemo_Login Page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Teemo_Login Page.png"; sourceTree = "<group>"; };
 		A18DF20A1ABE2317002B354F /* email2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = email2.png; sourceTree = "<group>"; };
-		A1A858371A8C7DC1001BF576 /* LOLInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = LOLInfo.plist; sourceTree = "<group>"; };
 		A1B5D8CF1AC67819000BD6A6 /* checkinbg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkinbg.png; sourceTree = "<group>"; };
 		A1B5D8D11AC678AF000BD6A6 /* chatroom.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chatroom.png; sourceTree = "<group>"; };
 		A1B5D8D31AC79A5F000BD6A6 /* time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = time.png; sourceTree = "<group>"; };
@@ -1436,11 +1430,8 @@
 			children = (
 				42B85A421A74A81A00FD4642 /* DataManager.swift */,
 				A1F138851A8346C9007DE5A2 /* LolAPI.swift */,
-				A1A858371A8C7DC1001BF576 /* LOLInfo.plist */,
-				427D7A941A85CBDE00BFB2DA /* UserTeam.plist */,
 				427D7A921A85CBA600BFB2DA /* UserTeam.swift */,
 				42B85A411A74A81A00FD4642 /* UserInformation.swift */,
-				42B85A471A74A9FC00FD4642 /* UserInformation.plist */,
 			);
 			name = data;
 			sourceTree = "<group>";
@@ -1557,7 +1548,6 @@
 				A1B86EB51ACE406E00942626 /* 34.png in Resources */,
 				A1B86F211ACE6D9A00942626 /* GOLD II.png in Resources */,
 				42DBA6A31AD62FF3001F57CE /* 泳池爬梯.png in Resources */,
-				A1A858381A8C7DC1001BF576 /* LOLInfo.plist in Resources */,
 				A1B86E9A1ACE406E00942626 /* 17.png in Resources */,
 				A1B86ED91ACE406E00942626 /* 69.png in Resources */,
 				A12405A31AA9688100B5B992 /* addmember.png in Resources */,
@@ -1666,7 +1656,6 @@
 				A1B86EC61ACE406E00942626 /* 48.png in Resources */,
 				A1B86F231ACE6D9A00942626 /* GOLD IV.png in Resources */,
 				A1B86F2B1ACE6D9A00942626 /* SILVER I.png in Resources */,
-				42B85A481A74A9FC00FD4642 /* UserInformation.plist in Resources */,
 				A13919221AA2C21D00CD232A /* Start time.png in Resources */,
 				A18BF4321AA2F8EC000678F3 /* Email_Password_Nickname_BG.png in Resources */,
 				A1B8E95E1A7B20F2009BE011 /* 战队2.png in Resources */,
@@ -1751,7 +1740,6 @@
 				A1B86EB81ACE406E00942626 /* 37.png in Resources */,
 				42DBA6721AD5D489001F57CE /* LOGIN PAGE 1.png in Resources */,
 				A13E549D1AC6319200FD45F6 /* mode_time_teams_kuang.png in Resources */,
-				427D7A951A85CBDE00BFB2DA /* UserTeam.plist in Resources */,
 				A1B86EA41ACE406E00942626 /* 236.png in Resources */,
 				A1B86E901ACE406E00942626 /* 133.png in Resources */,
 				A1B8E9591A7B20F2009BE011 /* 我.png in Resources */,

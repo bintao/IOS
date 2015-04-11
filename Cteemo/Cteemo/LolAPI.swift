@@ -14,53 +14,98 @@ class LolAPI: NSObject{
     
     let key = "dbb5810d-9b30-4d9d-85d0-1f58aadb8ec6"
     
-    var lolID :String = ""
-    var lolRank: String = ""
-    var lolName: String = ""
-    var lolLevel : String = ""
-    var lolIcon : String = ""
-    var lolpatch : String = ""
+    var lolID :String!
+    var lolRank: String!
     
+    var lolName: String!
+    var lolLevel : String!
+    
+    var lolIcon : String!
+    var lolpatch : String!
+
+    
+    var userDefault = NSUserDefaults.standardUserDefaults()
    
     
     func setUp(){
-        if DataManager.getLOLInfo() != nil {
-
-        var data:[String: AnyObject] = DataManager.getLOLInfo()!
-        lolID = data["lolID"] as String
-        lolLevel = data["lolLevel"] as String
-        lolRank = data["lolRank"] as String
-        lolName = data["lolName"] as String
-        lolIcon = data["lolIcon"] as String
-        lolpatch = data["lolpatch"] as String
+        
+        if userDefault.objectForKey("lolID") != nil {
+            
+            self.lolID = userDefault.objectForKey("lolID") as String
+            
         }
-    
-    }
-    
-    func packaging()->[String: AnyObject]{
-    
-        var data:[String: AnyObject] = ["lolID": lolID,"lolName":lolName,"lolRank":lolRank,"lolLevel": lolLevel,"lolIcon":lolIcon,"lolpatch":lolpatch]
-        return data
         
+        if userDefault.objectForKey("lolRank") != nil {
+            
+            self.lolRank = userDefault.objectForKey("lolRank") as String
+            
+        }
+        
+        if userDefault.objectForKey("lolName") != nil {
+            
+            self.lolName = userDefault.objectForKey("lolName") as String
+            
+        }
+        
+        if userDefault.objectForKey("lolLevel") != nil {
+            
+            self.lolLevel = userDefault.objectForKey("lolLevel") as String
+            
+        }
+        
+        if userDefault.objectForKey("lolIcon") != nil {
+            
+            self.lolIcon = userDefault.objectForKey("lolIcon") as String
+            
+        }
+        
+        if userDefault.objectForKey("lolpatch") != nil {
+            
+            self.lolpatch = userDefault.objectForKey("lolpatch") as String
+            
+        }
+        
+    
     }
-
+    
+    
     func cleanUserData(){
-        lolID = ""
-        lolName = ""
-        lolRank = ""
-        lolLevel = ""
-        lolIcon = ""
         
-        DataManager.saveLOLInfoToLocal(packaging())
+        self.lolIcon = nil
+        self.lolID = nil
+        self.lolName = nil
+        self.lolLevel = nil
+        self.lolRank = nil
+        
+        userDefault.removeObjectForKey("lolID")
+        userDefault.removeObjectForKey("lolName")
+        
+        userDefault.removeObjectForKey("lolRank")
+        userDefault.removeObjectForKey("lolLevel")
+        
+        userDefault.removeObjectForKey("lolIcon")
+      
+        userDefault.synchronize()
+
     }
     
     func saveLOLData(){
         
-        var data:[String: AnyObject] = packaging()
         
-        DataManager.saveLOLInfoToLocal(data)
+        userDefault.setValue(lolID, forKey: "lolID")
+        
+        userDefault.setValue(lolName, forKey: "lolName")
+        userDefault.setValue(lolRank, forKey: "lolRank")
+        
+        userDefault.setValue(lolLevel, forKey: "lolLevel")
+        userDefault.setValue(lolIcon, forKey: "lolIcon")
+        
+        userDefault.synchronize()
         
     }
+    
+    
+    
     //get LOL summoner ID and level
     func getSummonerID(lolName : String, loginView: Login_SchoolAndPhoto){
         
@@ -76,7 +121,7 @@ class LolAPI: NSObject{
     
     func uploadlolinfo(){
     
-        if self.lolName != "" {
+        if self.lolName != nil {
             var url = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/"+self.lolName+"?api_key="+key
             request(.GET,url)
                 .responseJSON { (_, _, JSON, _) in
@@ -95,7 +140,7 @@ class LolAPI: NSObject{
     
     func uploadlolid(){
     
-        if self.lolName != "" {
+        if self.lolName != nil {
             var url = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/"+self.lolName+"?api_key="+key
             request(.GET,url)
                 .responseJSON { (_, _, JSON, _) in
@@ -109,7 +154,7 @@ class LolAPI: NSObject{
                                 var idd: Int! = result["id"] as? Int!
                                 self.lolID = "\(idd)"
                             }
-                            else {LolAPIGlobal.lolID = ""}
+                            else {LolAPIGlobal.lolID = nil}
                           
                             self.saveLOLData()
                         }
@@ -133,12 +178,12 @@ class LolAPI: NSObject{
                 var idd: Int! = result["id"] as? Int!
                 self.lolID = "\(idd)"
             }
-            else {LolAPIGlobal.lolID = ""}
+            else {LolAPIGlobal.lolID = nil}
             
             if result["name"]? != nil {
                 LolAPIGlobal.lolName = result["name"] as String
             }
-            else {LolAPIGlobal.lolName = ""}
+            else {LolAPIGlobal.lolName = nil}
             
             if result["profileIconId"]? != nil {
                 var iconid: Int! = result["profileIconId"] as? Int!
@@ -146,13 +191,13 @@ class LolAPI: NSObject{
                 var str = "http://ddragon.leagueoflegends.com/cdn/"+LolAPIGlobal.lolpatch+"/img/profileicon/"+"\(iconid)"+".png"
                 self.lolIcon = str
             }
-            else {LolAPIGlobal.lolIcon = ""}
+            else {LolAPIGlobal.lolIcon = nil}
             
             if result["summonerLevel"]? != nil {
                 var levelid: Int! = result["summonerLevel"] as Int!
                 self.lolLevel = "\(levelid)"
             }
-            else {LolAPIGlobal.lolLevel = ""}
+            else {LolAPIGlobal.lolLevel = nil}
         
             self.saveLOLData()
             
@@ -160,7 +205,7 @@ class LolAPI: NSObject{
             self.getSummonerLeague(lolID)
             }
             else {
-            LolAPIGlobal.lolRank = ""
+            LolAPIGlobal.lolRank = nil
             
             }
         }
@@ -196,7 +241,7 @@ class LolAPI: NSObject{
         }
         else {
         
-            LolAPIGlobal.lolRank = ""
+            LolAPIGlobal.lolRank = nil
             LolAPIGlobal.saveLOLData()
         }
       
@@ -244,12 +289,4 @@ class LolAPI: NSObject{
         
 
         
-        
-    
-    
-  
-    
-   
-    
-    
 }

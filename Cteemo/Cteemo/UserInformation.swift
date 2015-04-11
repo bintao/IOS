@@ -14,18 +14,18 @@ var UserInfoGlobal: UserInformation = UserInformation()
 class UserInformation: NSObject, RequestResultDelegate{
    
     // User profile
-    var email: String = ""
-    var name: String = ""
-    var fbid: String = ""
-    var accessToken: String = ""
-    var gender: String = ""
-    var school: String = ""
-    var intro: String = ""
-    var profile_icon_Link: String = ""
-    var tokenVaild : String = ""
-    var profile_ID: String = ""
+    var email: String!
+    var name: String!
+    var fbid: String!
+    var accessToken: String!
+    var gender: String!
+    var school: String!
+    var intro: String!
+    var profile_icon_Link: String!
+    var tokenVaild : String!
+    var profile_ID: String!
     
-    var rongToken: String = ""
+    var rongToken: String!
     //var iscaptain: String?
     
     var userDefault = NSUserDefaults.standardUserDefaults()
@@ -35,7 +35,7 @@ class UserInformation: NSObject, RequestResultDelegate{
     //check if the user is logined
     func userIsLogined()->Bool{
         
-        if accessToken == "" {
+        if accessToken == nil {
             return false
         }else{
             return true
@@ -45,37 +45,79 @@ class UserInformation: NSObject, RequestResultDelegate{
     //setUp the local user data
     func setUp(){
         
-        userDefault.objectForKey("name")
+        if userDefault.objectForKey("name") != nil {
         
-        if DataManager.getUserInfo() != nil{
-            
-        var data:[String: AnyObject] = DataManager.getUserInfo()!
-            name = data["name"] as String
-            fbid = data["fbid"] as String
-            accessToken = data["accessToken"] as String
-            email = data["email"] as String
-            gender = data["gender"] as String
-            school = data["school"] as String
-            intro = data["intro"] as String
-            profile_ID = data["profile_ID"] as String
-            profile_icon_Link = data["profile_icon_Link"] as String
+        self.name = userDefault.objectForKey("name") as String
         
-            rongToken = data["rongToken"] as String
-            
-            tokenVaild = data["tokenVaild"] as String
         }
+        
+        if userDefault.objectForKey("fbid") != nil {
+            
+            self.fbid = userDefault.objectForKey("fbid") as String
+            
+        }
+        
+        if userDefault.objectForKey("accessToken") != nil {
+            
+            self.accessToken = userDefault.objectForKey("accessToken") as String
+            
+        }
+        
+        if userDefault.objectForKey("email") != nil {
+            
+            self.email = userDefault.objectForKey("email") as String
+            
+        }
+        
+        if userDefault.objectForKey("gender") != nil {
+            
+            self.gender = userDefault.objectForKey("gender") as String
+            
+        }
+        
+        if userDefault.objectForKey("school") != nil {
+            
+            self.school = userDefault.objectForKey("school") as String
+            
+        }
+        
+        if userDefault.objectForKey("intro") != nil {
+            
+            self.intro = userDefault.objectForKey("intro") as String
+            
+        }
+        
+        if userDefault.objectForKey("profile_ID") != nil {
+            
+            self.profile_ID = userDefault.objectForKey("profile_ID") as String
+            
+        }
+        
+        if userDefault.objectForKey("profile_icon_Link") != nil {
+            
+            self.profile_icon_Link = userDefault.objectForKey("profile_icon_Link") as String
+            
+        }
+        
+        if userDefault.objectForKey("rongToken") != nil {
+            
+            self.rongToken = userDefault.objectForKey("rongToken") as String
+            
+        }
+        
+        if userDefault.objectForKey("tokenVaild") != nil {
+            
+            self.tokenVaild = userDefault.objectForKey("tokenVaild") as String
+            
+        }
+        
         icon = DataManager.getUserIconFromLocal()
+        
+        
     }
     
     //change user data and save
 
-    
-    func packaging()->[String: AnyObject]{
-        
-        var data:[String: AnyObject] = ["name": name, "fbid": fbid, "accessToken": accessToken, "email": email, "gender": gender, "school": school, "intro": intro,"profile_ID":profile_ID, "profile_icon_Link": profile_icon_Link,"tokenVaild":tokenVaild,"rongToken" :rongToken]
-        return data
-        
-    }
     
     func uploadUserIcon(){
         if icon != nil{
@@ -98,7 +140,8 @@ class UserInformation: NSObject, RequestResultDelegate{
     }
     
     func getIconFromServer(){
-
+        
+        if profile_icon_Link != nil {
         ImageLoader.sharedLoader.imageForUrl(profile_icon_Link, completionHandler:{(image: UIImage?, url: String) in
             println(url)
             if image? != nil {
@@ -108,7 +151,7 @@ class UserInformation: NSObject, RequestResultDelegate{
             else {
                 self.icon = UIImage(named: "error.png")!
             }})
-
+        }
     }
     
     func gotResult(prefix: String, result: [String : AnyObject]) {
@@ -136,15 +179,15 @@ class UserInformation: NSObject, RequestResultDelegate{
             if result["username"]? != nil {
                 UserInfoGlobal.name = result["username"] as String
             }
-            else{ UserInfoGlobal.name = ""}
+            else{ UserInfoGlobal.name = nil}
             if result["id"]? != nil {
                 UserInfoGlobal.profile_ID = result["id"] as String
             }
-             else{ UserInfoGlobal.profile_ID = ""}
+             else{ UserInfoGlobal.profile_ID = nil}
             if result["intro"]? != nil {
                 UserInfoGlobal.intro = result["intro"] as String
             }
-            else{ UserInfoGlobal.intro = ""}
+            else{ UserInfoGlobal.intro = nil}
             if result["profile_icon"]? != nil {
                 UserInfoGlobal.profile_icon_Link = result["profile_icon"] as String
                 getIconFromServer()
@@ -152,27 +195,27 @@ class UserInformation: NSObject, RequestResultDelegate{
             if result["school"]? != nil {
                 UserInfoGlobal.school = result["school"] as String
             }
-            else{ UserInfoGlobal.school = ""}
+            else{ UserInfoGlobal.school = nil}
             
             if result["lolID"]? != nil {
                 LolAPIGlobal.lolName = result["lolID"] as String
             }
-            else{ LolAPIGlobal.lolName = ""}
+            else{ LolAPIGlobal.lolName = nil}
             if result["LOLTeamID"]? != nil {
                 TeamInfoGlobal.teamID = result["LOLTeamID"] as String
             }
-            else{ TeamInfoGlobal.teamID  = ""}
+            else{ TeamInfoGlobal.teamID  = nil}
             
             if result["LOLTeam"]? != nil {
                 TeamInfoGlobal.teamName = result["LOLTeam"] as String
             }
-            else { TeamInfoGlobal.teamName = ""}
+            else { TeamInfoGlobal.teamName = nil}
             if result["dotaID"]? != nil{
             LolAPIGlobal.lolRank = result["dotaID"] as String
             }
             else{
                 
-                LolAPIGlobal.lolRank = ""
+                LolAPIGlobal.lolRank = nil
            
             }
             if result["hstoneID"]? != nil{
@@ -181,10 +224,9 @@ class UserInformation: NSObject, RequestResultDelegate{
             }
             else{
             
-            LolAPIGlobal.lolID = ""
+            LolAPIGlobal.lolID = nil
             
             }
-            
             
             UserInfoGlobal.saveUserData()
             TeamInfoGlobal.saveUserData()
@@ -210,16 +252,25 @@ class UserInformation: NSObject, RequestResultDelegate{
         userDefault.setValue(email, forKey: "email")
 
         userDefault.setValue(name, forKey: "name")
-
-        name = ""
-        fbid = ""
-        accessToken = ""
-        gender = ""
-        school = ""
-        intro = ""
-        profile_ID = ""
-        profile_icon_Link = ""
-        tokenVaild = ""
+        
+        userDefault.setValue(fbid, forKey: "fbid")
+        
+        userDefault.setValue(accessToken, forKey: "accessToken")
+        
+        userDefault.setValue(gender, forKey: "gender")
+        
+        userDefault.setValue(school, forKey: "school")
+        
+        userDefault.setValue(intro, forKey: "intro")
+        
+        userDefault.setValue(profile_ID, forKey: "profile_ID")
+        
+        userDefault.setValue(profile_icon_Link, forKey: "profile_icon_Link")
+        
+        userDefault.setValue(tokenVaild, forKey: "tokenVaild")
+        
+        userDefault.setValue(rongToken, forKey: "rongToken")
+        
 
         userDefault.synchronize()
 
@@ -228,19 +279,36 @@ class UserInformation: NSObject, RequestResultDelegate{
     //user logout, remove all local data
     func cleanUserData(){
         
-        userDefault.removeObjectForKey("email")
         
-        email = ""
-        name = ""
-        fbid = ""
-        accessToken = ""
-        gender = ""
-        school = ""
-        intro = ""
-        profile_ID = ""
-        profile_icon_Link = ""
-        tokenVaild = ""
+        self.email = nil
+        self.name = nil
+        self.fbid = nil
+        self.accessToken = nil
+        self.gender = nil
+        self.school = nil
+        self.intro = nil
+        self.profile_ID = nil
+        self.profile_icon_Link = nil
+        self.rongToken = nil
+        self.tokenVaild = nil
+        self.icon = nil
+        
+        userDefault.removeObjectForKey("email")
+        userDefault.removeObjectForKey("name")
+        userDefault.removeObjectForKey("fbid")
+        userDefault.removeObjectForKey("accessToken")
+        userDefault.removeObjectForKey("gender")
+        userDefault.removeObjectForKey("school")
+        userDefault.removeObjectForKey("intro")
+        userDefault.removeObjectForKey("profile_ID")
+        userDefault.removeObjectForKey("profile_icon_Link")
+        userDefault.removeObjectForKey("tokenVaild")
+        userDefault.removeObjectForKey("rongToken")
+        
+        
         userDefault.synchronize()
+        
+        
         DataManager.deleFileInLocal("icon.png")
         DataManager.deleFileInLocal("lolicon.png")
         DataManager.deleFileInLocal("teamicon.png")

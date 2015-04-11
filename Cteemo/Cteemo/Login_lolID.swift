@@ -29,11 +29,11 @@ class Login_lolID: UIViewController, UIScrollViewDelegate,RequestResultDelegate{
     override func viewDidLoad() {
        
         
-        if(LolAPIGlobal.lolLevel != "" && LolAPIGlobal.lolID != "" ){
+        if(LolAPIGlobal.lolLevel != nil && LolAPIGlobal.lolID != nil ){
             
             self.lolname.text = LolAPIGlobal.lolName
             self.lol_level.text = "Level:" + LolAPIGlobal.lolLevel
-            if LolAPIGlobal.lolRank !=  ""{
+            if LolAPIGlobal.lolRank !=  nil{
             self.lol_rank.text = LolAPIGlobal.lolRank
             }
             else {
@@ -64,9 +64,18 @@ class Login_lolID: UIViewController, UIScrollViewDelegate,RequestResultDelegate{
     @IBAction func start(sender: UIButton) {
         
         println(self.gender)
+        var rank : String = ""
+        if LolAPIGlobal.lolRank != nil {
         
+        rank = LolAPIGlobal.lolRank
+        }
+        else {
+            
+        rank = "noRank"
         
-        var par = ["username": self.name,"school": self.school ,"lolID": self.clolname ,"intro" : self.gender,"dotaID": LolAPIGlobal.lolRank, "hstoneID": LolAPIGlobal.lolID]
+        }
+        
+        var par = ["username": self.name,"school": self.school ,"lolID": self.clolname ,"intro" : self.gender,"dotaID": rank, "hstoneID": LolAPIGlobal.lolID]
         
         var req = ARequest(prefix: "profile", method: requestType.POST, parameters: par)
         req.delegate = self

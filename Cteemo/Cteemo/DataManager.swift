@@ -11,53 +11,6 @@ import UIKit
 class DataManager: NSObject {
    
     // initialize plist
-    class func initializeUserInfo(){
-        
-        let fileManager = NSFileManager()
-        var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        path = path.stringByAppendingPathComponent("UserInformation.plist")
-        var resource = NSBundle.mainBundle().pathForResource("UserInformation", ofType: "plist") as String?
-        
-        var dict = NSDictionary(contentsOfFile: resource!)
-            fileManager.copyItemAtPath(resource!, toPath: path, error: nil)
-
-        path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        path = path.stringByAppendingPathComponent("UserTeam")
-        resource = NSBundle.mainBundle().pathForResource("UserTeam", ofType: "plist") as String?
-        dict = NSDictionary(contentsOfFile: resource!)
-        fileManager.copyItemAtPath(resource!, toPath: path, error: nil)
-        
-        path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
-        path = path.stringByAppendingPathComponent("LOLInfo")
-        resource = NSBundle.mainBundle().pathForResource("LOLInfo", ofType: "plist") as String?
-        dict = NSDictionary(contentsOfFile: resource!)
-        fileManager.copyItemAtPath(resource!, toPath: path, error: nil)
-    }
-    
-    
-    class func getUserInfo()->[String: AnyObject]?{
-        return DataManager.getPlistFile("UserInformation.plist")?
-    }
-    
-    class func saveUserInfoToLocal(info: [String: AnyObject]){
-        DataManager.savePlistFile(info, fileName: "UserInformation.plist")
-    }
-    
-    class func getTeamInfo()->[String: AnyObject]?{
-        return DataManager.getPlistFile("UserTeam.plist")?
-    }
-    
-    class func saveTeamInfoToLocal(info: [String: AnyObject]){
-        DataManager.savePlistFile(info, fileName: "UserTeam.plist")
-    }
-    
-    class func getLOLInfo()->[String: AnyObject]?{
-        return DataManager.getPlistFile("LOLInfo.plist")?
-    }
-    
-    class func saveLOLInfoToLocal(info: [String: AnyObject]){
-        savePlistFile(info, fileName: "LOLInfo.plist")
-    }
     
     class func getNewsInfo()->[AnyObject]{
         if DataManager.checkIfFileExist("News.plist"){
@@ -66,6 +19,7 @@ class DataManager: NSObject {
             return [AnyObject]()
         }
     }
+    
     
     class func getNewsImages(newsArr:[AnyObject])->[UIImage]{
         
@@ -167,7 +121,6 @@ class DataManager: NSObject {
     }
 
     class func getPlistFile(fileName:String)->[String: AnyObject]?{
-        
         
         let fileManager = NSFileManager()
         var path = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
