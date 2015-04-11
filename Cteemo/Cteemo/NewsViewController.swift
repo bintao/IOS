@@ -22,8 +22,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     let tableHeight:CGFloat = 140
     
-    var imageArray : [UIImage]!
-    var originalImage :[UIImage]!
+    var imageUrl = [String]()
     
     //@IBOutlet var menu : UIBarButtonItem!
     var hotImageIcon : UIButton!
@@ -42,13 +41,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         menu.target = self
         menu.action = Selector("clickMenu:")
-        newsArr = DataManager.getNewsInfo()
-        imageArray = DataManager.getNewsImages(newsArr)
-        originalImage = DataManager.getNewsImages(newsArr)
-        
         currentChosen = newsArr.count / 10
-
-        //imageScrollimageScrollView.contentSize = image.size
         updateNews(0)
     
     }
@@ -80,7 +73,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 var newsInfo = ["news":newsArr]
                 
             //save user info and update image files
-                DataManager.saveNewsInfoToLocal(newsInfo)
+
                 downloadNewsPictureImages(newsInfo)
                 currentChosen = newsArr.count / 10
 
@@ -91,7 +84,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
             newsArr = newsArr + (result as [AnyObject])
             var newsInfo = ["news":newsArr]
             //save user info and update image files
-            DataManager.saveNewsInfoToLocal(newsInfo)
             downloadNewsPictureImages(newsInfo)
             
         }
@@ -106,39 +98,30 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         var count = 0
         var downloadCount = 0
+        println(info)
+        
+        
         
         for var index = 0; index < (info["news"] as [AnyObject]).count; index++ {
             
             var imageURL = ((info["news"] as [AnyObject])[index] as [String:AnyObject])["news_pic"] as String
             
+            if imageURL != ""  {
+                
+                
+                self.imageUrl.append(imageURL)
+                //loadpicture
+                
+            }//url is not empty
+            else{
             
+                self.imageUrl.append("")
             
-            if imageURL != "" && !DataManager.checkIfFileExist((imageURL as NSString).substringFromIndex(countElements(imageURL) - 10) as String) {
-                
-                var imgarr = (imageURL as NSString).substringFromIndex(countElements(imageURL) - 10) as String
-                
-                count++
-                
-                ImageLoader.sharedLoader.imageForUrl(imageURL, completionHandler:{(image: UIImage?, url: String) in
-                    println(image)
-                    if image? != nil {
-                        DataManager.saveImageToLocal(image!, name: "\(imgarr).png")
-                        //reload data after all images are downloaded
-                    }
-                    downloadCount++
-                    println(downloadCount)
-                    println(count)
-                    if count == downloadCount{
-                        self.imageArray = DataManager.getNewsImages(self.newsArr)
-                        self.originalImage = DataManager.getNewsImages(self.newsArr)
-                        self.newsTable.reloadData()
-                        self.stopLoading()
-                    }
-                    
-                })
-                
             }
-        }
+        }//end for 
+        
+        
+          self.newsTable.reloadData()
         
     }
     
@@ -209,61 +192,85 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
-        
-        println (imageArray.count)
-        
-        if imageArray.count != 0 {
-        var imgHeight = imageArray[indexPath.row].size.width * tableHeight / self.view.frame.width
-        var cellImage = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, tableHeight))
-        // crop the part image in the center
-        cellImage.image = imageArray[indexPath.row].crop(CGRectMake(0, (imageArray[indexPath.row].size.height - imgHeight) / 2, imageArray[indexPath.row].size.width, imgHeight))
-        cell.addSubview(cellImage)
-        
-        
-        var img = UIImage()
-        img = img.setGradientToImage(cellImage.frame, locationList: [0.0,1.0], colorList: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.2], startPoint: CGPointMake(0, tableHeight), endPoint: CGPointMake(cellImage.frame.width + 200, -30))
-        var coverImage = UIImageView(frame: cellImage.frame)
-        coverImage.image = img
-        cell.addSubview(coverImage)
-        
-        
-        var title = UITextView(frame: CGRectMake(15, 10, self.view.frame.width - 100, 90))
-        title.font = UIFont(name: "Palatino-Roman", size: 21)
-        title.text = (newsArr[indexPath.row] as [String : AnyObject])["title"] as String
-        title.textColor = UIColor.darkGrayColor()
-        title.backgroundColor = UIColor.clearColor()
-        title.textAlignment = NSTextAlignment.Left
-        title.userInteractionEnabled = false
-        cell.addSubview(title)
-        
-        var time = UILabel(frame: CGRectMake(20, tableHeight - 30, self.view.frame.width - 100, 20))
-        time.font = UIFont(name: "Palatino-Bold", size: 14)
-        time.text = (newsArr[indexPath.row] as [String : AnyObject])["date"] as? String
-        var index = countElements(time.text!) - 7
-        time.text = (time.text! as NSString).substringToIndex(index)
-        time.textColor = UIColor.grayColor()
-        time.alpha = 0.8
-        time.backgroundColor = UIColor.clearColor()
-        time.textAlignment = NSTextAlignment.Left
-        cell.addSubview(time)
-        
-        
-        var line = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, 0.7))
-        line.backgroundColor = UIColor.lightGrayColor()
-        cell.addSubview(line)
-        
-        if indexPath.row == 0 {
-            coverImage.removeFromSuperview()
-            cellImage.frame.size = CGSizeMake(self.view.frame.width, self.view.frame.width * 0.67)
-            cellImage.image = imageArray[indexPath.row]
-            title.frame.origin = CGPointMake(15, self.view.frame.width * 0.67 - 90)
-            title.textColor = UIColor.whiteColor()
-            title.font = UIFont(name: "Palatino-Bold", size: 22)
+        if imageUrl.count != 0 && imageUrl.count > indexPath.row{
             
-            time.frame.origin = CGPointMake(20, self.view.frame.width * 0.67 - 30)
-            time.textColor = UIColor.whiteColor()
+            var pic :UIImage!
             
-        }
+            ImageLoader.sharedLoader.imageForUrl(imageUrl[indexPath.row], completionHandler:{(image: UIImage?, url: String) in
+                if image != nil {
+                    
+                    pic = image
+                }
+                else{
+                    
+                    pic = UIImage(named: "img1.png")!
+                    
+                }
+                
+                var imgHeight = pic.size.width * self.tableHeight / self.view.frame.width
+                var cellImage = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, self.tableHeight))
+                // crop the part image in the center
+                cellImage.image = pic.crop(CGRectMake(0, (pic.size.height - imgHeight) / 2, pic.size.width, imgHeight))
+                cell.addSubview(cellImage)
+                
+                
+                var img = UIImage()
+                img = img.setGradientToImage(cellImage.frame, locationList: [0.0,1.0], colorList: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.2], startPoint: CGPointMake(0, self.tableHeight), endPoint: CGPointMake(cellImage.frame.width + 200, -30))
+                var coverImage = UIImageView(frame: cellImage.frame)
+              
+                coverImage.image = img
+                cell.addSubview(coverImage)
+                
+                
+                var title = UITextView(frame: CGRectMake(15, 10, self.view.frame.width - 100, 90))
+                title.font = UIFont(name: "Palatino-Roman", size: 21)
+                title.text = (self.newsArr[indexPath.row] as [String : AnyObject])["title"] as String
+                title.textColor = UIColor.darkGrayColor()
+                title.backgroundColor = UIColor.clearColor()
+                title.textAlignment = NSTextAlignment.Left
+                title.userInteractionEnabled = false
+                cell.addSubview(title)
+                
+                
+                var time = UILabel(frame: CGRectMake(20, self.tableHeight - 30, self.view.frame.width - 100, 20))
+                time.font = UIFont(name: "Palatino-Bold", size: 14)
+                time.text = (self.newsArr[indexPath.row] as [String : AnyObject])["date"] as? String
+                var index = countElements(time.text!) - 7
+                time.text = (time.text! as NSString).substringToIndex(index)
+                time.textColor = UIColor.darkGrayColor()
+                time.alpha = 0.8
+                time.backgroundColor = UIColor.clearColor()
+                time.textAlignment = NSTextAlignment.Left
+                cell.addSubview(time)
+                
+                
+                var line = UIImageView(frame: CGRectMake(0, 0, self.view.frame.width, 0.7))
+                line.backgroundColor = UIColor.lightGrayColor()
+                cell.addSubview(line)
+                
+                
+                if indexPath.row == 0 {
+                    coverImage.removeFromSuperview()
+                    cellImage.frame.size = CGSizeMake(self.view.frame.width, self.view.frame.width * 0.67)
+                    cellImage.image = pic
+                    title.frame.origin = CGPointMake(15, self.view.frame.width * 0.67 - 90)
+                    title.textColor = UIColor.whiteColor()
+                    title.font = UIFont(name: "Palatino-Bold", size: 22)
+                    
+                    time.frame.origin = CGPointMake(20, self.view.frame.width * 0.67 - 30)
+                    time.textColor = UIColor.whiteColor()
+                    
+                }
+              
+                
+            })
+            
+    
+        
+        
+       
+        
+     
         }
         return cell
     
@@ -271,8 +278,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
       
-        println(indexPath.row )
-       
         
         if indexPath.row < self.weburl.count {
             

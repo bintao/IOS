@@ -110,6 +110,7 @@ class ARequest: NSObject {
         var parameters = NSMutableDictionary()
         var filePath = NSURL(fileURLWithPath: DataManager.getURLPath().stringByAppendingPathComponent(fileName))!
         println(filePath)
+        
         var request = AFHTTPRequestSerializer().multipartFormRequestWithMethod("POST", URLString: server + prefix, parameters: parameters, constructingBodyWithBlock: { (formData) -> Void in
             formData.appendPartWithFileURL(filePath, name: "upload", fileName: "upload", mimeType: "image/png", error: nil)
             return

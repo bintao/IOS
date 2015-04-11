@@ -99,7 +99,7 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
             
             TeamInfoGlobal.teamicon_link = result["teamIcon"] as String
         }
-        else {TeamInfoGlobal.teamicon_link = "" }
+        else {TeamInfoGlobal.teamicon_link = nil }
         
     }
     

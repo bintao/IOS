@@ -113,7 +113,6 @@ class UserInformation: NSObject, RequestResultDelegate{
         
         icon = DataManager.getUserIconFromLocal()
         
-        
     }
     
     //change user data and save

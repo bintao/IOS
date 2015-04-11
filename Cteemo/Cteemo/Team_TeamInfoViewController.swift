@@ -66,7 +66,12 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
             
             self.edit.alpha = 0
             
+        }else if TeamInfoGlobal.iscaptain == "yes"{
+            
+            self.edit.alpha = 1
+            
         }
+            
         
             let subviews = self.memberScroll.subviews
             

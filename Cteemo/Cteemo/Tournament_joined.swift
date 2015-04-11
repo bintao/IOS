@@ -201,7 +201,9 @@ class Tournament_joined: UIViewController {
     }
     
     func searchmyid() {
-    
+     
+        
+        if TeamInfoGlobal.teamName != nil {
         var myteamname = TeamInfoGlobal.teamName
         var par : [String: AnyObject] = ["api_key":Tournament.key]
         var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+self.url+"/participants.json",parameters:par)
@@ -223,8 +225,10 @@ class Tournament_joined: UIViewController {
                             }
                         }
                     }//end for loop
-                }
+                }//end if
                 
+        }//endrequest
+            
         }
    
     

@@ -152,7 +152,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
         }
             
-        else if message.targetId != "KEFU1426185510333" && message.conversationType != RCConversationType.onversationType_CHATROOM {
+        else if message.targetId != "KEFU1426185638731" && message.conversationType != RCConversationType.onversationType_CHATROOM {
             
             println(message.targetId)
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT

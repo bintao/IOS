@@ -295,8 +295,9 @@ class UserTeam: NSObject{
             else {self.teamicon_link = nil}
         
             if result["id"]? != nil{
+                
                 var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
-                println(TeamInfoGlobal.iscaptain)
+                
                 if(captain == UserInfoGlobal.profile_ID){
                     TeamInfoGlobal.iscaptain = "yes"
                 }
