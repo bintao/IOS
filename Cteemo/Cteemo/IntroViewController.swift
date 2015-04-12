@@ -32,8 +32,9 @@ class IntroViewController: UIViewController, UIScrollViewDelegate{
     var secondView: second!
     var thirdView: third!
     
+    let pageCount = 3
     
-    var currentPageNum = 0;
+    var currentPageNum = 0
     
     func startApp() {
         performSegueWithIdentifier("returnFromIntro", sender: self)
@@ -44,7 +45,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate{
         
         start = nil
         
-        scroller.contentSize = CGSizeMake(view.frame.width * 3, view.frame.height)
+        scroller.contentSize = CGSizeMake(view.frame.width * CGFloat(pageCount), view.frame.height)
         scroller.showsHorizontalScrollIndicator = false
         
         var gestureReco = UIPanGestureRecognizer(target: self, action: "dragged:")
@@ -82,7 +83,17 @@ class IntroViewController: UIViewController, UIScrollViewDelegate{
         scroller.setContentOffset(CGPointMake(view.frame.width * CGFloat(currentPageNum) - translation.x, 0), animated: false)
         
         if recognizer.state == UIGestureRecognizerState.Cancelled || recognizer.state == UIGestureRecognizerState.Failed || recognizer.state == UIGestureRecognizerState.Ended{
-            determineCurrentPage()
+            // should change page
+            if abs(translation.x) > 30 {
+                if currentPageNum != 0 && translation.x > 0 {
+                    currentPageNum--
+                }else if currentPageNum != pageCount - 1 && translation.x < 0{
+                    currentPageNum++
+                }
+                controller.currentPage = currentPageNum
+            }
+            scroller.setContentOffset(CGPointMake(view.frame.width * CGFloat(currentPageNum), 0), animated: true)
+
         }
         
     }
@@ -117,16 +128,7 @@ class IntroViewController: UIViewController, UIScrollViewDelegate{
     }
     
     func scrollViewWillEndDragging(scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-    }
     
-    func determineCurrentPage(){
-        if scroller.contentOffset.x > view.frame.width / 2 + view.frame.width * CGFloat(currentPageNum) && currentPageNum < 2{
-            currentPageNum++
-        }else if scroller.contentOffset.x < view.frame.width * CGFloat(currentPageNum - 1) + view.frame.width / 2 && currentPageNum > 0{
-            currentPageNum--
-        }
-        controller.currentPage = currentPageNum
-        scroller.setContentOffset(CGPointMake(view.frame.width * CGFloat(currentPageNum), 0), animated: true)
     }
     
     override func didReceiveMemoryWarning() {

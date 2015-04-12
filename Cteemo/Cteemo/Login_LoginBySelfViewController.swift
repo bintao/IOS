@@ -72,6 +72,7 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
                 // login success
                 UserInfoGlobal.accessToken = result["token"] as String
                 UserInfoGlobal.rongToken = (result["rongToken"] as [String: AnyObject])["token"] as String
+                UserInfoGlobal.email = self.email.text
                 UserInfoGlobal.saveUserData()
                 UserInfoGlobal.updateUserInfo()
                 

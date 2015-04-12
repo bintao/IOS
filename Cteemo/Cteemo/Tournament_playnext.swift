@@ -174,8 +174,6 @@ class Tournament_playnext:  UIViewController  {
                 }//count is 0 can't find
                 else{
                     
-                    
-                    
                     let alert1 = SCLAlertView()
                     alert1.addButton("ok"){
                         
@@ -316,7 +314,6 @@ class Tournament_playnext:  UIViewController  {
         
         
     }
-    
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         

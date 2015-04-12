@@ -21,6 +21,8 @@ class TournamentViewController: UIViewController {
     var joinTeam :String = ""
     var teams: [AnyObject] = [AnyObject]()
     
+    var solo : Bool = false
+    
     override func viewDidAppear(animated: Bool) {
         
       //  ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
@@ -50,10 +52,22 @@ class TournamentViewController: UIViewController {
     }
     
        override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+       
         if segue.identifier == "gotoGame"{
-            //((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+            
+            self.solo  = false
+            
+            var controller: Tournament_game = segue.destinationViewController as Tournament_game
         }
+        
+        else if segue.identifier == "sologame"{
+            
+            self.solo  = true
+            
+        }
+        
     }
+    
     
     /*
     // MARK: - Navigation

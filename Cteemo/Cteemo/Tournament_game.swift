@@ -74,11 +74,9 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         var url = Tournament.tournamentUrl[sender.tag] as String
         var name = Tournament.tournamentName[sender.tag] as String
         
-        
         if TeamInfoGlobal.teamName != nil {
         
             var member = TeamInfoGlobal.teamName
-            
             
             alert2.showWaiting(self.parentViewController?.parentViewController, title: "Loading", subTitle: "Cteemo is loading", closeButtonTitle: nil, duration: 0.0)
             var par : [String: AnyObject] = ["api_key":Tournament.key]
