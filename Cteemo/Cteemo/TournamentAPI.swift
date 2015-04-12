@@ -14,10 +14,16 @@ import Foundation
 
 var Tournament: TournamentAPI = TournamentAPI()
 
+
 class TournamentAPI: NSObject{
     
     
-    let key = "OzVqaaqFdjiuTGPbbeQfvpgHxnIcquz6yh5LSwep"
+    var key = "OzVqaaqFdjiuTGPbbeQfvpgHxnIcquz6yh5LSwep"
+    
+    
+    let teamkey = "OzVqaaqFdjiuTGPbbeQfvpgHxnIcquz6yh5LSwep"
+    let solokey = "QTDlzXYOuaeOSP2nyPfroTg2tiyoHF4EWjnYS6fo"
+    
     // for tournament
     var totalnumber = 0
     var tournamentName: [AnyObject] = [AnyObject]()

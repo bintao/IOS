@@ -378,6 +378,12 @@
 		A1EB12141A99AAE700FC8388 /* TournamentAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB12131A99AAE700FC8388 /* TournamentAPI.swift */; };
 		A1EF3F781AC3A65B003D3B7D /* Team_requests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EF3F771AC3A65B003D3B7D /* Team_requests.swift */; };
 		A1F138861A8346C9007DE5A2 /* LolAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1F138851A8346C9007DE5A2 /* LolAPI.swift */; };
+		A1F266F91ADA0C1100C91D7C /* 1Top.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F266F31ADA0C1100C91D7C /* 1Top.png */; };
+		A1F266FA1ADA0C1100C91D7C /* 1v1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F266F41ADA0C1100C91D7C /* 1v1.png */; };
+		A1F266FB1ADA0C1100C91D7C /* 2Bot.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F266F51ADA0C1100C91D7C /* 2Bot.png */; };
+		A1F266FC1ADA0C1100C91D7C /* 5v5.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F266F61ADA0C1100C91D7C /* 5v5.png */; };
+		A1F266FD1ADA0C1100C91D7C /* solo.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F266F71ADA0C1100C91D7C /* solo.png */; };
+		A1F266FE1ADA0C1100C91D7C /* Tounament.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F266F81ADA0C1100C91D7C /* Tounament.png */; };
 		A1F3AA601AB1753F00CD5ACE /* chat.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F3AA5C1AB1753F00CD5ACE /* chat.png */; };
 		A1F3AA611AB1753F00CD5ACE /* checkin.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F3AA5D1AB1753F00CD5ACE /* checkin.png */; };
 		A1F3AA621AB1753F00CD5ACE /* playnext.png in Resources */ = {isa = PBXBuildFile; fileRef = A1F3AA5E1AB1753F00CD5ACE /* playnext.png */; };
@@ -801,6 +807,12 @@
 		A1EB12131A99AAE700FC8388 /* TournamentAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentAPI.swift; sourceTree = "<group>"; };
 		A1EF3F771AC3A65B003D3B7D /* Team_requests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_requests.swift; sourceTree = "<group>"; };
 		A1F138851A8346C9007DE5A2 /* LolAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LolAPI.swift; sourceTree = "<group>"; };
+		A1F266F31ADA0C1100C91D7C /* 1Top.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1Top.png; sourceTree = "<group>"; };
+		A1F266F41ADA0C1100C91D7C /* 1v1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1v1.png; sourceTree = "<group>"; };
+		A1F266F51ADA0C1100C91D7C /* 2Bot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2Bot.png; sourceTree = "<group>"; };
+		A1F266F61ADA0C1100C91D7C /* 5v5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5v5.png; sourceTree = "<group>"; };
+		A1F266F71ADA0C1100C91D7C /* solo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = solo.png; sourceTree = "<group>"; };
+		A1F266F81ADA0C1100C91D7C /* Tounament.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tounament.png; sourceTree = "<group>"; };
 		A1F3AA5C1AB1753F00CD5ACE /* chat.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chat.png; sourceTree = "<group>"; };
 		A1F3AA5D1AB1753F00CD5ACE /* checkin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = checkin.png; sourceTree = "<group>"; };
 		A1F3AA5E1AB1753F00CD5ACE /* playnext.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playnext.png; sourceTree = "<group>"; };
@@ -991,6 +1003,7 @@
 		42B85A131A74897A00FD4642 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A1F266F21ADA0BFC00C91D7C /* newtournament */,
 				A12D3D491AD9FC7C00C2076A /* arrw.png */,
 				A18EAD4F1AD9F2960062173E /* ME */,
 				A1FA7D6C1AD656A200671F29 /* icon */,
@@ -1474,6 +1487,19 @@
 			name = data;
 			sourceTree = "<group>";
 		};
+		A1F266F21ADA0BFC00C91D7C /* newtournament */ = {
+			isa = PBXGroup;
+			children = (
+				A1F266F31ADA0C1100C91D7C /* 1Top.png */,
+				A1F266F41ADA0C1100C91D7C /* 1v1.png */,
+				A1F266F51ADA0C1100C91D7C /* 2Bot.png */,
+				A1F266F61ADA0C1100C91D7C /* 5v5.png */,
+				A1F266F71ADA0C1100C91D7C /* solo.png */,
+				A1F266F81ADA0C1100C91D7C /* Tounament.png */,
+			);
+			name = newtournament;
+			sourceTree = "<group>";
+		};
 		A1FA7D6C1AD656A200671F29 /* icon */ = {
 			isa = PBXGroup;
 			children = (
@@ -1617,6 +1643,7 @@
 				A1B86ED11ACE406E00942626 /* 6.png in Resources */,
 				A13919181AA2C21D00CD232A /* LOL LOGO BLACK.png in Resources */,
 				A1B86ECD1ACE406E00942626 /* 56.png in Resources */,
+				A1F266FB1ADA0C1100C91D7C /* 2Bot.png in Resources */,
 				A1B86E7E1ACE406E00942626 /* 107.png in Resources */,
 				A139191E1AA2C21D00CD232A /* Public.png in Resources */,
 				A1B86EC81ACE406E00942626 /* 50.png in Resources */,
@@ -1660,6 +1687,7 @@
 				A1B86EBA1ACE406E00942626 /* 39.png in Resources */,
 				A1FA7D7B1AD656B400671F29 /* 120x120.png in Resources */,
 				A1B86EAB1ACE406E00942626 /* 267.png in Resources */,
+				A1F266FD1ADA0C1100C91D7C /* solo.png in Resources */,
 				A1B86E821ACE406E00942626 /* 112.png in Resources */,
 				A1B86ECF1ACE406E00942626 /* 58.png in Resources */,
 				42B85A251A748CDB00FD4642 /* button.png in Resources */,
@@ -1680,11 +1708,13 @@
 				42B85A241A748CDB00FD4642 /* backG.png in Resources */,
 				42855BA61A847D9F00EB9546 /* teambg .png in Resources */,
 				42F15D3A1ACF64A7004D64EF /* 2View.xib in Resources */,
+				A1F266FE1ADA0C1100C91D7C /* Tounament.png in Resources */,
 				A1B86E771ACE406E00942626 /* 10.png in Resources */,
 				A1B86EA21ACE406E00942626 /* 222.png in Resources */,
 				A13E54951AC6315B00FD45F6 /* bliz.png in Resources */,
 				4215A6701A7B45E1002EB62E /* speaker.png in Resources */,
 				A1DA6E101AC38DC00092C8A4 /* heise.png in Resources */,
+				A1F266FC1ADA0C1100C91D7C /* 5v5.png in Resources */,
 				A139191A1AA2C21D00CD232A /* mode_time框子.png in Resources */,
 				A1DA6E081AC389C60092C8A4 /* joinTeamButton.png in Resources */,
 				A12D3D4A1AD9FC7C00C2076A /* arrw.png in Resources */,
@@ -1762,6 +1792,7 @@
 				A1B86EE01ACE406E00942626 /* 78.png in Resources */,
 				A103113D1AA80A2F000B7BB3 /* tournamentNew.png in Resources */,
 				A1B86EEC1ACE406F00942626 /* 90.png in Resources */,
+				A1F266FA1ADA0C1100C91D7C /* 1v1.png in Resources */,
 				A1B86ED41ACE406E00942626 /* 62.png in Resources */,
 				A1B86E9E1ACE406E00942626 /* 20.png in Resources */,
 				A1B86E991ACE406E00942626 /* 161.png in Resources */,
@@ -1836,6 +1867,7 @@
 				A139190F1AA2C21D00CD232A /* BO3.png in Resources */,
 				42B85A2F1A74947E00FD4642 /* textField.png in Resources */,
 				A1B86E7D1ACE406E00942626 /* 106.png in Resources */,
+				A1F266F91ADA0C1100C91D7C /* 1Top.png in Resources */,
 				A18BF4351AA2F8EC000678F3 /* NEW SUMMONER PAGE_BG.png in Resources */,
 				A1F3AA621AB1753F00CD5ACE /* playnext.png in Resources */,
 				A1B86F1F1ACE6D9A00942626 /* DIAMOND V.png in Resources */,

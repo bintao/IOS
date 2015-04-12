@@ -38,7 +38,6 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
         // doens't appear if user haven't login
         RCIM.sharedRCIM().setReceiveMessageDelegate(self)
-        Tournament.getTournamentList()
         LolAPIGlobal.getlolvision()
         
     }

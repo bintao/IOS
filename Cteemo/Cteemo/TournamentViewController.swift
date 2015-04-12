@@ -21,6 +21,12 @@ class TournamentViewController: UIViewController {
     var joinTeam :String = ""
     var teams: [AnyObject] = [AnyObject]()
     
+    @IBOutlet var teamshamer: FBShimmeringView!
+    @IBOutlet var shamer: FBShimmeringView!
+    @IBOutlet var sologame: UIImageView!
+    
+    @IBOutlet var teamgame: UIImageView!
+    
     var solo : Bool = false
     
     override func viewDidAppear(animated: Bool) {
@@ -31,10 +37,14 @@ class TournamentViewController: UIViewController {
     
     
     override func viewDidLoad() {
+        
+        shamer.contentView = sologame
+        shamer.shimmering = true
+        teamshamer.contentView = teamgame
+        teamshamer.shimmering = true
         Tournament.getTournamentList()
         super.viewDidLoad()
        
-        constrain.constant = self.view.frame.width / 3
         // Do any additional setup after loading the view.
     }
 
@@ -56,12 +66,14 @@ class TournamentViewController: UIViewController {
         if segue.identifier == "gotoGame"{
             
             self.solo  = false
+            Tournament.key = Tournament.teamkey
             
             var controller: Tournament_game = segue.destinationViewController as Tournament_game
         }
         
         else if segue.identifier == "sologame"{
             
+            Tournament.key = Tournament.solokey
             self.solo  = true
             
         }

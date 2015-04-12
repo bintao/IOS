@@ -293,12 +293,12 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
             
         if TeamInfoGlobal.iscaptain != nil && TeamInfoGlobal.iscaptain == "yes"{
             
-            alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Join request", subTitle: username + " Want join your team ",closeButtonTitle: "Cancel", duration: 0.0)
+            alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x333333), title: "Join request", subTitle: username + " Want join your team ",closeButtonTitle: "Cancel", duration: 0.0)
         
         }
         else{
             
-            alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Invite request", subTitle: "I want to be part of " + username + "'s Team",closeButtonTitle: "Cancel", duration: 0.0)
+            alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x333333), title: "Invite request", subTitle: "I want to be part of " + username + "'s Team",closeButtonTitle: "Cancel", duration: 0.0)
             
         }
         
@@ -350,7 +350,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                
             }
             
-            alert.showCustom(self.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Invite request", subTitle: "I don't want to join " + username + "'s Team",closeButtonTitle: "Cancel", duration: 0.0)
+            alert.showCustom(self.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x333333), title: "Invite request", subTitle: "I don't want to join " + username + "'s Team",closeButtonTitle: "Cancel", duration: 0.0)
             
         }
         

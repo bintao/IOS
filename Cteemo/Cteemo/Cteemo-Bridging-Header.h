@@ -11,4 +11,6 @@
 #import <RCChatListViewController.h>
 #import "SCLAlertView.h"
 #import "MJRefresh.h"
-
+#import <FBShimmering.h>
+#import <FBShimmeringLayer.h>
+#import <FBShimmeringView.h>

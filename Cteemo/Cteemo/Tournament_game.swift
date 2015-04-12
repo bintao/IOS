@@ -16,6 +16,8 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     var joinTeam :String = ""
     var memberID = 0
     
+    var solo = false
+    
     var teams: [AnyObject] = [AnyObject]()
     
     //select tournament in list
@@ -34,13 +36,14 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         
        tableData.addSubview(refreshControl)
         
+        
         //Do any additional setup after loading the view.
     }
     
     func flashdata() {
-    
+        
         Tournament.getTournamentList()
-      
+        
         tableData.reloadData()
         self.refreshControl.endRefreshing()
     
@@ -160,7 +163,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                                 
                                 
                             }
-                            alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Free Tournament!", subTitle: "Dear captain, Do you want to Join " + name,closeButtonTitle: "Cancel", duration: 0.0)
+                            alert.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x333333), title: "Free Tournament!", subTitle: "Dear captain, Do you want to Join " + name,closeButtonTitle: "Cancel", duration: 0.0)
                             
                             
                         }

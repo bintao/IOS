@@ -232,7 +232,7 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
             }
             
             
-            alert.showCustom(self.parentViewController?.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Invite request", subTitle: "I want to invite " + username,closeButtonTitle: "Cancel", duration: 0.0)
+            alert.showCustom(self.parentViewController?.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x333333), title: "Invite request", subTitle: "I want to invite " + username,closeButtonTitle: "Cancel", duration: 0.0)
             
         }
         

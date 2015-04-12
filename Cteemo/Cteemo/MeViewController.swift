@@ -208,7 +208,7 @@ class MeViewController: UIViewController  {
              ((self.parentViewController as UINavigationController).parentViewController as MainViewController).logout()
             
         })
-       alert1.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x2ECC71), title: "Log out CTeemo", subTitle: "Play tournament next time~ ",closeButtonTitle: "Cancel", duration: 0.0)
+       alert1.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x333333), title: "Log out CTeemo", subTitle: "Play tournament next time~ ",closeButtonTitle: "Cancel", duration: 0.0)
         
     }
     
