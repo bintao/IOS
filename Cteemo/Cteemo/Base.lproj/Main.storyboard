@@ -1469,13 +1469,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9kW-7L-WH5">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9kW-7L-WH5">
                                 <rect key="frame" x="0.0" y="64" width="375" height="275"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJF-yS-q4Q">
-                                        <rect key="frame" x="0.0" y="0.0" width="376" height="275"/>
+                                        <rect key="frame" x="-1" y="0.0" width="376" height="275"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="rJF-yS-q4Q" secondAttribute="height" multiplier="376:257" id="Fit-Hh-E2g"/>
+                                            <constraint firstAttribute="width" secondItem="rJF-yS-q4Q" secondAttribute="height" multiplier="376:275" id="IH8-Up-0Qo"/>
                                             <constraint firstAttribute="width" secondItem="rJF-yS-q4Q" secondAttribute="height" multiplier="376:275" id="LxY-yh-W2C"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="1Top.png">
@@ -1484,6 +1485,7 @@
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="Fit-Hh-E2g"/>
+                                                <exclude reference="IH8-Up-0Qo"/>
                                                 <exclude reference="LxY-yh-W2C"/>
                                             </mask>
                                         </variation>
@@ -1491,31 +1493,56 @@
                                             <segue destination="lki-Wn-9da" kind="show" identifier="gotoGame" id="ghN-ly-d3N"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="5v5.png" translatesAutoresizingMaskIntoConstraints="NO" id="xQX-l5-QAn">
-                                        <rect key="frame" x="200" y="54" width="167" height="86"/>
-                                    </imageView>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gh1-gZ-jBS" customClass="FBShimmeringView">
-                                        <rect key="frame" x="187" y="20" width="188" height="64"/>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gh1-gZ-jBS" customClass="FBShimmeringView">
+                                        <rect key="frame" x="187" y="14" width="178" height="61"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Tounament.png" translatesAutoresizingMaskIntoConstraints="NO" id="lrr-zN-Go7">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Tounament.png" translatesAutoresizingMaskIntoConstraints="NO" id="lrr-zN-Go7">
                                                 <rect key="frame" x="16" y="8" width="156" height="45"/>
                                             </imageView>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="lrr-zN-Go7" firstAttribute="leading" secondItem="gh1-gZ-jBS" secondAttribute="leading" id="K4c-fp-fkj"/>
+                                            <constraint firstAttribute="width" secondItem="gh1-gZ-jBS" secondAttribute="height" multiplier="47:16" id="Lad-uX-y6D"/>
+                                            <constraint firstAttribute="trailing" secondItem="lrr-zN-Go7" secondAttribute="trailing" id="VQB-ng-TBB"/>
+                                            <constraint firstAttribute="bottom" secondItem="lrr-zN-Go7" secondAttribute="bottom" id="aEb-5M-cO7"/>
+                                            <constraint firstItem="lrr-zN-Go7" firstAttribute="top" secondItem="gh1-gZ-jBS" secondAttribute="top" id="fwu-cH-638"/>
+                                        </constraints>
                                     </view>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="5v5.png" translatesAutoresizingMaskIntoConstraints="NO" id="xQX-l5-QAn">
+                                        <rect key="frame" x="198" y="86" width="167" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="xQX-l5-QAn" secondAttribute="height" multiplier="167:80" id="0Mp-2z-Cjv"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="xQX-l5-QAn" secondAttribute="bottom" constant="109" id="0Zo-4g-JZ8"/>
                                     <constraint firstAttribute="width" secondItem="9kW-7L-WH5" secondAttribute="height" multiplier="15:11" id="8WP-HA-PYv"/>
+                                    <constraint firstItem="xQX-l5-QAn" firstAttribute="top" secondItem="gh1-gZ-jBS" secondAttribute="bottom" constant="-10" id="GF0-kW-mwO"/>
+                                    <constraint firstItem="xQX-l5-QAn" firstAttribute="leading" secondItem="9kW-7L-WH5" secondAttribute="leading" constant="180" id="P4j-uR-3NY"/>
                                     <constraint firstAttribute="bottom" secondItem="rJF-yS-q4Q" secondAttribute="bottom" id="PeC-6O-ODW"/>
+                                    <constraint firstItem="gh1-gZ-jBS" firstAttribute="leading" secondItem="9kW-7L-WH5" secondAttribute="leading" constant="180" id="Q60-SO-3D3"/>
                                     <constraint firstItem="rJF-yS-q4Q" firstAttribute="top" secondItem="9kW-7L-WH5" secondAttribute="top" id="Vax-cO-RaI"/>
+                                    <constraint firstAttribute="trailing" secondItem="xQX-l5-QAn" secondAttribute="trailing" constant="10" id="ZV8-nw-4V2"/>
                                     <constraint firstAttribute="trailing" secondItem="rJF-yS-q4Q" secondAttribute="trailing" id="dVg-so-ozk"/>
+                                    <constraint firstAttribute="trailing" secondItem="gh1-gZ-jBS" secondAttribute="trailing" constant="10" id="eBP-7A-B2L"/>
+                                    <constraint firstItem="gh1-gZ-jBS" firstAttribute="top" secondItem="9kW-7L-WH5" secondAttribute="top" constant="14" id="n2l-iq-nsk"/>
+                                    <constraint firstItem="gh1-gZ-jBS" firstAttribute="leading" secondItem="9kW-7L-WH5" secondAttribute="leading" constant="187" id="oxZ-LN-akv"/>
                                     <constraint firstItem="rJF-yS-q4Q" firstAttribute="leading" secondItem="9kW-7L-WH5" secondAttribute="leading" id="p5P-0M-RAW"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="8WP-HA-PYv"/>
+                                        <exclude reference="oxZ-LN-akv"/>
+                                        <exclude reference="0Zo-4g-JZ8"/>
+                                    </mask>
+                                </variation>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqw-IJ-osO">
-                                <rect key="frame" x="0.0" y="342" width="375" height="275"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eqw-IJ-osO">
+                                <rect key="frame" x="0.0" y="411" width="375" height="275"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozM-mT-b0s">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ozM-mT-b0s">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="275"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="ozM-mT-b0s" secondAttribute="height" multiplier="15:11" id="NEN-1I-R47"/>
@@ -1535,30 +1562,80 @@
                                             <segue destination="lki-Wn-9da" kind="show" identifier="sologame" id="os6-PX-mud"/>
                                         </connections>
                                     </button>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7wN-g0-2jG">
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7wN-g0-2jG">
                                         <rect key="frame" x="18" y="69" width="188" height="138"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1v1.png" translatesAutoresizingMaskIntoConstraints="NO" id="t5N-Z6-MMh">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="1v1.png" translatesAutoresizingMaskIntoConstraints="NO" id="t5N-Z6-MMh">
                                                 <rect key="frame" x="2" y="54" width="184" height="84"/>
                                             </imageView>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUi-Et-UUj" customClass="FBShimmeringView">
-                                                <rect key="frame" x="8" y="0.0" width="161" height="66"/>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HUi-Et-UUj" customClass="FBShimmeringView">
+                                                <rect key="frame" x="8" y="0.0" width="150" height="37"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="solo.png" translatesAutoresizingMaskIntoConstraints="NO" id="aoB-8d-V6L">
-                                                        <rect key="frame" x="6" y="11" width="148" height="47"/>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="solo.png" translatesAutoresizingMaskIntoConstraints="NO" id="aoB-8d-V6L">
+                                                        <rect key="frame" x="0.0" y="0.0" width="148" height="37"/>
                                                     </imageView>
                                                 </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="aoB-8d-V6L" secondAttribute="bottom" id="Ajy-wP-Eah"/>
+                                                    <constraint firstItem="aoB-8d-V6L" firstAttribute="top" secondItem="HUi-Et-UUj" secondAttribute="top" id="Ktm-UX-Wjn"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aoB-8d-V6L" secondAttribute="trailing" id="N2H-k8-RgO"/>
+                                                    <constraint firstAttribute="width" secondItem="HUi-Et-UUj" secondAttribute="height" multiplier="4:1" id="ZDp-MO-laF"/>
+                                                    <constraint firstItem="aoB-8d-V6L" firstAttribute="leading" secondItem="HUi-Et-UUj" secondAttribute="leading" id="gkk-xA-EDu"/>
+                                                </constraints>
                                             </view>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="t5N-Z6-MMh" firstAttribute="leading" secondItem="7wN-g0-2jG" secondAttribute="leading" constant="-10" id="6oR-Yl-yoC"/>
+                                            <constraint firstAttribute="trailing" secondItem="t5N-Z6-MMh" secondAttribute="trailing" constant="-10" id="As5-77-Q1j"/>
+                                            <constraint firstAttribute="trailing" secondItem="HUi-Et-UUj" secondAttribute="trailing" id="HDx-Pu-FCp"/>
+                                            <constraint firstItem="HUi-Et-UUj" firstAttribute="top" secondItem="7wN-g0-2jG" secondAttribute="top" id="KPU-yS-TGD"/>
+                                            <constraint firstItem="HUi-Et-UUj" firstAttribute="top" secondItem="7wN-g0-2jG" secondAttribute="top" id="Khc-mr-R4D"/>
+                                            <constraint firstAttribute="bottom" secondItem="t5N-Z6-MMh" secondAttribute="bottom" id="XSO-WI-Y93"/>
+                                            <constraint firstAttribute="width" secondItem="7wN-g0-2jG" secondAttribute="height" multiplier="94:69" id="hXs-77-h7S"/>
+                                            <constraint firstAttribute="centerX" secondItem="HUi-Et-UUj" secondAttribute="centerX" id="l8F-Ag-jDg"/>
+                                            <constraint firstItem="t5N-Z6-MMh" firstAttribute="top" secondItem="HUi-Et-UUj" secondAttribute="bottom" constant="-5" id="qYa-Mg-eSh"/>
+                                            <constraint firstAttribute="width" secondItem="7wN-g0-2jG" secondAttribute="height" multiplier="94:69" id="qwf-xR-SdJ"/>
+                                            <constraint firstAttribute="centerX" secondItem="t5N-Z6-MMh" secondAttribute="centerX" id="upZ-am-F2d"/>
+                                            <constraint firstItem="HUi-Et-UUj" firstAttribute="leading" secondItem="7wN-g0-2jG" secondAttribute="leading" id="zcC-LN-3Rx"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="qwf-xR-SdJ"/>
+                                                <exclude reference="Khc-mr-R4D"/>
+                                                <exclude reference="l8F-Ag-jDg"/>
+                                                <exclude reference="upZ-am-F2d"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="7wN-g0-2jG" secondAttribute="bottom" constant="68" id="5G9-t6-cXk"/>
                                     <constraint firstItem="ozM-mT-b0s" firstAttribute="top" secondItem="eqw-IJ-osO" secondAttribute="top" id="IEK-Vg-mnF"/>
+                                    <constraint firstItem="7wN-g0-2jG" firstAttribute="top" secondItem="eqw-IJ-osO" secondAttribute="top" constant="69" id="P55-zr-6mB"/>
+                                    <constraint firstAttribute="centerY" secondItem="7wN-g0-2jG" secondAttribute="centerY" id="YwG-OA-kOx"/>
                                     <constraint firstAttribute="trailing" secondItem="ozM-mT-b0s" secondAttribute="trailing" id="c7w-5s-TR0"/>
                                     <constraint firstAttribute="width" secondItem="eqw-IJ-osO" secondAttribute="height" multiplier="15:11" id="eaR-Fy-OmH"/>
+                                    <constraint firstAttribute="trailing" secondItem="7wN-g0-2jG" secondAttribute="trailing" constant="169" id="kLZ-Fk-aql"/>
+                                    <constraint firstAttribute="bottom" secondItem="7wN-g0-2jG" secondAttribute="bottom" constant="68" id="ph0-qH-hHg"/>
                                     <constraint firstAttribute="bottom" secondItem="ozM-mT-b0s" secondAttribute="bottom" id="q8r-4A-jTQ"/>
                                     <constraint firstItem="ozM-mT-b0s" firstAttribute="leading" secondItem="eqw-IJ-osO" secondAttribute="leading" id="ush-nS-L5r"/>
+                                    <constraint firstItem="7wN-g0-2jG" firstAttribute="leading" secondItem="eqw-IJ-osO" secondAttribute="leading" constant="18" id="xX9-jU-kIz"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="eaR-Fy-OmH"/>
+                                        <exclude reference="YwG-OA-kOx"/>
+                                        <exclude reference="kLZ-Fk-aql"/>
+                                        <exclude reference="ph0-qH-hHg"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="c53-My-zmx">
+                                <rect key="frame" x="0.0" y="354" width="375" height="20"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="LYA-rV-CHr"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -1566,12 +1643,25 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="9kW-7L-WH5" firstAttribute="top" secondItem="u2k-pL-fgA" secondAttribute="bottom" id="2e2-FD-j61"/>
+                            <constraint firstItem="eqw-IJ-osO" firstAttribute="top" secondItem="c53-My-zmx" secondAttribute="bottom" id="3RV-X9-zBR"/>
                             <constraint firstItem="1WX-ke-7T8" firstAttribute="top" secondItem="eqw-IJ-osO" secondAttribute="bottom" constant="50" id="7eT-wf-JHN"/>
+                            <constraint firstItem="c53-My-zmx" firstAttribute="top" secondItem="9kW-7L-WH5" secondAttribute="bottom" id="9iv-sY-Bdp"/>
                             <constraint firstAttribute="trailing" secondItem="eqw-IJ-osO" secondAttribute="trailing" id="Tam-Iv-b5S"/>
+                            <constraint firstAttribute="centerY" secondItem="c53-My-zmx" secondAttribute="centerY" id="dtm-3R-lte"/>
                             <constraint firstAttribute="trailing" secondItem="9kW-7L-WH5" secondAttribute="trailing" id="go3-dA-j0U"/>
                             <constraint firstItem="eqw-IJ-osO" firstAttribute="leading" secondItem="HA5-bj-XDP" secondAttribute="leading" id="iNl-8L-tyu"/>
+                            <constraint firstAttribute="centerY" secondItem="c53-My-zmx" secondAttribute="centerY" id="mq6-7Z-WLC"/>
+                            <constraint firstItem="c53-My-zmx" firstAttribute="leading" secondItem="HA5-bj-XDP" secondAttribute="leading" id="v1J-a6-nek"/>
+                            <constraint firstItem="eqw-IJ-osO" firstAttribute="top" secondItem="9kW-7L-WH5" secondAttribute="bottom" constant="3" id="wYK-r9-l2i"/>
                             <constraint firstItem="9kW-7L-WH5" firstAttribute="leading" secondItem="HA5-bj-XDP" secondAttribute="leading" id="wdB-mF-RfU"/>
+                            <constraint firstAttribute="trailing" secondItem="c53-My-zmx" secondAttribute="trailing" id="y7C-Oe-anA"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="mq6-7Z-WLC"/>
+                                <exclude reference="wYK-r9-l2i"/>
+                            </mask>
+                        </variation>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="TOURNAMENT" id="qno-qw-Agn">
@@ -1588,7 +1678,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ri6-du-Sxk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5543.5" y="-1343.5"/>
+            <point key="canvasLocation" x="5543.5" y="-1337.5"/>
         </scene>
         <!--Tournament game-->
         <scene sceneID="PL8-7R-Wb3">
@@ -3490,6 +3580,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="6oO-tp-J5o"/>
                                             <constraint firstAttribute="width" constant="60" id="FZ5-9c-E1y"/>
+                                            <constraint firstAttribute="width" secondItem="Jrp-wv-CD1" secondAttribute="height" multiplier="1:1" id="Lz8-qD-Sla"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="Mv1-e6-swG"/>
                                             <constraint firstAttribute="width" constant="38" id="aOj-mu-qS1"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="bJb-Jy-BqL"/>
@@ -3499,6 +3590,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                                 <exclude reference="6oO-tp-J5o"/>
                                                 <exclude reference="FZ5-9c-E1y"/>
                                                 <exclude reference="Mv1-e6-swG"/>
+                                                <exclude reference="aOj-mu-qS1"/>
                                                 <exclude reference="bJb-Jy-BqL"/>
                                             </mask>
                                         </variation>
@@ -3624,6 +3716,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         <rect key="frame" x="19" y="11" width="38" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="38" id="JLE-c0-p3Q"/>
+                                            <constraint firstAttribute="width" secondItem="IKM-vf-fUO" secondAttribute="height" multiplier="1:1" id="gV6-wQ-DQX"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="hyM-Lb-bhx"/>
                                             <constraint firstAttribute="width" constant="60" id="jlM-Ak-MJb"/>
                                             <constraint firstAttribute="height" constant="60" id="sJp-mD-h7N"/>
@@ -3631,6 +3724,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
+                                                <exclude reference="JLE-c0-p3Q"/>
                                                 <exclude reference="hyM-Lb-bhx"/>
                                                 <exclude reference="jlM-Ak-MJb"/>
                                                 <exclude reference="sJp-mD-h7N"/>
@@ -3692,6 +3786,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                     <constraint firstAttribute="trailing" secondItem="jsa-gu-i0b" secondAttribute="trailing" id="4fO-Fh-8JS"/>
                                     <constraint firstAttribute="trailing" secondItem="E20-JO-FjB" secondAttribute="trailing" id="8wa-rB-WWl"/>
                                     <constraint firstItem="jsa-gu-i0b" firstAttribute="top" secondItem="Zgo-0a-YGF" secondAttribute="top" id="9QY-zv-52G"/>
+                                    <constraint firstItem="E20-JO-FjB" firstAttribute="top" secondItem="IKM-vf-fUO" secondAttribute="bottom" constant="10" id="D5s-pH-7cO"/>
                                     <constraint firstItem="E20-JO-FjB" firstAttribute="top" secondItem="IKM-vf-fUO" secondAttribute="bottom" constant="6" id="Gsv-Th-mBu"/>
                                     <constraint firstItem="IKM-vf-fUO" firstAttribute="leading" secondItem="Zgo-0a-YGF" secondAttribute="leading" constant="19" id="IoX-3k-Tob"/>
                                     <constraint firstAttribute="bottom" secondItem="E20-JO-FjB" secondAttribute="bottom" id="Lyo-0J-cRh"/>
@@ -3727,6 +3822,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         <exclude reference="YUy-ak-VJ3"/>
                                         <exclude reference="cCo-ac-dU3"/>
                                         <exclude reference="fCc-d5-awF"/>
+                                        <exclude reference="oSL-Q8-TZV"/>
                                         <exclude reference="e2p-VY-UOH"/>
                                         <exclude reference="yfl-WE-1Ft"/>
                                         <exclude reference="ydP-s2-tCG"/>
@@ -3740,6 +3836,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         <rect key="frame" x="17" y="19" width="53" height="42"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="GOj-He-jyh"/>
+                                            <constraint firstAttribute="width" secondItem="oSf-Gd-pDn" secondAttribute="height" multiplier="53:42" id="Pvh-yc-4sA"/>
                                             <constraint firstAttribute="width" constant="60" id="VhB-t2-zq4"/>
                                             <constraint firstAttribute="height" constant="60" id="aE9-gG-1o5"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="voP-Tn-ZAF"/>
@@ -3784,8 +3881,8 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                             <constraint firstAttribute="width" constant="15" id="wn2-7i-V18"/>
                                         </constraints>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Messages" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AI0-1m-W69">
-                                        <rect key="frame" x="105" y="29" width="200" height="23"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Messages" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AI0-1m-W69">
+                                        <rect key="frame" x="100" y="29" width="200" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="BSW-RH-Hmv"/>
                                             <constraint firstAttribute="height" constant="24" id="Zct-Ay-BaE"/>
@@ -3799,19 +3896,8 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                             </mask>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esr-mH-iFh">
-                                        <rect key="frame" x="53" y="6" width="30" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="DQ1-ZS-lSI"/>
-                                            <constraint firstAttribute="height" constant="30" id="NmM-Q8-Yai"/>
-                                        </constraints>
-                                        <state key="normal">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUO-Lf-NZo">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUO-Lf-NZo">
+                                        <rect key="frame" x="100" y="0.0" width="375" height="80"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="ihG-88-FXL"/>
                                             <constraint firstAttribute="width" constant="375" id="ml0-FG-ZPy"/>
@@ -3829,11 +3915,32 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                             <action selector="getlist:" destination="rdl-cK-aoW" eventType="touchUpInside" id="xe6-fC-UNc"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Esr-mH-iFh">
+                                        <rect key="frame" x="78" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="BJY-LZ-RPg"/>
+                                            <constraint firstAttribute="width" constant="30" id="DQ1-ZS-lSI"/>
+                                            <constraint firstAttribute="height" constant="30" id="NmM-Q8-Yai"/>
+                                            <constraint firstAttribute="width" constant="25" id="SRS-CE-GRG"/>
+                                            <constraint firstAttribute="width" secondItem="Esr-mH-iFh" secondAttribute="height" multiplier="1:1" id="dYP-so-MEw"/>
+                                        </constraints>
+                                        <state key="normal">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="DQ1-ZS-lSI"/>
+                                                <exclude reference="NmM-Q8-Yai"/>
+                                                <exclude reference="dYP-so-MEw"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="oSf-Gd-pDn" firstAttribute="top" secondItem="c8h-Nq-Grc" secondAttribute="bottom" constant="18" id="0L6-Gw-yLd"/>
-                                    <constraint firstItem="AI0-1m-W69" firstAttribute="leading" secondItem="oSf-Gd-pDn" secondAttribute="trailing" constant="35" id="20V-5q-NTN"/>
+                                    <constraint firstItem="AI0-1m-W69" firstAttribute="leading" secondItem="oSf-Gd-pDn" secondAttribute="trailing" constant="30" id="20V-5q-NTN"/>
                                     <constraint firstItem="xUO-Lf-NZo" firstAttribute="leading" secondItem="x2z-Qw-fum" secondAttribute="leading" id="6tY-O1-8Ny"/>
                                     <constraint firstItem="AI0-1m-W69" firstAttribute="top" secondItem="c8h-Nq-Grc" secondAttribute="bottom" constant="24" id="9Ex-bA-Uju"/>
                                     <constraint firstItem="hRy-AF-VvU" firstAttribute="leading" secondItem="x2z-Qw-fum" secondAttribute="leading" id="CLr-VB-YeI"/>
@@ -3844,6 +3951,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                     <constraint firstItem="hRy-AF-VvU" firstAttribute="top" secondItem="oSf-Gd-pDn" secondAttribute="bottom" constant="18" id="L5d-tf-74U"/>
                                     <constraint firstItem="Esr-mH-iFh" firstAttribute="leading" secondItem="x2z-Qw-fum" secondAttribute="leading" constant="53" id="LuR-jj-6YF"/>
                                     <constraint firstAttribute="trailing" secondItem="hRy-AF-VvU" secondAttribute="trailing" id="P7a-Vh-H6P"/>
+                                    <constraint firstItem="hRy-AF-VvU" firstAttribute="top" secondItem="Esr-mH-iFh" secondAttribute="bottom" constant="43" id="Pzb-b8-dl1"/>
                                     <constraint firstAttribute="centerY" secondItem="P3v-Ye-jeh" secondAttribute="centerY" id="Q8i-Tu-RHe"/>
                                     <constraint firstItem="c8h-Nq-Grc" firstAttribute="leading" secondItem="x2z-Qw-fum" secondAttribute="leading" id="QDo-w8-SaA"/>
                                     <constraint firstItem="Esr-mH-iFh" firstAttribute="top" secondItem="c8h-Nq-Grc" secondAttribute="bottom" constant="5" id="RE7-yP-uZE"/>
@@ -3851,6 +3959,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                     <constraint firstItem="hRy-AF-VvU" firstAttribute="top" secondItem="oSf-Gd-pDn" secondAttribute="bottom" constant="6" id="S8q-Vq-OxD"/>
                                     <constraint firstAttribute="bottom" secondItem="hRy-AF-VvU" secondAttribute="bottom" id="UAe-V2-z2B"/>
                                     <constraint firstItem="hRy-AF-VvU" firstAttribute="top" secondItem="oSf-Gd-pDn" secondAttribute="bottom" constant="6" id="V0B-KC-IHm"/>
+                                    <constraint firstItem="Esr-mH-iFh" firstAttribute="leading" secondItem="oSf-Gd-pDn" secondAttribute="trailing" constant="-10" id="Vyt-4S-JYU"/>
                                     <constraint firstAttribute="width" secondItem="x2z-Qw-fum" secondAttribute="height" multiplier="75:16" id="YgY-EB-LmT"/>
                                     <constraint firstAttribute="width" constant="375" id="cIe-cf-gJP"/>
                                     <constraint firstItem="P3v-Ye-jeh" firstAttribute="top" secondItem="c8h-Nq-Grc" secondAttribute="bottom" constant="26" id="cVe-7m-jlk"/>
@@ -3866,6 +3975,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                     <constraint firstItem="c8h-Nq-Grc" firstAttribute="leading" secondItem="x2z-Qw-fum" secondAttribute="leading" id="x9w-sQ-0xv"/>
                                     <constraint firstAttribute="centerX" secondItem="hRy-AF-VvU" secondAttribute="centerX" id="xTD-tZ-dVA"/>
                                     <constraint firstAttribute="trailing" secondItem="c8h-Nq-Grc" secondAttribute="trailing" id="xX8-32-d1v"/>
+                                    <constraint firstItem="hRy-AF-VvU" firstAttribute="top" secondItem="oSf-Gd-pDn" secondAttribute="bottom" constant="18" id="xcd-Ec-usv"/>
                                     <constraint firstAttribute="bottom" secondItem="xUO-Lf-NZo" secondAttribute="bottom" id="zmM-kr-0pc"/>
                                 </constraints>
                                 <variation key="default">
@@ -3875,12 +3985,16 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         <exclude reference="iZH-ab-j5z"/>
                                         <exclude reference="x9w-sQ-0xv"/>
                                         <exclude reference="CjA-tr-SrP"/>
+                                        <exclude reference="LuR-jj-6YF"/>
+                                        <exclude reference="L5d-tf-74U"/>
                                         <exclude reference="P7a-Vh-H6P"/>
+                                        <exclude reference="Pzb-b8-dl1"/>
                                         <exclude reference="S8q-Vq-OxD"/>
                                         <exclude reference="V0B-KC-IHm"/>
                                         <exclude reference="jnG-DG-up0"/>
                                         <exclude reference="jrS-2b-eUD"/>
                                         <exclude reference="qaL-65-s5P"/>
+                                        <exclude reference="20V-5q-NTN"/>
                                         <exclude reference="9Ex-bA-Uju"/>
                                         <exclude reference="cVe-7m-jlk"/>
                                     </mask>
@@ -3898,12 +4012,14 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                             <constraint firstAttribute="width" constant="38" id="Jw6-kQ-OYV"/>
                                             <constraint firstAttribute="width" constant="46" id="PVg-NP-9zp"/>
                                             <constraint firstAttribute="width" constant="60" id="Tnb-nu-wyL"/>
+                                            <constraint firstAttribute="width" secondItem="aeT-zb-ZCB" secondAttribute="height" multiplier="1:1" id="yBJ-0q-y0T"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
                                                 <exclude reference="2ef-s2-w81"/>
                                                 <exclude reference="859-NZ-Bux"/>
                                                 <exclude reference="IdN-Hl-QnM"/>
+                                                <exclude reference="Jw6-kQ-OYV"/>
                                                 <exclude reference="PVg-NP-9zp"/>
                                                 <exclude reference="Tnb-nu-wyL"/>
                                             </mask>
@@ -4026,6 +4142,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         <rect key="frame" x="19" y="11" width="38" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="8cQ-dV-tVl"/>
+                                            <constraint firstAttribute="width" secondItem="d7d-mP-7LU" secondAttribute="height" multiplier="1:1" id="Q0T-as-UIx"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="X8v-TZ-dBn"/>
                                             <constraint firstAttribute="width" constant="38" id="fB3-FE-Hai"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="gfR-Tr-iTX"/>
@@ -4035,6 +4152,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                             <mask key="constraints">
                                                 <exclude reference="8cQ-dV-tVl"/>
                                                 <exclude reference="X8v-TZ-dBn"/>
+                                                <exclude reference="fB3-FE-Hai"/>
                                                 <exclude reference="gfR-Tr-iTX"/>
                                                 <exclude reference="xkT-nF-Mpp"/>
                                             </mask>
@@ -4468,9 +4586,9 @@ Cteemo can determine your game result automatically. Please click “get tournam
         <image name="white.png" width="1200" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="1TS-hj-YUx"/>
         <segue reference="WGx-hs-GOh"/>
-        <segue reference="os6-PX-mud"/>
+        <segue reference="ghN-ly-d3N"/>
+        <segue reference="1TS-hj-YUx"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
 </document>

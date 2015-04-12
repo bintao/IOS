@@ -12,7 +12,7 @@ var LolAPIGlobal: LolAPI = LolAPI()
 
 class LolAPI: NSObject{
     
-    let key = "dbb5810d-9b30-4d9d-85d0-1f58aadb8ec6"
+    let key = "ada8d21b-db43-414e-a8b3-fe7718de6626"
     
     var lolID :String!
     var lolRank: String!

@@ -37,10 +37,7 @@ class Tournament_joined: UIViewController {
         
     
         super.viewDidLoad()
-        self.Tournamentname = Tournament.tournamentName[self.gamenumber] as String
         navigation.title = self.Tournamentname
-       
-        
         
         // Do any additional setup after loading the view.
     }
@@ -48,7 +45,6 @@ class Tournament_joined: UIViewController {
     override func viewDidAppear(animated: Bool) {
         
         self.searchmyid()
-        self.Tournamentname = Tournament.tournamentName[self.gamenumber] as String
         self.navigationController?.navigationItem.title = self.Tournamentname
         self.type.text = self.TournamentType
         self.time.text = self.starttime
@@ -170,15 +166,14 @@ class Tournament_joined: UIViewController {
            
             var controller: Bracket = segue.destinationViewController as Bracket
        
-            controller.url = Tournament.tournamentUrl[self.gamenumber] as String
+            controller.url = self.url
             
         }
         else if segue.identifier == "playnextgame"{
             
-             var controller: Tournament_playnext = segue.destinationViewController as Tournament_playnext
-            
+            var controller: Tournament_playnext = segue.destinationViewController as Tournament_playnext
             controller.myteamid = self.memberID
-           controller.tournamentname = self.Tournamentname
+            controller.tournamentname = self.Tournamentname
             controller.url = self.url
             controller.starttimetext = self.starttime
         }
@@ -202,7 +197,6 @@ class Tournament_joined: UIViewController {
     
     func searchmyid() {
      
-        
         if TeamInfoGlobal.teamName != nil {
         var myteamname = TeamInfoGlobal.teamName
         var par : [String: AnyObject] = ["api_key":Tournament.key]

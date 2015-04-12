@@ -136,8 +136,6 @@ class Tournament_startgame: UIViewController {
                     let myjson = JSON(JSONdata!)
                     
                     if let player = myjson["participants"].array{
-                    println( player)
-                    println(player.count)
                     
                     if player.count != 0 {
                         
@@ -146,10 +144,6 @@ class Tournament_startgame: UIViewController {
                             
                             if let champion = myjson["participants"][i]["championId"].int
                             {
-                                
-                                println(champion)
-                                
-                                println(self.mychampion)
                                 
                                 if self.mychampion == champion {
                                     

@@ -11,6 +11,20 @@ import UIKit
 import Foundation
 
 
+struct Tournamentdata {
+    
+    
+    var name = String()
+    var url = String()
+    var id = Int()
+    var gameName = String()
+    var startTime = String()
+    var joinedmember = Int()
+    var type = String()
+    var group = Int()
+    var max = Int()
+    
+}
 
 var Tournament: TournamentAPI = TournamentAPI()
 
@@ -20,28 +34,165 @@ class TournamentAPI: NSObject{
     
     var key = "OzVqaaqFdjiuTGPbbeQfvpgHxnIcquz6yh5LSwep"
     
-    
     let teamkey = "OzVqaaqFdjiuTGPbbeQfvpgHxnIcquz6yh5LSwep"
     let solokey = "QTDlzXYOuaeOSP2nyPfroTg2tiyoHF4EWjnYS6fo"
     
-    // for tournament
-    var totalnumber = 0
-    var tournamentName: [AnyObject] = [AnyObject]()
-    var tournamentUrl: [AnyObject] = [AnyObject]()
-    var tournamentID: [AnyObject] = [AnyObject]()
-    var gameName : [AnyObject] = [AnyObject]()
-    var startTime : [AnyObject] = [AnyObject]()
-    var totalMember : [AnyObject] = [AnyObject]()
-    var tournamentType : [AnyObject] = [AnyObject]()
-    var groupstage: [AnyObject] = [AnyObject]()
-    var maxteam :[AnyObject] = [AnyObject]()
+    var soloTournaments :[Tournamentdata] = []
+    var teamTournaments :[Tournamentdata] = []
+    
+    // for tournamen
     
     // for teams
     var teams :[AnyObject] = [AnyObject]()
     var memberid = 0
-    func getArray(){
+    
+    
+    func gettournamentdata(solo: Bool) {
+     
+       
+        var key = ""
+        
+        if solo {
+            key = self.solokey
+        }
+        else{
+        
+            key = self.teamkey
+        }
+        
+        var par : [String: AnyObject] = ["api_key": key]
+        
+        var req = request(.GET,"https://api.challonge.com/v1/tournaments.json",parameters:par)
+            .responseJSON { (_, _, JSONdata, _) in
+                if JSONdata != nil{
+                    let myjson = JSON(JSONdata!)
+                    var totaltournament = myjson.count
+                    if myjson.count != 0 {
+                        for i in 0...myjson.count-1{
+                            
+                            var tournament = Tournamentdata()
+                            
+                            
+                            if let url = myjson[i]["tournament"]["url"].string
+                            {
+                                 tournament.url = url
+                            }
+                            
+                            if let name = myjson[i]["tournament"]["name"].string{
+                                
+                                tournament.name = name
+                            }
+                            
+                            if let id = myjson[i]["tournament"]["id"].int{
+                                
+                               tournament.id = id
+                            }
+                            
+                            if let type = myjson[i]["tournament"]["tournament_type"].string{
+                                
+                              tournament.type = type
+                            }
+                            else{
+                                 tournament.type = "noType"
+                            }
+                            
+                            
+                            if let teams = myjson[i]["tournament"]["participants_count"].int{
+                                tournament.joinedmember = teams
+                            }
+                            
+                            if let start = myjson[i]["tournament"]["start_at"].string{
+                                tournament.startTime = start
+                            }
+                            else{
+                                tournament.startTime = "noTime"
+                            }
+                            
+                            if let game = myjson[i]["tournament"]["game_name"].string{
+                                tournament.gameName = game
+                            
+                            }
+                            else {
+                                 tournament.gameName = "noGame"
+                            }
+                            
+                            
+                            if let group = myjson[i]["tournament"]["group_stages_enabled"].int{
+                                 tournament.group = group
+                            }
+                            
+                            if let max = myjson[i]["tournament"]["signup_cap"].int{
+                              tournament.max = max
+                                
+                            }
+                            else{ tournament.max = 256}
+                            
+                            
+                            if solo {
+                            
+                                
+                                println(tournament.name)
+                                
+                                if self.soloTournaments.count < myjson.count{
+                                
+                                    self.soloTournaments.append(tournament)
+                                
+                                }else{
+                                
+                                    self.soloTournaments[i] = tournament
+                                }
+                            
+                            
+                            }
+                            else{
+                                
+                                println(tournament.name)
+                                println("sdsdsd")
+                                
+                                if self.teamTournaments.count < myjson.count{
+                                    
+                                    self.teamTournaments.append(tournament)
+                                    
+                                }
+                                else{
+                                    
+                                self.teamTournaments[i] = tournament
+                                
+                                }
+                            
+                            
+                            }
+                            
+                            
+                        }//end for
+                        
+                        
+                    }//end myjson
+                   
+                }//end nil
+        
+        
+        }//end request
+        
+        
+    
+    }
+    
+    
+    
+    func getsolodata(){
+        
+        gettournamentdata(true)
         
     }
+    
+    func getteamdata(){
+        
+        gettournamentdata(false)
+        
+    }
+    
+    
    /* POST https://challonge.com/api/tournaments.{json|xml}
     
     http://api.challonge.com/v1/documents/tournaments/create
@@ -61,22 +212,9 @@ class TournamentAPI: NSObject{
         }
     
     }
-    func resetdata(){
-        
-        self.tournamentName.removeAll()
-        self.tournamentName.removeAll()
-        self.tournamentUrl.removeAll()
-        self.tournamentID .removeAll()
-        self.gameName.removeAll()
-        self.startTime.removeAll()
-        self.totalMember.removeAll()
-        self.tournamentType.removeAll()
-        self.groupstage.removeAll()
-        self.maxteam.removeAll()
     
     
-    }
-    //show Tournament
+      //show Tournament
     func showTournament(id: String){
     
         var par : [String: AnyObject] = ["api_key":key,"include_participants":1]
@@ -92,131 +230,7 @@ class TournamentAPI: NSObject{
     
     //https://api.challonge.com/v1/tournaments/{tournament}/participants.{json|xml}
 
-    func getTournamentList(){
-        
-        var par : [String: AnyObject] = ["api_key":Tournament.key]
-        var req = request(.GET,"https://api.challonge.com/v1/tournaments.json",parameters:par)
-            .responseJSON { (_, _, JSONdata, _) in
-                if JSONdata != nil{
-                let myjson = JSON(JSONdata!)
-                self.totalnumber = myjson.count
-                var totaltournament = myjson.count
-                    if myjson.count != 0 {
-                for i in 0...myjson.count-1{
-                    if let url = myjson[i]["tournament"]["url"].string
-                    {
-                    if self.tournamentUrl.count < totaltournament{
-                       self.tournamentUrl.append(url)
-                    }
-                        
-                    else{ self.tournamentUrl[i] = url}
-                    
-                }
-                
-                if let name = myjson[i]["tournament"]["name"].string{
-                    
-                    if self.tournamentName.count < totaltournament{
-                    self.tournamentName.append(name)
-                    }
-                    else {
-                        self.tournamentName[i] = name
-                    }
-                }
-                    
-                if let id = myjson[i]["tournament"]["id"].int{
-                    
-                    if self.tournamentID.count < totaltournament{
-                        
-                        self.tournamentID.append(id)
-                    }
-                    else {
-                        self.tournamentID[i] = id
-                    }
-                    
-                }
-                    
-                if let type = myjson[i]["tournament"]["tournament_type"].string{
-                    
-                    if self.tournamentType.count < totaltournament{
-                        self.tournamentType.append(type)
-                    }
-                     else {
-                        self.tournamentType[i] = type
-                     }
-                    
-                }
-                else{
-                    self.tournamentType.append("noType")
-                }
-                    
-                    
-                if let teams = myjson[i]["tournament"]["participants_count"].int{
-                    if self.totalMember.count < totaltournament{
-                        self.totalMember.append(teams)
-                    }
-                    else{
-                        
-                        self.totalMember[i] = teams
-                    }
-                }
-                    
-                if let start = myjson[i]["tournament"]["start_at"].string{
-                    if self.startTime.count < totaltournament{
-                        self.startTime.append(start)
-                    }
-                    else {
-                        self.startTime[i] = start
-                    }
-                }
-                else{
-                 self.startTime.append("noTime")
-                }
-                    
-                if let game = myjson[i]["tournament"]["game_name"].string{
-                    if self.gameName.count < totaltournament{
-                    self.gameName.append(game)
-                    }
-                    else{
-                    
-                    self.gameName[i] = game
-                    }
-                }
-                else {
-                    self.gameName.append("noGame")
-                }
-                    
-                    
-                if let group = myjson[i]["tournament"]["group_stages_enabled"].int{
-                    if self.groupstage.count < totaltournament{
-                    self.groupstage.append(group)
-                    }
-                    else{
-                        self.groupstage[i] = group
-                    }
-                }
-                    
-                if let max = myjson[i]["tournament"]["signup_cap"].int{
-                    if self.maxteam.count < totaltournament{
-                    self.maxteam.append(max)
-                    }
-                    else {
-                    
-                    self.maxteam[i] = max
-                    }
-                    
-                }
-                else{ self.maxteam.append(256)}
-                
-                    
-                }
-    
-            }
-                println(self.totalnumber)
-        }
-        }
-    }
-    
-    //Delete Tournament
+       //Delete Tournament
     func deleteTournament(id:String){
         
         var par : [String: AnyObject] = ["api_key":key]

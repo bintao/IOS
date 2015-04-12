@@ -27,7 +27,6 @@ class TournamentViewController: UIViewController {
     
     @IBOutlet var teamgame: UIImageView!
     
-    var solo : Bool = false
     
     override func viewDidAppear(animated: Bool) {
         
@@ -42,7 +41,6 @@ class TournamentViewController: UIViewController {
         shamer.shimmering = true
         teamshamer.contentView = teamgame
         teamshamer.shimmering = true
-        Tournament.getTournamentList()
         super.viewDidLoad()
        
         // Do any additional setup after loading the view.
@@ -65,17 +63,16 @@ class TournamentViewController: UIViewController {
        
         if segue.identifier == "gotoGame"{
             
-            self.solo  = false
-            Tournament.key = Tournament.teamkey
-            
             var controller: Tournament_game = segue.destinationViewController as Tournament_game
+            controller.solo = false
+            Tournament.key = Tournament.teamkey
         }
         
         else if segue.identifier == "sologame"{
             
+            var controller: Tournament_game = segue.destinationViewController as Tournament_game
+            controller.solo = true
             Tournament.key = Tournament.solokey
-            self.solo  = true
-            
         }
         
     }

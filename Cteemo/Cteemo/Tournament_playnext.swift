@@ -54,14 +54,10 @@ class Tournament_playnext:  UIViewController  {
         self.startmatch.alpha = 0
         self.starttime.text = self.starttimetext
         
-        
     }
     
     override func viewDidAppear(animated: Bool) {
      
-        
-      
-        
         var par : [String: AnyObject] = ["api_key":Tournament.key,"participant_id" : myteamid]
         
         
@@ -69,7 +65,6 @@ class Tournament_playnext:  UIViewController  {
             .responseJSON { (_, _, JSONdata, _) in
                 
                 if JSONdata != nil  {
-                    
                 let myjson = JSON(JSONdata!)
                var scoreresult = ""
                 var count = myjson.count
