@@ -30,6 +30,8 @@ class Tournament_playnext:  UIViewController  {
     var myteam = teamdata()
     var oppteam = teamdata()
     
+    var solo = false
+    
     var textfield : UITextField!
     var blueteammember :[matchmember] = []
     var redmember :[matchmember] = []
@@ -324,6 +326,7 @@ class Tournament_playnext:  UIViewController  {
             controller.myteamdata = self.myteam
             controller.oppteam = self.oppteam
             controller.mychampion = self.mychampionpick
+            controller.solo = self.solo
         }
     
     

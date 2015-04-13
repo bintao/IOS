@@ -14,8 +14,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet var loading : UIActivityIndicatorView!
     
-    @IBOutlet var menu: UIBarButtonItem!
-    
     var newsDisplay : NewsDisplayViewController!
     
     var currentChosen:Int = 0
@@ -38,9 +36,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        menu.target = self
-        menu.action = Selector("clickMenu:")
         currentChosen = newsArr.count / 10
         updateNews(0)
     
@@ -130,33 +125,8 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Dispose of any resources that can be recreated.
     }
     
-    func clickMenu(sender: AnyObject) {
-        
-    }
     
     //neturn from news detail
-    func clickReturn() {
-        
-        UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            self.newsDisplay.view.transform = CGAffineTransformMakeTranslation(self.view.frame.width, 0)
-            self.newsDisplay.view.alpha = 0
-            self.menu.tintColor = UIColor.whiteColor()
-            },completion: {
-                (value: Bool) in
-                self.newsDisplay.view.removeFromSuperview()
-                self.newsDisplay.removeFromParentViewController()
-                self.newsDisplay = nil
-                self.menu.action = Selector("clickMenu:")
-                self.menu.image = UIImage(named: "SUMMARY")
-                UIView.animateWithDuration(0.7, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-                    self.menu.tintColor = self.view.tintColor
-                    },completion: {
-                        (value: Bool) in
-                })
-                
-        })
-        
-    }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
@@ -264,11 +234,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
               
                 
             })
-            
-    
-        
-        
-       
         
      
         }

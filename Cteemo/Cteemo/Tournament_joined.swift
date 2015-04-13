@@ -20,6 +20,8 @@ class Tournament_joined: UIViewController {
     var memberID = 1
     var teams: [AnyObject] = [AnyObject]()
     
+    
+    var solo = false
     var gamenumber = 0
     var url :String = ""
     
@@ -173,6 +175,7 @@ class Tournament_joined: UIViewController {
             controller.tournamentname = self.Tournamentname
             controller.url = self.url
             controller.starttimetext = self.starttime
+            controller.solo = self.solo
         }
         
 

@@ -155,7 +155,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
         }
             
-        else if message.targetId != "KEFU1428461589567" && message.conversationType != RCConversationType.onversationType_CHATROOM {
+        else if message.targetId != "KEFU1428955428622" && message.conversationType != RCConversationType.onversationType_CHATROOM {
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
                 dispatch_async(dispatch_get_main_queue(),{

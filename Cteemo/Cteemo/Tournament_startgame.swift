@@ -36,9 +36,11 @@ struct teamdata {
 
 class Tournament_startgame: UIViewController {
 
+    @IBOutlet var finishbu: UIButton!
+    
     var myteamdata = teamdata()
     var oppteam = teamdata()
-    
+    var solo = false
     @IBOutlet var myteam: UIScrollView!
     @IBOutlet var opponent: UIScrollView!
     
@@ -58,7 +60,18 @@ class Tournament_startgame: UIViewController {
     override func viewDidLoad() {
         
         
-        println(self.gameID)
+        if self.solo {
+        
+            
+            self.finishbu.setTitle("Finish solo", forState: UIControlState.Normal)
+        
+        }
+        else{
+        
+            self.finishbu.setTitle("Game Finish", forState: UIControlState.Normal)
+            
+        }
+        
         let subviews = self.myteam.subviews
         
         for subview in subviews{
@@ -117,7 +130,7 @@ class Tournament_startgame: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        self.soloTournament()
+        
     
     
     
@@ -127,7 +140,13 @@ class Tournament_startgame: UIViewController {
     
     
     @IBAction func finishgame(sender: AnyObject) {
+        if  self.solo {
         
+            self.soloTournament()
+        
+        }
+        
+        else{
         
         let url = "https://na.api.pvp.net/api/lol/na/v2.2/match/"+"\(self.gameID)"+"?api_key="+LolAPIGlobal.key
         request(.GET,url)
@@ -202,7 +221,7 @@ class Tournament_startgame: UIViewController {
                 
         }//request end
         
-        
+        }
     }
 
     

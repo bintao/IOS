@@ -257,6 +257,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
             controller.url = self.url
             controller.Tournamentname  = self.name
             controller.memberID = self.memberID
+            controller.solo = self.solo
             
         }
     }
