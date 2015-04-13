@@ -1,4 +1,4 @@
- pod 'RongCloudIMKit', '>= 1.4.2'
+ pod 'RongCloudIMKit', '>= 1.4.1'
  pod 'SCLAlertView-Objective-C'
  pod 'MJRefresh'
  pod 'Shimmer'

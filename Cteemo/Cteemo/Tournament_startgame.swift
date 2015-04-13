@@ -117,18 +117,19 @@ class Tournament_startgame: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        
+        self.soloTournament()
     
     
     
     }
     
     
+    
+    
     @IBAction func finishgame(sender: AnyObject) {
         
         
         let url = "https://na.api.pvp.net/api/lol/na/v2.2/match/"+"\(self.gameID)"+"?api_key="+LolAPIGlobal.key
-       
         request(.GET,url)
             .responseJSON { (_, _, JSONdata, _) in
                 var participantId = 0
@@ -201,12 +202,50 @@ class Tournament_startgame: UIViewController {
                 
         }//request end
         
-      
-
-        
         
     }
 
+    
+    
+    func soloTournament(){
+    
+        
+        let alert1 = SCLAlertView()
+        
+        
+        alert1.addButton("Win & report photo"){
+            
+            self.performSegueWithIdentifier("winnerReport", sender: self)
+            
+        }
+        
+        alert1.addButton("Loss & play next time"){
+           
+        self.performSegueWithIdentifier("backjoinedgame", sender: self)
+            
+        }
+        
+        
+         alert1.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x333333), title: "Log out CTeemo", subTitle: "Play tournament next time~ ",closeButtonTitle: "Cancel", duration: 0.0)
+        
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "winnerReport"{
+            
+            var controller: Tournament_WinnerPhoto = segue.destinationViewController as Tournament_WinnerPhoto
+            
+            controller.url = self.url
+            controller.myteamdata = self.myteamdata
+            controller.oppteam = self.oppteam
+            controller.matchid = self.matchid
+
+        }
+    }
+    
+    
     
     func finishgame(){
         
@@ -234,7 +273,6 @@ class Tournament_startgame: UIViewController {
         
         println(par)
         
-        
         let url = "https://api.challonge.com/v1/tournaments/"+self.url+"/matches/"+"\(self.matchid)"+".json"
         
         request(.PUT,url, parameters: par)
@@ -248,7 +286,7 @@ class Tournament_startgame: UIViewController {
                         self.performSegueWithIdentifier("backjoinedgame", sender: self)
                         
                     }
-                    alert1.showSuccess(self.parentViewController?.parentViewController, title: "WIN!!!!", subTitle: "Cong summoner ! You just won a game", closeButtonTitle: nil, duration: 0.0)
+                    alert1.showSuccess(self.parentViewController?.parentViewController, title: "WIN", subTitle: "Cong! Summoner you just won a game!", closeButtonTitle: nil, duration: 0.0)
 
                     
                 }

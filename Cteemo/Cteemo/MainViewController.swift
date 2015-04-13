@@ -139,6 +139,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
     func didReceivedMessage(message: RCMessage!, left: Int32) {
         
         //得到组群信息并且设置角标
+        println(message.targetId)
         if  message.conversationType == RCConversationType.onversationType_GROUP{
             
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
@@ -154,9 +155,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
         }
             
-        else if message.targetId != "KEFU1426185638731" && message.conversationType != RCConversationType.onversationType_CHATROOM {
-            
-            println(message.targetId)
+        else if message.targetId != "KEFU1428461589567" && message.conversationType != RCConversationType.onversationType_CHATROOM {
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
                 dispatch_async(dispatch_get_main_queue(),{
@@ -214,8 +213,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
                     
                 NSLog("Login successfully with userId: %@.",userId)
                 println(RCIMClient.sharedRCIMClient().getCurrentConnectionstatus().rawValue)
-                
-                println("ssdsd")
+            
                 }){
                     (status:RCConnectErrorCode) -> Void in
                     

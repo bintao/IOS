@@ -49,15 +49,16 @@ class TournamentAPI: NSObject{
     
     func gettournamentdata(solo: Bool) {
      
-       
         var key = ""
         
         if solo {
             key = self.solokey
+            
         }
         else{
         
             key = self.teamkey
+            
         }
         
         var par : [String: AnyObject] = ["api_key": key]

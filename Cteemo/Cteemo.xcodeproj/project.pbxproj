@@ -180,6 +180,18 @@
 		A16023F61A87356E00CFAACA /* Login_lolID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A16023F51A87356E00CFAACA /* Login_lolID.swift */; };
 		A170B6BB1AC507DC0012FE21 /* cuipiji.png in Resources */ = {isa = PBXBuildFile; fileRef = A170B6BA1AC507DC0012FE21 /* cuipiji.png */; };
 		A170B6C31AC508490012FE21 /* goutou.png in Resources */ = {isa = PBXBuildFile; fileRef = A170B6C21AC508490012FE21 /* goutou.png */; };
+		A1838F841ADB817C004690A3 /* CameraSessionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1838F6B1ADB817C004690A3 /* CameraSessionView.m */; };
+		A1838F851ADB817C004690A3 /* CameraDismissButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1838F6F1ADB817C004690A3 /* CameraDismissButton.m */; };
+		A1838F861ADB817C004690A3 /* CameraFlashButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1838F711ADB817C004690A3 /* CameraFlashButton.m */; };
+		A1838F871ADB817C004690A3 /* CameraFocalReticule.m in Sources */ = {isa = PBXBuildFile; fileRef = A1838F731ADB817C004690A3 /* CameraFocalReticule.m */; };
+		A1838F881ADB817C004690A3 /* CameraShutterButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1838F751ADB817C004690A3 /* CameraShutterButton.m */; };
+		A1838F891ADB817C004690A3 /* CameraToggleButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1838F771ADB817C004690A3 /* CameraToggleButton.m */; };
+		A1838F8A1ADB817C004690A3 /* LaunchCameraButton.m in Sources */ = {isa = PBXBuildFile; fileRef = A1838F791ADB817C004690A3 /* LaunchCameraButton.m */; };
+		A1838F8B1ADB817C004690A3 /* Cool Camera Mockup.sketch in Resources */ = {isa = PBXBuildFile; fileRef = A1838F7A1ADB817C004690A3 /* Cool Camera Mockup.sketch */; };
+		A1838F8C1ADB817C004690A3 /* PaintCodeFile.pcvd in Resources */ = {isa = PBXBuildFile; fileRef = A1838F7B1ADB817C004690A3 /* PaintCodeFile.pcvd */; };
+		A1838F8D1ADB817C004690A3 /* CameraStyleKitClass.m in Sources */ = {isa = PBXBuildFile; fileRef = A1838F7E1ADB817C004690A3 /* CameraStyleKitClass.m */; };
+		A1838F8E1ADB817C004690A3 /* CaptureSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A1838F811ADB817C004690A3 /* CaptureSessionManager.m */; };
+		A1838F8F1ADB817C004690A3 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = A1838F831ADB817C004690A3 /* Constants.m */; };
 		A18BF4261AA2F7BD000678F3 /* Tournament_joined.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */; };
 		A18BF4311AA2F8EC000678F3 /* Email_Password Page_Bg.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF42B1AA2F8EC000678F3 /* Email_Password Page_Bg.png */; };
 		A18BF4321AA2F8EC000678F3 /* Email_Password_Nickname_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = A18BF42C1AA2F8EC000678F3 /* Email_Password_Nickname_BG.png */; };
@@ -372,6 +384,7 @@
 		A1DA6E081AC389C60092C8A4 /* joinTeamButton.png in Resources */ = {isa = PBXBuildFile; fileRef = A1DA6E071AC389C60092C8A4 /* joinTeamButton.png */; };
 		A1DA6E101AC38DC00092C8A4 /* heise.png in Resources */ = {isa = PBXBuildFile; fileRef = A1DA6E0F1AC38DC00092C8A4 /* heise.png */; };
 		A1DCEAF01AAED19500DE2DD5 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A1DCEAEF1AAED19500DE2DD5 /* QuartzCore.framework */; };
+		A1E28B311ADB7C7A00DE0BFC /* Tournament_WinnerPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1E28B301ADB7C7A00DE0BFC /* Tournament_WinnerPhoto.swift */; };
 		A1E57CE91AB2D8DA00FDF193 /* chuishi.png in Resources */ = {isa = PBXBuildFile; fileRef = A1E57CE81AB2D8DA00FDF193 /* chuishi.png */; };
 		A1EB12041A99263800FC8388 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1EB12031A99263800FC8388 /* ImageLoader.swift */; };
 		A1EB12091A99277900FC8388 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = A1EB12081A99277900FC8388 /* error.png */; };
@@ -609,6 +622,28 @@
 		A16023F51A87356E00CFAACA /* Login_lolID.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login_lolID.swift; sourceTree = "<group>"; };
 		A170B6BA1AC507DC0012FE21 /* cuipiji.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cuipiji.png; sourceTree = "<group>"; };
 		A170B6C21AC508490012FE21 /* goutou.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goutou.png; sourceTree = "<group>"; };
+		A1838F6A1ADB817C004690A3 /* CameraSessionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraSessionView.h; sourceTree = "<group>"; };
+		A1838F6B1ADB817C004690A3 /* CameraSessionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraSessionView.m; sourceTree = "<group>"; };
+		A1838F6E1ADB817C004690A3 /* CameraDismissButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraDismissButton.h; sourceTree = "<group>"; };
+		A1838F6F1ADB817C004690A3 /* CameraDismissButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraDismissButton.m; sourceTree = "<group>"; };
+		A1838F701ADB817C004690A3 /* CameraFlashButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraFlashButton.h; sourceTree = "<group>"; };
+		A1838F711ADB817C004690A3 /* CameraFlashButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraFlashButton.m; sourceTree = "<group>"; };
+		A1838F721ADB817C004690A3 /* CameraFocalReticule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraFocalReticule.h; sourceTree = "<group>"; };
+		A1838F731ADB817C004690A3 /* CameraFocalReticule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraFocalReticule.m; sourceTree = "<group>"; };
+		A1838F741ADB817C004690A3 /* CameraShutterButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraShutterButton.h; sourceTree = "<group>"; };
+		A1838F751ADB817C004690A3 /* CameraShutterButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraShutterButton.m; sourceTree = "<group>"; };
+		A1838F761ADB817C004690A3 /* CameraToggleButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraToggleButton.h; sourceTree = "<group>"; };
+		A1838F771ADB817C004690A3 /* CameraToggleButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraToggleButton.m; sourceTree = "<group>"; };
+		A1838F781ADB817C004690A3 /* LaunchCameraButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchCameraButton.h; sourceTree = "<group>"; };
+		A1838F791ADB817C004690A3 /* LaunchCameraButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchCameraButton.m; sourceTree = "<group>"; };
+		A1838F7A1ADB817C004690A3 /* Cool Camera Mockup.sketch */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cool Camera Mockup.sketch"; sourceTree = "<group>"; };
+		A1838F7B1ADB817C004690A3 /* PaintCodeFile.pcvd */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = PaintCodeFile.pcvd; sourceTree = "<group>"; };
+		A1838F7D1ADB817C004690A3 /* CameraStyleKitClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CameraStyleKitClass.h; sourceTree = "<group>"; };
+		A1838F7E1ADB817C004690A3 /* CameraStyleKitClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CameraStyleKitClass.m; sourceTree = "<group>"; };
+		A1838F801ADB817C004690A3 /* CaptureSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureSessionManager.h; sourceTree = "<group>"; };
+		A1838F811ADB817C004690A3 /* CaptureSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureSessionManager.m; sourceTree = "<group>"; };
+		A1838F821ADB817C004690A3 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		A1838F831ADB817C004690A3 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament_joined.swift; sourceTree = "<group>"; };
 		A18BF42B1AA2F8EC000678F3 /* Email_Password Page_Bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Email_Password Page_Bg.png"; sourceTree = "<group>"; };
 		A18BF42C1AA2F8EC000678F3 /* Email_Password_Nickname_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Email_Password_Nickname_BG.png; sourceTree = "<group>"; };
@@ -801,6 +836,7 @@
 		A1DA6E071AC389C60092C8A4 /* joinTeamButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = joinTeamButton.png; sourceTree = "<group>"; };
 		A1DA6E0F1AC38DC00092C8A4 /* heise.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = heise.png; sourceTree = "<group>"; };
 		A1DCEAEF1AAED19500DE2DD5 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A1E28B301ADB7C7A00DE0BFC /* Tournament_WinnerPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament_WinnerPhoto.swift; sourceTree = "<group>"; };
 		A1E57CE81AB2D8DA00FDF193 /* chuishi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chuishi.png; sourceTree = "<group>"; };
 		A1EB12031A99263800FC8388 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		A1EB12081A99277900FC8388 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
@@ -966,6 +1002,7 @@
 				42B859EE1A74840F00FD4642 /* Cteemo.xcdatamodeld */,
 				42B85A3C1A74A0D800FD4642 /* Reachability.h */,
 				42B85A3D1A74A0D800FD4642 /* Reachability.m */,
+				A1838F681ADB817C004690A3 /* CustomizableCamera */,
 				42B0A3231A898BD200EA908C /* AFNetworking */,
 				42B85A131A74897A00FD4642 /* Images */,
 				42B859EA1A74840F00FD4642 /* Supporting Files */,
@@ -1235,6 +1272,75 @@
 			name = Tournament;
 			sourceTree = "<group>";
 		};
+		A1838F681ADB817C004690A3 /* CustomizableCamera */ = {
+			isa = PBXGroup;
+			children = (
+				A1838F691ADB817C004690A3 /* Camera View */,
+				A1838F6C1ADB817C004690A3 /* Graphical Assets */,
+				A1838F7F1ADB817C004690A3 /* Model Classes */,
+			);
+			path = CustomizableCamera;
+			sourceTree = "<group>";
+		};
+		A1838F691ADB817C004690A3 /* Camera View */ = {
+			isa = PBXGroup;
+			children = (
+				A1838F6A1ADB817C004690A3 /* CameraSessionView.h */,
+				A1838F6B1ADB817C004690A3 /* CameraSessionView.m */,
+			);
+			path = "Camera View";
+			sourceTree = "<group>";
+		};
+		A1838F6C1ADB817C004690A3 /* Graphical Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A1838F6D1ADB817C004690A3 /* CameraViewComponents */,
+				A1838F7A1ADB817C004690A3 /* Cool Camera Mockup.sketch */,
+				A1838F7B1ADB817C004690A3 /* PaintCodeFile.pcvd */,
+				A1838F7C1ADB817C004690A3 /* UI Assets */,
+			);
+			path = "Graphical Assets";
+			sourceTree = "<group>";
+		};
+		A1838F6D1ADB817C004690A3 /* CameraViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				A1838F6E1ADB817C004690A3 /* CameraDismissButton.h */,
+				A1838F6F1ADB817C004690A3 /* CameraDismissButton.m */,
+				A1838F701ADB817C004690A3 /* CameraFlashButton.h */,
+				A1838F711ADB817C004690A3 /* CameraFlashButton.m */,
+				A1838F721ADB817C004690A3 /* CameraFocalReticule.h */,
+				A1838F731ADB817C004690A3 /* CameraFocalReticule.m */,
+				A1838F741ADB817C004690A3 /* CameraShutterButton.h */,
+				A1838F751ADB817C004690A3 /* CameraShutterButton.m */,
+				A1838F761ADB817C004690A3 /* CameraToggleButton.h */,
+				A1838F771ADB817C004690A3 /* CameraToggleButton.m */,
+				A1838F781ADB817C004690A3 /* LaunchCameraButton.h */,
+				A1838F791ADB817C004690A3 /* LaunchCameraButton.m */,
+			);
+			path = CameraViewComponents;
+			sourceTree = "<group>";
+		};
+		A1838F7C1ADB817C004690A3 /* UI Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A1838F7D1ADB817C004690A3 /* CameraStyleKitClass.h */,
+				A1838F7E1ADB817C004690A3 /* CameraStyleKitClass.m */,
+			);
+			path = "UI Assets";
+			sourceTree = "<group>";
+		};
+		A1838F7F1ADB817C004690A3 /* Model Classes */ = {
+			isa = PBXGroup;
+			children = (
+				A1838F801ADB817C004690A3 /* CaptureSessionManager.h */,
+				A1838F811ADB817C004690A3 /* CaptureSessionManager.m */,
+				A1838F821ADB817C004690A3 /* Constants.h */,
+				A1838F831ADB817C004690A3 /* Constants.m */,
+			);
+			path = "Model Classes";
+			sourceTree = "<group>";
+		};
 		A18BF42A1AA2F8DF000678F3 /* lollog */ = {
 			isa = PBXGroup;
 			children = (
@@ -1464,6 +1570,7 @@
 		A1EB12191A99C61900FC8388 /* Tournament */ = {
 			isa = PBXGroup;
 			children = (
+				A1E28B301ADB7C7A00DE0BFC /* Tournament_WinnerPhoto.swift */,
 				A11844B21AC9C20A00022E45 /* Tournament_playnext.swift */,
 				A13811D41AA8E9F900E8293D /* tournamentViewCell.swift */,
 				A18BF4251AA2F7BD000678F3 /* Tournament_joined.swift */,
@@ -1773,6 +1880,7 @@
 				A170B6BB1AC507DC0012FE21 /* cuipiji.png in Resources */,
 				A1B86EB21ACE406E00942626 /* 31.png in Resources */,
 				A1B86EF11ACE406F00942626 /* 99.png in Resources */,
+				A1838F8B1ADB817C004690A3 /* Cool Camera Mockup.sketch in Resources */,
 				A1B5D8D01AC67819000BD6A6 /* checkinbg.png in Resources */,
 				A1B86F221ACE6D9A00942626 /* GOLD III.png in Resources */,
 				A1B86EA11ACE406E00942626 /* 22.png in Resources */,
@@ -1917,6 +2025,7 @@
 				A13919271AA2C21D00CD232A /* win button_.png in Resources */,
 				42B85A281A748CDB00FD4642 /* lock1.png in Resources */,
 				A1010D4B1A7B385700256208 /* school.png in Resources */,
+				A1838F8C1ADB817C004690A3 /* PaintCodeFile.pcvd in Resources */,
 				A1B86F1B1ACE6D9A00942626 /* DIAMOND I.png in Resources */,
 				A13919241AA2C21D00CD232A /* Tournament Rule Icons.png in Resources */,
 				A15EDDA91AD245FC0050EDB6 /* tourLabel.png in Resources */,
@@ -1976,8 +2085,10 @@
 			files = (
 				A11FED851ABD4D060075B627 /* RAMFumeAnimation.swift in Sources */,
 				42B85A101A74884100FD4642 /* Login_CreateViewController.swift in Sources */,
+				A1E28B311ADB7C7A00DE0BFC /* Tournament_WinnerPhoto.swift in Sources */,
 				A1010D471A7B2ACF00256208 /* ARequest.swift in Sources */,
 				42B859F21A74840F00FD4642 /* Login_MainViewController.swift in Sources */,
+				A1838F8E1ADB817C004690A3 /* CaptureSessionManager.m in Sources */,
 				A1EF3F781AC3A65B003D3B7D /* Team_requests.swift in Sources */,
 				A14E3C211A9B21F8003C837F /* Bracket.swift in Sources */,
 				42B74FC81A812416008B575C /* NewsViewController.swift in Sources */,
@@ -1998,6 +2109,7 @@
 				4267D82F1A8011D20054E800 /* ImageProcessor.swift in Sources */,
 				421D565C1A8339D2005E56F0 /* Team_FindTeamViewController.swift in Sources */,
 				42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */,
+				A1838F8F1ADB817C004690A3 /* Constants.m in Sources */,
 				A11FED891ABD4D060075B627 /* RAMItemAnimationProtocol.swift in Sources */,
 				42B859F01A74840F00FD4642 /* Cteemo.xcdatamodeld in Sources */,
 				42B0A3481A89CFF800EA908C /* Login_Forpassword.swift in Sources */,
@@ -2006,10 +2118,14 @@
 				42855BA81A84803000EB9546 /* Team_CreateTeamViewController.swift in Sources */,
 				42B74FC51A812416008B575C /* TournamentViewController.swift in Sources */,
 				A11FED841ABD4D060075B627 /* RAMFrameItemAnimation.swift in Sources */,
+				A1838F861ADB817C004690A3 /* CameraFlashButton.m in Sources */,
 				423142F91A9C40180033B3E7 /* NewsDisplayViewController.swift in Sources */,
 				42B85A441A74A81A00FD4642 /* UserInformation.swift in Sources */,
+				A1838F881ADB817C004690A3 /* CameraShutterButton.m in Sources */,
 				427D7A911A85C36000BFB2DA /* CustomSwitcher.swift in Sources */,
 				42B0A33B1A898BD200EA908C /* AFSecurityPolicy.m in Sources */,
+				A1838F871ADB817C004690A3 /* CameraFocalReticule.m in Sources */,
+				A1838F8D1ADB817C004690A3 /* CameraStyleKitClass.m in Sources */,
 				42B0A33F1A898BD200EA908C /* AFURLSessionManager.m in Sources */,
 				429FD09F1A801607003BA84D /* Login_AddPhoto.swift in Sources */,
 				42B0A3381A898BD200EA908C /* AFHTTPRequestOperationManager.m in Sources */,
@@ -2027,9 +2143,13 @@
 				A18BF4261AA2F7BD000678F3 /* Tournament_joined.swift in Sources */,
 				A1EB12041A99263800FC8388 /* ImageLoader.swift in Sources */,
 				42B0A33A1A898BD200EA908C /* AFNetworkReachabilityManager.m in Sources */,
+				A1838F891ADB817C004690A3 /* CameraToggleButton.m in Sources */,
+				A1838F841ADB817C004690A3 /* CameraSessionView.m in Sources */,
 				A1F138861A8346C9007DE5A2 /* LolAPI.swift in Sources */,
 				42B0A3371A898BD200EA908C /* AFHTTPRequestOperation.m in Sources */,
 				A11FED871ABD4D060075B627 /* RAMTransitionItemAnimation.swift in Sources */,
+				A1838F851ADB817C004690A3 /* CameraDismissButton.m in Sources */,
+				A1838F8A1ADB817C004690A3 /* LaunchCameraButton.m in Sources */,
 				A13811D51AA8E9F900E8293D /* tournamentViewCell.swift in Sources */,
 				A15D188A1AC261E400C7E83E /* Teampostview.swift in Sources */,
 				42B85A181A748B2E00FD4642 /* Login_SchoolSearchViewController.swift in Sources */,

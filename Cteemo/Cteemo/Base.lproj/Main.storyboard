@@ -2224,6 +2224,7 @@
                         <outlet property="myteam" destination="Vow-5e-sB9" id="IHN-LZ-wyn"/>
                         <outlet property="opponent" destination="x8F-jr-G5m" id="Mkc-rQ-zKv"/>
                         <segue destination="BD8-41-gPL" kind="unwind" identifier="backjoinedgame" unwindAction="returnToJoined:" id="wuT-Ss-Ddo"/>
+                        <segue destination="Kgt-Gk-25H" kind="show" identifier="winnerReport" id="dTP-3Z-zTS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96W-k6-xBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2407,6 +2408,53 @@ Cteemo can determine your game result automatically. Please click “get tournam
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uqR-jC-m8u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="7742.5" y="-2640.5"/>
+        </scene>
+        <!--Tournament Winner Photo-->
+        <scene sceneID="qbP-5O-L0g">
+            <objects>
+                <viewController id="Kgt-Gk-25H" customClass="Tournament_WinnerPhoto" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yPT-tE-sOU"/>
+                        <viewControllerLayoutGuide type="bottom" id="Upc-Ee-Vi1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="H17-a8-WAB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NB1-3C-FIZ">
+                                <rect key="frame" x="85" y="176" width="205" height="214"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xim-9e-d5T">
+                                <rect key="frame" x="107" y="417" width="161" height="30"/>
+                                <state key="normal" title="Submit &amp; Back" backgroundImage="postbu.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="win:" destination="Kgt-Gk-25H" eventType="touchUpInside" id="gEa-H8-wJV"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uXY-m5-zzH">
+                                <rect key="frame" x="45" y="124" width="46" height="30"/>
+                                <state key="normal" title="add">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="addphoto:" destination="Kgt-Gk-25H" eventType="touchUpInside" id="XgR-lW-PSV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="reportimage" destination="NB1-3C-FIZ" id="E1Z-kT-zsc"/>
+                        <segue destination="hr7-xQ-USi" kind="unwind" identifier="backjoinedgame" unwindAction="returnToJoined:" id="sct-Vl-IRu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nWD-Fb-FS6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="hr7-xQ-USi" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="8093.5" y="-1803.5"/>
         </scene>
         <!--TEAM-->
         <scene sceneID="dgm-0z-Qiv">

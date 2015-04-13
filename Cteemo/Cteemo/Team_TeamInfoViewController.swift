@@ -54,7 +54,6 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
             team.groupName = TeamInfoGlobal.teamName
             grouplist.append(team)
             
-            
             RCIM.sharedRCIM().syncGroups(grouplist, completion: { () -> Void in
                 
                 }, error: nil)

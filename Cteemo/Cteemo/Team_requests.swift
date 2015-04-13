@@ -201,6 +201,8 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         return cell
         
     }
+    
+    
     func accept(sender : AnyObject){
     
         println(sender.tag)
@@ -214,10 +216,6 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         
             let alert = SCLAlertView()
             let alert1 = SCLAlertView()
-        
-        
-        
-      
         
             alert.addButton("Accept!"){
                 self.startLoading()
@@ -233,8 +231,6 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                         .responseJSON { (_, _, JSONdata, _) in
                             
                             if JSONdata == nil {
-                                
-                                
                                 
                             }
                                 

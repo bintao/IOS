@@ -18,10 +18,11 @@ class Login_SchoolSearchViewController: UIViewController, UITextFieldDelegate , 
 
     override func viewDidLoad() {
         schoolSearch.becomeFirstResponder()
-        schools = ["UIUC","UCB","Stanford","MIT","University of Michigan"]
+        schools = ["Public","UIUC","SCSU","PURDUE","MIT","Others"]
         
         schoolResult.backgroundColor = UIColor.clearColor()
         schoolResult.reloadData()
+        
     }
     
 

@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4612722CA87F944116E33709"
+               BlueprintIdentifier = "B2501C13183CEA327C6EC553"
                BuildableName = "libPods-RongCloudIMKit.a"
                BlueprintName = "Pods-RongCloudIMKit"
                ReferencedContainer = "container:Pods.xcodeproj">

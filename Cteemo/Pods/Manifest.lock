@@ -6,7 +6,7 @@ PODS:
 
 DEPENDENCIES:
   - MJRefresh
-  - RongCloudIMKit (>= 1.4.2)
+  - RongCloudIMKit (>= 1.4.1)
   - SCLAlertView-Objective-C
   - Shimmer
 
