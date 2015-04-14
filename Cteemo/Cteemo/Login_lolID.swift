@@ -103,6 +103,8 @@ class Login_lolID: UIViewController, UIScrollViewDelegate,RequestResultDelegate{
             
             UserInfoGlobal.saveUserData()
             
+            LolAPIGlobal.saveLOLData()
+            
            var req1 = ARequest(prefix: "upload_profile_icon", method: requestType.POST)
             req1.delegate = self
             req1.uploadPhoto("icon.png")

@@ -199,7 +199,7 @@ class UserInformation: NSObject, RequestResultDelegate{
             if result["lolID"]? != nil {
                 LolAPIGlobal.lolName = result["lolID"] as String
             }
-            else{ LolAPIGlobal.lolName = nil}
+            
             if result["LOLTeamID"]? != nil {
                 TeamInfoGlobal.teamID = result["LOLTeamID"] as String
             }

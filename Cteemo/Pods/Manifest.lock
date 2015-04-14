@@ -1,6 +1,6 @@
 PODS:
-  - MJRefresh (1.4.4)
-  - RongCloudIMKit (1.4.3)
+  - MJRefresh (1.4.5)
+  - RongCloudIMKit (1.4.4)
   - SCLAlertView-Objective-C (0.7.0)
   - Shimmer (1.0.2)
 
@@ -11,8 +11,8 @@ DEPENDENCIES:
   - Shimmer
 
 SPEC CHECKSUMS:
-  MJRefresh: e4a25dd1f3afbe5c547ff0d434cb40997803bc81
-  RongCloudIMKit: 08f45ebb8eca63c47dd0034c631f5fc72a6d664d
+  MJRefresh: 4b24394e577ea399fbc926e5b6072317aae2c152
+  RongCloudIMKit: 0c0c92aa18d08ee3a0c1b9ae64a58724a33f4aa9
   SCLAlertView-Objective-C: 0491ea966dba9b3713178e2ffbcd0a148dc5b271
   Shimmer: c5374be1c2b0c9e292fb05b339a513cf291cac86
 

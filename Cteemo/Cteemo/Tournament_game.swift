@@ -119,6 +119,10 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         var member :String!
         
+        
+        println(LolAPIGlobal.lolName)
+        
+        
         if self.solo {
             
             member = LolAPIGlobal.lolName
@@ -130,9 +134,6 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
             member = TeamInfoGlobal.teamName
             
         }
-        
-        println(member)
-        
         
         if member != nil {
             

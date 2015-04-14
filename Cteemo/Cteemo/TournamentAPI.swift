@@ -61,11 +61,14 @@ class TournamentAPI: NSObject{
             
         }
         
+        
         var par : [String: AnyObject] = ["api_key": key]
         
         var req = request(.GET,"https://api.challonge.com/v1/tournaments.json",parameters:par)
             .responseJSON { (_, _, JSONdata, _) in
                 if JSONdata != nil{
+                    
+                    println(JSONdata)
                     let myjson = JSON(JSONdata!)
                     var totaltournament = myjson.count
                     if myjson.count != 0 {

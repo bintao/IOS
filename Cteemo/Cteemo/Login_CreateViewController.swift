@@ -70,7 +70,6 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         
         stopLoading()
         
-        
         if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {
             
             let pass = self.password.text
@@ -95,10 +94,9 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
     }
     
     func emailverfication(){
-    
+        
         UserInfoGlobal.email = email.text
         UserInfoGlobal.name = nickname.text
-        
         UserInfoGlobal.saveUserData()
         
         let alert1 = SCLAlertView()
@@ -117,10 +115,12 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
                         UserInfoGlobal.rongToken = (result["rongToken"] as [String: AnyObject])["token"] as String
                         UserInfoGlobal.saveUserData()
                         self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
+                        
                     }
                     else{
                         
-                        alert1.showCustom(self, image: UIImage(named: "email2.png")!, color: UserInfoGlobal.UIColorFromRGB(0x3498DB), title: "Verification failed ", subTitle: "Please check " + UserInfoGlobal.email + ". May be in spam box. ",closeButtonTitle: nil, duration: 0.0)
+                        alert1.showNotice(self, title: "Verification failed ", subTitle: "Please check " + UserInfoGlobal.email + ". May be in spam box. ", closeButtonTitle: nil, duration: 0.0)
+                            
                         
                     }
                     

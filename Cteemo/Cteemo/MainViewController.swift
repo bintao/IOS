@@ -183,11 +183,11 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         println(NSUserDefaults.standardUserDefaults().objectForKey("introview"))
         
         if NSUserDefaults.standardUserDefaults().objectForKey("introview") == nil{
-            self.performSegueWithIdentifier("showIntro", sender: self)
+          self.performSegueWithIdentifier("showIntro", sender: self)
         }
         
         //当用户没有token时跳转到登录界面
-        if UserInfoGlobal.accessToken == nil
+        if UserInfoGlobal.accessToken == nil || UserInfoGlobal.name == nil
         {
             self.performSegueWithIdentifier("login", sender: self)
             
@@ -206,9 +206,12 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
          
             RCIM.setUserInfoFetcherWithDelegate(self, isCacheUserInfo: true)
             
+            println("sdsd")
+            
+            println(UserInfoGlobal.rongToken)
             
             if UserInfoGlobal.rongToken != nil{
-                println(UserInfoGlobal.rongToken)
+                
                 RCIM.connectWithToken(UserInfoGlobal.rongToken, completion: { (userId:String!) -> Void in
                     
                 NSLog("Login successfully with userId: %@.",userId)
