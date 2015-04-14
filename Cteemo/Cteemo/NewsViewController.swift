@@ -193,7 +193,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 
                 var title = UITextView(frame: CGRectMake(15, 10, self.view.frame.width - 100, 90))
-                title.font = UIFont(name: "Palatino-Roman", size: 21)
+                title.font = UIFont(name: "Palatino-Bold", size: 21)
                 title.text = (self.newsArr[indexPath.row] as [String : AnyObject])["title"] as String
                 title.textColor = UIColor.darkGrayColor()
                 title.backgroundColor = UIColor.clearColor()

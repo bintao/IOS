@@ -419,8 +419,7 @@ class TournamentAPI: NSObject{
     "DRAFT MODE":2,
     "ALL RANDOM":4,
     "TOURNAMENT DRAFT":6}
-    
-    
+
     
     self.spec = {'NONE':'NONE',
     'ALL':'ALL',
@@ -442,6 +441,24 @@ class TournamentAPI: NSObject{
         return code + base64String
     
     }
+    
+    
+    func solotournamentcode(name:String, pass:String) -> String{
+        
+        var code = "pvpnet://lol/customgame/joinorcreate/map11/pick1/team5/specALL/"
+        
+        let plainString = "{\"name\":\"\(name)\",\"extra\":\"\(name)\",\"password\":\"\(pass)\",\"report\":\"\"}"
+        
+        println(plainString)
+        
+        let plainData = (plainString as NSString).dataUsingEncoding(NSUTF8StringEncoding)!
+        let base64String = plainData.base64EncodedStringWithOptions(NSDataBase64EncodingOptions(rawValue: 0))
+        
+        println(code+base64String)
+        return code + base64String
+        
+    }
+
     
     
     func findmember(){

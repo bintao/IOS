@@ -198,8 +198,21 @@ class Tournament_playnext:  UIViewController  {
     @IBAction func getcode(sender: AnyObject) {
         
         var name = self.tournamentname + "\(self.matchid)"
-        var code = Tournament.tournamentcode(name, pass:"123")
-      
+        var code = ""
+        
+        if self.solo {
+        
+            
+        code = Tournament.solotournamentcode(name, pass:"123")
+            
+        }
+        else{
+        code = Tournament.tournamentcode(name, pass:"123")
+        
+        }
+        
+        
+        
         self.sentemail(code)
     }
     
