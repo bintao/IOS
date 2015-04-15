@@ -45,7 +45,7 @@ class TournamentAPI: NSObject{
     // for teams
     var teams :[AnyObject] = [AnyObject]()
     var memberid = 0
-    
+    var solo :Bool = true
     
     func gettournamentdata(solo: Bool) {
      

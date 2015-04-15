@@ -19,8 +19,6 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     var joinTeam :String = ""
     var memberID = 0
     
-    var solo = false
-    
     var teams: [AnyObject] = [AnyObject]()
     
     //select tournament in list
@@ -40,7 +38,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         super.viewDidLoad()
         
         
-        if solo{
+        if Tournament.solo{
             
             Tournaments = Tournament.soloTournaments
         }else{
@@ -61,12 +59,12 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     func flashdata() {
         
         
-            if self.solo {
+            if Tournament.solo {
                 
                 Tournament.gettournamentdata(true)
                 Tournaments = Tournament.soloTournaments
             }
-            else{
+            else {
                 Tournament.gettournamentdata(false)
                 Tournaments = Tournament.teamTournaments
 
@@ -92,7 +90,6 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         if Tournaments.count != 0 && Tournaments.count > indexPath.row {
             
             cell2.setCell(Tournaments[indexPath.row].gameName, name: Tournaments[indexPath.row].name, rule: Tournaments[indexPath.row].type, time:Tournaments[indexPath.row].startTime,joined: Tournaments[indexPath.row].joinedmember, maxteam:Tournaments[indexPath.row].max)
-        
         cell2.setNeedsUpdateConstraints()
         cell2.JoinedFree.addTarget(self, action: "joinTournament:", forControlEvents: UIControlEvents.TouchUpInside)
         cell2.JoinedFree.tag = indexPath.row
@@ -119,11 +116,9 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         var member :String!
         
+      
         
-        println(LolAPIGlobal.lolName)
-        
-        
-        if self.solo {
+        if Tournament.solo {
             
             member = LolAPIGlobal.lolName
            
@@ -173,7 +168,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                         //当在比赛中找不到成员时候
                     else{
                         
-                        if self.solo  || (TeamInfoGlobal.iscaptain != nil && TeamInfoGlobal.iscaptain == "yes"){
+                        if Tournament.solo  || (TeamInfoGlobal.iscaptain != nil && TeamInfoGlobal.iscaptain == "yes"){
                             
                             alert.addButton("Join!"){
                                 
@@ -258,7 +253,6 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
             controller.url = self.url
             controller.Tournamentname  = self.name
             controller.memberID = self.memberID
-            controller.solo = self.solo
             
         }
     }
@@ -270,13 +264,15 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if solo {
+        if Tournament.solo {
+            
         return Tournament.soloTournaments.count
         
         }
         else{
+            
         return Tournament.teamTournaments.count
-        
+            
         }
     }
 

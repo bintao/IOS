@@ -2232,7 +2232,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="96W-k6-xBM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="BD8-41-gPL" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="7529.5" y="-1746.5"/>
+            <point key="canvasLocation" x="7518.5" y="-1730.5"/>
         </scene>
         <!--Tournament playnext-->
         <scene sceneID="BIq-j8-huV">

@@ -305,9 +305,6 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         
         
-        
-        
-        
     }
     
     

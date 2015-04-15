@@ -30,8 +30,6 @@ class Tournament_playnext:  UIViewController  {
     var myteam = teamdata()
     var oppteam = teamdata()
     
-    var solo = false
-    
     var textfield : UITextField!
     var blueteammember :[matchmember] = []
     var redmember :[matchmember] = []
@@ -66,27 +64,27 @@ class Tournament_playnext:  UIViewController  {
         var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+url+"/matches.json",parameters:par)
             .responseJSON { (_, _, JSONdata, _) in
                 
+                println(JSONdata)
+                
                 if JSONdata != nil  {
                 let myjson = JSON(JSONdata!)
-               var scoreresult = ""
+                var scoreresult = ""
                 var count = myjson.count
                 
-                println(count)
                 if count != 0  {
                     
                 println(myjson[count - 1]["match"]["state"])
                 if let state = myjson[count - 1]["match"]["state"].string
                 {
                     
-                    println("sdsdsd")
                     if state != "complete" {
                         
-                        println(JSON)
                         if let id = myjson[count - 1]["match"]["id"].int
                         {
                             self.matchid = id
                             
                         }
+                        
                         if let player = myjson[count - 1]["match"]["player1_id"].int
                         {
                             
@@ -196,27 +194,27 @@ class Tournament_playnext:  UIViewController  {
     
     
     @IBAction func getcode(sender: AnyObject) {
-        
+        if self.matchid != 0  {
         var name = self.tournamentname + "\(self.matchid)"
         var code = ""
-        
-        if self.solo {
-        
-            
         code = Tournament.solotournamentcode(name, pass:"123")
-            
-        }
-        else{
-        code = Tournament.tournamentcode(name, pass:"123")
-        
-        }
-        
-        
         
         self.sentemail(code)
+        }
+        else{
+        
+            let alert1 = SCLAlertView()
+            alert1.addButton("ok"){
+                
+                self.performSegueWithIdentifier("backtojoined", sender: self)
+                
+            }
+            alert1.showError(self.parentViewController?.parentViewController, title: "Error", subTitle: "Please reEnter play next Game", closeButtonTitle: nil, duration: 0.0)
+            
+        }
     }
-    
-    
+
+
     @IBAction func startmatchaction(sender: AnyObject) {
         
         let url = "https://na.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/NA1/"+LolAPIGlobal.lolID+"?api_key="+LolAPIGlobal.key
@@ -226,8 +224,10 @@ class Tournament_playnext:  UIViewController  {
             .responseJSON { (_, _, JSONdata, error) in
                 
                 if JSONdata != nil && JSONdata as? [String : AnyObject]? != nil {
-                    let myjson = JSON(JSONdata!)
                     
+                    println(JSONdata)
+                    
+                    let myjson = JSON(JSONdata!)
                     
                     if let gameStartTime = myjson["gameStartTime"].int
                     {
@@ -339,7 +339,7 @@ class Tournament_playnext:  UIViewController  {
             controller.myteamdata = self.myteam
             controller.oppteam = self.oppteam
             controller.mychampion = self.mychampionpick
-            controller.solo = self.solo
+            
         }
     
     
@@ -353,7 +353,7 @@ class Tournament_playnext:  UIViewController  {
         /* curl -X POST https://api.sendgrid.com/api/mail.send.json -d api_user=bintao -dapi_key=ck80i539gz -d to=bintao@cteemo.com -d toname=bintao -d subject=chaos -dtext=chaos -d from=support@cteemo.com -d content=123123
         */
         
-        if UserInfoGlobal.email != "" {
+        if UserInfoGlobal.email != nil {
         
         var par : [String: AnyObject] = ["api_user":"bintao","api_key":"ck80i539gz","to":UserInfoGlobal.email,"toname":"bintao","subject":"Touranment Code","text": tournamentcode,"from":"support@cteemo.com"]
         println(UserInfoGlobal.email)

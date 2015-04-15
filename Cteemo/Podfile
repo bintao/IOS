@@ -2,3 +2,4 @@
  pod 'SCLAlertView-Objective-C'
  pod 'MJRefresh'
  pod 'Shimmer'
+ pod 'SendGrid', '~>  0.2.6'

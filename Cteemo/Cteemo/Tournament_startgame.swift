@@ -40,7 +40,6 @@ class Tournament_startgame: UIViewController {
     
     var myteamdata = teamdata()
     var oppteam = teamdata()
-    var solo = false
     @IBOutlet var myteam: UIScrollView!
     @IBOutlet var opponent: UIScrollView!
     
@@ -60,7 +59,7 @@ class Tournament_startgame: UIViewController {
     override func viewDidLoad() {
         
         
-        if self.solo {
+        if Tournament.solo {
         
             
             self.finishbu.setTitle("Finish solo", forState: UIControlState.Normal)
@@ -140,7 +139,7 @@ class Tournament_startgame: UIViewController {
     
     
     @IBAction func finishgame(sender: AnyObject) {
-        if  self.solo {
+        if Tournament.solo {
         
             self.soloTournament()
         
@@ -192,7 +191,6 @@ class Tournament_startgame: UIViewController {
                                             }
                                             
                                           
-                                    
                                     }
                                     
                                 }//check id
@@ -247,6 +245,7 @@ class Tournament_startgame: UIViewController {
         
          alert1.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x333333), title: "Log out CTeemo", subTitle: "Play tournament next time~ ",closeButtonTitle: "Cancel", duration: 0.0)
         
+        
     }
     
     
@@ -284,10 +283,12 @@ class Tournament_startgame: UIViewController {
         
         if win < 2 {
             
-            par  = ["api_key":Tournament.key,"match[scores_csv]":score,"match[winner_id]": myteamdata.teamid]
+        par  = ["api_key":Tournament.key,"match[scores_csv]":score,"match[winner_id]": myteamdata.teamid]
         }
         else{
-             par  = ["api_key":Tournament.key,"match[scores_csv]":score,"match[winner_id]": myteamdata.teamid]
+            
+        par  = ["api_key":Tournament.key,"match[scores_csv]":score,"match[winner_id]": myteamdata.teamid]
+            
         }
         
         println(par)
