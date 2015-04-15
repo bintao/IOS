@@ -68,18 +68,21 @@ class Tournament_WinnerPhoto:  UIViewController ,CACameraSessionDelegate {
         }
         
         println(par)
-        
+         let alert = SCLAlertView()
+        alert.showWaiting(self.parentViewController?.parentViewController, title: "waiting", subTitle: "Cteemmo is loading ", closeButtonTitle: nil, duration: 0.0)
         let url = "https://api.challonge.com/v1/tournaments/"+self.url+"/matches/"+"\(self.matchid)"+".json"
         
         request(.PUT,url, parameters: par)
             .responseJSON { (_, _, JSON, _) in
-                
+                alert.hideView()
                 if JSON != nil{
                     
                     let alert1 = SCLAlertView()
                     alert1.addButton("ok"){
                         
+                        self.sentresult()
                         self.performSegueWithIdentifier("backjoinedgame", sender: self)
+                        
                         
                     }
                     alert1.showSuccess(self.parentViewController?.parentViewController, title: "WIN", subTitle: "Cong summoner ! You just win a game!", closeButtonTitle: nil, duration: 0.0)
@@ -98,7 +101,17 @@ class Tournament_WinnerPhoto:  UIViewController ,CACameraSessionDelegate {
     }
     
     
+    func sentresult(){
     
+        var send = SendGrid.apiUser("bintao", apiKey: "ck80i539gz")
+        var email = SendGridEmail()
+        email.to = "cteemo@163.com"
+        email.from = "support@cteemo.com"
+        email.subject = LolAPIGlobal.lolName + "'s match report"
+        email.text = "Player : " + LolAPIGlobal.lolName + "\n Matchid : " + "\(self.matchid)"
+        email.attachImage(self.reportimage.image)
+        send.sendWithWeb(email)
+    }
     
     func didCaptureImage(image: UIImage!) {
         

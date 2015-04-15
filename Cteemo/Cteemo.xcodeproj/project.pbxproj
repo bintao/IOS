@@ -124,6 +124,10 @@
 		A12D3D4E1ADA037300C2076A /* cup66.png in Resources */ = {isa = PBXBuildFile; fileRef = A12D3D4C1ADA037300C2076A /* cup66.png */; };
 		A12F7CAE1AD7203A00DBCAA8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F7CAD1AD7203A00DBCAA8 /* SwiftyJSON.swift */; };
 		A12FDD8A1A85EF9B00DF278F /* Team_AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */; };
+		A13114941ADE3FF600BC748E /* SMTPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A13114931ADE3FF600BC748E /* SMTPAPI.m */; };
+		A13114971ADE405C00BC748E /* SendGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = A13114961ADE405C00BC748E /* SendGrid.m */; };
+		A131149D1ADE40AB00BC748E /* SendGridEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = A131149A1ADE40AB00BC748E /* SendGridEmail.m */; };
+		A131149E1ADE40AB00BC748E /* SendGridEmailAttachment.m in Sources */ = {isa = PBXBuildFile; fileRef = A131149C1ADE40AB00BC748E /* SendGridEmailAttachment.m */; };
 		A13811D51AA8E9F900E8293D /* tournamentViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13811D41AA8E9F900E8293D /* tournamentViewCell.swift */; };
 		A13811D81AA9016500E8293D /* hearthstone.png in Resources */ = {isa = PBXBuildFile; fileRef = A13811D61AA9016500E8293D /* hearthstone.png */; };
 		A13811D91AA9016500E8293D /* lol.png in Resources */ = {isa = PBXBuildFile; fileRef = A13811D71AA9016500E8293D /* lol.png */; };
@@ -566,6 +570,14 @@
 		A12D3D4C1ADA037300C2076A /* cup66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cup66.png; sourceTree = "<group>"; };
 		A12F7CAD1AD7203A00DBCAA8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_AddPhoto.swift; sourceTree = "<group>"; };
+		A13114921ADE3FF600BC748E /* SMTPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTPAPI.h; sourceTree = "<group>"; };
+		A13114931ADE3FF600BC748E /* SMTPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTPAPI.m; sourceTree = "<group>"; };
+		A13114951ADE405C00BC748E /* SendGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendGrid.h; sourceTree = "<group>"; };
+		A13114961ADE405C00BC748E /* SendGrid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendGrid.m; sourceTree = "<group>"; };
+		A13114991ADE40AB00BC748E /* SendGridEmail.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendGridEmail.h; sourceTree = "<group>"; };
+		A131149A1ADE40AB00BC748E /* SendGridEmail.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendGridEmail.m; sourceTree = "<group>"; };
+		A131149B1ADE40AB00BC748E /* SendGridEmailAttachment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendGridEmailAttachment.h; sourceTree = "<group>"; };
+		A131149C1ADE40AB00BC748E /* SendGridEmailAttachment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SendGridEmailAttachment.m; sourceTree = "<group>"; };
 		A13811D41AA8E9F900E8293D /* tournamentViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tournamentViewCell.swift; sourceTree = "<group>"; };
 		A13811D61AA9016500E8293D /* hearthstone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hearthstone.png; sourceTree = "<group>"; };
 		A13811D71AA9016500E8293D /* lol.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lol.png; sourceTree = "<group>"; };
@@ -1002,6 +1014,7 @@
 				42B859EE1A74840F00FD4642 /* Cteemo.xcdatamodeld */,
 				42B85A3C1A74A0D800FD4642 /* Reachability.h */,
 				42B85A3D1A74A0D800FD4642 /* Reachability.m */,
+				A13114981ADE408F00BC748E /* sentemil */,
 				A1838F681ADB817C004690A3 /* CustomizableCamera */,
 				42B0A3231A898BD200EA908C /* AFNetworking */,
 				42B85A131A74897A00FD4642 /* Images */,
@@ -1207,6 +1220,21 @@
 				42DBA67B1AD5F980001F57CE /* Loading png.png */,
 			);
 			name = intro;
+			sourceTree = "<group>";
+		};
+		A13114981ADE408F00BC748E /* sentemil */ = {
+			isa = PBXGroup;
+			children = (
+				A13114921ADE3FF600BC748E /* SMTPAPI.h */,
+				A13114931ADE3FF600BC748E /* SMTPAPI.m */,
+				A13114951ADE405C00BC748E /* SendGrid.h */,
+				A13114961ADE405C00BC748E /* SendGrid.m */,
+				A13114991ADE40AB00BC748E /* SendGridEmail.h */,
+				A131149A1ADE40AB00BC748E /* SendGridEmail.m */,
+				A131149B1ADE40AB00BC748E /* SendGridEmailAttachment.h */,
+				A131149C1ADE40AB00BC748E /* SendGridEmailAttachment.m */,
+			);
+			name = sentemil;
 			sourceTree = "<group>";
 		};
 		A13918E61AA2C11B00CD232A /* Tournament */ = {
@@ -2083,7 +2111,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A13114941ADE3FF600BC748E /* SMTPAPI.m in Sources */,
 				A11FED851ABD4D060075B627 /* RAMFumeAnimation.swift in Sources */,
+				A13114971ADE405C00BC748E /* SendGrid.m in Sources */,
 				42B85A101A74884100FD4642 /* Login_CreateViewController.swift in Sources */,
 				A1E28B311ADB7C7A00DE0BFC /* Tournament_WinnerPhoto.swift in Sources */,
 				A1010D471A7B2ACF00256208 /* ARequest.swift in Sources */,
@@ -2127,6 +2157,7 @@
 				A1838F871ADB817C004690A3 /* CameraFocalReticule.m in Sources */,
 				A1838F8D1ADB817C004690A3 /* CameraStyleKitClass.m in Sources */,
 				42B0A33F1A898BD200EA908C /* AFURLSessionManager.m in Sources */,
+				A131149D1ADE40AB00BC748E /* SendGridEmail.m in Sources */,
 				429FD09F1A801607003BA84D /* Login_AddPhoto.swift in Sources */,
 				42B0A3381A898BD200EA908C /* AFHTTPRequestOperationManager.m in Sources */,
 				A1EB12141A99AAE700FC8388 /* TournamentAPI.swift in Sources */,
@@ -2143,6 +2174,7 @@
 				A18BF4261AA2F7BD000678F3 /* Tournament_joined.swift in Sources */,
 				A1EB12041A99263800FC8388 /* ImageLoader.swift in Sources */,
 				42B0A33A1A898BD200EA908C /* AFNetworkReachabilityManager.m in Sources */,
+				A131149E1ADE40AB00BC748E /* SendGridEmailAttachment.m in Sources */,
 				A1838F891ADB817C004690A3 /* CameraToggleButton.m in Sources */,
 				A1838F841ADB817C004690A3 /* CameraSessionView.m in Sources */,
 				A1F138861A8346C9007DE5A2 /* LolAPI.swift in Sources */,

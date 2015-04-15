@@ -169,8 +169,7 @@ class MeViewController: UIViewController  {
     
     @IBAction func aboutCteemo(sender: AnyObject) {
         
-        
-        
+     
     }
     
     @IBAction func facebookshare(sender: AnyObject) {
