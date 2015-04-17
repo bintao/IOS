@@ -4361,7 +4361,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                             </view>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                        <color key="tintColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="tintColor" red="0.71372549019607845" green="0.4823529411764706" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="yUc-L8-Xke" firstAttribute="leading" secondItem="vhA-jf-RXF" secondAttribute="leading" id="425-py-7fR"/>
                             <constraint firstAttribute="trailing" secondItem="Zgo-0a-YGF" secondAttribute="trailing" id="6ZE-e5-r8c"/>

@@ -133,17 +133,23 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         if member != nil {
             
             alert2.showWaiting(self.parentViewController?.parentViewController, title: "Loading", subTitle: "Cteemo is loading", closeButtonTitle: nil, duration: 0.0)
+            
             var par : [String: AnyObject] = ["api_key":Tournament.key]
-            var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+name+"/participants.json",parameters:par)
+            
+            
+            var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+self.url+"/participants.json",parameters:par)
+                
                 .responseJSON { (_, _, JSONdata, _) in
-                    
+                    println(JSONdata)
+                   
                     let myjson = JSON(JSONdata!)
                     var s = 0
+                    println(myjson)
                     if myjson.count != 0{
                         for i in 0...myjson.count-1{
                             if let k = myjson[i]["participant"]["name"].string{
                                 
-                                if k == member{
+                                if k == member {
                                     println(k)
                                     if let n =  myjson[i]["participant"]["id"].int{
                                         

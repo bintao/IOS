@@ -56,6 +56,7 @@ class Tournament_joined: UIViewController {
     
     @IBAction func bracket(sender: AnyObject){
         
+        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
         self.performSegueWithIdentifier("bracket", sender: self)
         
         

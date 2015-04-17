@@ -60,9 +60,14 @@ class Tournament_playnext:  UIViewController  {
      
         var par : [String: AnyObject] = ["api_key":Tournament.key,"participant_id" : myteamid]
         
+        let alert = SCLAlertView()
+        alert.showWaiting(self.parentViewController?.parentViewController, title: "Loading data", subTitle: "please wait loding....", closeButtonTitle: nil, duration: 0.0)
         
         var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+url+"/matches.json",parameters:par)
             .responseJSON { (_, _, JSONdata, _) in
+                
+                alert.hideView()
+                
                 
                 println(JSONdata)
                 

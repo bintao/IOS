@@ -187,7 +187,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         }
         
         //当用户没有token时跳转到登录界面
-        if UserInfoGlobal.accessToken == nil || UserInfoGlobal.name == nil
+        if UserInfoGlobal.accessToken == nil
         {
             self.performSegueWithIdentifier("login", sender: self)
             
