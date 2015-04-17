@@ -87,15 +87,13 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var iconurl :String = ""
-        var username :String = ""
+        var username :String = "noName"
         var content : String = ""
         
-        if ((teams[indexPath.row] as? [String: AnyObject])?["user_profile"] as? [String: AnyObject])?["profile_icon"]? != nil
-        {
-            
+        if !(((teams[indexPath.row] as? [String: AnyObject])?["user_profile"] as? [String: AnyObject])?["profile_icon"]? is NSNull){
             iconurl = ((teams[indexPath.row] as [String: AnyObject])["user_profile"] as [String: AnyObject])["profile_icon"] as String
-            
-            
+         }
+        
             if !(((teams[indexPath.row] as? [String: AnyObject])?["user_profile"] as? [String: AnyObject])?["username"]? is NSNull){
                 
                 username = ((teams[indexPath.row] as [String: AnyObject])["user_profile"] as [String: AnyObject])["username"] as String
@@ -109,7 +107,7 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
             content = " nothing to say"
             }
             
-        }
+        
         
       
         
@@ -188,14 +186,26 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         if ((teams[sender.tag] as? [String: AnyObject])?["user_profile"] as? [String : AnyObject])?["id"] != nil {
             
+            var name = "noName"
+            var content = "noContent"
+            
             var id = ((teams[sender.tag] as [String: AnyObject])["user_profile"] as [String : AnyObject])["id"]  as String
             
-            var name = ((teams[sender.tag] as [String: AnyObject])["user_profile"] as [String : AnyObject])["username"]  as String
             
-            var content = (teams[sender.tag] as [String: AnyObject])["content"] as String
             
-          
-            println(sender.tag)
+            
+            if !(((teams[sender.tag] as? [String: AnyObject])?["user_profile"] as? [String: AnyObject])?["username"]? is NSNull){
+                
+               var name = ((teams[sender.tag] as [String: AnyObject])["user_profile"] as [String : AnyObject])["username"]  as String
+                
+            }
+         
+            
+            if !(((teams[sender.tag] as? [String: AnyObject])?["content"] is NSNull)){
+            
+                content = (teams[sender.tag] as [String: AnyObject])["content"] as String
+            
+            }
 
             
             var chatViewController : RCChatViewController = RCIM.sharedRCIM().createPrivateChat(id, title: name , completion: nil)

@@ -141,11 +141,22 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         {
             if  (teams[indexPath.row] as? [String: AnyObject])?["teamIcon"] != nil {
               
+                if !((teams[indexPath.row] as? [String: AnyObject])?["teamIcon"]? is NSNull){
+                    
+                  iconurl = (teams[indexPath.row] as [String: AnyObject])["teamIcon"] as String
+                    
+                }
+              
+                if !((teams[indexPath.row] as? [String: AnyObject])?["captain"]? is NSNull){
+                    school =  (teams[indexPath.row] as [String: AnyObject])["captain"] as String
+
                 
-                iconurl = (teams[indexPath.row] as [String: AnyObject])["teamIcon"] as String
-                school =  (teams[indexPath.row] as [String: AnyObject])["captain"] as String
+                }
+                if !((teams[indexPath.row] as? [String: AnyObject])?["teamName"]? is NSNull){
+                    
                 name =  (teams[indexPath.row] as [String: AnyObject])["teamName"] as String
-            
+                    
+                }
             }
             
             
