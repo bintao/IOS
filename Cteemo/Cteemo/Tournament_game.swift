@@ -86,10 +86,9 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         let cell2 = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[0] as tournamentViewCell
         
-        println(Tournaments.count)
         if Tournaments.count != 0 && Tournaments.count > indexPath.row {
             
-            cell2.setCell(Tournaments[indexPath.row].gameName, name: Tournaments[indexPath.row].name, rule: Tournaments[indexPath.row].type, time:Tournaments[indexPath.row].startTime,joined: Tournaments[indexPath.row].joinedmember, maxteam:Tournaments[indexPath.row].max)
+        cell2.setCell(Tournaments[indexPath.row].gameName, name: Tournaments[indexPath.row].name, rule: Tournaments[indexPath.row].type, time:Tournaments[indexPath.row].startTime,joined: Tournaments[indexPath.row].joinedmember, maxteam:Tournaments[indexPath.row].max)
         cell2.setNeedsUpdateConstraints()
         cell2.JoinedFree.addTarget(self, action: "joinTournament:", forControlEvents: UIControlEvents.TouchUpInside)
         cell2.JoinedFree.tag = indexPath.row

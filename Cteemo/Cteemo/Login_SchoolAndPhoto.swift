@@ -168,10 +168,7 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
            
         
             LolAPIGlobal.lolName = newStr
-            println(LolAPIGlobal.lolName)
-            println("sdsdsd")
             LolAPIGlobal.saveLOLData()
-            println(LolAPIGlobal.lolName)
             LolAPIGlobal.getSummonerID(newStr, loginView: Login_SchoolAndPhoto())
                 
             }

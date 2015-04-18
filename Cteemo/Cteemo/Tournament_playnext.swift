@@ -61,15 +61,14 @@ class Tournament_playnext:  UIViewController  {
         var par : [String: AnyObject] = ["api_key":Tournament.key,"participant_id" : myteamid]
         
         let alert = SCLAlertView()
+        
         alert.showWaiting(self.parentViewController?.parentViewController, title: "Loading data", subTitle: "please wait loding....", closeButtonTitle: nil, duration: 0.0)
+       
         
         var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+url+"/matches.json",parameters:par)
             .responseJSON { (_, _, JSONdata, _) in
                 
                 alert.hideView()
-                
-                
-                println(JSONdata)
                 
                 if JSONdata != nil  {
                 let myjson = JSON(JSONdata!)
@@ -78,7 +77,6 @@ class Tournament_playnext:  UIViewController  {
                 
                 if count != 0  {
                     
-                println(myjson[count - 1]["match"]["state"])
                 if let state = myjson[count - 1]["match"]["state"].string
                 {
                     
@@ -172,8 +170,11 @@ class Tournament_playnext:  UIViewController  {
           
                 
                 }//count is 0 can't find
+                    
+                    
                 else{
                     
+                    println(JSONdata)
                     let alert1 = SCLAlertView()
                     alert1.addButton("ok"){
                         
@@ -304,12 +305,10 @@ class Tournament_playnext:  UIViewController  {
                                 }//teamid
                                 
                                 
-                                
                             }//forloop
                             
                             self.performSegueWithIdentifier("gamestart", sender: self)
                             
-                           
                         }
                         
                         
@@ -335,7 +334,6 @@ class Tournament_playnext:  UIViewController  {
         if segue.identifier == "gamestart"{
        
             var controller: Tournament_startgame = segue.destinationViewController as Tournament_startgame
-            
             controller.blueteammember = self.blueteammember
             controller.redmember = self.redmember
             controller.gameID = self.gameID
