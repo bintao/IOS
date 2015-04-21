@@ -199,7 +199,7 @@ class MeViewController: UIViewController  {
         //clean all saved user data
         
         let alert1 = SCLAlertView()
-        alert1.addButton("logout", actionBlock:{ (Void) in
+        alert1.addButton("Logout", actionBlock:{ (Void) in
             
              ((self.parentViewController as UINavigationController).parentViewController as MainViewController).logout()
             

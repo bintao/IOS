@@ -165,7 +165,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
             }
         
         })
-            alert1.showNotice(self.parentViewController?.parentViewController, title: "Delete Team", subTitle: "You are a captain , Team need you." + TeamInfoGlobal.teamName, closeButtonTitle: "cancel", duration: 0.0)
+            alert1.showNotice(self.parentViewController?.parentViewController, title: "Delete Team", subTitle: "You are the captain, " + TeamInfoGlobal.teamName + " needs you." , closeButtonTitle: "Cancel", duration: 0.0)
             
         }
         else if TeamInfoGlobal.iscaptain == nil {

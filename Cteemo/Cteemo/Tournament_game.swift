@@ -189,11 +189,14 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                                         
                                                 if let error = myjson["errors"][0].string
                                                 {
-                                                    println(error)
+                                                    
                                                     if error.rangeOfString("no longer be added")?.isEmpty != nil{
                                                         alert1.showError(self.parentViewController?.parentViewController, title: "Failed to Join", subTitle: "Game already Started", closeButtonTitle: "ok", duration: 0.0)
+                                                        
                                                     }
-                                                    if error.rangeOfString("Name has already")?.isEmpty != nil{
+                                                    
+                                                    if error.rangeOfString("Name has already")?.isEmpty != nil
+                                                    {
                                                         self.performSegueWithIdentifier("joined", sender: self)
                                                         
                                                     } // already joined

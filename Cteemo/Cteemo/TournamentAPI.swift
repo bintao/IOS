@@ -287,10 +287,10 @@ class TournamentAPI: NSObject{
                 if let k = myjson[i]["participant"]["name"].string{
                     
                     if k == member{
-                        println(k)
+                        
                         if let n =  myjson[i]["participant"]["id"].int{
                             s = n
-                        println(s)
+                            
                         }
                     }
                 }

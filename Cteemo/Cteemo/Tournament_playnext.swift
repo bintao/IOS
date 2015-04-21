@@ -34,6 +34,8 @@ class Tournament_playnext:  UIViewController  {
     var blueteammember :[matchmember] = []
     var redmember :[matchmember] = []
     
+    var round = "round "
+    
     
     @IBOutlet var time: UILabel!
 
@@ -75,6 +77,9 @@ class Tournament_playnext:  UIViewController  {
                 var scoreresult = ""
                 var count = myjson.count
                 
+                println(JSONdata)
+                
+                
                 if count != 0  {
                     
                 if let state = myjson[count - 1]["match"]["state"].string
@@ -102,6 +107,12 @@ class Tournament_playnext:  UIViewController  {
                             
                         }
                         
+                        if let roundn = myjson[count - 1]["match"]["round"].int
+                        {
+                            
+                            self.round = "round " + "\(roundn)"
+                            
+                        }
                         
                         if self.player1 == 0 || self.player2 == 0 {
                             
@@ -203,8 +214,13 @@ class Tournament_playnext:  UIViewController  {
         if self.matchid != 0  {
         var name = self.tournamentname + "\(self.matchid)"
         var code = ""
-        code = Tournament.solotournamentcode(name, pass:"123")
-        
+        if Tournament.solo{
+            code = Tournament.solotournamentcode(name, pass:"123")
+        }
+        else{
+        code = Tournament.tournamentcode(name, pass: "123")
+        }
+
         self.sentemail(code)
         }
         else{
@@ -230,8 +246,6 @@ class Tournament_playnext:  UIViewController  {
             .responseJSON { (_, _, JSONdata, error) in
                 
                 if JSONdata != nil && JSONdata as? [String : AnyObject]? != nil {
-                    
-                    println(JSONdata)
                     
                     let myjson = JSON(JSONdata!)
                     
@@ -358,7 +372,8 @@ class Tournament_playnext:  UIViewController  {
         
         if UserInfoGlobal.email != nil {
         
-        var par : [String: AnyObject] = ["api_user":"bintao","api_key":"ck80i539gz","to":UserInfoGlobal.email,"toname":"bintao","subject":"Touranment Code","text": tournamentcode,"from":"support@cteemo.com"]
+        var par : [String: AnyObject] = ["api_user":"bintao","api_key":"ck80i539gz","to":UserInfoGlobal.email,"toname":"bintao","subject":"Touranment Code for " + self.round,"text": tournamentcode,"from":"support@cteemo.com"]
+            
         println(UserInfoGlobal.email)
         var url = "https://api.sendgrid.com/api/mail.send.json"
         var req = request(.POST, url, parameters: par)

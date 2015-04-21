@@ -1868,7 +1868,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qwa-Z0-ShR">
                                 <rect key="frame" x="26" y="284" width="100" height="100"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Brakect" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcy-6K-jEK">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bracket" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hcy-6K-jEK">
                                         <rect key="frame" x="19" y="79" width="63" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="TOh-Tu-GnG"/>
@@ -1981,7 +1981,7 @@
                                             <action selector="reportresult:" destination="UOt-dG-afN" eventType="touchUpInside" id="c7k-AA-2tC"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tournament" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3AM-F6-FL5">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Custom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3AM-F6-FL5">
                                         <rect key="frame" x="0.0" y="79" width="100" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="32h-bs-sSC"/>
@@ -1993,7 +1993,7 @@
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" Referee" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJj-Bj-DZV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Service" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJj-Bj-DZV">
                                         <rect key="frame" x="-3" y="99" width="100" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="KNb-zm-nKv"/>
@@ -2124,6 +2124,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="checkin" destination="mQI-gl-r2v" id="vvb-RF-oo5"/>
                         <outlet property="member" destination="JtV-AJ-rWE" id="oFU-RW-HZn"/>
                         <outlet property="navigation" destination="AYr-7R-LjN" id="USU-3N-DMc"/>
                         <outlet property="time" destination="6OL-fP-zna" id="01u-9W-GEE"/>

@@ -22,7 +22,7 @@ class Tournament_joined: UIViewController {
     var gamenumber = 0
     var url :String = ""
     
-    
+    @IBOutlet var checkin: UIButton!
     
     @IBOutlet var navigation: UINavigationItem!
     
@@ -48,7 +48,7 @@ class Tournament_joined: UIViewController {
         self.type.text = self.TournamentType
         self.time.text = self.starttime
         self.member.text = "\(self.totalmember)"
-        
+        self.checkin.alpha = 0
         
      ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
    
@@ -139,7 +139,7 @@ class Tournament_joined: UIViewController {
                 if result["errors"]? != nil {
                     
                     let alert1 = SCLAlertView()
-                    alert1.showError(self.parentViewController?.parentViewController, title: "Check in faild", subTitle: "Please contact custom servers", closeButtonTitle: "ok", duration: 0.0)
+                    alert1.showError(self.parentViewController?.parentViewController, title: "Check in failed", subTitle: "Please contact custom servers", closeButtonTitle: "ok", duration: 0.0)
                     
                 }
                 else {

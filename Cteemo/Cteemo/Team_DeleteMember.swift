@@ -136,7 +136,7 @@ class Team_DeleteMember: UIViewController, UITableViewDataSource, UITableViewDel
             
         })
         
-        alert1.showWarning(self.parentViewController?.parentViewController, title: "Kick Member", subTitle: "Do you want to kick" + name  , closeButtonTitle: "cancel", duration: 0.0)
+        alert1.showWarning(self.parentViewController?.parentViewController, title: "Kick Member", subTitle: "Do you want to kick" + name  , closeButtonTitle: "Cancel", duration: 0.0)
         
         
      
