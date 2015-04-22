@@ -16,7 +16,11 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
     @IBOutlet var bg : UIImageView!
     
     @IBOutlet var email : UITextField!
-   
+    
+    @IBOutlet var school : UITextField!
+    
+    @IBOutlet var name : UITextField!
+    
     
     @IBOutlet var back : UIButton!
     
@@ -39,7 +43,7 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
         
         if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) {
         
-        var req = request(.POST, "http://54.149.235.253:5000/forget_password", parameters: ["email": email.text,"username":"alex","school":"UIUC"])
+        var req = request(.POST, "http://54.149.235.253:5000/forget_password", parameters: ["email": email.text,"username":self.name.text,"school":self.school.text])
         .responseJSON { (_, _, JSON, _) in
         var result: [String: AnyObject] = JSON as [String: AnyObject]
         self.gotSubmitResult(result)
@@ -62,7 +66,7 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
         
         // email with user
         if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {            
-            
+            displaySpeaker("success! Please check your email!")
         }
         //can't find email
         else{
@@ -117,14 +121,25 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
     // keyboard customization
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         if textField == email{
-            email.resignFirstResponder()
+            self.email.resignFirstResponder()
+            self.school.becomeFirstResponder()
         }
+        if textField == self.school {
+            self.school.resignFirstResponder()
+            self.name.becomeFirstResponder()
+        }
+        if textField == self.name {
+            self.name.resignFirstResponder()
+        }
+        
         return true
     }
     
     // background tapped
     func backGroundTapped(gestureRecognizer: UITapGestureRecognizer){
-        email.resignFirstResponder()
+        self.email.resignFirstResponder()
+        self.name.resignFirstResponder()
+        self.school.resignFirstResponder()
         if teemoSpeaker.alpha != 0{
             disappearSpeaker()
         }
