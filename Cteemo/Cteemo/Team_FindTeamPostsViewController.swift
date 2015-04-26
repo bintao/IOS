@@ -62,9 +62,9 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
                 }
                 else if(JSON != nil){
                    println(JSON)
-                    self.teams = JSON as [AnyObject]
+                    self.teams = JSON as! [AnyObject]
                     var result: [AnyObject] = [AnyObject]()
-                    result = JSON as [AnyObject]
+                    result = JSON as! [AnyObject]
                     self.gotResult(result)
                     
                 }
@@ -94,7 +94,7 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
                     println(JSON)
                     
                     var result: [AnyObject] = [AnyObject]()
-                    result = JSON as [AnyObject]
+                    result = JSON as! [AnyObject]
                     self.teams.append(result)
                     
                     self.resultTable.reloadData()
@@ -132,13 +132,13 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         var iconurl :String = ""
         var username :String = ""
         
-        if ((teams[indexPath.row] as? [String: AnyObject])?["user_profile"] as? [String: AnyObject])?["profile_icon"]? != nil
+        if ((teams[indexPath.row] as! [String: AnyObject])["user_profile"] as! [String: AnyObject])["profile_icon"] != nil
         {
             
-            iconurl = ((teams[indexPath.row] as [String: AnyObject])["user_profile"] as [String: AnyObject])["profile_icon"] as String
-            if !(((teams[indexPath.row] as? [String: AnyObject])?["user_profile"] as? [String: AnyObject])?["username"]? is NSNull){
+            iconurl = ((teams[indexPath.row] as! [String: AnyObject])["user_profile"] as! [String: AnyObject])["profile_icon"] as! String
+            if !(((teams[indexPath.row] as! [String: AnyObject])["user_profile"] as! [String: AnyObject])["username"] is NSNull){
                 
-                username = ((teams[indexPath.row] as [String: AnyObject])["user_profile"] as [String: AnyObject])["username"] as String
+                username = ((teams[indexPath.row] as! [String: AnyObject])["user_profile"] as! [String: AnyObject])["username"] as! String
                 
             }
 
@@ -156,7 +156,7 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
         var cellIcon = UIImageView(image: nil)
         
         ImageLoader.sharedLoader.imageForUrl(iconurl, completionHandler:{(image: UIImage?, url: String) in
-            if image? != nil {
+            if image != nil {
                 cellIcon.image = image
             }else{
                 
@@ -219,9 +219,9 @@ class Team_FindTeamPostsViewController: UIViewController, UITableViewDataSource,
     
         if ((teams[sender.tag] as? [String: AnyObject])?["user_profile"] as? [String : AnyObject])?["id"] != nil {
             
-            var id = ((teams[sender.tag] as [String: AnyObject])["user_profile"] as [String : AnyObject])["id"]  as String
+            var id = ((teams[sender.tag] as! [String: AnyObject])["user_profile"] as! [String : AnyObject])["id"]  as! String
             
-             var name = ((teams[sender.tag] as [String: AnyObject])["user_profile"] as [String : AnyObject])["username"]  as String
+             var name = ((teams[sender.tag] as! [String: AnyObject])["user_profile"] as! [String : AnyObject])["username"]  as! String
             
             var chatViewController : RCChatViewController = RCIM.sharedRCIM().createPrivateChat(id, title: name , completion: nil)
             

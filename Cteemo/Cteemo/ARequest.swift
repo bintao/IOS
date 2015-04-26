@@ -109,9 +109,8 @@ class ARequest: NSObject {
         
         var parameters = NSMutableDictionary()
         var filePath = NSURL(fileURLWithPath: DataManager.getURLPath().stringByAppendingPathComponent(fileName))!
-        println(filePath)
         
-        var request = AFHTTPRequestSerializer().multipartFormRequestWithMethod("POST", URLString: server + prefix, parameters: parameters, constructingBodyWithBlock: { (formData) -> Void in
+        var request = AFHTTPRequestSerializer().multipartFormRequestWithMethod("POST", URLString: server + prefix, parameters: parameters as [NSObject : AnyObject], constructingBodyWithBlock: { (formData) -> Void in
             formData.appendPartWithFileURL(filePath, name: "upload", fileName: "upload", mimeType: "image/png", error: nil)
             return
             }, error: nil)
@@ -124,6 +123,7 @@ class ARequest: NSObject {
         
         uploadRequest = manager.uploadTaskWithStreamedRequest(request, progress: nil) { (response, obj, error) -> Void in
             if obj != nil{
+                
                 self.gotResult(obj)
             }
         }
@@ -134,7 +134,6 @@ class ARequest: NSObject {
     func gotResult(result: AnyObject){
         
         self.result = result
-        
         if self.delegate != nil{
             self.delegate!.gotResult(self.prefix, result: result)
         }

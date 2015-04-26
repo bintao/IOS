@@ -39,7 +39,7 @@ class DataManager: NSObject {
     class func saveImageToLocal(image: UIImage, name: String){
         println(image)
         let fileManager = NSFileManager()
-        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
         var imagePath = paths.stringByAppendingPathComponent(name)
         
         UIImagePNGRepresentation(image).writeToFile(imagePath, atomically: true)
@@ -50,7 +50,7 @@ class DataManager: NSObject {
         
         var image: UIImage!
         let fileManager = NSFileManager()
-        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
         var imagePath = paths.stringByAppendingPathComponent(name)
         if (fileManager.fileExistsAtPath(imagePath)) {
             let getImage = UIImage(contentsOfFile: imagePath)
@@ -62,7 +62,7 @@ class DataManager: NSObject {
     }
 
     class func checkIfFileExist(fileName: String)->Bool{
-        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
         
         var getImagePath = paths.stringByAppendingPathComponent(fileName)
         
@@ -79,7 +79,7 @@ class DataManager: NSObject {
     }
     
     class func deleFileInLocal(fileName: String){
-        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
         
         var getImagePath = paths.stringByAppendingPathComponent(fileName)
         
@@ -96,7 +96,7 @@ class DataManager: NSObject {
     class func getURLPath()->String{
 
         let fileManager = NSFileManager()
-        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as String
+        var paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true)[0] as! String
         return paths
     }
 

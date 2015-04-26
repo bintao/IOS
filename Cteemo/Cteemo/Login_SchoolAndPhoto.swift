@@ -81,24 +81,29 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
          if prefix == LolAPIGlobal.key {
             
             println(LolAPIGlobal.lolName)
-            if LolAPIGlobal.lolName != nil && (result as [String: AnyObject])[LolAPIGlobal.lolName] as [String: AnyObject]? != nil{
             
-                LolAPIGlobal.getIDresult((result as [String: AnyObject])[LolAPIGlobal.lolName] as [String: AnyObject])
+            
+            if LolAPIGlobal.lolName != nil && (result as! [String: AnyObject])[LolAPIGlobal.lolName] as? [String: AnyObject] != nil {
+                
+                LolAPIGlobal.getIDresult((result as! [String: AnyObject])[LolAPIGlobal.lolName] as! [String: AnyObject])
+            
             }
-            
+                
+                
+
         }
         
     }
     
-
+    
+    
+    
     // after got photo   go to cropping view
-    func imagePickerController(picker: UIImagePickerController!,
-        
-        didFinishPickingMediaWithInfo info: NSDictionary!) {
+  func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
             
             self.dismissViewControllerAnimated(true, completion: nil);
          
-            sourceImage =  info.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
+            sourceImage =  (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage) as! UIImage
             self.performSegueWithIdentifier("addImage", sender: self)
             
     }
@@ -107,13 +112,13 @@ class Login_SchoolAndPhoto: UIViewController, UITextFieldDelegate, UIImagePicker
         
         if segue.identifier == "addImage"{
             
-            var controller: Login_AddPhoto = segue.destinationViewController as Login_AddPhoto
+            var controller: Login_AddPhoto = segue.destinationViewController as! Login_AddPhoto
             controller.sourceImage = self.sourceImage
             
         }
         if segue.identifier == "gotololid"{
             
-            var controller: Login_lolID = segue.destinationViewController as Login_lolID
+            var controller: Login_lolID = segue.destinationViewController as! Login_lolID
             var gender = ""
             if self.gender.selectedSegmentIndex == 1{
                 gender = "Female"

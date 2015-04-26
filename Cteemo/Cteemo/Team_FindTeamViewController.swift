@@ -41,18 +41,23 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
             if TeamInfoGlobal.findplayer {
         
                 var req = request(.GET, "http://54.149.235.253:5000/search_profile", parameters: [ "username":searchBar.text])
-                    .responseJSON { (_, _, JSON, _) in
+                    .responseJSON { (_, _, JSONdata, _) in
                         self.stopLoading()
-                    
-                        println(JSON)
-                        if ((JSON as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
+                        let myjson = JSON(JSONdata!)
+                        
+                        if let unauthorized = myjson["message"].string
+                        {
                             
+                            if (unauthorized.rangeOfString("Unauthorized")?.isEmpty != nil)
+                            {
+                            
+                            
+                            }
+                        
                         }
-                        else if JSON? != nil{
-                            println(JSON)
-                            self.teams = JSON as [AnyObject]
+                        else if JSONdata != nil{
                             var result: [AnyObject] = [AnyObject]()
-                            result = JSON as [AnyObject]
+                            result = JSONdata as! [AnyObject]
                             self.gotResult(result)
                           
                         }
@@ -63,19 +68,26 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
             else{
             
                 var req = request(.GET, "http://54.149.235.253:5000/search_team/lol", parameters: [ "teamName":searchBar.text])
-                    .responseJSON { (_, _, JSON, _) in
+                    .responseJSON { (_, _, JSONdata, _) in
                         self.stopLoading()
                         
-                        println(JSON)
-                        if ((JSON as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
+                        let myjson = JSON(JSONdata!)
+                        
+                        if let unauthorized = myjson["message"].string
+                        {
+                            
+                            if (unauthorized.rangeOfString("Unauthorized")?.isEmpty != nil)
+                            {
+                                
+                                
+                            }
                             
                         }
-                        else if JSON? != nil{
-                            println(JSON)
-                            self.teams = JSON as [AnyObject]
+                        else if JSONdata != nil{
                             var result: [AnyObject] = [AnyObject]()
-                            result = JSON as [AnyObject]
+                            result = JSONdata as! [AnyObject]
                             self.gotResult(result)
+                            
                         }
                         
                 }
@@ -112,16 +124,16 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         
         if TeamInfoGlobal.findplayer {
             
-             if (teams[indexPath.row] as? [String: AnyObject])?["username"]? != nil{
+             if (teams[indexPath.row] as! [String: AnyObject])["username"] != nil{
             
-            if !((teams[indexPath.row] as? [String: AnyObject])?["profile_icon"]? is NSNull){
+            if !((teams[indexPath.row] as! [String: AnyObject])["profile_icon"] is NSNull){
                 
-            iconurl = (teams[indexPath.row] as [String: AnyObject])["profile_icon"] as String
+            iconurl = (teams[indexPath.row] as! [String: AnyObject])["profile_icon"] as! String
                 
             }
-            if !((teams[indexPath.row] as? [String: AnyObject])?["school"]? is NSNull){
+            if !((teams[indexPath.row] as! [String: AnyObject])["school"] is NSNull){
                 
-            school = (teams[indexPath.row] as [String: AnyObject])["school"] as String
+            school = (teams[indexPath.row] as! [String: AnyObject])["school"] as! String
             }
                 
             else{
@@ -131,7 +143,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
             }
             
            
-            name =  (teams[indexPath.row] as [String: AnyObject])["username"] as String
+            name =  (teams[indexPath.row] as! [String: AnyObject])["username"] as! String
             }
             
             
@@ -139,22 +151,22 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
             
         else
         {
-            if  (teams[indexPath.row] as? [String: AnyObject])?["teamIcon"] != nil {
+            if  (teams[indexPath.row] as! [String: AnyObject])["teamIcon"] != nil {
               
-                if !((teams[indexPath.row] as? [String: AnyObject])?["teamIcon"]? is NSNull){
+                if !((teams[indexPath.row] as! [String: AnyObject])["teamIcon"] is NSNull){
                     
-                  iconurl = (teams[indexPath.row] as [String: AnyObject])["teamIcon"] as String
+                  iconurl = (teams[indexPath.row] as! [String: AnyObject])["teamIcon"] as! String
                     
                 }
               
-                if !((teams[indexPath.row] as? [String: AnyObject])?["captain"]? is NSNull){
-                    school =  (teams[indexPath.row] as [String: AnyObject])["captain"] as String
+                if !((teams[indexPath.row] as! [String: AnyObject])["captain"] is NSNull){
+                    school =  (teams[indexPath.row] as! [String: AnyObject])["captain"] as! String
 
                 
                 }
-                if !((teams[indexPath.row] as? [String: AnyObject])?["teamName"]? is NSNull){
+                if !((teams[indexPath.row] as! [String: AnyObject])["teamName"] is NSNull){
                     
-                name =  (teams[indexPath.row] as [String: AnyObject])["teamName"] as String
+                name =  (teams[indexPath.row] as! [String: AnyObject])["teamName"] as! String
                     
                 }
             }
@@ -174,7 +186,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         
         ImageLoader.sharedLoader.imageForUrl(iconurl, completionHandler:{(image: UIImage?, url: String) in
             println(url)
-            if image? != nil {
+            if image != nil {
                 cellIcon.image = image
             }else{
             
@@ -225,11 +237,11 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
             if (teams[sender.tag] as? [String: AnyObject])?["profile_id"] != nil{
                 var username = ""
                 
-                var id = (teams[sender.tag] as [String: AnyObject])["profile_id"] as String
+                var id = (teams[sender.tag] as! [String: AnyObject])["profile_id"] as! String
                 
-                if (teams[sender.tag] as? [String: AnyObject])?["username"] != nil{
+                if (teams[sender.tag] as! [String: AnyObject])["username"] != nil{
                     
-                username = (teams[sender.tag] as [String: AnyObject])["username"] as String
+                username = (teams[sender.tag] as! [String: AnyObject])["username"] as! String
                 
                 }
                 let alert = SCLAlertView()
@@ -250,7 +262,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         
         else if (teams[sender.tag] as? [String: AnyObject])?["teamName"] != nil{
         
-        var teamname = (teams[sender.tag] as [String: AnyObject])["teamName"] as String
+        var teamname = (teams[sender.tag] as! [String: AnyObject])["teamName"] as! String
         
         let alert = SCLAlertView()
         alert.addButton("Join team now!"){
@@ -271,9 +283,7 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
     }
     
     func gotResult(prefix: String, result: AnyObject) {
-    
-        
-        println(result)
+
     
     }
     

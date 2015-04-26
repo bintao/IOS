@@ -54,18 +54,18 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     func gotResult(prefix: String, result: AnyObject) {
         if (prefix as NSString).substringFromIndex(36) == "/all/0" {
             
-              for var index = 0; index < (result as [AnyObject]).count; index++ {
+              for var index = 0; index < (result as! [AnyObject]).count; index++ {
             
-                var weburl = ((result as [AnyObject])[index] as [String:AnyObject])["news_url"] as String
+                var weburl = ((result as! [AnyObject])[index] as! [String:AnyObject])["news_url"] as! String
                 
                 self.weburl.append(weburl)
                 
             }
             
             //need update
-            if newsArr.count == 0 || (newsArr[0] as [String: AnyObject])["title"] as String != ((result as [AnyObject])[0] as [String: AnyObject])["title"] as String{
+            if newsArr.count == 0 || (newsArr[0] as! [String: AnyObject])["title"] as! String != ((result as! [AnyObject])[0] as! [String: AnyObject])["title"] as! String{
                 
-                newsArr = result as [AnyObject]
+                newsArr = result as! [AnyObject]
                 var newsInfo = ["news":newsArr]
                 
             //save user info and update image files
@@ -79,7 +79,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
             }
         }else if (prefix as NSString).substringToIndex(36) == "http://54.149.235.253:4000/news_list"{
-            newsArr = newsArr + (result as [AnyObject])
+            newsArr = newsArr + (result as! [AnyObject])
             var newsInfo = ["news":newsArr]
             //save user info and update image files
             downloadNewsPictureImages(newsInfo)
@@ -97,9 +97,9 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         var count = 0
         var downloadCount = 0
         
-        for var index = 0; index < (info["news"] as [AnyObject]).count; index++ {
+        for var index = 0; index < (info["news"] as! [AnyObject]).count; index++ {
             
-            var imageURL = ((info["news"] as [AnyObject])[index] as [String:AnyObject])["news_pic"] as String
+            var imageURL = ((info["news"] as! [AnyObject])[index] as! [String:AnyObject])["news_pic"] as! String
             
             if imageURL != ""  {
                 
@@ -185,7 +185,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 
                 var img = UIImage()
-                img = img.setGradientToImage(cellImage.frame, locationList: [0.0,1.0], colorList: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.2], startPoint: CGPointMake(0, self.tableHeight), endPoint: CGPointMake(cellImage.frame.width + 200, -30))
+               // img = img.setGradientToImage(cellImage.frame, locationList: [0.0,1.0], colorList: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.2], startPoint: CGPointMake(0, self.tableHeight), endPoint: CGPointMake(cellImage.frame.width + 200, -30))
                 var coverImage = UIImageView(frame: cellImage.frame)
               
                 coverImage.image = img
@@ -194,18 +194,17 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 var title = UITextView(frame: CGRectMake(15, 10, self.view.frame.width - 100, 90))
                 title.font = UIFont(name: "Palatino-Bold", size: 21)
-                title.text = (self.newsArr[indexPath.row] as [String : AnyObject])["title"] as String
+                title.text = (self.newsArr[indexPath.row] as! [String : AnyObject])["title"]as!String
                 title.textColor = UIColor.darkGrayColor()
                 title.backgroundColor = UIColor.clearColor()
                 title.textAlignment = NSTextAlignment.Left
                 title.userInteractionEnabled = false
                 cell.addSubview(title)
                 
-                
                 var time = UILabel(frame: CGRectMake(20, self.tableHeight - 30, self.view.frame.width - 100, 20))
                 time.font = UIFont(name: "Palatino-Bold", size: 14)
-                time.text = (self.newsArr[indexPath.row] as [String : AnyObject])["date"] as? String
-                var index = countElements(time.text!) - 7
+                time.text = (self.newsArr[indexPath.row] as! [String : AnyObject])["date"] as? String
+                var index = count(time.text!) - 7
                 time.text = (time.text! as NSString).substringToIndex(index)
                 time.textColor = UIColor.darkGrayColor()
                 time.alpha = 0.8
@@ -246,7 +245,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if indexPath.row < self.weburl.count {
             
-        self.website = self.weburl[indexPath.row] as String
+        self.website = self.weburl[indexPath.row] as! String
         
         
         }
@@ -263,7 +262,7 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "gotonewsdetail"{
             
-            var controller: NewsDisplayViewController = segue.destinationViewController as NewsDisplayViewController
+            var controller: NewsDisplayViewController = segue.destinationViewController as! NewsDisplayViewController
             controller.website = self.website
         }
     }

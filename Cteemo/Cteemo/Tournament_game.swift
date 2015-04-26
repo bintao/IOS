@@ -84,7 +84,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell2 = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[0] as tournamentViewCell
+        let cell2 = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[0] as! tournamentViewCell
         
         if Tournaments.count != 0 && Tournaments.count > indexPath.row {
             
@@ -181,12 +181,11 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                                 var req = request(.POST, "https://api.challonge.com/v1/tournaments/"+self.url+"/participants.json",parameters:par)
                                     .responseJSON { (_, _, JSONdata, _) in
                                         
-                                        let myjson = JSON(JSONdata!)
+                                        
                                         if JSONdata != nil {
                                             
-                                            var result: [String: AnyObject] = JSONdata as [String: AnyObject]
-                                            if result["errors"]? != nil {
-                                        
+                                            let myjson = JSON(JSONdata!)
+                                            
                                                 if let error = myjson["errors"][0].string
                                                 {
                                                     
@@ -203,15 +202,11 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                                                     
                                                 }// check errors
                                                 
-                                                
-                                            }//error exis
-                                                
-                                            else if result["participant"]? != nil {
-                                                
-                                                self.performSegueWithIdentifier("joined", sender: self)
-                                                
-                                                
-                                            }//newuser joined
+                                            else if let check = myjson["participant"].array {
+                                                    
+                                                    self.performSegueWithIdentifier("joined", sender: self)
+                                            
+                                            }
                                             
                                         }
                                         
@@ -254,7 +249,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         
         if segue.identifier == "joined"{
             
-            var controller: Tournament_joined = segue.destinationViewController as Tournament_joined
+            var controller: Tournament_joined = segue.destinationViewController as! Tournament_joined
             controller.starttime = self.starttime
             controller.TournamentType = self.TournamentType
             controller.totalmember = self.teamsnumber

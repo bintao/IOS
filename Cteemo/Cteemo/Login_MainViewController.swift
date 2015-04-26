@@ -43,14 +43,14 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
             
             // save user info from facebook
             
-            UserInfoGlobal.gender = user.objectForKey("gender") as String
+            UserInfoGlobal.gender = user.objectForKey("gender") as! String
             UserInfoGlobal.name = user.name
-            UserInfoGlobal.fbid = user.objectForKey("id") as String
+            UserInfoGlobal.fbid = user.objectForKey("id") as! String
             if user.objectForKey("email") != nil{
-                UserInfoGlobal.email = user.objectForKey("email") as String
+                UserInfoGlobal.email = user.objectForKey("email") as! String
             }
             
-            println(user.objectForKey("email") as String)
+            println(user.objectForKey("email") as! String)
             
             UserInfoGlobal.saveUserData()
             self.name = user.name
@@ -94,10 +94,10 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         if prefix == "fb_login"{
             //save token
             
-            if result["token"]? != nil && result["rongToken"]? != nil
+            if result["token"] as? String != nil && result["rongToken"] as? String != nil
             {
-                UserInfoGlobal.accessToken = result["token"] as String
-                UserInfoGlobal.rongToken = (result["rongToken"] as [String: AnyObject])["token"] as String
+                UserInfoGlobal.accessToken = result["token"] as! String
+                UserInfoGlobal.rongToken = (result["rongToken"] as! [String: AnyObject])["token"] as! String
                 UserInfoGlobal.saveUserData()
                 
                 //get profile from the user
@@ -115,7 +115,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         
         else if prefix == "profile" {
             
-            if result["username"]? != nil {
+            if result["username"] as? String  != nil {
                 //old User
             
                 
@@ -164,9 +164,9 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     func getFriends(){
     FBRequestConnection.startForMyFriendsWithCompletionHandler({ (connection, result, error: NSError!) -> Void in
             if error == nil {
-                var friendObjects = result["data"] as [NSDictionary]
+                var friendObjects = result["data"] as! [NSDictionary]
                 for friendObject in friendObjects {
-                    println(friendObject["id"] as NSString)
+                    println(friendObject["id"] as! NSString)
                 }
             } else {
                 println("Error requesting friends list form facebook")
@@ -213,7 +213,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         
         if segue.identifier == "getSchoolAfterFacebook"{
             
-            var controller: Login_SchoolAndPhoto = segue.destinationViewController as Login_SchoolAndPhoto
+            var controller: Login_SchoolAndPhoto = segue.destinationViewController as! Login_SchoolAndPhoto
             controller.name = self.name
             
         }

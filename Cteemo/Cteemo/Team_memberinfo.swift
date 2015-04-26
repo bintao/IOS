@@ -124,11 +124,10 @@ class Team_memberinfo: UIViewController, UITableViewDelegate, UITableViewDataSou
                     
                     if let newicon = myjson["profile_icon"].string{
                         
-                        self.iconurl = newicon
                         ImageLoader.sharedLoader.imageForUrl(newicon, completionHandler:{(image: UIImage?, url: String) in
                             println(url)
-                            if image? != nil {
-                                self.usericon = image?.roundCornersToCircle()
+                            if image != nil {
+                                self.usericon = image
                             }
                             else {
                                 self.usericon = UIImage(named: "error.png")!

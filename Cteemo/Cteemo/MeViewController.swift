@@ -72,7 +72,7 @@ class MeViewController: UIViewController  {
             
     if UserInfoGlobal.profile_icon_Link != nil {
         ImageLoader.sharedLoader.imageForUrl(UserInfoGlobal.profile_icon_Link, completionHandler:{(image: UIImage?, url: String) in
-            if image? != nil {
+            if image != nil {
                 self.usericon.image = image
             }
         })
@@ -85,7 +85,7 @@ class MeViewController: UIViewController  {
             
         }
         
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
+        ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).showTabb()
         
     }
 
@@ -156,9 +156,9 @@ class MeViewController: UIViewController  {
             
         }
         
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        ((self.parentViewController as! UINavigationController).parentViewController as!MainViewController).hideTabb()
         
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).cleanbadge()
+        ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).cleanbadge()
         
         self.navigationController?.pushViewController(list, animated: true)
         
@@ -186,7 +186,7 @@ class MeViewController: UIViewController  {
         
         UINavigationBar.appearance().tintColor = UserInfoGlobal.UIColorFromRGB(0xE74C3C)
         
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).hideTabb()
         
         self.navigationController?.pushViewController(chatViewController, animated: true)
         
@@ -201,7 +201,7 @@ class MeViewController: UIViewController  {
         let alert1 = SCLAlertView()
         alert1.addButton("Logout", actionBlock:{ (Void) in
             
-             ((self.parentViewController as UINavigationController).parentViewController as MainViewController).logout()
+             ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).logout()
             
         })
        alert1.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "error.png")!, color: UserInfoGlobal.UIColorFromRGB(0x333333), title: "Log out CTeemo", subTitle: "Play tournament next time~ ",closeButtonTitle: "Cancel", duration: 0.0)

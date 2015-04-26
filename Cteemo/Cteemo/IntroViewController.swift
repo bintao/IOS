@@ -51,15 +51,15 @@ class IntroViewController: UIViewController, UIScrollViewDelegate{
         var gestureReco = UIPanGestureRecognizer(target: self, action: "dragged:")
         back.addGestureRecognizer(gestureReco)
         
-        firstView = NSBundle.mainBundle().loadNibNamed("1View", owner: self, options: nil)[0] as first
+        firstView = NSBundle.mainBundle().loadNibNamed("1View", owner: self, options: nil)[0] as! first
         firstView.alpha = 0
         scroller.addSubview(firstView)
         
-        secondView = NSBundle.mainBundle().loadNibNamed("2View", owner: self, options: nil)[0] as second
+        secondView = NSBundle.mainBundle().loadNibNamed("2View", owner: self, options: nil)[0] as! second
         secondView.center.x = secondView.center.x + view.frame.width
         scroller.addSubview(secondView)
         
-        thirdView = NSBundle.mainBundle().loadNibNamed("3View", owner: self, options: nil)[0] as third
+        thirdView = NSBundle.mainBundle().loadNibNamed("3View", owner: self, options: nil)[0] as! third
         thirdView.center.x = thirdView.center.x + view.frame.width * 2
         scroller.addSubview(thirdView)
         

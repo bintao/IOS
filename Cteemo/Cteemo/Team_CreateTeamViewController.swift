@@ -50,7 +50,7 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
         var req = request(.POST, "http://54.149.235.253:5000/create_team/lol", parameters: ["teamName":teamName.text, "teamIntro":teamIntro.text,"isSchool":true])
             .responseJSON { (_, _, JSON, _) in
                 if JSON != nil{
-                   var result: [String: AnyObject] = JSON as [String: AnyObject]
+                   var result: [String: AnyObject] = JSON as! [String: AnyObject]
                 self.getResult(result)
                 }
             }
@@ -67,9 +67,9 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
     
     func getResult(result: [String: AnyObject]) {
         println(result)
-        if result["message"]? != nil{
+        if result["message"] as? String != nil{
         
-            if (result["message"] as String).rangeOfString("Tried to save")?.isEmpty != nil{
+            if (result["message"] as! String).rangeOfString("Tried to save")?.isEmpty != nil{
             
                      let alert = SCLAlertView()
                 alert.showError(self.parentViewController?.parentViewController, title: "Team name exised", subTitle: "Please enter team name again", closeButtonTitle: "ok", duration: 0.0)
@@ -78,7 +78,7 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
             }
         }
 
-       if(result["id"]? != nil){
+       if(result["id"] as? String != nil){
             TeamInfoGlobal.gotResult(result)
             var req1 = ARequest(prefix: "upload_team_icon/lol", method: requestType.POST)
             req1.delegate = self
@@ -93,9 +93,9 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
     
     func gotResult(prefix: String, result: AnyObject) {
         
-        if result["teamIcon"]? != nil {
+        if result["teamIcon"] as? String != nil {
             
-            TeamInfoGlobal.teamicon_link = result["teamIcon"] as String
+            TeamInfoGlobal.teamicon_link = result["teamIcon"] as! String
         }
         else {TeamInfoGlobal.teamicon_link = nil }
         
@@ -109,9 +109,11 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
         pickerC.delegate = self
         self.presentViewController(pickerC, animated: true, completion: nil)
     }
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: NSDictionary!) {
+    
+   func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]){
         self.dismissViewControllerAnimated(true, completion: nil);
-        sourceImage =  info.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
+        sourceImage =   (info as NSDictionary).objectForKey(UIImagePickerControllerOriginalImage) as! UIImage
+    
         self.performSegueWithIdentifier("addTeamImage", sender: self)
         
     }
@@ -120,7 +122,7 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
         
         if segue.identifier == "addTeamImage"{
             
-            var controller: Team_AddPhoto = segue.destinationViewController as Team_AddPhoto
+            var controller: Team_AddPhoto = segue.destinationViewController as! Team_AddPhoto
             controller.sourceImage = self.sourceImage
         }
                 

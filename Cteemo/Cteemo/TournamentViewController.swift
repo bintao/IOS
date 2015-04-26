@@ -63,14 +63,14 @@ class TournamentViewController: UIViewController {
        
         if segue.identifier == "gotoGame"{
             
-            var controller: Tournament_game = segue.destinationViewController as Tournament_game
+            var controller: Tournament_game = segue.destinationViewController as! Tournament_game
             Tournament.solo = false
             Tournament.key = Tournament.teamkey
         }
         
         else if segue.identifier == "sologame"{
             
-            var controller: Tournament_game = segue.destinationViewController as Tournament_game
+            var controller: Tournament_game = segue.destinationViewController as! Tournament_game
             Tournament.solo = true
             Tournament.key = Tournament.solokey
         }

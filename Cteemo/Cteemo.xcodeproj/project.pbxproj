@@ -22,7 +22,6 @@
 		425E8FE51A8B19BF00A06752 /* CustomPosterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */; };
 		4260F3FC1A886D6000A6F39D /* Team_TeamInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4260F3FB1A886D6000A6F39D /* Team_TeamInfoViewController.swift */; };
 		4260F4031A886F1E00A6F39D /* more111.png in Resources */ = {isa = PBXBuildFile; fileRef = 4260F4021A886F1E00A6F39D /* more111.png */; };
-		4267D82F1A8011D20054E800 /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4267D82E1A8011D20054E800 /* ImageProcessor.swift */; };
 		426CD2EC1A89649D0042F4F7 /* config.png in Resources */ = {isa = PBXBuildFile; fileRef = 426CD2EB1A89649D0042F4F7 /* config.png */; };
 		427D7A911A85C36000BFB2DA /* CustomSwitcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */; };
 		427D7A931A85CBA600BFB2DA /* UserTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 427D7A921A85CBA600BFB2DA /* UserTeam.swift */; };
@@ -125,8 +124,10 @@
 		A12D3D4A1AD9FC7C00C2076A /* arrw.png in Resources */ = {isa = PBXBuildFile; fileRef = A12D3D491AD9FC7C00C2076A /* arrw.png */; };
 		A12D3D4D1ADA037300C2076A /* phone9.png in Resources */ = {isa = PBXBuildFile; fileRef = A12D3D4B1ADA037300C2076A /* phone9.png */; };
 		A12D3D4E1ADA037300C2076A /* cup66.png in Resources */ = {isa = PBXBuildFile; fileRef = A12D3D4C1ADA037300C2076A /* cup66.png */; };
-		A12F7CAE1AD7203A00DBCAA8 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12F7CAD1AD7203A00DBCAA8 /* SwiftyJSON.swift */; };
 		A12FDD8A1A85EF9B00DF278F /* Team_AddPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */; };
+		A1308D221AEC92660023701C /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1308D211AEC92660023701C /* Alamofire.swift */; };
+		A1308D241AEC92BF0023701C /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1308D231AEC92BF0023701C /* SwiftyJSON.swift */; };
+		A1308D261AECC90C0023701C /* ImageProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1308D251AECC90C0023701C /* ImageProcessor.swift */; };
 		A13114941ADE3FF600BC748E /* SMTPAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = A13114931ADE3FF600BC748E /* SMTPAPI.m */; };
 		A13114971ADE405C00BC748E /* SendGrid.m in Sources */ = {isa = PBXBuildFile; fileRef = A13114961ADE405C00BC748E /* SendGrid.m */; };
 		A131149D1ADE40AB00BC748E /* SendGridEmail.m in Sources */ = {isa = PBXBuildFile; fileRef = A131149A1ADE40AB00BC748E /* SendGridEmail.m */; };
@@ -220,7 +221,6 @@
 		A1B5D8DC1AC7CD6B000BD6A6 /* loginpage1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8D91AC7CD6B000BD6A6 /* loginpage1.png */; };
 		A1B5D8DD1AC7CD6B000BD6A6 /* loginpage2.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8DA1AC7CD6B000BD6A6 /* loginpage2.png */; };
 		A1B5D8DE1AC7CD6B000BD6A6 /* startapplogin.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B5D8DB1AC7CD6B000BD6A6 /* startapplogin.png */; };
-		A1B651771AD709C900488D23 /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1B651761AD709C900488D23 /* Alamofire.swift */; };
 		A1B86DEE1ACE2A4600942626 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A1B86DED1ACE2A4600942626 /* libxml2.dylib */; };
 		A1B86E761ACE406E00942626 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B86DFA1ACE406E00942626 /* 1.png */; };
 		A1B86E771ACE406E00942626 /* 10.png in Resources */ = {isa = PBXBuildFile; fileRef = A1B86DFB1ACE406E00942626 /* 10.png */; };
@@ -456,7 +456,6 @@
 		425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPosterView.swift; sourceTree = "<group>"; };
 		4260F3FB1A886D6000A6F39D /* Team_TeamInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_TeamInfoViewController.swift; sourceTree = "<group>"; };
 		4260F4021A886F1E00A6F39D /* more111.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = more111.png; sourceTree = "<group>"; };
-		4267D82E1A8011D20054E800 /* ImageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		426CD2EB1A89649D0042F4F7 /* config.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = config.png; sourceTree = "<group>"; };
 		427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomSwitcher.swift; sourceTree = "<group>"; };
 		427D7A921A85CBA600BFB2DA /* UserTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTeam.swift; sourceTree = "<group>"; };
@@ -575,8 +574,10 @@
 		A12D3D491AD9FC7C00C2076A /* arrw.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrw.png; sourceTree = "<group>"; };
 		A12D3D4B1ADA037300C2076A /* phone9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = phone9.png; sourceTree = "<group>"; };
 		A12D3D4C1ADA037300C2076A /* cup66.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cup66.png; sourceTree = "<group>"; };
-		A12F7CAD1AD7203A00DBCAA8 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 		A12FDD891A85EF9B00DF278F /* Team_AddPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_AddPhoto.swift; sourceTree = "<group>"; };
+		A1308D211AEC92660023701C /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
+		A1308D231AEC92BF0023701C /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		A1308D251AECC90C0023701C /* ImageProcessor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageProcessor.swift; sourceTree = "<group>"; };
 		A13114921ADE3FF600BC748E /* SMTPAPI.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SMTPAPI.h; sourceTree = "<group>"; };
 		A13114931ADE3FF600BC748E /* SMTPAPI.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SMTPAPI.m; sourceTree = "<group>"; };
 		A13114951ADE405C00BC748E /* SendGrid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SendGrid.h; sourceTree = "<group>"; };
@@ -684,7 +685,6 @@
 		A1B5D8D91AC7CD6B000BD6A6 /* loginpage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginpage1.png; sourceTree = "<group>"; };
 		A1B5D8DA1AC7CD6B000BD6A6 /* loginpage2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loginpage2.png; sourceTree = "<group>"; };
 		A1B5D8DB1AC7CD6B000BD6A6 /* startapplogin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = startapplogin.png; sourceTree = "<group>"; };
-		A1B651761AD709C900488D23 /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alamofire.swift; sourceTree = "<group>"; };
 		A1B86DED1ACE2A4600942626 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		A1B86DFA1ACE406E00942626 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
 		A1B86DFB1ACE406E00942626 /* 10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 10.png; sourceTree = "<group>"; };
@@ -1019,10 +1019,10 @@
 				A1EB12191A99C61900FC8388 /* Tournament */,
 				A1EB121C1A99C66C00FC8388 /* data */,
 				A1010D461A7B2ACF00256208 /* ARequest.swift */,
+				A1308D251AECC90C0023701C /* ImageProcessor.swift */,
 				A1EB12031A99263800FC8388 /* ImageLoader.swift */,
-				A1B651761AD709C900488D23 /* Alamofire.swift */,
-				A12F7CAD1AD7203A00DBCAA8 /* SwiftyJSON.swift */,
-				4267D82E1A8011D20054E800 /* ImageProcessor.swift */,
+				A1308D231AEC92BF0023701C /* SwiftyJSON.swift */,
+				A1308D211AEC92660023701C /* Alamofire.swift */,
 				42B859EE1A74840F00FD4642 /* Cteemo.xcdatamodeld */,
 				42B85A3C1A74A0D800FD4642 /* Reachability.h */,
 				42B85A3D1A74A0D800FD4642 /* Reachability.m */,
@@ -2124,6 +2124,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A13114941ADE3FF600BC748E /* SMTPAPI.m in Sources */,
+				A1308D261AECC90C0023701C /* ImageProcessor.swift in Sources */,
 				A11FED851ABD4D060075B627 /* RAMFumeAnimation.swift in Sources */,
 				A10D09911AE898C300AEF2CE /* Team_Member_Top.swift in Sources */,
 				A10D09951AEB541900AEF2CE /* Team_Member_bot.swift in Sources */,
@@ -2152,7 +2153,6 @@
 				A11FED831ABD4D060075B627 /* RAMBounceAnimation.swift in Sources */,
 				A1C885D91AC29CF500AA7888 /* Team_playerpost.swift in Sources */,
 				42DBA6871AD60D6B001F57CE /* IntroViewController.swift in Sources */,
-				4267D82F1A8011D20054E800 /* ImageProcessor.swift in Sources */,
 				421D565C1A8339D2005E56F0 /* Team_FindTeamViewController.swift in Sources */,
 				42B85A3E1A74A0D800FD4642 /* Reachability.m in Sources */,
 				A1838F8F1ADB817C004690A3 /* Constants.m in Sources */,
@@ -2165,6 +2165,7 @@
 				42B74FC51A812416008B575C /* TournamentViewController.swift in Sources */,
 				A11FED841ABD4D060075B627 /* RAMFrameItemAnimation.swift in Sources */,
 				A1838F861ADB817C004690A3 /* CameraFlashButton.m in Sources */,
+				A1308D241AEC92BF0023701C /* SwiftyJSON.swift in Sources */,
 				423142F91A9C40180033B3E7 /* NewsDisplayViewController.swift in Sources */,
 				42B85A441A74A81A00FD4642 /* UserInformation.swift in Sources */,
 				A1838F881ADB817C004690A3 /* CameraShutterButton.m in Sources */,
@@ -2184,15 +2185,14 @@
 				A11FED881ABD4D060075B627 /* RAMAnimatedTabBarController.swift in Sources */,
 				42B85A451A74A81A00FD4642 /* DataManager.swift in Sources */,
 				42B74FC41A812416008B575C /* MainViewController.swift in Sources */,
-				A1B651771AD709C900488D23 /* Alamofire.swift in Sources */,
 				42B0A3391A898BD200EA908C /* AFHTTPSessionManager.m in Sources */,
-				A12F7CAE1AD7203A00DBCAA8 /* SwiftyJSON.swift in Sources */,
 				A18BF4261AA2F7BD000678F3 /* Tournament_joined.swift in Sources */,
 				A1EB12041A99263800FC8388 /* ImageLoader.swift in Sources */,
 				42B0A33A1A898BD200EA908C /* AFNetworkReachabilityManager.m in Sources */,
 				A131149E1ADE40AB00BC748E /* SendGridEmailAttachment.m in Sources */,
 				A1838F891ADB817C004690A3 /* CameraToggleButton.m in Sources */,
 				A1838F841ADB817C004690A3 /* CameraSessionView.m in Sources */,
+				A1308D221AEC92660023701C /* Alamofire.swift in Sources */,
 				A1F138861A8346C9007DE5A2 /* LolAPI.swift in Sources */,
 				42B0A3371A898BD200EA908C /* AFHTTPRequestOperation.m in Sources */,
 				A11FED871ABD4D060075B627 /* RAMTransitionItemAnimation.swift in Sources */,

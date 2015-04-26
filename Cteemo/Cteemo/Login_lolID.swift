@@ -42,7 +42,7 @@ class Login_lolID: UIViewController, UIScrollViewDelegate,RequestResultDelegate{
             
             ImageLoader.sharedLoader.imageForUrl(LolAPIGlobal.lolIcon, completionHandler:{(image: UIImage?, url: String) in
                 println(url)
-                if image? != nil {
+                if image != nil {
                     self.lol_icon.image = image?.roundCornersToCircle()
                 }
                 else {
@@ -108,7 +108,7 @@ class Login_lolID: UIViewController, UIScrollViewDelegate,RequestResultDelegate{
            var req1 = ARequest(prefix: "upload_profile_icon", method: requestType.POST)
             req1.delegate = self
             req1.uploadPhoto("icon.png")
-
+            
             
         }
         

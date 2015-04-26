@@ -71,7 +71,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
     
     func clearnteambadge(){
     
-        var tabItem  = self.tabbar.items![2] as UITabBarItem
+        var tabItem  = self.tabbar.items![2] as! UITabBarItem
         self.groupcount = 0
         tabItem.badgeValue = nil
         
@@ -79,7 +79,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
     
     func cleanbadge(){
         
-        var tabItem  = self.tabbar.items![3] as UITabBarItem
+        var tabItem  = self.tabbar.items![3] as! UITabBarItem
         self.count = 0
         tabItem.badgeValue = nil
     
@@ -140,14 +140,14 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
         //得到组群信息并且设置角标
         println(message.targetId)
-        if  message.conversationType == RCConversationType.onversationType_GROUP{
+        if  message.conversationType == RCConversationType.ConversationType_GROUP {
             
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
                 dispatch_async(dispatch_get_main_queue(), {
                     
                      self.groupcount = self.groupcount + 1
-                     var tabItem  = self.tabbar.items![2] as UITabBarItem
+                     var tabItem  = self.tabbar.items![2] as! UITabBarItem
                      tabItem.badgeValue = "\(self.groupcount)"
                     
                 })
@@ -155,16 +155,16 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         
         }
             
-        else if message.targetId != "KEFU1428955428622" && message.conversationType != RCConversationType.onversationType_CHATROOM {
+        else if message.targetId != "KEFU1428955428622" && message.conversationType != RCConversationType.ConversationType_CHATROOM {
             let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
             dispatch_async(dispatch_get_global_queue(priority, 0), { ()->() in
                 dispatch_async(dispatch_get_main_queue(),{
                   
                     self.count = self.count + 1
-                    var tabItem  = self.tabbar.items![3] as UITabBarItem
+                    var tabItem  = self.tabbar.items![3] as! UITabBarItem
                     tabItem.badgeValue = "\(self.count)"
                     
-                    ((self.childViewControllers[0] as  UINavigationController).childViewControllers[0] as MeViewController).updatemesage(self.count)
+                    ((self.childViewControllers[0] as!  UINavigationController).childViewControllers[0] as! MeViewController).updatemesage(self.count)
                     
                 })
             })
@@ -205,8 +205,6 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         else{
          
             RCIM.setUserInfoFetcherWithDelegate(self, isCacheUserInfo: true)
-            
-            println("sdsd")
             
             println(UserInfoGlobal.rongToken)
             

@@ -347,7 +347,7 @@ class Tournament_playnext:  UIViewController  {
         
         if segue.identifier == "gamestart"{
        
-            var controller: Tournament_startgame = segue.destinationViewController as Tournament_startgame
+            var controller: Tournament_startgame = segue.destinationViewController as! Tournament_startgame
             controller.blueteammember = self.blueteammember
             controller.redmember = self.redmember
             controller.gameID = self.gameID

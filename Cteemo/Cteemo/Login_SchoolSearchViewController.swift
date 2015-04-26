@@ -31,7 +31,7 @@ class Login_SchoolSearchViewController: UIViewController, UITextFieldDelegate , 
         
         if segue.identifier == "gotSchoolResult"{
             
-            var controller: Login_SchoolAndPhoto = segue.destinationViewController as Login_SchoolAndPhoto
+            var controller: Login_SchoolAndPhoto = segue.destinationViewController as! Login_SchoolAndPhoto
             
             controller.school.text = self.chosenSchool as String
         }

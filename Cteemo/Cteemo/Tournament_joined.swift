@@ -52,13 +52,13 @@ class Tournament_joined: UIViewController {
         self.member.text = "\(self.totalmember)"
         self.checkin.alpha = 0
         
-     ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
+     ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).showTabb()
    
     }
     
     @IBAction func bracket(sender: AnyObject){
         
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).hideTabb()
         self.performSegueWithIdentifier("bracket", sender: self)
         
         
@@ -92,10 +92,10 @@ class Tournament_joined: UIViewController {
     
         var temp = RCChatViewController()
         temp.currentTarget = self.url
-        temp.conversationType = RCConversationType.onversationType_CHATROOM
+        temp.conversationType = RCConversationType.ConversationType_CHATROOM
         temp.enableSettings = false
         temp.currentTargetName = self.Tournamentname
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).hideTabb()
         self.navigationController?.pushViewController(temp, animated: true)
     
     
@@ -118,7 +118,7 @@ class Tournament_joined: UIViewController {
         
         UINavigationBar.appearance().tintColor = UserInfoGlobal.UIColorFromRGB(0xE74C3C)
         
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).hideTabb()
         
         self.navigationController?.pushViewController(chatViewController, animated: true)
         
@@ -136,9 +136,9 @@ class Tournament_joined: UIViewController {
                 
                 if JSON != nil {
                 println(JSON)
-                var result = JSON as [String : AnyObject]
+                var result = JSON as! [String : AnyObject]
                 
-                if result["errors"]? != nil {
+                if result["errors"] != nil {
                     
                     let alert1 = SCLAlertView()
                     alert1.showError(self.parentViewController?.parentViewController, title: "Check in failed", subTitle: "Please contact custom servers", closeButtonTitle: "ok", duration: 0.0)
@@ -163,14 +163,14 @@ class Tournament_joined: UIViewController {
         
         if segue.identifier == "bracket"{
            
-            var controller: Bracket = segue.destinationViewController as Bracket
+            var controller: Bracket = segue.destinationViewController as! Bracket
        
             controller.url = self.url
             
         }
         else if segue.identifier == "playnextgame"{
             
-            var controller: Tournament_playnext = segue.destinationViewController as Tournament_playnext
+            var controller: Tournament_playnext = segue.destinationViewController as! Tournament_playnext
             controller.myteamid = self.memberID
             controller.tournamentname = self.Tournamentname
             controller.url = self.url

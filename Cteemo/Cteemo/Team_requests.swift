@@ -46,6 +46,8 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         startLoading()
         
+        println(TeamInfoGlobal.iscaptain )
+        
         if TeamInfoGlobal.iscaptain == nil  {
         var req = request(.GET, "http://54.149.235.253:5000/invite_request/lol", parameters: ["page": 0])
             .responseJSON { (_, _, JSON, _) in
@@ -55,12 +57,13 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                      
                 }
                 else if JSON != nil && JSON as? [AnyObject]? != nil {
-                    self.requests = JSON as [AnyObject]
+                    self.requests = JSON as! [AnyObject]
                     var result: [AnyObject] = [AnyObject]()
-                    result = JSON as [AnyObject]
+                    result = JSON as! [AnyObject]
                     self.gotResult(result)
                 }
         }
+            
         }else if TeamInfoGlobal.iscaptain == "yes" {
         
             var req = request(.GET, "http://54.149.235.253:5000/join_request/lol", parameters: ["page": 0])
@@ -73,7 +76,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                     else if(JSON as? [AnyObject] != nil){
                         println(JSON)
                         var result: [AnyObject] = [AnyObject]()
-                        result = JSON as [AnyObject]
+                        result = JSON as! [AnyObject]
                         self.gotResult(result)
                     }
             }
@@ -114,20 +117,20 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         var username :String = ""
         var school : String = ""
         
-        if (requests[indexPath.row] as? [String: AnyObject])?["profile_icon"]? != nil
+        if (requests[indexPath.row] as! [String: AnyObject])["profile_icon"] != nil
         {
             
-            iconurl = (requests[indexPath.row] as [String: AnyObject])["profile_icon"] as String
+            iconurl = (requests[indexPath.row] as! [String: AnyObject])["profile_icon"] as! String
             
             
-            if !((requests[indexPath.row] as? [String: AnyObject])?["username"] is NSNull){
+            if !((requests[indexPath.row] as! [String: AnyObject])["username"] is NSNull){
                 
-                username = (requests[indexPath.row] as [String: AnyObject])["username"] as String
+                username = (requests[indexPath.row] as! [String: AnyObject])["username"] as! String
                 
             }
             
-            if !((requests[indexPath.row] as? [String: AnyObject])?["school"]? is NSNull){
-                school = (requests[indexPath.row] as [String: AnyObject])["school"] as String
+            if !((requests[indexPath.row] as! [String: AnyObject])["school"] is NSNull){
+                school = (requests[indexPath.row] as! [String: AnyObject])["school"] as! String
             }
             else {
                 school = "NO school"
@@ -143,7 +146,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         var cellIcon = UIImageView(image: nil)
         
         ImageLoader.sharedLoader.imageForUrl(iconurl, completionHandler:{(image: UIImage?, url: String) in
-            if image? != nil {
+            if image != nil {
                 cellIcon.image = image
             }else{
                 
@@ -206,12 +209,12 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
     func accept(sender : AnyObject){
     
         println(sender.tag)
-       if (requests[sender.tag] as? [String: AnyObject])?["profile_id"]? != nil {
+       if (requests[sender.tag] as! [String: AnyObject])["profile_id"] != nil {
             
-            var id = (requests[sender.tag] as [String: AnyObject])["profile_id"] as String
+            var id = (requests[sender.tag] as! [String: AnyObject])["profile_id"] as! String
             var username = ""
-            if !((requests[sender.tag] as? [String: AnyObject])?["username"] is NSNull){
-                username = (requests[sender.tag] as [String: AnyObject])["username"] as String
+            if !((requests[sender.tag] as! [String: AnyObject])["username"] is NSNull){
+                username = (requests[sender.tag] as! [String: AnyObject])["username"] as! String
             }
         
             let alert = SCLAlertView()
@@ -261,7 +264,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                         println(JSONdata)
                         if JSONdata == nil {
                             
-                            ((((self.parentViewController as UINavigationController).parentViewController as MainViewController).childViewControllers[1] as  UINavigationController).childViewControllers[0] as TeamViewController).toTeammatedIfNeede()
+                            ((((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).childViewControllers[1] as!  UINavigationController).childViewControllers[0] as! TeamViewController).toTeammatedIfNeede()
                             
                             
                         }
@@ -310,12 +313,12 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
     
     func Decline(sender : AnyObject){
 
-         if (requests[sender.tag] as? [String: AnyObject])?["profile_id"]? != nil  {
+         if (requests[sender.tag] as! [String: AnyObject])["profile_id"] != nil  {
         
-            var id = (requests[sender.tag] as [String: AnyObject])["profile_id"] as String
+            var id = (requests[sender.tag] as! [String: AnyObject])["profile_id"] as! String
              var username = ""
-            if !((requests[sender.tag] as? [String: AnyObject])?["username"] is NSNull){
-                username = (requests[sender.tag] as [String: AnyObject])["username"] as String
+            if !((requests[sender.tag] as! [String: AnyObject])["username"] is NSNull){
+                username = (requests[sender.tag] as! [String: AnyObject])["username"] as! String
             }
             
             
@@ -330,8 +333,8 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                 var req = request(.DELETE, "http://54.149.235.253:5000/invite_request/lol",parameters: ["profileID": id])
                     .responseJSON { (_, _, JSON, _) in
                         println(JSON)
-                        if (JSON as [String:AnyObject])["status"]? != nil{
-                            if((JSON as [String:AnyObject])["status"] as String == "success")
+                        if (JSON as! [String:AnyObject])["status"] != nil{
+                            if((JSON as! [String:AnyObject])["status"] as! String == "success")
                             {
                               self.search()
                             }

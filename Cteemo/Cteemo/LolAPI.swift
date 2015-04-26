@@ -31,37 +31,37 @@ class LolAPI: NSObject{
         
         if userDefault.objectForKey("lolID") != nil {
             
-            self.lolID = userDefault.objectForKey("lolID") as String
+            self.lolID = userDefault.objectForKey("lolID") as! String
             
         }
         
         if userDefault.objectForKey("lolRank") != nil {
             
-            self.lolRank = userDefault.objectForKey("lolRank") as String
+            self.lolRank = userDefault.objectForKey("lolRank") as! String
             
         }
         
         if userDefault.objectForKey("lolName") != nil {
             
-            self.lolName = userDefault.objectForKey("lolName") as String
+            self.lolName = userDefault.objectForKey("lolName") as! String
             
         }
         
         if userDefault.objectForKey("lolLevel") != nil {
             
-            self.lolLevel = userDefault.objectForKey("lolLevel") as String
+            self.lolLevel = userDefault.objectForKey("lolLevel") as! String
             
         }
         
         if userDefault.objectForKey("lolIcon") != nil {
             
-            self.lolIcon = userDefault.objectForKey("lolIcon") as String
+            self.lolIcon = userDefault.objectForKey("lolIcon") as! String
             
         }
         
         if userDefault.objectForKey("lolpatch") != nil {
             
-            self.lolpatch = userDefault.objectForKey("lolpatch") as String
+            self.lolpatch = userDefault.objectForKey("lolpatch") as! String
             
         }
         
@@ -125,8 +125,8 @@ class LolAPI: NSObject{
             var url = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/"+self.lolName+"?api_key="+key
             request(.GET,url)
                 .responseJSON { (_, _, JSON, _) in
-                    if JSON as [String: AnyObject]? != nil{
-                        var result: [String: AnyObject] = JSON as [String: AnyObject]
+                    if JSON as! [String: AnyObject]? != nil{
+                        var result: [String: AnyObject] = JSON as! [String: AnyObject]
                         self.getIDresult(result)
                     }
             }
@@ -144,13 +144,13 @@ class LolAPI: NSObject{
             var url = "https://na.api.pvp.net/api/lol/na/v1.4/summoner/by-name/"+self.lolName+"?api_key="+key
             request(.GET,url)
                 .responseJSON { (_, _, JSON, _) in
-                    if JSON as [String: AnyObject]? != nil{
-                        var result: [String: AnyObject] = JSON as [String: AnyObject]
-                        if result["id"]? != nil{
+                    if JSON as! [String: AnyObject]? != nil{
+                        var result: [String: AnyObject] = JSON as! [String: AnyObject]
+                        if result["id"] != nil{
                             
                             println(result)
                             
-                            if result["id"]? != nil {
+                            if result["id"] != nil {
                                 var idd: Int! = result["id"] as? Int!
                                 self.lolID = "\(idd)"
                             }
@@ -170,38 +170,37 @@ class LolAPI: NSObject{
     
     func getIDresult(result: [String: AnyObject]){
        
-        if result["id"]? != nil{
+        if result["id"] as? Int != nil{
           
             println(result)
             
-            if result["id"]? != nil {
-                var idd: Int! = result["id"] as? Int!
+            if result["id"] as? Int != nil {
+                var idd: Int! = result["id"] as! Int!
                 self.lolID = "\(idd)"
             }
             else {LolAPIGlobal.lolID = nil}
             
-            if result["name"]? != nil {
-                LolAPIGlobal.lolName = result["name"] as String
+            if result["name"] as? String != nil {
+                LolAPIGlobal.lolName = result["name"] as! String
             }
             else {LolAPIGlobal.lolName = nil}
             
-            if result["profileIconId"]? != nil {
-                var iconid: Int! = result["profileIconId"] as? Int!
-                
+            if result["profileIconId"] as? Int != nil {
+                var iconid: Int! = result["profileIconId"] as! Int
                 var str = "http://ddragon.leagueoflegends.com/cdn/"+LolAPIGlobal.lolpatch+"/img/profileicon/"+"\(iconid)"+".png"
                 self.lolIcon = str
             }
             else {LolAPIGlobal.lolIcon = nil}
             
-            if result["summonerLevel"]? != nil {
-                var levelid: Int! = result["summonerLevel"] as Int!
+            if result["summonerLevel"] as? Int != nil {
+                var levelid: Int! = result["summonerLevel"] as! Int!
                 self.lolLevel = "\(levelid)"
             }
             else {LolAPIGlobal.lolLevel = nil}
         
             self.saveLOLData()
             
-            if(result["summonerLevel"] as Int == 30){
+            if(result["summonerLevel"] as! Int == 30){
             self.getSummonerLeague(lolID)
             }
             else {
@@ -218,8 +217,8 @@ class LolAPI: NSObject{
         var url = "https://na.api.pvp.net/api/lol/na/v2.5/league/by-summoner/"+lolID+"/entry?api_key="+key
         request(.GET,url)
             .responseJSON { (_, _, JSON, _) in
-                if JSON as [String: AnyObject]? != nil{
-                var result: [String: AnyObject] = JSON as [String: AnyObject]
+                if JSON as! [String: AnyObject]? != nil{
+                var result: [String: AnyObject] = JSON as! [String: AnyObject]
                 self.getLeagueResult(result)
                 }
         }
@@ -230,9 +229,9 @@ class LolAPI: NSObject{
     func getLeagueResult(result: [String: AnyObject]){
         
        // (result["entries"] as [String: AnyObject])["entries"]
-        println (((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"])
-        if (((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"]? != nil){
-            var tier : String = (((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["tier"] as String) + " "+(((((result[LolAPIGlobal.lolID] as [AnyObject])[0] as [String: AnyObject])["entries"] as [AnyObject])[0] as [String: AnyObject])["division"] as String)
+        println (((result[LolAPIGlobal.lolID] as! [AnyObject])[0] as! [String: AnyObject])["tier"])
+        if (((result[LolAPIGlobal.lolID] as! [AnyObject])[0] as! [String: AnyObject])["tier"] != nil){
+            var tier : String = (((result[LolAPIGlobal.lolID] as! [AnyObject])[0] as! [String: AnyObject])["tier"] as! String) + " "+(((((result[LolAPIGlobal.lolID] as! [AnyObject])[0] as! [String: AnyObject])["entries"] as! [AnyObject])[0] as! [String: AnyObject])["division"] as! String)
             
             println(tier)
             
@@ -255,10 +254,10 @@ class LolAPI: NSObject{
             .responseJSON { (_, _, JSON, _) in
                 if JSON != nil{
                 
-                var result: [String: AnyObject] = (JSON as [String: AnyObject])["n"] as [String: AnyObject]
+                var result: [String: AnyObject] = (JSON as! [String: AnyObject])["n"] as! [String: AnyObject]
                     
-                    if result["profileicon"]? != nil {
-                        LolAPIGlobal.lolpatch = result["profileicon"] as String
+                    if result["profileicon"] != nil {
+                        LolAPIGlobal.lolpatch = result["profileicon"] as! String
                         LolAPIGlobal.saveLOLData()
                         println(LolAPIGlobal.lolpatch)
                     }

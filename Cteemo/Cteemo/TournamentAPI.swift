@@ -211,7 +211,7 @@ class TournamentAPI: NSObject{
         var par : [String: AnyObject] = ["api_key":key,"tournament[name]":name,"tournament[url]":name,"tournament[description]":intro,"tournament[open_signup]":false]
         var req = request(.POST, "https://challonge.com/api/tournaments.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
-                var result: [String: AnyObject] = JSON as [String: AnyObject]
+                var result: [String: AnyObject] = JSON as! [String: AnyObject]
                 println(result)
         }
     
@@ -224,8 +224,8 @@ class TournamentAPI: NSObject{
         var par : [String: AnyObject] = ["api_key":key,"include_participants":1]
         var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+id+".json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
-                if JSON? != nil{
-                var result: [String: AnyObject] = JSON as [String: AnyObject]
+                if JSON != nil{
+                var result: [String: AnyObject] = JSON as! [String: AnyObject]
                 println(JSON)
                 
                 }
@@ -254,7 +254,7 @@ class TournamentAPI: NSObject{
         var par : [String: AnyObject] = ["api_key":key,"participant[name]":name]
         var req = request(.POST, "https://api.challonge.com/v1/tournaments/"+id+"/participants.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
-                var result: [String: AnyObject] = JSON as [String: AnyObject]
+                var result: [String: AnyObject] = JSON as! [String: AnyObject]
                 println(result)
         }
 

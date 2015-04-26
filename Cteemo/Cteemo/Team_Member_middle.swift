@@ -41,9 +41,9 @@ class Team_Member_middle: UITableViewCell {
     
     func setCell(name: String,winRatio :String,games :String, kda: String,killspergame:String, goldpergame :String,PentaKills : String,rank :String) {
         
-        if UIImage(named: rank + ".png")? != nil {
+        if UIImage(named: rank + ".png") != nil {
             
-            self.rank.image = UIImage(named: rank + ".png")?
+            self.rank.image = UIImage(named: rank + ".png")
         
         }
         

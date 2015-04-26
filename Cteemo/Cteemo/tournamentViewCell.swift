@@ -33,7 +33,7 @@ class tournamentViewCell: UITableViewCell {
         self.maxteams.text = "max : \(maxteam)"
         self.joinedteam.text = "current : \(joined)"
         self.tournamentRule.text = rule
-        if countElements(time) > 10 {
+        if count(time) > 10 {
         var range = Range(start: time.startIndex,
             end: advance(time.startIndex, 10))
         self.date.text = time.substringWithRange(range)

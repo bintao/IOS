@@ -68,10 +68,10 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
         
         if prefix == "login"{
             
-            if result["token"]? != nil && result["rongToken"]? != nil{
+            if result["token"] as? String != nil && result["rongToken"] as? [String: AnyObject] != nil{
                 // login success
-                UserInfoGlobal.accessToken = result["token"] as String
-                UserInfoGlobal.rongToken = (result["rongToken"] as [String: AnyObject])["token"] as String
+                UserInfoGlobal.accessToken = result["token"] as! String
+                UserInfoGlobal.rongToken = (result["rongToken"] as! [String: AnyObject])["token"] as! String
                 UserInfoGlobal.email = self.email.text
                 UserInfoGlobal.saveUserData()
                 UserInfoGlobal.updateUserInfo()
@@ -79,15 +79,15 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
                 self.performSegueWithIdentifier("loginSucc", sender: self)
                 
             }else{
-                if((result["message"] as String).rangeOfString("password")?.isEmpty != nil){
+                if((result["message"] as! String).rangeOfString("password")?.isEmpty != nil){
                     displaySpeaker("email and password not matched")
                 }
-                else if ((result["message"] as String).rangeOfString("ascii")?.isEmpty != nil)
+                else if ((result["message"] as! String).rangeOfString("ascii")?.isEmpty != nil)
                 {
                     
                     displaySpeaker("请不要输入中文，please type english!")
                 }
-                else if ((result["message"] as String).rangeOfString("Account")?.isEmpty != nil)
+                else if ((result["message"] as! String).rangeOfString("Account")?.isEmpty != nil)
                 {
                     displaySpeaker("Your Account not activated. Please check your email")
                 }

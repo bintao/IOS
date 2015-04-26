@@ -56,9 +56,9 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
                 }
                 else if(JSON != nil){
                     println(JSON)
-                    self.teams = JSON as [AnyObject]
+                    self.teams = JSON as! [AnyObject]
                     var result: [AnyObject] = [AnyObject]()
-                    result = JSON as [AnyObject]
+                    result = JSON as! [AnyObject]
                     self.gotResult(result)
                 }
                 
@@ -90,18 +90,18 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
         var username :String = "noName"
         var content : String = ""
         
-        if !(((teams[indexPath.row] as? [String: AnyObject])?["user_profile"] as? [String: AnyObject])?["profile_icon"]? is NSNull){
-            iconurl = ((teams[indexPath.row] as [String: AnyObject])["user_profile"] as [String: AnyObject])["profile_icon"] as String
+        if !(((teams[indexPath.row] as! [String: AnyObject])["user_profile"] as! [String: AnyObject])["profile_icon"] is NSNull){
+            iconurl = ((teams[indexPath.row] as! [String: AnyObject])["user_profile"] as! [String: AnyObject])["profile_icon"] as! String
          }
         
-            if !(((teams[indexPath.row] as? [String: AnyObject])?["user_profile"] as? [String: AnyObject])?["username"]? is NSNull){
+            if !(((teams[indexPath.row] as! [String: AnyObject])["user_profile"] as! [String: AnyObject])["username"] is NSNull){
                 
-                username = ((teams[indexPath.row] as [String: AnyObject])["user_profile"] as [String: AnyObject])["username"] as String
+                username = ((teams[indexPath.row] as! [String: AnyObject])["user_profile"] as! [String: AnyObject])["username"] as! String
                 
             }
             
-            if !((teams[indexPath.row] as? [String: AnyObject])?["content"]? is NSNull){
-                content = (teams[indexPath.row] as [String: AnyObject])["content"] as String
+            if !((teams[indexPath.row] as! [String: AnyObject])["content"] is NSNull){
+                content = (teams[indexPath.row] as! [String: AnyObject])["content"] as! String
             }
             else {
             content = " nothing to say"
@@ -122,7 +122,7 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
         var cellIcon = UIImageView(image: nil)
         
         ImageLoader.sharedLoader.imageForUrl(iconurl, completionHandler:{(image: UIImage?, url: String) in
-            if image? != nil {
+            if image != nil {
                 cellIcon.image = image
             }else{
                 
@@ -189,21 +189,21 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
             var name = "noName"
             var content = "noContent"
             
-            var id = ((teams[sender.tag] as [String: AnyObject])["user_profile"] as [String : AnyObject])["id"]  as String
+            var id = ((teams[sender.tag] as! [String: AnyObject])["user_profile"] as! [String : AnyObject])["id"]  as! String
             
             
             
             
-            if !(((teams[sender.tag] as? [String: AnyObject])?["user_profile"] as? [String: AnyObject])?["username"]? is NSNull){
+            if !(((teams[sender.tag] as! [String: AnyObject])["user_profile"] as! [String: AnyObject])["username"] is NSNull){
                 
-               var name = ((teams[sender.tag] as [String: AnyObject])["user_profile"] as [String : AnyObject])["username"]  as String
+               var name = ((teams[sender.tag] as! [String: AnyObject])["user_profile"] as! [String : AnyObject])["username"]  as! String
                 
             }
          
             
-            if !(((teams[sender.tag] as? [String: AnyObject])?["content"] is NSNull)){
+            if !(((teams[sender.tag] as! [String: AnyObject])["content"] is NSNull)){
             
-                content = (teams[sender.tag] as [String: AnyObject])["content"] as String
+                content = (teams[sender.tag] as! [String: AnyObject])["content"] as! String
             
             }
 
@@ -225,10 +225,10 @@ class Team_playerpost: UIViewController, UITableViewDataSource, UITableViewDeleg
             
             var username = ""
             
-            var id = ((teams[sender.tag] as [String: AnyObject])["user_profile"] as [String : AnyObject])["id"] as String
+            var id = ((teams[sender.tag] as! [String: AnyObject])["user_profile"] as! [String : AnyObject])["id"] as! String
             
-            if (teams[sender.tag] as? [String: AnyObject])?["username"] != nil{
-                username = (teams[sender.tag] as [String: AnyObject])["username"] as String
+            if (teams[sender.tag] as! [String: AnyObject])["username"] != nil{
+                username = (teams[sender.tag] as! [String: AnyObject])["username"] as! String
             }
             
             let alert = SCLAlertView()

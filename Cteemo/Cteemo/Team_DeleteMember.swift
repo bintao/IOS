@@ -51,15 +51,15 @@ class Team_DeleteMember: UIViewController, UITableViewDataSource, UITableViewDel
         backButton.setImage(UIImage(named: "white"), forState: UIControlState.Normal)
         cell.addSubview(backButton)
         
-        var iconurl = TeamInfoGlobal.memberIcon[indexPath.row] as String
-        var name = TeamInfoGlobal.memberName[indexPath.row] as String
+        var iconurl = TeamInfoGlobal.memberIcon[indexPath.row] as! String
+        var name = TeamInfoGlobal.memberName[indexPath.row] as! String
         
         var cellIcon = UIImageView(image: nil)
         
         
         ImageLoader.sharedLoader.imageForUrl(iconurl, completionHandler:{(image: UIImage?, url: String) in
             println(url)
-            if image? != nil {
+            if image != nil {
                 cellIcon.image = image
             }else{
                 
@@ -111,8 +111,8 @@ class Team_DeleteMember: UIViewController, UITableViewDataSource, UITableViewDel
         manager.session.configuration.HTTPAdditionalHeaders = [
             "token": UserInfoGlobal.accessToken
         ]
-        var profileid =  TeamInfoGlobal.memberId[sender.tag] as String
-        var name = TeamInfoGlobal.memberName[sender.tag] as String
+        var profileid =  TeamInfoGlobal.memberId[sender.tag] as! String
+        var name = TeamInfoGlobal.memberName[sender.tag] as! String
         
         alert1.addButton("Delete", actionBlock:{ (Void) in
             alert2.showWaiting(self.parentViewController?.parentViewController, title: "Wait a second", subTitle: "Quiting......", closeButtonTitle: nil, duration: 0.0)
@@ -123,8 +123,8 @@ class Team_DeleteMember: UIViewController, UITableViewDataSource, UITableViewDel
                     
                     println(JSON)
                     
-                    if (JSON as [String:AnyObject])["status"]? != nil{
-                        if((JSON as [String:AnyObject])["status"] as String == "success")
+                    if (JSON as! [String:AnyObject])["status"] != nil{
+                        if((JSON as! [String:AnyObject])["status"] as! String == "success")
                         {
                             TeamInfoGlobal.deletemember(sender.tag)
                             self.resultTable.reloadData()

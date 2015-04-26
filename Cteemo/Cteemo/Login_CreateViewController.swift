@@ -47,7 +47,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
             var req = request(.POST, "http://54.149.235.253:5000/create_user", parameters: ["email": email.text, "password":password.text])
                 .responseJSON { (_, _, JSON, _) in
                     if JSON != nil {
-                var result: [String: AnyObject] = JSON as [String: AnyObject]
+                var result: [String: AnyObject] = JSON as! [String: AnyObject]
                 self.gotCreateResult(result)
                     }
             }
@@ -70,7 +70,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         
         stopLoading()
         
-        if (((result["message"] as String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as String == "success") {
+        if (((result["message"] as! String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as! String == "success") {
             
             let pass = self.password.text
             self.savepass = pass
@@ -79,11 +79,11 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
             
             
         }else{
-            if((result["message"] as String).rangeOfString("Validation")?.isEmpty != nil){
+            if((result["message"] as! String).rangeOfString("Validation")?.isEmpty != nil){
                 displaySpeaker("Invalid Email")
             }
             
-            if((result["message"] as String).rangeOfString("Tried")?.isEmpty != nil){
+            if((result["message"] as! String).rangeOfString("Tried")?.isEmpty != nil){
                 displaySpeaker("Your Account Already Exist")
             }
             //login fail
@@ -106,13 +106,12 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
             var req = request(.POST, "http://54.149.235.253:5000/login", parameters: ["email": UserInfoGlobal.email, "password": self.savepass ])
                 .responseJSON { (_, _, JSON, _) in
                     
-                    println(JSON)
-                    var result = JSON as [String : AnyObject]
+                    var result = JSON as! [String : AnyObject]
                     
-                    if result["token"]? != nil && result["rongToken"]? != nil{
+                    if result["token"] as? String  != nil && result["rongToken"] as? String != nil{
                         
-                        UserInfoGlobal.accessToken = result["token"] as String
-                        UserInfoGlobal.rongToken = (result["rongToken"] as [String: AnyObject])["token"] as String
+                        UserInfoGlobal.accessToken = result["token"] as! String
+                        UserInfoGlobal.rongToken = (result["rongToken"] as! [String: AnyObject])["token"] as! String
                         UserInfoGlobal.saveUserData()
                         self.performSegueWithIdentifier("addSchoolAndPhoto", sender: self)
                         
@@ -209,7 +208,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
         
         if segue.identifier == "addSchoolAndPhoto"{
             
-            var controller: Login_SchoolAndPhoto = segue.destinationViewController as Login_SchoolAndPhoto
+            var controller: Login_SchoolAndPhoto = segue.destinationViewController as!Login_SchoolAndPhoto
             controller.name = self.nickname.text
             
         }

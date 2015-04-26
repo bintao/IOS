@@ -86,9 +86,9 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
             memberScroll.contentSize = CGSizeMake(75 * CGFloat(membersName.count), 75)
             for var index = 0; index < TeamInfoGlobal.memberCount; index++ {
                 var but = UIButton(frame: CGRectMake(5 + 75 * CGFloat(index), 10, 65, 65))
-                ImageLoader.sharedLoader.imageForUrl(TeamInfoGlobal.memberIcon[index] as String, completionHandler:{(image: UIImage?, url: String) in
+                ImageLoader.sharedLoader.imageForUrl(TeamInfoGlobal.memberIcon[index] as! String, completionHandler:{(image: UIImage?, url: String) in
                     
-                    if image? != nil {
+                    if image != nil {
                         
                         but.setImage(image, forState: UIControlState.Normal)
                         
@@ -113,7 +113,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
       
      
      
-         ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
+         ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).showTabb()
         
         if TeamInfoGlobal.teamicon != nil && DataManager.getTeamIconFromLocal() != nil{
             
@@ -124,7 +124,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
             
             ImageLoader.sharedLoader.imageForUrl(TeamInfoGlobal.teamicon_link, completionHandler:{(image: UIImage?, url: String) in
                 
-                if image? != nil {
+                if image != nil {
                     self.teamicon.image = image
                 }
                 else {
@@ -149,12 +149,12 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     
     func member(sender : UIButton){
         
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).hideTabb()
         
         if sender.tag < TeamInfoGlobal.memberId.count
         {
             
-            self.id = TeamInfoGlobal.memberId[sender.tag] as String
+            self.id = TeamInfoGlobal.memberId[sender.tag] as! String
             
         }
        
@@ -180,8 +180,8 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
             var req = request(.DELETE, "http://54.149.235.253:5000/create_team/lol")
                 .responseJSON { (_, _, JSON, _) in
                     alert2.hideView()
-                    if (JSON as [String:AnyObject])["status"]? != nil{
-                        if((JSON as [String:AnyObject])["status"] as String == "success")
+                    if (JSON as! [String:AnyObject])["status"] != nil{
+                        if((JSON as! [String:AnyObject])["status"] as! String == "success")
                         {
                             TeamInfoGlobal.cleanUserData()
                             TeamInfoGlobal.findplayer = false
@@ -200,8 +200,8 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
                 var req = request(.DELETE, "http://54.149.235.253:5000/my_team/lol")
                     .responseJSON { (_, _, JSON, _) in
                          alert2.hideView()
-                        if (JSON as [String:AnyObject])["status"]? != nil{
-                            if((JSON as [String:AnyObject])["status"] as String == "success")
+                        if (JSON as! [String:AnyObject])["status"] != nil{
+                            if((JSON as! [String:AnyObject])["status"] as! String == "success")
                             {
                                 TeamInfoGlobal.cleanUserData()
                                 TeamInfoGlobal.findplayer = false
@@ -251,9 +251,9 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         
         var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat(TeamInfoGlobal.teamID, title: TeamInfoGlobal.teamName, completion: nil)
         
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).clearnteambadge()
+        ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).clearnteambadge()
         
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).hideTabb()
         
         self.navigationController?.pushViewController(chatViewController, animated: true)
         
@@ -263,7 +263,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     
     @IBAction func findteammate(sender: AnyObject) {
         
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).hideTabb()
     }
     
     
@@ -271,7 +271,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         
         if segue.identifier == "findteammate"{
             
-            var controller: Team_JoinTeamViewController = segue.destinationViewController as Team_JoinTeamViewController
+            var controller: Team_JoinTeamViewController = segue.destinationViewController as! Team_JoinTeamViewController
             controller.join = true
             
         }
@@ -279,7 +279,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         else if segue.identifier == "memberinfo"{
         
             
-            var controller: Team_memberinfo = segue.destinationViewController as Team_memberinfo
+            var controller: Team_memberinfo = segue.destinationViewController as! Team_memberinfo
             controller.id = self.id
             
         }

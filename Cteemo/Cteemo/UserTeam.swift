@@ -48,45 +48,45 @@ class UserTeam: NSObject{
       
         if userDefault.objectForKey("teamName") != nil {
             
-            self.teamName = userDefault.objectForKey("teamName") as String
+            self.teamName = userDefault.objectForKey("teamName") as! String
             
         }
         
         if userDefault.objectForKey("teamID") != nil {
             
-            self.teamID = userDefault.objectForKey("teamID") as String
+            self.teamID = userDefault.objectForKey("teamID") as! String
             
         }
         
         
         if userDefault.objectForKey("team_Intro") != nil {
             
-            self.team_Intro = userDefault.objectForKey("team_Intro") as String
+            self.team_Intro = userDefault.objectForKey("team_Intro") as! String
             
         }
         
         if userDefault.objectForKey("iscaptain") != nil {
             
-            self.iscaptain = userDefault.objectForKey("iscaptain") as String
+            self.iscaptain = userDefault.objectForKey("iscaptain") as! String
             
         }
         
         if userDefault.objectForKey("teamicon_link") != nil {
             
-            self.teamicon_link = userDefault.objectForKey("teamicon_link") as String
+            self.teamicon_link = userDefault.objectForKey("teamicon_link") as! String
             
         }
         
         if userDefault.objectForKey("captainName") != nil {
             
-            self.captainName = userDefault.objectForKey("captainName") as String
+            self.captainName = userDefault.objectForKey("captainName") as! String
             
         }
         
         
         if userDefault.objectForKey("captainId") != nil {
             
-            self.captainId = userDefault.objectForKey("captainId") as String
+            self.captainId = userDefault.objectForKey("captainId") as! String
             
         }
 
@@ -110,7 +110,7 @@ class UserTeam: NSObject{
         if self.teamicon_link != nil {
         ImageLoader.sharedLoader.imageForUrl(self.teamicon_link, completionHandler:{(image: UIImage?, url: String) in
             println(url)
-            if image? != nil {
+            if image != nil {
                 self.teamicon = image
                 self.saveTeamIcon()
             }
@@ -144,7 +144,7 @@ class UserTeam: NSObject{
                    
                     ImageLoader.sharedLoader.imageForUrl(captainIcon, completionHandler:{(image: UIImage?, url: String) in
                         
-                        if image? != nil {
+                        if image != nil {
                             self.captainIcon = image
                         }
                         else {
@@ -275,37 +275,40 @@ class UserTeam: NSObject{
     
     func gotResult(result: [String: AnyObject]) {
         
-            if result["id"]? != nil {
-                TeamInfoGlobal.teamID = result["id"] as String
+            if result["id"] as? String != nil {
+                TeamInfoGlobal.teamID = result["id"] as! String
             }
             
             else {TeamInfoGlobal.teamID = nil}
         
-            if result["teamName"]? != nil {
-                TeamInfoGlobal.teamName = result["teamName"] as String
+            if result["teamName"] as? String != nil {
+                TeamInfoGlobal.teamName = result["teamName"] as! String
             }
                 
             else {TeamInfoGlobal.teamName = nil}
         
-            if result["teamIntro"]? != nil {
-                TeamInfoGlobal.team_Intro = result["teamIntro"] as String
+            if result["teamIntro"] as? String != nil {
+                TeamInfoGlobal.team_Intro = result["teamIntro"] as! String
             }
                 
             else {TeamInfoGlobal.team_Intro = nil}
         
-            if result["teamIcon"]? != nil {
+            if result["teamIcon"] as? String != nil {
                 
-                self.teamicon_link = result["teamIcon"] as String
+                self.teamicon_link = result["teamIcon"] as! String
             }
                 
-            else {self.teamicon_link = nil}
+            else {self.teamicon_link  = nil}
         
-            if result["id"]? != nil{
+            if result["id"] as? String != nil{
                 
-                var captain = (((result["captain"] as [AnyObject])[0] as [String: AnyObject])["profile_id"] as String)
+                var captain = (((result["captain"] as! [AnyObject])[0] as! [String: AnyObject])["profile_id"] as! String)
                 
                 if(captain == UserInfoGlobal.profile_ID){
                     TeamInfoGlobal.iscaptain = "yes"
+                }else{
+                 TeamInfoGlobal.iscaptain = nil
+                
                 }
             }
         

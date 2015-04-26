@@ -56,8 +56,8 @@ class Teampostview: UIViewController,UITextViewDelegate,RequestResultDelegate {
     
     func gotResult(prefix: String, result: AnyObject) {
         
-        if result["status"]? != nil {
-            var str = result["status"] as String
+        if result["status"] != nil {
+            var str = result["status"] as! String
             if str == "success"{
                 
                 self.performSegueWithIdentifier("backtojoin", sender: self)

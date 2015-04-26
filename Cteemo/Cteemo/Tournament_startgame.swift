@@ -252,7 +252,7 @@ class Tournament_startgame: UIViewController {
         
         if segue.identifier == "winnerReport"{
             
-            var controller: Tournament_WinnerPhoto = segue.destinationViewController as Tournament_WinnerPhoto
+            var controller: Tournament_WinnerPhoto = segue.destinationViewController as! Tournament_WinnerPhoto
             
             controller.url = self.url
             controller.myteamdata = self.myteamdata

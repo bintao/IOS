@@ -53,16 +53,20 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
 
         if(prefix == "my_team/lol" ){
         println(result)
-       if(result["id"]?  != nil ){
-            TeamInfoGlobal.gotResult(result as [String : AnyObject])
+            
+            
+       if(result["id"] as? String  != nil ){
+        
+            TeamInfoGlobal.gotResult(result as! [String : AnyObject])
             self.performSegueWithIdentifier("presentMyTeam", sender: self)
             
             }
             else {
               println("not joined team yet")
+        
             if ((result as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
                
-                 ((self.parentViewController as UINavigationController).parentViewController as MainViewController).tokennotvaild()
+                 ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).tokennotvaild()
             }
             }
         }
@@ -85,14 +89,14 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
             updateTeam()
         }
         
-        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
+        ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).showTabb()
     }
     
     
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier != "presentMyTeam"{
-            ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+            ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).hideTabb()
         }
     }
     

@@ -47,67 +47,67 @@ class UserInformation: NSObject, RequestResultDelegate{
         
         if userDefault.objectForKey("name") != nil {
         
-        self.name = userDefault.objectForKey("name") as String
+        self.name = userDefault.objectForKey("name") as! String
         
         }
         
         if userDefault.objectForKey("fbid") != nil {
             
-            self.fbid = userDefault.objectForKey("fbid") as String
+            self.fbid = userDefault.objectForKey("fbid") as! String
             
         }
         
         if userDefault.objectForKey("accessToken") != nil {
             
-            self.accessToken = userDefault.objectForKey("accessToken") as String
+            self.accessToken = userDefault.objectForKey("accessToken") as! String
             
         }
         
         if userDefault.objectForKey("email") != nil {
             
-            self.email = userDefault.objectForKey("email") as String
+            self.email = userDefault.objectForKey("email") as! String
             
         }
         
         if userDefault.objectForKey("gender") != nil {
             
-            self.gender = userDefault.objectForKey("gender") as String
+            self.gender = userDefault.objectForKey("gender") as! String
             
         }
         
         if userDefault.objectForKey("school") != nil {
             
-            self.school = userDefault.objectForKey("school") as String
+            self.school = userDefault.objectForKey("school") as! String
             
         }
         
         if userDefault.objectForKey("intro") != nil {
             
-            self.intro = userDefault.objectForKey("intro") as String
+            self.intro = userDefault.objectForKey("intro") as! String
             
         }
         
         if userDefault.objectForKey("profile_ID") != nil {
             
-            self.profile_ID = userDefault.objectForKey("profile_ID") as String
+            self.profile_ID = userDefault.objectForKey("profile_ID") as! String
             
         }
         
         if userDefault.objectForKey("profile_icon_Link") != nil {
             
-            self.profile_icon_Link = userDefault.objectForKey("profile_icon_Link") as String
+            self.profile_icon_Link = userDefault.objectForKey("profile_icon_Link") as! String
             
         }
         
         if userDefault.objectForKey("rongToken") != nil {
             
-            self.rongToken = userDefault.objectForKey("rongToken") as String
+            self.rongToken = userDefault.objectForKey("rongToken") as! String
             
         }
         
         if userDefault.objectForKey("tokenVaild") != nil {
             
-            self.tokenVaild = userDefault.objectForKey("tokenVaild") as String
+            self.tokenVaild = userDefault.objectForKey("tokenVaild") as! String
             
         }
         
@@ -143,7 +143,7 @@ class UserInformation: NSObject, RequestResultDelegate{
         if profile_icon_Link != nil {
         ImageLoader.sharedLoader.imageForUrl(profile_icon_Link, completionHandler:{(image: UIImage?, url: String) in
             println(url)
-            if image? != nil {
+            if image != nil {
                 self.icon = image
                 self.saveUserIcon()
             }
@@ -153,9 +153,7 @@ class UserInformation: NSObject, RequestResultDelegate{
         }
     }
     
-    func gotResult(prefix: String, result: [String : AnyObject]) {
-        
-    }
+   
     //upload user information to the server
     
     //download user information from the server
@@ -170,56 +168,62 @@ class UserInformation: NSObject, RequestResultDelegate{
         
         if prefix == "profile"{
         
+            println(result)
             
-            if ((result as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil {
+            if ((result as? [String: AnyObject])?["message"] as? String)?.rangeOfString("Unauthorized")?.isEmpty != nil
+            {
+                
             UserInfoGlobal.tokenVaild = "false"
+                
             }
             else {UserInfoGlobal.tokenVaild = "true"}
-            if result["username"]? != nil {
-                UserInfoGlobal.name = result["username"] as String
+            if result["username"] as? String != nil {
+                UserInfoGlobal.name = result["username"] as! String
             }
             else{ UserInfoGlobal.name = nil}
-            if result["id"]? != nil {
-                UserInfoGlobal.profile_ID = result["id"] as String
+            if result["id"] as? String != nil {
+                UserInfoGlobal.profile_ID = result["id"] as! String
             }
              else{ UserInfoGlobal.profile_ID = nil}
-            if result["intro"]? != nil {
-                UserInfoGlobal.intro = result["intro"] as String
+            if result["intro"] as? String != nil {
+                UserInfoGlobal.intro = result["intro"] as! String
             }
             else{ UserInfoGlobal.intro = nil}
-            if result["profile_icon"]? != nil {
-                UserInfoGlobal.profile_icon_Link = result["profile_icon"] as String
+            
+            println(result["profile_icon"] as? String)
+            if result["profile_icon"] as? String != nil {
+                UserInfoGlobal.profile_icon_Link = result["profile_icon"] as! String
                 getIconFromServer()
             }
-            if result["school"]? != nil {
-                UserInfoGlobal.school = result["school"] as String
+            if result["school"] as? String != nil {
+                UserInfoGlobal.school = result["school"] as! String
             }
             else{ UserInfoGlobal.school = nil}
             
-            if result["lolID"]? != nil {
-                LolAPIGlobal.lolName = result["lolID"] as String
+            if result["lolID"] as? String != nil {
+                LolAPIGlobal.lolName = result["lolID"] as! String
             }
             
-            if result["LOLTeamID"]? != nil {
-                TeamInfoGlobal.teamID = result["LOLTeamID"] as String
+            if result["LOLTeamID"] as? String != nil {
+                TeamInfoGlobal.teamID = result["LOLTeamID"] as! String
             }
             else{ TeamInfoGlobal.teamID  = nil}
             
-            if result["LOLTeam"]? != nil {
-                TeamInfoGlobal.teamName = result["LOLTeam"] as String
+            if result["LOLTeam"] as? String != nil {
+                TeamInfoGlobal.teamName = result["LOLTeam"] as! String
             }
             else { TeamInfoGlobal.teamName = nil}
-            if result["dotaID"]? != nil{
-            LolAPIGlobal.lolRank = result["dotaID"] as String
+            if result["dotaID"] as? String != nil{
+            LolAPIGlobal.lolRank = result["dotaID"] as! String
             }
             else{
                 
                 LolAPIGlobal.lolRank = nil
            
             }
-            if result["hstoneID"]? != nil{
+            if result["hstoneID"] as? String != nil{
                 
-                  LolAPIGlobal.lolID = result["hstoneID"] as String
+                  LolAPIGlobal.lolID = result["hstoneID"] as! String
             }
             else{
             
