@@ -21,6 +21,9 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
    
     @IBOutlet var edit: UIButton!
     
+    
+    var id = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -95,6 +98,8 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
                         
                     }})
                 
+                but.addTarget(self, action: "member:", forControlEvents: UIControlEvents.TouchUpInside)
+                but.tag = index
                 memberScroll.addSubview(but)
                 
                 var lab = UILabel(frame: CGRectMake(75 * CGFloat(index), 75, 75, 20))
@@ -105,7 +110,8 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
                 memberScroll.addSubview(lab)
                 
             }
-
+      
+     
      
          ((self.parentViewController as UINavigationController).parentViewController as MainViewController).showTabb()
         
@@ -115,14 +121,16 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         
         }
         else if TeamInfoGlobal.teamicon_link != nil{
+            
             ImageLoader.sharedLoader.imageForUrl(TeamInfoGlobal.teamicon_link, completionHandler:{(image: UIImage?, url: String) in
-                println(url)
+                
                 if image? != nil {
                     self.teamicon.image = image
                 }
                 else {
                     self.teamicon.image = UIImage(named: "error.png")!
                 }})
+            
             
         }
             
@@ -136,7 +144,25 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         
 
     }
-
+    
+    
+    
+    func member(sender : UIButton){
+        
+        ((self.parentViewController as UINavigationController).parentViewController as MainViewController).hideTabb()
+        
+        if sender.tag < TeamInfoGlobal.memberId.count
+        {
+            
+            self.id = TeamInfoGlobal.memberId[sender.tag] as String
+            
+        }
+       
+        self.performSegueWithIdentifier("memberinfo", sender: self)
+        
+    }
+    
+    
     
     
     @IBAction func leaveteam(sender: AnyObject) {
@@ -207,6 +233,8 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
         }
        
     }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -220,11 +248,6 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
 
 
     @IBAction func groupchat(sender: AnyObject) {
-        
-        
-       
-        
-
         
         var chatViewController : RCChatViewController = RCIM.sharedRCIM().createGroupChat(TeamInfoGlobal.teamID, title: TeamInfoGlobal.teamName, completion: nil)
         
@@ -250,6 +273,14 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
             
             var controller: Team_JoinTeamViewController = segue.destinationViewController as Team_JoinTeamViewController
             controller.join = true
+            
+        }
+        
+        else if segue.identifier == "memberinfo"{
+        
+            
+            var controller: Team_memberinfo = segue.destinationViewController as Team_memberinfo
+            controller.id = self.id
             
         }
     }

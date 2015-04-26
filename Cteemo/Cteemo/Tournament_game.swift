@@ -139,8 +139,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
             var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+self.url+"/participants.json",parameters:par)
                 
                 .responseJSON { (_, _, JSONdata, _) in
-                    println(JSONdata)
-                   
+                    
                     let myjson = JSON(JSONdata!)
                     var s = 0
                     println(myjson)
@@ -164,6 +163,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                     alert2.hideView()
                     
                     if s != 0 {
+                        
                         self.memberID = s
                         self.performSegueWithIdentifier("joined", sender: self)
                         

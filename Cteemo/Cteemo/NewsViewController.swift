@@ -43,10 +43,12 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //update the data of the news
     func updateNews(page: Int){
+        
         var req = ARequest(prefix: "http://54.149.235.253:4000/news_list/all/0", method: requestType.GET)
         req.server = ""
         req.delegate = self
         req.sendRequest()
+        
     }
     
     func gotResult(prefix: String, result: AnyObject) {
@@ -57,7 +59,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 var weburl = ((result as [AnyObject])[index] as [String:AnyObject])["news_url"] as String
                 
                 self.weburl.append(weburl)
-                
                 
             }
             
@@ -73,7 +74,9 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 currentChosen = newsArr.count / 10
 
             }else{
+                
                 stopLoading()
+                
             }
         }else if (prefix as NSString).substringToIndex(36) == "http://54.149.235.253:4000/news_list"{
             newsArr = newsArr + (result as [AnyObject])
@@ -93,9 +96,6 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         var count = 0
         var downloadCount = 0
-        println(info)
-        
-        
         
         for var index = 0; index < (info["news"] as [AnyObject]).count; index++ {
             

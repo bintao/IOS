@@ -278,20 +278,26 @@ class UserTeam: NSObject{
             if result["id"]? != nil {
                 TeamInfoGlobal.teamID = result["id"] as String
             }
+            
             else {TeamInfoGlobal.teamID = nil}
+        
             if result["teamName"]? != nil {
                 TeamInfoGlobal.teamName = result["teamName"] as String
             }
-           else {TeamInfoGlobal.teamName = nil}
+                
+            else {TeamInfoGlobal.teamName = nil}
+        
             if result["teamIntro"]? != nil {
                 TeamInfoGlobal.team_Intro = result["teamIntro"] as String
             }
-              else {TeamInfoGlobal.team_Intro = nil}
+                
+            else {TeamInfoGlobal.team_Intro = nil}
         
             if result["teamIcon"]? != nil {
                 
                 self.teamicon_link = result["teamIcon"] as String
             }
+                
             else {self.teamicon_link = nil}
         
             if result["id"]? != nil{
@@ -303,7 +309,6 @@ class UserTeam: NSObject{
                 }
             }
         
-    
         TeamInfoGlobal.saveUserData()
         self.getIconFromServer()
 

@@ -220,9 +220,6 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
     
     func contactCap(sender : UIButton){
         
-        println(sender.tag)
-        
-        
         if TeamInfoGlobal.findplayer {
             
             if (teams[sender.tag] as? [String: AnyObject])?["profile_id"] != nil{

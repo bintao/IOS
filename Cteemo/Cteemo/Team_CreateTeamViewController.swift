@@ -92,8 +92,6 @@ class Team_CreateTeamViewController: UIViewController, UITextViewDelegate,UIImag
     
     
     func gotResult(prefix: String, result: AnyObject) {
-    
-    print(result)
         
         if result["teamIcon"]? != nil {
             

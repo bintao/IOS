@@ -104,6 +104,9 @@
 		A1010D491A7B2F9100256208 /* school button icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D481A7B2F9100256208 /* school button icon.png */; };
 		A1010D4B1A7B385700256208 /* school.png in Resources */ = {isa = PBXBuildFile; fileRef = A1010D4A1A7B385700256208 /* school.png */; };
 		A103113D1AA80A2F000B7BB3 /* tournamentNew.png in Resources */ = {isa = PBXBuildFile; fileRef = A103113C1AA80A2F000B7BB3 /* tournamentNew.png */; };
+		A10D09911AE898C300AEF2CE /* Team_Member_Top.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D09901AE898C300AEF2CE /* Team_Member_Top.swift */; };
+		A10D09931AEAEF7A00AEF2CE /* Team_Member_middle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D09921AEAEF7A00AEF2CE /* Team_Member_middle.swift */; };
+		A10D09951AEB541900AEF2CE /* Team_Member_bot.swift in Sources */ = {isa = PBXBuildFile; fileRef = A10D09941AEB541800AEF2CE /* Team_Member_bot.swift */; };
 		A11844A91AC879AA00022E45 /* Team_DeleteMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11844A81AC879AA00022E45 /* Team_DeleteMember.swift */; };
 		A11844B31AC9C20A00022E45 /* Tournament_playnext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11844B21AC9C20A00022E45 /* Tournament_playnext.swift */; };
 		A11844BF1ACBA2A700022E45 /* Tournament_startgame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11844BE1ACBA2A700022E45 /* Tournament_startgame.swift */; };
@@ -176,6 +179,7 @@
 		A13E54A11AC631D900FD45F6 /* reportresult.png in Resources */ = {isa = PBXBuildFile; fileRef = A13E549F1AC631D900FD45F6 /* reportresult.png */; };
 		A14422441AA5925900A7BF6C /* result2.png in Resources */ = {isa = PBXBuildFile; fileRef = A14422421AA5925900A7BF6C /* result2.png */; };
 		A14422451AA5925900A7BF6C /* shoubin.png in Resources */ = {isa = PBXBuildFile; fileRef = A14422431AA5925900A7BF6C /* shoubin.png */; };
+		A14C08021AE83500006F4F95 /* Team_memberinfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14C08011AE83500006F4F95 /* Team_memberinfo.swift */; };
 		A14E3C211A9B21F8003C837F /* Bracket.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14E3C201A9B21F8003C837F /* Bracket.swift */; };
 		A15D187C1AC233EB00C7E83E /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = A15D187B1AC233EB00C7E83E /* post.png */; };
 		A15D188A1AC261E400C7E83E /* Teampostview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A15D18891AC261E400C7E83E /* Teampostview.swift */; };
@@ -550,6 +554,9 @@
 		A1010D481A7B2F9100256208 /* school button icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "school button icon.png"; sourceTree = "<group>"; };
 		A1010D4A1A7B385700256208 /* school.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = school.png; sourceTree = "<group>"; };
 		A103113C1AA80A2F000B7BB3 /* tournamentNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tournamentNew.png; sourceTree = "<group>"; };
+		A10D09901AE898C300AEF2CE /* Team_Member_Top.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_Member_Top.swift; sourceTree = "<group>"; };
+		A10D09921AEAEF7A00AEF2CE /* Team_Member_middle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_Member_middle.swift; sourceTree = "<group>"; };
+		A10D09941AEB541800AEF2CE /* Team_Member_bot.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_Member_bot.swift; sourceTree = "<group>"; };
 		A11844A81AC879AA00022E45 /* Team_DeleteMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_DeleteMember.swift; sourceTree = "<group>"; };
 		A11844B21AC9C20A00022E45 /* Tournament_playnext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament_playnext.swift; sourceTree = "<group>"; };
 		A11844BE1ACBA2A700022E45 /* Tournament_startgame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament_startgame.swift; sourceTree = "<group>"; };
@@ -626,6 +633,7 @@
 		A13E549F1AC631D900FD45F6 /* reportresult.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = reportresult.png; sourceTree = "<group>"; };
 		A14422421AA5925900A7BF6C /* result2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = result2.png; sourceTree = "<group>"; };
 		A14422431AA5925900A7BF6C /* shoubin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoubin.png; sourceTree = "<group>"; };
+		A14C08011AE83500006F4F95 /* Team_memberinfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_memberinfo.swift; sourceTree = "<group>"; };
 		A14E3C201A9B21F8003C837F /* Bracket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Bracket.swift; sourceTree = "<group>"; };
 		A15D187B1AC233EB00C7E83E /* post.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = post.png; sourceTree = "<group>"; };
 		A15D18891AC261E400C7E83E /* Teampostview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Teampostview.swift; sourceTree = "<group>"; };
@@ -911,6 +919,7 @@
 				A1C885D81AC29CF500AA7888 /* Team_playerpost.swift */,
 				A1EF3F771AC3A65B003D3B7D /* Team_requests.swift */,
 				A11844A81AC879AA00022E45 /* Team_DeleteMember.swift */,
+				A14C08011AE83500006F4F95 /* Team_memberinfo.swift */,
 			);
 			name = Team;
 			sourceTree = "<group>";
@@ -997,6 +1006,9 @@
 				42B859F61A74840F00FD4642 /* Images.xcassets */,
 				42B859F81A74840F00FD4642 /* LaunchScreen.xib */,
 				A1CEFEA11AABE71D002D5956 /* tableCell.xib */,
+				A10D09941AEB541800AEF2CE /* Team_Member_bot.swift */,
+				A10D09901AE898C300AEF2CE /* Team_Member_Top.swift */,
+				A10D09921AEAEF7A00AEF2CE /* Team_Member_middle.swift */,
 				42B74FBE1A812416008B575C /* MainViewController.swift */,
 				425E8FE41A8B19BF00A06752 /* CustomPosterView.swift */,
 				427D7A901A85C36000BFB2DA /* CustomSwitcher.swift */,
@@ -2113,17 +2125,21 @@
 			files = (
 				A13114941ADE3FF600BC748E /* SMTPAPI.m in Sources */,
 				A11FED851ABD4D060075B627 /* RAMFumeAnimation.swift in Sources */,
+				A10D09911AE898C300AEF2CE /* Team_Member_Top.swift in Sources */,
+				A10D09951AEB541900AEF2CE /* Team_Member_bot.swift in Sources */,
 				A13114971ADE405C00BC748E /* SendGrid.m in Sources */,
 				42B85A101A74884100FD4642 /* Login_CreateViewController.swift in Sources */,
 				A1E28B311ADB7C7A00DE0BFC /* Tournament_WinnerPhoto.swift in Sources */,
 				A1010D471A7B2ACF00256208 /* ARequest.swift in Sources */,
 				42B859F21A74840F00FD4642 /* Login_MainViewController.swift in Sources */,
 				A1838F8E1ADB817C004690A3 /* CaptureSessionManager.m in Sources */,
+				A14C08021AE83500006F4F95 /* Team_memberinfo.swift in Sources */,
 				A1EF3F781AC3A65B003D3B7D /* Team_requests.swift in Sources */,
 				A14E3C211A9B21F8003C837F /* Bracket.swift in Sources */,
 				42B74FC81A812416008B575C /* NewsViewController.swift in Sources */,
 				42B0A33C1A898BD200EA908C /* AFURLConnectionOperation.m in Sources */,
 				42E5E78B1A773E56004A781E /* Login_LoginBySelfViewController.swift in Sources */,
+				A10D09931AEAEF7A00AEF2CE /* Team_Member_middle.swift in Sources */,
 				42855B9D1A8459A600EB9546 /* Team_JoinTeamViewController.swift in Sources */,
 				4260F3FC1A886D6000A6F39D /* Team_TeamInfoViewController.swift in Sources */,
 				42B74FC71A812416008B575C /* TeamViewController.swift in Sources */,

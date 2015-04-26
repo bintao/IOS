@@ -905,7 +905,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubP-CX-JdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="qsJ-qK-8VB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="7267" y="960"/>
+            <point key="canvasLocation" x="7386" y="999"/>
         </scene>
         <!--Login School And Photo-->
         <scene sceneID="Hsk-5t-R6U">
@@ -1739,6 +1739,47 @@
             </objects>
             <point key="canvasLocation" x="5543.5" y="-1337.5"/>
         </scene>
+        <!--Team memberinfo-->
+        <scene sceneID="668-9I-cAb">
+            <objects>
+                <viewController id="GPD-fF-wv5" customClass="Team_memberinfo" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="epQ-2D-mf3"/>
+                        <viewControllerLayoutGuide type="bottom" id="yN7-Nh-qp0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ocA-cz-ypc">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="a7s-3b-NxP">
+                                <rect key="frame" x="0.0" y="64" width="600" height="544"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="a7s-3b-NxP" secondAttribute="bottom" id="Be6-cq-Xa4"/>
+                            <constraint firstItem="a7s-3b-NxP" firstAttribute="top" secondItem="epQ-2D-mf3" secondAttribute="bottom" id="Msm-t3-w6Z"/>
+                            <constraint firstItem="a7s-3b-NxP" firstAttribute="top" secondItem="epQ-2D-mf3" secondAttribute="bottom" constant="-60" id="aVN-en-Vw1"/>
+                            <constraint firstAttribute="trailing" secondItem="a7s-3b-NxP" secondAttribute="trailing" id="fSq-Wb-QON"/>
+                            <constraint firstItem="a7s-3b-NxP" firstAttribute="top" secondItem="epQ-2D-mf3" secondAttribute="top" id="gF1-tG-yli"/>
+                            <constraint firstItem="a7s-3b-NxP" firstAttribute="leading" secondItem="ocA-cz-ypc" secondAttribute="leading" id="nxr-NZ-lkI"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Msm-t3-w6Z"/>
+                                <exclude reference="aVN-en-Vw1"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="resulttabel" destination="a7s-3b-NxP" id="ng5-19-PS5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dEV-cr-6OG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6039" y="573"/>
+        </scene>
         <!--Tournament game-->
         <scene sceneID="PL8-7R-Wb3">
             <objects>
@@ -1788,7 +1829,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q3f-3u-YWV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6218.5" y="-1467.5"/>
+            <point key="canvasLocation" x="6170.5" y="-2343.5"/>
         </scene>
         <!--Tournament joined-->
         <scene sceneID="DA9-Pm-SbH">
@@ -2180,7 +2221,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hQ6-KD-TU1" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="5Pl-2H-vwE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6697.5" y="-1521.5"/>
+            <point key="canvasLocation" x="6713.5" y="-1517.5"/>
         </scene>
         <!--Cteemo Game-->
         <scene sceneID="QhA-4N-d8c">
@@ -3098,12 +3139,13 @@ Cteemo can determine your game result automatically. Please click “get tournam
                         <outlet property="navigation" destination="dwP-Q5-qV9" id="ESu-7v-6I0"/>
                         <outlet property="teamicon" destination="TKm-Hg-VRb" id="hBE-yj-u7R"/>
                         <segue destination="vGF-HT-bC3" kind="unwind" identifier="returnToTeam" unwindAction="returnToTeam:" id="RSJ-Qn-vLa"/>
+                        <segue destination="GPD-fF-wv5" kind="show" identifier="memberinfo" id="auN-HV-omY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pX3-eO-xmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="vGF-HT-bC3" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="5299" y="639"/>
+            <point key="canvasLocation" x="5314" y="585"/>
         </scene>
         <!--CREATE TEAM-->
         <scene sceneID="S1Y-3s-Tgk">
@@ -3227,7 +3269,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgX-LB-i11" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wEk-h5-C70" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6331" y="701"/>
+            <point key="canvasLocation" x="6753" y="630"/>
         </scene>
         <!--Team Join Team View Controller-->
         <scene sceneID="bpP-pN-ogk">
@@ -3323,7 +3365,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3O-pt-TQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6442" y="-796"/>
+            <point key="canvasLocation" x="6550" y="-156"/>
         </scene>
         <!--View Request-->
         <scene sceneID="S5M-et-oSz">
@@ -3456,7 +3498,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yZg-yF-7gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7166" y="366.5"/>
+            <point key="canvasLocation" x="7452" y="380.5"/>
         </scene>
         <!--Team Find Team View Controller-->
         <scene sceneID="XEh-Li-Oz0">

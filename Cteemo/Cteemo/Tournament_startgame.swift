@@ -182,11 +182,10 @@ class Tournament_startgame: UIViewController {
                                                 alert1.addButton("ok"){
                                                 
                                                  self.performSegueWithIdentifier("backjoinedgame", sender: self)
-                                                
+                                                    
                                                 }
                                                 
                                                 alert1.showNotice(self.parentViewController?.parentViewController, title: "Loss", subTitle: "Don't give up! You can win next time!", closeButtonTitle: nil, duration: 0.0)
-                                            
                                             
                                             }
                                             

@@ -38,6 +38,8 @@ class Tournament_joined: UIViewController {
         super.viewDidLoad()
         navigation.title = self.Tournamentname
         
+        //https://api.challonge.com/v1/tournaments/{tournament}/participants/randomize.{json|xml}
+        
         // Do any additional setup after loading the view.
     }
     
