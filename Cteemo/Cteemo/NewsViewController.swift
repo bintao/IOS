@@ -185,7 +185,10 @@ class NewsViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 
                 var img = UIImage()
-               // img = img.setGradientToImage(cellImage.frame, locationList: [0.0,1.0], colorList: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.2], startPoint: CGPointMake(0, self.tableHeight), endPoint: CGPointMake(cellImage.frame.width + 200, -30))
+                
+                img = img.setGradientToImage(cellImage.frame, locationList: [0.0,1.0], colorList: [1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 0.2], startPoint: CGPointMake(0, self.tableHeight), endPoint: CGPointMake(cellImage.frame.width + 200, -30))
+                
+                
                 var coverImage = UIImageView(frame: cellImage.frame)
               
                 coverImage.image = img

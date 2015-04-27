@@ -332,7 +332,33 @@ extension UIImage {
         UIGraphicsEndImageContext()
         return image
     }
-       
+    
+    
+    func setGradientToImage(frame:CGRect, locationList: [CGFloat], colorList: [CGFloat], startPoint: CGPoint, endPoint: CGPoint)->UIImage
+    {
+        // Allocate color space
+        var colorSpace = CGColorSpaceCreateDeviceRGB()
+        let componentCount  = locationList.count
+        //allocate myGradient
+        //var locationList: [CGFloat] = [0.0,1.0]
+        //var colorList: [CGFloat] = [253.0/255.0, 76.0/255.0, 83.0 / 255.0, 1.0, 1.0, 1.0, 1.0, 0.0]
+        var myGradient = CGGradientCreateWithColorComponents(colorSpace, colorList, locationList, componentCount)
+        
+        // Allocate bitmap context
+        
+        let bitmapInfo = CGBitmapInfo(CGImageAlphaInfo.PremultipliedLast.rawValue)
+        let bitmapContext = CGBitmapContextCreate(nil, Int(frame.width), Int(frame.height), 8, 0, colorSpace, bitmapInfo)
+        
+        //Draw Gradient Here
+        
+        CGContextDrawLinearGradient(bitmapContext, myGradient, startPoint, endPoint, 0)
+        // Create a CGImage from context
+        var cgImage = CGBitmapContextCreateImage(bitmapContext)
+        // Create a UIImage from CGImage
+        var uiImage = UIImage(CGImage: cgImage)
+        
+        return uiImage!
+    }
     
     
     func roundCorners(cornerRadius:CGFloat, border:CGFloat, color:UIColor) -> UIImage?

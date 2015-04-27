@@ -12,10 +12,7 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
 
     
     @IBOutlet var switcher: CustomSwitcher!
-    @IBOutlet var postbutton: UIButton!
-    @IBOutlet var postView: UIView!
     @IBOutlet var searchView: UIView!
-    @IBOutlet var playerView: UIView!
 
     var container : UIViewController!
     var join  = false
@@ -34,78 +31,43 @@ class Team_JoinTeamViewController: UIViewController, CustomSwitcherDelegate{
             
         }
         
-      
+            self.searchView.alpha = 1
         
-            self.postView.alpha = 1
-            self.searchView.alpha = 0
-            self.playerView.alpha = 0
 
         
         
     }
     
     override func viewDidAppear(animated: Bool) {
-        var choices = ["TEAMS","PLAYERS","SEARCH"]
+       var choices = ["SEARCH"]
         
+        if join {
+            
+       choices = ["SEARCH PLAYER"]
         
-       
+       }else {
+            
+        choices = ["SEARCH TEAMS"]
+            
+        }
+        
         switcher.setup(choices, colorSelected: self.navigationController!.view.tintColor!, colorDefault: UIColor.whiteColor())
         switcher.delegate = self
         
     }
     
     func customSwitcherSwitched(switcher: CustomSwitcher) {
-        if switcher.chosenBox == 0{
-            postSelect()
-            postbutton.alpha = 1
-            
-        }
-        else if switcher.chosenBox == 1{
-        
-            playerSelect()
-            postbutton.alpha = 1
-        }
-        else if switcher.chosenBox == 2{
+      if switcher.chosenBox == 0{
             searchSelect()
-            postbutton.alpha = 0
         }
     }
     
-    func postSelect(){
-            UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            
-            self.postView.alpha = 1
-            self.searchView.alpha = 0
-           self.playerView.alpha = 0
-            
-            }
-            , completion: {
-                (value: Bool) in
-            
-        })
-    }
-    
-    func playerSelect(){
-        UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
-            
-            self.postView.alpha = 0
-            self.searchView.alpha = 0
-            self.playerView.alpha = 1
-            
-            }
-            , completion: {
-                (value: Bool) in
-                
-        })
-    }
     
     func searchSelect(){
 
         UIView.animateWithDuration(0.3, delay: 0, options: UIViewAnimationOptions.CurveEaseInOut, animations: {
             
-            self.postView.alpha = 0
             self.searchView.alpha = 1
-            self.playerView.alpha = 0
             
             }
             , completion: {

@@ -94,7 +94,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         if prefix == "fb_login"{
             //save token
             
-            if result["token"] as? String != nil && result["rongToken"] as? String != nil
+            if result["token"] as? String != nil && result["rongToken"] as? [String: AnyObject] != nil
             {
                 UserInfoGlobal.accessToken = result["token"] as! String
                 UserInfoGlobal.rongToken = (result["rongToken"] as! [String: AnyObject])["token"] as! String

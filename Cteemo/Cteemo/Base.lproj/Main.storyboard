@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HIH-ZW-Nle">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -905,7 +905,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ubP-CX-JdV" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="qsJ-qK-8VB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="7386" y="999"/>
+            <point key="canvasLocation" x="7482" y="1183"/>
         </scene>
         <!--Login School And Photo-->
         <scene sceneID="Hsk-5t-R6U">
@@ -3305,67 +3305,27 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                     <segue destination="HQN-iE-gfF" kind="embed" id="o1e-Q4-Yky"/>
                                 </connections>
                             </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l3p-Uh-Ohe">
-                                <rect key="frame" x="0.0" y="141" width="600" height="459"/>
-                                <color key="tintColor" red="0.90588235289999997" green="0.2901960784" blue="0.32156862749999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <segue destination="T5p-QI-SCS" kind="embed" id="ofl-dz-aBO"/>
-                                </connections>
-                            </containerView>
-                            <containerView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQP-Gp-9ol">
-                                <rect key="frame" x="0.0" y="141" width="600" height="459"/>
-                                <color key="tintColor" red="0.90588235294117647" green="0.29019607843137257" blue="0.32156862745098042" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <segue destination="Krf-dv-9SF" kind="embed" id="OY0-sK-1Db"/>
-                                </connections>
-                            </containerView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EYk-sT-SU3">
-                                <rect key="frame" x="412" y="432" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="8bo-Z3-0Vx"/>
-                                    <constraint firstAttribute="height" constant="60" id="ZxY-6y-QHC"/>
-                                </constraints>
-                                <state key="normal" backgroundImage="post.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="WRp-xv-hhI" kind="push" identifier="" id="hOJ-b1-u35"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="OQP-Gp-9ol" firstAttribute="leading" secondItem="l3b-dI-OSP" secondAttribute="leading" id="4FY-Rg-T9I"/>
                             <constraint firstItem="UEp-9C-E24" firstAttribute="top" secondItem="9KK-6D-s5j" secondAttribute="bottom" id="5Om-qb-hyf"/>
-                            <constraint firstItem="l3p-Uh-Ohe" firstAttribute="leading" secondItem="l3b-dI-OSP" secondAttribute="leadingMargin" constant="-16" id="5ry-v6-L1v"/>
                             <constraint firstItem="UEp-9C-E24" firstAttribute="leading" secondItem="l3b-dI-OSP" secondAttribute="leading" id="Bft-4Q-g0p"/>
                             <constraint firstItem="9KK-6D-s5j" firstAttribute="leading" secondItem="l3b-dI-OSP" secondAttribute="leading" id="FJ1-Av-75e"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="EYk-sT-SU3" secondAttribute="trailing" constant="30" id="JRd-cn-RDY"/>
-                            <constraint firstItem="vFb-Sf-obK" firstAttribute="top" secondItem="OQP-Gp-9ol" secondAttribute="bottom" id="MRA-bZ-jGI"/>
-                            <constraint firstItem="vFb-Sf-obK" firstAttribute="top" secondItem="EYk-sT-SU3" secondAttribute="bottom" constant="100" id="ThT-XN-BDT"/>
-                            <constraint firstAttribute="trailing" secondItem="OQP-Gp-9ol" secondAttribute="trailing" id="fKM-ER-rV0"/>
-                            <constraint firstItem="OQP-Gp-9ol" firstAttribute="top" secondItem="9KK-6D-s5j" secondAttribute="bottom" id="hSE-SH-cme"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="l3p-Uh-Ohe" secondAttribute="trailing" constant="-16" id="kbQ-sV-tXW"/>
                             <constraint firstAttribute="trailing" secondItem="9KK-6D-s5j" secondAttribute="trailing" id="lse-SO-55G"/>
                             <constraint firstAttribute="trailing" secondItem="UEp-9C-E24" secondAttribute="trailing" id="ni3-Bq-yJ4"/>
-                            <constraint firstItem="l3p-Uh-Ohe" firstAttribute="top" secondItem="9KK-6D-s5j" secondAttribute="bottom" constant="15" id="oBC-tY-9pT"/>
                             <constraint firstItem="vFb-Sf-obK" firstAttribute="top" secondItem="UEp-9C-E24" secondAttribute="bottom" id="qUh-3o-wS4"/>
-                            <constraint firstItem="vFb-Sf-obK" firstAttribute="top" secondItem="l3p-Uh-Ohe" secondAttribute="bottom" id="rhD-5E-8Ps"/>
                             <constraint firstItem="9KK-6D-s5j" firstAttribute="top" secondItem="M4Z-yE-JUv" secondAttribute="bottom" constant="20" id="xgp-eU-oAe"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ZwZ-yb-h7A"/>
                     <connections>
-                        <outlet property="playerView" destination="l3p-Uh-Ohe" id="ffU-dS-fow"/>
-                        <outlet property="postView" destination="OQP-Gp-9ol" id="Hh2-sM-r3V"/>
-                        <outlet property="postbutton" destination="EYk-sT-SU3" id="AG0-Ou-SEl"/>
                         <outlet property="searchView" destination="UEp-9C-E24" id="a9g-sF-Nj1"/>
                         <outlet property="switcher" destination="i5j-GK-S6C" id="ON9-IV-iYX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k3O-pt-TQd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6550" y="-156"/>
+            <point key="canvasLocation" x="6601" y="-164"/>
         </scene>
         <!--View Request-->
         <scene sceneID="S5M-et-oSz">
@@ -3456,50 +3416,6 @@ Cteemo can determine your game result automatically. Please click “get tournam
             </objects>
             <point key="canvasLocation" x="5809" y="1399"/>
         </scene>
-        <!--Team playerpost-->
-        <scene sceneID="vFw-Og-Jeh">
-            <objects>
-                <viewController id="T5p-QI-SCS" customClass="Team_playerpost" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="HwM-0n-RFc"/>
-                        <viewControllerLayoutGuide type="bottom" id="Pht-3l-dnz"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Rsa-og-fgZ">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="459"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="a2b-7j-x7m">
-                                <rect key="frame" x="0.0" y="-43" width="600" height="522"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="HQN-iE-gfF" id="iYp-2a-6F6"/>
-                                    <outlet property="delegate" destination="HQN-iE-gfF" id="btf-iP-Epf"/>
-                                </connections>
-                            </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Gpy-I0-BdG">
-                                <rect key="frame" x="0.0" y="212" width="37" height="37"/>
-                                <color key="color" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerY" secondItem="Gpy-I0-BdG" secondAttribute="centerY" id="6fb-2Y-piH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="a2b-7j-x7m" secondAttribute="trailing" constant="-16" id="9sc-Ae-9N7"/>
-                            <constraint firstAttribute="centerX" secondItem="Gpy-I0-BdG" secondAttribute="centerX" id="KTq-6L-JvU"/>
-                            <constraint firstItem="a2b-7j-x7m" firstAttribute="top" secondItem="Rsa-og-fgZ" secondAttribute="topMargin" constant="15" id="Q7c-8e-op2"/>
-                            <constraint firstItem="a2b-7j-x7m" firstAttribute="leading" secondItem="Rsa-og-fgZ" secondAttribute="leadingMargin" constant="-16" id="QDM-9A-mIm"/>
-                            <constraint firstAttribute="bottom" secondItem="a2b-7j-x7m" secondAttribute="bottom" constant="50" id="r6H-lq-lh7"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="loading" destination="Gpy-I0-BdG" id="vwC-4o-wOn"/>
-                        <outlet property="resultTable" destination="a2b-7j-x7m" id="g9P-kc-sKp"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yZg-yF-7gh" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="7452" y="380.5"/>
-        </scene>
         <!--Team Find Team View Controller-->
         <scene sceneID="XEh-Li-Oz0">
             <objects>
@@ -3553,7 +3469,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUE-Xr-Mfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7642" y="-116.5"/>
+            <point key="canvasLocation" x="7330" y="-148.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4FT-0R-U4A">
@@ -4535,116 +4451,6 @@ Cteemo can determine your game result automatically. Please click “get tournam
             </objects>
             <point key="canvasLocation" x="4577" y="762"/>
         </scene>
-        <!--POST-->
-        <scene sceneID="mKo-F4-PT7">
-            <objects>
-                <viewController id="WRp-xv-hhI" customClass="Teampostview" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Nou-w0-iaP"/>
-                        <viewControllerLayoutGuide type="bottom" id="0wj-uv-thZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="CRn-aN-IjG">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FVi-gW-5Rn">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="0wj-uv-thZ" firstAttribute="top" secondItem="FVi-gW-5Rn" secondAttribute="bottom" id="Fhp-PV-VFU"/>
-                            <constraint firstItem="FVi-gW-5Rn" firstAttribute="leading" secondItem="CRn-aN-IjG" secondAttribute="leadingMargin" constant="-16" id="HWi-sp-TkR"/>
-                            <constraint firstItem="FVi-gW-5Rn" firstAttribute="top" secondItem="Nou-w0-iaP" secondAttribute="bottom" id="nYy-Eg-VFa"/>
-                            <constraint firstAttribute="centerX" secondItem="FVi-gW-5Rn" secondAttribute="centerX" id="o7r-Uc-mGA"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FVi-gW-5Rn" secondAttribute="trailing" constant="-16" id="rCw-Ba-nwF"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="POST" id="mr6-Dc-Geu">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="wsz-NZ-Nm2">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="myO-2l-SiJ">
-                                <rect key="frame" x="-23" y="-15" width="83" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="italicSystem" pointSize="18"/>
-                                <state key="normal" title="Finish">
-                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="selected">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="post:" destination="WRp-xv-hhI" eventType="touchUpInside" id="ReX-rU-0Sb"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="content" destination="FVi-gW-5Rn" id="ZzA-eY-Tjo"/>
-                        <outlet property="post" destination="myO-2l-SiJ" id="SKs-0B-6G1"/>
-                        <segue destination="9Dr-b7-a5n" kind="unwind" identifier="backtojoin" unwindAction="TeamJoinview:" id="lZj-YY-45e"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ZBb-gq-ZgQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="9Dr-b7-a5n" userLabel="Exit" sceneMemberID="exit"/>
-            </objects>
-            <point key="canvasLocation" x="7293.5" y="-732.5"/>
-        </scene>
-        <!--Team Find Team Posts View Controller-->
-        <scene sceneID="39f-Op-0P8">
-            <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Krf-dv-9SF" customClass="Team_FindTeamPostsViewController" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="vcy-Gf-BBu"/>
-                        <viewControllerLayoutGuide type="bottom" id="m5D-Si-wwn"/>
-                    </layoutGuides>
-                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Fth-Te-u7Q">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="459"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="R7e-FI-6qD">
-                                <rect key="frame" x="0.0" y="20" width="600" height="522"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="HQN-iE-gfF" id="Hee-MX-h7z"/>
-                                    <outlet property="delegate" destination="HQN-iE-gfF" id="2rE-mE-Fhj"/>
-                                </connections>
-                            </tableView>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="4fe-7K-JHy">
-                                <rect key="frame" x="0.0" y="211" width="37" height="37"/>
-                                <color key="color" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
-                            </activityIndicatorView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="4fe-7K-JHy" secondAttribute="centerX" id="2Ha-pP-vW5"/>
-                            <constraint firstItem="R7e-FI-6qD" firstAttribute="top" secondItem="vcy-Gf-BBu" secondAttribute="bottom" constant="15" id="C3D-Rh-HRU"/>
-                            <constraint firstAttribute="centerY" secondItem="4fe-7K-JHy" secondAttribute="centerY" id="FGN-Xb-AWg"/>
-                            <constraint firstAttribute="bottom" secondItem="R7e-FI-6qD" secondAttribute="bottom" constant="50" id="MHC-nV-7Se"/>
-                            <constraint firstItem="R7e-FI-6qD" firstAttribute="leading" secondItem="Fth-Te-u7Q" secondAttribute="leading" id="a2d-Ru-hl7"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="R7e-FI-6qD" secondAttribute="trailing" id="tXT-wI-CEQ"/>
-                            <constraint firstAttribute="trailing" secondItem="R7e-FI-6qD" secondAttribute="trailing" id="xxP-lT-aF4"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="tXT-wI-CEQ"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <toolbarItems/>
-                    <connections>
-                        <outlet property="loading" destination="4fe-7K-JHy" id="LYr-wd-lpQ"/>
-                        <outlet property="resultTable" destination="R7e-FI-6qD" id="ZHI-pD-ihc"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Vr9-Ym-tFo" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8389" y="144.5"/>
-        </scene>
         <!--Intro View Controller-->
         <scene sceneID="0Om-vc-fMy">
             <objects>
@@ -4751,7 +4557,6 @@ Cteemo can determine your game result automatically. Please click “get tournam
         <image name="more111.png" width="60" height="60"/>
         <image name="news" width="32" height="32"/>
         <image name="playnextmatch.png" width="169" height="149"/>
-        <image name="post.png" width="108" height="108"/>
         <image name="postbu.png" width="250" height="60"/>
         <image name="postsomething.png" width="250" height="60"/>
         <image name="reportresult.png" width="169" height="149"/>

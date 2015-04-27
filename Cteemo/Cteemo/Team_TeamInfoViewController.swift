@@ -62,6 +62,7 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
                 }, error: nil)
             
         capTain.setImage(TeamInfoGlobal.captainIcon, forState: UIControlState.Normal)
+        self.capTain.addTarget(self, action: "captain:", forControlEvents: UIControlEvents.TouchUpInside)
         capTainName.text = TeamInfoGlobal.captainName
             
         if TeamInfoGlobal.iscaptain == nil {
@@ -146,7 +147,16 @@ class Team_TeamInfoViewController: UIViewController, RequestResultDelegate{
     }
     
     
-    
+    func captain(sender : UIButton){
+        
+        
+        ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).hideTabb()
+        
+         self.id = TeamInfoGlobal.captainId
+        
+         self.performSegueWithIdentifier("memberinfo", sender: self)
+        
+    }
     func member(sender : UIButton){
         
         ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).hideTabb()

@@ -42,14 +42,23 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
         
         
         if (email.text != nil && email.text.rangeOfString("@")?.isEmpty != nil) {
+        self.startLoading()
         
         var req = request(.POST, "http://54.149.235.253:5000/forget_password", parameters: ["email": email.text,"username":self.name.text,"school":self.school.text])
         .responseJSON { (_, _, JSON, _) in
+
+        self.stopLoading()
+
+        println(JSON)
+        if JSON != nil {
+            
         var result: [String: AnyObject] = JSON as! [String: AnyObject]
         self.gotSubmitResult(result)
+            
+        }
         }
         
-        self.startLoading()
+       
         
         }else if email.text == "" || email.text.rangeOfString("@")?.isEmpty == nil{
         displaySpeaker("Email Invalid")
@@ -61,15 +70,22 @@ class Login_Forpassword: UIViewController, UITextFieldDelegate{
     
     func gotSubmitResult(result: [String: AnyObject]){
         
-        stopLoading()
         
         
         // email with user
         if (((result["message"] as! String).rangeOfString("Please")?.isEmpty != nil) && result["status"] as! String == "success") {
             displaySpeaker("success! Please check your email!")
         }
+            
+        else if (result["message"] as! String).rangeOfString("Information")?.isEmpty != nil {
+        
+        
+            displaySpeaker("Infomation does not match")
+            
+        }
         //can't find email
         else{
+            
             if((result["message"] as! String).rangeOfString("Validation")?.isEmpty != nil){
                 displaySpeaker("Invalid Email")
             }
