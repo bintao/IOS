@@ -18,7 +18,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
     @IBOutlet var resultTable: UITableView!
 
      var requests: [AnyObject] = [AnyObject]()
-    
+    var id = ""
     
     override func viewDidLoad() {
         
@@ -116,16 +116,21 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         var iconurl :String = ""
         var username :String = ""
         var school : String = ""
+        var id = ""
         
-        if (requests[indexPath.row] as! [String: AnyObject])["profile_icon"] != nil
-        {
+          if !((requests[indexPath.row] as! [String: AnyObject])["profile_id"] is NSNull){
             
-            iconurl = (requests[indexPath.row] as! [String: AnyObject])["profile_icon"] as! String
-            
+            id = (requests[indexPath.row] as! [String: AnyObject])["profile_id"] as! String
             
             if !((requests[indexPath.row] as! [String: AnyObject])["username"] is NSNull){
+            
+            username = (requests[indexPath.row] as! [String: AnyObject])["username"] as! String
+            
+            }
+            
+            if !((requests[indexPath.row] as! [String: AnyObject])["profile_icon"] is NSNull){
                 
-                username = (requests[indexPath.row] as! [String: AnyObject])["username"] as! String
+                iconurl = (requests[indexPath.row] as! [String: AnyObject])["iconurl"] as! String
                 
             }
             
@@ -141,9 +146,14 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         var backButton = UIButton(frame: CGRectMake(0, 0, self.view.frame.width, 80))
         backButton.setImage(UIImage(named: "white"), forState: UIControlState.Normal)
+        
+        backButton.addTarget(self, action: "viewinfo:", forControlEvents: UIControlEvents.TouchUpInside)
+        backButton.tag = id.toInt()!
+        
         cell.addSubview(backButton)
         
         var cellIcon = UIImageView(image: nil)
+        cellIcon.image = UIImage(named: "Forma 1")
         
         ImageLoader.sharedLoader.imageForUrl(iconurl, completionHandler:{(image: UIImage?, url: String) in
             if image != nil {
@@ -153,6 +163,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
                 cellIcon.image = UIImage(named: "Forma 1")
             }
         })
+        
         cellIcon.frame = CGRectMake(10, 10, 60, 60)
         cell.addSubview(cellIcon)
         
@@ -206,6 +217,23 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
     }
     
     
+    
+    func  viewinfo(sender : UIButton){
+        
+            
+            
+            self.id = "\(sender.tag)"
+            if self.id != ""
+            {
+                
+                self.performSegueWithIdentifier("gotoplayerinfo", sender: self)
+                
+            }
+            
+            
+        
+        
+    }
     func accept(sender : AnyObject){
     
         println(sender.tag)
@@ -352,7 +380,17 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
         
         
     }
-
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "gotoplayerinfo"{
+            
+            var controller: Team_memberinfo = segue.destinationViewController as! Team_memberinfo
+            controller.id = self.id
+            
+        }
+        
+        
+    }
     
     func startLoading(){
         self.loading.startAnimating()

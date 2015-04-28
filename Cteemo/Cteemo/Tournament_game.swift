@@ -184,6 +184,7 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                                         
                                         if JSONdata != nil {
                                             
+                                         
                                             let myjson = JSON(JSONdata!)
                                             
                                                 if let error = myjson["errors"][0].string
@@ -202,7 +203,8 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
                                                     
                                                 }// check errors
                                                 
-                                            else if let check = myjson["participant"].array {
+                                           
+                                            else if let check = myjson["participant"].dictionaryObject {
                                                     
                                                     self.performSegueWithIdentifier("joined", sender: self)
                                             

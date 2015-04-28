@@ -17,6 +17,8 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
     @IBOutlet var resultTable : UITableView!
     
     
+    var id = ""
+    
     var teams: [AnyObject] = [AnyObject]()
 
     
@@ -43,8 +45,9 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
                 var req = request(.GET, "http://54.149.235.253:5000/search_profile", parameters: [ "username":searchBar.text])
                     .responseJSON { (_, _, JSONdata, _) in
                         self.stopLoading()
+                        if JSONdata != nil {
                         let myjson = JSON(JSONdata!)
-                        
+                        println(JSONdata)
                         if let unauthorized = myjson["message"].string
                         {
                             
@@ -56,12 +59,13 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
                         
                         }
                         else if JSONdata != nil{
+                            
                             var result: [AnyObject] = [AnyObject]()
                             result = JSONdata as! [AnyObject]
                             self.gotResult(result)
                           
                         }
-                        
+                        }// check nil
                 }
             
             }
@@ -70,7 +74,9 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
                 var req = request(.GET, "http://54.149.235.253:5000/search_team/lol", parameters: [ "teamName":searchBar.text])
                     .responseJSON { (_, _, JSONdata, _) in
                         self.stopLoading()
+                        if JSONdata != nil{
                         
+                        println(JSONdata)
                         let myjson = JSON(JSONdata!)
                         
                         if let unauthorized = myjson["message"].string
@@ -89,6 +95,8 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
                             self.gotResult(result)
                             
                         }
+                            
+                        }// check nil
                         
                 }
             
@@ -120,17 +128,18 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         var iconurl : String = ""
         var school : String = ""
         var name : String = ""
-
+        var id : String = ""
         
         if TeamInfoGlobal.findplayer {
             
-             if (teams[indexPath.row] as! [String: AnyObject])["username"] != nil{
+             if !((teams[indexPath.row] as! [String: AnyObject])["profile_id"] is NSNull){
             
             if !((teams[indexPath.row] as! [String: AnyObject])["profile_icon"] is NSNull){
                 
             iconurl = (teams[indexPath.row] as! [String: AnyObject])["profile_icon"] as! String
                 
             }
+                
             if !((teams[indexPath.row] as! [String: AnyObject])["school"] is NSNull){
                 
             school = (teams[indexPath.row] as! [String: AnyObject])["school"] as! String
@@ -141,26 +150,34 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
             school = "No School"
             
             }
+            if !((teams[indexPath.row] as! [String: AnyObject])["username"] is NSNull){
+                    
+            name = (teams[indexPath.row] as! [String: AnyObject])["username"] as! String
             
-           
-            name =  (teams[indexPath.row] as! [String: AnyObject])["username"] as! String
+            } else{
+                
+            name = "No Name"
             }
+                
+            id =  (teams[indexPath.row] as! [String: AnyObject])["profile_id"] as! String
+            
+            }// name is nil
             
             
             }
             
         else
         {
-            if  (teams[indexPath.row] as! [String: AnyObject])["teamIcon"] != nil {
+            if  (teams[indexPath.row] as! [String: AnyObject])["teamID"] != nil {
               
                 if !((teams[indexPath.row] as! [String: AnyObject])["teamIcon"] is NSNull){
                     
-                  iconurl = (teams[indexPath.row] as! [String: AnyObject])["teamIcon"] as! String
+                iconurl = (teams[indexPath.row] as! [String: AnyObject])["teamIcon"] as! String
                     
                 }
               
                 if !((teams[indexPath.row] as! [String: AnyObject])["captain"] is NSNull){
-                    school =  (teams[indexPath.row] as! [String: AnyObject])["captain"] as! String
+                school =  (teams[indexPath.row] as! [String: AnyObject])["captain"] as! String
 
                 
                 }
@@ -173,62 +190,85 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
             
             
         }
+        var cell = tableView.dequeueReusableCellWithIdentifier("cell") as? UITableViewCell
+        if cell == nil {
+            
+        cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
+        cell!.selectionStyle = UITableViewCellSelectionStyle.None
         
-        
-        let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
-        cell.selectionStyle = UITableViewCellSelectionStyle.None
-        
+        }
         var backButton = UIButton(frame: CGRectMake(0, 0, self.view.frame.width, 80))
+        if TeamInfoGlobal.findplayer{
+            
+        backButton.addTarget(self, action: "viewinfo:", forControlEvents: UIControlEvents.TouchUpInside)
+        backButton.tag = id.toInt()!
+        }
         backButton.setImage(UIImage(named: "white"), forState: UIControlState.Normal)
-        cell.addSubview(backButton)
+        
+        cell!.addSubview(backButton)
         
         var cellIcon = UIImageView(image: nil)
+        cellIcon.image = UIImage(named: "error.png")!
         
         ImageLoader.sharedLoader.imageForUrl(iconurl, completionHandler:{(image: UIImage?, url: String) in
-            println(url)
             if image != nil {
                 cellIcon.image = image
             }else{
             
-                cellIcon.image = UIImage(named: "Forma 1")
+                cellIcon.image = UIImage(named: "error.png")!
             }
             })
 
         cellIcon.frame = CGRectMake(10, 10, 60, 60)
-        cell.addSubview(cellIcon)
+       
+
+        cell!.addSubview(cellIcon)
         
         var teamName = UILabel(frame: CGRectMake(85, 15, 200, 27))
         teamName.textColor = UIColor.darkGrayColor()
         teamName.text = name
         teamName.font = UIFont(name: "AvenirNext-Medium", size: 18)
-        cell.addSubview(teamName)
-        
-        
+        cell!.addSubview(teamName)
         
         var captain = UILabel(frame: CGRectMake(85, 45, 200, 27))
         if TeamInfoGlobal.findplayer {
         captain.text = "School : " + school
         }
         else{
-            
         captain.text = "Captain : " + school
-            
         }
         captain.textColor = UIColor.darkGrayColor()
         captain.font = UIFont(name: "AvenirNext-Regular", size: 13)
-        cell.addSubview(captain)
+        cell!.addSubview(captain)
         
         
         var contactCaptain = UIButton(frame: CGRectMake(self.view.frame.width - 60, 20, 40, 40))
         contactCaptain.setImage(UIImage(named: "adddd"), forState: UIControlState.Normal)
         contactCaptain.addTarget(self, action: "contactCap:", forControlEvents: UIControlEvents.TouchUpInside)
         contactCaptain.tag = indexPath.row
-        cell.addSubview(contactCaptain)
+        cell!.addSubview(contactCaptain)
 
-               return cell
+        return cell!
     }
 
-
+    func  viewinfo(sender : UIButton){
+    
+        if TeamInfoGlobal.findplayer {
+        
+            
+        self.id = "\(sender.tag)"
+        if self.id != ""
+        {
+            
+        self.performSegueWithIdentifier("playerinfo", sender: self)
+        
+        }
+       
+        
+        }
+    
+    
+    }
     
     func contactCap(sender : UIButton){
         
@@ -282,6 +322,14 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
     
     }
     
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+      
+        
+        println(indexPath.row)
+    }
+   
+    
     func gotResult(prefix: String, result: AnyObject) {
 
     
@@ -292,7 +340,17 @@ class Team_FindTeamViewController: UIViewController, UISearchBarDelegate, UITabl
         return true
     }
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        if segue.identifier == "playerinfo"{
+            
+            var controller: Team_memberinfo = segue.destinationViewController as! Team_memberinfo
+            controller.id = self.id
+            
+        }
+        
+        
+    }
     // background tapped
     
     

@@ -1748,7 +1748,7 @@
                         <viewControllerLayoutGuide type="bottom" id="yN7-Nh-qp0"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ocA-cz-ypc">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="a7s-3b-NxP">
@@ -1778,7 +1778,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dEV-cr-6OG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6039" y="573"/>
+            <point key="canvasLocation" x="7235" y="515"/>
         </scene>
         <!--Tournament game-->
         <scene sceneID="PL8-7R-Wb3">
@@ -3269,7 +3269,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JgX-LB-i11" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="wEk-h5-C70" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="6753" y="630"/>
+            <point key="canvasLocation" x="6655" y="1198"/>
         </scene>
         <!--Team Join Team View Controller-->
         <scene sceneID="bpP-pN-ogk">
@@ -3336,15 +3336,15 @@ Cteemo can determine your game result automatically. Please click “get tournam
                         <viewControllerLayoutGuide type="bottom" id="auZ-qA-aSi"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="VrC-CK-rJE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="br9-cS-HNL">
-                                <rect key="frame" x="169" y="284" width="37" height="37"/>
+                                <rect key="frame" x="282" y="284" width="37" height="37"/>
                                 <color key="color" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                             </activityIndicatorView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="lVO-Z3-MYq">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
@@ -3362,11 +3362,12 @@ Cteemo can determine your game result automatically. Please click “get tournam
                     <connections>
                         <outlet property="loading" destination="br9-cS-HNL" id="Adr-Rs-tqY"/>
                         <outlet property="resultTable" destination="lVO-Z3-MYq" id="J3h-ng-3uK"/>
+                        <segue destination="GPD-fF-wv5" kind="show" identifier="gotoplayerinfo" id="qJt-XH-Khk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rpz-5E-20s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5223" y="1986"/>
+            <point key="canvasLocation" x="5199" y="1730"/>
         </scene>
         <!--Team Delete Member-->
         <scene sceneID="n0y-i3-b9A">
@@ -3414,7 +3415,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Us-gn-KpE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5809" y="1399"/>
+            <point key="canvasLocation" x="6185" y="585"/>
         </scene>
         <!--Team Find Team View Controller-->
         <scene sceneID="XEh-Li-Oz0">
@@ -3465,6 +3466,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                         <outlet property="loading" destination="CIf-6w-enW" id="7kl-gk-Ais"/>
                         <outlet property="resultTable" destination="eXu-nV-OBg" id="flg-E6-qd5"/>
                         <outlet property="search" destination="BT9-o2-JSh" id="FBM-vn-K8t"/>
+                        <segue destination="GPD-fF-wv5" kind="show" identifier="playerinfo" id="tbV-Af-BCs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fUE-Xr-Mfk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3571,14 +3573,14 @@ Cteemo can determine your game result automatically. Please click “get tournam
                         <viewControllerLayoutGuide type="bottom" id="XRL-ab-ggT"/>
                     </layoutGuides>
                     <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="vhA-jf-RXF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eMO-n9-L85">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="160"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dhc-TY-OSc">
-                                        <rect key="frame" x="15" y="15" width="70" height="70"/>
+                                        <rect key="frame" x="15" y="45" width="70" height="70"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="70" id="9ho-dd-l3u"/>
                                             <constraint firstAttribute="height" constant="70" id="xOz-cD-Rbx"/>
@@ -3601,7 +3603,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Tag-Fd-Cca">
-                                        <rect key="frame" x="0.0" y="99" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="159" width="600" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="375" id="TTU-0R-Lkg"/>
                                             <constraint firstAttribute="height" constant="1" id="bnK-sP-Me3"/>
@@ -3613,7 +3615,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="esf-a3-6GA">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="375" id="mP1-KJ-3UF"/>
                                             <constraint firstAttribute="height" constant="1" id="xAW-j2-C8K"/>
@@ -3673,10 +3675,10 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xlJ-RE-dnj">
-                                <rect key="frame" x="0.0" y="275" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="419" width="600" height="96"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="req.png" translatesAutoresizingMaskIntoConstraints="NO" id="Jrp-wv-CD1">
-                                        <rect key="frame" x="21" y="11" width="38" height="38"/>
+                                        <rect key="frame" x="21" y="11" width="74" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="6oO-tp-J5o"/>
                                             <constraint firstAttribute="width" constant="60" id="FZ5-9c-E1y"/>
@@ -3696,7 +3698,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="c3V-bb-eO3">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="375" id="DD3-MM-gA2"/>
                                             <constraint firstAttribute="height" constant="1" id="bQx-44-Itr"/>
@@ -3708,7 +3710,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="aGD-Ci-7Q8">
-                                        <rect key="frame" x="0.0" y="59" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="95" width="600" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="8Yn-se-CQi"/>
                                             <constraint firstAttribute="width" constant="375" id="8hg-yn-AV5"/>
@@ -3720,7 +3722,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrw.png" translatesAutoresizingMaskIntoConstraints="NO" id="CVr-IP-rBQ">
-                                        <rect key="frame" x="329" y="20" width="15" height="20"/>
+                                        <rect key="frame" x="554" y="38" width="15" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="k1z-7V-kJ0"/>
                                             <constraint firstAttribute="width" constant="15" id="t5Q-5H-IQA"/>
@@ -3742,11 +3744,12 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GRT-PA-xxy">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="96"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
+                                            <action selector="viewrequest:" destination="rdl-cK-aoW" eventType="touchUpInside" id="vRV-cc-DTr"/>
                                             <segue destination="utI-GR-GPQ" kind="show" id="dDd-MC-ByA"/>
                                         </connections>
                                     </button>
@@ -3810,10 +3813,10 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zgo-0a-YGF">
-                                <rect key="frame" x="0.0" y="335" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="515" width="600" height="96"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="inf.png" translatesAutoresizingMaskIntoConstraints="NO" id="IKM-vf-fUO">
-                                        <rect key="frame" x="19" y="11" width="38" height="38"/>
+                                        <rect key="frame" x="19" y="11" width="74" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="38" id="JLE-c0-p3Q"/>
                                             <constraint firstAttribute="width" secondItem="IKM-vf-fUO" secondAttribute="height" multiplier="1:1" id="gV6-wQ-DQX"/>
@@ -3833,7 +3836,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="jsa-gu-i0b">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="pnK-yN-DPj"/>
                                             <constraint firstAttribute="width" constant="375" id="yWG-Y2-LTO"/>
@@ -3845,7 +3848,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="E20-JO-FjB">
-                                        <rect key="frame" x="0.0" y="59" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="95" width="600" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="3ys-of-Gtq"/>
                                             <constraint firstAttribute="width" constant="375" id="wKp-4a-w7b"/>
@@ -3857,14 +3860,14 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrw.png" translatesAutoresizingMaskIntoConstraints="NO" id="CGK-Gk-3nE">
-                                        <rect key="frame" x="329" y="20" width="15" height="20"/>
+                                        <rect key="frame" x="554" y="38" width="15" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="pbJ-eq-aWr"/>
                                             <constraint firstAttribute="height" constant="20" id="sw6-26-fXE"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="About us" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXp-Wh-hhX">
-                                        <rect key="frame" x="80" y="20" width="200" height="20"/>
+                                        <rect key="frame" x="80" y="38" width="200" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="OxK-MR-mzG"/>
                                             <constraint firstAttribute="height" constant="24" id="rIB-48-SW0"/>
@@ -3930,10 +3933,10 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x2z-Qw-fum">
-                                <rect key="frame" x="0.0" y="120" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="180" width="600" height="128"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="envelop.png" translatesAutoresizingMaskIntoConstraints="NO" id="oSf-Gd-pDn">
-                                        <rect key="frame" x="17" y="19" width="53" height="42"/>
+                                        <rect key="frame" x="17" y="19" width="114" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="GOj-He-jyh"/>
                                             <constraint firstAttribute="width" secondItem="oSf-Gd-pDn" secondAttribute="height" multiplier="53:42" id="Pvh-yc-4sA"/>
@@ -3951,7 +3954,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="c8h-Nq-Grc">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="8pG-r1-tnU"/>
                                             <constraint firstAttribute="width" constant="375" id="jlh-I2-B9u"/>
@@ -3963,7 +3966,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="hRy-AF-VvU">
-                                        <rect key="frame" x="0.0" y="79" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="127" width="600" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="375" id="2Ul-du-f2U"/>
                                             <constraint firstAttribute="height" constant="1" id="HQB-DR-4aX"/>
@@ -3975,14 +3978,14 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrw.png" translatesAutoresizingMaskIntoConstraints="NO" id="P3v-Ye-jeh">
-                                        <rect key="frame" x="329" y="30" width="15" height="20"/>
+                                        <rect key="frame" x="554" y="54" width="15" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="HvP-eQ-v96"/>
                                             <constraint firstAttribute="width" constant="15" id="wn2-7i-V18"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Messages" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AI0-1m-W69">
-                                        <rect key="frame" x="100" y="29" width="200" height="23"/>
+                                        <rect key="frame" x="100" y="53" width="200" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="BSW-RH-Hmv"/>
                                             <constraint firstAttribute="height" constant="24" id="Zct-Ay-BaE"/>
@@ -3997,7 +4000,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xUO-Lf-NZo">
-                                        <rect key="frame" x="100" y="0.0" width="375" height="80"/>
+                                        <rect key="frame" x="100" y="0.0" width="600" height="128"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="ihG-88-FXL"/>
                                             <constraint firstAttribute="width" constant="375" id="ml0-FG-ZPy"/>
@@ -4101,10 +4104,10 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yUc-L8-Xke">
-                                <rect key="frame" x="0.0" y="215" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="323" width="600" height="96"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cus.png" translatesAutoresizingMaskIntoConstraints="NO" id="aeT-zb-ZCB">
-                                        <rect key="frame" x="19" y="11" width="38" height="38"/>
+                                        <rect key="frame" x="19" y="11" width="74" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="2ef-s2-w81"/>
                                             <constraint firstAttribute="height" constant="60" id="859-NZ-Bux"/>
@@ -4126,7 +4129,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="qol-Kl-Qyi">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="uCU-oJ-k1p"/>
                                             <constraint firstAttribute="width" constant="375" id="vLl-Ti-Bzd"/>
@@ -4138,7 +4141,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="Fmj-hj-Zvd">
-                                        <rect key="frame" x="0.0" y="59" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="95" width="600" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="375" id="YvH-za-PHe"/>
                                             <constraint firstAttribute="height" constant="1" id="ele-Tw-oMK"/>
@@ -4150,7 +4153,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrw.png" translatesAutoresizingMaskIntoConstraints="NO" id="xyv-QX-Gyj">
-                                        <rect key="frame" x="329" y="20" width="15" height="20"/>
+                                        <rect key="frame" x="554" y="38" width="15" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="15" id="Qfn-G4-qI8"/>
                                             <constraint firstAttribute="height" constant="20" id="iWp-qE-WHE"/>
@@ -4172,7 +4175,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IlP-Mk-Bi7">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -4236,10 +4239,10 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                 </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gyb-tJ-58K">
-                                <rect key="frame" x="0.0" y="395" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="611" width="600" height="96"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lgout.png" translatesAutoresizingMaskIntoConstraints="NO" id="d7d-mP-7LU">
-                                        <rect key="frame" x="19" y="11" width="38" height="38"/>
+                                        <rect key="frame" x="19" y="11" width="74" height="74"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="60" id="8cQ-dV-tVl"/>
                                             <constraint firstAttribute="width" secondItem="d7d-mP-7LU" secondAttribute="height" multiplier="1:1" id="Q0T-as-UIx"/>
@@ -4259,7 +4262,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="TdH-7y-VyM">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="eqO-3O-rXa"/>
                                             <constraint firstAttribute="width" constant="375" id="sk3-Bf-i6l"/>
@@ -4271,7 +4274,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hentiao2.png" translatesAutoresizingMaskIntoConstraints="NO" id="JCw-AZ-u73">
-                                        <rect key="frame" x="0.0" y="59" width="375" height="1"/>
+                                        <rect key="frame" x="0.0" y="95" width="600" height="1"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="375" id="0ob-1x-sJQ"/>
                                             <constraint firstAttribute="height" constant="1" id="Pim-fa-xDU"/>
@@ -4283,14 +4286,14 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </imageView>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrw.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wib-JY-s0U">
-                                        <rect key="frame" x="329" y="20" width="15" height="20"/>
+                                        <rect key="frame" x="554" y="38" width="15" height="20"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="20" id="UZA-OE-LRR"/>
                                             <constraint firstAttribute="width" constant="15" id="YWi-lG-TDd"/>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xnf-7b-fsV">
-                                        <rect key="frame" x="77" y="20" width="200" height="21"/>
+                                        <rect key="frame" x="113" y="38" width="200" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="200" id="78L-Vh-VLa"/>
                                             <constraint firstAttribute="height" constant="24" id="SxO-du-io3"/>
@@ -4305,7 +4308,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIO-Ug-RFp">
-                                        <rect key="frame" x="-1" y="0.0" width="375" height="60"/>
+                                        <rect key="frame" x="-1" y="0.0" width="600" height="96"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="VDH-ZJ-YtM"/>
                                             <constraint firstAttribute="width" constant="375" id="qnR-pg-Wuo"/>
@@ -4414,7 +4417,6 @@ Cteemo can determine your game result automatically. Please click “get tournam
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="ME" id="LQC-UO-xCD"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="school" destination="DVH-mP-gyW" id="2eC-ER-5bb"/>
                         <outlet property="unreadmessage" destination="Esr-mH-iFh" id="jhM-a1-12z"/>
@@ -4424,7 +4426,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cwi-CY-dJG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4643.5" y="2013.5"/>
+            <point key="canvasLocation" x="4500" y="1939"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="m0P-be-rzg">
@@ -4576,6 +4578,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
     <inferredMetricsTieBreakers>
         <segue reference="WGx-hs-GOh"/>
         <segue reference="ghN-ly-d3N"/>
+        <segue reference="qJt-XH-Khk"/>
         <segue reference="1TS-hj-YUx"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>

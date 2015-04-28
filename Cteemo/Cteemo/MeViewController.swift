@@ -167,8 +167,10 @@ class MeViewController: UIViewController  {
     
 
     
-    @IBAction func aboutCteemo(sender: AnyObject) {
+    @IBAction func viewrequest(sender: AnyObject) {
         
+        
+    ((self.parentViewController as! UINavigationController).parentViewController as!MainViewController).hideTabb()
      
     }
     
