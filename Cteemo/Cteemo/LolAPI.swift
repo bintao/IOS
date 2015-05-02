@@ -171,9 +171,6 @@ class LolAPI: NSObject{
     func getIDresult(result: [String: AnyObject]){
        
         if result["id"] as? Int != nil{
-          
-            println(result)
-            
             if result["id"] as? Int != nil {
                 var idd: Int! = result["id"] as! Int!
                 self.lolID = "\(idd)"

@@ -48,19 +48,15 @@ class TournamentAPI: NSObject{
     var solo :Bool = true
     
     func gettournamentdata(solo: Bool) {
-     
+        
         var key = ""
         
         if solo {
             key = self.solokey
-            
         }
         else{
-        
             key = self.teamkey
-            
         }
-        
         
         var par : [String: AnyObject] = ["api_key": key]
         
@@ -106,7 +102,18 @@ class TournamentAPI: NSObject{
                             }
                             
                             if let start = myjson[i]["tournament"]["start_at"].string{
-                                tournament.startTime = start
+                                
+                                println(start)
+                                
+                                var dateFormatter = NSDateFormatter()
+                                dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSxxx"
+                                dateFormatter.timeZone = NSTimeZone.localTimeZone()
+                                var date = dateFormatter.dateFromString(start)
+                               
+                                var formatter = NSDateFormatter()
+                                formatter.dateFormat = "MM-dd HH:mm:ss"
+                                tournament.startTime = formatter.stringFromDate(date!)
+                                println(tournament.startTime)
                             }
                             else{
                                 tournament.startTime = "noTime"
@@ -149,9 +156,6 @@ class TournamentAPI: NSObject{
                             
                             }
                             else{
-                                
-                                println(tournament.name)
-                                println("sdsdsd")
                                 
                                 if self.teamTournaments.count < myjson.count{
                                     

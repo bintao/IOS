@@ -108,7 +108,7 @@ class Login_CreateViewController: UIViewController, UITextFieldDelegate{
                     
                     var result = JSON as! [String : AnyObject]
                     
-                    if result["token"] as? String  != nil && result["rongToken"] as? String != nil{
+                    if result["token"] as? String  != nil && result["rongToken"] as? [String: AnyObject] != nil{
                         
                         UserInfoGlobal.accessToken = result["token"] as! String
                         UserInfoGlobal.rongToken = (result["rongToken"] as! [String: AnyObject])["token"] as! String

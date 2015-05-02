@@ -46,20 +46,22 @@ class Tournament_playnext:  UIViewController  {
     @IBOutlet var icon: UIImageView!
     
     @IBOutlet var starttime: UILabel!
-    
+    var check = false
+    let globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
     
      override func viewDidLoad() {
         
         super.viewDidLoad()
         
         icon.image = UIImage(named: "error.png")!
-        self.startmatch.alpha = 0
         self.starttime.text = self.starttimetext
+
         
     }
     
     override func viewDidAppear(animated: Bool) {
-     
+        
+       self.check = false
         var par : [String: AnyObject] = ["api_key":Tournament.key,"participant_id" : myteamid]
         
         let alert = SCLAlertView()
@@ -157,10 +159,22 @@ class Tournament_playnext:  UIViewController  {
                             self.myteam.teamkey = 2
                             self.myteam.teamid = self.player2
                             self.oppteam.teamid = self.player1
+                            
                         }
-
-                    
-                    
+                       
+                        
+                        var time2 = dispatch_time(DISPATCH_TIME_NOW, (Int64)(800 * NSEC_PER_SEC))
+                        
+                        dispatch_after(time2, self.globalQueue) { () -> Void in
+                            
+                            if !self.check {
+                                
+                                self.starttournament()
+                                
+                            }// chekc game started
+                            
+                        }//wait 5 mins to start game
+                        
                     }// check match complete
                     
                     else {
@@ -220,8 +234,33 @@ class Tournament_playnext:  UIViewController  {
         else{
         code = Tournament.tournamentcode(name, pass: "123")
         }
-
+            var time1 = dispatch_time(DISPATCH_TIME_NOW, (Int64)(600 * NSEC_PER_SEC))
+            
+            dispatch_after(time1, self.globalQueue) { () -> Void in
+                
+                if !self.check {
+                    
+                    self.starttournament()
+                    
+                }// chekc game started
+                
+            }//wait 10 mins to start game
+            
+            var time = dispatch_time(DISPATCH_TIME_NOW, (Int64)(1200 * NSEC_PER_SEC))
+            
+            dispatch_after(time, self.globalQueue) { () -> Void in
+                
+                if !self.check {
+                    
+                    self.starttournament()
+                    
+                }// chekc game started
+                
+            }//wait 20 mins to start game
+            
+            
         self.sentemail(code)
+        
         }
         else{
         
@@ -242,7 +281,7 @@ class Tournament_playnext:  UIViewController  {
         let url = "https://na.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/NA1/"+LolAPIGlobal.lolID+"?api_key="+LolAPIGlobal.key
         
         
-       request(.GET,url)
+        request(.GET,url)
             .responseJSON { (_, _, JSONdata, error) in
                 
                 if JSONdata != nil && JSONdata as? [String : AnyObject]? != nil {
@@ -295,12 +334,12 @@ class Tournament_playnext:  UIViewController  {
                                     {
                                         member.summonerId = summonerId
                                         if summonerId == LolAPIGlobal.lolID.toInt() {
-                                        
+                                            
                                             if let championId = myjson["participants"][i]["championId"].int
                                             {
                                                 self.mychampionpick = championId
                                             }
-                                        
+                                            
                                         }
                                     }
                                     if let iconid = myjson["participants"][i]["profileIconId"].int
@@ -310,9 +349,28 @@ class Tournament_playnext:  UIViewController  {
                                     
                                     if teamid == 100{
                                         
-                                        self.blueteammember.append(member)
+                                        if i < self.blueteammember.count
+                                        {
+                                            self.blueteammember[i] = member
+                                        }
+                                        else  if self.blueteammember.count < 5 {
+                                            
+                                            self.blueteammember.append(member)
+                                        }
+                                        
+                                        
                                     }else{
-                                        self.redmember.append(member)
+                                        
+                                        if i < self.redmember.count
+                                        {
+                                            self.redmember[i] = member
+                                        
+                                        }
+                                        else  if self.redmember.count < 5 {
+                                        
+                                            self.redmember.append(member)
+
+                                        }
                                         
                                     }
                                     
@@ -330,17 +388,141 @@ class Tournament_playnext:  UIViewController  {
                     
                 }//json!=nil
                 else{
-                
+                    
                     let alert1 = SCLAlertView()
                     
                     alert1.showError(self.parentViewController?.parentViewController, title: "You must start game", subTitle: "Please start game before click", closeButtonTitle: "ok", duration: 0.0)
-                
+                    
                 }
                 
         }//alamofire
 
         
         
+    }
+    
+    func starttournament(){
+    
+        let url = "https://na.api.pvp.net/observer-mode/rest/consumer/getSpectatorGameInfo/NA1/"+LolAPIGlobal.lolID+"?api_key="+LolAPIGlobal.key
+        println("sdsdsd")
+        request(.GET,url)
+            .responseJSON { (_, _, JSONdata, error) in
+                
+                if JSONdata != nil && JSONdata as? [String : AnyObject]? != nil {
+                   
+                    let myjson = JSON(JSONdata!)
+                    
+                    if let gameStartTime = myjson["gameStartTime"].int
+                    {
+                        self.gameStartTime = gameStartTime
+                        
+                    }
+                    
+                    if let gameType = myjson["gameType"].string
+                    {
+                        println(gameType)
+                    }
+                    
+                    if let gameId = myjson["gameId"].int
+                    {
+                        self.gameID = gameId
+                    }
+                    
+                    if myjson["participants"] != nil{
+                        
+                        
+                        var size = myjson["participants"].count
+                        println(size)
+                        
+                        if size > 0 {
+                            self.check = true
+                            
+                            for i in 0...size - 1
+                            {
+                                var teamid = 0
+                                if let teamid = myjson["participants"][i]["teamId"].int{
+                                    
+                                    var member = matchmember()
+                                    
+                                    if let summonerName = myjson["participants"][i]["summonerName"].string
+                                    {
+                                        member.name = summonerName
+                                        
+                                    }
+                                    
+                                    if let championId = myjson["participants"][i]["championId"].int
+                                    {
+                                        member.heropick = championId
+                                    }
+                                    
+                                    if let summonerId = myjson["participants"][i]["summonerId"].int
+                                    {
+                                        member.summonerId = summonerId
+                                        if summonerId == LolAPIGlobal.lolID.toInt() {
+                                            
+                                            if let championId = myjson["participants"][i]["championId"].int
+                                            {
+                                                self.mychampionpick = championId
+                                            }
+                                            
+                                        }
+                                    }
+                                    if let iconid = myjson["participants"][i]["profileIconId"].int
+                                    {
+                                        member.iconid = iconid
+                                    }
+                                    
+                                    if teamid == 100{
+                                        
+                                        if i < self.blueteammember.count
+                                        {
+                                            self.blueteammember[i] = member
+                                        }
+                                        else if self.blueteammember.count < 5 {
+                                            
+                                            self.blueteammember.append(member)
+                                        }
+                                        
+                                        
+                                    }else{
+                                        
+                                        if i < self.redmember.count
+                                        {
+                                            self.redmember[i] = member
+                                            
+                                        }
+                                        else if self.redmember.count < 5{
+                                            
+                                            self.redmember.append(member)
+                                            
+                                        }
+                                        
+                                    }
+                                    
+                                }//teamid
+                                
+                                
+                            }//forloop
+                            
+                            self.performSegueWithIdentifier("gamestart", sender: self)
+                            
+                        }
+                        
+                        
+                    }
+                    
+                }//json!=nil
+                else{
+                    
+                  
+                    
+                }
+                
+        }//alamofire
+
+    
+    
+    
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -365,8 +547,6 @@ class Tournament_playnext:  UIViewController  {
     
     func  sentemail (tournamentcode : String){
 
-
-
         /* curl -X POST https://api.sendgrid.com/api/mail.send.json -d api_user=bintao -dapi_key=ck80i539gz -d to=bintao@cteemo.com -d toname=bintao -d subject=chaos -dtext=chaos -d from=support@cteemo.com -d content=123123
         */
         
@@ -384,10 +564,9 @@ class Tournament_playnext:  UIViewController  {
                 {
                     if message == "success"{
                     
-                        self.startmatch.alpha = 1
                         let alert1 = SCLAlertView()
                         
-                         alert1.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "email2.png")!, color: UserInfoGlobal.UIColorFromRGB(0x3498DB), title: "Tournament code !", subTitle: "Please check " + UserInfoGlobal.email,closeButtonTitle: "ok", duration: 0.0)
+                         alert1.showCustom(self.parentViewController?.parentViewController, image: UIImage(named: "email2.png")!, color: UserInfoGlobal.UIColorFromRGB(0x3498DB), title: "Tournament code !", subTitle: "Please check " + UserInfoGlobal.email,closeButtonTitle: "ok", duration: 60.0)
                     }
                     
                     

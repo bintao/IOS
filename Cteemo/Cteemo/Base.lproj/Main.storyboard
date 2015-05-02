@@ -2334,7 +2334,7 @@
             </objects>
             <point key="canvasLocation" x="7518.5" y="-1730.5"/>
         </scene>
-        <!--Tournament playnext-->
+        <!--Cteemo Game-->
         <scene sceneID="BIq-j8-huV">
             <objects>
                 <viewController id="vHw-Aw-1VQ" customClass="Tournament_playnext" customModule="Cteemo" customModuleProvider="target" sceneMemberID="viewController">
@@ -2407,7 +2407,7 @@
                                         <rect key="frame" x="1" y="8" width="375" height="37"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="How to Play" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8l8-t4-0Pq">
-                                                <rect key="frame" x="20" y="8" width="226" height="21"/>
+                                                <rect key="frame" x="16" y="8" width="226" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2422,7 +2422,7 @@
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K7c-TM-dzi">
                                         <rect key="frame" x="21" y="53" width="52" height="50"/>
                                     </imageView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nVb-fL-UV7">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" directionalLockEnabled="YES" pagingEnabled="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVb-fL-UV7">
                                         <rect key="frame" x="81" y="46" width="248" height="118"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Dear Summoner, 
@@ -2479,6 +2479,12 @@ Cteemo can determine your game result automatically. Please click “get tournam
                             </mask>
                         </variation>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Cteemo Game" id="rTa-fX-fJA">
+                        <barButtonItem key="leftBarButtonItem" title="." id="oRq-je-tC0">
+                            <color key="tintColor" red="0.28018465910000001" green="0.28018465910000001" blue="0.28018465910000001" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="icon" destination="K7c-TM-dzi" id="vc2-2r-xwJ"/>
@@ -3667,10 +3673,10 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         <exclude reference="pvJ-ts-ASp"/>
                                         <exclude reference="n5e-uf-f2t"/>
                                         <exclude reference="Df6-ah-kAE"/>
-                                        <exclude reference="xuv-1T-YGW"/>
                                         <exclude reference="69l-Nk-qts"/>
                                         <exclude reference="4Pm-mS-jKF"/>
                                         <exclude reference="dK8-Qz-8yi"/>
+                                        <exclude reference="xuv-1T-YGW"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -3799,14 +3805,14 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         <exclude reference="lod-cG-39q"/>
                                         <exclude reference="LXp-S3-gN6"/>
                                         <exclude reference="vR1-Gu-sav"/>
+                                        <exclude reference="50j-84-bC7"/>
+                                        <exclude reference="DmX-EJ-BBb"/>
                                         <exclude reference="5u0-cg-HM5"/>
                                         <exclude reference="Kcz-ug-ElP"/>
                                         <exclude reference="Nhc-6i-xQ6"/>
                                         <exclude reference="S7H-yw-UY1"/>
                                         <exclude reference="akA-bk-FNl"/>
                                         <exclude reference="mRj-vb-9Cv"/>
-                                        <exclude reference="50j-84-bC7"/>
-                                        <exclude reference="DmX-EJ-BBb"/>
                                         <exclude reference="jhm-Ib-MB7"/>
                                         <exclude reference="rr8-3s-lGQ"/>
                                     </mask>
@@ -3920,14 +3926,14 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         <exclude reference="Sze-LS-9EI"/>
                                         <exclude reference="sLG-1j-m4p"/>
                                         <exclude reference="U70-9j-PLo"/>
+                                        <exclude reference="e2p-VY-UOH"/>
+                                        <exclude reference="yfl-WE-1Ft"/>
                                         <exclude reference="8wa-rB-WWl"/>
                                         <exclude reference="Gsv-Th-mBu"/>
                                         <exclude reference="YUy-ak-VJ3"/>
                                         <exclude reference="cCo-ac-dU3"/>
                                         <exclude reference="fCc-d5-awF"/>
                                         <exclude reference="oSL-Q8-TZV"/>
-                                        <exclude reference="e2p-VY-UOH"/>
-                                        <exclude reference="yfl-WE-1Ft"/>
                                         <exclude reference="ydP-s2-tCG"/>
                                     </mask>
                                 </variation>
@@ -4089,6 +4095,8 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         <exclude reference="x9w-sQ-0xv"/>
                                         <exclude reference="CjA-tr-SrP"/>
                                         <exclude reference="LuR-jj-6YF"/>
+                                        <exclude reference="20V-5q-NTN"/>
+                                        <exclude reference="9Ex-bA-Uju"/>
                                         <exclude reference="L5d-tf-74U"/>
                                         <exclude reference="P7a-Vh-H6P"/>
                                         <exclude reference="Pzb-b8-dl1"/>
@@ -4097,8 +4105,6 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         <exclude reference="jnG-DG-up0"/>
                                         <exclude reference="jrS-2b-eUD"/>
                                         <exclude reference="qaL-65-s5P"/>
-                                        <exclude reference="20V-5q-NTN"/>
-                                        <exclude reference="9Ex-bA-Uju"/>
                                         <exclude reference="cVe-7m-jlk"/>
                                     </mask>
                                 </variation>
@@ -4227,13 +4233,13 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                         <exclude reference="6ic-WD-ZvG"/>
                                         <exclude reference="Slu-0O-zEp"/>
                                         <exclude reference="XiC-iv-bgl"/>
+                                        <exclude reference="KW0-XP-bmk"/>
+                                        <exclude reference="e3w-Fe-xbO"/>
                                         <exclude reference="3fy-hc-30U"/>
                                         <exclude reference="3o7-84-aRP"/>
                                         <exclude reference="8Rk-TR-AKY"/>
                                         <exclude reference="8qA-c0-vft"/>
                                         <exclude reference="Aqn-8Y-seA"/>
-                                        <exclude reference="KW0-XP-bmk"/>
-                                        <exclude reference="e3w-Fe-xbO"/>
                                         <exclude reference="eTf-Wm-jAR"/>
                                     </mask>
                                 </variation>

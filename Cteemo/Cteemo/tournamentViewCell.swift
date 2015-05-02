@@ -35,7 +35,7 @@ class tournamentViewCell: UITableViewCell {
         self.tournamentRule.text = rule
         if count(time) > 10 {
         var range = Range(start: time.startIndex,
-            end: advance(time.startIndex, 10))
+            end: advance(time.startIndex, 11))
         self.date.text = time.substringWithRange(range)
         }else {
             self.date.text = time

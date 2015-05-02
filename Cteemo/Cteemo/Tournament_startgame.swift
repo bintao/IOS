@@ -50,11 +50,14 @@ class Tournament_startgame: UIViewController {
     var gameStartTime = 0
     var gameID = 0
     var matchid = 0
+    var check = false
     
     var url :String = ""
 
     var blueteammember :[matchmember] = []
     var redmember :[matchmember] = []
+    let globalQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)
+
     
     override func viewDidLoad() {
         
@@ -129,9 +132,24 @@ class Tournament_startgame: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         
+        self.check = false
         
-    
-    
+        for i in 0...3{
+            let arr:[UInt64] = [20,1200,2400,3600]
+            var time = dispatch_time(DISPATCH_TIME_NOW, (Int64)(arr[i] * NSEC_PER_SEC))
+            
+            dispatch_after(time, self.globalQueue) { () -> Void in
+                if !self.check{
+                    
+                    self.finishtournament()
+                    
+                }
+                
+                
+            }
+
+        }
+        
     
     }
     
@@ -163,7 +181,7 @@ class Tournament_startgame: UIViewController {
                             
                             if let champion = myjson["participants"][i]["championId"].int
                             {
-                                
+                                self.check = false
                                 if self.mychampion == champion {
                                     
                                         if let winner = myjson["participants"][i]["stats"]["winner"].bool{
@@ -221,7 +239,85 @@ class Tournament_startgame: UIViewController {
         }
     }
 
+    func finishtournament() {
     
+        let url = "https://na.api.pvp.net/api/lol/na/v2.2/match/"+"\(self.gameID)"+"?api_key="+LolAPIGlobal.key
+        request(.GET,url)
+            .responseJSON { (_, _, JSONdata, _) in
+                var participantId = 0
+                if JSONdata != nil{
+                    let myjson = JSON(JSONdata!)
+                    
+                    if let player = myjson["participants"].array{
+                        
+                        if player.count != 0 {
+                            
+                            for i in 0...player.count - 1
+                            {
+                                
+                                if let champion = myjson["participants"][i]["championId"].int
+                                {
+                                    
+                                    if self.mychampion == champion {
+                                        
+                                        if let winner = myjson["participants"][i]["stats"]["winner"].bool{
+                                            
+                                            println(winner)
+                                            
+                                            if winner {
+                                                
+                                                self.finishgame()
+                                                
+                                                
+                                            }
+                                            else{
+                                                
+                                                let alert1 = SCLAlertView()
+                                                alert1.addButton("ok"){
+                                                    
+                                                    self.performSegueWithIdentifier("backjoinedgame", sender: self)
+                                                    
+                                                }
+                                                
+                                                alert1.showNotice(self.parentViewController?.parentViewController, title: "Loss", subTitle: "Don't give up! You can win next time!", closeButtonTitle: nil, duration: 0.0)
+                                                
+                                            }
+                                            
+                                            
+                                        }
+                                        
+                                    }//check id
+                                    
+                                }
+                                
+                            }//end for loop
+                            
+                            
+                            
+                        }//playercount
+                        
+                        
+                    }//player
+                    
+                    
+                }//jsonnil
+                    
+                else{
+                    
+                    let alert1 = SCLAlertView()
+                    
+                    alert1.showWarning(self.parentViewController?.parentViewController, title: "Game not finished", subTitle: "Please finish game first", closeButtonTitle: "ok", duration: 0.0)
+                    
+                }
+
+                
+        }//request end
+
+    
+    
+    
+    
+    }
     
     func soloTournament(){
     
@@ -253,7 +349,6 @@ class Tournament_startgame: UIViewController {
         if segue.identifier == "winnerReport"{
             
             var controller: Tournament_WinnerPhoto = segue.destinationViewController as! Tournament_WinnerPhoto
-            
             controller.url = self.url
             controller.myteamdata = self.myteamdata
             controller.oppteam = self.oppteam
@@ -274,6 +369,7 @@ class Tournament_startgame: UIViewController {
             
         }
         else{
+            
             score = "\(oppteam.win)" + "-" + "\(win)"
             
         }
