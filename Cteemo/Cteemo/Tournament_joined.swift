@@ -33,9 +33,19 @@ class Tournament_joined: UIViewController {
     @IBOutlet var member: UITextView!
     
     override func viewDidLoad() {
-        
-    
+       
         super.viewDidLoad()
+        
+        if self.starttime == "noTime"
+        {
+            self.checkin.alpha = 0
+            
+        } else{
+            
+            self.checkin.alpha = 1
+            
+        }
+        
         navigation.title = self.Tournamentname
         
         //https://api.challonge.com/v1/tournaments/{tournament}/participants/randomize.{json|xml}
@@ -50,7 +60,7 @@ class Tournament_joined: UIViewController {
         self.type.text = self.TournamentType
         self.time.text = self.starttime
         self.member.text = "\(self.totalmember)"
-        self.checkin.alpha = 0
+       
         
      ((self.parentViewController as! UINavigationController).parentViewController as! MainViewController).showTabb()
    
@@ -133,7 +143,6 @@ class Tournament_joined: UIViewController {
         var par : [String: AnyObject] = ["api_key":Tournament.key]
         var req = request(.POST, "https://api.challonge.com/v1/tournaments/"+self.url+"/participants/"+"\(self.memberID)"+"/check_in.json",parameters:par)
             .responseJSON { (_, _, JSON, _) in
-                
                 if JSON != nil {
                 println(JSON)
                 var result = JSON as! [String : AnyObject]
@@ -147,7 +156,7 @@ class Tournament_joined: UIViewController {
                 else {
                     
                     let alert1 = SCLAlertView()
-                    alert1.showSuccess(self.parentViewController?.parentViewController, title: "Check in Success", subTitle: TeamInfoGlobal.teamName + "ready for battle", closeButtonTitle: "ok", duration: 0.0)
+                    alert1.showSuccess(self.parentViewController?.parentViewController, title: "Check in Success", subTitle: TeamInfoGlobal.teamName + " ready for battle", closeButtonTitle: "ok", duration: 0.0)
                 }
                     
                     

@@ -67,7 +67,6 @@ class Tournament_WinnerPhoto:  UIViewController ,CACameraSessionDelegate {
             par  = ["api_key":Tournament.key,"match[scores_csv]":score,"match[winner_id]": myteamdata.teamid]
         }
         
-        println(par)
          let alert = SCLAlertView()
         alert.showWaiting(self.parentViewController?.parentViewController, title: "waiting", subTitle: "Cteemmo is loading ", closeButtonTitle: nil, duration: 0.0)
         let url = "https://api.challonge.com/v1/tournaments/"+self.url+"/matches/"+"\(self.matchid)"+".json"

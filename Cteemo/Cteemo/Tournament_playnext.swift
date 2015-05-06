@@ -67,7 +67,6 @@ class Tournament_playnext:  UIViewController  {
         let alert = SCLAlertView()
         
         alert.showWaiting(self.parentViewController?.parentViewController, title: "Loading data", subTitle: "please wait loding....", closeButtonTitle: nil, duration: 0.0)
-       
         
         var req = request(.GET, "https://api.challonge.com/v1/tournaments/"+url+"/matches.json",parameters:par)
             .responseJSON { (_, _, JSONdata, _) in
@@ -136,7 +135,7 @@ class Tournament_playnext:  UIViewController  {
                         
                         if self.player1 == self.myteamid {
                             if scoreresult == ""{
-                                self.myteam.win =  0
+                                self.myteam.win  =  0
                                 self.oppteam.win =  0
                                 
                             }else{
@@ -149,7 +148,7 @@ class Tournament_playnext:  UIViewController  {
                         }
                         else{
                             if scoreresult == ""{
-                                self.myteam.win =  0
+                                self.myteam.win  =  0
                                 self.oppteam.win =  0
                             
                             }else{
@@ -157,23 +156,27 @@ class Tournament_playnext:  UIViewController  {
                             self.oppteam.win =  Array(scoreresult.utf8).map { Int($0) }[0]
                             }
                             self.myteam.teamkey = 2
-                            self.myteam.teamid = self.player2
+                            self.myteam.teamid  = self.player2
                             self.oppteam.teamid = self.player1
                             
                         }
+                        
+                       if self.player1 != 0 && self.player2 != 0 {
                        
+                        var time = dispatch_time(DISPATCH_TIME_NOW, (Int64)(1000 * NSEC_PER_SEC))
                         
-                        var time2 = dispatch_time(DISPATCH_TIME_NOW, (Int64)(800 * NSEC_PER_SEC))
-                        
-                        dispatch_after(time2, self.globalQueue) { () -> Void in
+                        dispatch_after(time, self.globalQueue) { () -> Void in
                             
                             if !self.check {
                                 
                                 self.starttournament()
                                 
-                            }// chekc game started
+                                }// chekc game started
                             
-                        }//wait 5 mins to start game
+                            }//wait 20 mins to start game
+                        
+                        }
+                       
                         
                     }// check match complete
                     
@@ -214,7 +217,6 @@ class Tournament_playnext:  UIViewController  {
 
                 }// check json
                 
-                println(self.matchid)
                 
                 
         }

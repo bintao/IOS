@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/LolAPI.swift"
-            timestampString = "451728815.226691"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "LolAPI"
             landmarkType = "3">
          </BreakpointContent>
@@ -456,11 +456,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/LolAPI.swift"
-            timestampString = "450429232.915499"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "182"
-            endingLineNumber = "182"
+            startingLineNumber = "179"
+            endingLineNumber = "179"
             landmarkName = "getIDresult(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -472,7 +472,23 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/LolAPI.swift"
-            timestampString = "451728815.226691"
+            timestampString = "452242104.332521"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
+            landmarkName = "getlolvision()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/LolAPI.swift"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "261"
@@ -488,27 +504,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/LolAPI.swift"
-            timestampString = "451728815.226691"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "264"
-            endingLineNumber = "264"
-            landmarkName = "getlolvision()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cteemo/LolAPI.swift"
-            timestampString = "451728815.226691"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "262"
-            endingLineNumber = "262"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "getlolvision()"
             landmarkType = "5">
          </BreakpointContent>
@@ -536,11 +536,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/LolAPI.swift"
-            timestampString = "451728815.226691"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "301"
-            endingLineNumber = "301">
+            startingLineNumber = "298"
+            endingLineNumber = "298">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -550,11 +550,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/LolAPI.swift"
-            timestampString = "451728815.226691"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295">
+            startingLineNumber = "292"
+            endingLineNumber = "292">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -852,11 +852,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "317"
-            endingLineNumber = "317"
+            startingLineNumber = "313"
+            endingLineNumber = "313"
             landmarkName = "deleteMember(_:id:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -868,11 +868,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "329"
-            endingLineNumber = "329"
+            startingLineNumber = "325"
+            endingLineNumber = "325"
             landmarkName = "deleteMemberByname(_:member:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -884,11 +884,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "330"
-            endingLineNumber = "330"
+            startingLineNumber = "326"
+            endingLineNumber = "326"
             landmarkName = "deleteMemberByname(_:member:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -900,11 +900,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "336"
-            endingLineNumber = "336"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
             landmarkName = "deleteMemberByname(_:member:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -916,11 +916,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "335"
-            endingLineNumber = "335"
+            startingLineNumber = "331"
+            endingLineNumber = "331"
             landmarkName = "deleteMemberByname(_:member:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2220,11 +2220,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "372"
-            endingLineNumber = "372"
+            startingLineNumber = "368"
+            endingLineNumber = "368"
             landmarkName = "tournamentStart(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2236,11 +2236,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "393"
-            endingLineNumber = "393"
+            startingLineNumber = "389"
+            endingLineNumber = "389"
             landmarkName = "checkinabort(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2252,11 +2252,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "408"
-            endingLineNumber = "408"
+            startingLineNumber = "404"
+            endingLineNumber = "404"
             landmarkName = "checkinfinish(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2268,11 +2268,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "407"
-            endingLineNumber = "407"
+            startingLineNumber = "403"
+            endingLineNumber = "403"
             landmarkName = "checkinfinish(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2284,11 +2284,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "356"
-            endingLineNumber = "356"
+            startingLineNumber = "352"
+            endingLineNumber = "352"
             landmarkName = "getmatches(_:member:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2300,28 +2300,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_joined.swift"
-            timestampString = "451632331.773095"
+            timestampString = "452628353.683538"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
             landmarkName = "viewDidAppear(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cteemo/Tournament_joined.swift"
-            timestampString = "450757257.790177"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "viewDidLoad()"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -2620,11 +2604,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_game.swift"
-            timestampString = "451890315.298277"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "293"
-            endingLineNumber = "293"
+            startingLineNumber = "292"
+            endingLineNumber = "292"
             landmarkName = "returnTogame(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2636,11 +2620,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "452064674.759938"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "571"
-            endingLineNumber = "571"
+            startingLineNumber = "573"
+            endingLineNumber = "573"
             landmarkName = "sentemail(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2652,11 +2636,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "245"
-            endingLineNumber = "245"
+            startingLineNumber = "241"
+            endingLineNumber = "241"
             landmarkName = "TournamentAPI"
             landmarkType = "3">
          </BreakpointContent>
@@ -2668,11 +2652,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "452064674.759938"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "574"
-            endingLineNumber = "574"
+            startingLineNumber = "576"
+            endingLineNumber = "576"
             landmarkName = "sentemail(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2860,11 +2844,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "451980248.734908"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -2876,71 +2860,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "451980248.734908"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "451980248.734908"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "451980248.734908"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "93"
-            endingLineNumber = "93"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "451980248.734908"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "viewDidAppear(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "451980248.734908"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "108"
@@ -2955,12 +2875,76 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Cteemo/Tournament_startgame.swift"
-            timestampString = "452126512.91161"
+            filePath = "Cteemo/Tournament_playnext.swift"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "382"
-            endingLineNumber = "382"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/Tournament_playnext.swift"
+            timestampString = "452326591.471884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/Tournament_playnext.swift"
+            timestampString = "452326591.471884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/Tournament_playnext.swift"
+            timestampString = "452326591.471884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "viewDidAppear(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/Tournament_startgame.swift"
+            timestampString = "452242457.765403"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "378"
+            endingLineNumber = "378"
             landmarkName = "finishgame()"
             landmarkType = "5">
          </BreakpointContent>
@@ -2972,11 +2956,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_startgame.swift"
-            timestampString = "452126512.91161"
+            timestampString = "452242457.765403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "384"
-            endingLineNumber = "384"
+            startingLineNumber = "380"
+            endingLineNumber = "380"
             landmarkName = "finishgame()"
             landmarkType = "5">
             <Locations>
@@ -3020,11 +3004,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_startgame.swift"
-            timestampString = "452126512.91161"
+            timestampString = "452242457.765403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "366"
-            endingLineNumber = "366"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
             landmarkName = "finishgame()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3036,11 +3020,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_startgame.swift"
-            timestampString = "452126512.91161"
+            timestampString = "452242457.765403"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "379"
-            endingLineNumber = "379"
+            startingLineNumber = "375"
+            endingLineNumber = "375"
             landmarkName = "finishgame()"
             landmarkType = "5">
          </BreakpointContent>
@@ -3084,11 +3068,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "451980248.734908"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3468,11 +3452,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
             landmarkName = "gettournamentdata(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3484,11 +3468,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "145"
+            endingLineNumber = "145"
             landmarkName = "gettournamentdata(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3596,11 +3580,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/LolAPI.swift"
-            timestampString = "450676847.212274"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "173"
+            endingLineNumber = "173"
             landmarkName = "getIDresult(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3644,11 +3628,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_game.swift"
-            timestampString = "451012703.905027"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "joinTournament(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3660,11 +3644,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_game.swift"
-            timestampString = "451012703.905027"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "joinTournament(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3788,11 +3772,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "451980248.734908"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "78"
-            endingLineNumber = "78"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3804,11 +3788,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_game.swift"
-            timestampString = "451636355.038485"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
             landmarkName = "joinTournament(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3820,11 +3804,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_game.swift"
-            timestampString = "451636355.038485"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "joinTournament(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3836,11 +3820,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_game.swift"
-            timestampString = "451636355.038485"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "140"
+            endingLineNumber = "140"
             landmarkName = "joinTournament(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3852,11 +3836,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "451980248.734908"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3868,11 +3852,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "451980248.734908"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "87"
-            endingLineNumber = "87"
+            startingLineNumber = "86"
+            endingLineNumber = "86"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -3884,11 +3868,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "451980248.734908"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4266,11 +4250,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_game.swift"
-            timestampString = "451889897.666208"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "186"
+            endingLineNumber = "186"
             landmarkName = "joinTournament(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4282,23 +4266,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_game.swift"
-            timestampString = "451890315.298277"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
-            landmarkName = "joinTournament(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cteemo/Tournament_game.swift"
-            timestampString = "451890315.298277"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "209"
@@ -4314,23 +4282,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_game.swift"
-            timestampString = "451890315.298277"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "207"
-            endingLineNumber = "207"
-            landmarkName = "joinTournament(_:)"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Cteemo/Tournament_game.swift"
-            timestampString = "451890315.298277"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "208"
@@ -4346,11 +4298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_game.swift"
-            timestampString = "451890315.298277"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "205"
-            endingLineNumber = "205"
+            startingLineNumber = "206"
+            endingLineNumber = "206"
             landmarkName = "joinTournament(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4362,11 +4314,43 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_game.swift"
-            timestampString = "451890255.669441"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "189"
-            endingLineNumber = "189"
+            startingLineNumber = "207"
+            endingLineNumber = "207"
+            landmarkName = "joinTournament(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/Tournament_game.swift"
+            timestampString = "452326591.471884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "joinTournament(_:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/Tournament_game.swift"
+            timestampString = "452326591.471884"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "188"
+            endingLineNumber = "188"
             landmarkName = "joinTournament(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4394,11 +4378,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "452031328.82896"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "360"
-            endingLineNumber = "360"
+            startingLineNumber = "362"
+            endingLineNumber = "362"
             landmarkName = "startmatchaction(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4406,15 +4390,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "452031328.82896"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "407"
-            endingLineNumber = "407"
+            startingLineNumber = "409"
+            endingLineNumber = "409"
             landmarkName = "starttournament()"
             landmarkType = "5">
          </BreakpointContent>
@@ -4426,11 +4410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/Tournament_playnext.swift"
-            timestampString = "452064674.759938"
+            timestampString = "452326591.471884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "247"
-            endingLineNumber = "247"
+            startingLineNumber = "249"
+            endingLineNumber = "249"
             landmarkName = "getcode(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4474,11 +4458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452127699.309677"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
             landmarkName = "gettournamentdata(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4490,11 +4474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "gettournamentdata(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4506,11 +4490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "gettournamentdata(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4522,11 +4506,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452118481.411568"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "gettournamentdata(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4538,11 +4522,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "gettournamentdata(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4554,11 +4538,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452127699.309677"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "gettournamentdata(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -4570,13 +4554,91 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Cteemo/TournamentAPI.swift"
-            timestampString = "452128914.830309"
+            timestampString = "452242104.332521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
             landmarkName = "gettournamentdata(_:)"
             landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Cteemo/Team_Member_Top.swift"
+            timestampString = "452567439.84894"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "Team_Member_Top"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cteemo.Team_Member_Top.icon.setter : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIImageView&gt;"
+                  moduleName = "Cteemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/Team_Member_Top.swift"
+                  timestampString = "452567467.827286"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cteemo.Team_Member_Top.init (Cteemo.Team_Member_Top.Type)(style : C.UITableViewCellStyle, reuseIdentifier : Swift.Optional&lt;Swift.String&gt;) -&gt; Cteemo.Team_Member_Top"
+                  moduleName = "Cteemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/Team_Member_Top.swift"
+                  timestampString = "452567467.827508"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "211">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cteemo.Team_Member_Top.init (Cteemo.Team_Member_Top.Type)(coder : ObjectiveC.NSCoder) -&gt; Cteemo.Team_Member_Top"
+                  moduleName = "Cteemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/Team_Member_Top.swift"
+                  timestampString = "452567467.827767"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "138">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Cteemo.Team_Member_Top.icon.materializeForSet : weak Swift.ImplicitlyUnwrappedOptional&lt;ObjectiveC.UIImageView&gt;"
+                  moduleName = "Cteemo"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bintao/GitHub/IOS/Cteemo/Cteemo/Team_Member_Top.swift"
+                  timestampString = "452567467.827987"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

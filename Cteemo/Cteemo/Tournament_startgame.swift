@@ -304,9 +304,7 @@ class Tournament_startgame: UIViewController {
                     
                 else{
                     
-                    let alert1 = SCLAlertView()
                     
-                    alert1.showWarning(self.parentViewController?.parentViewController, title: "Game not finished", subTitle: "Please finish game first", closeButtonTitle: "ok", duration: 0.0)
                     
                 }
 
@@ -314,10 +312,8 @@ class Tournament_startgame: UIViewController {
         }//request end
 
     
-    
-    
-    
     }
+    
     
     func soloTournament(){
     

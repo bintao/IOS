@@ -106,7 +106,6 @@ class Tournament_game: UIViewController, UITableViewDataSource, UITableViewDeleg
         self.TournamentType = self.Tournaments[sender.tag].type
         self.starttime = self.Tournaments[sender.tag].startTime
         self.teamsnumber = self.Tournaments[sender.tag].joinedmember
-        
          let alert = SCLAlertView()
         let alert1 = SCLAlertView()
         let alert2 = SCLAlertView()

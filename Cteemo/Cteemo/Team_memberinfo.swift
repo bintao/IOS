@@ -334,10 +334,10 @@ class Team_memberinfo: UIViewController, UITableViewDelegate, UITableViewDataSou
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
       
         if indexPath.row == 0{
-            return 160
+            return 200
         }
         else  if indexPath.row == 1{
-            return 320
+            return 230
         }
         else{
             return 80
@@ -360,7 +360,7 @@ class Team_memberinfo: UIViewController, UITableViewDelegate, UITableViewDataSou
             
             cell = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[1] as? Team_Member_Top
             
-            cell?.setCell(name, school: school, icon: self.usericon)
+            cell?.setCell(name, win: userlolTotal.win, icon: self.usericon, rank: self.rank)
             
         }
     
@@ -376,7 +376,7 @@ class Team_memberinfo: UIViewController, UITableViewDelegate, UITableViewDataSou
                 
                 cell =  NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[2] as? Team_Member_middle
                 
-               cell?.setCell(self.lolname, winRatio: userlolTotal.win, games: "\(userlolTotal.game)", kda: userlolTotal.kda, killspergame:self.userlolTotal.killspergame, goldpergame:  self.userlolTotal.goldpergame, PentaKills: "\(self.userlolTotal.penta)", rank: self.rank)
+               cell?.setCell( "\(userlolTotal.game)", kda: userlolTotal.kda, killspergame:self.userlolTotal.killspergame, goldpergame:  self.userlolTotal.goldpergame, PentaKills: "\(self.userlolTotal.penta)")
             }
             
             return cell!

@@ -14,9 +14,14 @@ class Team_Member_Top: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
     
-    @IBOutlet weak var school: UILabel!
+    @IBOutlet weak var winRate: UILabel!
     
     @IBOutlet weak var icon: UIImageView!
+    
+    @IBOutlet var rank: UIImageView!
+    
+    @IBOutlet var level: UILabel!
+    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -26,12 +31,28 @@ class Team_Member_Top: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
-    func setCell( name: String,school :String,icon:  UIImage!) {
+    func setCell( name: String,win :String,icon:  UIImage!, rank : String) {
         
         self.name.text = name
-        self.school.text = school
+        self.winRate.text = win
         self.icon.image = icon
         
+        
+        if rank != ""{
+        
+         self.level.text = "LV.30"
+        
+        }else{
+            self.level.text = "Not 30"
+        
+        }//check level
+        
+        if UIImage(named: rank + ".png") != nil {
+            
+            self.rank.image = UIImage(named: rank + ".png")
+            
+        }
+
         
     }
     

@@ -12,9 +12,6 @@ import Foundation
 class Team_Member_middle: UITableViewCell {
     
     
-    @IBOutlet weak var name: UILabel!
-    
-    @IBOutlet weak var winRatio: UILabel!
     
     @IBOutlet weak var games: UILabel!
     
@@ -28,8 +25,6 @@ class Team_Member_middle: UITableViewCell {
     @IBOutlet weak var PentaKills: UILabel!
     
     
-    @IBOutlet weak var rank: UIImageView!
-    
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -39,16 +34,8 @@ class Team_Member_middle: UITableViewCell {
         super.init(coder: aDecoder)
     }
     
-    func setCell(name: String,winRatio :String,games :String, kda: String,killspergame:String, goldpergame :String,PentaKills : String,rank :String) {
-        
-        if UIImage(named: rank + ".png") != nil {
-            
-            self.rank.image = UIImage(named: rank + ".png")
-        
-        }
-        
-        self.name.text = name
-        self.winRatio.text = winRatio
+    func setCell(games :String, kda: String,killspergame:String, goldpergame :String,PentaKills : String) {
+       
         self.games.text = games
         self.Kills.text = kda
         self.TripleKills.text = killspergame
