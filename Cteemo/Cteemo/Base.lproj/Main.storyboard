@@ -114,7 +114,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <exit id="2pp-Wd-a8q" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1384" y="37"/>
+            <point key="canvasLocation" x="1532" y="45"/>
         </scene>
         <!--Login Login By Self View Controller-->
         <scene sceneID="ToN-RI-bck">
@@ -2713,7 +2713,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <segue destination="blR-Dl-a0a" kind="show" id="kPk-un-p50"/>
+                                            <action selector="findplayer:" destination="V25-ub-kb1" eventType="touchUpInside" id="TWw-ds-Npn"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wo7-54-MBn">
@@ -2799,6 +2799,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                     <connections>
                         <outlet property="createTeam" destination="MP3-zR-KRT" id="OlW-XM-ddd"/>
                         <segue destination="hEF-di-Hta" kind="show" identifier="presentMyTeam" id="3Id-Zs-Wgb"/>
+                        <segue destination="blR-Dl-a0a" kind="show" identifier="findteam" id="oAu-yN-gji"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Oc7-yB-RhU" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3503,7 +3504,7 @@ Cteemo can determine your game result automatically. Please click “get tournam
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mNQ-0L-rkg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3955" y="-678"/>
+            <point key="canvasLocation" x="3665" y="-732"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="h4I-5s-lpI">
@@ -4582,10 +4583,10 @@ Cteemo can determine your game result automatically. Please click “get tournam
         <image name="white.png" width="1200" height="1200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WGx-hs-GOh"/>
-        <segue reference="ghN-ly-d3N"/>
+        <segue reference="9wu-Y0-gi9"/>
+        <segue reference="oAu-yN-gji"/>
         <segue reference="qJt-XH-Khk"/>
-        <segue reference="1TS-hj-YUx"/>
+        <segue reference="ghN-ly-d3N"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
 </document>

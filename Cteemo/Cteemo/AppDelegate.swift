@@ -19,8 +19,7 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-    
+   
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         
@@ -88,11 +87,50 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
         // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-
+        
+        let alert = SCLAlertView()
+        var req = request(.GET, "https://itunes.apple.com/lookup?id=983850950")
+            .responseJSON { (_, _, JSONdata, _) in
+                
+                if JSONdata != nil {
+                    
+                    let myjson = JSON(JSONdata!)
+                    println(myjson["results"])
+                    println(myjson["results"][0]["trackViewUrl"])
+                    println(myjson["results"][0]["version"])
+                    
+                    let version = myjson["results"][0]["version"].string
+                    let url =  myjson["results"][0]["trackViewUrl"].string
+                    var current = ""
+                    
+                    if let build = NSBundle.mainBundle().infoDictionary?["CFBundleShortVersionString"] as? String {
+                       current = build
+                    }
+                    
+                    if version != nil && url != nil && version != current{
+                        
+                        alert.addButton("update", actionBlock:{ (Void) in
+                            
+                            var newurl:NSURL? = NSURL(string: url!)
+                            UIApplication.sharedApplication().openURL(newurl!)
+                            
+                        })
+                        
+                        alert.showCustom(self.window?.rootViewController, image: UIImage(named: "config.png")!, color: UserInfoGlobal.UIColorFromRGB(0x3498DB), title: "New Version " + version! , subTitle: "Please update your Version!",closeButtonTitle: "Next time", duration: 20.0)
+                        
+                    }// check version match or not
+                   
+                    
+                }// check jason nil
+              
+        }
+        
+     
         application.applicationIconBadgeNumber = 0
 
         if RCIMClient.sharedRCIMClient().getCurrentConnectionstatus().rawValue == 9 {
@@ -109,7 +147,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     
                     NSLog("Login failed")
             }
-            
             
         }
     }

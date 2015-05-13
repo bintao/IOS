@@ -130,7 +130,7 @@ class Team_requests: UIViewController, UITableViewDataSource, UITableViewDelegat
             
             if !((requests[indexPath.row] as! [String: AnyObject])["profile_icon"] is NSNull){
                 
-                iconurl = (requests[indexPath.row] as! [String: AnyObject])["iconurl"] as! String
+                iconurl = (requests[indexPath.row] as! [String: AnyObject])["profile_icon"] as! String
                 
             }
             

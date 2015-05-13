@@ -24,7 +24,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
     
     override func viewDidLoad(){
         super.viewDidLoad()
-                    
             var loginView: FBLoginView = FBLoginView()
             loginView.delegate = self
             loginView.frame.size = self.facebook.frame.size
@@ -33,6 +32,11 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+       
+        
+        
+    }
     //save and update user data
 
     func loginViewFetchedUserInfo(loginView: FBLoginView!, user: FBGraphUser!)
@@ -70,6 +74,7 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
                     req.sendRequest()
                     self.startLoading()
                     
+                    
                 }
                 else
                 {
@@ -79,8 +84,6 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
 
             
         }
-
-        
         
     }
     
@@ -117,14 +120,12 @@ class Login_MainViewController: UIViewController, FBLoginViewDelegate, RequestRe
             
             if result["username"] as? String  != nil {
                 //old User
-            
-                
                 UserInfoGlobal.updateUserInfo()
                 
                 UserInfoGlobal.getIconFromServer()
                 //TeamInfoGlobal.uploadTeamInfo()
-                self.performSegueWithIdentifier("exitToMain", sender: self)
-                
+               self.performSegueWithIdentifier("exitToMain", sender: self)
+               
                 
             }
             else {

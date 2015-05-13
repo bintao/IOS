@@ -337,7 +337,7 @@ class Team_memberinfo: UIViewController, UITableViewDelegate, UITableViewDataSou
             return 200
         }
         else  if indexPath.row == 1{
-            return 230
+            return 160
         }
         else{
             return 80
@@ -360,7 +360,7 @@ class Team_memberinfo: UIViewController, UITableViewDelegate, UITableViewDataSou
             
             cell = NSBundle.mainBundle().loadNibNamed("tableCell", owner: 0, options: nil)[1] as? Team_Member_Top
             
-            cell?.setCell(name, win: userlolTotal.win, icon: self.usericon, rank: self.rank)
+            cell?.setCell(self.lolname, win: "Win ratio: " + userlolTotal.win, icon: self.usericon, rank: self.rank)
             
         }
     

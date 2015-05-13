@@ -339,8 +339,6 @@ class UserTeam: NSObject{
     //user logout, remove all local data
     func cleanUserData(){
         
-        
-        
         self.teamName = nil
         self.teamID = nil
         self.team_Intro = nil
@@ -349,6 +347,7 @@ class UserTeam: NSObject{
         self.captainName = nil
         self.captainId = nil
         self.teamicon = nil
+        TeamInfoGlobal.findplayer = false
         
         userDefault.removeObjectForKey("teamName")
         userDefault.removeObjectForKey("teamID")

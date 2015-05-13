@@ -109,6 +109,8 @@
 		A11844A91AC879AA00022E45 /* Team_DeleteMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11844A81AC879AA00022E45 /* Team_DeleteMember.swift */; };
 		A11844B31AC9C20A00022E45 /* Tournament_playnext.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11844B21AC9C20A00022E45 /* Tournament_playnext.swift */; };
 		A11844BF1ACBA2A700022E45 /* Tournament_startgame.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11844BE1ACBA2A700022E45 /* Tournament_startgame.swift */; };
+		A11F63F21B0303800049CBCC /* img2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A11F63F01B0303800049CBCC /* img2.jpg */; };
+		A11F63F31B0303800049CBCC /* img3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A11F63F11B0303800049CBCC /* img3.jpg */; };
 		A11FED831ABD4D060075B627 /* RAMBounceAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FED781ABD4D060075B627 /* RAMBounceAnimation.swift */; };
 		A11FED841ABD4D060075B627 /* RAMFrameItemAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FED7A1ABD4D060075B627 /* RAMFrameItemAnimation.swift */; };
 		A11FED851ABD4D060075B627 /* RAMFumeAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A11FED7C1ABD4D060075B627 /* RAMFumeAnimation.swift */; };
@@ -582,6 +584,8 @@
 		A11844A81AC879AA00022E45 /* Team_DeleteMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Team_DeleteMember.swift; sourceTree = "<group>"; };
 		A11844B21AC9C20A00022E45 /* Tournament_playnext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament_playnext.swift; sourceTree = "<group>"; };
 		A11844BE1ACBA2A700022E45 /* Tournament_startgame.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tournament_startgame.swift; sourceTree = "<group>"; };
+		A11F63F01B0303800049CBCC /* img2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img2.jpg; sourceTree = "<group>"; };
+		A11F63F11B0303800049CBCC /* img3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = img3.jpg; sourceTree = "<group>"; };
 		A11FED781ABD4D060075B627 /* RAMBounceAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMBounceAnimation.swift; sourceTree = "<group>"; };
 		A11FED7A1ABD4D060075B627 /* RAMFrameItemAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFrameItemAnimation.swift; sourceTree = "<group>"; };
 		A11FED7C1ABD4D060075B627 /* RAMFumeAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RAMFumeAnimation.swift; sourceTree = "<group>"; };
@@ -1114,6 +1118,8 @@
 				A16CFABE1AF432F600ED552C /* personalSocial */,
 				A1F266F21ADA0BFC00C91D7C /* newtournament */,
 				A12D3D491AD9FC7C00C2076A /* arrw.png */,
+				A11F63F01B0303800049CBCC /* img2.jpg */,
+				A11F63F11B0303800049CBCC /* img3.jpg */,
 				A18EAD4F1AD9F2960062173E /* ME */,
 				A1FA7D6C1AD656A200671F29 /* icon */,
 				A1B86EF81ACE6D9A00942626 /* tier */,
@@ -2068,6 +2074,7 @@
 				A1E57CE91AB2D8DA00FDF193 /* chuishi.png in Resources */,
 				A1B86F241ACE6D9A00942626 /* GOLD V.png in Resources */,
 				A1B5D8DC1AC7CD6B000BD6A6 /* loginpage1.png in Resources */,
+				A11F63F21B0303800049CBCC /* img2.jpg in Resources */,
 				A13919101AA2C21D00CD232A /* camera icons (report result).png in Resources */,
 				42DBA66F1AD5D489001F57CE /* Cloud左下角.png in Resources */,
 				A1B86EE91ACE406F00942626 /* 86.png in Resources */,
@@ -2101,6 +2108,7 @@
 				A1F3AA601AB1753F00CD5ACE /* chat.png in Resources */,
 				42F15D341ACF649F004D64EF /* 3View.xib in Resources */,
 				A1B86F1C1ACE6D9A00942626 /* DIAMOND II.png in Resources */,
+				A11F63F31B0303800049CBCC /* img3.jpg in Resources */,
 				A1B86EEA1ACE406F00942626 /* 89.png in Resources */,
 				42B85A2D1A748D4E00FD4642 /* arrowTurned.png in Resources */,
 				A1B86EE61ACE406F00942626 /* 83.png in Resources */,

@@ -79,6 +79,8 @@ class Login_LoginBySelfViewController: UIViewController, FBLoginViewDelegate, UI
                 self.performSegueWithIdentifier("loginSucc", sender: self)
                 
             }else{
+                
+                println(result)
                 if((result["message"] as! String).rangeOfString("password")?.isEmpty != nil){
                     displaySpeaker("email and password not matched")
                 }

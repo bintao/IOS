@@ -42,6 +42,7 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         Tournament.getsolodata()
         Tournament.getteamdata()
         
+      
         
     }
     
@@ -409,6 +410,22 @@ class MainViewController:  UIViewController , UITabBarDelegate, RequestResultDel
         }
         
     }
+    
+    
+    func updateapp(){
+        
+        let alert = SCLAlertView()
+        alert.addButton("update", actionBlock:{ (Void) in
+            
+            var url:NSURL? = NSURL(string: "https://itunes.apple.com/us/app/cteemo/id983850950?mt=8&uo=4")
+            UIApplication.sharedApplication().openURL(url!)
+            
+        })
+        alert.showNotice(self, title: "New Version", subTitle: "Please update your Version!", closeButtonTitle: nil, duration: 0.0)
+        
+    
+    }
+    
     
 }
 

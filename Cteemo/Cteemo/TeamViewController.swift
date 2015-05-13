@@ -110,7 +110,6 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        
         let cell: UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "cell")
         cell.selectionStyle = UITableViewCellSelectionStyle.None
         
@@ -137,6 +136,12 @@ class TeamViewController: UIViewController , UITableViewDataSource, UITableViewD
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func findplayer(sender: AnyObject) {
+        performSegueWithIdentifier("findteam", sender: self)
+        
+             TeamInfoGlobal.findplayer = false
+        
+    }
     
     @IBAction func returnToTeam(segue : UIStoryboardSegue) {
       
